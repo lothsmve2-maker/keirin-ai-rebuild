@@ -1,0 +1,81 @@
+name: Fetch Keirin Schedule
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch official schedule
+        run: python fetch_schedule.py
+
+      - name: Validate schedule output
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          path = Path("data/today_schedule.json")
+
+          if not path.exists():
+              raise SystemExit(
+                  "エラー: today_schedule.json がありません"
+              )
+
+          data = json.loads(
+              path.read_text(encoding="utf-8")
+          )
+
+          if data.get("status") != "ok":
+              raise SystemExit(
+                  "エラー: データ取得状態が正常ではありません"
+              )
+
+          events = data.get("events", [])
+          active = data.get("active_today", [])
+
+          if not events:
+              raise SystemExit(
+                  "エラー: 開催日程が0件です"
+              )
+
+          print("開催日程ファイル: OK")
+          print(f"開催日程件数: {len(events)}")
+          print(f"本日開催件数: {len(active)}")
+
+          for event in active:
+              print(
+                  event.get("venue_name"),
+                  event.get("start_date"),
+                  event.get("end_date"),
+                  event.get("event_name")
+              )
+          PY
+
+      - name: Save schedule data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add data/today_schedule.json
+
+          if git diff --cached --quiet; then
+            echo "開催日程に変更はありません"
+          else
+            git commit -m "Update official keirin schedule"
+            git push
+          fi
