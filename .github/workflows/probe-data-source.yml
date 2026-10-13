@@ -1,0 +1,49 @@
+name: Probe Keirin Data Source
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Validate venue master
+        run: python scripts/validate_venues.py
+
+      - name: Probe official schedule pages
+        id: probe
+        continue-on-error: true
+        run: python scripts/probe_schedule_source.py
+
+      - name: Save source probe report
+        if: always()
+        run: |
+          if [ -f data/source_probe.json ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/source_probe.json
+            git diff --cached --quiet || git commit -m "Record official schedule source probe"
+            git push
+          else
+            echo "検証レポートが作成されていません"
+            exit 1
+          fi
+
+      - name: Check probe result
+        if: steps.probe.outcome == 'failure'
+        run: |
+          echo "公式サイトの取得結果を確認してください"
+          exit 1
