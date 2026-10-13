@@ -1,0 +1,53 @@
+{
+  "checked_at_utc": "2026-10-13T15:55:38.625447+00:00",
+  "source_url": "https://www.keirin.jp/sp/raceschedule",
+  "http_status": 200,
+  "body_bytes": 121867,
+  "page_title": "開催日程｜KEIRIN.JP",
+  "tag_counts": {
+    "html": 1,
+    "head": 1,
+    "meta": 10,
+    "title": 1,
+    "link": 9,
+    "script": 15,
+    "body": 1,
+    "div": 312,
+    "p": 57,
+    "img": 447,
+    "table": 168,
+    "tbody": 47,
+    "tr": 249,
+    "td": 688,
+    "span": 11,
+    "input": 9,
+    "a": 3,
+    "button": 53,
+    "br": 2,
+    "select": 2,
+    "option": 41,
+    "footer": 1,
+    "ul": 1,
+    "li": 5,
+    "i": 1
+  },
+  "table_count": 168,
+  "candidate_link_count": 2,
+  "candidate_links": [
+    {
+      "text": "開催日程",
+      "href": "/sp/raceschedule"
+    },
+    {
+      "text": "グレードレース 開催日程",
+      "href": "/sp/graderaceschedule"
+    }
+  ],
+  "html_markers": {
+    "開催日程": true,
+    "2026": true,
+    "10月": true,
+    "開催場": false
+  },
+  "note": "これはHTML構造の調査結果であり、開催日程の確定データではありません。"
+}
