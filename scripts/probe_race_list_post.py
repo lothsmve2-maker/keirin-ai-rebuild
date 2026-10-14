@@ -102,7 +102,17 @@ def main():
 
         schedule = schedule_response.json()
         venues = schedule.get("kInfo", [])
+print("\n=== 開催情報の確認 ===")
 
+for venue in venues:
+    print({
+        "競輪場": venue.get("jyoName"),
+        "ボタン表示条件": venue.get("btnFlgLive"),
+        "開催情報あり": bool(venue.get("encPrm")),
+        "開催情報の長さ": len(str(venue.get("encPrm") or "")),
+    })
+
+print("====================")
         result["steps"]["schedule"] = {
             "status_code": schedule_response.status_code,
             "venue_count": len(venues),
