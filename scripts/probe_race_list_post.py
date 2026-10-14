@@ -23,42 +23,44 @@ HEADERS = {
     "Accept-Language": "ja,en-US;q=0.9",
 }
 
+INTERESTING = re.compile(
+    r"formlnk|commonSubmit|formPost|formGet|encp|"
+    r"SJ0\d+|racelist|/sp/race|/sp/result",
+    re.I,
+)
+
 
 def log(message):
     print(message, flush=True)
 
 
-def page_title(html):
+def title_of(html):
     soup = BeautifulSoup(html, "html.parser")
     return soup.title.get_text(" ", strip=True) if soup.title else ""
 
 
-def extract_date_range(text, year):
-    pattern = (
-        r"(\d{1,2})/(\d{1,2})[（(][^）)]*[）)]"
-        r"\s*[～〜~\-－]\s*(\d{1,2})/(\d{1,2})"
-    )
+def extract_scripts(html, page_url):
+    soup = BeautifulSoup(html, "html.parser")
+    found = []
 
-    match = re.search(pattern, text)
+    for tag in soup.find_all("script"):
+        src = tag.get("src")
 
-    if not match:
-        pattern = (
-            r"(\d{1,2})/(\d{1,2})\s*[～〜~\-－]\s*"
-            r"(\d{1,2})/(\d{1,2})"
-        )
-        match = re.search(pattern, text)
+        if src:
+            found.append({
+                "type": "external",
+                "url": urljoin(page_url, src),
+            })
+        elif tag.string or tag.get_text(strip=True):
+            source = tag.string or tag.get_text()
+            if INTERESTING.search(source):
+                found.append({
+                    "type": "inline",
+                    "url": page_url + "#inline-script",
+                    "source": source[:20000],
+                })
 
-    if not match:
-        return None
-
-    sm, sd, em, ed = map(int, match.groups())
-
-    try:
-        start = date(year, sm, sd)
-        end = date(year + (1 if em < sm else 0), em, ed)
-        return start, end
-    except ValueError:
-        return None
+    return found
 
 
 def extract_links(html, page_url):
@@ -66,25 +68,15 @@ def extract_links(html, page_url):
     found = []
 
     for tag in soup.find_all(True):
-        onclick = tag.get("onclick", "")
-        href = tag.get("href", "")
+        onclick = str(tag.get("onclick", ""))
+        href = str(tag.get("href", ""))
 
-        if not onclick and not href:
+        if not INTERESTING.search(onclick + " " + href):
             continue
 
-        text = tag.get_text(" ", strip=True)
-        combined = f"{onclick} {href}"
-
-        if not re.search(
-            r"formlnk|encp|racelist|/sp/race|/sp/result|SJ0\d+",
-            combined,
-            re.I,
-        ):
-            continue
-
-        item = {
+        found.append({
             "tag": tag.name,
-            "text": text[:200],
+            "text": tag.get_text(" ", strip=True)[:200],
             "onclick": onclick,
             "href": href,
             "resolved_href": urljoin(page_url, href) if href else "",
@@ -96,24 +88,12 @@ def extract_links(html, page_url):
                     "data-href", "data-url", "action", "method"
                 )
             },
-        }
-
-        found.append(item)
+        })
 
     return found
 
 
-def extract_scripts(html, page_url):
-    soup = BeautifulSoup(html, "html.parser")
-    urls = []
-
-    for tag in soup.find_all("script", src=True):
-        urls.append(urljoin(page_url, tag["src"]))
-
-    return list(dict.fromkeys(urls))
-
-
-def extract_form_info(html):
+def extract_forms(html):
     soup = BeautifulSoup(html, "html.parser")
     forms = []
 
@@ -139,6 +119,80 @@ def extract_form_info(html):
     return forms
 
 
+def extract_tokens(html, page_url, today):
+    soup = BeautifulSoup(html, "html.parser")
+    found = []
+
+    pattern = re.compile(
+        r"""formlnk\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]"""
+    )
+
+    for tag in soup.find_all(True):
+        onclick = str(tag.get("onclick", ""))
+        match = pattern.search(onclick)
+
+        if not match:
+            continue
+
+        found.append({
+            "text": tag.get_text(" ", strip=True)[:200],
+            "target": urljoin(page_url, match.group(1)),
+            "token": match.group(2),
+            "onclick": onclick,
+            "is_today_text": today.strftime("%Y/%m/%d") in tag.get_text(),
+        })
+
+    return found
+
+
+def inspect_javascript(session, script_url, referer):
+    result = {
+        "url": script_url,
+        "status": None,
+        "content_type": "",
+        "size": 0,
+        "interesting": False,
+        "matches": [],
+        "error": None,
+    }
+
+    try:
+        response = session.get(
+            script_url,
+            headers={"Referer": referer},
+            timeout=20,
+        )
+
+        result["status"] = response.status_code
+        result["content_type"] = response.headers.get("Content-Type", "")
+        result["size"] = len(response.content)
+
+        if response.status_code != 200:
+            return result
+
+        source = response.text
+        matches = []
+
+        for match in INTERESTING.finditer(source):
+            start = max(0, match.start() - 250)
+            end = min(len(source), match.end() + 700)
+            snippet = source[start:end]
+
+            if snippet not in matches:
+                matches.append(snippet)
+
+            if len(matches) >= 15:
+                break
+
+        result["interesting"] = bool(matches)
+        result["matches"] = matches
+
+    except Exception as exc:
+        result["error"] = str(exc)
+
+    return result
+
+
 def main():
     today = date.today()
 
@@ -148,51 +202,71 @@ def main():
         "cookies": [],
         "links": [],
         "forms": [],
-        "scripts": [],
+        "javascript_urls": [],
+        "javascript_details": [],
         "token_candidates": [],
-        "transition_tests": [],
+        "notes": [
+            "診断専用。レース一覧取得処理は変更しない。",
+            "このスクリプトではPOST送信を実行しない。",
+            "Cookieの値は保存しない。",
+        ],
     }
 
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    log("=" * 65)
-    log("KEIRIN.JP 画面遷移・フォーム診断")
+    log("=" * 60)
+    log("KEIRIN.JP 遷移診断")
     log(f"実行日: {today.isoformat()}")
-    log("=" * 65)
+    log("=" * 60)
 
-    # 1. トップページ
-    top = session.get(TOP_URL, timeout=30)
-    top.encoding = top.apparent_encoding
+    pages = []
 
-    log(f"\nトップ: HTTP {top.status_code} / {page_title(top.text)}")
+    for name, url, referer in (
+        ("top", TOP_URL, None),
+        ("schedule", SCHEDULE_URL, TOP_URL),
+    ):
+        try:
+            headers = {"Referer": referer} if referer else {}
 
-    report["pages"].append({
-        "url": top.url,
-        "status": top.status_code,
-        "title": page_title(top.text),
-    })
+            response = session.get(
+                url,
+                headers=headers,
+                timeout=30,
+            )
+            response.encoding = response.apparent_encoding
 
-    # 2. 開催日程ページ
-    schedule = session.get(
-        SCHEDULE_URL,
-        headers={"Referer": top.url},
-        timeout=30,
-    )
-    schedule.encoding = schedule.apparent_encoding
+            page = {
+                "name": name,
+                "url": response.url,
+                "status": response.status_code,
+                "title": title_of(response.text),
+                "html": response.text,
+            }
 
-    log(
-        f"開催日程: HTTP {schedule.status_code} / "
-        f"{page_title(schedule.text)}"
-    )
+            pages.append(page)
 
-    report["pages"].append({
-        "url": schedule.url,
-        "status": schedule.status_code,
-        "title": page_title(schedule.text),
-    })
+            report["pages"].append({
+                "name": name,
+                "url": response.url,
+                "status": response.status_code,
+                "title": page["title"],
+                "size": len(response.content),
+            })
 
-    # 3. セッション情報
+            log(
+                f"{name}: HTTP {response.status_code} "
+                f"/ {page['title']}"
+            )
+
+        except Exception as exc:
+            log(f"{name}取得失敗: {exc}")
+            report["pages"].append({
+                "name": name,
+                "url": url,
+                "error": str(exc),
+            })
+
     for cookie in session.cookies:
         report["cookies"].append({
             "name": cookie.name,
@@ -201,157 +275,101 @@ def main():
             "secure": cookie.secure,
         })
 
-    log(f"Cookie数: {len(report['cookies'])}")
+    script_map = {}
 
-    # 4. ページのリンクとフォームを調査
-    for page_name, html, page_url in (
-        ("top", top.text, top.url),
-        ("schedule", schedule.text, schedule.url),
-    ):
+    for page in pages:
+        if "html" not in page:
+            continue
+
+        name = page["name"]
+        html = page["html"]
+        page_url = page["url"]
+
         links = extract_links(html, page_url)
-        forms = extract_form_info(html)
+        forms = extract_forms(html)
+        scripts = extract_scripts(html, page_url)
 
         report["links"].append({
-            "page": page_name,
+            "page": name,
             "items": links,
         })
 
         report["forms"].append({
-            "page": page_name,
+            "page": name,
             "items": forms,
         })
 
-        log(f"\n[{page_name}] 関連リンク: {len(links)}")
-        log(f"[{page_name}] フォーム: {len(forms)}")
+        log(f"\n[{name}] 関連リンク: {len(links)}")
+        log(f"[{name}] フォーム: {len(forms)}")
 
         for item in links:
-            log(
-                "LINK "
-                + json.dumps(item, ensure_ascii=False)[:700]
-            )
+            log("LINK " + json.dumps(item, ensure_ascii=False)[:900])
 
         for form in forms:
-            log(
-                "FORM "
-                + json.dumps(form, ensure_ascii=False)[:1200]
-            )
+            log("FORM " + json.dumps(form, ensure_ascii=False)[:900])
 
-    # 5. JavaScriptを取得し、遷移処理を探す
-    script_urls = list(dict.fromkeys(
-        extract_scripts(top.text, top.url)
-        + extract_scripts(schedule.text, schedule.url)
-    ))
+        for script in scripts:
+            if script["type"] == "inline":
+                report["javascript_details"].append({
+                    "type": "inline",
+                    "page": name,
+                    "url": script["url"],
+                    "interesting": True,
+                    "source": script["source"],
+                })
+            else:
+                script_map.setdefault(script["url"], page_url)
 
-    log(f"\nJavaScript候補: {len(script_urls)}")
-
-    for script_url in script_urls:
-        try:
-            response = session.get(
-                script_url,
-                headers={"Referer": schedule.url},
-                timeout=20,
-            )
-
-            if response.status_code != 200:
-                continue
-
-            source = response.text
-
-            if not re.search(
-                r"formlnk|commonSubmit|formPost|encp|SJ0301|SJ0305",
-                source,
-                re.I,
-            ):
-                continue
-
-            matches = []
-
-            for match in re.finditer(
-                r"formlnk|commonSubmit|formPost|encp|SJ0301|SJ0305",
-                source,
-                re.I,
-            ):
-                start = max(0, match.start() - 350)
-                end = min(len(source), match.end() + 900)
-                snippet = source[start:end]
-
-                if snippet not in matches:
-                    matches.append(snippet)
-
-                if len(matches) >= 12:
-                    break
-
-            entry = {
-                "url": script_url,
-                "status": response.status_code,
-                "snippets": matches,
-            }
-
-            report["scripts"].append(entry)
-            log(f"\nJS: {script_url}")
-
-            for snippet in matches:
-                log(snippet[:1000])
-                log("-" * 30)
-
-        except Exception as exc:
-            log(f"JS取得失敗: {script_url}: {exc}")
-
-    # 6. 開催トークン候補を記録する
-    soup = BeautifulSoup(schedule.text, "html.parser")
-
-    token_pattern = re.compile(
-        r"""formlnk\s*\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]"""
+    schedule_page = next(
+        (p for p in pages if p["name"] == "schedule" and "html" in p),
+        None,
     )
 
-    for tag in soup.find_all(True):
-        onclick = tag.get("onclick", "")
-        match = token_pattern.search(onclick)
+    if schedule_page:
+        report["token_candidates"] = extract_tokens(
+            schedule_page["html"],
+            schedule_page["url"],
+            today,
+        )
 
-        if not match:
-            continue
+    log(f"\nJavaScript URL数: {len(script_map)}")
 
-        text = tag.get_text(" ", strip=True)
-        interval = extract_date_range(text, today.year)
+    for index, script_url in enumerate(script_map, 1):
+        log(f"JS URL {index}: {script_url}")
 
-        entry = {
-            "text": text,
-            "target": urljoin(BASE, match.group(1)),
-            "token": match.group(2),
-            "onclick": onclick,
-            "date_range": (
-                [interval[0].isoformat(), interval[1].isoformat()]
-                if interval else None
-            ),
-            "is_today": (
-                interval[0] <= today <= interval[1]
-                if interval else False
-            ),
-        }
+        detail = inspect_javascript(
+            session,
+            script_url,
+            script_map[script_url],
+        )
 
-        report["token_candidates"].append(entry)
+        report["javascript_details"].append(detail)
 
-    log(
-        f"\nトークン候補: "
-        f"{len(report['token_candidates'])}"
-    )
+        if detail["interesting"]:
+            log(f"  関連コードあり: {len(detail['matches'])}箇所")
+
+            for snippet in detail["matches"][:5]:
+                log("  " + snippet[:500].replace("\n", " "))
+        elif detail["status"] != 200:
+            log(f"  HTTP: {detail['status']}")
+
+    report["javascript_urls"] = list(script_map.keys())
+
+    log(f"\nCookie数: {len(report['cookies'])}")
+    log(f"開催トークン候補: {len(report['token_candidates'])}")
 
     for item in report["token_candidates"]:
-        if item["is_today"]:
-            log(
-                "当日候補: "
-                + json.dumps(item, ensure_ascii=False)
+        log(
+            "TOKEN "
+            + json.dumps(
+                {
+                    "text": item["text"],
+                    "target": item["target"],
+                    "is_today_text": item["is_today_text"],
+                },
+                ensure_ascii=False,
             )
-
-    # 7. 重要：ここではPOSTを再実行しない
-    # 公式ページが必要とするパラメータを特定する前に、
-    # 同じPOSTを繰り返しても原因の切り分けにならないため。
-
-    report["notes"] = [
-        "この診断ではPOSTを再実行していない。",
-        "開催リンク、フォーム、JavaScript、Cookie情報を記録した。",
-        "Cookieの値など認証情報は保存していない。",
-    ]
+        )
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     OUTPUT.write_text(
@@ -359,14 +377,10 @@ def main():
         encoding="utf-8",
     )
 
-    log("\n" + "=" * 65)
-    log("診断完了")
-    log(f"リンク記録: {len(report['links'])}ページ")
-    log(f"フォーム記録: {len(report['forms'])}ページ")
-    log(f"関連JavaScript: {len(report['scripts'])}")
-    log(f"トークン候補: {len(report['token_candidates'])}")
-    log(f"出力: {OUTPUT}")
-    log("=" * 65)
+    log("\n診断完了")
+    log(f"出力ファイル: {OUTPUT}")
+    log(f"外部JavaScript: {len(report['javascript_urls'])}")
+    log(f"JavaScript調査結果: {len(report['javascript_details'])}")
 
 
 if __name__ == "__main__":
