@@ -15,7 +15,6 @@ VENUES_FILE = DATA_DIR / "venues.json"
 OUTPUT_FILE = DATA_DIR / "today_schedule.json"
 
 SOURCE_URL = "https://www.keirin.jp/sp/raceschedule"
-
 JST = ZoneInfo("Asia/Tokyo")
 
 USER_AGENT = (
@@ -23,7 +22,7 @@ USER_AGENT = (
     "(compatible; KeirinAI/2.0)"
 )
 
-DATE_RANGE_PATTERN = re.compile(
+DATE_PATTERN = re.compile(
     r"(?<!\d)"
     r"(\d{1,2})\s*/\s*(\d{1,2})"
     r"\s*(?:\([^)]*\))?"
@@ -37,63 +36,15 @@ def now_jst():
     return datetime.now(JST)
 
 
-def compact(value):
+def normalize(value):
     value = str(value or "")
-    value = value.replace("\u3000", "")
-    value = value.replace("\xa0", "")
-    value = re.sub(r"\s+", "", value)
-    return value.strip()
+    value = value.replace("\u3000", " ")
+    value = value.replace("\xa0", " ")
+    return " ".join(value.split()).strip()
 
 
-class TableRowParser(HTMLParser):
-    """
-    HTMLのtr単位でテキストを保持する。
-    ページ全体のテキストを平坦化しない。
-    """
-
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-
-        self.rows = []
-        self.current_row = None
-        self.row_depth = 0
-
-    def handle_starttag(self, tag, attrs):
-        tag = tag.lower()
-
-        if tag == "tr":
-            if self.current_row is None:
-                self.current_row = []
-                self.row_depth = 1
-            else:
-                self.row_depth += 1
-
-        elif self.current_row is not None:
-            if tag == "br":
-                self.current_row.append(" ")
-
-    def handle_endtag(self, tag):
-        tag = tag.lower()
-
-        if tag == "tr" and self.current_row is not None:
-            self.row_depth -= 1
-
-            if self.row_depth <= 0:
-                text = " ".join(self.current_row)
-                text = " ".join(text.split())
-
-                if text:
-                    self.rows.append(text)
-
-                self.current_row = None
-                self.row_depth = 0
-
-    def handle_data(self, data):
-        if self.current_row is not None:
-            value = " ".join(data.split())
-
-            if value:
-                self.current_row.append(value)
+def compact(value):
+    return re.sub(r"\s+", "", normalize(value))
 
 
 def load_venues():
@@ -113,32 +64,33 @@ def load_venues():
             "venues.json の venues が空です"
         )
 
-    result = {}
+    by_code = {}
 
-    for venue in venues:
-        code = str(venue.get("venue_code", "")).strip()
-        name = str(venue.get("name", "")).strip()
+    for item in venues:
+        code = str(
+            item.get("venue_code", "")
+        ).strip()
+
+        name = normalize(item.get("name", ""))
 
         if not code or not name:
             raise ValueError(
-                "競輪場マスターにコードまたは名称がありません"
+                "競輪場コードまたは名称がありません"
             )
 
-        key = compact(name)
-
-        if key in result:
+        if code in by_code:
             raise ValueError(
-                f"競輪場名が重複しています: {name}"
+                f"競輪場コードが重複しています: {code}"
             )
 
-        result[key] = {
+        by_code[code] = {
             "venue_code": code,
             "name": name,
-            "region": venue.get("region"),
-            "prefecture": venue.get("prefecture"),
+            "region": item.get("region"),
+            "prefecture": item.get("prefecture"),
         }
 
-    return result
+    return by_code
 
 
 def fetch_html():
@@ -146,7 +98,9 @@ def fetch_html():
         SOURCE_URL,
         headers={
             "User-Agent": USER_AGENT,
-            "Accept-Language": "ja,en-US;q=0.8,en;q=0.6",
+            "Accept-Language": (
+                "ja,en-US;q=0.8,en;q=0.6"
+            ),
         },
     )
 
@@ -169,7 +123,7 @@ def fetch_html():
 
     if not raw:
         raise RuntimeError(
-            "公式サイトから空のデータが返されました"
+            "公式サイトから空のHTMLが返されました"
         )
 
     html = raw.decode(
@@ -180,8 +134,8 @@ def fetch_html():
     return html, status, len(raw)
 
 
-def parse_date_range(text, base_year):
-    match = DATE_RANGE_PATTERN.search(text)
+def parse_date_range(text, target_year):
+    match = DATE_PATTERN.search(text)
 
     if not match:
         return None
@@ -193,19 +147,14 @@ def parse_date_range(text, base_year):
 
     try:
         start_date = date(
-            base_year,
+            target_year,
             start_month,
             start_day,
         )
 
-        end_year = base_year
+        end_year = target_year
 
         if end_month < start_month:
-            end_year += 1
-        elif (
-            end_month == start_month
-            and end_day < start_day
-        ):
             end_year += 1
 
         end_date = date(
@@ -227,158 +176,284 @@ def parse_date_range(text, base_year):
     }
 
 
-def find_venue_in_row(row, venue_master):
+class ScheduleParser(HTMLParser):
     """
-    競輪場名が行内に独立して存在する場合のみ認識する。
-    開催名の一部に似た文字列があっても認識しない。
+    公式HTMLから競輪場コードと開催テーブルを抽出する。
+    標準ライブラリのみで動作する。
     """
 
-    normalized = compact(row)
+    def __init__(self, venue_master):
+        super().__init__(convert_charrefs=True)
 
-    for key in sorted(
-        venue_master.keys(),
-        key=len,
-        reverse=True,
-    ):
-        if normalized == key:
-            return key
+        self.venue_master = venue_master
 
-        if normalized.startswith(key + "開催がありません"):
-            return key
+        self.current_venue_code = None
+        self.current_button_code = None
+        self.current_button_name = ""
+        self.capturing_venue_name = False
 
-    return None
+        self.active_table = False
+        self.table_depth = 0
 
+        self.current_cell = None
+        self.cells = []
 
-def parse_schedule(html, venue_master, target_date):
-    parser = TableRowParser()
-    parser.feed(html)
-    parser.close()
+        self.events = []
+        self.seen_venues = set()
 
-    rows = parser.rows
+    def handle_starttag(self, tag, attrs):
+        attrs = dict(attrs)
+        tag = tag.lower()
 
-    if not rows:
-        raise RuntimeError(
-            "HTMLの行を抽出できませんでした。"
-            "公式ページの構造を確認する必要があります。"
+        classes = set(
+            (attrs.get("class") or "").split()
         )
 
-    print(f"HTML行数: {len(rows)}")
+        # 競輪場ボタンの識別コードを取得
+        if tag == "button":
+            onclick = attrs.get("onclick") or ""
 
-    venue_names = sorted(
-        venue_master.keys(),
-        key=len,
-        reverse=True,
-    )
+            match = re.search(
+                r"jocd=(\d+)",
+                onclick,
+            )
 
-    current_venue = None
-    events = []
-    seen = set()
+            if match:
+                code = match.group(1)
 
-    for row_index, row in enumerate(rows):
-        normalized_row = compact(row)
+                if code not in self.venue_master:
+                    raise ValueError(
+                        "競輪場マスターにないコードです: "
+                        f"{code}"
+                    )
 
-        # 競輪場の見出し行を認識
-        matched_venue = find_venue_in_row(
-            row,
-            venue_master,
-        )
+                self.current_button_code = code
+                self.current_button_name = ""
 
-        if matched_venue:
-            current_venue = matched_venue
+        # ボタン内の競輪場名を取得
+        if (
+            tag == "p"
+            and self.current_button_code
+            and "btn_base_fsz" in classes
+        ):
+            self.capturing_venue_name = True
 
-            # 「開催がありません」は開催情報ではない
-            if "開催がありません" in normalized_row:
-                current_venue = matched_venue
-                continue
+        # 開催情報のテーブルを検出
+        if tag == "table":
+            if (
+                not self.active_table
+                and "race_tbl" in classes
+            ):
+                if self.current_venue_code is None:
+                    raise RuntimeError(
+                        "開催テーブルの前に競輪場コードを"
+                        "確認できませんでした"
+                    )
 
-            # 競輪場名だけの行は開催情報ではない
-            if normalized_row == matched_venue:
-                continue
+                self.active_table = True
+                self.table_depth = 1
+                self.cells = []
+                self.current_cell = None
 
-        if current_venue is None:
-            continue
+            elif self.active_table:
+                self.table_depth += 1
+
+        if not self.active_table:
+            return
+
+        # 開催テーブル内のセルを記録
+        if tag == "td":
+            self.current_cell = {
+                "class": attrs.get("class", ""),
+                "colspan": attrs.get("colspan"),
+                "text": "",
+            }
+
+        elif tag == "img" and self.current_cell:
+            alt = attrs.get("alt")
+
+            if alt:
+                self.current_cell["text"] += (
+                    " " + normalize(alt)
+                )
+
+        elif tag == "br" and self.current_cell:
+            self.current_cell["text"] += " "
+
+    def handle_data(self, data):
+        value = normalize(data)
+
+        if not value:
+            return
+
+        if self.capturing_venue_name:
+            self.current_button_name += value
+
+        if self.active_table and self.current_cell:
+            self.current_cell["text"] += (
+                " " + value
+            )
+
+    def handle_endtag(self, tag):
+        tag = tag.lower()
+
+        if tag == "p" and self.capturing_venue_name:
+            self.capturing_venue_name = False
+
+        if tag == "button" and self.current_button_code:
+            code = self.current_button_code
+
+            master_name = self.venue_master[code]["name"]
+            actual_name = normalize(
+                self.current_button_name
+            )
+
+            if compact(actual_name) != compact(master_name):
+                raise RuntimeError(
+                    "競輪場コードと名称が一致しません: "
+                    f"コード={code}, "
+                    f"マスター={master_name}, "
+                    f"HTML={actual_name}"
+                )
+
+            self.current_venue_code = code
+            self.seen_venues.add(code)
+
+            self.current_button_code = None
+            self.current_button_name = ""
+
+        if not self.active_table:
+            return
+
+        if tag == "td" and self.current_cell:
+            self.current_cell["text"] = normalize(
+                self.current_cell["text"]
+            )
+
+            self.cells.append(self.current_cell)
+            self.current_cell = None
+
+        if tag == "table":
+            self.table_depth -= 1
+
+            if self.table_depth <= 0:
+                self._finish_table()
+
+                self.active_table = False
+                self.table_depth = 0
+                self.current_cell = None
+                self.cells = []
+
+    def _finish_table(self):
+        venue_code = self.current_venue_code
+
+        if not venue_code:
+            return
+
+        date_text = ""
+
+        for cell in self.cells:
+            classes = set(
+                cell["class"].split()
+            )
+
+            if "kikan" in classes:
+                date_text = cell["text"]
+                break
 
         date_info = parse_date_range(
-            row,
-            target_date.year,
+            date_text,
+            now_jst().year,
         )
 
         if not date_info:
-            continue
+            # 開催テーブルの構造が違う場合は採用しない
+            return
 
-        # 開催日が含まれる行の情報だけを利用する。
-        # 別の行の開催名を推測して結び付けない。
-        match = DATE_RANGE_PATTERN.search(row)
+        event_name = None
+        grade = None
 
-        if not match:
-            continue
-
-        before = row[:match.start()].strip()
-        after = row[match.end():].strip()
-
-        # 開催名は日付より後ろにあるテキストを優先
-        event_name = after
-
-        if not event_name:
-            # 同じ行の前側に開催名が含まれている場合のみ利用
-            event_name = before
-
-        event_name = event_name.strip(" |｜\t")
-
-        # 開催名が取得できない場合も、日付から開催名を作らない
-        if not event_name:
-            event_name = None
-
-        venue = venue_master[current_venue]
-
-        event_key = (
-            venue["venue_code"],
-            date_info["start_date"],
-            date_info["end_date"],
-        )
-
-        # 同じ競輪場・同じ期間の重複登録はエラーにする。
-        # 別開催として勝手に採用しない。
-        if event_key in seen:
-            raise RuntimeError(
-                "同じ競輪場・開催期間が重複しました: "
-                f"{venue['name']} "
-                f"{date_info['start_date']}～"
-                f"{date_info['end_date']}"
+        for cell in self.cells:
+            classes = set(
+                cell["class"].split()
             )
 
-        seen.add(event_key)
+            text = normalize(cell["text"])
 
-        start_date = date.fromisoformat(
-            date_info["start_date"]
-        )
+            if "grade" in classes and text:
+                grade = text
 
-        end_date = date.fromisoformat(
-            date_info["end_date"]
-        )
+            if (
+                cell.get("colspan") == "5"
+                and text
+            ):
+                event_name = text
 
-        events.append({
-            "venue_code": venue["venue_code"],
+        venue = self.venue_master[venue_code]
+
+        event = {
+            "venue_code": venue_code,
             "venue_name": venue["name"],
             "region": venue["region"],
             "prefecture": venue["prefecture"],
             "event_name": event_name,
+            "grade": grade,
             "start_date": date_info["start_date"],
             "end_date": date_info["end_date"],
-            "is_active_today": (
-                start_date <= target_date <= end_date
-            ),
-            "race_count": None,
-            "race_count_status": "not_acquired",
             "source": SOURCE_URL,
-            "source_row_index": row_index,
-        })
+        }
 
-    if not events:
+        self.events.append(event)
+
+
+def parse_schedule(html, venue_master, target_date):
+    parser = ScheduleParser(venue_master)
+
+    parser.feed(html)
+    parser.close()
+
+    if not parser.seen_venues:
         raise RuntimeError(
-            "開催日程を抽出できませんでした。"
-            "誤ったデータの保存を防ぐため中止します。"
+            "競輪場コードを一件も確認できませんでした"
         )
+
+    if not parser.events:
+        raise RuntimeError(
+            "開催期間を抽出できませんでした。"
+            "既存データの上書きを中止します"
+        )
+
+    events = []
+    seen = set()
+
+    for event in parser.events:
+        key = (
+            event["venue_code"],
+            event["start_date"],
+            event["end_date"],
+        )
+
+        if key in seen:
+            continue
+
+        seen.add(key)
+
+        start_date = date.fromisoformat(
+            event["start_date"]
+        )
+
+        end_date = date.fromisoformat(
+            event["end_date"]
+        )
+
+        event["is_active_today"] = (
+            start_date <= target_date <= end_date
+        )
+
+        event["race_count"] = None
+        event["race_count_status"] = "not_acquired"
+
+        events.append(event)
 
     events.sort(
         key=lambda item: (
@@ -387,44 +462,7 @@ def parse_schedule(html, venue_master, target_date):
         )
     )
 
-    # 同じ競輪場の開催期間が重なっていないか検証
-    by_venue = {}
-
-    for event in events:
-        by_venue.setdefault(
-            event["venue_code"],
-            [],
-        ).append(event)
-
-    for code, venue_events in by_venue.items():
-        venue_events.sort(
-            key=lambda item: item["start_date"]
-        )
-
-        for previous, current in zip(
-            venue_events,
-            venue_events[1:],
-        ):
-            previous_end = date.fromisoformat(
-                previous["end_date"]
-            )
-
-            current_start = date.fromisoformat(
-                current["start_date"]
-            )
-
-            if current_start <= previous_end:
-                raise RuntimeError(
-                    "同じ競輪場の開催期間が重なっています。"
-                    "日程を自動確定せず中止します: "
-                    f"{previous['venue_name']} "
-                    f"{previous['start_date']}～"
-                    f"{previous['end_date']} / "
-                    f"{current['start_date']}～"
-                    f"{current['end_date']}"
-                )
-
-    return events
+    return events, len(parser.seen_venues)
 
 
 def build_output(
@@ -432,18 +470,21 @@ def build_output(
     target_date,
     http_status,
     body_bytes,
+    venue_count,
 ):
-    active_events = [
+    active_today = [
         event
         for event in events
         if event["is_active_today"]
     ]
 
+    now = now_jst().isoformat(
+        timespec="seconds"
+    )
+
     return {
         "schema_version": 2,
-        "generated_at": now_jst().isoformat(
-            timespec="seconds"
-        ),
+        "generated_at": now,
         "target_date": target_date.isoformat(),
         "status": "ok",
         "source": {
@@ -451,26 +492,46 @@ def build_output(
             "url": SOURCE_URL,
             "http_status": http_status,
             "body_bytes": body_bytes,
-            "retrieved_at": now_jst().isoformat(
-                timespec="seconds"
-            ),
+            "retrieved_at": now,
         },
         "summary": {
+            "venue_count": venue_count,
             "event_count": len(events),
-            "active_event_count": len(active_events),
+            "active_event_count": len(active_today),
             "race_count": None,
             "race_count_status": "not_acquired",
         },
         "events": events,
-        "active_today": active_events,
+        "active_today": active_today,
         "data_notes": [
-            "公式ページのHTML行単位で開催日程を抽出しています。",
-            "抽出成功は全項目の正しさを保証するものではありません。",
-            "同一競輪場の開催期間重複はエラーとして停止します。",
+            "開催日程は公式サイトのHTMLから取得しています。",
+            "競輪場コードと名称をマスターと照合しています。",
+            "開催期間を取得できない場合は保存を中止します。",
             "レース数・出走表・選手情報は未取得です。",
-            "未取得の値を推測で補完していません。",
         ],
     }
+
+
+def save_json_safely(output):
+    temporary_file = OUTPUT_FILE.with_suffix(".tmp")
+
+    temporary_file.write_text(
+        json.dumps(
+            output,
+            ensure_ascii=False,
+            indent=2,
+        ),
+        encoding="utf-8",
+    )
+
+    # JSONの再読込に成功した場合だけ置き換える
+    json.loads(
+        temporary_file.read_text(
+            encoding="utf-8"
+        )
+    )
+
+    temporary_file.replace(OUTPUT_FILE)
 
 
 def main():
@@ -481,24 +542,26 @@ def main():
 
     target_date = now_jst().date()
 
-    print("=" * 42)
-    print(" KEIRIN AI SCHEDULE DATA v2")
-    print("=" * 42)
-    print(f"対象日: {target_date.isoformat()}")
+    print("=" * 44)
+    print("KEIRIN AI SCHEDULE DATA")
+    print("=" * 44)
+    print("対象日:", target_date.isoformat())
 
     try:
         venue_master = load_venues()
 
         print(
-            f"競輪場マスター: {len(venue_master)}場"
+            "競輪場マスター:",
+            len(venue_master),
+            "場",
         )
 
-        html, http_status, body_bytes = fetch_html()
+        html, status, body_bytes = fetch_html()
 
-        print(f"HTTP status: {http_status}")
-        print(f"取得サイズ: {body_bytes} bytes")
+        print("HTTP status:", status)
+        print("取得サイズ:", body_bytes, "bytes")
 
-        events = parse_schedule(
+        events, venue_count = parse_schedule(
             html,
             venue_master,
             target_date,
@@ -507,56 +570,49 @@ def main():
         output = build_output(
             events,
             target_date,
-            http_status,
+            status,
             body_bytes,
+            venue_count,
         )
 
-        # 既存ファイルを直接途中書き込みしない
-        temporary_file = OUTPUT_FILE.with_suffix(".tmp")
-
-        temporary_file.write_text(
-            json.dumps(
-                output,
-                ensure_ascii=False,
-                indent=2,
-            ),
-            encoding="utf-8",
-        )
-
-        # JSONとして再読込できることを確認してから置換
-        json.loads(
-            temporary_file.read_text(
-                encoding="utf-8"
+        if not output["active_today"]:
+            raise RuntimeError(
+                "対象日の開催場が0件です。"
+                "誤った結果の保存を防ぐため中止します"
             )
-        )
 
-        temporary_file.replace(OUTPUT_FILE)
+        save_json_safely(output)
 
-        print("-" * 42)
-        print(f"開催日程抽出: {len(events)}件")
+        print("-" * 44)
+        print("競輪場検出:", venue_count)
+        print("開催情報:", len(events))
         print(
-            f"本日開催: {len(output['active_today'])}件"
+            "本日開催:",
+            len(output["active_today"]),
         )
 
         for event in output["active_today"]:
             print(
-                f"  {event['venue_name']}: "
+                f"  {event['venue_name']} "
                 f"{event['start_date']}～"
                 f"{event['end_date']} "
-                f"({event['event_name'] or '開催名未取得'})"
+                f"{event['event_name'] or '開催名未取得'}"
             )
 
-        print("-" * 42)
-        print(f"保存先: {OUTPUT_FILE}")
+        print("-" * 44)
+        print("保存先:", OUTPUT_FILE)
         print("状態: OK")
-        print("注意: レース数・出走表は未取得です。")
+        print(
+            "注意: レース数と出走表はまだ未取得です"
+        )
 
     except Exception as exc:
-        print("=" * 42)
-        print("開催日程の検証に失敗しました")
-        print(f"原因: {exc}")
+        print("=" * 44)
+        print("開催日程の取得・検証に失敗しました")
+        print("原因:", exc)
         print(
-            "既存のtoday_schedule.jsonは上書きしていません。"
+            "既存のtoday_schedule.jsonは"
+            "上書きしていません"
         )
         sys.exit(1)
 
