@@ -1,6 +1,6 @@
 import json
 import re
-from datetime import datetime, date
+from datetime import date, datetime
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -11,6 +11,8 @@ BASE = "https://keirin.jp"
 ROOT = Path(__file__).resolve().parent.parent
 OUTPUT = ROOT / "data" / "race_transition_diagnostic.json"
 
+JST = ZoneInfo("Asia/Tokyo")
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Linux; Android 13) "
@@ -20,24 +22,14 @@ HEADERS = {
     "Accept-Language": "ja,en-US;q=0.9",
 }
 
-JST = ZoneInfo("Asia/Tokyo")
+
+def normalize(value):
+    return re.sub(r"\s+", " ", value or "").strip()
 
 
-def log(message):
-    print(message, flush=True)
-
-
-def normalize(text):
-    return re.sub(r"\s+", " ", text or "").strip()
-
-
-def parse_event_date(text, target):
-    """
-    開催日程の表示例:
-    10/14(水)～10/16(金)
-    """
+def is_active_event(text, target):
     match = re.search(
-        r"(\d{1,2})/(\d{1,2}).*?[～〜\-－]\s*"
+        r"(\d{1,2})/(\d{1,2}).*?[～〜~\-－]\s*"
         r"(\d{1,2})/(\d{1,2})",
         text,
     )
@@ -48,17 +40,17 @@ def parse_event_date(text, target):
     sm, sd, em, ed = map(int, match.groups())
 
     try:
-        start = date(target.year, sm, sd)
+        start_year = target.year
         end_year = target.year
+
+        if sm > target.month + 1:
+            start_year -= 1
 
         if em < sm:
             end_year += 1
 
+        start = date(start_year, sm, sd)
         end = date(end_year, em, ed)
-
-        # 年をまたぐ開催に対応
-        if start > target and start.year == target.year:
-            start = date(target.year - 1, sm, sd)
 
         return start <= target <= end
 
@@ -73,25 +65,20 @@ def main():
     report = {
         "generated_at": now.isoformat(),
         "target_date": target.isoformat(),
-        "source": f"{BASE}/sp/raceschedule",
-        "schedule_status": None,
-        "active_event_count": 0,
-        "results": [],
-        "notes": [
-            "開催日程ページのencpを使ってレース一覧を取得する。",
-            "既存の予想・買い目・収支データは変更しない。",
-        ],
+        "status": "error",
+        "events_found": 0,
+        "race_list_pages_ok": 0,
+        "total_race_numbers": 0,
+        "total_rider_names": 0,
+        "events": [],
     }
 
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    log("=" * 50)
-    log("KEIRIN.JP 実レース一覧取得テスト")
-    log(f"対象日: {target}")
-    log("=" * 50)
+    print(f"対象日: {target}", flush=True)
 
-    # 1. 公式開催日程を取得
+    # 1. 開催日程を取得
     response = session.get(
         f"{BASE}/sp/raceschedule",
         timeout=30,
@@ -99,20 +86,16 @@ def main():
     response.raise_for_status()
     response.encoding = response.apparent_encoding
 
-    report["schedule_status"] = response.status_code
-
     soup = BeautifulSoup(response.text, "html.parser")
-
-    # 2. 開催日程に埋め込まれた公式の画面遷移情報を抽出
     events = []
-    seen_tokens = set()
+    seen = set()
 
+    # 2. 公式ページの画面遷移パラメータを取得
     for element in soup.find_all(onclick=True):
         onclick = element.get("onclick", "")
 
         match = re.search(
-            r"formlnk\(\s*['\"]([^'\"]+)['\"]\s*,\s*"
-            r"['\"]([^'\"]+)['\"]\s*\)",
+            r"""formlnk\(\s*['"]([^'"]+)['"]\s*,\s*['"]([^'"]+)['"]\s*\)""",
             onclick,
         )
 
@@ -121,60 +104,29 @@ def main():
 
         endpoint, encp = match.groups()
 
-        if encp in seen_tokens:
+        if endpoint != "/sp/racelist" or encp in seen:
             continue
 
-        seen_tokens.add(encp)
+        seen.add(encp)
 
-        # 表示要素の文字と親要素の文字から開催日を探す
-        texts = []
-        node = element
+        text = normalize(element.get_text(" ", strip=True))
 
-        for _ in range(5):
-            if node is None:
-                break
-
-            text = normalize(node.get_text(" ", strip=True))
-
-            if text and text not in texts:
-                texts.append(text)
-
-            node = node.parent
-
-        event_text = next(
-            (
-                text for text in texts
-                if parse_event_date(text, target)
-            ),
-            "",
-        )
-
-        if not event_text:
+        if not is_active_event(text, target):
             continue
 
         events.append({
+            "event_text": text,
             "endpoint": endpoint,
             "encp": encp,
-            "event_text": event_text[:500],
         })
 
-    report["active_event_count"] = len(events)
+    report["events_found"] = len(events)
+    print(f"開催情報: {len(events)}件", flush=True)
 
-    log(f"本日該当の開催情報: {len(events)}件")
-
-    # 3. 各開催のレース一覧を取得
-    for index, event in enumerate(events, 1):
-        endpoint = event["endpoint"]
-
-        if not endpoint.startswith("/"):
-            log(f"対象外URL: {endpoint}")
-            continue
-
-        url = BASE + endpoint
-
+    # 3. 実際のレース一覧を取得
+    for event in events:
         item = {
             "event_text": event["event_text"],
-            "request_url": url,
             "http_status": None,
             "final_url": None,
             "title": "",
@@ -184,12 +136,9 @@ def main():
             "error": None,
         }
 
-        log(f"\n開催 {index}/{len(events)}")
-        log(event["event_text"][:100])
-
         try:
             result = session.post(
-                url,
+                BASE + event["endpoint"],
                 data={
                     "encp": event["encp"],
                     "disp": "SJ0301",
@@ -197,14 +146,10 @@ def main():
                 headers={
                     "Referer": f"{BASE}/sp/raceschedule",
                     "Origin": BASE,
-                    "Content-Type": (
-                        "application/x-www-form-urlencoded"
-                    ),
                 },
                 timeout=30,
                 allow_redirects=True,
             )
-
             result.encoding = result.apparent_encoding
 
             item["http_status"] = result.status_code
@@ -221,10 +166,10 @@ def main():
             )
 
             body = normalize(page.get_text(" ", strip=True))
-            item["body_sample"] = body[:2500]
+            item["body_sample"] = body[:3000]
 
-            # ページに実際に表示されたレース番号を検出
-            race_numbers = set()
+            # レース番号の候補を抽出
+            numbers = set()
 
             for element in page.find_all(
                 ["a", "button", "td", "th", "span", "div"]
@@ -235,16 +180,17 @@ def main():
                     number = int(text[:-1])
 
                     if 1 <= number <= 12:
-                        race_numbers.add(number)
+                        numbers.add(number)
 
-            item["race_numbers"] = sorted(race_numbers)
+            item["race_numbers"] = sorted(numbers)
 
-            # 選手名候補。実際の出走表かどうかの確認に使用
+            # 選手名候補を抽出
             names = set()
 
             for element in page.select(
-                ".racerName, .playerName, .sensyuName, "
-                "[class*='racer'], [class*='sensyu']"
+                "[class*='racerName'], "
+                "[class*='playerName'], "
+                "[class*='sensyuName']"
             ):
                 name = normalize(element.get_text(" ", strip=True))
 
@@ -253,45 +199,41 @@ def main():
 
             item["rider_names"] = sorted(names)
 
-            log(f"HTTP: {item['http_status']}")
-            log(f"ページ: {item['title']}")
-            log(f"レース番号: {item['race_numbers']}")
-            log(f"選手名候補: {len(item['rider_names'])}件")
+            if item["http_status"] == 200 and numbers:
+                report["race_list_pages_ok"] += 1
+
+            report["total_race_numbers"] += len(numbers)
+            report["total_rider_names"] += len(names)
+
+            print(
+                f"{item['event_text'][:50]} | "
+                f"HTTP {item['http_status']} | "
+                f"レース番号 {len(numbers)}件 | "
+                f"選手名候補 {len(names)}件",
+                flush=True,
+            )
 
         except Exception as exc:
             item["error"] = str(exc)
-            log(f"取得エラー: {exc}")
+            print(f"取得エラー: {exc}", flush=True)
 
-        report["results"].append(item)
+        report["events"].append(item)
 
     # 4. 結果を保存
-    successful = [
-        item for item in report["results"]
-        if item["http_status"] == 200
-        and item["race_numbers"]
-    ]
-
-    report["successful_race_list_pages"] = len(successful)
     report["status"] = (
-        "ok" if successful else "race_list_not_confirmed"
+        "ok"
+        if report["race_list_pages_ok"] > 0
+        else "race_list_not_confirmed"
     )
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-
     OUTPUT.write_text(
-        json.dumps(
-            report,
-            ensure_ascii=False,
-            indent=2,
-        ),
+        json.dumps(report, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
-    log("\n" + "=" * 50)
-    log(f"開催情報: {len(events)}件")
-    log(f"レース一覧を確認できたページ: {len(successful)}件")
-    log(f"保存先: {OUTPUT}")
-    log("=" * 50)
+    print(f"結果: {report['status']}", flush=True)
+    print(f"保存先: {OUTPUT}", flush=True)
 
 
 if __name__ == "__main__":
