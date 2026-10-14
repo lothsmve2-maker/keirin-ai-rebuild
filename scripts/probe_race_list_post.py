@@ -1,16 +1,23 @@
 import json
+import re
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
+from urllib.parse import urljoin
+
 import requests
+from bs4 import BeautifulSoup
+
 JST = timezone(timedelta(hours=9))
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "data" / "race_list_post_probe.json"
+OUTPUT = ROOT / "data" / "race_transition_diagnostic.json"
+
 BASE = "https://keirin.jp"
 TOP_URL = BASE + "/sp/top"
+RACELIST_URL = BASE + "/sp/racelist"
 JSON_URL = BASE + "/sp/json"
-RACE_LIST_URL = BASE + "/sp/racelist"
-RACE_INFO_URL = BASE + "/sp/race"
+
 TODAY = datetime.now(JST).strftime("%Y%m%d")
+
 HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
@@ -19,166 +26,322 @@ HEADERS = {
     ),
     "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
 }
-def inspect_response(response):
-    from bs4 import BeautifulSoup
-    soup = BeautifulSoup(response.text, "html.parser")
-    title = soup.title.get_text(" ", strip=True) if soup.title else ""
-    body = soup.get_text(" ", strip=True)
-    is_error = (
-        "/error" in response.url
-        or "予期せぬエラー" in body
-        or "エラーページ" in title
-    )
-    return {
-        "status_code": response.status_code,
-        "final_url": response.url,
-        "title": title,
-        "bytes": len(response.content),
-        "is_error_page": is_error,
-        "has_race_list": (
-            not is_error
-            and "出走表" in body
-            and "開催情報" in title
+
+
+def inspect_html(html, page_url):
+    soup = BeautifulSoup(html, "html.parser")
+
+    result = {
+        "title": (
+            soup.title.get_text(" ", strip=True)
+            if soup.title else ""
         ),
-        "body_text": body[:2000],
+        "forms": [],
+        "interesting_inputs": [],
+        "scripts": [],
+        "interesting_links": [],
     }
+
+    # フォームの送信先・送信方式を確認
+    for form in soup.find_all("form"):
+        form_data = {
+            "action": form.get("action"),
+            "method": form.get("method"),
+            "id": form.get("id"),
+            "name": form.get("name"),
+            "inputs": [],
+        }
+
+        for tag in form.find_all(
+            ["input", "button", "select"]
+        ):
+            form_data["inputs"].append({
+                "tag": tag.name,
+                "type": tag.get("type"),
+                "name": tag.get("name"),
+                "id": tag.get("id"),
+                "value_length": len(
+                    str(tag.get("value") or "")
+                ),
+            })
+
+        result["forms"].append(form_data)
+
+    # 画面遷移に関係しそうな項目だけ抽出
+    for tag in soup.find_all(["input", "script", "a"]):
+        element_id = str(tag.get("id") or "")
+        name = str(tag.get("name") or "")
+        src = str(tag.get("src") or "")
+        href = str(tag.get("href") or "")
+
+        combined = (
+            element_id + " " + name + " " + src + " " + href
+        ).lower()
+
+        if any(
+            word in combined
+            for word in [
+                "syusolisturl",
+                "encp",
+                "disp",
+                "submit",
+                "common",
+                "sj0101",
+                "sj0305",
+                "sj0301",
+                "sj0304",
+                "sj0306",
+                "racelist",
+                "race",
+            ]
+        ):
+            if tag.name == "input":
+                result["interesting_inputs"].append({
+                    "name": name,
+                    "id": element_id,
+                    "type": tag.get("type"),
+                    "value_length": len(
+                        str(tag.get("value") or "")
+                    ),
+                })
+
+            elif tag.name == "script" and src:
+                result["scripts"].append(
+                    urljoin(page_url, src)
+                )
+
+            elif tag.name == "a":
+                result["interesting_links"].append({
+                    "text": tag.get_text(" ", strip=True),
+                    "href": href,
+                    "onclick": tag.get("onclick"),
+                })
+
+    # JavaScriptファイルをすべて記録
+    for tag in soup.find_all("script", src=True):
+        url = urljoin(page_url, tag["src"])
+        if url not in result["scripts"]:
+            result["scripts"].append(url)
+
+    return result
+
+
+def get_js_snippets(session, url):
+    try:
+        response = session.get(url, timeout=25)
+
+        if response.status_code != 200:
+            return {
+                "url": url,
+                "status_code": response.status_code,
+                "snippets": [],
+            }
+
+        text = response.text
+        lines = text.splitlines()
+        snippets = []
+        keywords = [
+            "formPost",
+            "syusoListURL",
+            "keirinjyoInfoClick",
+            "btnPickupClick",
+            "encp",
+            "SJ0305",
+            "SJ0315",
+        ]
+
+        matched_lines = set()
+
+        for index, line in enumerate(lines):
+            if any(word.lower() in line.lower()
+                   for word in keywords):
+                start = max(0, index - 4)
+                end = min(len(lines), index + 7)
+
+                for line_number in range(start, end):
+                    matched_lines.add(line_number)
+
+        if matched_lines:
+            current = []
+            previous = -2
+
+            for line_number in sorted(matched_lines):
+                if line_number > previous + 1 and current:
+                    snippets.append("\n".join(current))
+                    current = []
+
+                current.append(
+                    f"{line_number + 1}: {lines[line_number]}"
+                )
+                previous = line_number
+
+            if current:
+                snippets.append("\n".join(current))
+
+        return {
+            "url": url,
+            "status_code": response.status_code,
+            "bytes": len(response.content),
+            "snippets": snippets[:30],
+        }
+
+    except Exception as exc:
+        return {
+            "url": url,
+            "error": f"{type(exc).__name__}: {exc}",
+            "snippets": [],
+        }
+
+
 def main():
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
     result = {
         "generated_at": datetime.now(JST).isoformat(),
         "target_date": TODAY,
-        "steps": {},
-        "venue_diagnostics": [],
-        "venues": [],
+        "pages": {},
+        "javascript": [],
+        "schedule_summary": {},
         "error": None,
     }
-    session = requests.Session()
-    session.headers.update(HEADERS)
+
     try:
-        print("1. 公式トップページを取得中")
+        # 1. トップページを取得
+        print("1. 公式トップページを調査中")
+
         top = session.get(TOP_URL, timeout=30)
         top.raise_for_status()
-        result["steps"]["top"] = {
-            "status_code": top.status_code,
-            "final_url": top.url,
-            "cookie_count": len(session.cookies),
-        }
-        print("2. 開催情報を取得中")
-        response = session.get(
-            JSON_URL,
-            params={"type": "JSJ058", "kday": TODAY},
+
+        result["pages"]["top"] = inspect_html(
+            top.text, top.url
+        )
+
+        # 2. 開催情報ページを直接取得
+        print("2. 開催情報ページを調査中")
+
+        race_page = session.get(
+            RACELIST_URL, timeout=30
+        )
+        race_page.raise_for_status()
+
+        result["pages"]["racelist_get"] = inspect_html(
+            race_page.text, race_page.url
+        )
+
+        # 3. 開催情報JSONを取得
+        print("3. 開催情報JSONを調査中")
+
+        schedule_response = session.get(
+            BASE + "/sp/json",
+            params={
+                "type": "JSJ058",
+                "kday": TODAY,
+            },
             headers={
                 "Referer": TOP_URL,
                 "X-Requested-With": "XMLHttpRequest",
             },
             timeout=30,
         )
-        response.raise_for_status()
-        schedule = response.json()
+        schedule_response.raise_for_status()
+
+        schedule = schedule_response.json()
         venues = schedule.get("kInfo", [])
-        if not isinstance(venues, list):
-            raise ValueError("開催情報の形式が想定と異なります")
-        result["steps"]["schedule"] = {
-            "status_code": response.status_code,
+
+        result["schedule_summary"] = {
             "venue_count": len(venues),
+            "venues": [
+                {
+                    "name": v.get("jyoName"),
+                    "btnFlgLive": v.get("btnFlgLive"),
+                    "encPrm_present": bool(v.get("encPrm")),
+                    "encPrm_length": len(
+                        str(v.get("encPrm") or "")
+                    ),
+                    "keys": list(v.keys()),
+                }
+                for v in venues
+            ],
         }
-        print("\n=== 開催情報の確認 ===")
-        for venue in venues:
-            diagnostic = {
-                "venue_name": venue.get("jyoName"),
-                "btnFlgLive": venue.get("btnFlgLive"),
-                "encPrm_present": bool(venue.get("encPrm")),
-                "encPrm_length": len(
-                    str(venue.get("encPrm") or "")
-                ),
-                "encPrm_type": type(
-                    venue.get("encPrm")
-                ).__name__,
-            }
-            result["venue_diagnostics"].append(diagnostic)
-            print(diagnostic)
-        print("======================")
-        for venue in venues:
-            name = venue.get("jyoName", "")
-            code = str(
-                venue.get("bKeirinCd")
-                or venue.get("KeirinCd")
-                or ""
+
+        # 4. 関係するJavaScriptを集める
+        script_urls = set()
+
+        for page in result["pages"].values():
+            script_urls.update(page["scripts"])
+
+        targets = [
+            url for url in script_urls
+            if any(
+                word in url.lower()
+                for word in [
+                    "commonsubmit",
+                    "commonjson",
+                    "commonload",
+                    "sj0101",
+                    "sc0201",
+                    "sj0301",
+                    "sj0304",
+                    "sj0305",
+                    "sj0306",
+                ]
             )
-            encp = venue.get("encPrm")
-            item = {
-                "venue_name": name,
-                "venue_code": code,
-                "encp_present": bool(encp),
-                "race_list": None,
-                "race_info": None,
-                "errors": [],
-            }
-            print("\n会場:", name, code)
-            if not encp:
-                item["errors"].append("encPrmがありません")
-                result["venues"].append(item)
-                continue
-            tests = [
-                (
-                    "race_list",
-                    RACE_LIST_URL,
-                    {"encp": encp, "disp": "SJ0305"},
-                ),
-                (
-                    "race_info",
-                    RACE_INFO_URL,
-                    {"encp": encp, "disp": "SJ0315"},
-                ),
-            ]
-            for key, url, payload in tests:
-                try:
-                    res = session.post(
-                        url,
-                        data=payload,
-                        headers={
-                            "Referer": TOP_URL,
-                            "Origin": BASE,
-                        },
-                        timeout=30,
-                        allow_redirects=True,
-                    )
-                    details = inspect_response(res)
-                    item[key] = details
-                    print(
-                        key,
-                        "HTTP", details["status_code"],
-                        details["title"],
-                        "エラー:", details["is_error_page"],
-                    )
-                except Exception as exc:
-                    message = (
-                        f"{key}: {type(exc).__name__}: {exc}"
-                    )
-                    item["errors"].append(message)
-                    print(message)
-            result["venues"].append(item)
-        success_count = sum(
-            1
-            for item in result["venues"]
-            if item["race_list"]
-            and item["race_list"]["has_race_list"]
-        )
-        result["summary"] = {
-            "venue_count": len(result["venues"]),
-            "race_list_success_count": success_count,
-            "session_cookie_count": len(session.cookies),
-        }
-        print("\n調査完了")
-        print("開催場数:", len(result["venues"]))
-        print("レース一覧確認成功:", success_count)
+        ]
+
+        print("4. JavaScriptを調査中")
+        print("対象ファイル数:", len(targets))
+
+        for url in sorted(targets):
+            print("調査:", url)
+
+            js_result = get_js_snippets(session, url)
+
+            if js_result.get("snippets"):
+                result["javascript"].append(js_result)
+
+        # 5. 要点を表示
+        print("\n=== 送信先・フォームの診断 ===")
+
+        for page_name, page in result["pages"].items():
+            print("\nページ:", page_name)
+            print("タイトル:", page["title"])
+
+            for item in page["interesting_inputs"]:
+                if (
+                    "syusolisturl" in str(item).lower()
+                    or "encp" in str(item).lower()
+                ):
+                    print("関連項目:", item)
+
+            for form in page["forms"]:
+                print("フォーム:", {
+                    "action": form["action"],
+                    "method": form["method"],
+                    "id": form["id"],
+                    "name": form["name"],
+                })
+
+        print("\nJavaScript調査ファイル数:",
+              len(result["javascript"]))
+
+        print("================================")
+
     except Exception as exc:
-        result["error"] = f"{type(exc).__name__}: {exc}"
-        print("エラー:", result["error"])
+        result["error"] = (
+            f"{type(exc).__name__}: {exc}"
+        )
+        print("調査エラー:", result["error"])
+
     OUTPUT.write_text(
         json.dumps(result, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
-    print("結果保存:", OUTPUT)
+
+    print("\n診断結果を保存:", OUTPUT)
+
+
 if __name__ == "__main__":
     main()
