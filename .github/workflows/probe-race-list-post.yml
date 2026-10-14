@@ -1,34 +1,39 @@
 name: Probe Race List POST
-
 on:
   workflow_dispatch:
-
 permissions:
-  contents: write
-
+  contents: read
 jobs:
   probe:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-
       - name: Install dependencies
         run: pip install requests beautifulsoup4
-
       - name: Run probe
         run: python scripts/probe_race_list_post.py
-
-      - name: Commit results
+      - name: Check diagnostic file
+        if: always()
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/race_list_post_probe.json
-          git diff --cached --quiet || git commit -m "Probe race list POST"
-          git push
+          echo "=== Diagnostic file ==="
+          if [ -f data/race_transition_diagnostic.json ]; then
+            ls -lh data/race_transition_diagnostic.json
+            python -m json.tool data/race_transition_diagnostic.json > /dev/null
+            echo "JSON validation: OK"
+          else
+            echo "Diagnostic file not found"
+            exit 1
+          fi
+      - name: Upload diagnostic results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: keirin-race-transition-diagnostic
+          path: data/race_transition_diagnostic.json
+          if-no-files-found: error
+          retention-days: 7
