@@ -1,0 +1,824 @@
+{
+  "generated_at": "2026-10-14T15:38:39.526980+09:00",
+  "target_date": "20261014",
+  "schedule_status": 200,
+  "venues": [
+    {
+      "venue_name": "奈良",
+      "venue_code": "53",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 33037,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "玉野",
+      "venue_code": "61",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 33153,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "別府",
+      "venue_code": "86",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 36067,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "青森",
+      "venue_code": "12",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 27973,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "いわき平",
+      "venue_code": "13",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 32274,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "前橋",
+      "venue_code": "22",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 35376,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "大宮",
+      "venue_code": "25",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 27707,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    },
+    {
+      "venue_name": "熊本",
+      "venue_code": "87",
+      "encp_present": true,
+      "race_list": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/racelist",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 32254,
+        "title": "開催情報｜KEIRIN.JP",
+        "body_text": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "オッズ",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "結　果",
+            "href": "#",
+            "onclick": null
+          },
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/common/jquery-ui.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/commonJSON.js",
+          "/sp/static/js/commonLoad.js",
+          "/sp/static/js/commonLink.js",
+          "/sp/static/js/commonSubmit.js",
+          "/sp/static/js/subdialog.js",
+          "/sp/static/js/bopen.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/SC0201_c.js",
+          "/sp/static/js/SC0201_v.js",
+          "/sp/static/js/SC0201.js",
+          "/sp/static/js/FSJ0305.js",
+          "/sp/static/js/SJ0301_v.js",
+          "/sp/static/js/SJ0301_c.js",
+          "/sp/static/js/SJ0304_v.js",
+          "/sp/static/js/SJ0304_c.js",
+          "/sp/static/js/SJ0304.js",
+          "/sp/static/js/SJ0305_v.js",
+          "/sp/static/js/SJ0305_c.js",
+          "/sp/static/js/SJ0305.js",
+          "/sp/static/js/SJ0306_v.js",
+          "/sp/static/js/SJ0306_c.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "race_info": {
+        "status_code": 200,
+        "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+        "content_type": "text/html;charset=UTF-8",
+        "bytes": 9135,
+        "title": "エラーページ｜KEIRIN.JP",
+        "body_text": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "",
+            "href": null,
+            "onclick": "sfHelpLinkClick()"
+          }
+        ],
+        "forms": [],
+        "script_urls": [
+          "/sp/static/js/common/jquery-1.11.3.js",
+          "/sp/static/js/common/bootstrap.min.js",
+          "/sp/static/js/common/jquery.cookie.js",
+          "/sp/static/js/common/jquery.json.min.js",
+          "/sp/static/js/slick/slick.min.js",
+          "/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/S_ticker.js",
+          "/sp/static/js/S_footer.js",
+          "/sp/static/js/commonSubmit.js"
+        ]
+      },
+      "errors": []
+    }
+  ],
+  "error": null
+}
