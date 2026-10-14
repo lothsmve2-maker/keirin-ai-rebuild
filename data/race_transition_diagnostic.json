@@ -1,81 +1,961 @@
 {
-  "generated_at": "2026-10-15T04:28:35.383092+09:00",
-  "target_date": "2026-10-15",
-  "status": "race_list_not_confirmed",
-  "events_found": 7,
-  "race_list_pages_ok": 0,
-  "total_race_numbers": 0,
-  "total_rider_names": 0,
-  "events": [
-    {
-      "event_text": "10/14(水)～10/16(金) ＣＴＣ杯 ニッカン・コム杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
+  "created_at": "2026-10-14T20:01:54.593834+00:00",
+  "project": "keirin-ai-rebuild",
+  "script": "scripts/probe_race_list_post.py",
+  "official_site": "https://keirin.jp",
+  "checks": {
+    "schedule_page": {
+      "status_code": 200,
+      "url": "https://keirin.jp/sp/raceschedule",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 121867,
+      "success": true
     },
-    {
-      "event_text": "10/13(火)～10/15(木) ＣＴＣなら３分前まで買える杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
-    },
-    {
-      "event_text": "10/15(木)～10/17(土) チャリロト杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
-    },
-    {
-      "event_text": "10/15(木)～10/17(土) ＷＩＮＴＩＣＫＥＴ杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
-    },
-    {
-      "event_text": "10/14(水)～10/16(金) ラブリン杯弁慶賞ｉｎ奈良",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
-    },
-    {
-      "event_text": "10/13(火)～10/15(木) ＳＴ観音寺カップ＆ＣＴＣ杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
-    },
-    {
-      "event_text": "10/14(水)～10/16(金) 仲間と繋がるＴＩＰＳＴＡＲ杯",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "title": "開催情報｜KEIRIN.JP",
-      "race_numbers": [],
-      "rider_names": [],
-      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
-      "error": null
+    "javascript_files_found": 11,
+    "javascript_urls": [
+      "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+      "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+      "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+      "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+      "https://keirin.jp/sp/static/js/S_footer.js",
+      "https://keirin.jp/sp/static/js/S_ticker.js",
+      "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+      "https://keirin.jp/sp/static/js/bopen.js",
+      "https://keirin.jp/sp/static/js/S_touch.js",
+      "https://keirin.jp/sp/static/js/SJ0201.js",
+      "https://keirin.jp/sp/static/js/commonSubmit.js"
+    ],
+    "schedule_json": {
+      "status_code": 200,
+      "url": "https://keirin.jp/sp/json?type=JSJ058",
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 12371,
+      "is_json": true,
+      "json_parse_error": null,
+      "success": true,
+      "venue_count": 8,
+      "venue_samples": [
+        {
+          "venue_name": null,
+          "venue_code": "53",
+          "start_date": "20261014",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "61",
+          "start_date": "20261013",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "86",
+          "start_date": "20261014",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "12",
+          "start_date": "20261014",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "13",
+          "start_date": "20261012",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "6nWOJ2YgWUh0vVMBoyI8CC6Tr0lpb4qQqbthIt45YD0"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "22",
+          "start_date": "20261013",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "D-fs-ibaZM4Z3cYeuKvjg2aG8onHvLhKpjf2Md_z7Bs"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "25",
+          "start_date": "20261012",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "CpPQzSRN4GOX-sUUc0RGwS_M19wgKXuXUHea-sztpU4"
+        },
+        {
+          "venue_name": null,
+          "venue_code": "87",
+          "start_date": "20261012",
+          "live_flag": 1,
+          "encPrm_present": true,
+          "encPrm_length": 43,
+          "encPrm": "IOS13V6oiZkyQWK3r2H3SjuQ46riMMm_FqOYd1LDYRA"
+        }
+      ]
     }
-  ]
+  },
+  "javascript_analysis": {
+    "files_examined": 11,
+    "total_bytes_examined": 857958,
+    "relevant_files": {
+      "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js": {
+        "http": {
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "content_type": "application/javascript",
+          "bytes": 284394
+        },
+        "patterns": {
+          "json_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "racelist_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "race_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "schedule_type": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "enc_parameter": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "ajax_terms": {
+            "match_count": 80,
+            "snippets": [
+              {
+                "match": "AJAX",
+                "context": "i ];\n\t\t\t\t\t\tif ( rscriptType.test( node.type || \"\" ) &&\n\t\t\t\t\t\t\t!jQuery._data( node, \"globalEval\" ) && jQuery.contains( doc, node ) ) {\n\n\t\t\t\t\t\t\tif ( node.src ) {\n\t\t\t\t\t\t\t\t// Optional AJAX dependency, but won't run scripts if not present\n\t\t\t\t\t\t\t\tif ( jQuery._evalUrl ) {\n\t\t\t\t\t\t\t\t\tjQuery._evalUrl( node.src );\n\t\t\t\t\t\t\t\t}\n\t\t\t\t\t\t\t} else {\n\t\t\t\t\t\t\t\tjQuery.globalEval( ( node.text || node.textContent || node.innerHTML || \"\" ).replace( rcleanScript, \"\" ) "
+              },
+              {
+                "match": "ajax",
+                "context": "if ( !xml || !xml.documentElement || xml.getElementsByTagName( \"parsererror\" ).length ) {\n\t\tjQuery.error( \"Invalid XML: \" + data );\n\t}\n\treturn xml;\n};\n\n\nvar\n\t// Document location\n\tajaxLocParts,\n\tajaxLocation,\n\n\trhash = /#.*$/,\n\trts = /([?&])_=[^&]*/,\n\trheaders = /^(.*?):[ \\t]*([^\\r\\n]*)\\r?$/mg, // IE leaves an \\r character at EOL\n\t// #7653, #8125, #8152: local protocol detection\n\trlocalProtocol = /^(?:about|app|app-storage|.+-extension|file"
+              },
+              {
+                "match": "ajax",
+                "context": "ml.documentElement || xml.getElementsByTagName( \"parsererror\" ).length ) {\n\t\tjQuery.error( \"Invalid XML: \" + data );\n\t}\n\treturn xml;\n};\n\n\nvar\n\t// Document location\n\tajaxLocParts,\n\tajaxLocation,\n\n\trhash = /#.*$/,\n\trts = /([?&])_=[^&]*/,\n\trheaders = /^(.*?):[ \\t]*([^\\r\\n]*)\\r?$/mg, // IE leaves an \\r character at EOL\n\t// #7653, #8125, #8152: local protocol detection\n\trlocalProtocol = /^(?:about|app|app-storage|.+-extension|file|res|widget):$/"
+              },
+              {
+                "match": "ajax",
+                "context": "?:GET|HEAD)$/,\n\trprotocol = /^\\/\\//,\n\trurl = /^([\\w.+-]+:)(?:\\/\\/(?:[^\\/?#]*@|)([^\\/?#:]*)(?::(\\d+)|)|)/,\n\n\t/* Prefilters\n\t * 1) They are useful to introduce custom dataTypes (see ajax/jsonp.js for an example)\n\t * 2) These are called:\n\t *    - BEFORE asking for a transport\n\t *    - AFTER param serialization (s.data is a string if s.processData is true)\n\t * 3) key is the dataType\n\t * 4) the catchall symbol \"*\" can be used\n\t * 5) execution wi"
+              },
+              {
+                "match": "ajax",
+                "context": "lint and evade compression\n\tallTypes = \"*/\".concat(\"*\");\n\n// #8138, IE may throw an exception when accessing\n// a field from window.location if document.domain has been set\ntry {\n\tajaxLocation = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment loc"
+              },
+              {
+                "match": "ajax",
+                "context": "if document.domain has been set\ntry {\n\tajaxLocation = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.aja"
+              },
+              {
+                "match": "ajax",
+                "context": "tion = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports"
+              },
+              {
+                "match": "ajax",
+                "context": "atch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// data"
+              },
+              {
+                "match": "ajax",
+                "context": " Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression "
+              },
+              {
+                "match": "ajax",
+                "context": "will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dat"
+              },
+              {
+                "match": "ajax",
+                "context": "ent.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dataTypeExpression, func ) {\n"
+              },
+              {
+                "match": "ajax",
+                "context": "ion.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dataTypeExpression, func ) {\n\n\t\tif ( typeof dataTypeExpression !== \"string\" ) {\n\t\t\tfunc = dataTypeE"
+              },
+              {
+                "match": "ajax",
+                "context": "ion = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dataTypeExpression, func ) {\n\n\t\tif ( typeof dataTypeExpression !== \"string\" ) {\n\t\t\tfunc = dataTypeExpression;\n\t\t\tdataTypeExp"
+              },
+              {
+                "match": "ajax",
+                "context": "!( selected = dataTypeOrTransport );\n\t\t\t}\n\t\t});\n\t\treturn selected;\n\t}\n\n\treturn inspect( options.dataTypes[ 0 ] ) || !inspected[ \"*\" ] && inspect( \"*\" );\n}\n\n// A special extend for ajax options\n// that takes \"flat\" options (not to be deep extended)\n// Fixes #9887\nfunction ajaxExtend( target, src ) {\n\tvar deep, key,\n\t\tflatOptions = jQuery.ajaxSettings.flatOptions || {};\n\n\tfor ( key in src ) {\n\t\tif ( src[ key ] !== undefined ) {\n\t\t\t( flatOptio"
+              },
+              {
+                "match": "ajax",
+                "context": "ons.dataTypes[ 0 ] ) || !inspected[ \"*\" ] && inspect( \"*\" );\n}\n\n// A special extend for ajax options\n// that takes \"flat\" options (not to be deep extended)\n// Fixes #9887\nfunction ajaxExtend( target, src ) {\n\tvar deep, key,\n\t\tflatOptions = jQuery.ajaxSettings.flatOptions || {};\n\n\tfor ( key in src ) {\n\t\tif ( src[ key ] !== undefined ) {\n\t\t\t( flatOptions[ key ] ? target : ( deep || (deep = {}) ) )[ key ] = src[ key ];\n\t\t}\n\t}\n\tif ( deep ) {\n\t\t"
+              },
+              {
+                "match": "ajax",
+                "context": "A special extend for ajax options\n// that takes \"flat\" options (not to be deep extended)\n// Fixes #9887\nfunction ajaxExtend( target, src ) {\n\tvar deep, key,\n\t\tflatOptions = jQuery.ajaxSettings.flatOptions || {};\n\n\tfor ( key in src ) {\n\t\tif ( src[ key ] !== undefined ) {\n\t\t\t( flatOptions[ key ] ? target : ( deep || (deep = {}) ) )[ key ] = src[ key ];\n\t\t}\n\t}\n\tif ( deep ) {\n\t\tjQuery.extend( true, target, deep );\n\t}\n\n\treturn target;\n}\n\n/* Hand"
+              },
+              {
+                "match": "ajax",
+                "context": "ons[ key ] ? target : ( deep || (deep = {}) ) )[ key ] = src[ key ];\n\t\t}\n\t}\n\tif ( deep ) {\n\t\tjQuery.extend( true, target, deep );\n\t}\n\n\treturn target;\n}\n\n/* Handles responses to an ajax request:\n * - finds the right dataType (mediates between content-type and expected dataType)\n * - returns the corresponding response\n */\nfunction ajaxHandleResponses( s, jqXHR, responses ) {\n\tvar firstDataType, ct, finalDataType, type,\n\t\tcontents = s.contents"
+              },
+              {
+                "match": "ajax",
+                "context": "\n\n/* Handles responses to an ajax request:\n * - finds the right dataType (mediates between content-type and expected dataType)\n * - returns the corresponding response\n */\nfunction ajaxHandleResponses( s, jqXHR, responses ) {\n\tvar firstDataType, ct, finalDataType, type,\n\t\tcontents = s.contents,\n\t\tdataTypes = s.dataTypes;\n\n\t// Remove auto dataType and get content-type in the process\n\twhile ( dataTypes[ 0 ] === \"*\" ) {\n\t\tdataTypes.shift();\n\t\ti"
+              },
+              {
+                "match": "ajax",
+                "context": "\n\t\treturn responses[ finalDataType ];\n\t}\n}\n\n/* Chain conversions given the request and the original response\n * Also sets the responseXXX fields on the jqXHR instance\n */\nfunction ajaxConvert( s, response, jqXHR, isSuccess ) {\n\tvar conv2, current, conv, tmp, prev,\n\t\tconverters = {},\n\t\t// Work with a copy of dataTypes in case we need to modify it for conversion\n\t\tdataTypes = s.dataTypes.slice();\n\n\t// Create converters map with lowercased key"
+              },
+              {
+                "match": "ajax",
+                "context": ": response };\n}\n\njQuery.extend({\n\n\t// Counter for holding the number of active queries\n\tactive: 0,\n\n\t// Last-Modified header cache for next request\n\tlastModified: {},\n\tetag: {},\n\n\tajaxSettings: {\n\t\turl: ajaxLocation,\n\t\ttype: \"GET\",\n\t\tisLocal: rlocalProtocol.test( ajaxLocParts[ 1 ] ),\n\t\tglobal: true,\n\t\tprocessData: true,\n\t\tasync: true,\n\t\tcontentType: \"application/x-www-form-urlencoded; charset=UTF-8\",\n\t\t/*\n\t\ttimeout: 0,\n\t\tdata: null,\n\t\tdataT"
+              },
+              {
+                "match": "ajax",
+                "context": ".extend({\n\n\t// Counter for holding the number of active queries\n\tactive: 0,\n\n\t// Last-Modified header cache for next request\n\tlastModified: {},\n\tetag: {},\n\n\tajaxSettings: {\n\t\turl: ajaxLocation,\n\t\ttype: \"GET\",\n\t\tisLocal: rlocalProtocol.test( ajaxLocParts[ 1 ] ),\n\t\tglobal: true,\n\t\tprocessData: true,\n\t\tasync: true,\n\t\tcontentType: \"application/x-www-form-urlencoded; charset=UTF-8\",\n\t\t/*\n\t\ttimeout: 0,\n\t\tdata: null,\n\t\tdataType: null,\n\t\tusername: "
+              },
+              {
+                "match": "ajax",
+                "context": "es\n\tactive: 0,\n\n\t// Last-Modified header cache for next request\n\tlastModified: {},\n\tetag: {},\n\n\tajaxSettings: {\n\t\turl: ajaxLocation,\n\t\ttype: \"GET\",\n\t\tisLocal: rlocalProtocol.test( ajaxLocParts[ 1 ] ),\n\t\tglobal: true,\n\t\tprocessData: true,\n\t\tasync: true,\n\t\tcontentType: \"application/x-www-form-urlencoded; charset=UTF-8\",\n\t\t/*\n\t\ttimeout: 0,\n\t\tdata: null,\n\t\tdataType: null,\n\t\tusername: null,\n\t\tpassword: null,\n\t\tcache: null,\n\t\tthrows: false,\n\t\ttra"
+              },
+              {
+                "match": "ajax",
+                "context": "XML\n\t\t},\n\n\t\t// For options that shouldn't be deep extended:\n\t\t// you can add your own custom options here if\n\t\t// and when you create one that shouldn't be\n\t\t// deep extended (see ajaxExtend)\n\t\tflatOptions: {\n\t\t\turl: true,\n\t\t\tcontext: true\n\t\t}\n\t},\n\n\t// Creates a full fledged settings object into target\n\t// with both ajaxSettings and settings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings )"
+              },
+              {
+                "match": "ajax",
+                "context": "that shouldn't be\n\t\t// deep extended (see ajaxExtend)\n\t\tflatOptions: {\n\t\t\turl: true,\n\t\t\tcontext: true\n\t\t}\n\t},\n\n\t// Creates a full fledged settings object into target\n\t// with both ajaxSettings and settings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Ext"
+              },
+              {
+                "match": "ajax",
+                "context": "\t\turl: true,\n\t\t\tcontext: true\n\t\t}\n\t},\n\n\t// Creates a full fledged settings object into target\n\t// with both ajaxSettings and settings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\t"
+              },
+              {
+                "match": "ajax",
+                "context": "\tcontext: true\n\t\t}\n\t},\n\n\t// Creates a full fledged settings object into target\n\t// with both ajaxSettings and settings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\tajaxPrefilter: "
+              },
+              {
+                "match": "ajax",
+                "context": "ttings and settings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\tajaxPrefilter: addToPrefiltersOrTransports( prefilters ),\n\tajaxTransport: addToPrefiltersOrTransports( transports "
+              },
+              {
+                "match": "ajax",
+                "context": "ettings fields.\n\t// If target is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\tajaxPrefilter: addToPrefiltersOrTransports( prefilters ),\n\tajaxTransport: addToPrefiltersOrTransports( transports ),\n\n\t// Main"
+              },
+              {
+                "match": "ajax",
+                "context": "et is omitted, writes into ajaxSettings.\n\tajaxSetup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\tajaxPrefilter: addToPrefiltersOrTransports( prefilters ),\n\tajaxTransport: addToPrefiltersOrTransports( transports ),\n\n\t// Main method\n\tajax: function( ur"
+              },
+              {
+                "match": "ajax",
+                "context": "Setup: function( target, settings ) {\n\t\treturn settings ?\n\n\t\t\t// Building a settings object\n\t\t\tajaxExtend( ajaxExtend( target, jQuery.ajaxSettings ), settings ) :\n\n\t\t\t// Extending ajaxSettings\n\t\t\tajaxExtend( jQuery.ajaxSettings, target );\n\t},\n\n\tajaxPrefilter: addToPrefiltersOrTransports( prefilters ),\n\tajaxTransport: addToPrefiltersOrTransports( transports ),\n\n\t// Main method\n\tajax: function( url, options ) {\n\n\t\t// If url is an object, simu"
+              }
+            ]
+          }
+        }
+      },
+      "https://keirin.jp/sp/static/js/common/jquery-ui.js": {
+        "http": {
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "content_type": "application/javascript",
+          "bytes": 470325
+        },
+        "patterns": {
+          "json_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "racelist_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "race_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "schedule_type": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "enc_parameter": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "ajax_terms": {
+            "match_count": 7,
+            "snippets": [
+              {
+                "match": "ajax",
+                "context": ".options.source === \"string\" ) {\n\t\t\turl = this.options.source;\n\t\t\tthis.source = function( request, response ) {\n\t\t\t\tif ( that.xhr ) {\n\t\t\t\t\tthat.xhr.abort();\n\t\t\t\t}\n\t\t\t\tthat.xhr = $.ajax({\n\t\t\t\t\turl: url,\n\t\t\t\t\tdata: request,\n\t\t\t\t\tdataType: \"json\",\n\t\t\t\t\tsuccess: function( data ) {\n\t\t\t\t\t\tresponse( data );\n\t\t\t\t\t},\n\t\t\t\t\terror: function() {\n\t\t\t\t\t\tresponse([]);\n\t\t\t\t\t}\n\t\t\t\t});\n\t\t\t};\n\t\t} else {\n\t\t\tthis.source = this.options.source;\n\t\t}\n\t},\n\n\t_searchTi"
+              },
+              {
+                "match": "ajax",
+                "context": "moveAttr( \"aria-busy\" );\n\n\t\t\t\tif ( jqXHR === that.xhr ) {\n\t\t\t\t\tdelete that.xhr;\n\t\t\t\t}\n\t\t\t};\n\n\t\t// not remote\n\t\tif ( this._isLocal( anchor[ 0 ] ) ) {\n\t\t\treturn;\n\t\t}\n\n\t\tthis.xhr = $.ajax( this._ajaxSettings( anchor, event, eventData ) );\n\n\t\t// support: jQuery <1.8\n\t\t// jQuery <1.8 returns false if the request is canceled in beforeSend,\n\t\t// but as of 1.8, $.ajax() always returns a jqXHR object.\n\t\tif ( this.xhr && this.xhr.statusText !== \"canc"
+              },
+              {
+                "match": "ajax",
+                "context": "ria-busy\" );\n\n\t\t\t\tif ( jqXHR === that.xhr ) {\n\t\t\t\t\tdelete that.xhr;\n\t\t\t\t}\n\t\t\t};\n\n\t\t// not remote\n\t\tif ( this._isLocal( anchor[ 0 ] ) ) {\n\t\t\treturn;\n\t\t}\n\n\t\tthis.xhr = $.ajax( this._ajaxSettings( anchor, event, eventData ) );\n\n\t\t// support: jQuery <1.8\n\t\t// jQuery <1.8 returns false if the request is canceled in beforeSend,\n\t\t// but as of 1.8, $.ajax() always returns a jqXHR object.\n\t\tif ( this.xhr && this.xhr.statusText !== \"canceled\" ) {\n\t\t"
+              },
+              {
+                "match": "ajax",
+                "context": "$.ajax( this._ajaxSettings( anchor, event, eventData ) );\n\n\t\t// support: jQuery <1.8\n\t\t// jQuery <1.8 returns false if the request is canceled in beforeSend,\n\t\t// but as of 1.8, $.ajax() always returns a jqXHR object.\n\t\tif ( this.xhr && this.xhr.statusText !== \"canceled\" ) {\n\t\t\ttab.addClass( \"ui-tabs-loading\" );\n\t\t\tpanel.attr( \"aria-busy\", \"true\" );\n\n\t\t\tthis.xhr\n\t\t\t\t.done(function( response, status, jqXHR ) {\n\t\t\t\t\t// support: jQuery <1.8\n\t\t"
+              },
+              {
+                "match": "ajax",
+                "context": ", status ) {\n\t\t\t\t\t// support: jQuery <1.8\n\t\t\t\t\t// http://bugs.jquery.com/ticket/11778\n\t\t\t\t\tsetTimeout(function() {\n\t\t\t\t\t\tcomplete( jqXHR, status );\n\t\t\t\t\t}, 1 );\n\t\t\t\t});\n\t\t}\n\t},\n\n\t_ajaxSettings: function( anchor, event, eventData ) {\n\t\tvar that = this;\n\t\treturn {\n\t\t\turl: anchor.attr( \"href\" ),\n\t\t\tbeforeSend: function( jqXHR, settings ) {\n\t\t\t\treturn that._trigger( \"beforeLoad\", event,\n\t\t\t\t\t$.extend( { jqXHR: jqXHR, ajaxSettings: settings }, e"
+              },
+              {
+                "match": "ajax",
+                "context": "r that = this;\n\t\treturn {\n\t\t\turl: anchor.attr( \"href\" ),\n\t\t\tbeforeSend: function( jqXHR, settings ) {\n\t\t\t\treturn that._trigger( \"beforeLoad\", event,\n\t\t\t\t\t$.extend( { jqXHR: jqXHR, ajaxSettings: settings }, eventData ) );\n\t\t\t}\n\t\t};\n\t},\n\n\t_getPanelForTab: function( tab ) {\n\t\tvar id = $( tab ).attr( \"aria-controls\" );\n\t\treturn this.element.find( this._sanitizeSelector( \"#\" + id ) );\n\t}\n});\n\n\n/*!\n * jQuery UI Tooltip 1.11.4\n * http://jqueryui.c"
+              },
+              {
+                "match": "ajax",
+                "context": " {\n\t\t\treturn this._open( event, target, contentOption );\n\t\t}\n\n\t\tcontent = contentOption.call( target[0], function( response ) {\n\n\t\t\t// IE may instantly serve a cached response for ajax requests\n\t\t\t// delay this call to _open so the other call to _open runs first\n\t\t\tthat._delay(function() {\n\n\t\t\t\t// Ignore async response if tooltip was closed already\n\t\t\t\tif ( !target.data( \"ui-tooltip-open\" ) ) {\n\t\t\t\t\treturn;\n\t\t\t\t}\n\n\t\t\t\t// jQuery creates a sp"
+              }
+            ]
+          }
+        }
+      },
+      "https://keirin.jp/sp/static/js/S_footer.js": {
+        "http": {
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/static/js/S_footer.js",
+          "content_type": "application/javascript",
+          "bytes": 4212
+        },
+        "patterns": {
+          "json_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "racelist_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "race_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "schedule_type": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "enc_parameter": {
+            "match_count": 3,
+            "snippets": [
+              {
+                "match": "encPrm",
+                "context": "CCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").pa"
+              },
+              {
+                "match": "encp",
+                "context": "t\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/"
+              },
+              {
+                "match": "encPrm",
+                "context": "nts(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/foote"
+              }
+            ]
+          },
+          "ajax_terms": {
+            "match_count": 0,
+            "snippets": []
+          }
+        }
+      },
+      "https://keirin.jp/sp/static/js/SJ0201.js": {
+        "http": {
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/static/js/SJ0201.js",
+          "content_type": "application/javascript",
+          "bytes": 1686
+        },
+        "patterns": {
+          "json_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "racelist_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "race_endpoint": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "schedule_type": {
+            "match_count": 0,
+            "snippets": []
+          },
+          "enc_parameter": {
+            "match_count": 3,
+            "snippets": [
+              {
+                "match": "encp",
+                "context": "0\"+loop).slice(-2)).append(loop +'月</option>');\nif(selectData == loop){\nopData.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+              },
+              {
+                "match": "encp",
+                "context": "d\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+              },
+              {
+                "match": "encp",
+                "context": "ted\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+              }
+            ]
+          },
+          "ajax_terms": {
+            "match_count": 0,
+            "snippets": []
+          }
+        }
+      }
+    },
+    "errors": [],
+    "note": "検出した文字列は候補です。周辺コードを確認するまで、通信パラメータや type の意味を確定扱いしません。"
+  },
+  "schedule": {},
+  "race_list_tests": [
+    {
+      "venue_name": "名称不明",
+      "venue_code": "53",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 32668,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 30748,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "61",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 32536,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 9135,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "86",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 32476,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 30652,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "12",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 27973,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 27281,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "13",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 29466,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 9135,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "22",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 31757,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 9135,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "25",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 27707,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 9135,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    },
+    {
+      "venue_name": "名称不明",
+      "venue_code": "87",
+      "encPrm_length": 43,
+      "attempts": [
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/racelist",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 29574,
+          "page_check": {
+            "title": "開催情報｜KEIRIN.JP",
+            "generic_or_error_page": true,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結 果 発売締切 → 発走予定 → 投 票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        },
+        {
+          "endpoint": "/pc/racelist",
+          "disp": "SJ0305",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 16602,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS RESERVED."
+          }
+        },
+        {
+          "endpoint": "/sp/racelist",
+          "disp": "SJ0301",
+          "success": false,
+          "status_code": 200,
+          "url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+          "content_type": "text/html;charset=UTF-8",
+          "bytes": 9135,
+          "page_check": {
+            "title": "エラーページ｜KEIRIN.JP",
+            "generic_or_error_page": false,
+            "race_numbers_found": [],
+            "race_number_count": 0,
+            "rider_name_candidates": [],
+            "rider_name_candidate_count": 0,
+            "race_list_evidence": false,
+            "body_excerpt": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+          }
+        }
+      ],
+      "confirmed_success": false
+    }
+  ],
+  "confirmed_race_list_success_count": 0,
+  "warnings": [
+    "レース一覧の取得成功は確認できませんでした。HTTP 200 やリダイレクトだけでは成功扱いしていません。"
+  ],
+  "final_status": "race_list_not_confirmed"
 }
