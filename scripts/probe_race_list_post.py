@@ -7,340 +7,325 @@ from urllib.parse import urljoin
 import requests
 from bs4 import BeautifulSoup
 
+
+BASE_URL = "https://keirin.jp"
+TOP_URL = f"{BASE_URL}/sp/top"
+SCHEDULE_URL = f"{BASE_URL}/sp/raceschedule"
+
+ROOT = Path(__file__).resolve().parent.parent
+DATA_DIR = ROOT / "data"
+OUTPUT = DATA_DIR / "race_transition_diagnostic.json"
+
 JST = timezone(timedelta(hours=9))
-ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "data" / "race_transition_diagnostic.json"
 
-BASE = "https://keirin.jp"
-TOP_URL = BASE + "/sp/top"
-RACELIST_URL = BASE + "/sp/racelist"
-JSON_URL = BASE + "/sp/json"
-
-TODAY = datetime.now(JST).strftime("%Y%m%d")
-
-HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-        "Version/17.0 Mobile/15E148 Safari/604.1"
-    ),
-    "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
-}
+KEYWORDS = [
+    "commonSubmit",
+    "formPost",
+    "syusoListURL",
+    "keirinjyoInfoClick",
+    "btnPickupClick",
+    "encp",
+    "SJ0305",
+    "SJ0315",
+    "racelist",
+    "raceList",
+    "raceInfo",
+    "disp",
+]
 
 
-def inspect_html(html, page_url):
-    soup = BeautifulSoup(html, "html.parser")
+def log(message):
+    print(message, flush=True)
 
-    result = {
-        "title": (
-            soup.title.get_text(" ", strip=True)
-            if soup.title else ""
-        ),
-        "forms": [],
-        "interesting_inputs": [],
-        "scripts": [],
-        "interesting_links": [],
-    }
 
-    # フォームの送信先・送信方式を確認
-    for form in soup.find_all("form"):
-        form_data = {
-            "action": form.get("action"),
-            "method": form.get("method"),
-            "id": form.get("id"),
-            "name": form.get("name"),
-            "inputs": [],
+def fetch(session, url):
+    try:
+        response = session.get(url, timeout=25)
+        response.encoding = response.apparent_encoding
+        return {
+            "url": url,
+            "status": response.status_code,
+            "final_url": response.url,
+            "html": response.text,
+            "error": None,
+        }
+    except Exception as exc:
+        return {
+            "url": url,
+            "status": None,
+            "final_url": None,
+            "html": "",
+            "error": f"{type(exc).__name__}: {exc}",
         }
 
-        for tag in form.find_all(
-            ["input", "button", "select"]
-        ):
-            form_data["inputs"].append({
-                "tag": tag.name,
-                "type": tag.get("type"),
-                "name": tag.get("name"),
-                "id": tag.get("id"),
-                "value_length": len(
-                    str(tag.get("value") or "")
-                ),
+
+def inspect_page(page):
+    html = page["html"]
+    page_url = page["final_url"] or page["url"]
+
+    result = {
+        "requested_url": page["url"],
+        "status": page["status"],
+        "final_url": page["final_url"],
+        "error": page["error"],
+        "title": "",
+        "forms": [],
+        "links": [],
+        "scripts": [],
+        "keyword_lines": [],
+    }
+
+    if not html:
+        return result
+
+    soup = BeautifulSoup(html, "html.parser")
+
+    if soup.title:
+        result["title"] = soup.title.get_text(" ", strip=True)
+
+    for form in soup.find_all("form"):
+        inputs = []
+
+        for item in form.find_all(["input", "button", "select"]):
+            inputs.append({
+                "tag": item.name,
+                "type": item.get("type"),
+                "name": item.get("name"),
+                "value": item.get("value"),
+                "id": item.get("id"),
+                "onclick": item.get("onclick"),
             })
 
-        result["forms"].append(form_data)
+        result["forms"].append({
+            "action": urljoin(page_url, form.get("action") or page_url),
+            "raw_action": form.get("action"),
+            "method": form.get("method", "get").upper(),
+            "id": form.get("id"),
+            "name": form.get("name"),
+            "inputs": inputs,
+        })
 
-    # 画面遷移に関係しそうな項目だけ抽出
-    for tag in soup.find_all(["input", "script", "a"]):
-        element_id = str(tag.get("id") or "")
-        name = str(tag.get("name") or "")
-        src = str(tag.get("src") or "")
-        href = str(tag.get("href") or "")
+    for tag in soup.find_all(True):
+        onclick = tag.get("onclick")
+        href = tag.get("href")
 
-        combined = (
-            element_id + " " + name + " " + src + " " + href
-        ).lower()
+        if onclick:
+            text = tag.get_text(" ", strip=True)
+            combined = f"{onclick} {href or ''} {text}"
 
-        if any(
-            word in combined
-            for word in [
-                "syusolisturl",
-                "encp",
-                "disp",
-                "submit",
-                "common",
-                "sj0101",
-                "sj0305",
-                "sj0301",
-                "sj0304",
-                "sj0306",
-                "racelist",
-                "race",
-            ]
-        ):
-            if tag.name == "input":
-                result["interesting_inputs"].append({
-                    "name": name,
-                    "id": element_id,
-                    "type": tag.get("type"),
-                    "value_length": len(
-                        str(tag.get("value") or "")
-                    ),
+            if any(k.lower() in combined.lower() for k in KEYWORDS):
+                result["links"].append({
+                    "tag": tag.name,
+                    "text": text[:160],
+                    "href": urljoin(page_url, href) if href else None,
+                    "onclick": onclick[:500],
+                    "id": tag.get("id"),
+                    "name": tag.get("name"),
+                    "class": tag.get("class"),
                 })
 
-            elif tag.name == "script" and src:
-                result["scripts"].append(
-                    urljoin(page_url, src)
-                )
+        elif href:
+            text = tag.get_text(" ", strip=True)
+            combined = f"{href} {text}"
 
-            elif tag.name == "a":
-                result["interesting_links"].append({
-                    "text": tag.get_text(" ", strip=True),
-                    "href": href,
-                    "onclick": tag.get("onclick"),
+            if any(k.lower() in combined.lower() for k in KEYWORDS):
+                result["links"].append({
+                    "tag": tag.name,
+                    "text": text[:160],
+                    "href": urljoin(page_url, href),
+                    "onclick": None,
+                    "id": tag.get("id"),
+                    "name": tag.get("name"),
+                    "class": tag.get("class"),
                 })
 
-    # JavaScriptファイルをすべて記録
     for tag in soup.find_all("script", src=True):
-        url = urljoin(page_url, tag["src"])
-        if url not in result["scripts"]:
-            result["scripts"].append(url)
+        src = urljoin(page_url, tag.get("src"))
+        result["scripts"].append(src)
+
+    lines = html.splitlines()
+
+    for i, line in enumerate(lines):
+        if any(k.lower() in line.lower() for k in KEYWORDS):
+            result["keyword_lines"].append({
+                "line": i + 1,
+                "text": line.strip()[:500],
+            })
 
     return result
 
 
-def get_js_snippets(session, url):
-    try:
-        response = session.get(url, timeout=25)
+def inspect_javascript(session, script_urls):
+    output = []
+    seen = set()
 
-        if response.status_code != 200:
-            return {
-                "url": url,
-                "status_code": response.status_code,
-                "snippets": [],
-            }
+    for url in script_urls:
+        if url in seen:
+            continue
+        seen.add(url)
 
-        text = response.text
-        lines = text.splitlines()
-        snippets = []
-        keywords = [
-            "formPost",
-            "syusoListURL",
-            "keirinjyoInfoClick",
-            "btnPickupClick",
-            "encp",
-            "SJ0305",
-            "SJ0315",
-        ]
+        # 大量の無関係なJSを取得しない
+        if len(seen) > 35:
+            break
 
-        matched_lines = set()
+        try:
+            response = session.get(url, timeout=20)
 
-        for index, line in enumerate(lines):
-            if any(word.lower() in line.lower()
-                   for word in keywords):
-                start = max(0, index - 4)
-                end = min(len(lines), index + 7)
+            if response.status_code != 200:
+                continue
 
-                for line_number in range(start, end):
-                    matched_lines.add(line_number)
+            content_type = response.headers.get("Content-Type", "")
 
-        if matched_lines:
-            current = []
-            previous = -2
+            if "javascript" not in content_type.lower() and not url.lower().endswith(".js"):
+                continue
 
-            for line_number in sorted(matched_lines):
-                if line_number > previous + 1 and current:
-                    snippets.append("\n".join(current))
-                    current = []
+            source = response.text
+            lines = source.splitlines()
+            matches = []
 
-                current.append(
-                    f"{line_number + 1}: {lines[line_number]}"
-                )
-                previous = line_number
+            for i, line in enumerate(lines):
+                if any(k.lower() in line.lower() for k in KEYWORDS):
+                    start = max(0, i - 2)
+                    end = min(len(lines), i + 4)
 
-            if current:
-                snippets.append("\n".join(current))
+                    matches.append({
+                        "line": i + 1,
+                        "snippet": "\n".join(lines[start:end])[:1200],
+                    })
 
-        return {
-            "url": url,
-            "status_code": response.status_code,
-            "bytes": len(response.content),
-            "snippets": snippets[:30],
-        }
+                    if len(matches) >= 35:
+                        break
 
-    except Exception as exc:
-        return {
-            "url": url,
-            "error": f"{type(exc).__name__}: {exc}",
-            "snippets": [],
-        }
+            if matches:
+                output.append({
+                    "url": url,
+                    "status": response.status_code,
+                    "matches": matches,
+                })
+
+                log(f"  JS候補: {url} / 一致 {len(matches)} 件")
+
+        except Exception as exc:
+            log(f"  JS取得失敗: {url} / {type(exc).__name__}: {exc}")
+
+    return output
 
 
 def main():
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     session = requests.Session()
-    session.headers.update(HEADERS)
+    session.headers.update({
+        "User-Agent": (
+            "Mozilla/5.0 (Linux; Android 13) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/125.0.0.0 Mobile Safari/537.36"
+        ),
+        "Accept-Language": "ja,en-US;q=0.9,en;q=0.8",
+        "Referer": TOP_URL,
+    })
 
-    result = {
-        "generated_at": datetime.now(JST).isoformat(),
-        "target_date": TODAY,
-        "pages": {},
-        "javascript": [],
-        "schedule_summary": {},
-        "error": None,
+    log("=" * 55)
+    log("KEIRIN.JP 遷移先・フォーム診断")
+    log("=" * 55)
+
+    pages = []
+
+    for label, url in [
+        ("公式トップページ", TOP_URL),
+        ("公式開催日程", SCHEDULE_URL),
+    ]:
+        log(f"\n[{label}] GET {url}")
+        page = fetch(session, url)
+        pages.append(page)
+
+        log(f"HTTP: {page['status']}")
+        log(f"最終URL: {page['final_url']}")
+
+        if page["error"]:
+            log(f"取得エラー: {page['error']}")
+
+    inspected = []
+
+    for page in pages:
+        result = inspect_page(page)
+        inspected.append(result)
+
+        log(f"\n--- ページ解析: {result['requested_url']} ---")
+        log(f"タイトル: {result['title']}")
+        log(f"フォーム数: {len(result['forms'])}")
+        log(f"関連リンク・onclick数: {len(result['links'])}")
+        log(f"JavaScript数: {len(result['scripts'])}")
+
+        for form in result["forms"]:
+            log(
+                "FORM "
+                f"method={form['method']} "
+                f"action={form['action']} "
+                f"id={form['id']} "
+                f"name={form['name']}"
+            )
+
+            for item in form["inputs"]:
+                if item["name"] or item["onclick"]:
+                    log(f"  INPUT/BUTTON: {item}")
+
+        for item in result["links"][:30]:
+            log(f"LINK: {json.dumps(item, ensure_ascii=False)}")
+
+        for item in result["keyword_lines"][:20]:
+            log(f"HTML: {item['line']}: {item['text']}")
+
+    script_urls = []
+
+    for page in inspected:
+        script_urls.extend(page["scripts"])
+
+    log("\n--- 関連JavaScriptを調査 ---")
+    js_results = inspect_javascript(session, script_urls)
+
+    report = {
+        "checked_at": datetime.now(JST).isoformat(),
+        "method": "Inspect official top and schedule pages; do not assume /sp/racelist exists",
+        "pages": inspected,
+        "javascript": js_results,
     }
 
-    try:
-        # 1. トップページを取得
-        print("1. 公式トップページを調査中")
-
-        top = session.get(TOP_URL, timeout=30)
-        top.raise_for_status()
-
-        result["pages"]["top"] = inspect_html(
-            top.text, top.url
-        )
-
-        # 2. 開催情報ページを直接取得
-        print("2. 開催情報ページを調査中")
-
-        race_page = session.get(
-            RACELIST_URL, timeout=30
-        )
-        race_page.raise_for_status()
-
-        result["pages"]["racelist_get"] = inspect_html(
-            race_page.text, race_page.url
-        )
-
-        # 3. 開催情報JSONを取得
-        print("3. 開催情報JSONを調査中")
-
-        schedule_response = session.get(
-            BASE + "/sp/json",
-            params={
-                "type": "JSJ058",
-                "kday": TODAY,
-            },
-            headers={
-                "Referer": TOP_URL,
-                "X-Requested-With": "XMLHttpRequest",
-            },
-            timeout=30,
-        )
-        schedule_response.raise_for_status()
-
-        schedule = schedule_response.json()
-        venues = schedule.get("kInfo", [])
-
-        result["schedule_summary"] = {
-            "venue_count": len(venues),
-            "venues": [
-                {
-                    "name": v.get("jyoName"),
-                    "btnFlgLive": v.get("btnFlgLive"),
-                    "encPrm_present": bool(v.get("encPrm")),
-                    "encPrm_length": len(
-                        str(v.get("encPrm") or "")
-                    ),
-                    "keys": list(v.keys()),
-                }
-                for v in venues
-            ],
-        }
-
-        # 4. 関係するJavaScriptを集める
-        script_urls = set()
-
-        for page in result["pages"].values():
-            script_urls.update(page["scripts"])
-
-        targets = [
-            url for url in script_urls
-            if any(
-                word in url.lower()
-                for word in [
-                    "commonsubmit",
-                    "commonjson",
-                    "commonload",
-                    "sj0101",
-                    "sc0201",
-                    "sj0301",
-                    "sj0304",
-                    "sj0305",
-                    "sj0306",
-                ]
-            )
-        ]
-
-        print("4. JavaScriptを調査中")
-        print("対象ファイル数:", len(targets))
-
-        for url in sorted(targets):
-            print("調査:", url)
-
-            js_result = get_js_snippets(session, url)
-
-            if js_result.get("snippets"):
-                result["javascript"].append(js_result)
-
-        # 5. 要点を表示
-        print("\n=== 送信先・フォームの診断 ===")
-
-        for page_name, page in result["pages"].items():
-            print("\nページ:", page_name)
-            print("タイトル:", page["title"])
-
-            for item in page["interesting_inputs"]:
-                if (
-                    "syusolisturl" in str(item).lower()
-                    or "encp" in str(item).lower()
-                ):
-                    print("関連項目:", item)
-
-            for form in page["forms"]:
-                print("フォーム:", {
-                    "action": form["action"],
-                    "method": form["method"],
-                    "id": form["id"],
-                    "name": form["name"],
-                })
-
-        print("\nJavaScript調査ファイル数:",
-              len(result["javascript"]))
-
-        print("================================")
-
-    except Exception as exc:
-        result["error"] = (
-            f"{type(exc).__name__}: {exc}"
-        )
-        print("調査エラー:", result["error"])
-
     OUTPUT.write_text(
-        json.dumps(result, ensure_ascii=False, indent=2),
+        json.dumps(report, ensure_ascii=False, indent=2),
         encoding="utf-8",
     )
 
-    print("\n診断結果を保存:", OUTPUT)
+    log("\n" + "=" * 55)
+    log("診断完了")
+    log(f"調査ページ数: {len(inspected)}")
+    log(f"JavaScript調査結果: {len(js_results)}")
+    log(f"保存先: {OUTPUT}")
+    log("=" * 55)
+
+    # GitHub Actionsのログから結果を確認できるようにする
+    log("\n=== 送信先・フォームの診断 ===")
+
+    for page in inspected:
+        log(f"\nページ: {page['requested_url']}")
+        log(f"HTTP: {page['status']} / タイトル: {page['title']}")
+
+        for form in page["forms"]:
+            log(
+                f"FORM {form['method']} {form['action']} "
+                f"id={form['id']} name={form['name']}"
+            )
+
+        for item in page["links"]:
+            log(json.dumps(item, ensure_ascii=False))
+
+    log("\n=== JavaScriptの重要箇所 ===")
+
+    for item in js_results:
+        log(f"\nFILE: {item['url']}")
+
+        for match in item["matches"][:15]:
+            log(f"LINE {match['line']}\n{match['snippet']}")
 
 
 if __name__ == "__main__":
