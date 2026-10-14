@@ -1,1322 +1,1810 @@
 {
-  "created_at": "2026-10-14T20:10:08.673536+00:00",
-  "project": "keirin-ai-rebuild",
+  "diagnostic": "KEIRIN.JP racecard communication investigation",
+  "started_at_utc": "2026-10-14T20:14:15.609859+00:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
-  "checks": {
-    "schedule_page": {
-      "status_code": 200,
-      "url": "https://keirin.jp/sp/raceschedule",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 121867,
-      "redirect_history": [],
-      "success": true
-    },
-    "links_found": 80,
-    "links_with_encp": 0
-  },
-  "official_form_post": {
-    "status_code": 200,
-    "url": "https://keirin.jp/sp/static/js/commonSubmit.js",
-    "content_type": "application/javascript",
-    "bytes": 851,
-    "redirect_history": [],
-    "function_found": true,
-    "formPost_source": [
-      "formPost: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"post\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nreturn;\n},\nformGet: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"get\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nreturn;\n}\n};\n"
-    ]
-  },
-  "schedule_links": [
-    {
-      "tag": "a",
-      "href": "/sp/raceschedule",
-      "absolute_href": "https://keirin.jp/sp/raceschedule",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "",
-      "formlnk_call": null,
-      "element_text": "開催日程"
-    },
-    {
-      "tag": "a",
-      "href": "/sp/graderaceschedule",
-      "absolute_href": "https://keirin.jp/sp/graderaceschedule",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "",
-      "formlnk_call": null,
-      "element_text": "グレードレース 開催日程"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO80VYyMPkDWzS_aNMcJgQ5Ns')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "YyUMwJFqH_os4DNhTHKO80VYyMPkDWzS_aNMcJgQ5Ns",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO80VYyMPkDWzS_aNMcJgQ5Ns')"
-      },
-      "element_text": "09/30(水)～10/02(金) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM')"
-      },
-      "element_text": "10/14(水)～10/16(金) ＣＴＣ杯 ニッカン・コム杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO88ziB31mGQYBsGONoyb4HGI')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "YyUMwJFqH_os4DNhTHKO88ziB31mGQYBsGONoyb4HGI",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO88ziB31mGQYBsGONoyb4HGI')"
-      },
-      "element_text": "10/19(月)～10/21(水) ウィンチケット ニッカン・コム"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO81KEL8r7GlTFwqRRiYFaQ7A')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "YyUMwJFqH_os4DNhTHKO81KEL8r7GlTFwqRRiYFaQ7A",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO81KEL8r7GlTFwqRRiYFaQ7A')"
-      },
-      "element_text": "10/24(土)～10/26(月) Ｂｅｔｉｍｏ杯×赤競杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8wLV6OqCYrS_dR9olh2SZ7k')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "YyUMwJFqH_os4DNhTHKO8wLV6OqCYrS_dR9olh2SZ7k",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8wLV6OqCYrS_dR9olh2SZ7k')"
-      },
-      "element_text": "10/29(木)～10/31(土) ＪｏｍｏｎＧＰ日刊スポ杯ＯＰ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8COdk5JfljoNyBmzNl2c9nJw')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "6nWOJ2YgWUh0vVMBoyI8COdk5JfljoNyBmzNl2c9nJw",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8COdk5JfljoNyBmzNl2c9nJw')"
-      },
-      "element_text": "10/04(日)～10/06(火) サンスポ・ソラモギ・しいたけＣ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CDCL0qPydCPkwUAtI7oA1KQ')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "6nWOJ2YgWUh0vVMBoyI8CDCL0qPydCPkwUAtI7oA1KQ",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CDCL0qPydCPkwUAtI7oA1KQ')"
-      },
-      "element_text": "10/12(月)～10/14(水) 仲間と繋がるＴＩＰＳＴＡＲ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CIjOXw91rJ15A1PGh9V-rQU')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "6nWOJ2YgWUh0vVMBoyI8CIjOXw91rJ15A1PGh9V-rQU",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CIjOXw91rJ15A1PGh9V-rQU')"
-      },
-      "element_text": "10/21(水)～10/23(金) ＣＴＣなら３分前まで買える杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSPtQnORNQEO9Pheq8IxSWE8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uT3_6zZe5WhDM6pyOeBlSPtQnORNQEO9Pheq8IxSWE8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSPtQnORNQEO9Pheq8IxSWE8')"
-      },
-      "element_text": "10/09(金)～10/12(月) 寛仁親王牌・世界選手権記念"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSJSKv-yQgc2fi9TP0qn22Yg')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uT3_6zZe5WhDM6pyOeBlSJSKv-yQgc2fi9TP0qn22Yg",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSJSKv-yQgc2fi9TP0qn22Yg')"
-      },
-      "element_text": "10/30(金)～11/01(日) 弥彦王冠記念・報知新聞賞"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1mDYdFLQ-EuakgV7Ncv5RQ')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "D-fs-ibaZM4Z3cYeuKvjg1mDYdFLQ-EuakgV7Ncv5RQ",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1mDYdFLQ-EuakgV7Ncv5RQ')"
-      },
-      "element_text": "09/30(水)～10/02(金) 競輪データならＢｅｔｉｍｏ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg3HjQlu3rvnA1GfpQX6SdFI')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "D-fs-ibaZM4Z3cYeuKvjg3HjQlu3rvnA1GfpQX6SdFI",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg3HjQlu3rvnA1GfpQX6SdFI')"
-      },
-      "element_text": "10/06(火)～10/08(木) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1CmE93Vcm8Om666ynnA1FE')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "D-fs-ibaZM4Z3cYeuKvjg1CmE93Vcm8Om666ynnA1FE",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1CmE93Vcm8Om666ynnA1FE')"
-      },
-      "element_text": "10/13(火)～10/15(木) ＣＴＣなら３分前まで買える杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjgxDZ5nHFLRu4VSe9VQnbnlY')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "D-fs-ibaZM4Z3cYeuKvjgxDZ5nHFLRu4VSe9VQnbnlY",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjgxDZ5nHFLRu4VSe9VQnbnlY')"
-      },
-      "element_text": "10/21(水)～10/23(金) オッズパーク杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','fnI91TdVAK41Vyxrjvt6vTP-7VrZBUWZ4kJ0PBFZe_U')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "fnI91TdVAK41Vyxrjvt6vTP-7VrZBUWZ4kJ0PBFZe_U",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','fnI91TdVAK41Vyxrjvt6vTP-7VrZBUWZ4kJ0PBFZe_U')"
-      },
-      "element_text": "10/19(月)～10/21(水) スピードチャンネル・スカパー杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','VB1S_PaPR1rdxlfD6hcdcGswAKymhBptkQCjVRnMrSc')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "VB1S_PaPR1rdxlfD6hcdcGswAKymhBptkQCjVRnMrSc",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','VB1S_PaPR1rdxlfD6hcdcGswAKymhBptkQCjVRnMrSc')"
-      },
-      "element_text": "10/30(金)～11/01(日) ＵＪＣＣロード杯・トータリ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwfdywKfgO9nQwA8qkBd-Qq4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "CpPQzSRN4GOX-sUUc0RGwfdywKfgO9nQwA8qkBd-Qq4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwfdywKfgO9nQwA8qkBd-Qq4')"
-      },
-      "element_text": "10/01(木)～10/03(土) スポーツニッポン新聞社杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwVtgF1pKnysAa7iD8gp9ic0')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "CpPQzSRN4GOX-sUUc0RGwVtgF1pKnysAa7iD8gp9ic0",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwVtgF1pKnysAa7iD8gp9ic0')"
-      },
-      "element_text": "10/06(火)～10/08(木) 日刊スポーツ杯争奪戦"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwcY9t7CZEhtTvDA9Loffv3M')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "CpPQzSRN4GOX-sUUc0RGwcY9t7CZEhtTvDA9Loffv3M",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwcY9t7CZEhtTvDA9Loffv3M')"
-      },
-      "element_text": "10/12(月)～10/14(水) ブリヂストンサイクル杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwQspyZuvSMcUaxuYENUHUxU')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "CpPQzSRN4GOX-sUUc0RGwQspyZuvSMcUaxuYENUHUxU",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwQspyZuvSMcUaxuYENUHUxU')"
-      },
-      "element_text": "10/22(木)～10/24(土) 日本シンライサービス杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','86UD0KmbHVSS6K2kIhuq0ZqLe71cbncKCEKRBerldq8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "86UD0KmbHVSS6K2kIhuq0ZqLe71cbncKCEKRBerldq8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','86UD0KmbHVSS6K2kIhuq0ZqLe71cbncKCEKRBerldq8')"
-      },
-      "element_text": "10/30(金)～11/01(日) 競輪データならＢｅｔｉｍｏ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvWFoiTJo-hFkji9i9fsclI')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "yARyZ2RxXOeo4l7Z4BiVfvWFoiTJo-hFkji9i9fsclI",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvWFoiTJo-hFkji9i9fsclI')"
-      },
-      "element_text": "10/17(土)～10/20(火) ゴールドカップレース"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvzb3fVDvXnGwDBPTiwQ5tQ')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "yARyZ2RxXOeo4l7Z4BiVfvzb3fVDvXnGwDBPTiwQ5tQ",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvzb3fVDvXnGwDBPTiwQ5tQ')"
-      },
-      "element_text": "10/26(月)～10/28(水) 高木真備杯＆ベティモ杯＆日刊杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkXzxFto3bCOrsCtlOAeUG7M')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "PJOfLLI48RrgDLu5cqJtkXzxFto3bCOrsCtlOAeUG7M",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkXzxFto3bCOrsCtlOAeUG7M')"
-      },
-      "element_text": "10/03(土)～10/05(月) 第９回みんなの競輪カップ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkbDlDZCKx1wsW0cyFWflKxs')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "PJOfLLI48RrgDLu5cqJtkbDlDZCKx1wsW0cyFWflKxs",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkbDlDZCKx1wsW0cyFWflKxs')"
-      },
-      "element_text": "10/30(金)～11/01(日) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhfzFrtNBlOnGTV6ZhUM2f0')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "8IvInlH-g8qkyhDj_R7SEhfzFrtNBlOnGTV6ZhUM2f0",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhfzFrtNBlOnGTV6ZhUM2f0')"
-      },
-      "element_text": "10/01(木)～10/03(土) サンスポ杯 ラ・ピスタ新橋Ｃ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEpQvqK2Pya9zvb3YgGniqp0')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "8IvInlH-g8qkyhDj_R7SEpQvqK2Pya9zvb3YgGniqp0",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEpQvqK2Pya9zvb3YgGniqp0')"
-      },
-      "element_text": "10/09(金)～10/11(日) オッズパーク杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEsKnuYr3LMg3BLNd3ofHOs8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "8IvInlH-g8qkyhDj_R7SEsKnuYr3LMg3BLNd3ofHOs8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEsKnuYr3LMg3BLNd3ofHOs8')"
-      },
-      "element_text": "10/20(火)～10/22(木) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhE1zFAAk_3jLl0qngzym5A')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "8IvInlH-g8qkyhDj_R7SEhE1zFAAk_3jLl0qngzym5A",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhE1zFAAk_3jLl0qngzym5A')"
-      },
-      "element_text": "10/24(土)～10/26(月) 前検コメはウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlxnb_H4atigeMN8-loRZvrs')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "DmIwu_ksRjo1cUHhq6GFlxnb_H4atigeMN8-loRZvrs",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlxnb_H4atigeMN8-loRZvrs')"
-      },
-      "element_text": "10/03(土)～10/05(月) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlwVwhA4adsu0dcSoYRqj8EI')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "DmIwu_ksRjo1cUHhq6GFlwVwhA4adsu0dcSoYRqj8EI",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlwVwhA4adsu0dcSoYRqj8EI')"
-      },
-      "element_text": "10/08(木)～10/10(土) 湘南しらす丸八丸杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXYkT68LaHvY3Djawu8X_fl4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "oGn5WPyFKUs7MmpVS67mXYkT68LaHvY3Djawu8X_fl4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXYkT68LaHvY3Djawu8X_fl4')"
-      },
-      "element_text": "10/20(火)～10/22(木) スポーツニッポン新聞社杯争奪戦"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXSd9y_c4GhJqsjIcnG1b_0Q')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "oGn5WPyFKUs7MmpVS67mXSd9y_c4GhJqsjIcnG1b_0Q",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXSd9y_c4GhJqsjIcnG1b_0Q')"
-      },
-      "element_text": "10/26(月)～10/28(水) 万葉の湯杯争奪戦"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStb8OESi2-G-xCni41xAMs7w4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "a1Mwgr0l_Pv5qcmXHYStb8OESi2-G-xCni41xAMs7w4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStb8OESi2-G-xCni41xAMs7w4')"
-      },
-      "element_text": "10/07(水)～10/09(金) 広告宣伝は静岡テレビセンター杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc')"
-      },
-      "element_text": "10/15(木)～10/17(土) チャリロト杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiilOe8pBUmfUVxNNl5FeCQFo')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "u93Y_4IZiF1UgerS4eAiilOe8pBUmfUVxNNl5FeCQFo",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiilOe8pBUmfUVxNNl5FeCQFo')"
-      },
-      "element_text": "10/24(土)～10/26(月) チャリロト杯 リンカイカップ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiiv7HUq64yiZ6ME0DTQMZTYk')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "u93Y_4IZiF1UgerS4eAiiv7HUq64yiZ6ME0DTQMZTYk",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiiv7HUq64yiZ6ME0DTQMZTYk')"
-      },
-      "element_text": "10/30(金)～11/01(日) Ｋドリームス杯 ＪＰＦカップ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SB9LwskjkaXxX0eqfB-PPXU')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "fh4VmOIOM0WWTQX4GRt_SB9LwskjkaXxX0eqfB-PPXU",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SB9LwskjkaXxX0eqfB-PPXU')"
-      },
-      "element_text": "10/10(土)～10/12(月) ＣＴＣなら３分前まで買える杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SCr77ewKpBi7gVyeT4NMYGg')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "fh4VmOIOM0WWTQX4GRt_SCr77ewKpBi7gVyeT4NMYGg",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SCr77ewKpBi7gVyeT4NMYGg')"
-      },
-      "element_text": "10/28(水)～10/30(金) 日刊スポーツ杯 ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVjJwAnTeus9GkllNppBWu8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "M55-TiOKRgzcmeiQ08HxlVjJwAnTeus9GkllNppBWu8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVjJwAnTeus9GkllNppBWu8')"
-      },
-      "element_text": "10/06(火)～10/08(木) 楽天Ｋドリームス杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVle08oB--MT0o8da__CyQw')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "M55-TiOKRgzcmeiQ08HxlVle08oB--MT0o8da__CyQw",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVle08oB--MT0o8da__CyQw')"
-      },
-      "element_text": "10/22(木)～10/24(土) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlSUB0NjgR0WcaFXaVIfPlnk')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "M55-TiOKRgzcmeiQ08HxlSUB0NjgR0WcaFXaVIfPlnk",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlSUB0NjgR0WcaFXaVIfPlnk')"
-      },
-      "element_text": "10/27(火)～10/29(木) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco')"
-      },
-      "element_text": "10/15(木)～10/17(土) ＷＩＮＴＩＣＫＥＴ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuVxaV7xP0Y8NbfmJvCxleW6A')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "NiH2Hdt-CWhCXytnwocuVxaV7xP0Y8NbfmJvCxleW6A",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuVxaV7xP0Y8NbfmJvCxleW6A')"
-      },
-      "element_text": "10/10(土)～10/12(月) 競輪データならＢｅｔｉｍｏ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuV4uMSKV6FG315QCDMBa-DHc')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "NiH2Hdt-CWhCXytnwocuV4uMSKV6FG315QCDMBa-DHc",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuV4uMSKV6FG315QCDMBa-DHc')"
-      },
-      "element_text": "10/17(土)～10/19(月) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwWWILb1bfXxVWgpZAS_OfI')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "eNuNUsNFo4CVHMeFfGSwJwWWILb1bfXxVWgpZAS_OfI",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwWWILb1bfXxVWgpZAS_OfI')"
-      },
-      "element_text": "10/01(木)～10/04(日) 蒲生氏郷杯王座競輪"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwSll-sRfQyzbAcQIjfIY3I')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "eNuNUsNFo4CVHMeFfGSwJwSll-sRfQyzbAcQIjfIY3I",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwSll-sRfQyzbAcQIjfIY3I')"
-      },
-      "element_text": "10/21(水)～10/23(金) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7OQRCcav7YvgneLKvj6bFoY')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "qv4GFogOJHiRvlOmhrBR7OQRCcav7YvgneLKvj6bFoY",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7OQRCcav7YvgneLKvj6bFoY')"
-      },
-      "element_text": "10/07(水)～10/09(金) 萬古焼協賛 日刊スポーツ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4')"
-      },
-      "element_text": "10/16(金)～10/18(日) 稲藤日永うちわ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7Aa-hl03lSN_3nFPdoyXYRw')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "qv4GFogOJHiRvlOmhrBR7Aa-hl03lSN_3nFPdoyXYRw",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7Aa-hl03lSN_3nFPdoyXYRw')"
-      },
-      "element_text": "10/21(水)～10/23(金) スポーツニッポン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsPqNIF-sKwum5mQOxMjYZk')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "hXAFouF_EW8oCnSpPo40hsPqNIF-sKwum5mQOxMjYZk",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsPqNIF-sKwum5mQOxMjYZk')"
-      },
-      "element_text": "09/30(水)～10/02(金) オッズパーク杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hs5WrSH89CG6UOEwUFxLQ-s')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "hXAFouF_EW8oCnSpPo40hs5WrSH89CG6UOEwUFxLQ-s",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hs5WrSH89CG6UOEwUFxLQ-s')"
-      },
-      "element_text": "10/05(月)～10/07(水) Ｂｅｔｉｍｏ杯牛若丸賞ｉｎ奈良"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hts6oB72XDUdvmxRM2Gq-KA')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "hXAFouF_EW8oCnSpPo40hts6oB72XDUdvmxRM2Gq-KA",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hts6oB72XDUdvmxRM2Gq-KA')"
-      },
-      "element_text": "10/09(金)～10/11(日) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8')"
-      },
-      "element_text": "10/14(水)～10/16(金) ラブリン杯弁慶賞ｉｎ奈良"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hnlt_fgMJWRJ5PXpuN7pn7o')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "hXAFouF_EW8oCnSpPo40hnlt_fgMJWRJ5PXpuN7pn7o",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hnlt_fgMJWRJ5PXpuN7pn7o')"
-      },
-      "element_text": "10/23(金)～10/25(日) ＣＴＣなら３分前まで買える杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','D4DOyhWP8yD6jQkjiiZ35DL1LvWFBZCBp4NiU8lEyVE')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "D4DOyhWP8yD6jQkjiiZ35DL1LvWFBZCBp4NiU8lEyVE",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','D4DOyhWP8yD6jQkjiiZ35DL1LvWFBZCBp4NiU8lEyVE')"
-      },
-      "element_text": "10/26(月)～10/28(水) ＣＴＣは３分前杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','v3GkGBnzcJwx-zPUFdtwmROC6PPEHcqiZVUSHxOlVO4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "v3GkGBnzcJwx-zPUFdtwmROC6PPEHcqiZVUSHxOlVO4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','v3GkGBnzcJwx-zPUFdtwmROC6PPEHcqiZVUSHxOlVO4')"
-      },
-      "element_text": "10/13(火)～10/15(木) ＳＴ観音寺カップ＆ＣＴＣ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','Ozpk-eumfo_0DwX9fHqEYZM2vaQijD5zEQSt7gPN5Vg')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "Ozpk-eumfo_0DwX9fHqEYZM2vaQijD5zEQSt7gPN5Vg",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','Ozpk-eumfo_0DwX9fHqEYZM2vaQijD5zEQSt7gPN5Vg')"
-      },
-      "element_text": "10/18(日)～10/20(火) くにまつ杯／チャリロト杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW27DMre_ZraAHsHTLbMz7Cuk')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "cT5PUT3R6DvBoJ7bLhzW27DMre_ZraAHsHTLbMz7Cuk",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW27DMre_ZraAHsHTLbMz7Cuk')"
-      },
-      "element_text": "10/04(日)～10/06(火) 介護サービスのセービング杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW23oHyCRUJpmVSh4R7JhMM9E')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "cT5PUT3R6DvBoJ7bLhzW23oHyCRUJpmVSh4R7JhMM9E",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW23oHyCRUJpmVSh4R7JhMM9E')"
-      },
-      "element_text": "10/23(金)～10/25(日) みんなの競輪杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfo0m4rnPSqrOoBrCjz7HIT4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "MuuX8lCsFCCFm0JpogHUfo0m4rnPSqrOoBrCjz7HIT4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfo0m4rnPSqrOoBrCjz7HIT4')"
-      },
-      "element_text": "10/03(土)～10/05(月) ＣＴＣなら３分前まで買える杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfg5J2ST_W0IySbTX98R8ck8')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "MuuX8lCsFCCFm0JpogHUfg5J2ST_W0IySbTX98R8ck8",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfg5J2ST_W0IySbTX98R8ck8')"
-      },
-      "element_text": "10/24(土)～10/26(月) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhbbH1g8teIJss01Rjzmv8aY')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "u3ftnY5SRux-xk3s1TGkhbbH1g8teIJss01Rjzmv8aY",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhbbH1g8teIJss01Rjzmv8aY')"
-      },
-      "element_text": "10/07(水)～10/09(金) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhZ7v27_Ztul7DZT5CZP0uN0')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "u3ftnY5SRux-xk3s1TGkhZ7v27_Ztul7DZT5CZP0uN0",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhZ7v27_Ztul7DZT5CZP0uN0')"
-      },
-      "element_text": "10/17(土)～10/19(月) 土佐の名人戦・日曜市１５０周年"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','4QhapE1YS9GkaZAPKYUWdXvrEIXgCSmB3BNmfninRsg')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "4QhapE1YS9GkaZAPKYUWdXvrEIXgCSmB3BNmfninRsg",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','4QhapE1YS9GkaZAPKYUWdXvrEIXgCSmB3BNmfninRsg')"
-      },
-      "element_text": "10/04(日)～10/06(火) サンケイスポーツ×ウィンチケ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','aTOkj2dFUUpQATsHeOxViBHjfEmMbGrPknkiBKLadBs')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "aTOkj2dFUUpQATsHeOxViBHjfEmMbGrPknkiBKLadBs",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','aTOkj2dFUUpQATsHeOxViBHjfEmMbGrPknkiBKLadBs')"
-      },
-      "element_text": "10/11(日)～10/13(火) スポーツニッポン×ＨＰＣＪＣ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIDb1FUhlN24zyV3EH0k246w')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "1-mDn3P5FXuZU5C-JbtnIDb1FUhlN24zyV3EH0k246w",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIDb1FUhlN24zyV3EH0k246w')"
-      },
-      "element_text": "10/01(木)～10/03(土) 競輪データならＢｅｔｉｍｏ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIPO99Ab55n08ZLrFUT6ScWM')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "1-mDn3P5FXuZU5C-JbtnIPO99Ab55n08ZLrFUT6ScWM",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIPO99Ab55n08ZLrFUT6ScWM')"
-      },
-      "element_text": "10/27(火)～10/29(木) 楽天ケイドリームス杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM9muS26-e4kB1x3QxtM7jV0')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uXOPvbsfbpEeQ909fsorM9muS26-e4kB1x3QxtM7jV0",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM9muS26-e4kB1x3QxtM7jV0')"
-      },
-      "element_text": "10/03(土)～10/05(月) オッズパーク杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM4CcgcBIqUdHEXibAdR8KLA')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uXOPvbsfbpEeQ909fsorM4CcgcBIqUdHEXibAdR8KLA",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM4CcgcBIqUdHEXibAdR8KLA')"
-      },
-      "element_text": "10/09(金)～10/11(日) 第８回森うなぎ屋杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM_kADHqqK95cySEHA2-RW-U')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uXOPvbsfbpEeQ909fsorM_kADHqqK95cySEHA2-RW-U",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM_kADHqqK95cySEHA2-RW-U')"
-      },
-      "element_text": "10/17(土)～10/19(月) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM1ZJZg8ggHQrQazMyH0eRSA')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "uXOPvbsfbpEeQ909fsorM1ZJZg8ggHQrQazMyH0eRSA",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM1ZJZg8ggHQrQazMyH0eRSA')"
-      },
-      "element_text": "10/27(火)～10/29(木) サテライトみぞべカップ"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_GYkhlG0pJaUU9gxegaVrpqY')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "pwzdqoQWyXU0o-0Slea_GYkhlG0pJaUU9gxegaVrpqY",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_GYkhlG0pJaUU9gxegaVrpqY')"
-      },
-      "element_text": "09/30(水)～10/02(金) けいりんラブ！ラブリン杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_Gcm2_nVEs1nl-1EQIOxP-LQ')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "pwzdqoQWyXU0o-0Slea_Gcm2_nVEs1nl-1EQIOxP-LQ",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_Gcm2_nVEs1nl-1EQIOxP-LQ')"
-      },
-      "element_text": "10/18(日)～10/20(火) 競輪データならＢｅｔｉｍｏ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU')"
-      },
-      "element_text": "10/14(水)～10/16(金) 仲間と繋がるＴＩＰＳＴＡＲ杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUCrqaFX2JFjI4x_tNQkoXzA')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "28W231JXvY69KguDggGaUCrqaFX2JFjI4x_tNQkoXzA",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUCrqaFX2JFjI4x_tNQkoXzA')"
-      },
-      "element_text": "10/28(水)～10/30(金) 競輪するならみんなの競輪杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SvCPDrdLm53Mc_01wnL8I70')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "IOS13V6oiZkyQWK3r2H3SvCPDrdLm53Mc_01wnL8I70",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SvCPDrdLm53Mc_01wnL8I70')"
-      },
-      "element_text": "10/12(月)～10/14(水) 前検日コメならウィンチケット杯"
-    },
-    {
-      "tag": "table",
-      "href": "/sp/racelist",
-      "absolute_href": "https://keirin.jp/sp/racelist",
-      "encp": null,
-      "encp_length": 0,
-      "onclick": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SmNxXq7UszPF16rsUL4mFp4')",
-      "formlnk_call": {
-        "href": "/sp/racelist",
-        "encp_literal": "IOS13V6oiZkyQWK3r2H3SmNxXq7UszPF16rsUL4mFp4",
-        "encp_variable": null,
-        "source": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SmNxXq7UszPF16rsUL4mFp4')"
-      },
-      "element_text": "10/22(木)～10/25(日) 熊本地震復興事業火の国杯争奪戦"
+  "json_url": "https://keirin.jp/sp/json?type=JSJ058",
+  "events": [
+    {
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num": "12R",
+      "start_date": "20261014",
+      "encPrm": "hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "reqprm": "",
+      "sensyuList_type": "list",
+      "sensyuList_count": 6
+    },
+    {
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num": "12R",
+      "start_date": "20261013",
+      "encPrm": "v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+      "reqprm": "",
+      "sensyuList_type": "list",
+      "sensyuList_count": 6
+    },
+    {
+      "venue": "別府",
+      "venue_code": "86",
+      "race_num": "12R",
+      "start_date": "20261014",
+      "encPrm": "28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU",
+      "reqprm": "",
+      "sensyuList_type": "list",
+      "sensyuList_count": 6
     }
   ],
-  "schedule_json": {
-    "status_code": 200,
-    "url": "https://keirin.jp/sp/json?type=JSJ058",
-    "content_type": "application/json;charset=utf-8",
-    "bytes": 12371,
-    "redirect_history": [],
-    "success": true,
-    "venue_count": 8,
-    "venues": [
-      {
-        "venue_name": "奈良",
-        "venue_code": "53",
-        "keirin_code": "53",
-        "start_date": "20261014",
-        "race_num": "12R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+  "tests": [
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 30748,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "玉野",
-        "venue_code": "61",
-        "keirin_code": "61",
-        "start_date": "20261013",
-        "race_num": "12R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 30748,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "別府",
-        "venue_code": "86",
-        "keirin_code": "86",
-        "start_date": "20261014",
-        "race_num": "12R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "青森",
-        "venue_code": "12",
-        "keirin_code": "12",
-        "start_date": "20261014",
-        "race_num": "7R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "いわき平",
-        "venue_code": "13",
-        "keirin_code": "13",
-        "start_date": "20261012",
-        "race_num": "9R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "前橋",
-        "venue_code": "22",
-        "keirin_code": "22",
-        "start_date": "20261013",
-        "race_num": "11R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encprm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "大宮",
-        "venue_code": "25",
-        "keirin_code": "25",
-        "start_date": "20261012",
-        "race_num": "7R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 32668,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
-      {
-        "venue_name": "熊本",
-        "venue_code": "87",
-        "keirin_code": "87",
-        "start_date": "20261012",
-        "race_num": "9R",
-        "encp_present": true,
-        "encp_length": 43,
-        "rider_count": 6
-      }
-    ],
-    "result_code": 0,
-    "request_parameters": {
-      "kday": "20261014"
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 32668,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encprm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/racelist",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 54779,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 477,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 出走表一覧",
+          "結果一覧 投票",
+          "発売締切 ",
+          "発走予定 ",
+          "出場予定選手一覧 発売案内",
+          "発売時間",
+          "最終"
+        ],
+        "rider_related_classes": [
+          "players"
+        ],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 出走表一覧 結果一覧 投票はこちら 発売締切 > 発走予定 > 出場予定選手一覧 発売案内 【発売時間】 ○○：○○～△△：△△ 終 ：最終レースまで 【発売レース】 全 ：全レース発売 部 ：一部レース発売 出走表印刷 出走表一覧 連続再生にチェックを入れて「ダイジェスト連続」ボタン(画面下部)を押してください。 一押し 好相性 ダイジェスト連続 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED. OK 競輪場 グレード 開催日 レース 種目 競走結果 ダイジェスト ■ ＢＳ通過順位・短評 着 ＢＳ 通過順位 車番 選手名 短評 ■ 車番 今開催出場選手は 太字で表示されます。 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 ■ 払戻金 ■ 備考"
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 54779,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 477,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 出走表一覧",
+          "結果一覧 投票",
+          "発売締切 ",
+          "発走予定 ",
+          "出場予定選手一覧 発売案内",
+          "発売時間",
+          "最終"
+        ],
+        "rider_related_classes": [
+          "players"
+        ],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 出走表一覧 結果一覧 投票はこちら 発売締切 > 発走予定 > 出場予定選手一覧 発売案内 【発売時間】 ○○：○○～△△：△△ 終 ：最終レースまで 【発売レース】 全 ：全レース発売 部 ：一部レース発売 出走表印刷 出走表一覧 連続再生にチェックを入れて「ダイジェスト連続」ボタン(画面下部)を押してください。 一押し 好相性 ダイジェスト連続 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED. OK 競輪場 グレード 開催日 レース 種目 競走結果 ダイジェスト ■ ＢＳ通過順位・短評 着 ＢＳ 通過順位 車番 選手名 短評 ■ 車番 今開催出場選手は 太字で表示されます。 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 ■ 払戻金 ■ 備考"
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 32536,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encp_only",
+      "params_keys": [
+        "encp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 32536,
+      "redirect_history": [],
+      "html_metrics": {
+        "title": "開催情報｜KEIRIN.JP",
+        "text_length": 401,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "開催情報",
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [],
+        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/sp/racelist",
+      "candidate": "encPrm_only",
+      "params_keys": [
+        "encPrm"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "発生",
+          "映像",
+          "再生不具合",
+          "解消",
+          "不便",
+          "競輪",
+          "電話投票会員",
+          "会員",
+          "募集中",
+          "競輪",
+          "競輪",
+          "番車",
+          "競走得点上位順",
+          "選手",
+          "予期"
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encp",
+      "params_keys": [
+        "encp",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encPrm",
+      "params_keys": [
+        "encPrm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/pc/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/pc/racelist",
+      "candidate": "encprm",
+      "params_keys": [
+        "encprm",
+        "disp"
+      ],
+      "status_code": 200,
+      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 16602,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/pc/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
+      "html_metrics": {
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 207,
+        "race_number_count": 0,
+        "race_numbers": [],
+        "japanese_text_sample": [
+          "初心者",
+          "開催日程 検索",
+          "資料室 ",
+          "競輪場",
+          "場外売場 日本競輪選手養成",
+          "今日",
+          "開催 明日",
+          "開催 予期",
+          "発生",
+          "操作",
+          "客様利用環境表示 "
+        ],
+        "rider_related_classes": [],
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
+      },
+      "racecard_candidate": false,
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num_hint": "12R"
     }
+  ],
+  "summary": {
+    "status": "not_confirmed",
+    "events_found": 8,
+    "events_tested": 3,
+    "tests_executed": 36,
+    "racecard_candidates": 0,
+    "successful_candidates": []
   },
-  "post_tests": [],
-  "confirmed_race_list_count": 0,
-  "final_status": "not_confirmed",
   "warnings": [
-    "開催日程HTMLから遷移先とencpの組を取得できませんでした。",
-    "出走表取得は未確認です。HTTP 200だけでは成功扱いしていません。"
-  ]
+    "この診断では、正しい送信パラメータを事前に確定していません。",
+    "HTTP 200だけでは出走表取得成功と判定しません。",
+    "診断対象は公開ページへの読み取りリクエストのみです。"
+  ],
+  "schedule": {
+    "status_code": 200,
+    "final_url": "https://keirin.jp/sp/raceschedule",
+    "bytes": 121867
+  },
+  "json_source": {
+    "url": "https://keirin.jp/sp/json?type=JSJ058",
+    "status_code": 200,
+    "content_type": "application/json;charset=utf-8",
+    "bytes": 12371
+  },
+  "events_found": 8,
+  "finished_at_utc": "2026-10-14T20:14:52.178293+00:00"
 }
