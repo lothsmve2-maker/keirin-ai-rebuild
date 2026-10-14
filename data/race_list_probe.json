@@ -1,0 +1,298 @@
+{
+  "generated_at": "2026-10-14T14:51:51+09:00",
+  "target_date": "2026-10-14",
+  "status": "ok",
+  "active_venues": [
+    {
+      "venue_code": "13",
+      "venue_name": "いわき平",
+      "region": "北日本",
+      "prefecture": "福島県",
+      "event_name": "仲間と繋がるＴＩＰＳＴＡＲ杯",
+      "grade": "F2",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-14",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "25",
+      "venue_name": "大宮",
+      "region": "関東",
+      "prefecture": "埼玉県",
+      "event_name": "ブリヂストンサイクル杯",
+      "grade": "F2",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-14",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "87",
+      "venue_name": "熊本",
+      "region": "九州",
+      "prefecture": "熊本県",
+      "event_name": "前検日コメならウィンチケット杯",
+      "grade": "F2",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-14",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "22",
+      "venue_name": "前橋",
+      "region": "関東",
+      "prefecture": "群馬県",
+      "event_name": "ＣＴＣなら３分前まで買える杯",
+      "grade": "F2",
+      "start_date": "2026-10-13",
+      "end_date": "2026-10-15",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "61",
+      "venue_name": "玉野",
+      "region": "中国",
+      "prefecture": "岡山県",
+      "event_name": "ＳＴ観音寺カップ＆ＣＴＣ杯",
+      "grade": "F1",
+      "start_date": "2026-10-13",
+      "end_date": "2026-10-15",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "12",
+      "venue_name": "青森",
+      "region": "北日本",
+      "prefecture": "青森県",
+      "event_name": "ＣＴＣ杯 ニッカン・コム杯",
+      "grade": "F2",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-16",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "53",
+      "venue_name": "奈良",
+      "region": "近畿",
+      "prefecture": "奈良県",
+      "event_name": "ラブリン杯弁慶賞ｉｎ奈良",
+      "grade": "F1",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-16",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "86",
+      "venue_name": "別府",
+      "region": "九州",
+      "prefecture": "大分県",
+      "event_name": "仲間と繋がるＴＩＰＳＴＡＲ杯",
+      "grade": "F1",
+      "start_date": "2026-10-14",
+      "end_date": "2026-10-16",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    }
+  ],
+  "sources": [
+    {
+      "source_url": "https://keirin.jp/sp/top",
+      "http_status": 200,
+      "body_bytes": 58451,
+      "error": null,
+      "links": [
+        {
+          "url": "http://keirin.jp/sp/topicsdetail?nnum=157&skbn=1&scyy=2017&scmm=04&cgcd=&nxtp=1",
+          "text": "",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/pc/static/beginner/select-language/index.html",
+          "text": "",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#race_today",
+          "text": "昨日 (10/13)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#race_today",
+          "text": "今日 (10/14)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#race_today",
+          "text": "明日 (10/15)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/pointtraderequestlist",
+          "text": "",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/pointtraderequestlist",
+          "text": "",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#pick_today",
+          "text": "今日 (10/14)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#pick_today",
+          "text": "明日 (10/15)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#push_today",
+          "text": "今日 (10/14)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/top#push_today",
+          "text": "明日 (10/15)",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/pc/static/beginner/ways-to-bet/dokanto.html",
+          "text": "",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/userenvironment",
+          "text": "お客様 利用環境表示",
+          "title": null
+        }
+      ],
+      "race_candidates": [],
+      "scripts": [
+        "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+        "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+        "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+        "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+        "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+        "https://keirin.jp/sp/static/js/commonJSON.js",
+        "https://keirin.jp/sp/static/js/commonLoad.js",
+        "https://keirin.jp/sp/static/js/commonLink.js",
+        "https://keirin.jp/sp/static/js/commonSubmit.js",
+        "https://keirin.jp/sp/static/js/slick/slick.min.js",
+        "https://keirin.jp/sp/static/js/S_footer.js",
+        "https://keirin.jp/sp/static/js/S_ticker.js",
+        "https://keirin.jp/sp/static/js/SJ0101.js",
+        "https://keirin.jp/sp/static/js/SJ0101_v.js",
+        "https://keirin.jp/sp/static/js/SJ0101_c.js",
+        "https://keirin.jp/sp/static/js/S_footer.js",
+        "https://keirin.jp/sp/static/js/commonSubmit.js"
+      ],
+      "stylesheets": [
+        "https://keirin.jp/sp/static/css/common/bootstrap.min.css",
+        "https://keirin.jp/sp/static/css/common/bootstrap-theme.min.css",
+        "https://keirin.jp/sp/static/css/common/font-awesome.min.css",
+        "https://keirin.jp/sp/static/css/S_base.css",
+        "https://keirin.jp/sp/static/css/SJ0101.css",
+        "https://keirin.jp/sp/static/js/slick/slick.css",
+        "https://keirin.jp/sp/static/js/slick/slick-theme.css",
+        "https://keirin.jp/sp/static/css/common/font-awesome.min.css",
+        "https://keirin.jp/sp/static/css/sc0103.css"
+      ],
+      "venue_name_matches": []
+    },
+    {
+      "source_url": "https://keirin.jp/sp/raceschedule",
+      "http_status": 200,
+      "body_bytes": 121867,
+      "error": null,
+      "links": [
+        {
+          "url": "https://keirin.jp/sp/raceschedule",
+          "text": "開催日程",
+          "title": null
+        },
+        {
+          "url": "https://keirin.jp/sp/graderaceschedule",
+          "text": "グレードレース 開催日程",
+          "title": null
+        }
+      ],
+      "race_candidates": [
+        {
+          "url": "https://keirin.jp/sp/raceschedule",
+          "text": "開催日程",
+          "title": null,
+          "matched_patterns": [
+            "race"
+          ],
+          "host": "keirin.jp",
+          "path": "/sp/raceschedule",
+          "query": ""
+        },
+        {
+          "url": "https://keirin.jp/sp/graderaceschedule",
+          "text": "グレードレース 開催日程",
+          "title": null,
+          "matched_patterns": [
+            "race"
+          ],
+          "host": "keirin.jp",
+          "path": "/sp/graderaceschedule",
+          "query": ""
+        }
+      ],
+      "scripts": [
+        "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+        "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+        "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+        "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+        "https://keirin.jp/sp/static/js/S_footer.js",
+        "https://keirin.jp/sp/static/js/S_ticker.js",
+        "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+        "https://keirin.jp/sp/static/js/bopen.js",
+        "https://keirin.jp/sp/static/js/S_touch.js",
+        "https://keirin.jp/sp/static/js/SJ0201.js",
+        "https://keirin.jp/sp/static/js/S_footer.js",
+        "https://keirin.jp/sp/static/js/commonSubmit.js"
+      ],
+      "stylesheets": [
+        "https://keirin.jp/sp/static/css/common/bootstrap.min.css",
+        "https://keirin.jp/sp/static/css/common/bootstrap-theme.min.css",
+        "https://keirin.jp/sp/static/css/common/font-awesome.min.css",
+        "https://keirin.jp/sp/static/css/common/jquery-ui.css",
+        "https://keirin.jp/sp/static/css/S_base.css",
+        "https://keirin.jp/sp/static/css/SJ0201_0321.css",
+        "https://keirin.jp/sp/static/css/common/font-awesome.min.css",
+        "https://keirin.jp/sp/static/css/sc0103.css"
+      ],
+      "venue_name_matches": []
+    }
+  ],
+  "notes": [
+    "このプログラムはURLとHTML構造の調査用です。",
+    "レース情報の取得成功を保証するものではありません。",
+    "実際のURLとページ構造を確認してから本番処理を実装します。"
+  ]
+}
