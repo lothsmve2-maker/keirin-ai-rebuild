@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 URL = "https://www.keirin.jp/sp/raceschedule"
-OUT = Path(“data/schedule_inspection.json”)
+OUT = Path("data/schedule_inspection.json")
 
 def main():
 OUT.parent.mkdir(parents=True, exist_ok=True)
