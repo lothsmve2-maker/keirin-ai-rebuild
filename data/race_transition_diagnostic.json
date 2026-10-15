@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T15:31:12.486333+09:00",
+  "started_at_jst": "2026-10-15T16:18:03.236645+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -13,7 +13,7 @@
     "final_url": "https://keirin.jp/sp/json?type=JSJ058",
     "status_code": 200,
     "content_type": "application/json;charset=utf-8",
-    "bytes": 10788
+    "bytes": 10778
   },
   "events_found": 7,
   "events": [
@@ -273,7 +273,7 @@
       "json_path": "$.kInfo[2]",
       "venue": "別府",
       "venue_code": "86",
-      "race_num": "1R",
+      "race_num": "3R",
       "start_date": "20261014",
       "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
       "reqprm": "",
@@ -310,7 +310,7 @@
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "3R",
         "sensyuList": [
           {
             "sensyuName": "小川真太郎",
@@ -439,7 +439,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "11R",
+      "race_num": "12R",
       "start_date": "20261013",
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
@@ -477,8 +477,8 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "1",
-        "raceNum": "11R",
+        "denColorFlg": "0",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -523,7 +523,7 @@
       "json_path": "$.kInfo[4]",
       "venue": "前橋",
       "venue_code": "22",
-      "race_num": "1R",
+      "race_num": "2R",
       "start_date": "20261013",
       "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
       "reqprm": "",
@@ -561,8 +561,8 @@
       "raw_relevant_fields": {
         "jyoName": "前橋",
         "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
-        "denColorFlg": "0",
-        "raceNum": "1R",
+        "denColorFlg": "1",
+        "raceNum": "2R",
         "sensyuList": [
           {
             "sensyuName": "山田　敦也",
@@ -3879,7 +3879,7 @@
     {
       "venue": "別府",
       "venue_code": "86",
-      "race_num": "1R",
+      "race_num": "3R",
       "start_date": "20261014",
       "json_path": "$.kInfo[2]",
       "raw_keys": [
@@ -3915,7 +3915,7 @@
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "3R",
         "sensyuList": [
           {
             "sensyuName": "小川真太郎",
@@ -4041,7 +4041,7 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "11R",
+      "race_num": "12R",
       "start_date": "20261013",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -4078,8 +4078,8 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "1",
-        "raceNum": "11R",
+        "denColorFlg": "0",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -4123,7 +4123,7 @@
     {
       "venue": "前橋",
       "venue_code": "22",
-      "race_num": "1R",
+      "race_num": "2R",
       "start_date": "20261013",
       "json_path": "$.kInfo[4]",
       "raw_keys": [
@@ -4160,8 +4160,8 @@
       "raw_relevant_fields": {
         "jyoName": "前橋",
         "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
-        "denColorFlg": "0",
-        "raceNum": "1R",
+        "denColorFlg": "1",
+        "raceNum": "2R",
         "sensyuList": [
           {
             "sensyuName": "山田　敦也",
@@ -5430,5 +5430,79 @@
       "status": "ok"
     }
   ],
-  "finished_at_jst": "2026-10-15T15:31:30.303830+09:00"
+  "json_endpoint_tests": [
+    {
+      "venue": "静岡",
+      "start_date": "20261015",
+      "request_id": "JSJ049",
+      "params": {
+        "type": "JSJ049"
+      },
+      "status_code": 500,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 3869,
+      "response_type": "not_json",
+      "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<head id=\"j_idt2\">\n\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0\" />\n\t\t<meta name=\"format-detection\" content=\"telephone=no\" />\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html\" charset=\"utf-8\" />\n\t\t<meta http-equiv=\"content-script-type\" content=\"text/javascript\" />\n\t\t<meta http-equiv=\"content-style-type\" content=\"text/css\" />\n\t\t<meta http-equiv=\"imagetoolbar\" content=\"no\" />\n\t\t<meta name=\"author\" content=\"JKA\" />\n\t\t<meta name=\"copyright\" content=\"COPYRIGHT(C) JKA. ALL RIGHTS RESERVED.\" />\n\t\t<meta name=\"robots\" content=\"NOINDEX,NOFOLLOW\" />\n\t\t<title>エラーページ｜KEIRIN.JP</title>\n\t\t<link rel=\"icon\" href=\"/sp/static/img/common/favicon.ico\" />\n\t\t<link rel=\"stylesheet\" href=\"/sp/static/css/common/bootstrap.min.css\" />\n\t\t<link rel=\"stylesheet\" href=\"/sp/static/css/common/bootstrap-theme.min.css\" />\n\t\t<l"
+    },
+    {
+      "venue": "静岡",
+      "start_date": "20261015",
+      "request_id": "JSJ049",
+      "params": {
+        "type": "JSJ049",
+        "encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc"
+      },
+      "status_code": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 6886,
+      "response_type": "dict",
+      "top_level_keys": [
+        "strUPDATE",
+        "strKaisaiStop",
+        "strKaisaiStopMes",
+        "kaisaiNitijiList",
+        "kaisaiDayList",
+        "resultCd",
+        "writeANA"
+      ],
+      "sample": "{\"strUPDATE\": \"2026/10/15 02:37&nbsp;更新\", \"strKaisaiStop\": \"0\", \"strKaisaiStopMes\": \"\", \"kaisaiNitijiList\": [{\"strNitji\": \"初日\", \"strDay\": \"(10/15)\", \"strLnkIndex\": \"Nitiji_1\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"2日目\", \"strDay\": \"(10/16)\", \"strLnkIndex\": \"Nitiji_2\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"最終日\", \"strDay\": \"(10/17)\", \"strLnkIndex\": \"Nitiji_3\", \"strKaisaiST\": \"0\"}], \"kaisaiDayList\": [{\"strKaisaiNitijiLnk\": \"Nitiji_1\", \"strKaisaiNitijName\": \"初日(10/15)\", \"raceProgramList\": [{\"strRaceNo\": \"1\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"2\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"3\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"4\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"5\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"6\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"7\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"8\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"9\", \"strSyumokuName\": \"Ａ級初日特選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1\"}]}, {\"strKaisaiNitijiLnk\": \"Nitiji_2\", \"strKaisaiNitijName\": \"2日目(10/16)\", \"r...(省略)"
+    },
+    {
+      "venue": "豊橋",
+      "start_date": "20261015",
+      "request_id": "JSJ049",
+      "params": {
+        "type": "JSJ049"
+      },
+      "status_code": 500,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 3869,
+      "response_type": "not_json",
+      "sample": "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\" ?>\n<!DOCTYPE html>\n<html xmlns=\"http://www.w3.org/1999/xhtml\">\n\t<head id=\"j_idt2\">\n\t\t<meta name=\"viewport\" content=\"width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=0\" />\n\t\t<meta name=\"format-detection\" content=\"telephone=no\" />\n\t\t<meta http-equiv=\"Content-Type\" content=\"text/html\" charset=\"utf-8\" />\n\t\t<meta http-equiv=\"content-script-type\" content=\"text/javascript\" />\n\t\t<meta http-equiv=\"content-style-type\" content=\"text/css\" />\n\t\t<meta http-equiv=\"imagetoolbar\" content=\"no\" />\n\t\t<meta name=\"author\" content=\"JKA\" />\n\t\t<meta name=\"copyright\" content=\"COPYRIGHT(C) JKA. ALL RIGHTS RESERVED.\" />\n\t\t<meta name=\"robots\" content=\"NOINDEX,NOFOLLOW\" />\n\t\t<title>エラーページ｜KEIRIN.JP</title>\n\t\t<link rel=\"icon\" href=\"/sp/static/img/common/favicon.ico\" />\n\t\t<link rel=\"stylesheet\" href=\"/sp/static/css/common/bootstrap.min.css\" />\n\t\t<link rel=\"stylesheet\" href=\"/sp/static/css/common/bootstrap-theme.min.css\" />\n\t\t<l"
+    },
+    {
+      "venue": "豊橋",
+      "start_date": "20261015",
+      "request_id": "JSJ049",
+      "params": {
+        "type": "JSJ049",
+        "encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco"
+      },
+      "status_code": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 6886,
+      "response_type": "dict",
+      "top_level_keys": [
+        "strUPDATE",
+        "strKaisaiStop",
+        "strKaisaiStopMes",
+        "kaisaiNitijiList",
+        "kaisaiDayList",
+        "resultCd",
+        "writeANA"
+      ],
+      "sample": "{\"strUPDATE\": \"2026/10/15 02:37&nbsp;更新\", \"strKaisaiStop\": \"0\", \"strKaisaiStopMes\": \"\", \"kaisaiNitijiList\": [{\"strNitji\": \"初日\", \"strDay\": \"(10/15)\", \"strLnkIndex\": \"Nitiji_1\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"2日目\", \"strDay\": \"(10/16)\", \"strLnkIndex\": \"Nitiji_2\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"最終日\", \"strDay\": \"(10/17)\", \"strLnkIndex\": \"Nitiji_3\", \"strKaisaiST\": \"0\"}], \"kaisaiDayList\": [{\"strKaisaiNitijiLnk\": \"Nitiji_1\", \"strKaisaiNitijName\": \"初日(10/15)\", \"raceProgramList\": [{\"strRaceNo\": \"1\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"2\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"3\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"4\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"5\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"6\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"7\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"8\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"9\", \"strSyumokuName\": \"Ａ級初日特選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1\"}]}, {\"strKaisaiNitijiLnk\": \"Nitiji_2\", \"strKaisaiNitijName\": \"2日目(10/16)\", \"r...(省略)"
+    }
+  ],
+  "finished_at_jst": "2026-10-15T16:18:23.834057+09:00"
 }
