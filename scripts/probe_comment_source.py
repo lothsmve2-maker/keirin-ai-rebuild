@@ -46,6 +46,7 @@ def main():
         params={
             "type": "JSJ041",
             "encp": RACE_ENCP,
+            "skbn": "1",
         },
         headers={
             "Referer": url,
