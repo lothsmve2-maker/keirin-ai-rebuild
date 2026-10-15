@@ -28,22 +28,10 @@ jobs:
         run: python scripts/probe_race_list_post.py
 
       - name: Commit diagnostic result
-        env:
-          GH_TOKEN: ${{ github.token }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
           git add data/race_transition_diagnostic.json
-
-          if git diff --cached --quiet; then
-            echo "診断結果に変更はありません"
-            exit 0
-          fi
-
-          git commit -m "Update race transition diagnostic"
-
-          git fetch origin main
-          git rebase origin/main
-
+          git diff --cached --quiet || git commit -m "Update race transition diagnostic"
+          git pull --rebase origin main
           git push origin HEAD:main
