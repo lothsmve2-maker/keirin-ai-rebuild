@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T15:17:29.336462+09:00",
+  "started_at_jst": "2026-10-15T15:31:12.486333+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "11R",
+      "race_num": "12R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -227,8 +227,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "1",
-        "raceNum": "11R",
+        "denColorFlg": "0",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -477,7 +477,7 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "11R",
         "sensyuList": [
           {
@@ -1402,6 +1402,8 @@
           "XMLHttpRequest"
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "location\\.href",
@@ -1437,6 +1439,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [
         "#"
@@ -1463,6 +1467,8 @@
           ".ajax("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "location\\.href",
@@ -1486,6 +1492,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -1510,6 +1518,8 @@
           "Post("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -1590,6 +1600,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -1607,6 +1619,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -1626,6 +1640,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -1643,6 +1659,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -1667,6 +1685,8 @@
           "Post("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -1732,6 +1752,8 @@
         ],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -3775,7 +3797,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "11R",
+      "race_num": "12R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -3812,8 +3834,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "1",
-        "raceNum": "11R",
+        "denColorFlg": "0",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -4056,7 +4078,7 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "11R",
         "sensyuList": [
           {
@@ -4204,6 +4226,13 @@
           ".ajax("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [
+        {
+          "position": 2309,
+          "context": "'communicate_success',\nREQUEST_FAIL: 'communicate_fail',\nREQUEST_END: 'communicate_off'\n},\ngetRequest: function(reqType, para) {\nreturn com.getRequestMain(reqType, para,false);\n},\ngetRequestGet: function(reqType, para) {\nreturn com.getRequestMain(reqType, para,true);\n},\ngetRequestMain: function(reqType, para, flgType) {\nif(flgType) {\n$.ajaxSetup(cfg.ajaxCfgG);\n} else {\n$.ajaxSetup(cfg.ajaxCfg);\n}\nvar $html = $('html'),\nparams = para;\nisConnected = true;\n$html.trigger(com.EVENTS.REQUEST_ST"
+        }
+      ],
       "source_contexts": [
         {
           "matched_pattern": "reqprm",
@@ -4255,6 +4284,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -4272,6 +4303,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -4291,6 +4324,8 @@
         ],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -4326,6 +4361,31 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [
+        "JSJ035"
+      ],
+      "json_request_contexts": [
+        {
+          "position": 21,
+          "context": "var hhController = {\nJSON_REQ_ID: \"JSJ035\",\ninit: function() {\n},\nhhJSONRequest: function(encp) {\nvar result = null;\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(hhController.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCo"
+        },
+        {
+          "position": 161,
+          "context": "var hhController = {\nJSON_REQ_ID: \"JSJ035\",\ninit: function() {\n},\nhhJSONRequest: function(encp) {\nvar result = null;\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(hhController.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCom.getRequestGet(hhController.JSON_REQ_ID, cbPrm)\n.done(function(result) {\nhhView.hhDrawJSONData(result, cbPrm);\n});\n}\n};\n"
+        },
+        {
+          "position": 188,
+          "context": "ntroller = {\nJSON_REQ_ID: \"JSJ035\",\ninit: function() {\n},\nhhJSONRequest: function(encp) {\nvar result = null;\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(hhController.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCom.getRequestGet(hhController.JSON_REQ_ID, cbPrm)\n.done(function(result) {\nhhView.hhDrawJSONData(result, cbPrm);\n});\n}\n};\n"
+        },
+        {
+          "position": 334,
+          "context": "p;\nCom.getRequestGet(hhController.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCom.getRequestGet(hhController.JSON_REQ_ID, cbPrm)\n.done(function(result) {\nhhView.hhDrawJSONData(result, cbPrm);\n});\n}\n};\n"
+        },
+        {
+          "position": 361,
+          "context": "roller.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCom.getRequestGet(hhController.JSON_REQ_ID, cbPrm)\n.done(function(result) {\nhhView.hhDrawJSONData(result, cbPrm);\n});\n}\n};\n"
+        }
+      ],
       "source_contexts": [
         {
           "matched_pattern": "encp",
@@ -4356,6 +4416,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "encPrm",
@@ -4476,6 +4538,8 @@
           "Post("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -4691,6 +4755,8 @@
         ],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "location\\.href",
@@ -4808,6 +4874,27 @@
           "Post("
         ]
       },
+      "json_req_ids": [
+        "JSJ049"
+      ],
+      "json_request_contexts": [
+        {
+          "position": 25,
+          "context": "var rpController = {\n    JSON_REQ_ID: \"JSJ049\",\n    init: function() {\n        Controller.rbCreateList(\"\");\n    },\n    rpCreateList: function( kbrParm) {\n        var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nr"
+        },
+        {
+          "position": 225,
+          "context": "\",\n    init: function() {\n        Controller.rbCreateList(\"\");\n    },\n    rpCreateList: function( kbrParm) {\n        var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\"click\",\"#setRaceProgram button\",function(){\nvar parent = $(this).parent();\nvar children = $(parent).children();\nvar action = $(children[1]).attr(\"valu"
+        },
+        {
+          "position": 262,
+          "context": "troller.rbCreateList(\"\");\n    },\n    rpCreateList: function( kbrParm) {\n        var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\"click\",\"#setRaceProgram button\",function(){\nvar parent = $(this).parent();\nvar children = $(parent).children();\nvar action = $(children[1]).attr(\"value\");\nvar params = {};\nparams[\""
+        },
+        {
+          "position": 289,
+          "context": "   },\n    rpCreateList: function( kbrParm) {\n        var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\"click\",\"#setRaceProgram button\",function(){\nvar parent = $(this).parent();\nvar children = $(parent).children();\nvar action = $(children[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).a"
+        }
+      ],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -4853,6 +4940,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -4872,6 +4961,23 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [
+        "JSJ050"
+      ],
+      "json_request_contexts": [
+        {
+          "position": 21,
+          "context": "var khController = {\nJSON_REQ_ID: \"JSJ050\",\ninit: function() {\nController.rhDspSyokinRank();\n},\nkhDspKaisaiHatubaiInfo: function(encp) {\nvar result = null;\nvar params = {};\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(SJ0304Controller.JSON_REQ_ID, params)\n.done(function(result) {\nkhView.khDrawJSONData(result,params);\n"
+        },
+        {
+          "position": 217,
+          "context": "J050\",\ninit: function() {\nController.rhDspSyokinRank();\n},\nkhDspKaisaiHatubaiInfo: function(encp) {\nvar result = null;\nvar params = {};\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(SJ0304Controller.JSON_REQ_ID, params)\n.done(function(result) {\nkhView.khDrawJSONData(result,params);\n});\n}\n};\n"
+        },
+        {
+          "position": 248,
+          "context": "oller.rhDspSyokinRank();\n},\nkhDspKaisaiHatubaiInfo: function(encp) {\nvar result = null;\nvar params = {};\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(SJ0304Controller.JSON_REQ_ID, params)\n.done(function(result) {\nkhView.khDrawJSONData(result,params);\n});\n}\n};\n"
+        }
+      ],
       "source_contexts": [
         {
           "matched_pattern": "encp",
@@ -4897,6 +5003,8 @@
           "Post("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -4987,6 +5095,8 @@
         ],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "encPrm",
@@ -5052,6 +5162,27 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [
+        "JSJ051"
+      ],
+      "json_request_contexts": [
+        {
+          "position": 21,
+          "context": "var slController = {\nJSON_REQ_ID: \"JSJ051\",\nsampleCreateList: function(prm) {\nvar result = null;\nvar params = {};\nparams[Com.COM_CONST.ENCRYPTION] = prm;\nCom.getRequestGet(slController.JSON_REQ_ID, params)\n.done(function(result) {\nslView.slDrawJSONData(result);\n});\n}\n};\n"
+        },
+        {
+          "position": 125,
+          "context": "var slController = {\nJSON_REQ_ID: \"JSJ051\",\nsampleCreateList: function(prm) {\nvar result = null;\nvar params = {};\nparams[Com.COM_CONST.ENCRYPTION] = prm;\nCom.getRequestGet(slController.JSON_REQ_ID, params)\n.done(function(result) {\nslView.slDrawJSONData(result);\n});\n}\n};\n"
+        },
+        {
+          "position": 158,
+          "context": "var slController = {\nJSON_REQ_ID: \"JSJ051\",\nsampleCreateList: function(prm) {\nvar result = null;\nvar params = {};\nparams[Com.COM_CONST.ENCRYPTION] = prm;\nCom.getRequestGet(slController.JSON_REQ_ID, params)\n.done(function(result) {\nslView.slDrawJSONData(result);\n});\n}\n};\n"
+        },
+        {
+          "position": 185,
+          "context": "lController = {\nJSON_REQ_ID: \"JSJ051\",\nsampleCreateList: function(prm) {\nvar result = null;\nvar params = {};\nparams[Com.COM_CONST.ENCRYPTION] = prm;\nCom.getRequestGet(slController.JSON_REQ_ID, params)\n.done(function(result) {\nslView.slDrawJSONData(result);\n});\n}\n};\n"
+        }
+      ],
       "source_contexts": [],
       "form_target_hints": [],
       "status": "ok"
@@ -5075,6 +5206,8 @@
           "Post("
         ]
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -5212,6 +5345,8 @@
         "submit_calls": [],
         "api_calls": []
       },
+      "json_req_ids": [],
+      "json_request_contexts": [],
       "source_contexts": [
         {
           "matched_pattern": "racelist",
@@ -5252,6 +5387,23 @@
           "Post("
         ]
       },
+      "json_req_ids": [
+        "JSJ052"
+      ],
+      "json_request_contexts": [
+        {
+          "position": 25,
+          "context": "var bcController = {\n    JSON_REQ_ID: \"JSJ052\",\n    bcCreateList: function(params) {      \n        Com.getRequestGet(bcController.JSON_REQ_ID, params)\n            .done(function(result) {\n            bcView.bcDrawJSONData(result.jsj018JSONData,params);\n            });\n    }\n};\n$(document).ready(function(){\n$(document).on(\"click\",\".res"
+        },
+        {
+          "position": 103,
+          "context": "var bcController = {\n    JSON_REQ_ID: \"JSJ052\",\n    bcCreateList: function(params) {      \n        Com.getRequestGet(bcController.JSON_REQ_ID, params)\n            .done(function(result) {\n            bcView.bcDrawJSONData(result.jsj018JSONData,params);\n            });\n    }\n};\n$(document).ready(function(){\n$(document).on(\"click\",\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nv"
+        },
+        {
+          "position": 130,
+          "context": "var bcController = {\n    JSON_REQ_ID: \"JSJ052\",\n    bcCreateList: function(params) {      \n        Com.getRequestGet(bcController.JSON_REQ_ID, params)\n            .done(function(result) {\n            bcView.bcDrawJSONData(result.jsj018JSONData,params);\n            });\n    }\n};\n$(document).ready(function(){\n$(document).on(\"click\",\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nvar Url = $(\"#hdnRaceRVURL"
+        }
+      ],
       "source_contexts": [
         {
           "matched_pattern": "commonSubmit",
@@ -5278,5 +5430,5 @@
       "status": "ok"
     }
   ],
-  "finished_at_jst": "2026-10-15T15:17:46.969914+09:00"
+  "finished_at_jst": "2026-10-15T15:31:30.303830+09:00"
 }
