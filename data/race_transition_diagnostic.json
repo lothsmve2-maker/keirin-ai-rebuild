@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP racecard communication investigation",
-  "started_at_utc": "2026-10-15T01:10:50.734427+00:00",
+  "started_at_utc": "2026-10-15T01:24:03.861453+00:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "events": [
@@ -12,7 +12,76 @@
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
       "sensyuList_type": "list",
-      "sensyuList_count": 6
+      "sensyuList_count": 6,
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "inspect_encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
+      "inspect_denColorFlg": "0",
+      "inspect_raceNum": "1R",
+      "inspect_sensyuList": [
+        {
+          "sensyuName": "恩田　淳平",
+          "sensyuNo": "014809",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "中井　太祐",
+          "sensyuNo": "014605",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "東　龍之介",
+          "sensyuNo": "014523",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "福永　大智",
+          "sensyuNo": "015274",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "岡部　陸斗",
+          "sensyuNo": "015791",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+          "sensyuIconChar": "A級"
+        },
+        {
+          "sensyuName": "尾崎　睦",
+          "sensyuNo": "015070",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+          "sensyuIconChar": "ガールズ"
+        }
+      ]
     },
     {
       "venue": "玉野",
@@ -22,7 +91,76 @@
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
       "sensyuList_type": "list",
-      "sensyuList_count": 6
+      "sensyuList_count": 6,
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "inspect_encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
+      "inspect_denColorFlg": "0",
+      "inspect_raceNum": "1R",
+      "inspect_sensyuList": [
+        {
+          "sensyuName": "山岸　佳太",
+          "sensyuNo": "015038",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "久田　朔",
+          "sensyuNo": "015826",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "石毛　克幸",
+          "sensyuNo": "013628",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "三宅　達也",
+          "sensyuNo": "013291",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "佐藤　和也",
+          "sensyuNo": "014427",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "菅野　航基",
+          "sensyuNo": "015508",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+          "sensyuIconChar": "A級"
+        }
+      ]
     },
     {
       "venue": "別府",
@@ -32,7 +170,74 @@
       "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
       "reqprm": "",
       "sensyuList_type": "list",
-      "sensyuList_count": 6
+      "sensyuList_count": 6,
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "inspect_encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
+      "inspect_denColorFlg": "0",
+      "inspect_raceNum": "1R",
+      "inspect_sensyuList": [
+        {
+          "sensyuName": "小川真太郎",
+          "sensyuNo": "015063",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "森田　一郎",
+          "sensyuNo": "015799",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "阿部　将大",
+          "sensyuNo": "015474",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "須永　優太",
+          "sensyuNo": "014358",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "中川誠一郎",
+          "sensyuNo": "013745",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+          "sensyuIconChar": "S級"
+        },
+        {
+          "sensyuName": "坂本　紘規",
+          "sensyuNo": "015415",
+          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+          "sensyuIconChar": "A級"
+        }
+      ]
     }
   ],
   "tests": [
@@ -1822,5 +2027,5 @@
     "bytes": 10791
   },
   "events_found": 7,
-  "finished_at_utc": "2026-10-15T01:11:25.830945+00:00"
+  "finished_at_utc": "2026-10-15T01:24:39.631708+00:00"
 }
