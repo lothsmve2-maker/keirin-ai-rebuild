@@ -272,16 +272,44 @@ def inspect_html(html, page_url):
     soup = BeautifulSoup(html or "", "html.parser")
 
     links = []
+    click_handlers = []
+
+    # 通常のリンク
     for tag in soup.find_all("a", href=True):
         href = urljoin(page_url, tag["href"])
         text = tag.get_text(" ", strip=True)
+        onclick = tag.get("onclick", "")
 
         links.append({
             "text": text[:150],
             "href": href,
+            "onclick": onclick[:2000],
         })
 
+    # onclickを持つボタン・リンク・その他の要素
+    for tag in soup.find_all(attrs={"onclick": True}):
+        onclick = str(tag.get("onclick", ""))
+
+        item = {
+            "tag": tag.name,
+            "text": tag.get_text(" ", strip=True)[:150],
+            "onclick": onclick[:3000],
+            "id": tag.get("id", ""),
+            "class": tag.get("class", []),
+        }
+
+        # 画面遷移に関係する呼び出しを抽出
+        if re.search(
+            r"formlnk|formPost|commonSubmit|"
+            r"encp|encPrm|SJ0\d+|racelist|racecard",
+            onclick,
+            re.IGNORECASE,
+        ):
+            click_handlers.append(item)
+
+    # フォーム
     forms = []
+
     for form in soup.find_all("form"):
         forms.append({
             "action": urljoin(
@@ -303,7 +331,9 @@ def inspect_html(html, page_url):
             ][:80],
         })
 
+    # JavaScriptファイルとインラインスクリプト
     scripts = []
+
     for tag in soup.find_all("script"):
         src = tag.get("src")
 
@@ -327,6 +357,7 @@ def inspect_html(html, page_url):
         "text_length": len(page_text),
         "text_sample": page_text[:1500],
         "links": links,
+        "click_handlers": click_handlers,
         "forms": forms,
         "scripts": scripts,
     }
