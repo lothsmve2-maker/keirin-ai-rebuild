@@ -959,6 +959,85 @@ def main():
         "/",
         len(followup_urls),
     )
+        # 8. 公式JSON JSJ049の直接取得を検証
+    print("[8/8] 出走表関連JSONを直接検証中...")
+
+    report["json_endpoint_tests"] = []
+
+    today = now_jst().strftime("%Y%m%d")
+    target_events = [
+        event for event in report.get("events", [])
+        if event.get("start_date") == today
+        and event.get("encPrm")
+    ][:2]
+
+    if not target_events:
+        target_events = [
+            event for event in report.get("events", [])
+            if event.get("encPrm")
+        ][:2]
+
+    for event in target_events:
+        for encp in ("", event.get("encPrm", "")):
+            if not encp and encp != "":
+                continue
+
+            params = {"type": "JSJ049"}
+            if encp:
+                params["encp"] = encp
+
+            test = {
+                "venue": event.get("venue", ""),
+                "start_date": event.get("start_date", ""),
+                "request_id": "JSJ049",
+                "params": params,
+            }
+
+            try:
+                response = session.get(
+                    urljoin(BASE, "/sp/json"),
+                    params=params,
+                    headers={"Referer": SCHEDULE_URL},
+                    timeout=TIMEOUT,
+                )
+
+                test["status_code"] = response.status_code
+                test["content_type"] = response.headers.get(
+                    "Content-Type", ""
+                )
+                test["bytes"] = len(response.content)
+
+                try:
+                    data = response.json()
+                    test["response_type"] = type(data).__name__
+
+                    if isinstance(data, dict):
+                        test["top_level_keys"] = list(data.keys())
+                        test["sample"] = shorten(data, 3000)
+                    else:
+                        test["sample"] = shorten(data, 3000)
+
+                except Exception:
+                    test["response_type"] = "not_json"
+                    test["sample"] = response.text[:1000]
+
+            except Exception as exc:
+                test["error"] = (
+                    f"{type(exc).__name__}: {exc}"
+                )
+
+            report["json_endpoint_tests"].append(test)
+
+            print(
+                "  JSJ049:",
+                test.get("venue"),
+                "encpあり" if encp else "encpなし",
+                "HTTP",
+                test.get("status_code", "ERROR"),
+                test.get("response_type", ""),
+            )
+
+            time.sleep(PAUSE_SECONDS)
     # 集計
     js_ok = sum(
         1 for item in report["javascript_files"]
