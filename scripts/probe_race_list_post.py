@@ -427,7 +427,34 @@ def download_javascript(session, script_url):
         )
 
         result["scan"] = scan_javascript(text)
+        # JSON通信に使うリクエストIDを抽出
+        result["json_req_ids"] = list(
+            dict.fromkeys(
+                re.findall(
+                    r"""JSON_REQ_ID\s*:\s*["']([^"']+)["']""",
+                    text,
+                )
+            )
+        )
 
+        # JSON取得関数とパラメータ定義の手掛かり
+        result["json_request_contexts"] = []
+
+        for match in re.finditer(
+            r"JSON_REQ_ID|getRequestGet|COM_CONST\.ENCRYPTION",
+            text,
+            flags=re.IGNORECASE,
+        ):
+            start = max(0, match.start() - 180)
+            end = min(len(text), match.end() + 300)
+
+            result["json_request_contexts"].append({
+                "position": match.start(),
+                "context": text[start:end],
+            })
+
+            if len(result["json_request_contexts"]) >= 30:
+                break
         patterns = [
             r"commonSubmit",
             r"formPost",
