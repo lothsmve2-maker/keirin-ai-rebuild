@@ -802,41 +802,71 @@ def main():
 
     report["rider_data_inspection"] = rider_data_events
 
-    # 6. 出走表候補ページを読み取り検証
-    print("[6/6] 発見した候補URLを検証中...")
-
-    test_urls = []
-
-    for link in relevant_links:
-        url = link.get("href", "")
-
-        if url.startswith(BASE):
-            test_urls.append(url)
-
-    for candidate in js_url_candidates:
-        match = candidate.get("match", "")
-        urls = re.findall(
-            r"""https?://[^"'`\s<>]+|/[^"'`\s<>]+""",
-            match,
+    # 6. HTMLのクリック処理から実際のPOST通信を検証
+    print("[6/6] 出走表へのPOST通信を検証中...")
+    test_specs = []
+    seen_specs = set()
+    for item in html_info.get(
+        "click_handlers", []
+    ):
+        onclick = str(
+            item.get("onclick", "")
         )
-
-        for url in urls:
-            if url.startswith("/"):
-                url = urljoin(BASE, url)
-
-            if url.startswith(BASE):
-                test_urls.append(url)
-
-    test_urls = list(dict.fromkeys(test_urls))[:12]
-
-    for url in test_urls:
-        print("  検証:", url[:120])
-
+        match = re.search(
+            r"""formlnk\(\s*['"]([^'"]+)['"]"""
+            r"""\s*,\s*['"]([^'"]+)['"]\s*\)""",
+            onclick,
+        )
+        if not match:
+            continue
+        path = match.group(1)
+        encp = match.group(2)
+        url = urljoin(BASE, path)
+        # 公式サイト内のURLだけを検証
+        parsed_url = urlparse(url)
+        if parsed_url.netloc != urlparse(BASE).netloc:
+            continue
+        if parsed_url.path != "/sp/racelist":
+            continue
+        signature = (url, encp)
+        if signature in seen_specs:
+            continue
+        seen_specs.add(signature)
+        test_specs.append({
+            "url": url,
+            "params": {
+                "encp": encp,
+                "disp": "SJ0301",
+            },
+            "source_text": item.get("text", ""),
+        })
+    print(
+        f"発見したPOST候補: {len(test_specs)}"
+    )
+    for spec in test_specs[:8]:
+        print(
+            "  POST検証:",
+            spec["url"],
+            "開催:",
+            spec["source_text"][:60],
+        )
+        result = test_candidate(
+            session,
+            spec["url"],
+            params=spec["params"],
+            method="POST",
+            referer=SCHEDULE_URL,
+        )
+        result["source_text"] = (
+            spec["source_text"]
+        )
         report["candidate_tests"].append(
-            test_candidate(session, url)
+            result
         )
-
         time.sleep(PAUSE_SECONDS)
+    report["post_candidates_found"] = len(
+        test_specs
+    )
 
     # 集計
     js_ok = sum(
