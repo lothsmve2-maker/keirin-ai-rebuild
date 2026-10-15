@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T11:11:04.190109+09:00",
+  "started_at_jst": "2026-10-15T11:13:46.391233+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -1577,5 +1577,5 @@
       }
     }
   ],
-  "finished_at_jst": "2026-10-15T11:11:11.535391+09:00"
+  "finished_at_jst": "2026-10-15T11:13:50.267386+09:00"
 }
