@@ -2,23 +2,29 @@
 # -*- coding: utf-8 -*-
 
 """
-KEIRIN.JP 出走表通信診断
-- 公式開催情報 JSON JSJ058 から encPrm / reqprm を取得
-- /sp/racelist と /pc/racelist を比較
-- GET / POST、パラメータ名・送信形式を比較
-- HTML内のレース番号・選手情報を検証
-- 結果を data/race_transition_diagnostic.json に保存
+KEIRIN.JP 出走表データ取得先・通信経路 一括診断
 
-このスクリプトは診断専用。
-update.py、today.json、予想データは変更しない。
+調査対象:
+1. 公式開催日程ページ
+2. 公式JSON JSJ058の全階層
+3. 開催日・競輪場・選手データの構造
+4. HTML内のリンク・フォーム・JavaScript
+5. JavaScript内の出走表URL・JSON取得処理
+6. 開催情報に含まれる選手データ
+7. 実際に発見したURLへの読み取りリクエスト
+
+出力:
+data/race_transition_diagnostic.json
+
+update.py / today.json / AI予想データは変更しない。
 """
 
 import json
 import re
 import time
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 from pathlib import Path
-from urllib.parse import urljoin
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup
@@ -31,9 +37,12 @@ JSON_URL = f"{BASE}/sp/json?type=JSJ058"
 OUTPUT = Path("data/race_transition_diagnostic.json")
 
 TIMEOUT = 20
-MAX_EVENTS = 3
-MAX_TESTS = 36
-PAUSE_SECONDS = 0.4
+MAX_EVENTS = 8
+MAX_JS_FILES = 30
+MAX_JS_BYTES = 1_500_000
+PAUSE_SECONDS = 0.2
+
+JST = timezone(timedelta(hours=9))
 
 HEADERS = {
     "User-Agent": (
@@ -43,10 +52,22 @@ HEADERS = {
     ),
     "Accept": (
         "text/html,application/xhtml+xml,application/json,"
-        "application/xml;q=0.9,*/*;q=0.8"
+        "application/javascript,*/*;q=0.8"
     ),
     "Accept-Language": "ja-JP,ja;q=0.9,en;q=0.7",
 }
+
+
+def now_jst():
+    return datetime.now(JST)
+
+
+def save_json(data):
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    OUTPUT.write_text(
+        json.dumps(data, ensure_ascii=False, indent=2, default=str),
+        encoding="utf-8",
+    )
 
 
 def make_session():
@@ -55,591 +76,693 @@ def make_session():
     return session
 
 
-def save_json(data):
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
-    OUTPUT.write_text(
-        json.dumps(data, ensure_ascii=False, indent=2),
-        encoding="utf-8",
+def fetch(session, url, **kwargs):
+    return session.get(
+        url,
+        timeout=TIMEOUT,
+        allow_redirects=True,
+        **kwargs,
     )
 
 
-def get_text(session, url, **kwargs):
-    response = session.get(url, timeout=TIMEOUT, **kwargs)
-    response.encoding = response.apparent_encoding or "utf-8"
-    return response
-
-
-def get_json(session, url):
-    response = get_text(session, url)
-
-    info = {
-        "url": response.url,
-        "status_code": response.status_code,
-        "content_type": response.headers.get("Content-Type", ""),
-        "bytes": len(response.content),
-    }
-
+def fetch_json(session, url):
+    response = fetch(session, url)
     response.raise_for_status()
 
     try:
         payload = response.json()
     except Exception as exc:
         raise RuntimeError(
-            f"JSON解析失敗: {type(exc).__name__}: {exc}; "
-            f"先頭={response.text[:300]!r}"
+            f"JSON解析失敗: {exc}; "
+            f"本文先頭={response.text[:300]!r}"
         ) from exc
 
-    return payload, info
-
-
-def normalize_event(item):
-    """公式JSONの開催データを、元の項目を残して正規化する。"""
-    if not isinstance(item, dict):
-        return None
-
-    venue = (
-        item.get("jyoName")
-        or item.get("venueName")
-        or item.get("jyo")
-        or ""
-    )
-
-    enc_prm = (
-        item.get("encPrm")
-        or item.get("encp")
-        or item.get("encprm")
-        or ""
-    )
-
-    req_prm = item.get("reqprm") or ""
-
-    if not venue and not enc_prm:
-        return None
-
-    return {
-        "venue": str(venue),
-        "venue_code": str(
-            item.get("bKeirinCd")
-            or item.get("KeirinCd")
-            or item.get("jyoCd")
-            or ""
-        ),
-        "race_num": str(item.get("raceNum") or ""),
-        "start_date": str(item.get("kStartDate") or ""),
-        "encPrm": str(enc_prm),
-        "reqprm": str(req_prm),
-        "sensyuList_type": type(item.get("sensyuList")).__name__,
-        "sensyuList_count": (
-            len(item["sensyuList"])
-            if isinstance(item.get("sensyuList"), (list, dict))
-            else None
-        ),
-        "raw": item,
+    return payload, {
+        "requested_url": url,
+        "final_url": response.url,
+        "status_code": response.status_code,
+        "content_type": response.headers.get("Content-Type", ""),
+        "bytes": len(response.content),
     }
+
+
+def shorten(value, limit=1200):
+    try:
+        text = json.dumps(value, ensure_ascii=False, default=str)
+    except Exception:
+        text = str(value)
+
+    if len(text) > limit:
+        return text[:limit] + "...(省略)"
+    return text
 
 
 def find_events(payload):
-    """JSONの階層が変わっても kInfo を探す。"""
+    """JSON全体から開催情報候補を抽出する。"""
     found = []
+    visited = set()
 
-    def walk(obj):
+    def walk(obj, path="$"):
         if isinstance(obj, dict):
-            kinfo = obj.get("kInfo")
+            if (
+                any(k in obj for k in ("encPrm", "encp", "encprm"))
+                and any(
+                    k in obj
+                    for k in (
+                        "jyoName",
+                        "venueName",
+                        "jyo",
+                        "raceNum",
+                        "sensyuList",
+                    )
+                )
+            ):
+                signature = (
+                    str(obj.get("jyoName", "")),
+                    str(obj.get("bKeirinCd", "")),
+                    str(obj.get("raceNum", "")),
+                    str(obj.get("encPrm", obj.get("encp", ""))),
+                )
 
-            if isinstance(kinfo, list):
-                found.extend(kinfo)
+                if signature not in visited:
+                    visited.add(signature)
+                    found.append({
+                        "path": path,
+                        "raw": obj,
+                    })
 
             for key, value in obj.items():
-                if key != "kInfo":
-                    walk(value)
+                walk(value, f"{path}.{key}")
 
         elif isinstance(obj, list):
-            for value in obj:
-                walk(value)
+            for index, value in enumerate(obj):
+                walk(value, f"{path}[{index}]")
 
     walk(payload)
-
-    # kInfo が見つからない場合は、JSON全体の辞書を候補にする。
-    if not found:
-        def fallback(obj):
-            if isinstance(obj, dict):
-                if (
-                    any(k in obj for k in ("encPrm", "encp"))
-                    and any(k in obj for k in ("jyoName", "raceNum"))
-                ):
-                    found.append(obj)
-                for value in obj.values():
-                    fallback(value)
-            elif isinstance(obj, list):
-                for value in obj:
-                    fallback(value)
-
-        fallback(payload)
-
-    events = []
-    seen = set()
-
-    for item in found:
-        event = normalize_event(item)
-        if not event:
-            continue
-
-        key = (
-            event["venue"],
-            event["venue_code"],
-            event["race_num"],
-            event["encPrm"],
-        )
-
-        if key in seen:
-            continue
-
-        seen.add(key)
-        events.append(event)
-
-    return events
+    return found
 
 
-def html_metrics(html):
-    soup = BeautifulSoup(html or "", "html.parser")
-    text = soup.get_text(" ", strip=True)
+def get_value(obj, *keys):
+    for key in keys:
+        value = obj.get(key)
+        if value not in (None, ""):
+            return value
+    return ""
 
-    # 1R～12Rなどのレース番号
-    race_matches = re.findall(
-        r"(?<!\d)(?:1[0-2]|[1-9])\s*R(?![A-Za-z])",
-        text,
-        flags=re.IGNORECASE,
-    )
 
-    # 「1 佐藤」などの表記だけに依存しないよう、
-    # ページ内の選手名らしい日本語文字列も記録する。
-    japanese_names = re.findall(
-        r"[一-龥々〆ヵヶ]{2,8}\s*[一-龥々〆ヵヶ]{0,8}",
-        text,
-    )
+def event_info(item):
+    raw = item["raw"]
 
-    rider_classes = []
-    for tag in soup.find_all(True):
-        classes = tag.get("class", [])
-        if isinstance(classes, str):
-            classes = [classes]
+    start_date = str(get_value(
+        raw,
+        "kStartDate",
+        "startDate",
+        "kaisaiDate",
+        "start_date",
+    ))
 
-        for cls in classes:
-            if re.search(
-                r"rider|sensyu|player|entry|racelist|member",
-                str(cls),
-                re.IGNORECASE,
-            ):
-                rider_classes.append(str(cls))
+    enc = str(get_value(raw, "encPrm", "encp", "encprm"))
+    req = str(get_value(raw, "reqprm"))
 
-    error_terms = [
-        "ページが見つかりません",
-        "エラーが発生しました",
-        "不正なリクエスト",
-        "該当する情報がありません",
-        "システムエラー",
-        "アクセスできません",
-    ]
-
-    error_hits = [term for term in error_terms if term in text]
+    sensyu = raw.get("sensyuList")
 
     return {
-        "title": soup.title.get_text(strip=True) if soup.title else "",
-        "text_length": len(text),
-        "race_number_count": len(set(race_matches)),
-        "race_numbers": sorted(
-            set(race_matches),
-            key=lambda value: int(re.search(r"\d+", value).group()),
+        "json_path": item["path"],
+        "venue": str(get_value(
+            raw,
+            "jyoName",
+            "venueName",
+            "jyo",
+        )),
+        "venue_code": str(get_value(
+            raw,
+            "bKeirinCd",
+            "KeirinCd",
+            "jyoCd",
+        )),
+        "race_num": str(get_value(raw, "raceNum")),
+        "start_date": start_date,
+        "encPrm": enc,
+        "reqprm": req,
+        "raw_keys": list(raw.keys()),
+        "sensyuList_type": type(sensyu).__name__,
+        "sensyuList_count": (
+            len(sensyu)
+            if isinstance(sensyu, (list, dict))
+            else None
         ),
-        "japanese_text_sample": japanese_names[:15],
-        "rider_related_classes": sorted(set(rider_classes))[:30],
-        "error_markers": error_hits,
-        "text_sample": text[:1000],
+        "sensyuList_sample": shorten(sensyu, 5000),
+        "raw_relevant_fields": {
+            key: value
+            for key, value in raw.items()
+            if any(
+                word in key.lower()
+                for word in (
+                    "sensyu",
+                    "rider",
+                    "race",
+                    "entry",
+                    "member",
+                    "comment",
+                    "line",
+                    "enc",
+                    "req",
+                    "name",
+                )
+            )
+        },
     }
 
 
-def looks_like_racecard(metrics):
-    """
-    レース番号だけでは成功と判定しない。
-    返却内容を保存し、候補の比較に利用する。
-    """
+def parse_date(value):
+    value = str(value or "")
+
+    match = re.search(r"(20\d{6})", value)
+    if match:
+        try:
+            return datetime.strptime(
+                match.group(1), "%Y%m%d"
+            ).date()
+        except ValueError:
+            pass
+
+    return None
+
+
+def event_priority(event):
+    today = now_jst().date()
+    date = parse_date(event.get("start_date"))
+
+    if date is None:
+        date_rank = 0
+    elif date >= today:
+        date_rank = 3
+    else:
+        date_rank = 1
+
     return (
-        metrics["text_length"] >= 500
-        and metrics["race_number_count"] >= 2
-        and not metrics["error_markers"]
+        date_rank,
+        date.isoformat() if date else "",
+        bool(event.get("encPrm")),
+        bool(event.get("venue")),
     )
 
 
-def candidate_payloads(event):
-    """
-    正しいパラメータ形式は未確定。
-    既知のキーを使った候補を比較するだけで、
-    どれかが正しいと事前に決めつけない。
-    """
-    enc = event.get("encPrm", "")
-    req = event.get("reqprm", "")
+def inspect_html(html, page_url):
+    soup = BeautifulSoup(html or "", "html.parser")
 
-    candidates = []
+    links = []
+    for tag in soup.find_all("a", href=True):
+        href = urljoin(page_url, tag["href"])
+        text = tag.get_text(" ", strip=True)
 
-    if enc:
-        candidates.extend([
-            ("encp", {"encp": enc, "disp": "SJ0301"}),
-            ("encPrm", {"encPrm": enc, "disp": "SJ0301"}),
-            ("encprm", {"encprm": enc, "disp": "SJ0301"}),
-            ("encp_only", {"encp": enc}),
-            ("encPrm_only", {"encPrm": enc}),
-        ])
+        links.append({
+            "text": text[:150],
+            "href": href,
+        })
 
-    if req:
-        candidates.extend([
-            ("reqprm", {"reqprm": req, "disp": "SJ0301"}),
-            ("reqprm_only", {"reqprm": req}),
-        ])
-
-    if enc and req:
-        candidates.extend([
-            (
-                "encp_and_reqprm",
-                {"encp": enc, "reqprm": req, "disp": "SJ0301"},
+    forms = []
+    for form in soup.find_all("form"):
+        forms.append({
+            "action": urljoin(
+                page_url,
+                form.get("action") or page_url,
             ),
-            (
-                "encPrm_and_reqprm",
-                {"encPrm": enc, "reqprm": req, "disp": "SJ0301"},
-            ),
-        ])
+            "method": (form.get("method") or "GET").upper(),
+            "name": form.get("name", ""),
+            "id": form.get("id", ""),
+            "inputs": [
+                {
+                    "name": field.get("name", ""),
+                    "type": field.get("type", ""),
+                    "value": field.get("value", ""),
+                }
+                for field in form.find_all(
+                    ["input", "select", "button"]
+                )
+            ][:80],
+        })
 
-    # 同一のパラメータ候補は重複させない。
-    result = []
-    seen = set()
+    scripts = []
+    for tag in soup.find_all("script"):
+        src = tag.get("src")
 
-    for name, params in candidates:
-        signature = json.dumps(
-            params,
-            sort_keys=True,
-            ensure_ascii=False,
+        if src:
+            scripts.append({
+                "src": urljoin(page_url, src),
+                "inline": False,
+            })
+        elif tag.string or tag.get_text(strip=True):
+            scripts.append({
+                "src": "",
+                "inline": True,
+                "text": (tag.string or tag.get_text())[:5000],
+            })
+
+    title = soup.title.get_text(strip=True) if soup.title else ""
+    page_text = soup.get_text(" ", strip=True)
+
+    return {
+        "title": title,
+        "text_length": len(page_text),
+        "text_sample": page_text[:1500],
+        "links": links,
+        "forms": forms,
+        "scripts": scripts,
+    }
+
+
+def scan_javascript(text):
+    """出走表・通信先の手掛かりをJavaScriptから抽出する。"""
+    patterns = {
+        "race_urls": (
+            r"""["'`](?:[^"'`]{0,100})?"""
+            r"""(?:racelist|racecard|raceprogram|raceinfo)"""
+            r"""[^"'`]{0,200}["'`]"""
+        ),
+        "json_urls": (
+            r"""["'`][^"'`]{0,250}"""
+            r"""(?:/json|\.json|type=JSJ\d+)[^"'`]{0,250}["'`]"""
+        ),
+        "parameter_names": (
+            r"""(?:encPrm|encp|reqprm|sensyuList|"""
+            r"""disp|raceNum|jyoCd|bKeirinCd)"""
+        ),
+        "submit_calls": (
+            r"""(?:form\.submit|submit\(|location\.href|"""
+            r"""location\.assign|location\.replace)"""
+        ),
+        "api_calls": (
+            r"""(?:fetch\(|XMLHttpRequest|\.ajax\(|"""
+            r"""axios\.|getJSON\(|post\()"""
+        ),
+    }
+
+    result = {}
+
+    for name, pattern in patterns.items():
+        matches = re.findall(
+            pattern,
+            text or "",
+            flags=re.IGNORECASE,
         )
-        if signature in seen:
-            continue
-        seen.add(signature)
-        result.append((name, params))
+
+        result[name] = list(dict.fromkeys(
+            str(value)[:500] for value in matches
+        ))[:100]
 
     return result
 
 
-def inspect_response(response, method, endpoint, candidate_name, params):
-    response.encoding = response.apparent_encoding or "utf-8"
+def download_javascript(session, script_url):
+    parsed = urlparse(script_url)
 
-    content_type = response.headers.get("Content-Type", "")
-    body = response.text or ""
+    if parsed.netloc and parsed.netloc != urlparse(BASE).netloc:
+        return {
+            "url": script_url,
+            "status": "external_host_skipped",
+        }
 
-    record = {
-        "method": method,
-        "endpoint": endpoint,
-        "candidate": candidate_name,
-        "params_keys": list(params.keys()),
-        "status_code": response.status_code,
-        "final_url": response.url,
-        "content_type": content_type,
-        "bytes": len(response.content),
-        "redirect_history": [
-            {
-                "status_code": item.status_code,
-                "url": item.url,
-                "location": item.headers.get("Location", ""),
-            }
-            for item in response.history
-        ],
-    }
+    try:
+        response = fetch(session, script_url)
 
-    if "json" in content_type.lower():
-        try:
-            parsed = response.json()
-            record["json_response"] = parsed
-            record["json_top_level_type"] = type(parsed).__name__
-            record["html_metrics"] = None
-            record["racecard_candidate"] = False
-            return record
-        except Exception:
-            record["json_parse_error"] = True
+        result = {
+            "url": script_url,
+            "final_url": response.url,
+            "status_code": response.status_code,
+            "content_type": response.headers.get(
+                "Content-Type", ""
+            ),
+            "bytes": len(response.content),
+        }
 
-    metrics = html_metrics(body)
-    record["html_metrics"] = metrics
-    record["racecard_candidate"] = looks_like_racecard(metrics)
+        if not response.ok:
+            result["status"] = "http_error"
+            return result
 
-    return record
+        if len(response.content) > MAX_JS_BYTES:
+            result["status"] = "too_large"
+            return result
+
+        text = response.content.decode(
+            response.encoding or "utf-8",
+            errors="replace",
+        )
+
+        result["scan"] = scan_javascript(text)
+
+        # 関連キーワードを含む行を記録する
+        lines = text.splitlines()
+        relevant_lines = []
+
+        for line_number, line in enumerate(lines, 1):
+            if re.search(
+                r"racelist|racecard|raceprogram|sensyuList|"
+                r"encPrm|reqprm|JSJ\d{3}|fetch\(|XMLHttpRequest",
+                line,
+                re.IGNORECASE,
+            ):
+                relevant_lines.append({
+                    "line": line_number,
+                    "text": line[:600],
+                })
+
+                if len(relevant_lines) >= 60:
+                    break
+
+        result["relevant_lines"] = relevant_lines
+        result["status"] = "ok"
+
+        return result
+
+    except Exception as exc:
+        return {
+            "url": script_url,
+            "status": "error",
+            "error": f"{type(exc).__name__}: {exc}",
+        }
+
+
+def test_candidate(session, url, params=None):
+    """GETのみで、発見した候補URLを安全に調査する。"""
+    try:
+        response = fetch(
+            session,
+            url,
+            params=params or None,
+            headers={"Referer": SCHEDULE_URL},
+        )
+
+        response.encoding = (
+            response.apparent_encoding or "utf-8"
+        )
+
+        content_type = response.headers.get("Content-Type", "")
+        body = response.text or ""
+
+        result = {
+            "requested_url": url,
+            "final_url": response.url,
+            "params": params or {},
+            "status_code": response.status_code,
+            "content_type": content_type,
+            "bytes": len(response.content),
+            "redirects": [
+                {
+                    "status_code": item.status_code,
+                    "url": item.url,
+                    "location": item.headers.get("Location", ""),
+                }
+                for item in response.history
+            ],
+        }
+
+        if "json" in content_type.lower():
+            try:
+                parsed = response.json()
+                result["response_type"] = "json"
+                result["json_top_level_type"] = type(parsed).__name__
+
+                if isinstance(parsed, dict):
+                    result["json_keys"] = list(parsed.keys())
+
+                result["json_sample"] = shorten(parsed, 5000)
+            except Exception:
+                result["response_type"] = "json_parse_failed"
+                result["body_sample"] = body[:1500]
+        else:
+            metrics = inspect_html(body, response.url)
+
+            result["response_type"] = "html"
+            result["title"] = metrics["title"]
+            result["text_length"] = metrics["text_length"]
+            result["body_sample"] = metrics["text_sample"][:1000]
+
+        return result
+
+    except Exception as exc:
+        return {
+            "requested_url": url,
+            "params": params or {},
+            "error": f"{type(exc).__name__}: {exc}",
+        }
 
 
 def main():
-    started = datetime.now(timezone.utc).isoformat()
-
     report = {
-        "diagnostic": "KEIRIN.JP racecard communication investigation",
-        "started_at_utc": started,
+        "diagnostic": "KEIRIN.JP race-list and entry data investigation",
+        "started_at_jst": now_jst().isoformat(),
         "schedule_url": SCHEDULE_URL,
         "json_url": JSON_URL,
+        "schedule": {},
+        "json_source": {},
+        "events_found": 0,
         "events": [],
-        "tests": [],
+        "html_discovery": {},
+        "javascript_files": [],
+        "candidate_tests": [],
         "summary": {},
         "warnings": [
-            "この診断では、正しい送信パラメータを事前に確定していません。",
-            "HTTP 200だけでは出走表取得成功と判定しません。",
-            "診断対象は公開ページへの読み取りリクエストのみです。",
+            "HTTP 200だけでは出走表取得成功と判断しない。",
+            "取得できたデータと推測した情報を区別する。",
+            "update.pyとtoday.jsonは変更しない。",
         ],
     }
 
     session = make_session()
 
-    print("[1/5] 開催日程ページを取得中...")
+    print("=" * 50)
+    print(" KEIRIN.JP 出走表・通信先 一括診断")
+    print("=" * 50)
+
+    # 1. 開催日程ページ
+    print("[1/6] 開催日程ページを解析中...")
 
     try:
-        schedule = get_text(session, SCHEDULE_URL)
+        response = fetch(session, SCHEDULE_URL)
+        response.raise_for_status()
+
         report["schedule"] = {
-            "status_code": schedule.status_code,
-            "final_url": schedule.url,
-            "bytes": len(schedule.content),
+            "status_code": response.status_code,
+            "final_url": response.url,
+            "bytes": len(response.content),
         }
-        schedule.raise_for_status()
+
+        html_info = inspect_html(
+            response.text,
+            response.url,
+        )
+
+        report["html_discovery"] = html_info
+
     except Exception as exc:
         report["schedule_error"] = (
             f"{type(exc).__name__}: {exc}"
         )
-        print("開催日程ページの取得に失敗:", report["schedule_error"])
+        html_info = {"scripts": [], "links": [], "forms": []}
 
-    print("[2/5] 公式JSON JSJ058を取得中...")
+    # 2. 公式JSON
+    print("[2/6] 公式JSON JSJ058を解析中...")
 
     try:
-        payload, json_info = get_json(session, JSON_URL)
+        payload, json_info = fetch_json(session, JSON_URL)
         report["json_source"] = json_info
-        events = find_events(payload)
+
+        event_candidates = find_events(payload)
+        events = [
+            event_info(item)
+            for item in event_candidates
+        ]
+
         report["events_found"] = len(events)
 
+        events.sort(
+            key=event_priority,
+            reverse=True,
+        )
+
+        report["events"] = events[:MAX_EVENTS]
+
+        # JSONの上位構造も保存
+        report["json_structure"] = {
+            "top_level_type": type(payload).__name__,
+            "top_level_keys": (
+                list(payload.keys())
+                if isinstance(payload, dict)
+                else []
+            ),
+        }
+
     except Exception as exc:
-        report["json_error"] = f"{type(exc).__name__}: {exc}"
+        report["json_error"] = (
+            f"{type(exc).__name__}: {exc}"
+        )
         save_json(report)
-        print("公式JSONの取得に失敗:", report["json_error"])
-        print(f"診断結果を保存しました: {OUTPUT}")
+        print("公式JSON取得失敗:", report["json_error"])
         raise SystemExit(1)
 
     print(f"開催候補: {len(events)}")
 
-    # encPrmがあり、開催名または開催コードを持つ候補を優先する。
-    events.sort(
-        key=lambda e: (
-            bool(e.get("encPrm")),
-            bool(e.get("venue")),
-            bool(e.get("venue_code")),
-        ),
-        reverse=True,
-    )
+    # 3. JavaScriptを解析
+    print("[3/6] JavaScriptの通信先を調査中...")
 
-    selected = events[:MAX_EVENTS]
+    script_urls = []
 
-    for event in selected:
-        event_copy = {
-            key: value
-            for key, value in event.items()
-            if key != "raw"
-        }
+    for script in html_info.get("scripts", []):
+        if script.get("src"):
+            script_urls.append(script["src"])
+        elif script.get("inline"):
+            report.setdefault("inline_scripts", []).append({
+                "scan": scan_javascript(script.get("text", "")),
+                "text_sample": script.get("text", "")[:1500],
+            })
 
-        # 公式JSONの内部データを確認する
-        raw = event.get("raw", {})
+    # HTML内に現れたJavaScript参照を重複排除
+    script_urls = list(dict.fromkeys(script_urls))
+    script_urls = script_urls[:MAX_JS_FILES]
 
-        if isinstance(raw, dict):
-            event_copy["raw_keys"] = list(raw.keys())
+    for index, script_url in enumerate(script_urls, 1):
+        print(f"  JS {index}/{len(script_urls)}")
+        js_result = download_javascript(session, script_url)
+        report["javascript_files"].append(js_result)
+        time.sleep(PAUSE_SECONDS)
 
-            # 選手・レース関連データをそのまま記録
-            for key, value in raw.items():
-                if any(
-                    word in key.lower()
-                    for word in (
-                        "sensyu",
-                        "rider",
-                        "race",
-                        "entry",
-                        "member",
-                        "comment",
-                        "line",
-                        "enc",
-                        "req",
-                    )
-                ):
-                    event_copy[f"inspect_{key}"] = value
+    # 4. 発見したリンクを分類
+    print("[4/6] 出走表関連リンクを抽出中...")
 
-        report["events"].append(event_copy) 
+    relevant_links = []
 
-    if not selected:
-        report["summary"] = {
-            "status": "no_event_candidates",
-            "message": "JSJ058内に開催候補を見つけられませんでした。",
-        }
-        save_json(report)
-        print("開催候補がありません。JSON構造を診断ファイルに保存しました。")
-        print(f"保存先: {OUTPUT}")
-        return
-
-    print("[3/5] encPrm / reqprmの有無を確認中...")
-
-    for event in selected:
-        print(
-            f"  {event['venue'] or '(開催名不明)'}"
-            f" / encPrm={'あり' if event['encPrm'] else 'なし'}"
-            f" / reqprm={'あり' if event['reqprm'] else 'なし'}"
+    for link in html_info.get("links", []):
+        combined = (
+            link.get("text", "") + " " + link.get("href", "")
         )
 
-    print("[4/5] GET / POSTとパラメータ形式を比較中...")
+        if re.search(
+            r"出走表|racelist|racecard|raceprogram|"
+            r"sensyu|entry|raceinfo",
+            combined,
+            re.IGNORECASE,
+        ):
+            relevant_links.append(link)
 
-    endpoints = [
-        "/sp/racelist",
-        "/pc/racelist",
-    ]
+    report["relevant_links"] = relevant_links[:150]
 
-    tests_done = 0
+    # JavaScriptから出走表関連URL候補を集約
+    js_url_candidates = []
 
-    for event in selected:
-        payload_candidates = candidate_payloads(event)
-
-        if not payload_candidates:
-            report["tests"].append({
-                "venue": event["venue"],
-                "status": "skipped",
-                "reason": "encPrm / reqprm がありません。",
+    for item in report["javascript_files"]:
+        for match in (
+            item.get("scan", {}).get("race_urls", [])
+            if item.get("scan")
+            else []
+        ):
+            js_url_candidates.append({
+                "source": item.get("url"),
+                "match": match,
             })
-            continue
 
-        referer = SCHEDULE_URL
+    report["javascript_url_candidates"] = js_url_candidates
 
-        for endpoint in endpoints:
-            target_url = urljoin(BASE, endpoint)
+    # 5. 開催JSONの中身をまとめる
+    print("[5/6] 選手データの構造を整理中...")
 
-            for candidate_name, params in payload_candidates:
-                if tests_done >= MAX_TESTS:
-                    break
+    rider_data_events = []
 
-                for method in ("POST", "GET"):
-                    if tests_done >= MAX_TESTS:
-                        break
+    for event in report["events"]:
+        rider_data_events.append({
+            "venue": event["venue"],
+            "venue_code": event["venue_code"],
+            "race_num": event["race_num"],
+            "start_date": event["start_date"],
+            "json_path": event["json_path"],
+            "raw_keys": event["raw_keys"],
+            "sensyuList_type": event["sensyuList_type"],
+            "sensyuList_count": event["sensyuList_count"],
+            "sensyuList_sample": event["sensyuList_sample"],
+            "raw_relevant_fields": event["raw_relevant_fields"],
+        })
 
-                    test_headers = {
-                        "Referer": referer,
-                        "Origin": BASE,
-                    }
+    report["rider_data_inspection"] = rider_data_events
 
-                    try:
-                        if method == "POST":
-                            response = session.post(
-                                target_url,
-                                data=params,
-                                headers=test_headers,
-                                timeout=TIMEOUT,
-                                allow_redirects=True,
-                            )
-                        else:
-                            response = session.get(
-                                target_url,
-                                params=params,
-                                headers=test_headers,
-                                timeout=TIMEOUT,
-                                allow_redirects=True,
-                            )
+    # 6. 出走表候補ページを読み取り検証
+    print("[6/6] 発見した候補URLを検証中...")
 
-                        record = inspect_response(
-                            response,
-                            method,
-                            endpoint,
-                            candidate_name,
-                            params,
-                        )
-                        record["venue"] = event["venue"]
-                        record["venue_code"] = event["venue_code"]
-                        record["race_num_hint"] = event["race_num"]
+    test_urls = []
 
-                        report["tests"].append(record)
+    for link in relevant_links:
+        url = link.get("href", "")
 
-                        metric = record.get("html_metrics") or {}
+        if url.startswith(BASE):
+            test_urls.append(url)
 
-                        print(
-                            f"  {tests_done + 1:02d} "
-                            f"{method:4s} {endpoint:14s} "
-                            f"{candidate_name:22s} "
-                            f"HTTP {record['status_code']} "
-                            f"文字数={metric.get('text_length', 0)} "
-                            f"レース番号={metric.get('race_number_count', 0)} "
-                            f"候補={'YES' if record.get('racecard_candidate') else 'no'}"
-                        )
+    for candidate in js_url_candidates:
+        match = candidate.get("match", "")
+        urls = re.findall(
+            r"""https?://[^"'`\s<>]+|/[^"'`\s<>]+""",
+            match,
+        )
 
-                    except Exception as exc:
-                        report["tests"].append({
-                            "venue": event["venue"],
-                            "venue_code": event["venue_code"],
-                            "method": method,
-                            "endpoint": endpoint,
-                            "candidate": candidate_name,
-                            "params_keys": list(params.keys()),
-                            "error": f"{type(exc).__name__}: {exc}",
-                            "racecard_candidate": False,
-                        })
+        for url in urls:
+            if url.startswith("/"):
+                url = urljoin(BASE, url)
 
-                        print(
-                            f"  {tests_done + 1:02d} "
-                            f"{method} {endpoint} "
-                            f"{candidate_name}: "
-                            f"{type(exc).__name__}: {exc}"
-                        )
+            if url.startswith(BASE):
+                test_urls.append(url)
 
-                    tests_done += 1
-                    time.sleep(PAUSE_SECONDS)
+    test_urls = list(dict.fromkeys(test_urls))[:12]
 
-            if tests_done >= MAX_TESTS:
-                break
+    for url in test_urls:
+        print("  検証:", url[:120])
 
-        if tests_done >= MAX_TESTS:
-            break
+        report["candidate_tests"].append(
+            test_candidate(session, url)
+        )
 
-    print("[5/5] 診断結果を集計中...")
+        time.sleep(PAUSE_SECONDS)
 
-    successes = [
-        item
-        for item in report["tests"]
-        if item.get("racecard_candidate")
-    ]
+    # 集計
+    js_ok = sum(
+        1 for item in report["javascript_files"]
+        if item.get("status") == "ok"
+    )
 
-    report["finished_at_utc"] = datetime.now(timezone.utc).isoformat()
+    events_with_sensyu = sum(
+        1 for event in report["events"]
+        if event.get("sensyuList_count") is not None
+    )
+
+    report["finished_at_jst"] = now_jst().isoformat()
+
     report["summary"] = {
-        "status": (
-            "candidate_found"
-            if successes
-            else "not_confirmed"
-        ),
+        "status": "diagnostic_completed",
         "events_found": len(events),
-        "events_tested": len(selected),
-        "tests_executed": tests_done,
-        "racecard_candidates": len(successes),
-        "successful_candidates": [
-            {
-                "venue": item.get("venue"),
-                "method": item.get("method"),
-                "endpoint": item.get("endpoint"),
-                "candidate": item.get("candidate"),
-                "status_code": item.get("status_code"),
-                "final_url": item.get("final_url"),
-                "race_numbers": (
-                    (item.get("html_metrics") or {}).get("race_numbers", [])
-                ),
-            }
-            for item in successes
-        ],
+        "events_inspected": len(report["events"]),
+        "events_with_sensyuList": events_with_sensyu,
+        "javascript_files_found": len(script_urls),
+        "javascript_files_read": js_ok,
+        "relevant_links_found": len(relevant_links),
+        "javascript_url_candidates": len(js_url_candidates),
+        "candidate_urls_tested": len(report["candidate_tests"]),
+        "confirmed_racecard_url": False,
+        "next_step": (
+            "JSONの選手データ構造とJavaScriptの通信先を確認し、"
+            "実際の出走表取得先を特定する。"
+        ),
     }
 
     save_json(report)
 
-    print("------------------------------------")
-    print("診断完了")
+    print()
+    print("=" * 50)
+    print(" 診断完了")
+    print("=" * 50)
     print(f"開催候補: {len(events)}")
-    print(f"検証リクエスト: {tests_done}")
-    print(f"出走表候補: {len(successes)}")
-    print(f"最終判定: {report['summary']['status']}")
+    print(f"選手データ構造を調査した開催: {events_with_sensyu}")
+    print(f"解析したJavaScript: {js_ok}/{len(script_urls)}")
+    print(f"出走表関連リンク: {len(relevant_links)}")
+    print(f"検証した候補URL: {len(report['candidate_tests'])}")
     print(f"保存先: {OUTPUT}")
-    print("------------------------------------")
+    print("=" * 50)
 
 
 if __name__ == "__main__":
