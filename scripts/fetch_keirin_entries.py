@@ -383,7 +383,67 @@ def extract_assignment(html, variable_name):
 # ============================================================
 # 選手データ
 # ============================================================
+def fetch_official_comments(session, race_encp, referer=None):
+    """
+    KEIRIN.JP公式JSONから選手コメントを取得する。
+    戻り値は車番をキーにした辞書。
+    取得できない場合は空辞書を返す。
+    """
+    url = f"{BASE}/sp/json"
 
+    headers = {
+        "Referer": referer or f"{BASE}/sp/raceschedule",
+        "X-Requested-With": "XMLHttpRequest",
+    }
+
+    comments = {}
+
+    # 公式ページと同じ通信形式で取得する
+    for skbn in ("1",):
+        try:
+            response = session.get(
+                url,
+                params={
+                    "type": "JSJ041",
+                    "encp": race_encp,
+                    "skbn": skbn,
+                },
+                headers=headers,
+                timeout=TIMEOUT,
+            )
+            response.raise_for_status()
+            payload = response.json()
+
+            if not isinstance(payload, dict):
+                continue
+
+            riders = payload.get("sensyuTypeInfo", [])
+
+            if not isinstance(riders, list):
+                continue
+
+            for rider in riders:
+                if not isinstance(rider, dict):
+                    continue
+
+                car_no = str(rider.get("syaban", "")).strip()
+                comment = str(
+                    rider.get("sensyuComment", "")
+                ).strip()
+
+                if car_no and comment:
+                    comments[car_no] = comment
+
+            # JSONが正常に返った場合はここで終了
+            break
+
+        except Exception as e:
+            print(
+                f"  コメント取得エラー: "
+                f"{str(e)[:150]}"
+            )
+
+    return comments
 def normalize_rider(raw):
     """公式JSONの選手データを共通形式にする。"""
 
@@ -604,7 +664,21 @@ def extract_race_data(session, race):
 
         if rider["car_no"] or rider["name"]:
             riders.append(rider)
+    # KEIRIN.JP公式コメントを取得
+    official_comments = fetch_official_comments(
+        session,
+        race["race_encp"],
+        referer=race.get("race_url"),
+    )
 
+    # 取得したコメントを選手データに反映
+    for rider in riders:
+        car_no = str(rider.get("car_no", "")).strip()
+        comment = official_comments.get(car_no, "")
+
+        if comment:
+            rider["comment"] = comment
+            rider["comment_available"] = True
     meta = {}
 
     if isinstance(base_info, dict):
