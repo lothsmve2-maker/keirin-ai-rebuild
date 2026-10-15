@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T16:41:00.040710+09:00",
+  "started_at_jst": "2026-10-15T16:48:36.087685+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -523,7 +523,7 @@
       "json_path": "$.kInfo[4]",
       "venue": "前橋",
       "venue_code": "22",
-      "race_num": "3R",
+      "race_num": "4R",
       "start_date": "20261013",
       "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
       "reqprm": "",
@@ -561,8 +561,8 @@
       "raw_relevant_fields": {
         "jyoName": "前橋",
         "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
-        "denColorFlg": "1",
-        "raceNum": "3R",
+        "denColorFlg": "0",
+        "raceNum": "4R",
         "sensyuList": [
           {
             "sensyuName": "山田　敦也",
@@ -4123,7 +4123,7 @@
     {
       "venue": "前橋",
       "venue_code": "22",
-      "race_num": "3R",
+      "race_num": "4R",
       "start_date": "20261013",
       "json_path": "$.kInfo[4]",
       "raw_keys": [
@@ -4160,8 +4160,8 @@
       "raw_relevant_fields": {
         "jyoName": "前橋",
         "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
-        "denColorFlg": "1",
-        "raceNum": "3R",
+        "denColorFlg": "0",
+        "raceNum": "4R",
         "sensyuList": [
           {
             "sensyuName": "山田　敦也",
@@ -5470,8 +5470,7 @@
           "race_url": "/sp/race",
           "race_param": "a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc"
         }
-      ],
-      "error": "TypeError: inspect_html() missing 1 required positional argument: 'page_url'"
+      ]
     },
     {
       "venue": "豊橋",
@@ -5512,10 +5511,1436 @@
           "race_url": "/sp/race",
           "race_param": "-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk"
         }
-      ],
-      "error": "TypeError: inspect_html() missing 1 required positional argument: 'page_url'"
+      ]
     }
   ],
-  "race_page_tests": [],
-  "finished_at_jst": "2026-10-15T16:41:18.369139+09:00"
+  "race_page_tests": [
+    {
+      "venue": "静岡",
+      "day": "初日(10/15)",
+      "race_no": "1",
+      "race_name": "Ｌ級ガールズ予選（第１走）",
+      "request_path": "/sp/race",
+      "parameter_present": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 65943,
+      "title": "レース情報｜KEIRIN.JP",
+      "text_sample": "レース情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 バック回数の上位2人は、1位赤字、2位青字で表示されます。 競走得点・バック回数の上位2人は、1位赤字、2位青字で表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の対戦成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 印 車 番 選手名 府県 / 級班 前 現 / 脚質 選手コメント 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 1 着 2 着 3 着 着 外 H S 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 期別 年齢 ホーム バンク 失格点 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 同時出走レース一覧 開催 開催日 R 競走種目 成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 着 車 番 選手名 着差 上り 決手 B 個人状況 結果払戻金 短評・展開 ダイジェスト 車番 選手名 短評 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 結果払戻金 短評・展開 ダイジェスト COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "html_inspection": {
+        "title": "レース情報｜KEIRIN.JP",
+        "text_length": 1473,
+        "text_sample": "レース情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 バック回数の上位2人は、1位赤字、2位青字で表示されます。 競走得点・バック回数の上位2人は、1位赤字、2位青字で表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の対戦成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 印 車 番 選手名 府県 / 級班 前 現 / 脚質 選手コメント 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 1 着 2 着 3 着 着 外 H S 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 期別 年齢 ホーム バンク 失格点 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 同時出走レース一覧 開催 開催日 R 競走種目 成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 着 車 番 選手名 着差 上り 決手 B 個人状況 結果払戻金 短評・展開 ダイジェスト 車番 選手名 短評 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 結果払戻金 短評・展開 ダイジェスト COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+          },
+          {
+            "text": "オッズ",
+            "href": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+          },
+          {
+            "text": "結　果",
+            "href": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+          }
+        ],
+        "forms": [],
+        "scripts": [
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/slick/slick.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonLink.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_footer.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0313.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/FSJ0315.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0314_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0314_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327.js",
+            "inline": false
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n$(window).load(function() {\n\tvar flg = 0; \n\tvar widthTckH = window.innerWidth-1;\n\tvar dispFlg = true;\n\tif (flg == 0){\n\t\t$('#ticker_area').css('height','32px');\n\t}\t\n\tif (dispFlg == true) {\n\t\t$('#ticker_area').removeClass('dispoff');\n\t\ttickerdisp(flg,'ticker',widthTckH);\n\t\t$('#shTickerHsep').width(widthTckH);\n\t}\n});\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n     var anaJsonType = \"SJ0315\";\n   "
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_footer.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+            "inline": false
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n$(window).load(function() {\nvar flg = 9; \nfooterloading(flg);\n});\nsfLoadingFinalize();\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n//<![CDATA[\n    var anaxhr = new XMLHttpRequest();\n    var anaURL = location.protocol + '//' + location.host + '/sp' + '/ana';   \n    anaxhr.open(\"GET\", anaURL);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-SCREEN\", screen.width+\"x\"+screen.height);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-URI\", window.location.href);\n    if(\"anaJsonType\" in window){\n      anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-JSONTYPE\", anaJsonType);\n    }\n    anaxhr.send();\n   \n//]]>\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n     var displayingId = \"SJ0315\";\n     var parentFuncId = \"FSJ0315\";\n     var displayingSyoriKbn = 1;\n     var currentPath = \"/sp\";\n     var jsonData = [];\n     jsonData[\"SC0201\"] = {\"C0201data\":{\"imgGradeSrc\":\"/sp/static/img/icon/grade/ico_f2.png\",\"imgGradeAlt\":\"F2\",\"raceName\":\"チャリロト杯\",\"joName\":\"静岡\",\"txtKikan\":\"2026/10/15～2026/10/17\",\"txtEventDate\":\"2026/10/15\",\"txtDaily\":\"(初日)\",\"selRaceNo\":1,\"syumoku\":\"Ｌ級ガ予１\",\"kyori\":1625,\"syukai\":4,\"nameKyosou\":\"Ｉ固\",\"aftStartTime\":\"20:40\",\"aftBetTime\":\"20:37\",\"bfrStartTime\":\"20:40\",\"bfrBetTime\":\"20:37\",\"flgPrevBet\":false,\"cidPrevBetBgcolor\":\"zenjitu_hatubai_bg_color\",\"flgActvKekkaList\":false,\"flgActvSyumoku\":true,\"flgActvOdds\":true,\"flgActvKekka\":false,\"encSelParaR\":\"a1Mwgr0l_Pv5qcmXHYStb1yQe9ZSSIWmBJ_ilNds63T-pXAfHoHlbykvyzLxV9bY\",\"encSelParaK\":\"a1Mwgr0l_Pv5qcmXHYStb1yQe9ZSSIWmBJ_ilNds63T-pXAfHoHlbykvyzLxV9bY\",\"encParaS\":\"a1Mwgr0l_Pv5qcmXHYStb0xZOZC71JQC6bZKtktmqTh1DeoCKWqZiqVzmqdWKcCS\",\"flgKekkaRefund\":false,\"flgRecodes\":true,\"flgRaceCancel\":false,\"flgSyusso\":true,\"nmOddsBtn\":\"オッズ\",\"sKbn\":\"1\",\"gyomuDate\":\"202610151648\",\"aftBetDate\":\"202610152037\"},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0314\"] = {\"narabiyoso\":{\"chushiFlg\":\"2\",\"maxAxixY\":1,\"lineKeitai\":\"ライン無し\",\"lineKeitaiClass\":\"noline\",\"kyoHyoji\":\"false\",\"teikyo\":\"小田競\",\"errFlg\":\"false\",\"ryoikiFlg\":\"true\",\"shaban\":[{\"ichi\":\"3\",\"shaban\":\"1\",\"classname\":\"base_color_1\"},{\"ichi\":\"7\",\"shaban\":\"2\",\"classname\":\"base_color_2\"},{\"ichi\":\"9\",\"shaban\":\"3\",\"classname\":\"base_color_3\"},{\"ichi\":\"1\",\"shaban\":\"4\",\"classname\":\"base_color_4\"},{\"ichi\":\"11\",\"shaban\":\"5\",\"classname\":\"base_color_5\"},{\"ichi\":\"5\",\"shaban\":\"6\",\"classname\":\"base_color_6\"},{\"ichi\":\"13\",\"shaban\":\"7\",\"classname\":\"base_color_7\"}]},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0315\"] = {\"syoriKbn\":\"1\",\"syusouInfoExistFlg\":\"1\",\"charColor1\":\"color_red\",\"charColor2\":\"color_blue\",\"lastUpdateTime\":\"2026/10/15 07:02\\u0026nbsp;更新\",\"yudoSensyuName\":\"飯田　憲司\",\"raceResult1Syaban\":\"1\",\"raceResult2Syaban\":\"2\",\"backCnt1Syaban\":\"2\",\"backCnt2Syaban\":\"4\",\"sensyuTypeInfo\":[{\"syabanBgColorInfo\":\"base_color_1_bk\",\"syabanCharColorInfo\":\"base_color_1\",\"syaban\":\"1\",\"sensyuRegistNo\":\"015853\",\"sensyuName\":\"中島　瞳\",\"huKen\":\"埼　玉\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"56.21\",\"nigeCnt\":\"1\",\"makuriCnt\":\"7\",\"sasiCnt\":\"7\",\"markCnt\":\"1\",\"backCnt\":\"2\"},{\"syabanBgColorInfo\":\"base_color_2_bk\",\"syabanCharColorInfo\":\"base_color_2\",\"syaban\":\"2\",\"sensyuRegistNo\":\"016035\",\"sensyuName\":\"伊藤梨里花\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"53.20\",\"nigeCnt\":\"3\",\"makuriCnt\":\"7\",\"sasiCnt\":\"0\",\"markCnt\":\"2\",\"backCnt\":\"12\"},{\"syabanBgColorInfo\":\"base_color_3_bk\",\"syabanCharColorInfo\":\"base_color_3\",\"syaban\":\"3\",\"sensyuRegistNo\":\"015674\",\"sensyuName\":\"野寺　楓\",\"huKen\":\"静　岡\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"51.23\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"3\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_4_bk\",\"syabanCharColorInfo\":\"base_color_4\",\"syaban\":\"4\",\"sensyuRegistNo\":\"014962\",\"sensyuName\":\"石井　貴子\",\"huKen\":\"東　京\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"逃\",\"heikinTokuten\":\"51.08\",\"nigeCnt\":\"1\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"0\",\"backCnt\":\"8\"},{\"syabanBgColorInfo\":\"base_color_5_bk\",\"syabanCharColorInfo\":\"base_color_5\",\"syaban\":\"5\",\"sensyuRegistNo\":\"015864\",\"sensyuName\":\"田野口佳奈\",\"huKen\":\"香　川\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"48.83\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"0\",\"backCnt\":\"1\"},{\"syabanBgColorInfo\":\"base_color_6_bk\",\"syabanCharColorInfo\":\"base_color_6\",\"syaban\":\"6\",\"sensyuRegistNo\":\"015317\",\"sensyuName\":\"佐伯　智恵\",\"huKen\":\"愛　媛\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"48.40\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"0\",\"markCnt\":\"3\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_7_bk\",\"syabanCharColorInfo\":\"base_color_7\",\"syaban\":\"7\",\"sensyuRegistNo\":\"015146\",\"sensyuName\":\"齊藤　由紀\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"45.76\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"0\",\"markCnt\":\"0\",\"backCnt\":\"0\"}],\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0326\"] = {};\n   "
+          }
+        ],
+        "click_handlers": [
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "結果払戻金",
+            "onclick": "rrResultHaraiGakuClick();"
+          },
+          {
+            "tag": "button",
+            "text": "短評・展開",
+            "onclick": "rrShortCriticismClick();"
+          },
+          {
+            "tag": "button",
+            "text": "ダイジェスト",
+            "onclick": "rrDigestClick();"
+          },
+          {
+            "tag": "button",
+            "text": "結果払戻金",
+            "onclick": "rdResultHaraiGakuClick();"
+          },
+          {
+            "tag": "button",
+            "text": "短評・展開",
+            "onclick": "rdShortCriticismClick();"
+          },
+          {
+            "tag": "button",
+            "text": "ダイジェスト",
+            "onclick": "rdDigestClick();"
+          },
+          {
+            "tag": "button",
+            "text": "競輪トピックス",
+            "onclick": "location.href='/sp/topicslist'"
+          },
+          {
+            "tag": "button",
+            "text": "競輪場／場外車券 売場からのお知らせ",
+            "onclick": "location.href='/sp/rmationlist'"
+          },
+          {
+            "tag": "button",
+            "text": "選手検索",
+            "onclick": "location.href='/sp/racersearch'"
+          },
+          {
+            "tag": "button",
+            "text": "開催日程",
+            "onclick": "location.href='/sp/raceschedule'"
+          },
+          {
+            "tag": "button",
+            "text": "競輪場一覧",
+            "onclick": "location.href='/sp/jyolist'"
+          },
+          {
+            "tag": "button",
+            "text": "場外車券売場一覧",
+            "onclick": "location.href='/sp/jyogailist'"
+          },
+          {
+            "tag": "button",
+            "text": "ランキング",
+            "onclick": "sfRankingLinkClick()"
+          },
+          {
+            "tag": "a",
+            "text": "",
+            "onclick": "sfHelpLinkClick()"
+          }
+        ]
+      },
+      "html_contains_rider_terms": true
+    },
+    {
+      "venue": "豊橋",
+      "day": "初日(10/15)",
+      "race_no": "1",
+      "race_name": "Ｌ級ガールズ予選（第１走）",
+      "request_path": "/sp/race",
+      "parameter_present": true,
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 66014,
+      "title": "レース情報｜KEIRIN.JP",
+      "text_sample": "レース情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 バック回数の上位2人は、1位赤字、2位青字で表示されます。 競走得点・バック回数の上位2人は、1位赤字、2位青字で表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の対戦成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 印 車 番 選手名 府県 / 級班 前 現 / 脚質 選手コメント 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 1 着 2 着 3 着 着 外 H S 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 期別 年齢 ホーム バンク 失格点 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 同時出走レース一覧 開催 開催日 R 競走種目 成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 着 車 番 選手名 着差 上り 決手 B 個人状況 結果払戻金 短評・展開 ダイジェスト 車番 選手名 短評 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 結果払戻金 短評・展開 ダイジェスト COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "html_inspection": {
+        "title": "レース情報｜KEIRIN.JP",
+        "text_length": 1473,
+        "text_sample": "レース情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 バック回数の上位2人は、1位赤字、2位青字で表示されます。 競走得点・バック回数の上位2人は、1位赤字、2位青字で表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の対戦成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 印 車 番 選手名 府県 / 級班 前 現 / 脚質 選手コメント 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 1 着 2 着 3 着 着 外 H S 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 期別 年齢 ホーム バンク 失格点 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 同時出走レース一覧 開催 開催日 R 競走種目 成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 着 車 番 選手名 着差 上り 決手 B 個人状況 結果払戻金 短評・展開 ダイジェスト 車番 選手名 短評 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 結果払戻金 短評・展開 ダイジェスト COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+        "links": [
+          {
+            "text": "出走表 直近4ヶ月",
+            "href": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+          },
+          {
+            "text": "出走表 種目別成績",
+            "href": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+          },
+          {
+            "text": "オッズ",
+            "href": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+          },
+          {
+            "text": "結　果",
+            "href": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+          }
+        ],
+        "forms": [],
+        "scripts": [
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/slick/slick.min.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonLink.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_footer.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SC0201.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0313.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/FSJ0315.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0314_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0314_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0315.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0316.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0317.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0319.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0321.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0322.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0323.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0324.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0325.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0326.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327_v.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327_c.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/SJ0327.js",
+            "inline": false
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n$(window).load(function() {\n\tvar flg = 0; \n\tvar widthTckH = window.innerWidth-1;\n\tvar dispFlg = true;\n\tif (flg == 0){\n\t\t$('#ticker_area').css('height','32px');\n\t}\t\n\tif (dispFlg == true) {\n\t\t$('#ticker_area').removeClass('dispoff');\n\t\ttickerdisp(flg,'ticker',widthTckH);\n\t\t$('#shTickerHsep').width(widthTckH);\n\t}\n});\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n     var anaJsonType = \"SJ0315\";\n   "
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/S_footer.js",
+            "inline": false
+          },
+          {
+            "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+            "inline": false
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n$(window).load(function() {\nvar flg = 9; \nfooterloading(flg);\n});\nsfLoadingFinalize();\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n//<![CDATA[\n    var anaxhr = new XMLHttpRequest();\n    var anaURL = location.protocol + '//' + location.host + '/sp' + '/ana';   \n    anaxhr.open(\"GET\", anaURL);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-SCREEN\", screen.width+\"x\"+screen.height);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-URI\", window.location.href);\n    if(\"anaJsonType\" in window){\n      anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-JSONTYPE\", anaJsonType);\n    }\n    anaxhr.send();\n   \n//]]>\n"
+          },
+          {
+            "src": "",
+            "inline": true,
+            "text": "\n     var displayingId = \"SJ0315\";\n     var parentFuncId = \"FSJ0315\";\n     var displayingSyoriKbn = 1;\n     var currentPath = \"/sp\";\n     var jsonData = [];\n     jsonData[\"SC0201\"] = {\"C0201data\":{\"imgGradeSrc\":\"/sp/static/img/icon/grade/ico_f2.png\",\"imgGradeAlt\":\"F2\",\"raceName\":\"ＷＩＮＴＩＣＫＥＴ杯\",\"joName\":\"豊橋\",\"txtKikan\":\"2026/10/15～2026/10/17\",\"txtEventDate\":\"2026/10/15\",\"txtDaily\":\"(初日)\",\"selRaceNo\":1,\"syumoku\":\"Ｌ級ガ予１\",\"kyori\":1625,\"syukai\":4,\"nameKyosou\":\"Ｉ固\",\"aftStartTime\":\"20:50\",\"aftBetTime\":\"20:47\",\"bfrStartTime\":\"20:50\",\"bfrBetTime\":\"20:47\",\"flgPrevBet\":false,\"cidPrevBetBgcolor\":\"zenjitu_hatubai_bg_color\",\"flgActvKekkaList\":false,\"flgActvSyumoku\":true,\"flgActvOdds\":true,\"flgActvKekka\":false,\"encSelParaR\":\"-rgLOUDZaX8RQ73rPRpBXlwQZFP9qwgIdTxaaw0NBGAkaShLwVcedDF7R52hck_j\",\"encSelParaK\":\"-rgLOUDZaX8RQ73rPRpBXlwQZFP9qwgIdTxaaw0NBGAkaShLwVcedDF7R52hck_j\",\"encParaS\":\"-rgLOUDZaX8RQ73rPRpBXsNE_mpE2AO9PUtXgOgC72_gVzw-und0ZsntPLFj_O8c\",\"flgKekkaRefund\":false,\"flgRecodes\":true,\"flgRaceCancel\":false,\"flgSyusso\":true,\"nmOddsBtn\":\"オッズ\",\"sKbn\":\"1\",\"gyomuDate\":\"202610151648\",\"aftBetDate\":\"202610152047\"},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0314\"] = {\"narabiyoso\":{\"chushiFlg\":\"2\",\"maxAxixY\":1,\"lineKeitai\":\"ライン無し\",\"lineKeitaiClass\":\"noline\",\"kyoHyoji\":\"false\",\"teikyo\":\"中部競輪\",\"errFlg\":\"false\",\"ryoikiFlg\":\"true\",\"shaban\":[{\"ichi\":\"1\",\"shaban\":\"1\",\"classname\":\"base_color_1\"},{\"ichi\":\"5\",\"shaban\":\"2\",\"classname\":\"base_color_2\"},{\"ichi\":\"3\",\"shaban\":\"3\",\"classname\":\"base_color_3\"},{\"ichi\":\"7\",\"shaban\":\"4\",\"classname\":\"base_color_4\"},{\"ichi\":\"9\",\"shaban\":\"5\",\"classname\":\"base_color_5\"},{\"ichi\":\"11\",\"shaban\":\"6\",\"classname\":\"base_color_6\"},{\"ichi\":\"13\",\"shaban\":\"7\",\"classname\":\"base_color_7\"}]},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0315\"] = {\"syoriKbn\":\"1\",\"syusouInfoExistFlg\":\"1\",\"charColor1\":\"color_red\",\"charColor2\":\"color_blue\",\"lastUpdateTime\":\"2026/10/15 07:02\\u0026nbsp;更新\",\"yudoSensyuName\":\"内藤　久文\",\"raceResult1Syaban\":\"1\",\"raceResult2Syaban\":\"2\",\"backCnt1Syaban\":\"1,2\",\"sensyuTypeInfo\":[{\"syabanBgColorInfo\":\"base_color_1_bk\",\"syabanCharColorInfo\":\"base_color_1\",\"syaban\":\"1\",\"sensyuRegistNo\":\"015756\",\"sensyuName\":\"熊谷　芽緯\",\"huKen\":\"岩　手\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"逃\",\"heikinTokuten\":\"55.29\",\"nigeCnt\":\"3\",\"makuriCnt\":\"7\",\"sasiCnt\":\"0\",\"markCnt\":\"1\",\"backCnt\":\"9\"},{\"syabanBgColorInfo\":\"base_color_2_bk\",\"syabanCharColorInfo\":\"base_color_2\",\"syaban\":\"2\",\"sensyuRegistNo\":\"015491\",\"sensyuName\":\"當銘沙恵美\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"54.11\",\"nigeCnt\":\"2\",\"makuriCnt\":\"5\",\"sasiCnt\":\"3\",\"markCnt\":\"2\",\"backCnt\":\"9\"},{\"syabanBgColorInfo\":\"base_color_3_bk\",\"syabanCharColorInfo\":\"base_color_3\",\"syaban\":\"3\",\"sensyuRegistNo\":\"015865\",\"sensyuName\":\"豊田　美香\",\"huKen\":\"徳　島\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"51.83\",\"nigeCnt\":\"0\",\"makuriCnt\":\"1\",\"sasiCnt\":\"2\",\"markCnt\":\"3\",\"backCnt\":\"1\"},{\"syabanBgColorInfo\":\"base_color_4_bk\",\"syabanCharColorInfo\":\"base_color_4\",\"syaban\":\"4\",\"sensyuRegistNo\":\"015027\",\"sensyuName\":\"長澤　彩\",\"huKen\":\"福　岡\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"50.95\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"1\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_5_bk\",\"syabanCharColorInfo\":\"base_color_5\",\"syaban\":\"5\",\"sensyuRegistNo\":\"016040\",\"sensyuName\":\"アニー紗世\",\"huKen\":\"和歌山\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"48.29\",\"nigeCnt\":\"0\",\"makuriCnt\":\"2\",\"sasiCnt\":\"0\",\"markCnt\":\"0\",\"backCnt\":\"2\"},{\"syabanBgColorInfo\":\"base_color_6_bk\",\"syabanCharColorInfo\":\"base_color_6\",\"syaban\":\"6\",\"sensyuRegistNo\":\"015759\",\"sensyuName\":\"星野　しほ\",\"huKen\":\"東　京\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"47.39\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"0\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_7_bk\",\"syabanCharColorInfo\":\"base_color_7\",\"syaban\":\"7\",\"sensyuRegistNo\":\"015581\",\"sensyuName\":\"刈込　奈那\",\"ketujyouTuikaHojyuColorInfo\":\"color_blue\",\"ketujyouTuikaHojyu\":\"追加\",\"huKen\":\"千　葉\",\"prevKyuhan\":\"L1\",\"kyuhan\":\"L1\",\"kyakusitu\":\"逃\",\"heikinTokuten\":\"45.33\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"0\",\"markCnt\":\"0\",\"backCnt\":\"2\"}],\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0326\"] = {};\n   "
+          }
+        ],
+        "click_handlers": [
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "基本情報",
+            "onclick": "btnClickOfFrame('SJ0315')"
+          },
+          {
+            "tag": "button",
+            "text": "直近成績",
+            "onclick": "btnClickOfFrame('SJ0316')"
+          },
+          {
+            "tag": "button",
+            "text": "対戦成績",
+            "onclick": "btnClickOfFrame('SJ0317')"
+          },
+          {
+            "tag": "button",
+            "text": "当場成績",
+            "onclick": "btnClickOfFrame('SJ0319')"
+          },
+          {
+            "tag": "button",
+            "text": "連対率 ギヤ倍数",
+            "onclick": "btnClickOfFrame('SJ0322')"
+          },
+          {
+            "tag": "button",
+            "text": "着度数 H·S回数",
+            "onclick": "btnClickOfFrame('SJ0323')"
+          },
+          {
+            "tag": "button",
+            "text": "選手情報",
+            "onclick": "btnClickOfFrame('SJ0324')"
+          },
+          {
+            "tag": "button",
+            "text": "予想情報",
+            "onclick": "btnClickOfFrame('SJ0321')"
+          },
+          {
+            "tag": "button",
+            "text": "結果払戻金",
+            "onclick": "rrResultHaraiGakuClick();"
+          },
+          {
+            "tag": "button",
+            "text": "短評・展開",
+            "onclick": "rrShortCriticismClick();"
+          },
+          {
+            "tag": "button",
+            "text": "ダイジェスト",
+            "onclick": "rrDigestClick();"
+          },
+          {
+            "tag": "button",
+            "text": "結果払戻金",
+            "onclick": "rdResultHaraiGakuClick();"
+          },
+          {
+            "tag": "button",
+            "text": "短評・展開",
+            "onclick": "rdShortCriticismClick();"
+          },
+          {
+            "tag": "button",
+            "text": "ダイジェスト",
+            "onclick": "rdDigestClick();"
+          },
+          {
+            "tag": "button",
+            "text": "競輪トピックス",
+            "onclick": "location.href='/sp/topicslist'"
+          },
+          {
+            "tag": "button",
+            "text": "競輪場／場外車券 売場からのお知らせ",
+            "onclick": "location.href='/sp/rmationlist'"
+          },
+          {
+            "tag": "button",
+            "text": "選手検索",
+            "onclick": "location.href='/sp/racersearch'"
+          },
+          {
+            "tag": "button",
+            "text": "開催日程",
+            "onclick": "location.href='/sp/raceschedule'"
+          },
+          {
+            "tag": "button",
+            "text": "競輪場一覧",
+            "onclick": "location.href='/sp/jyolist'"
+          },
+          {
+            "tag": "button",
+            "text": "場外車券売場一覧",
+            "onclick": "location.href='/sp/jyogailist'"
+          },
+          {
+            "tag": "button",
+            "text": "ランキング",
+            "onclick": "sfRankingLinkClick()"
+          },
+          {
+            "tag": "a",
+            "text": "",
+            "onclick": "sfHelpLinkClick()"
+          }
+        ]
+      },
+      "html_contains_rider_terms": true
+    }
+  ],
+  "finished_at_jst": "2026-10-15T16:48:54.852514+09:00"
 }
