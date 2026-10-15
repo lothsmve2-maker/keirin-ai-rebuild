@@ -1,57 +1,70 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-15",
-  "started_at": "2026-10-15T19:53:42.561548+09:00",
-  "finished_at": "2026-10-15T19:54:01.867263+09:00",
+  "started_at": "2026-10-15T20:17:43.911479+09:00",
+  "finished_at": "2026-10-15T20:18:00.459628+09:00",
   "status": "ok",
   "events_found": 7,
+  "events_checked": 0,
+  "events_with_races": 2,
   "races_found": 18,
+  "races_checked": 18,
   "races_fetched": 18,
+  "races_excluded_other_date": 0,
+  "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 126,
+  "commented_rider_count": 0,
   "events": [
     {
       "venue": "奈良",
       "venue_code": "53",
       "start_date": "20261014",
-      "race_count": 0
+      "race_count": 0,
+      "status": "レース一覧0件"
     },
     {
       "venue": "玉野",
       "venue_code": "61",
       "start_date": "20261013",
-      "race_count": 0
+      "race_count": 0,
+      "status": "レース一覧0件"
     },
     {
       "venue": "別府",
       "venue_code": "86",
       "start_date": "20261014",
-      "race_count": 0
+      "race_count": 0,
+      "status": "レース一覧0件"
     },
     {
       "venue": "青森",
       "venue_code": "12",
       "start_date": "20261014",
-      "race_count": 0
+      "race_count": 0,
+      "status": "レース一覧0件"
     },
     {
       "venue": "前橋",
       "venue_code": "22",
       "start_date": "20261013",
-      "race_count": 0
+      "race_count": 0,
+      "status": "レース一覧0件"
     },
     {
       "venue": "静岡",
       "venue_code": "38",
       "start_date": "20261015",
-      "race_count": 9
+      "race_count": 9,
+      "status": "レース一覧取得済み"
     },
     {
       "venue": "豊橋",
       "venue_code": "45",
       "start_date": "20261015",
-      "race_count": 9
+      "race_count": 9,
+      "status": "レース一覧取得済み"
     }
   ],
   "races": [
@@ -67,39 +80,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "20:40",
       "distance_m": "1625",
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": "3",
+          "position": 3,
           "car_no": "1"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "2"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "3"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "4"
         },
         {
-          "position": "11",
+          "position": 11,
           "car_no": "5"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "6"
         },
         {
-          "position": "13",
+          "position": 13,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -115,7 +131,8 @@
           "sashi": "7",
           "mark": "1",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -131,7 +148,8 @@
           "sashi": "0",
           "mark": "2",
           "back": "12",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -147,7 +165,8 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -163,7 +182,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "8",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -179,7 +199,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -195,7 +216,8 @@
           "sashi": "0",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -211,14 +233,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -232,39 +262,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:00",
       "distance_m": "1625",
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": "7",
+          "position": 7,
           "car_no": "1"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "2"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "3"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "11",
+          "position": 11,
           "car_no": "6"
         },
         {
-          "position": "13",
+          "position": 13,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -280,7 +313,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "11",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -296,7 +330,8 @@
           "sashi": "3",
           "mark": "4",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -312,7 +347,8 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -328,7 +364,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -344,7 +381,8 @@
           "sashi": "0",
           "mark": "2",
           "back": "3",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -360,7 +398,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -376,14 +415,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -397,39 +444,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:20",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "6",
+          "position": 6,
           "car_no": "1"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "2"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "3"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "4"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "5"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "6"
         },
         {
-          "position": "4",
+          "position": 4,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -445,7 +495,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "17",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -461,7 +512,8 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -477,7 +529,8 @@
           "sashi": "4",
           "mark": "1",
           "back": "12",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -493,7 +546,8 @@
           "sashi": "3",
           "mark": "4",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -509,7 +563,8 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -525,7 +580,8 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -541,14 +597,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -562,39 +626,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:40",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "4",
+          "position": 4,
           "car_no": "1"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "2"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "3"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "4"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "5"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "6"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -610,7 +677,8 @@
           "sashi": "5",
           "mark": "0",
           "back": "6",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -626,7 +694,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "19",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -642,7 +711,8 @@
           "sashi": "7",
           "mark": "2",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -658,7 +728,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -674,7 +745,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -690,7 +762,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -706,14 +779,22 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -727,39 +808,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:00",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "2"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "3"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "6"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -775,7 +859,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "6",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -791,7 +876,8 @@
           "sashi": "0",
           "mark": "1",
           "back": "11",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -807,7 +893,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -823,7 +910,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -839,7 +927,8 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -855,7 +944,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "8",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -871,14 +961,22 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -892,39 +990,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:20",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "2"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "3"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "4"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "5"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "6"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -940,7 +1041,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "10",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -956,7 +1058,8 @@
           "sashi": "4",
           "mark": "5",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -972,7 +1075,8 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -988,7 +1092,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "5",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1004,7 +1109,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1020,7 +1126,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1036,14 +1143,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -1057,39 +1172,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:40",
       "distance_m": "1625",
       "line_type": "四分戦",
       "line_order": [
         {
-          "position": "5",
+          "position": 5,
           "car_no": "1"
         },
         {
-          "position": "4",
+          "position": 4,
           "car_no": "2"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "3"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "4"
         },
         {
-          "position": "10",
+          "position": 10,
           "car_no": "5"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "6"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1105,7 +1223,8 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1121,7 +1240,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "16",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1137,7 +1257,8 @@
           "sashi": "7",
           "mark": "2",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1153,7 +1274,8 @@
           "sashi": "1",
           "mark": "4",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1169,7 +1291,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1185,7 +1308,8 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1201,14 +1325,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "13",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -1222,39 +1354,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "23:00",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "2"
         },
         {
-          "position": "4",
+          "position": 4,
           "car_no": "3"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "4"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "5"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "6"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1270,7 +1405,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "18",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1286,7 +1422,8 @@
           "sashi": "6",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1302,7 +1439,8 @@
           "sashi": "3",
           "mark": "2",
           "back": "8",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1318,7 +1456,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1334,7 +1473,8 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1350,7 +1490,8 @@
           "sashi": "0",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1366,14 +1507,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "7",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA"
+      "http_status": 200
     },
     {
       "venue": "静岡",
@@ -1387,39 +1536,42 @@
       "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU",
       "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "23:20",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "2"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "3"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "4"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "5"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "6"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1435,7 +1587,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "10",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1451,7 +1604,8 @@
           "sashi": "9",
           "mark": "1",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1467,7 +1621,8 @@
           "sashi": "7",
           "mark": "5",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1483,7 +1638,8 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1499,7 +1655,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "6",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1515,7 +1672,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1531,14 +1689,22 @@
           "sashi": "2",
           "mark": "0",
           "back": "8",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -1552,39 +1718,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "20:50",
       "distance_m": "1625",
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "2"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "3"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "11",
+          "position": 11,
           "car_no": "6"
         },
         {
-          "position": "13",
+          "position": 13,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1600,7 +1769,8 @@
           "sashi": "0",
           "mark": "1",
           "back": "9",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1616,7 +1786,8 @@
           "sashi": "3",
           "mark": "2",
           "back": "9",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1632,7 +1803,8 @@
           "sashi": "2",
           "mark": "3",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1648,7 +1820,8 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1664,7 +1837,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1680,7 +1854,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1696,14 +1871,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -1717,39 +1900,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:10",
       "distance_m": "1625",
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "2"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "3"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "11",
+          "position": 11,
           "car_no": "6"
         },
         {
-          "position": "13",
+          "position": 13,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1765,7 +1951,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "10",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1781,7 +1968,8 @@
           "sashi": "1",
           "mark": "4",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1797,7 +1985,8 @@
           "sashi": "1",
           "mark": "3",
           "back": "7",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1813,7 +2002,8 @@
           "sashi": "0",
           "mark": "1",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1829,7 +2019,8 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -1845,7 +2036,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -1861,14 +2053,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -1882,39 +2082,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:30",
       "distance_m": "1625",
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": "2",
+          "position": 2,
           "car_no": "1"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "2"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "3"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "4"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "5"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "6"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -1930,7 +2133,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -1946,7 +2150,8 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -1962,7 +2167,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -1978,7 +2184,8 @@
           "sashi": "4",
           "mark": "1",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -1994,7 +2201,8 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2010,7 +2218,8 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2026,14 +2235,22 @@
           "sashi": "2",
           "mark": "0",
           "back": "5",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2047,39 +2264,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "21:50",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "2",
+          "position": 2,
           "car_no": "1"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "2"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "3"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "4"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "5"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "6"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2095,7 +2315,8 @@
           "sashi": "4",
           "mark": "0",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2111,7 +2332,8 @@
           "sashi": "0",
           "mark": "2",
           "back": "4",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2127,7 +2349,8 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2143,7 +2366,8 @@
           "sashi": "4",
           "mark": "1",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2159,7 +2383,8 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2175,7 +2400,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "3",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2191,14 +2417,22 @@
           "sashi": "1",
           "mark": "0",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2212,39 +2446,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:10",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "5",
+          "position": 5,
           "car_no": "1"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "2"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "3"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "4"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "5"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "6"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2260,7 +2497,8 @@
           "sashi": "2",
           "mark": "1",
           "back": "3",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2276,7 +2514,8 @@
           "sashi": "1",
           "mark": "5",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2292,7 +2531,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2308,7 +2548,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2324,7 +2565,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "12",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2340,7 +2582,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2356,14 +2599,22 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2377,39 +2628,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:30",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "2"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "3"
         },
         {
-          "position": "8",
+          "position": 8,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "6"
         },
         {
-          "position": "4",
+          "position": 4,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2425,7 +2679,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "11",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2441,7 +2696,8 @@
           "sashi": "2",
           "mark": "8",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2457,7 +2713,8 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2473,7 +2730,8 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2489,7 +2747,8 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2505,7 +2764,8 @@
           "sashi": "3",
           "mark": "0",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2521,14 +2781,22 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2542,39 +2810,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "22:50",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "1",
+          "position": 1,
           "car_no": "1"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "2"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "3"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "4"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "5"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "6"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2590,7 +2861,8 @@
           "sashi": "1",
           "mark": "1",
           "back": "14",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2606,7 +2878,8 @@
           "sashi": "6",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2622,7 +2895,8 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2638,7 +2912,8 @@
           "sashi": "7",
           "mark": "2",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2654,7 +2929,8 @@
           "sashi": "2",
           "mark": "5",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2670,7 +2946,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2686,14 +2963,22 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2707,39 +2992,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "23:10",
       "distance_m": "1625",
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": "2",
+          "position": 2,
           "car_no": "1"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "2"
         },
         {
-          "position": "6",
+          "position": 6,
           "car_no": "3"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "4"
         },
         {
-          "position": "3",
+          "position": 3,
           "car_no": "5"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "6"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2755,7 +3043,8 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2771,7 +3060,8 @@
           "sashi": "0",
           "mark": "1",
           "back": "20",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2787,7 +3077,8 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2803,7 +3094,8 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2819,7 +3111,8 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -2835,7 +3128,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "8",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -2851,14 +3145,22 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg"
+      "http_status": 200
     },
     {
       "venue": "豊橋",
@@ -2872,39 +3174,42 @@
       "race_encp": "-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0",
       "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
       "race_date_display": "2026/10/15",
+      "verified_race_date": "2026-10-15",
       "start_time": "23:30",
       "distance_m": "1625",
       "line_type": "四分戦",
       "line_order": [
         {
-          "position": "4",
+          "position": 4,
           "car_no": "1"
         },
         {
-          "position": "7",
+          "position": 7,
           "car_no": "2"
         },
         {
-          "position": "1",
+          "position": 1,
           "car_no": "3"
         },
         {
-          "position": "5",
+          "position": 5,
           "car_no": "4"
         },
         {
-          "position": "9",
+          "position": 9,
           "car_no": "5"
         },
         {
-          "position": "2",
+          "position": 2,
           "car_no": "6"
         },
         {
-          "position": "10",
+          "position": 10,
           "car_no": "7"
         }
       ],
+      "lines": [],
+      "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
         {
           "car_no": "1",
@@ -2920,7 +3225,8 @@
           "sashi": "6",
           "mark": "3",
           "back": "1",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "2",
@@ -2936,7 +3242,8 @@
           "sashi": "9",
           "mark": "4",
           "back": "2",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "3",
@@ -2952,7 +3259,8 @@
           "sashi": "3",
           "mark": "1",
           "back": "6",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "4",
@@ -2968,7 +3276,8 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "5",
@@ -2984,7 +3293,8 @@
           "sashi": "0",
           "mark": "0",
           "back": "12",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "6",
@@ -3000,7 +3310,8 @@
           "sashi": "1",
           "mark": "0",
           "back": "10",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         },
         {
           "car_no": "7",
@@ -3016,15 +3327,35 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": ""
+          "comment": "",
+          "comment_available": false
         }
       ],
       "rider_count": 7,
+      "validation": {
+        "duplicate_car_numbers": false,
+        "duplicate_line_numbers": false,
+        "missing_line_numbers": [],
+        "unknown_line_numbers": [],
+        "rider_count_valid": true
+      },
+      "comment_count": 0,
       "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
-      "http_status": 200,
-      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0"
+      "http_status": 200
     }
   ],
-  "errors": []
+  "errors": [],
+  "warnings": [],
+  "summary": {
+    "target_date": "2026-10-15",
+    "fetched_by_venue": {
+      "静岡": 9,
+      "豊橋": 9
+    },
+    "race_count": 18,
+    "rider_count": 126,
+    "commented_rider_count": 0,
+    "comment_missing_rider_count": 126
+  }
 }
