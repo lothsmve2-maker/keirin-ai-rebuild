@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T13:02:31.949066+09:00",
+  "started_at_jst": "2026-10-15T15:17:29.336462+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -13,7 +13,7 @@
     "final_url": "https://keirin.jp/sp/json?type=JSJ058",
     "status_code": 200,
     "content_type": "application/json;charset=utf-8",
-    "bytes": 10786
+    "bytes": 10788
   },
   "events_found": 7,
   "events": [
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "7R",
+      "race_num": "11R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -227,8 +227,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "0",
-        "raceNum": "7R",
+        "denColorFlg": "1",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -439,7 +439,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "6R",
+      "race_num": "11R",
       "start_date": "20261013",
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
@@ -478,7 +478,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "6R",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -3775,7 +3775,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "7R",
+      "race_num": "11R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -3812,8 +3812,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "0",
-        "raceNum": "7R",
+        "denColorFlg": "1",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -4019,7 +4019,7 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "6R",
+      "race_num": "11R",
       "start_date": "20261013",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -4057,7 +4057,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "6R",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -4182,5 +4182,1101 @@
     }
   ],
   "post_candidates_found": 78,
-  "finished_at_jst": "2026-10-15T13:02:44.482562+09:00"
+  "followup_javascript_files": [
+    {
+      "url": "https://keirin.jp/sp/static/js/commonJSON.js",
+      "final_url": "https://keirin.jp/sp/static/js/commonJSON.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 5383,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [
+          "'/json'"
+        ],
+        "parameter_names": [
+          "reqprm"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          ".ajax("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "reqprm",
+          "position": 3881,
+          "context": "')[1] == errpath.split('/')[2] ) {\nerrpath = errpath.slice(('/'+errpath.split('/')[1]).length);\n}\nerrurl = errurl + errpath;\nif( errprm ) {\nerrurl = errurl + \"?PRM=\" + errprm;\n}\nlocation.href = errurl;\n},\nmakePcUpdatePage: function(errDivId, errmsg, reqprm, cbfunc) {\nvar btnid=errDivId+\"RetryBtn\";\nprmSet[btnid] = reqprm;\n$('#'+errDivId).empty();\n$('#'+errDivId).addClass('al-c')\n.append($('<span />').addClass('error_msg_fsz').append(!errmsg ? com.emptyErrMsg : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 3946,
+          "context": "rrpath.split('/')[1]).length);\n}\nerrurl = errurl + errpath;\nif( errprm ) {\nerrurl = errurl + \"?PRM=\" + errprm;\n}\nlocation.href = errurl;\n},\nmakePcUpdatePage: function(errDivId, errmsg, reqprm, cbfunc) {\nvar btnid=errDivId+\"RetryBtn\";\nprmSet[btnid] = reqprm;\n$('#'+errDivId).empty();\n$('#'+errDivId).addClass('al-c')\n.append($('<span />').addClass('error_msg_fsz').append(!errmsg ? com.emptyErrMsg : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]);});\n},\nmakeSpUpdatePage: function(errDivId, errmsg, reqprm, cbf"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 4341,
+          "context": "g : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]);});\n},\nmakeSpUpdatePage: function(errDivId, errmsg, reqprm, cbfunc) {\nvar btnid=errDivId+\"RetryBtn\";\nprmSet[btnid] = reqprm;\n$('#'+errDivId).empty();\n$('#'+errDivId).addClass('al-c')\n.append($('<span />').addClass('error_msg_fsz').append(!errmsg ? com.emptyErrMsg : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 4406,
+          "context": "s('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]);});\n},\nmakeSpUpdatePage: function(errDivId, errmsg, reqprm, cbfunc) {\nvar btnid=errDivId+\"RetryBtn\";\nprmSet[btnid] = reqprm;\n$('#'+errDivId).empty();\n$('#'+errDivId).addClass('al-c')\n.append($('<span />').addClass('error_msg_fsz').append(!errmsg ? com.emptyErrMsg : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button[id='+btnid+']').on('click',function(arg){cbfunc(prmSet[(this.id)]);});\n},\nrequestErrorView: function(result, status, error, respon"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 277,
+          "context": "url: location.protocol + '//' + location.host + '/' + $($('script[src$=\"commonJSON.js\"]')[0]).attr('src').split('/')[1] + '/json',\ncrossDomain: true\n}\n};\nfunction createAnalyzeInfo(jsonType) {\nvar targetJsonType = jsonType;\nvar targetAnaUri = window.location.href;\nif(\"anaOddsType\" in window) {\nif(anaOddsType != \"\") {\ntargetJsonType = anaOddsType;\n}\n}\nif(\"anaUri\" in window) {\ntargetAnaUri = anaUri;\n}\nreturn {\n\"X-KEIRINJP-ANA-SCREEN\"    : screen.width+\"x\"+screen.height,\n\"X-KEIRINJP-ANA-URI\"       : targetAnaUri,\n\"X-KEIRINJP-ANA-JSONTYPE\"  : targetJsonType\n};\n};\n(function($, config, undefined) {\n'use strict';\nvar _self = this;\nvar options = {\nfireTapThreshol"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 3809,
+          "context": "indexOf(\"/sp/\") != -1 ) {\nerrpath = com.spErrUrl;\n}\nif( errpath.split('/')[1] == errpath.split('/')[2] ) {\nerrpath = errpath.slice(('/'+errpath.split('/')[1]).length);\n}\nerrurl = errurl + errpath;\nif( errprm ) {\nerrurl = errurl + \"?PRM=\" + errprm;\n}\nlocation.href = errurl;\n},\nmakePcUpdatePage: function(errDivId, errmsg, reqprm, cbfunc) {\nvar btnid=errDivId+\"RetryBtn\";\nprmSet[btnid] = reqprm;\n$('#'+errDivId).empty();\n$('#'+errDivId).addClass('al-c')\n.append($('<span />').addClass('error_msg_fsz').append(!errmsg ? com.emptyErrMsg : errmsg))\n.append($('<br />'))\n.append($('<button />').addClass('btn onbtn jupdbtn').attr('id',btnid).append('更　新'));\n$('button["
+        }
+      ],
+      "form_target_hints": [
+        "/sp/pc/error",
+        "/sp/sp/error"
+      ],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/commonLoad.js",
+      "final_url": "https://keirin.jp/sp/static/js/commonLoad.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 1683,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/commonLink.js",
+      "final_url": "https://keirin.jp/sp/static/js/commonLink.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 368,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/commonSubmit.js",
+      "final_url": "https://keirin.jp/sp/static/js/commonSubmit.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 851,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [
+          "submit("
+        ],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 4,
+          "context": "var commonSubmit = {\nformPost: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"post\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().r"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 21,
+          "context": "var commonSubmit = {\nformPost: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"post\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nretu"
+        },
+        {
+          "matched_pattern": "formGet",
+          "position": 436,
+          "context": ");\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nreturn;\n},\nformGet: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"get\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nretur"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SC0201_c.js",
+      "final_url": "https://keirin.jp/sp/static/js/SC0201_c.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 453,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "encp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "encp",
+          "position": 90,
+          "context": "var hhController = {\nJSON_REQ_ID: \"JSJ035\",\ninit: function() {\n},\nhhJSONRequest: function(encp) {\nvar result = null;\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(hhController.JSON_REQ_ID, params)\n.done(function(result) {\nhhView.hhDrawJSONData(result, params);\n});\n},\nhhJSONretry: function(cbPrm) {\nvar result = null;\nCom.getRequestGet(hhController.JSON_REQ_ID, cbPrm)\n.done(function(result) {\nhhView.hhDrawJSONData(result, cbPrm);\n});\n}\n};\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SC0201_v.js",
+      "final_url": "https://keirin.jp/sp/static/js/SC0201_v.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 6711,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "reqPrm",
+          "reqprm",
+          "encp",
+          "disp",
+          "EncPrm",
+          "encP"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "encPrm",
+          "position": 1169,
+          "context": "(\"value\", maindata.C0201data.encSelParaR));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncSelK\").attr(\"value\", maindata.C0201data.encSelParaK));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncPrmS\").attr(\"value\", maindata.C0201data.encParaS));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgKekkaRefund\").attr(\"value\", maindata.C0201data.flgKekkaRefund));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgRecodes\").attr(\"value\", maindata.C0201data.flgRecodes));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhF"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 293,
+          "context": "SONData: function(maindata, _reqParam) {\nif ( !maindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 311,
+          "context": "maindata, _reqParam) {\nif ( !maindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').add"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 349,
+          "context": ") {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').r"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 374,
+          "context": "\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhh"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 414,
+          "context": "0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParam"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 432,
+          "context": "JSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParams').empty();\n$('#h"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 464,
+          "context": "maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParams').empty();\n$('#hhParams').append($('<input />')."
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 483,
+          "context": "= -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParams').empty();\n$('#hhParams').append($('<input />').attr(\"type\", \"hidde"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1169,
+          "context": "(\"value\", maindata.C0201data.encSelParaR));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncSelK\").attr(\"value\", maindata.C0201data.encSelParaK));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncPrmS\").attr(\"value\", maindata.C0201data.encParaS));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgKekkaRefund\").attr(\"value\", maindata.C0201data.flgKekkaRefund));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgRecodes\").attr(\"value\", maindata.C0201data.flgRecodes));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"h"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1212,
+          "context": "\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncSelK\").attr(\"value\", maindata.C0201data.encSelParaK));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncPrmS\").attr(\"value\", maindata.C0201data.encParaS));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgKekkaRefund\").attr(\"value\", maindata.C0201data.flgKekkaRefund));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgRecodes\").attr(\"value\", maindata.C0201data.flgRecodes));\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhFlgRaceCancel\").attr(\"value\", maindata.C02"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 246,
+          "context": "var hhView = {\nHDNKEY_ID: 'JSJ035',\nhhDrawJSONData: function(maindata, _reqParam) {\nif ( !maindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivEr"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 286,
+          "context": "hhDrawJSONData: function(maindata, _reqParam) {\nif ( !maindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 329,
+          "context": "m) {\nif ( !maindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$("
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 341,
+          "context": "aindata ) {\nCom.makePcUpdatePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucAr"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 367,
+          "context": "tePage(\"hhDivErrArea\",\"\",_reqParam,function(arg0){hhController.hhJSONretry(arg0);});\n} else if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff'"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 456,
+          "context": "se if ( maindata.resultCd == -1 ) {\nvar reqPrm = [];\nif( !_reqParam && maindata.reqprm.encp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParams').empty();\n$('#hhParams').append($('<input"
+        },
+        {
+          "matched_pattern": "reqprm",
+          "position": 544,
+          "context": "ncp != null && (\"encp\" in maindata.reqprm) ) {\nreqPrm[\"encp\"] = maindata.reqprm.encp;\n} else if( _reqParam && _reqParam.encp != null && (\"encp\" in _reqParam) ) {\nreqPrm[\"encp\"] = _reqParam.encp;\n}\nCom.makePcUpdatePage(\"hhDivErrArea\",maindata.message,reqPrm,function(arg0){hhController.hhJSONretry(arg0);});\n$('#hhDivSucArea').addClass('dispoff');\n$('#hhDivErrArea').removeClass('dispoff');\n} else {\n$('#hhDivErrArea').addClass('dispoff');\n$('#hhDivSucArea').removeClass('dispoff');\nhhView.makeDataView(maindata);\n$('#hhParams').empty();\n$('#hhParams').append($('<input />').attr(\"type\", \"hidden\").attr(\"id\", \"hhEncSelR\").attr(\"value\", maindata.C0201data.en"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SC0201.js",
+      "final_url": "https://keirin.jp/sp/static/js/SC0201.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 6242,
+      "scan": {
+        "race_urls": [
+          "'#hhbtnRaceProgram'",
+          "'hhbtnRaceProgram'"
+        ],
+        "json_urls": [],
+        "parameter_names": [
+          "EncPrm",
+          "encp",
+          "disp",
+          "Disp"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 1203,
+          "context": "ength){\nparams[\"voteBackFlg\"] = $('#voteBackFlg').val();\n}\n}\nswitch (fid) {\ncase 'SJ0301':\ncase 'SJ0304':\npara = hhGetEncFstK();\nparams[\"encp\"] = para;\ncase 'SJ0305':\ncase 'SJ0306':\nparams[\"disp\"] = fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| "
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 1389,
+          "context": "ms[\"disp\"] = fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(parentFuncId) !== \"undefined\" && parentFuncId == \"FSJ0315\")){\nparams[\"disp\"] = displayingId;\nif( displayingId == \"SJ0315\" ) {\nparams[\"skbn\"] = displayingSyoriKbn;\n}\nparams[\"hojiV"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 1827,
+          "context": "\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(parentFuncId) !== \"undefined\" && parentFuncId == \"FSJ0315\")){\nparams[\"disp\"] = displayingId;\nif( displayingId == \"SJ0315\" ) {\nparams[\"skbn\"] = displayingSyoriKbn;\n}\nparams[\"hojiVoteMode\"] = hojiVoteMode;\ncommonSubmit.formGet(senisakiUrl,params,\"_self\");\n} else {\nif( displayingId == \"ST0203\" ) {\nparams[\"disp\"] = $('#UNQ_hidden_01').val();\nparams[\"hoji\"] = $('#UNQ_hidden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\n"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 2081,
+          "context": "onSubmit.formGet(senisakiUrl,params,\"_self\");\n} else {\nif( displayingId == \"ST0203\" ) {\nparams[\"disp\"] = $('#UNQ_hidden_01').val();\nparams[\"hoji\"] = $('#UNQ_hidden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPo"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 2239,
+          "context": "idden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#h"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 2474,
+          "context": "\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#hhKaisaihi').addClass('dispoff');\n$('#hhNitiji').addClass('dispoff');\nhhChgPattern(1);\n$(\"body\").removeClass($(\"body\").attr('data-zbg-color'));\n$('#divVote').addClass('dispoff');\nbreak;\ncase 3:\ncase 4:\n$('#hhKikan').addClass('dispoff');"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 1216,
+          "context": "s[\"voteBackFlg\"] = $('#voteBackFlg').val();\n}\n}\nswitch (fid) {\ncase 'SJ0301':\ncase 'SJ0304':\npara = hhGetEncFstK();\nparams[\"encp\"] = para;\ncase 'SJ0305':\ncase 'SJ0306':\nparams[\"disp\"] = fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(p"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 1402,
+          "context": "fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(parentFuncId) !== \"undefined\" && parentFuncId == \"FSJ0315\")){\nparams[\"disp\"] = displayingId;\nif( displayingId == \"SJ0315\" ) {\nparams[\"skbn\"] = displayingSyoriKbn;\n}\nparams[\"hojiVoteMode\"]"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 2094,
+          "context": "Get(senisakiUrl,params,\"_self\");\n} else {\nif( displayingId == \"ST0203\" ) {\nparams[\"disp\"] = $('#UNQ_hidden_01').val();\nparams[\"hoji\"] = $('#UNQ_hidden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,p"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 2252,
+          "context": "l();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#hhKaisaihi"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 2487,
+          "context": ";\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#hhKaisaihi').addClass('dispoff');\n$('#hhNitiji').addClass('dispoff');\nhhChgPattern(1);\n$(\"body\").removeClass($(\"body\").attr('data-zbg-color'));\n$('#divVote').addClass('dispoff');\nbreak;\ncase 3:\ncase 4:\n$('#hhKikan').addClass('dispoff');\n$('#hhKa"
+        },
+        {
+          "matched_pattern": "formGet",
+          "position": 1840,
+          "context": " url1\n|| urln == url2\n|| (typeof(parentFuncId) !== \"undefined\" && parentFuncId == \"FSJ0315\")){\nparams[\"disp\"] = displayingId;\nif( displayingId == \"SJ0315\" ) {\nparams[\"skbn\"] = displayingSyoriKbn;\n}\nparams[\"hojiVoteMode\"] = hojiVoteMode;\ncommonSubmit.formGet(senisakiUrl,params,\"_self\");\n} else {\nif( displayingId == \"ST0203\" ) {\nparams[\"disp\"] = $('#UNQ_hidden_01').val();\nparams[\"hoji\"] = $('#UNQ_hidden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSu"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 396,
+          "context": "hgetFlgRaceCancel() {\nreturn $('#hhFlgRaceCancel').val();\n}\nfunction hhGetEncSelK() {\nvar ret = $('#hhEncSelK').val();\nreturn ret;\n};\nfunction hhGetEncSelR() {\nvar ret = $('#hhEncSelR').val();\nreturn ret;\n};\nfunction hhGetEncFstK() {\nvar ret = $('#hhEncPrmS').val();\nreturn ret;\n};\nfunction hhCheckPost(fid,prm,kbn,hojiVoteMode) {\nvar params = {},\npara = prm,\nurln = location.href,\nurl1 = $('#hhhdnPostUrl1').val(),\nurl2 = $('#hhhdnPostUrl2').val(),\nurl3 = $('#hhhdnPostUrl3').val(),\nurl4 = $('#hhhdnPostUrl4').val(),\nurl5 = $('#hhhdnPostUrl5').val(),\nurl6 = $('#hhhdnPostUrl6').val();\nparams[\"encp\"] = prm;\nif($('#voteBackFlgOrigin').length){\nvar voteBack"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 396,
+          "context": "hgetFlgRaceCancel() {\nreturn $('#hhFlgRaceCancel').val();\n}\nfunction hhGetEncSelK() {\nvar ret = $('#hhEncSelK').val();\nreturn ret;\n};\nfunction hhGetEncSelR() {\nvar ret = $('#hhEncSelR').val();\nreturn ret;\n};\nfunction hhGetEncFstK() {\nvar ret = $('#hhEncPrmS').val();\nreturn ret;\n};\nfunction hhCheckPost(fid,prm,kbn,hojiVoteMode) {\nvar params = {},\npara = prm,\nurln = location.href,\nurl1 = $('#hhhdnPostUrl1').val(),\nurl2 = $('#hhhdnPostUrl2').val(),\nurl3 = $('#hhhdnPostUrl3').val(),\nurl4 = $('#hhhdnPostUrl4').val(),\nurl5 = $('#hhhdnPostUrl5').val(),\nurl6 = $('#hhhdnPostUrl6').val();\nparams[\"encp\"] = prm;\nif($('#voteBackFlgOrigin').length){\nvar voteBa"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 740,
+          "context": "{},\npara = prm,\nurln = location.href,\nurl1 = $('#hhhdnPostUrl1').val(),\nurl2 = $('#hhhdnPostUrl2').val(),\nurl3 = $('#hhhdnPostUrl3').val(),\nurl4 = $('#hhhdnPostUrl4').val(),\nurl5 = $('#hhhdnPostUrl5').val(),\nurl6 = $('#hhhdnPostUrl6').val();\nparams[\"encp\"] = prm;\nif($('#voteBackFlgOrigin').length){\nvar voteBackFlg = $('#voteBackFlgOrigin').val();\nif(voteBackFlg == '1' || voteBackFlg == '2'){\nparams[\"voteBackFlg\"] = voteBackFlg;\n}\n}else{\nif($('#voteBackFlg').length){\nparams[\"voteBackFlg\"] = $('#voteBackFlg').val();\n}\n}\nswitch (fid) {\ncase 'SJ0301':\ncase 'SJ0304':\npara = hhGetEncFstK();\nparams[\"encp\"] = para;\ncase 'SJ0305':\ncase 'SJ0306':\nparams[\"d"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1090,
+          "context": "f(voteBackFlg == '1' || voteBackFlg == '2'){\nparams[\"voteBackFlg\"] = voteBackFlg;\n}\n}else{\nif($('#voteBackFlg').length){\nparams[\"voteBackFlg\"] = $('#voteBackFlg').val();\n}\n}\nswitch (fid) {\ncase 'SJ0301':\ncase 'SJ0304':\npara = hhGetEncFstK();\nparams[\"encp\"] = para;\ncase 'SJ0305':\ncase 'SJ0306':\nparams[\"disp\"] = fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fi"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 513,
+          "context": ";\nreturn ret;\n};\nfunction hhGetEncSelR() {\nvar ret = $('#hhEncSelR').val();\nreturn ret;\n};\nfunction hhGetEncFstK() {\nvar ret = $('#hhEncPrmS').val();\nreturn ret;\n};\nfunction hhCheckPost(fid,prm,kbn,hojiVoteMode) {\nvar params = {},\npara = prm,\nurln = location.href,\nurl1 = $('#hhhdnPostUrl1').val(),\nurl2 = $('#hhhdnPostUrl2').val(),\nurl3 = $('#hhhdnPostUrl3').val(),\nurl4 = $('#hhhdnPostUrl4').val(),\nurl5 = $('#hhhdnPostUrl5').val(),\nurl6 = $('#hhhdnPostUrl6').val();\nparams[\"encp\"] = prm;\nif($('#voteBackFlgOrigin').length){\nvar voteBackFlg = $('#voteBackFlgOrigin').val();\nif(voteBackFlg == '1' || voteBackFlg == '2'){\nparams[\"voteBackFlg\"] = voteBackFlg;\n}\n}e"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 444,
+          "context": "').val();\n}\nfunction hhGetEncSelK() {\nvar ret = $('#hhEncSelK').val();\nreturn ret;\n};\nfunction hhGetEncSelR() {\nvar ret = $('#hhEncSelR').val();\nreturn ret;\n};\nfunction hhGetEncFstK() {\nvar ret = $('#hhEncPrmS').val();\nreturn ret;\n};\nfunction hhCheckPost(fid,prm,kbn,hojiVoteMode) {\nvar params = {},\npara = prm,\nurln = location.href,\nurl1 = $('#hhhdnPostUrl1').val(),\nurl2 = $('#hhhdnPostUrl2').val(),\nurl3 = $('#hhhdnPostUrl3').val(),\nurl4 = $('#hhhdnPostUrl4').val(),\nurl5 = $('#hhhdnPostUrl5').val(),\nurl6 = $('#hhhdnPostUrl6').val();\nparams[\"encp\"] = prm;\nif($('#voteBackFlgOrigin').length){\nvar voteBackFlg = $('#voteBackFlgOrigin').val();\nif(voteBac"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 1220,
+          "context": "oteBackFlg\"] = $('#voteBackFlg').val();\n}\n}\nswitch (fid) {\ncase 'SJ0301':\ncase 'SJ0304':\npara = hhGetEncFstK();\nparams[\"encp\"] = para;\ncase 'SJ0305':\ncase 'SJ0306':\nparams[\"disp\"] = fid;\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(pa"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 1406,
+          "context": "\nif(urln == url2) {\nupdate(fid,para);\n} else {\ncommonSubmit.formPost(url2,params,\"_self\");\n}\nbreak;\ncase 'SJ0315':\nparams[\"skbn\"] = kbn;\ncase 'SJ0326':\nif(urln == url1) {\nbtnClickOfFrame(fid, \"\", kbn);\n} else {\nparams[\"disp\"] = fid;\ncommonSubmit.formPost(url1,params,\"_self\");\n}\nbreak;\ncase 'ST0101':\ncase 'ST0501':\nvar senisakiUrl;\nif(fid == 'ST0101'){\nsenisakiUrl = url3;\n}\nelse if(fid == 'ST0501'){\nsenisakiUrl = url6;\n}\nif(urln == url1\n|| urln == url2\n|| (typeof(parentFuncId) !== \"undefined\" && parentFuncId == \"FSJ0315\")){\nparams[\"disp\"] = displayingId;\nif( displayingId == \"SJ0315\" ) {\nparams[\"skbn\"] = displayingSyoriKbn;\n}\nparams[\"hojiVoteMode\"] "
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 2098,
+          "context": "senisakiUrl,params,\"_self\");\n} else {\nif( displayingId == \"ST0203\" ) {\nparams[\"disp\"] = $('#UNQ_hidden_01').val();\nparams[\"hoji\"] = $('#UNQ_hidden_10').val();\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,pa"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 2256,
+          "context": "\nparams[\"kake\"] = $(\"#UNQ_hidden_05\").val();\nparams[\"hojiVoteMode\"] = '2';\ncommonSubmit.formPost(senisakiUrl,params,\"_self\");\n} else {\n$('#btnBack').click();\n}\n}\nbreak;\ncase 'ST0203':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#hhKaisaihi'"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 2491,
+          "context": "mmonSubmit.formPost(url4,params,\"_self\");\nbreak;\ncase 'ST0511':\ncase 'ST0512':\ncase 'ST0513':\ncase 'ST0514':\ncase 'ST0515':\ncase 'ST0516':\ncase 'ST0517':\ncase 'ST0531':\ncase 'ST0532':\nparams[\"disp\"] = \"SJ0315\";\nparams[\"skbn\"] = kbn;\ncommonSubmit.formPost(url5,params,\"_self\");\nbreak;\ndefault:\nreturn;\n}\n};\nfunction hhChgActiveBtn(kbn) {\nswitch(kbn) {\ncase 1:\ncase 2:\n$('#hhKikan').removeClass('dispoff');\n$('#hhKaisaihi').addClass('dispoff');\n$('#hhNitiji').addClass('dispoff');\nhhChgPattern(1);\n$(\"body\").removeClass($(\"body\").attr('data-zbg-color'));\n$('#divVote').addClass('dispoff');\nbreak;\ncase 3:\ncase 4:\n$('#hhKikan').addClass('dispoff');\n$('#hhKai"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 4666,
+          "context": "dClass('dispoff');\n$('#hhDivRaceDtlFrame').addClass('dispoff');\n} else {\n$('#hhdivTabbtnField').removeClass('dispoff');\n$('#hhDivRaceDtlFrame').removeClass('dispoff');\n}\n};\n$(document).on( 'click', \"button[id='hhbtnSyusouList']\", function() {\nhhCheckPost(\"SJ0305\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnResultList']\", function() {\nhhCheckPost(\"SJ0306\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnRaceProgram']\", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 4778,
+          "context": "poff');\n$('#hhDivRaceDtlFrame').removeClass('dispoff');\n}\n};\n$(document).on( 'click', \"button[id='hhbtnSyusouList']\", function() {\nhhCheckPost(\"SJ0305\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnResultList']\", function() {\nhhCheckPost(\"SJ0306\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnRaceProgram']\", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"l"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 4891,
+          "context": "']\", function() {\nhhCheckPost(\"SJ0305\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnResultList']\", function() {\nhhCheckPost(\"SJ0306\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnRaceProgram']\", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"li[id='hhtabSyumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(document).on( 'click', \"li[id='"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5014,
+          "context": "on() {\nhhCheckPost(\"SJ0306\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnRaceProgram']\", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"li[id='hhtabSyumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(document).on( 'click', \"li[id='hhtabOdds']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar ho"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5119,
+          "context": ", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"li[id='hhtabSyumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(document).on( 'click', \"li[id='hhtabOdds']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '2';\nhhCheckPost(\"ST0501\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"l"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5226,
+          "context": "tubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"li[id='hhtabSyumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(document).on( 'click', \"li[id='hhtabOdds']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '2';\nhhCheckPost(\"ST0501\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"li[id='hhtabKekka']\", function() {\nhhCheckPost(\"SJ0326\",hhGetEncSelR());\n});\n$(document).on( 'click', \"butto"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5444,
+          "context": "Syumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(document).on( 'click', \"li[id='hhtabOdds']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '2';\nhhCheckPost(\"ST0501\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"li[id='hhtabKekka']\", function() {\nhhCheckPost(\"SJ0326\",hhGetEncSelR());\n});\n$(document).on( 'click', \"button[id='hhbtnVote']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '1';\nhhCheckPost(\"ST0101\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document)"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5565,
+          "context": "ion() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '2';\nhhCheckPost(\"ST0501\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"li[id='hhtabKekka']\", function() {\nhhCheckPost(\"SJ0326\",hhGetEncSelR());\n});\n$(document).on( 'click', \"button[id='hhbtnVote']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '1';\nhhCheckPost(\"ST0101\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"button[id='hhbtnBackToVote']\", function() {\nvar seniMotoDispId;\nif($('#voteBackFlg').val() == '1'){\nseniMo"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 5785,
+          "context": "Kekka']\", function() {\nhhCheckPost(\"SJ0326\",hhGetEncSelR());\n});\n$(document).on( 'click', \"button[id='hhbtnVote']\", function() {\nvar sKbn = \"\";\nif(typeof displayingSyoriKbn != 'undefined'){\nsKbn = displayingSyoriKbn;\n}\nvar hojiVoteMode = '1';\nhhCheckPost(\"ST0101\",hhGetEncSelR(),sKbn,hojiVoteMode);\n});\n$(document).on( 'click', \"button[id='hhbtnBackToVote']\", function() {\nvar seniMotoDispId;\nif($('#voteBackFlg').val() == '1'){\nseniMotoDispId = \"ST0203\"\n}else if($('#voteBackFlg').val() == '2'){\nseniMotoDispId = \"ST0511\"\n}\nhhCheckPost(seniMotoDispId,hhGetEncSelR());\n});\n$(document).on( 'click', \"button[id='hhbtnIntroduction']\", function() {\ncommonLink"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 6067,
+          "context": "n,hojiVoteMode);\n});\n$(document).on( 'click', \"button[id='hhbtnBackToVote']\", function() {\nvar seniMotoDispId;\nif($('#voteBackFlg').val() == '1'){\nseniMotoDispId = \"ST0203\"\n}else if($('#voteBackFlg').val() == '2'){\nseniMotoDispId = \"ST0511\"\n}\nhhCheckPost(seniMotoDispId,hhGetEncSelR());\n});\n$(document).on( 'click', \"button[id='hhbtnIntroduction']\", function() {\ncommonLink.NewWindow($(this).attr('data-intro-url'),\"1\");\n});\n"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3510,
+          "context": "ispoff');\n$('#hhKaisaihi').removeClass('dispoff');\n$('#hhNitiji').removeClass('dispoff');\nhhChgPattern(2);\n$('#divVote').addClass('dispoff');\nbreak;\n}\n$('#hhbtnSyusouList').removeClass('active');\n$('#hhbtnResultList').removeClass('active');\n$('#hhbtnRaceProgram').removeClass('active');\n$('#hhbtnKaisaiHatubaiGuidance').removeClass('active');\n$('#hhtabChokkin').removeClass('active');\n$('#hhtabSyumoku').removeClass('active');\n$('#hhtabOdds').removeClass('active');\n$('#hhtabKekka').removeClass('active');\nswitch(kbn) {\ncase 1: \n$('#hhbtnRaceProgram').addClass('active');\nbreak;\ncase 2: \n$('#hhbtnKaisaiHatubaiGuidance').addClass('active');\nbreak;\ncase 3: \n$('#"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3798,
+          "context": "('#hhbtnKaisaiHatubaiGuidance').removeClass('active');\n$('#hhtabChokkin').removeClass('active');\n$('#hhtabSyumoku').removeClass('active');\n$('#hhtabOdds').removeClass('active');\n$('#hhtabKekka').removeClass('active');\nswitch(kbn) {\ncase 1: \n$('#hhbtnRaceProgram').addClass('active');\nbreak;\ncase 2: \n$('#hhbtnKaisaiHatubaiGuidance').addClass('active');\nbreak;\ncase 3: \n$('#hhbtnSyusouList').addClass('active');\nbreak;\ncase 4: \n$('#hhbtnResultList').addClass('active');\n$(\"body\").removeClass($(\"body\").attr('data-zbg-color'));\nbreak;\ncase 5:\n$('#hhtabChokkin').addClass('active');\nbreak;\ncase 6:\n$('#hhtabSyumoku').addClass('active');\nbreak;\ncase 7:\n$('#hhtabOdd"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 4855,
+          "context": "'click', \"button[id='hhbtnSyusouList']\", function() {\nhhCheckPost(\"SJ0305\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnResultList']\", function() {\nhhCheckPost(\"SJ0306\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnRaceProgram']\", function() {\nhhCheckPost(\"SJ0301\",hhGetEncSelK());\n});\n$(document).on( 'click', \"button[id='hhbtnKaisaiHatubaiGuidance']\", function() {\nhhCheckPost(\"SJ0304\",hhGetEncSelK());\n});\n$(document).on( 'click', \"li[id='hhtabChokkin']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),1);\n});\n$(document).on( 'click', \"li[id='hhtabSyumoku']\", function() {\nhhCheckPost(\"SJ0315\",hhGetEncSelR(),2);\n});\n$(d"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 4459,
+      "scan": {
+        "race_urls": [
+          "\").append(\nmakebtnNitijitbody\n)\n);\nvar setRaceProgram = $(\"",
+          "\";\nsetRaceProgram.empty();\nmakeProgramArrowtb.addClass(\"",
+          "')\nfor(var loopProgram = 0; loopProgram < raceNitiji.raceProgramList.length; loopProgram++){\nvar raceProgram = raceNitiji.raceProgramList[loopProgram];\nmakeProgramRacetb =$('",
+          "\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"",
+          "\" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('",
+          "\",raceProgram.strArrow).attr(\"",
+          "\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('",
+          "\" + raceProgram.strColorClass).append(\n$('",
+          "').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"",
+          "\",raceProgram.strRaceLnk)\ninputhiddenprm = $('",
+          "\",raceProgram.strRaceLnkPrm)\ninputhiddenkbn = $('",
+          "\",raceProgram.strRaceLnkKbn)\n} else {\ninputhiddenlnk = \"",
+          "\"btn100p clear-fix divraceProgram\"",
+          "\").append(\nmakeProgramtbody\n)\n);\nmakeRaceNitijiLnk.append(\nmakeRaceDay\n).append(\nmakeProgram\n);\nsetRaceProgram.append(\nmakeRaceNitijiLnk\n);\n}\n}\n$(\""
+        ],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "location\\.href",
+          "position": 979,
+          "context": "(var loopNitiji = 0; loopNitiji < sc0301_json.kaisaiNitijiList.length; loopNitiji++){\nvar nitijiData = sc0301_json.kaisaiNitijiList[loopNitiji];\nmakebtnNitiji = $('<button>');\nmakebtnNitiji.addClass(\"btn onbtn\").attr(\"type\",\"button\").attr(\"onclick\",\"location.href='#\" + nitijiData.strLnkIndex + \"'\").append(\n$('<p>').addClass(\"btn_base_fsz al-l\")\n).append(\n$('<div>').addClass(\"nobr divNitijiName\").append(\nnitijiData.strNitji\n)\n).append(\n$('<div>').addClass(\"nobr divNitijiDay\").append(\nnitijiData.strDay\n)\n);\nmakebtnNitijitbody.append(\n$('<tr>').append(\n$('<td>').addClass(\"tdNitiji\").append(\nmakebtnNitiji\n)\n)\n);\nif(nitijiData.strKaisaiST == \"1\"){\nvar makediv "
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 1734,
+          "context": "'<tbody>').append(\n$('<tr>').append(\n$('<td>').addClass(\"v-al-m nb-a\").append(\nnitijiData.strKaisaiSTMes)\n)\n)\n)\n);\nmakebtnNitijitbody.append(\nmakediv\n);\n}\n}\nsetNitijiDiv.append(\n$('<table>').addClass(\"btn100p\").append(\nmakebtnNitijitbody\n)\n);\nvar setRaceProgram = $(\"#setRaceProgram\");\nvar makeRaceNitijiLnk;\nvar makeRaceDay;\nvar makeProgram;\nvar makeProgramtbody;\nvar makeProgrambtn;\nvar makeProgramtabl;\nvar makeProgramRacetb;\nvar makeProgramArrowtb = $('<td>');\nvar inputhiddenlnk = \"\";\nvar inputhiddenprm = \"\";\nvar inputhiddenkbn = \"\";\nsetRaceProgram.empty();\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$("
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 1755,
+          "context": "'<tr>').append(\n$('<td>').addClass(\"v-al-m nb-a\").append(\nnitijiData.strKaisaiSTMes)\n)\n)\n)\n);\nmakebtnNitijitbody.append(\nmakediv\n);\n}\n}\nsetNitijiDiv.append(\n$('<table>').addClass(\"btn100p\").append(\nmakebtnNitijitbody\n)\n);\nvar setRaceProgram = $(\"#setRaceProgram\");\nvar makeRaceNitijiLnk;\nvar makeRaceDay;\nvar makeProgram;\nvar makeProgramtbody;\nvar makeProgrambtn;\nvar makeProgramtabl;\nvar makeProgramRacetb;\nvar makeProgramArrowtb = $('<td>');\nvar inputhiddenlnk = \"\";\nvar inputhiddenprm = \"\";\nvar inputhiddenkbn = \"\";\nsetRaceProgram.empty();\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",s"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2027,
+          "context": "eRaceNitijiLnk;\nvar makeRaceDay;\nvar makeProgram;\nvar makeProgramtbody;\nvar makeProgrambtn;\nvar makeProgramtabl;\nvar makeProgramRacetb;\nvar makeProgramArrowtb = $('<td>');\nvar inputhiddenlnk = \"\";\nvar inputhiddenprm = \"\";\nvar inputhiddenkbn = \"\";\nsetRaceProgram.empty();\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",sc0301_json.strArrow).attr(\"alt\",sc0301_json.strArrowName)\n)\n);\nfor(var loopRace = 0; loopRace < sc0301_json.kaisaiDayList.length;  loopRace++){\nvar raceNitiji = sc0301_json.kaisaiDayList[loopRace];\nmakeRaceNitijiLnk = $('<div>');\nmakeRaceNitijiLnk.attr(\"id\",raceNitiji.str"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2648,
+          "context": "keRaceNitijiLnk.attr(\"id\",raceNitiji.strKaisaiNitijiLnk);\nmakeRaceDay = $('<div>');\nmakeRaceDay.addClass(\"al-l divRaceNitiji\").append(\nraceNitiji.strKaisaiNitijName\n);\nmakeProgramtbody = $('<tbody>')\nfor(var loopProgram = 0; loopProgram < raceNitiji.raceProgramList.length; loopProgram++){\nvar raceProgram = raceNitiji.raceProgramList[loopProgram];\nmakeProgramRacetb =$('<td>');\nmakeProgramRacetb.addClass(\"border_width0 rettd\").append(\n$('<p>').addClass(\"al-l btn_base_fsz\")\n).append(\n$('<div>').addClass(\"nobr al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrow"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2692,
+          "context": "aiNitijiLnk);\nmakeRaceDay = $('<div>');\nmakeRaceDay.addClass(\"al-l divRaceNitiji\").append(\nraceNitiji.strKaisaiNitijName\n);\nmakeProgramtbody = $('<tbody>')\nfor(var loopProgram = 0; loopProgram < raceNitiji.raceProgramList.length; loopProgram++){\nvar raceProgram = raceNitiji.raceProgramList[loopProgram];\nmakeProgramRacetb =$('<td>');\nmakeProgramRacetb.addClass(\"border_width0 rettd\").append(\n$('<p>').addClass(\"al-l btn_base_fsz\")\n).append(\n$('<div>').addClass(\"nobr al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2717,
+          "context": " = $('<div>');\nmakeRaceDay.addClass(\"al-l divRaceNitiji\").append(\nraceNitiji.strKaisaiNitijName\n);\nmakeProgramtbody = $('<tbody>')\nfor(var loopProgram = 0; loopProgram < raceNitiji.raceProgramList.length; loopProgram++){\nvar raceProgram = raceNitiji.raceProgramList[loopProgram];\nmakeProgramRacetb =$('<td>');\nmakeProgramRacetb.addClass(\"border_width0 rettd\").append(\n$('<p>').addClass(\"al-l btn_base_fsz\")\n).append(\n$('<div>').addClass(\"nobr al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\""
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2940,
+          "context": "r raceProgram = raceNitiji.raceProgramList[loopProgram];\nmakeProgramRacetb =$('<td>');\nmakeProgramRacetb.addClass(\"border_width0 rettd\").append(\n$('<p>').addClass(\"al-l btn_base_fsz\")\n).append(\n$('<div>').addClass(\"nobr al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",raceProgram.strArrow).attr(\"alt\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('<button>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).appen"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 2981,
+          "context": "t[loopProgram];\nmakeProgramRacetb =$('<td>');\nmakeProgramRacetb.addClass(\"border_width0 rettd\").append(\n$('<p>').addClass(\"al-l btn_base_fsz\")\n).append(\n$('<div>').addClass(\"nobr al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",raceProgram.strArrow).attr(\"alt\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('<button>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).append(\n$('<table>').addClass(\"border_width0\")"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3160,
+          "context": "al-r raceEveNamewid\").append(\nraceProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",raceProgram.strArrow).attr(\"alt\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('<button>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).append(\n$('<table>').addClass(\"border_width0\").append(\n$('<tbody>').append(\n$('<tr>').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhidde"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3193,
+          "context": "eProgram.strRaceNo\n)\n).append(\n\"R \" + raceProgram.strSyumokuName\n);\nmakeProgramArrowtb = $('<td>');\nmakeProgramArrowtb.addClass(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",raceProgram.strArrow).attr(\"alt\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('<button>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).append(\n$('<table>').addClass(\"border_width0\").append(\n$('<tbody>').append(\n$('<tr>').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhiddenlnk.attr(\"type\",\"hidden\").attr(\""
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3319,
+          "context": "s(\"border_width0\").append(\n$('<div>').addClass(\"link_arrow\").append(\n$('<img>').attr(\"src\",raceProgram.strArrow).attr(\"alt\",raceProgram.strArrowName)\n)\n);\nmakeProgrambtn = $('<button>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).append(\n$('<table>').addClass(\"border_width0\").append(\n$('<tbody>').append(\n$('<tr>').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhiddenlnk.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnk)\ninputhiddenprm = $('<input>');\ninputhiddenprm.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.st"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3499,
+          "context": "on>');\nmakeProgrambtn.attr(\"type\",\"button\").addClass(\"btn linkbtn \" + raceProgram.strColorClass).append(\n$('<table>').addClass(\"border_width0\").append(\n$('<tbody>').append(\n$('<tr>').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhiddenlnk.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnk)\ninputhiddenprm = $('<input>');\ninputhiddenprm.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkPrm)\ninputhiddenkbn = $('<input>');\ninputhiddenkbn.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkKbn)\n} else {\ninputhiddenlnk = \"\";\ninputhiddenprm = \"\";\ninputhid"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3611,
+          "context": "le>').addClass(\"border_width0\").append(\n$('<tbody>').append(\n$('<tr>').append(\nmakeProgramRacetb\n).append(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhiddenlnk.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnk)\ninputhiddenprm = $('<input>');\ninputhiddenprm.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkPrm)\ninputhiddenkbn = $('<input>');\ninputhiddenkbn.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkKbn)\n} else {\ninputhiddenlnk = \"\";\ninputhiddenprm = \"\";\ninputhiddenkbn = \"\";\n}\nmakeProgramtbody.append(\n$('<tr>').append(\n$('<td>').addClass(\"raceProtd\").append(\nmakeProgrambtn"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3716,
+          "context": "(\nmakeProgramArrowtb\n)\n)\n)\n);\nif(raceProgram.strRaceLnk != \"\"){\ninputhiddenlnk = $('<input>');\ninputhiddenlnk.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnk)\ninputhiddenprm = $('<input>');\ninputhiddenprm.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkPrm)\ninputhiddenkbn = $('<input>');\ninputhiddenkbn.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkKbn)\n} else {\ninputhiddenlnk = \"\";\ninputhiddenprm = \"\";\ninputhiddenkbn = \"\";\n}\nmakeProgramtbody.append(\n$('<tr>').append(\n$('<td>').addClass(\"raceProtd\").append(\nmakeProgrambtn\n).append(\ninputhiddenlnk\n).append(\ninputhiddenprm\n).append(\ninputhiddenkbn\n)\n)\n);\n}\nmakeProgram = $('<di"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 3824,
+          "context": "k.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnk)\ninputhiddenprm = $('<input>');\ninputhiddenprm.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkPrm)\ninputhiddenkbn = $('<input>');\ninputhiddenkbn.attr(\"type\",\"hidden\").attr(\"value\",raceProgram.strRaceLnkKbn)\n} else {\ninputhiddenlnk = \"\";\ninputhiddenprm = \"\";\ninputhiddenkbn = \"\";\n}\nmakeProgramtbody.append(\n$('<tr>').append(\n$('<td>').addClass(\"raceProtd\").append(\nmakeProgrambtn\n).append(\ninputhiddenlnk\n).append(\ninputhiddenprm\n).append(\ninputhiddenkbn\n)\n)\n);\n}\nmakeProgram = $('<div>');\nmakeProgram.addClass(\"btn100p clear-fix divraceProgram\").append(\n$('<table>').addClass(\"btn100p\").appe"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 4176,
+          "context": "akeProgramtbody.append(\n$('<tr>').append(\n$('<td>').addClass(\"raceProtd\").append(\nmakeProgrambtn\n).append(\ninputhiddenlnk\n).append(\ninputhiddenprm\n).append(\ninputhiddenkbn\n)\n)\n);\n}\nmakeProgram = $('<div>');\nmakeProgram.addClass(\"btn100p clear-fix divraceProgram\").append(\n$('<table>').addClass(\"btn100p\").append(\nmakeProgramtbody\n)\n);\nmakeRaceNitijiLnk.append(\nmakeRaceDay\n).append(\nmakeProgram\n);\nsetRaceProgram.append(\nmakeRaceNitijiLnk\n);\n}\n}\n$(\"#setUPDATE\").empty();\n$(\"#setUPDATE\").append(sc0301_json.strUPDATE);\n}\nreturn;\n}\n};\n"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 4327,
+          "context": "pend(\ninputhiddenkbn\n)\n)\n);\n}\nmakeProgram = $('<div>');\nmakeProgram.addClass(\"btn100p clear-fix divraceProgram\").append(\n$('<table>').addClass(\"btn100p\").append(\nmakeProgramtbody\n)\n);\nmakeRaceNitijiLnk.append(\nmakeRaceDay\n).append(\nmakeProgram\n);\nsetRaceProgram.append(\nmakeRaceNitijiLnk\n);\n}\n}\n$(\"#setUPDATE\").empty();\n$(\"#setUPDATE\").append(sc0301_json.strUPDATE);\n}\nreturn;\n}\n};\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 799,
+      "scan": {
+        "race_urls": [
+          "\"#setRaceProgram button\""
+        ],
+        "json_urls": [
+          "\");\n    },\n    rpCreateList: function( kbrParm) {\n        var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\""
+        ],
+        "parameter_names": [
+          "encp",
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 757,
+          "context": "var action = $(children[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).attr(\"value\");\nvar dispDI = $(children[3]).attr(\"value\");\nif(dispDI == 1){\ndispDI=\"SJ0315\";\n}else if(dispDI == 2){\ndispDI=\"SJ0326\";\n}\nparams[\"disp\"] = dispDI\ncommonSubmit.formPost(action,params);\n});\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 770,
+          "context": "$(children[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).attr(\"value\");\nvar dispDI = $(children[3]).attr(\"value\");\nif(dispDI == 1){\ndispDI=\"SJ0315\";\n}else if(dispDI == 2){\ndispDI=\"SJ0326\";\n}\nparams[\"disp\"] = dispDI\ncommonSubmit.formPost(action,params);\n});\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 575,
+          "context": "result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\"click\",\"#setRaceProgram button\",function(){\nvar parent = $(this).parent();\nvar children = $(parent).children();\nvar action = $(children[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).attr(\"value\");\nvar dispDI = $(children[3]).attr(\"value\");\nif(dispDI == 1){\ndispDI=\"SJ0315\";\n}else if(dispDI == 2){\ndispDI=\"SJ0326\";\n}\nparams[\"disp\"] = dispDI\ncommonSubmit.formPost(action,params);\n});\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 774,
+          "context": "ildren[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).attr(\"value\");\nvar dispDI = $(children[3]).attr(\"value\");\nif(dispDI == 1){\ndispDI=\"SJ0315\";\n}else if(dispDI == 2){\ndispDI=\"SJ0326\";\n}\nparams[\"disp\"] = dispDI\ncommonSubmit.formPost(action,params);\n});\n"
+        },
+        {
+          "matched_pattern": "raceprogram",
+          "position": 407,
+          "context": "     var result = null;\n        var params = {};\n        params[Com.COM_CONST.ENCRYPTION] = kbrParm;\nCom.getRequestGet(rpController.JSON_REQ_ID, params)\n.done(function(result) {\nrpView.rpDrawJSONData(result);\n});\n    }\n};\n$(document).on(\"click\",\"#setRaceProgram button\",function(){\nvar parent = $(this).parent();\nvar children = $(parent).children();\nvar action = $(children[1]).attr(\"value\");\nvar params = {};\nparams[\"encp\"] = $(children[2]).attr(\"value\");\nvar dispDI = $(children[3]).attr(\"value\");\nif(dispDI == 1){\ndispDI=\"SJ0315\";\n}else if(dispDI == 2){\ndispDI=\"SJ0326\";\n}\nparams[\"disp\"] = dispDI\ncommonSubmit.formPost(action,params);\n});\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 10751,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 341,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "encp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "encp",
+          "position": 129,
+          "context": "var khController = {\nJSON_REQ_ID: \"JSJ050\",\ninit: function() {\nController.rhDspSyokinRank();\n},\nkhDspKaisaiHatubaiInfo: function(encp) {\nvar result = null;\nvar params = {};\nvar params = {};\nparams[\"encp\"] = encp;\nCom.getRequestGet(SJ0304Controller.JSON_REQ_ID, params)\n.done(function(result) {\nkhView.khDrawJSONData(result,params);\n});\n}\n};\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0304.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0304.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 868,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 230,
+          "context": "function khShisetuAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njo"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 332,
+          "context": "e');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 660,
+          "context": "kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 765,
+          "context": ";\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 243,
+          "context": "function khShisetuAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 345,
+          "context": " = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\""
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 673,
+          "context": "f\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 778,
+          "context": "$(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 247,
+          "context": "function khShisetuAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 349,
+          "context": "(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiGuideUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\")"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 677,
+          "context": "\n}\n}\nfunction khUribaAnnaiBtn(uribakbn,id){\nvar jocd = $(\"#khuribaCd_\"+id).attr('value');\nvar kday = $(\"#khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 782,
+          "context": "khKday\").attr('value');\nif (uribakbn == 0) {\nif(jocd){\nif(jocd.length > 2){\nvar jocd_wk = jocd.substr(0,2);\njocd = jocd_wk;\n}\n}\ncommonSubmit.formPost($('#khJyoSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n} else {\ncommonSubmit.formPost($('#khJyogaiSellInfoUrl').val(), { \"jocd\" : jocd, \"kday\" : kday }, \"_self\");\n}\n}\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 9286,
+      "scan": {
+        "race_urls": [
+          "\";\nvar narabiTyuiFlg = false;\nfor(var i = 0; i < json.rInfo.length; i++ ){\nvar divRaceInfo = $('",
+          "'); \ndivRaceInfo.append('",
+          "');\ndivRaceInfo.append('",
+          "\"; \n}\ndivRaceInfo.append('",
+          "');\ndivSyusouList.append(divRaceInfo);\nvar divNarabi = $('"
+        ],
+        "json_urls": [],
+        "parameter_names": [
+          "disp",
+          "Disp",
+          "encPrm"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "encPrm",
+          "position": 7179,
+          "context": "aetu = $('<div class=\"race_data\" />');\ndivSyaetu.append(edtSyabetu(json.rInfo[i].sInfo, json.iaDspFlag, iaJson));\nvar trButtons = $('<tr />');\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn\" onclick=\"slSyusouClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">出走表</p></button></td>');\nif(json.rInfo[i].ozzFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button type"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 7449,
+          "context": "lass=\"al-c btn_base_fsz\">出走表</p></button></td>');\nif(json.rInfo[i].ozzFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn orange\" onclick=\"slVoteClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 7663,
+          "context": "ick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn orange\" onclick=\"slVoteClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slResultClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">結果</p></button></td>');\n}\n        divSyaetu.append($('<div class=\"btn33pv2 clea"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 7945,
+          "context": "tn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slResultClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">結果</p></button></td>');\n}\n        divSyaetu.append($('<div class=\"btn33pv2 clear-fix bgtrans\" style=\"padding-top: 10px;\" />')\n         .append($('<table class=\"btn33pv2\" />')\n             .append(trButtons)));\n        divSyusouList.append(divSyaetu);\n}\nfor(var i = 0; i < json.rInfo.length; i++ ){\nif(json.rInfo[i].narabiFlg == 1){\nedtNarabi(json.rInfo[i].raceN"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 7179,
+          "context": "aetu = $('<div class=\"race_data\" />');\ndivSyaetu.append(edtSyabetu(json.rInfo[i].sInfo, json.iaDspFlag, iaJson));\nvar trButtons = $('<tr />');\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn\" onclick=\"slSyusouClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">出走表</p></button></td>');\nif(json.rInfo[i].ozzFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button ty"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 7449,
+          "context": "lass=\"al-c btn_base_fsz\">出走表</p></button></td>');\nif(json.rInfo[i].ozzFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn orange\" onclick=\"slVoteClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button ty"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 7663,
+          "context": "ick=\"slOzzClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">オッズ</p></button></td>');\nif(json.rInfo[i].voteFlg == 1){\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn orange\" onclick=\"slVoteClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slResultClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">結果</p></button></td>');\n}\n        divSyaetu.append($('<div class=\"btn33pv2 cl"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 7945,
+          "context": "tn_base_fsz\">投票</p></button></td>');\n}else{\nif(json.rInfo[i].resultFlg == 1){\ndisabled = \"\"; \n}else{\ndisabled = \"disabled\";\n}\ntrButtons.append('<td><button type=\"button\" class=\"btn linkbtn ' + disabled + '\" onclick=\"slResultClick(\\'' + json.rInfo[i].encPrm + '\\');\"><p class=\"al-c btn_base_fsz\">結果</p></button></td>');\n}\n        divSyaetu.append($('<div class=\"btn33pv2 clear-fix bgtrans\" style=\"padding-top: 10px;\" />')\n         .append($('<table class=\"btn33pv2\" />')\n             .append(trButtons)));\n        divSyusouList.append(divSyaetu);\n}\nfor(var i = 0; i < json.rInfo.length; i++ ){\nif(json.rInfo[i].narabiFlg == 1){\nedtNarabi(json.rInfo[i].rac"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 5504,
+          "context": "span><br/>' +\n   '<span>発走予定</span><div class=\"wsp\"></div><span class=\"' + json.rInfo[i].stTimeColor + '\">' + json.rInfo[i].stTime + '</span></div>');\nvar digestURL = \"\";\nif(json.rInfo[i].digetURL){\ndisabled = \"\";\ndigestURL = 'onclick=\"window.open().location.href=\\'' + json.rInfo[i].digetURL + '\\'\"';\n}else{\ndisabled = \"disabled\"; \n}\ndivRaceInfo.append('<div class=\"fl-r\">' +\n   '<button type=\"button\" class=\"btn onbtn clear-fix ' + disabled + '\" style=\"padding:0px 2px\" ' + digestURL + '>' +\n   '<div class=\"fl-l\" style=\"padding-top:2px;padding-left:4px;\"><img height=\"20\" style=\"margin-right: 3px;\" alt=\"film\" src=\"' + CONTEXT_PATH + '/static/img/icon/ico_film"
+        }
+      ],
+      "form_target_hints": [
+        "onclick="
+      ],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 271,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0305.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0305.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 572,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "encPrm",
+          "disp",
+          "encp"
+        ],
+        "submit_calls": [],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 32,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction s"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 167,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 315,
+          "context": "asicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 466,
+          "context": "cp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 45,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultCl"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 328,
+          "context": ".val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 479,
+          "context": " \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 23,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\""
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 116,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { "
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 158,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_se"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 306,
+          "context": "'#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 371,
+          "context": "m }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 457,
+          "context": "(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 550,
+          "context": "Click(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 23,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_sel"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 108,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL')"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 116,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), "
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 158,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 363,
+          "context": " : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 542,
+          "context": "n slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 49,
+          "context": "function slSyusouClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultCli"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 332,
+          "context": "(), { \"disp\" : \"SJ0315\", \"encp\" : encPrm }, \"_self\");\n}\nfunction slOzzClick(encPrm){\ncommonSubmit.formPost($('#slOzzURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 483,
+          "context": "sp\" : \"SJ0305\", \"hojiVoteMode\" : \"2\" }, \"_self\");\n}\nfunction slVoteClick(encPrm){\ncommonSubmit.formPost($('#slVoteURL').val(), { \"encp\" : encPrm, \"disp\" : \"SJ0305\", \"hojiVoteMode\" : \"1\" }, \"_self\");\n}\nfunction slResultClick(encPrm){\ncommonSubmit.formPost($('#slRaceBasicInfoURL').val(), { \"disp\" : \"SJ0326\", \"encp\" : encPrm }, \"_self\");\n}\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 27975,
+      "scan": {
+        "race_urls": [
+          "\")\n.append(theadHtml)\n.append(tmpHtml)\n);\nif(JsonData.dokantoRaceList.length != 0){\nfor(var i = 0; i <= count; i++){\nif($(JsonData.dokantoRaceList)[i]){\ndokantoList = $(JsonData.dokantoRaceList)[i];\ntbodytrHtml = $(\""
+        ],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "racelist",
+          "position": 16230,
+          "context": "nto7Color + \" b-a al-c\"))\n}\nif(JsonData.dispDokanto4Flg == 1){\ntmpHtml.append($(\"<td>\").append(\"Dokanto!4two\").addClass(JsonData.dokanto4twoColor + \" b-a al-c\"))\n}\ntblHtml.append($(\"<thead>\")\n.append(theadHtml)\n.append(tmpHtml)\n);\nif(JsonData.dokantoRaceList.length != 0){\nfor(var i = 0; i <= count; i++){\nif($(JsonData.dokantoRaceList)[i]){\ndokantoList = $(JsonData.dokantoRaceList)[i];\ntbodytrHtml = $(\"<tr>\");\ntbodytrHtml.append($(\"<td>\").addClass(\"b-a al-r\").append(dokantoList.dokantoRaceNo+\"R\"));\nsyabantblHtml= $(\"<table>\");\nsyabantbodyHtml = $(\"<tbody>\");\nfor(var j= 0;j < dokantoList.dokantoFirst.length;j++){\nfirstSyaban = dokantoList.dokantoFirst["
+        },
+        {
+          "matched_pattern": "racelist",
+          "position": 16307,
+          "context": "($(\"<td>\").append(\"Dokanto!4two\").addClass(JsonData.dokanto4twoColor + \" b-a al-c\"))\n}\ntblHtml.append($(\"<thead>\")\n.append(theadHtml)\n.append(tmpHtml)\n);\nif(JsonData.dokantoRaceList.length != 0){\nfor(var i = 0; i <= count; i++){\nif($(JsonData.dokantoRaceList)[i]){\ndokantoList = $(JsonData.dokantoRaceList)[i];\ntbodytrHtml = $(\"<tr>\");\ntbodytrHtml.append($(\"<td>\").addClass(\"b-a al-r\").append(dokantoList.dokantoRaceNo+\"R\"));\nsyabantblHtml= $(\"<table>\");\nsyabantbodyHtml = $(\"<tbody>\");\nfor(var j= 0;j < dokantoList.dokantoFirst.length;j++){\nfirstSyaban = dokantoList.dokantoFirst[j];\nsyabantbodyHtml.append($(\"<tr>\").append($(\"<td>\").append(firstSyaban.syab"
+        },
+        {
+          "matched_pattern": "racelist",
+          "position": 16354,
+          "context": "Data.dokanto4twoColor + \" b-a al-c\"))\n}\ntblHtml.append($(\"<thead>\")\n.append(theadHtml)\n.append(tmpHtml)\n);\nif(JsonData.dokantoRaceList.length != 0){\nfor(var i = 0; i <= count; i++){\nif($(JsonData.dokantoRaceList)[i]){\ndokantoList = $(JsonData.dokantoRaceList)[i];\ntbodytrHtml = $(\"<tr>\");\ntbodytrHtml.append($(\"<td>\").addClass(\"b-a al-r\").append(dokantoList.dokantoRaceNo+\"R\"));\nsyabantblHtml= $(\"<table>\");\nsyabantbodyHtml = $(\"<tbody>\");\nfor(var j= 0;j < dokantoList.dokantoFirst.length;j++){\nfirstSyaban = dokantoList.dokantoFirst[j];\nsyabantbodyHtml.append($(\"<tr>\").append($(\"<td>\").append(firstSyaban.syaban).addClass(firstSyaban.syabanClass + \" al-c\")"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 603,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [
+          "\",\n    bcCreateList: function(params) {      \n        Com.getRequestGet(bcController.JSON_REQ_ID, params)\n            .done(function(result) {\n            bcView.bcDrawJSONData(result.jsj018JSONData,params);\n            });\n    }\n};\n$(document).ready(function(){\n$(document).on(\""
+        ],
+        "parameter_names": [
+          "encp",
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 564,
+          "context": "ment).on(\"click\",\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nvar Url = $(\"#hdnRaceRVURL\").val();\nvar RVPrm = $(\"#btnracuRVPrm\"+ clcbtn[1]).val();\n    var prm = {};\n    prm = {\"encp\" : RVPrm,\"disp\" : \"SJ0326\"};\ncommonSubmit.formPost(Url,prm)\n});\n});\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 577,
+          "context": "ck\",\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nvar Url = $(\"#hdnRaceRVURL\").val();\nvar RVPrm = $(\"#btnracuRVPrm\"+ clcbtn[1]).val();\n    var prm = {};\n    prm = {\"encp\" : RVPrm,\"disp\" : \"SJ0326\"};\ncommonSubmit.formPost(Url,prm)\n});\n});\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 530,
+          "context": "document).ready(function(){\n$(document).on(\"click\",\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nvar Url = $(\"#hdnRaceRVURL\").val();\nvar RVPrm = $(\"#btnracuRVPrm\"+ clcbtn[1]).val();\n    var prm = {};\n    prm = {\"encp\" : RVPrm,\"disp\" : \"SJ0326\"};\ncommonSubmit.formPost(Url,prm)\n});\n});\n"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 581,
+          "context": "\".resultbtn\",function(){\nvar myid = this.id;\nvar clcbtn = myid.split(\"bcbtnResult\")\nvar Url = $(\"#hdnRaceRVURL\").val();\nvar RVPrm = $(\"#btnracuRVPrm\"+ clcbtn[1]).val();\n    var prm = {};\n    prm = {\"encp\" : RVPrm,\"disp\" : \"SJ0326\"};\ncommonSubmit.formPost(Url,prm)\n});\n});\n"
+        }
+      ],
+      "form_target_hints": [],
+      "status": "ok"
+    }
+  ],
+  "finished_at_jst": "2026-10-15T15:17:46.969914+09:00"
 }
