@@ -1,0 +1,75 @@
+name: Fetch KEIRIN.JP Entries
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "10,40 * * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  fetch-entries:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests beautifulsoup4
+
+      - name: Fetch today's entries
+        run: |
+          python -u scripts/fetch_keirin_entries.py
+
+      - name: Show output summary
+        if: always()
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+
+          p = Path("data/entries_today.json")
+
+          if not p.exists():
+              print("ERROR: data/entries_today.json がありません")
+          else:
+              data = json.loads(p.read_text(encoding="utf-8"))
+              print("状態:", data.get("status"))
+              print("対象日:", data.get("target_date"))
+              print("レース候補:", data.get("races_found"))
+              print("取得成功:", data.get("races_fetched"))
+              print("取得失敗:", data.get("races_failed"))
+              print("選手データ件数:", data.get("rider_count"))
+              print("エラー:", json.dumps(
+                  data.get("errors", []),
+                  ensure_ascii=False,
+                  indent=2
+              ))
+          PY
+
+      - name: Save fetched data
+        if: always()
+        run: |
+          if [ -f data/entries_today.json ]; then
+            git add data/entries_today.json
+            if ! git diff --cached --quiet; then
+              git config user.name "github-actions[bot]"
+              git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+              git commit -m "Update KEIRIN.JP entries"
+              git push
+            else
+              echo "変更なし"
+            fi
+          else
+            echo "保存対象ファイルがありません"
+          fi
