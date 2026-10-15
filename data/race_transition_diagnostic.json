@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T12:18:16.847408+09:00",
+  "started_at_jst": "2026-10-15T12:31:23.722983+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "5R",
+      "race_num": "6R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -228,7 +228,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "5R",
+        "raceNum": "6R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -1928,7 +1928,192 @@
       "status": "ok"
     }
   ],
-  "candidate_tests": [],
+  "candidate_tests": [
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "YyUMwJFqH_os4DNhTHKO80VYyMPkDWzS_aNMcJgQ5Ns",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 27520,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "09/30(水)～10/02(金) 前検日コメならウィンチケット杯"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 27715,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/14(水)～10/16(金) ＣＴＣ杯　ニッカン・コム杯"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "YyUMwJFqH_os4DNhTHKO88ziB31mGQYBsGONoyb4HGI",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 26392,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/19(月)～10/21(水) ウィンチケット　ニッカン・コム"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "YyUMwJFqH_os4DNhTHKO81KEL8r7GlTFwqRRiYFaQ7A",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 27390,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/24(土)～10/26(月) Ｂｅｔｉｍｏ杯×赤競杯"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "YyUMwJFqH_os4DNhTHKO8wLV6OqCYrS_dR9olh2SZ7k",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 29145,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/29(木)～10/31(土) ＪｏｍｏｎＧＰ日刊スポ杯ＯＰ杯"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "6nWOJ2YgWUh0vVMBoyI8COdk5JfljoNyBmzNl2c9nJw",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 30980,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/04(日)～10/06(火) サンスポ・ソラモギ・しいたけＣ"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "6nWOJ2YgWUh0vVMBoyI8CDCL0qPydCPkwUAtI7oA1KQ",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 29101,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/12(月)～10/14(水) 仲間と繋がるＴＩＰＳＴＡＲ杯"
+    },
+    {
+      "method": "POST",
+      "requested_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/racelist",
+      "params": {
+        "encp": "6nWOJ2YgWUh0vVMBoyI8CIjOXw91rJ15A1PGh9V-rQU",
+        "disp": "SJ0301"
+      },
+      "status_code": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "bytes": 26401,
+      "redirects": [],
+      "response_type": "html",
+      "title": "開催情報｜KEIRIN.JP",
+      "text_length": 401,
+      "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "entry_indicators": {
+        "has_race_number": false,
+        "has_rider_terms": true,
+        "has_error_terms": false
+      },
+      "source_text": "10/21(水)～10/23(金) ＣＴＣなら３分前まで買える杯"
+    }
+  ],
   "summary": {
     "status": "diagnostic_completed",
     "events_found": 7,
@@ -1938,7 +2123,7 @@
     "javascript_files_read": 11,
     "relevant_links_found": 0,
     "javascript_url_candidates": 0,
-    "candidate_urls_tested": 0,
+    "candidate_urls_tested": 8,
     "confirmed_racecard_url": false,
     "next_step": "JSONの選手データ構造とJavaScriptの通信先を確認し、実際の出走表取得先を特定する。"
   },
@@ -2165,7 +2350,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "5R",
+      "race_num": "6R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -2203,7 +2388,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "5R",
+        "raceNum": "6R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -2571,5 +2756,6 @@
       }
     }
   ],
-  "finished_at_jst": "2026-10-15T12:18:21.264029+09:00"
+  "post_candidates_found": 78,
+  "finished_at_jst": "2026-10-15T12:31:36.801750+09:00"
 }
