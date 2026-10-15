@@ -38,6 +38,64 @@ def main():
 
     url = f"{BASE}/sp/race?encp={RACE_ENCP}"
     r = fetch(url)
+        # 選手コメントの公式JSON取得テスト
+    print("\n--- 選手コメントJSONテスト ---")
+
+    api = s.get(
+        f"{BASE}/sp/json",
+        params={
+            "type": "JSJ041",
+            "encp": RACE_ENCP,
+        },
+        headers={
+            "Referer": url,
+            "X-Requested-With": "XMLHttpRequest",
+        },
+        timeout=20,
+    )
+
+    print("HTTP:", api.status_code)
+    print("取得サイズ:", len(api.text), "bytes")
+
+    try:
+        data = api.json()
+
+        if isinstance(data, dict):
+            print("JSONキー:", list(data.keys()))
+
+            riders = data.get("sensyuTypeInfo", [])
+
+            if isinstance(riders, list):
+                print("選手件数:", len(riders))
+
+                count = 0
+                for rider in riders:
+                    if not isinstance(rider, dict):
+                        continue
+
+                    comment = str(
+                        rider.get("sensyuComment", "")
+                    ).strip()
+
+                    if comment:
+                        print(
+                            "コメント:",
+                            rider.get("syaban", "?"),
+                            rider.get("sensyuName", ""),
+                            comment[:100],
+                        )
+                        count += 1
+
+                print("コメント取得件数:", count)
+            else:
+                print("sensyuTypeInfoの形式:", type(riders).__name__)
+
+        else:
+            print("JSON形式:", type(data).__name__)
+
+    except Exception as e:
+        print("JSON解析エラー:", str(e))
+        print("応答先頭:", api.text[:500])
     print("レースページ:", r.status_code, len(r.text), "bytes")
 
     soup = BeautifulSoup(r.text, "html.parser")
