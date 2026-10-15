@@ -959,12 +959,14 @@ def main():
         "/",
         len(followup_urls),
     )
-    # 8. 公式JSON JSJ049の直接取得を検証
-    print("[8/8] 出走表関連JSONを直接検証中...")
+    # 8. 公式JSONと個別レースページを検証
+    print("[8/8] 個別レースの出走表を検証中...")
 
     report["json_endpoint_tests"] = []
+    report["race_page_tests"] = []
 
     today = now_jst().strftime("%Y%m%d")
+
     target_events = [
         event for event in report.get("events", [])
         if event.get("start_date") == today
@@ -978,66 +980,171 @@ def main():
         ][:2]
 
     for event in target_events:
-        for encp in ("", event.get("encPrm", "")):
-            if not encp and encp != "":
+        params = {
+            "type": "JSJ049",
+            "encp": event.get("encPrm", ""),
+        }
+
+        test = {
+            "venue": event.get("venue", ""),
+            "start_date": event.get("start_date", ""),
+            "request_id": "JSJ049",
+        }
+
+        try:
+            response = session.get(
+                urljoin(BASE, "/sp/json"),
+                params=params,
+                headers={"Referer": SCHEDULE_URL},
+                timeout=TIMEOUT,
+            )
+
+            test["status_code"] = response.status_code
+            test["content_type"] = response.headers.get(
+                "Content-Type", ""
+            )
+            test["bytes"] = len(response.content)
+
+            if response.status_code != 200:
+                test["error"] = "JSJ049の取得に失敗"
+                report["json_endpoint_tests"].append(test)
                 continue
 
-            params = {"type": "JSJ049"}
-            if encp:
-                params["encp"] = encp
+            data = response.json()
 
-            test = {
-                "venue": event.get("venue", ""),
-                "start_date": event.get("start_date", ""),
-                "request_id": "JSJ049",
-                "params": params,
-            }
+            test["top_level_keys"] = list(data.keys())
+            test["race_count"] = 0
 
-            try:
-                response = session.get(
-                    urljoin(BASE, "/sp/json"),
-                    params=params,
-                    headers={"Referer": SCHEDULE_URL},
-                    timeout=TIMEOUT,
-                )
+            days = data.get("kaisaiDayList", [])
+            race_candidates = []
 
-                test["status_code"] = response.status_code
-                test["content_type"] = response.headers.get(
-                    "Content-Type", ""
-                )
-                test["bytes"] = len(response.content)
+            for day in days:
+                races = day.get("raceProgramList", [])
+                for race in races:
+                    race_candidates.append({
+                        "day": day.get("strKaisaiNitijName", ""),
+                        "race_no": race.get("strRaceNo", ""),
+                        "race_name": race.get("strSyumokuName", ""),
+                        "race_url": race.get("strRaceLnk", ""),
+                        "race_param": race.get("strRaceLnkPrm", ""),
+                    })
 
-                try:
-                    data = response.json()
-                    test["response_type"] = type(data).__name__
-
-                    if isinstance(data, dict):
-                        test["top_level_keys"] = list(data.keys())
-                        test["sample"] = shorten(data, 3000)
-                    else:
-                        test["sample"] = shorten(data, 3000)
-
-                except Exception:
-                    test["response_type"] = "not_json"
-                    test["sample"] = response.text[:1000]
-
-            except Exception as exc:
-                test["error"] = (
-                    f"{type(exc).__name__}: {exc}"
-                )
+            test["race_count"] = len(race_candidates)
+            test["race_samples"] = race_candidates[:3]
 
             report["json_endpoint_tests"].append(test)
 
             print(
-                "  JSJ049:",
-                test.get("venue"),
-                "encpあり" if encp else "encpなし",
+                "  JSON:",
+                test["venue"],
                 "HTTP",
-                test.get("status_code", "ERROR"),
-                test.get("response_type", ""),
+                test["status_code"],
+                "レース数",
+                test["race_count"],
+            )
+
+            if not race_candidates:
+                continue
+
+            race = race_candidates[0]
+            race_path = race.get("race_url") or "/sp/race"
+            race_param = race.get("race_param", "")
+
+            page_test = {
+                "venue": test["venue"],
+                "day": race["day"],
+                "race_no": race["race_no"],
+                "race_name": race["race_name"],
+                "request_path": race_path,
+                "parameter_present": bool(race_param),
+            }
+
+            if not race_param:
+                page_test["error"] = "strRaceLnkPrmがありません"
+                report["race_page_tests"].append(page_test)
+                continue
+
+            race_response = session.get(
+                urljoin(BASE, race_path),
+                params={"encp": race_param},
+                headers={"Referer": SCHEDULE_URL},
+                timeout=TIMEOUT,
+            )
+
+            page_test["status_code"] = race_response.status_code
+            page_test["content_type"] = race_response.headers.get(
+                "Content-Type", ""
+            )
+            page_test["bytes"] = len(race_response.content)
+
+            content_type = page_test["content_type"].lower()
+
+            if "html" in content_type or "<html" in race_response.text[:500].lower():
+                soup = BeautifulSoup(
+                    race_response.text,
+                    "html.parser",
+                )
+
+                page_test["title"] = (
+                    soup.title.get_text(" ", strip=True)
+                    if soup.title else ""
+                )
+
+                page_test["text_sample"] = soup.get_text(
+                    " ",
+                    strip=True,
+                )[:3000]
+
+                page_test["html_inspection"] = inspect_html(
+                    race_response.text
+                )
+
+                page_test["html_contains_rider_terms"] = any(
+                    word in race_response.text
+                    for word in (
+                        "選手名",
+                        "車番",
+                        "コメント",
+                        "競走得点",
+                        "racePlayer",
+                        "racerName",
+                    )
+                )
+
+            else:
+                page_test["body_sample"] = race_response.text[:3000]
+
+            report["race_page_tests"].append(page_test)
+
+            print(
+                "  個別レース:",
+                page_test["venue"],
+                page_test["race_no"],
+                "R HTTP",
+                page_test["status_code"],
+                page_test["content_type"],
+                page_test["bytes"],
+                "bytes",
             )
 
             time.sleep(PAUSE_SECONDS)
+
+        except Exception as exc:
+            test["error"] = f"{type(exc).__name__}: {exc}"
+
+            if not any(
+                item is test
+                for item in report["json_endpoint_tests"]
+            ):
+                report["json_endpoint_tests"].append(test)
+
+            print(
+                "  エラー:",
+                test["venue"],
+                test.get("error", ""),
+            )
+
+    # ここから下の既存の「# 集計」は残す
     # 集計
     js_ok = sum(
         1 for item in report["javascript_files"]
