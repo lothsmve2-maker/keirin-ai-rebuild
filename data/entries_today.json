@@ -1,15 +1,15 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-15",
-  "started_at": "2026-10-15T19:46:39.581122+09:00",
-  "finished_at": "2026-10-15T19:46:48.120788+09:00",
-  "status": "error",
+  "started_at": "2026-10-15T19:53:42.561548+09:00",
+  "finished_at": "2026-10-15T19:54:01.867263+09:00",
+  "status": "ok",
   "events_found": 7,
   "races_found": 18,
-  "races_fetched": 0,
-  "races_failed": 18,
-  "rider_count": 0,
+  "races_fetched": 18,
+  "races_failed": 0,
+  "rider_count": 126,
   "events": [
     {
       "venue": "奈良",
@@ -54,115 +54,2977 @@
       "race_count": 9
     }
   ],
-  "races": [],
-  "errors": [
+  "races": [
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "1",
-      "error": "HTTPError: 500 Server Error: Internal Server Error for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+      "race_name": "Ｌ級ガ予１",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "20:40",
+      "distance_m": "1625",
+      "line_type": "ライン無し",
+      "line_order": [
+        {
+          "position": "3",
+          "car_no": "1"
+        },
+        {
+          "position": "7",
+          "car_no": "2"
+        },
+        {
+          "position": "9",
+          "car_no": "3"
+        },
+        {
+          "position": "1",
+          "car_no": "4"
+        },
+        {
+          "position": "11",
+          "car_no": "5"
+        },
+        {
+          "position": "5",
+          "car_no": "6"
+        },
+        {
+          "position": "13",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015853",
+          "name": "中島　瞳",
+          "prefecture": "埼　玉",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "56.21",
+          "nige": "1",
+          "makuri": "7",
+          "sashi": "7",
+          "mark": "1",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "016035",
+          "name": "伊藤梨里花",
+          "prefecture": "愛　知",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "53.20",
+          "nige": "3",
+          "makuri": "7",
+          "sashi": "0",
+          "mark": "2",
+          "back": "12",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015674",
+          "name": "野寺　楓",
+          "prefecture": "静　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "追",
+          "points": "51.23",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014962",
+          "name": "石井　貴子",
+          "prefecture": "東　京",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "逃",
+          "points": "51.08",
+          "nige": "1",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "8",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015864",
+          "name": "田野口佳奈",
+          "prefecture": "香　川",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "48.83",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "015317",
+          "name": "佐伯　智恵",
+          "prefecture": "愛　媛",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "48.40",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015146",
+          "name": "齊藤　由紀",
+          "prefecture": "愛　知",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "45.76",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "2",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8"
+      "race_name": "Ｌ級ガ予１",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:00",
+      "distance_m": "1625",
+      "line_type": "ライン無し",
+      "line_order": [
+        {
+          "position": "7",
+          "car_no": "1"
+        },
+        {
+          "position": "3",
+          "car_no": "2"
+        },
+        {
+          "position": "1",
+          "car_no": "3"
+        },
+        {
+          "position": "5",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "11",
+          "car_no": "6"
+        },
+        {
+          "position": "13",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "014974",
+          "name": "山原さくら",
+          "prefecture": "山　口",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "58.54",
+          "nige": "5",
+          "makuri": "15",
+          "sashi": "2",
+          "mark": "0",
+          "back": "11",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015069",
+          "name": "細田　愛未",
+          "prefecture": "埼　玉",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "53.74",
+          "nige": "0",
+          "makuri": "4",
+          "sashi": "3",
+          "mark": "4",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015321",
+          "name": "比嘉真梨代",
+          "prefecture": "沖　縄",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "追",
+          "points": "51.25",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015402",
+          "name": "鈴木　樹里",
+          "prefecture": "福　島",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "50.29",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015942",
+          "name": "齊藤　由莉",
+          "prefecture": "神奈川",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "49.72",
+          "nige": "3",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "2",
+          "back": "3",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "016045",
+          "name": "前田　真希",
+          "prefecture": "福　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "47.80",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015949",
+          "name": "岡田　優歩",
+          "prefecture": "和歌山",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "0.00",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "3",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:20",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "6",
+          "car_no": "1"
+        },
+        {
+          "position": "2",
+          "car_no": "2"
+        },
+        {
+          "position": "1",
+          "car_no": "3"
+        },
+        {
+          "position": "7",
+          "car_no": "4"
+        },
+        {
+          "position": "3",
+          "car_no": "5"
+        },
+        {
+          "position": "8",
+          "car_no": "6"
+        },
+        {
+          "position": "4",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015339",
+          "name": "土田　武志",
+          "prefecture": "茨　城",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "88.44",
+          "nige": "5",
+          "makuri": "5",
+          "sashi": "3",
+          "mark": "0",
+          "back": "17",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "013535",
+          "name": "平沼　由充",
+          "prefecture": "福　島",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "87.60",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015507",
+          "name": "上遠野拓馬",
+          "prefecture": "宮　城",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "逃",
+          "points": "87.48",
+          "nige": "4",
+          "makuri": "2",
+          "sashi": "4",
+          "mark": "1",
+          "back": "12",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "013933",
+          "name": "藤田　竜矢",
+          "prefecture": "埼　玉",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "86.55",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "4",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "013106",
+          "name": "赤井　学",
+          "prefecture": "千　葉",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.41",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "013553",
+          "name": "小島　雅章",
+          "prefecture": "埼　玉",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.03",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "014584",
+          "name": "井上　嵩",
+          "prefecture": "神奈川",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "両",
+          "points": "77.57",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "1",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "4",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:40",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "4",
+          "car_no": "1"
+        },
+        {
+          "position": "1",
+          "car_no": "2"
+        },
+        {
+          "position": "2",
+          "car_no": "3"
+        },
+        {
+          "position": "6",
+          "car_no": "4"
+        },
+        {
+          "position": "8",
+          "car_no": "5"
+        },
+        {
+          "position": "5",
+          "car_no": "6"
+        },
+        {
+          "position": "9",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "014822",
+          "name": "関根健太郎",
+          "prefecture": "神奈川",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "88.95",
+          "nige": "2",
+          "makuri": "1",
+          "sashi": "5",
+          "mark": "0",
+          "back": "6",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015795",
+          "name": "今井　希",
+          "prefecture": "埼　玉",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "逃",
+          "points": "87.92",
+          "nige": "7",
+          "makuri": "2",
+          "sashi": "0",
+          "mark": "0",
+          "back": "19",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014153",
+          "name": "伊藤　太一",
+          "prefecture": "山　梨",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "85.88",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "7",
+          "mark": "2",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "013112",
+          "name": "佐藤　明",
+          "prefecture": "静　岡",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "81.64",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015293",
+          "name": "中里福太郎",
+          "prefecture": "北海道",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "81.29",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "1",
+          "mark": "0",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "013036",
+          "name": "深澤　伸介",
+          "prefecture": "静　岡",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "80.00",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "013453",
+          "name": "阿部　宏之",
+          "prefecture": "宮　城",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "79.08",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "5",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:00",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "5",
+          "car_no": "2"
+        },
+        {
+          "position": "2",
+          "car_no": "3"
+        },
+        {
+          "position": "6",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "8",
+          "car_no": "6"
+        },
+        {
+          "position": "3",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015099",
+          "name": "吉竹　尚城",
+          "prefecture": "静　岡",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "89.29",
+          "nige": "4",
+          "makuri": "8",
+          "sashi": "1",
+          "mark": "0",
+          "back": "6",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014579",
+          "name": "齋藤　一茂",
+          "prefecture": "群　馬",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "逃",
+          "points": "84.91",
+          "nige": "6",
+          "makuri": "3",
+          "sashi": "0",
+          "mark": "1",
+          "back": "11",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014530",
+          "name": "栗田　雄矢",
+          "prefecture": "静　岡",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "83.87",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014008",
+          "name": "甲斐　康昭",
+          "prefecture": "群　馬",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "83.14",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "013983",
+          "name": "大崎　智久",
+          "prefecture": "青　森",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.12",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "5",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "014985",
+          "name": "竹山　慶太",
+          "prefecture": "宮　城",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "81.53",
+          "nige": "1",
+          "makuri": "1",
+          "sashi": "2",
+          "mark": "0",
+          "back": "8",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "012193",
+          "name": "井手　尚治",
+          "prefecture": "神奈川",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "追",
+          "points": "81.27",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "6",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:20",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "2",
+          "car_no": "2"
+        },
+        {
+          "position": "6",
+          "car_no": "3"
+        },
+        {
+          "position": "5",
+          "car_no": "4"
+        },
+        {
+          "position": "7",
+          "car_no": "5"
+        },
+        {
+          "position": "9",
+          "car_no": "6"
+        },
+        {
+          "position": "3",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015618",
+          "name": "高本　和也",
+          "prefecture": "神奈川",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "89.41",
+          "nige": "3",
+          "makuri": "5",
+          "sashi": "1",
+          "mark": "0",
+          "back": "10",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014818",
+          "name": "田口　裕一",
+          "prefecture": "千　葉",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "88.61",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "5",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014984",
+          "name": "會澤　龍",
+          "prefecture": "宮　城",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "87.37",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "5",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015414",
+          "name": "大森　光明",
+          "prefecture": "北海道",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "両",
+          "points": "83.85",
+          "nige": "3",
+          "makuri": "2",
+          "sashi": "1",
+          "mark": "0",
+          "back": "5",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "012953",
+          "name": "矢内　良和",
+          "prefecture": "群　馬",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "80.95",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "014362",
+          "name": "岩崎　大和",
+          "prefecture": "茨　城",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "80.40",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015100",
+          "name": "渡邊　颯太",
+          "prefecture": "静　岡",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "逃",
+          "points": "78.66",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "7",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:40",
+      "distance_m": "1625",
+      "line_type": "四分戦",
+      "line_order": [
+        {
+          "position": "5",
+          "car_no": "1"
+        },
+        {
+          "position": "4",
+          "car_no": "2"
+        },
+        {
+          "position": "8",
+          "car_no": "3"
+        },
+        {
+          "position": "2",
+          "car_no": "4"
+        },
+        {
+          "position": "10",
+          "car_no": "5"
+        },
+        {
+          "position": "6",
+          "car_no": "6"
+        },
+        {
+          "position": "1",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "014144",
+          "name": "石川　雅望",
+          "prefecture": "群　馬",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "90.15",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "5",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015797",
+          "name": "中島　淳",
+          "prefecture": "埼　玉",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "89.66",
+          "nige": "9",
+          "makuri": "3",
+          "sashi": "0",
+          "mark": "0",
+          "back": "16",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015330",
+          "name": "伊藤　奎",
+          "prefecture": "福　島",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "85.92",
+          "nige": "1",
+          "makuri": "0",
+          "sashi": "7",
+          "mark": "2",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014464",
+          "name": "中西　司",
+          "prefecture": "神奈川",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.83",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "4",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015157",
+          "name": "高橋　大輝",
+          "prefecture": "秋　田",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "両",
+          "points": "82.41",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "3",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "013690",
+          "name": "伊藤　大理",
+          "prefecture": "長　野",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.04",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "5",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015045",
+          "name": "大関　祐也",
+          "prefecture": "千　葉",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "79.62",
+          "nige": "1",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "13",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "8",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "23:00",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "2",
+          "car_no": "2"
+        },
+        {
+          "position": "4",
+          "car_no": "3"
+        },
+        {
+          "position": "9",
+          "car_no": "4"
+        },
+        {
+          "position": "5",
+          "car_no": "5"
+        },
+        {
+          "position": "6",
+          "car_no": "6"
+        },
+        {
+          "position": "8",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015875",
+          "name": "邊見　竜馬",
+          "prefecture": "福　島",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "95.16",
+          "nige": "17",
+          "makuri": "1",
+          "sashi": "2",
+          "mark": "0",
+          "back": "18",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "013748",
+          "name": "佐々木省司",
+          "prefecture": "青　森",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "91.59",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "6",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014859",
+          "name": "小林　申太",
+          "prefecture": "茨　城",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "両",
+          "points": "86.59",
+          "nige": "5",
+          "makuri": "2",
+          "sashi": "3",
+          "mark": "2",
+          "back": "8",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "012960",
+          "name": "水書　義弘",
+          "prefecture": "千　葉",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "追",
+          "points": "84.21",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "3",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "014070",
+          "name": "秋葉　大輔",
+          "prefecture": "東　京",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "83.79",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "012957",
+          "name": "宮澤　晃",
+          "prefecture": "山　梨",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "81.62",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "013468",
+          "name": "勝俣　亮",
+          "prefecture": "神奈川",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "両",
+          "points": "79.93",
+          "nige": "3",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "7",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA"
     },
     {
-      "stage": "race_detail",
       "venue": "静岡",
+      "venue_code": "38",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "9",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU"
+      "race_name": "Ａ級初特選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU",
+      "event_encp": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "race_date_display": "2026/10/15",
+      "start_time": "23:20",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "6",
+          "car_no": "2"
+        },
+        {
+          "position": "7",
+          "car_no": "3"
+        },
+        {
+          "position": "9",
+          "car_no": "4"
+        },
+        {
+          "position": "2",
+          "car_no": "5"
+        },
+        {
+          "position": "3",
+          "car_no": "6"
+        },
+        {
+          "position": "5",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015162",
+          "name": "蕗澤鴻太郎",
+          "prefecture": "群　馬",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "逃",
+          "points": "95.60",
+          "nige": "6",
+          "makuri": "8",
+          "sashi": "2",
+          "mark": "0",
+          "back": "10",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014361",
+          "name": "真船圭一郎",
+          "prefecture": "福　島",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "93.33",
+          "nige": "1",
+          "makuri": "2",
+          "sashi": "9",
+          "mark": "1",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014082",
+          "name": "高橋　雅之",
+          "prefecture": "千　葉",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "追",
+          "points": "92.95",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "7",
+          "mark": "5",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014466",
+          "name": "二藤　元太",
+          "prefecture": "静　岡",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "92.33",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015423",
+          "name": "上川　直紀",
+          "prefecture": "栃　木",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "91.96",
+          "nige": "4",
+          "makuri": "5",
+          "sashi": "1",
+          "mark": "1",
+          "back": "6",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "014991",
+          "name": "中島　将尊",
+          "prefecture": "東　京",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "追",
+          "points": "91.83",
+          "nige": "1",
+          "makuri": "1",
+          "sashi": "1",
+          "mark": "1",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015602",
+          "name": "比佐　宝太",
+          "prefecture": "福　島",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "逃",
+          "points": "91.62",
+          "nige": "3",
+          "makuri": "5",
+          "sashi": "2",
+          "mark": "0",
+          "back": "8",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "1",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+      "race_name": "Ｌ級ガ予１",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "20:50",
+      "distance_m": "1625",
+      "line_type": "ライン無し",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "5",
+          "car_no": "2"
+        },
+        {
+          "position": "3",
+          "car_no": "3"
+        },
+        {
+          "position": "7",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "11",
+          "car_no": "6"
+        },
+        {
+          "position": "13",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015756",
+          "name": "熊谷　芽緯",
+          "prefecture": "岩　手",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "逃",
+          "points": "55.29",
+          "nige": "3",
+          "makuri": "7",
+          "sashi": "0",
+          "mark": "1",
+          "back": "9",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015491",
+          "name": "當銘沙恵美",
+          "prefecture": "愛　知",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "54.11",
+          "nige": "2",
+          "makuri": "5",
+          "sashi": "3",
+          "mark": "2",
+          "back": "9",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015865",
+          "name": "豊田　美香",
+          "prefecture": "徳　島",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "51.83",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "2",
+          "mark": "3",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015027",
+          "name": "長澤　彩",
+          "prefecture": "福　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "50.95",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "016040",
+          "name": "アニー紗世",
+          "prefecture": "和歌山",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "48.29",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "0",
+          "mark": "0",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "015759",
+          "name": "星野　しほ",
+          "prefecture": "東　京",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "追",
+          "points": "47.39",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015581",
+          "name": "刈込　奈那",
+          "prefecture": "千　葉",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "逃",
+          "points": "45.33",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "2",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "2",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg"
+      "race_name": "Ｌ級ガ予１",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:10",
+      "distance_m": "1625",
+      "line_type": "ライン無し",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "3",
+          "car_no": "2"
+        },
+        {
+          "position": "5",
+          "car_no": "3"
+        },
+        {
+          "position": "7",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "11",
+          "car_no": "6"
+        },
+        {
+          "position": "13",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015400",
+          "name": "久米　詩",
+          "prefecture": "静　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "56.28",
+          "nige": "8",
+          "makuri": "4",
+          "sashi": "3",
+          "mark": "0",
+          "back": "10",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015018",
+          "name": "高橋　梨香",
+          "prefecture": "埼　玉",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "53.53",
+          "nige": "0",
+          "makuri": "4",
+          "sashi": "1",
+          "mark": "4",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015858",
+          "name": "平子　結菜",
+          "prefecture": "三　重",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "51.50",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "1",
+          "mark": "3",
+          "back": "7",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015944",
+          "name": "赤池　七虹",
+          "prefecture": "静　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "50.25",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "0",
+          "mark": "1",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015576",
+          "name": "菅原ななこ",
+          "prefecture": "宮　城",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "50.16",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "016044",
+          "name": "齊藤　萌",
+          "prefecture": "福　岡",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "両",
+          "points": "47.33",
+          "nige": "1",
+          "makuri": "1",
+          "sashi": "0",
+          "mark": "0",
+          "back": "4",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015593",
+          "name": "中村　鈴花",
+          "prefecture": "熊　本",
+          "previous_class": "L1",
+          "class": "L1",
+          "style": "追",
+          "points": "46.77",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "3",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:30",
+      "distance_m": "1625",
+      "line_type": "三分戦",
+      "line_order": [
+        {
+          "position": "2",
+          "car_no": "1"
+        },
+        {
+          "position": "5",
+          "car_no": "2"
+        },
+        {
+          "position": "8",
+          "car_no": "3"
+        },
+        {
+          "position": "9",
+          "car_no": "4"
+        },
+        {
+          "position": "6",
+          "car_no": "5"
+        },
+        {
+          "position": "3",
+          "car_no": "6"
+        },
+        {
+          "position": "1",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "013332",
+          "name": "吉村　和之",
+          "prefecture": "岐　阜",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "89.28",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "015483",
+          "name": "谷元　奎心",
+          "prefecture": "山　口",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "88.21",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014950",
+          "name": "市村　昌樹",
+          "prefecture": "兵　庫",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "85.48",
+          "nige": "0",
+          "makuri": "6",
+          "sashi": "2",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015056",
+          "name": "田村　風起",
+          "prefecture": "奈　良",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "83.57",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "1",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "014549",
+          "name": "戸伏　康夫",
+          "prefecture": "岡　山",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "82.85",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "013953",
+          "name": "坂元　洋行",
+          "prefecture": "三　重",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "81.83",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015101",
+          "name": "松岡晋乃介",
+          "prefecture": "岐　阜",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "81.62",
+          "nige": "2",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "5",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "4",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "21:50",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "2",
+          "car_no": "1"
+        },
+        {
+          "position": "1",
+          "car_no": "2"
+        },
+        {
+          "position": "6",
+          "car_no": "3"
+        },
+        {
+          "position": "3",
+          "car_no": "4"
+        },
+        {
+          "position": "7",
+          "car_no": "5"
+        },
+        {
+          "position": "5",
+          "car_no": "6"
+        },
+        {
+          "position": "9",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "013971",
+          "name": "内山　拓",
+          "prefecture": "福　岡",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "86.16",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "4",
+          "mark": "0",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014783",
+          "name": "魚屋　周成",
+          "prefecture": "大　分",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "逃",
+          "points": "86.09",
+          "nige": "2",
+          "makuri": "7",
+          "sashi": "0",
+          "mark": "2",
+          "back": "4",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "012452",
+          "name": "伊藤　健詞",
+          "prefecture": "石　川",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "追",
+          "points": "85.86",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "5",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014332",
+          "name": "芳野　匠",
+          "prefecture": "愛　媛",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "84.53",
+          "nige": "1",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "1",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "012112",
+          "name": "冨岡　健一",
+          "prefecture": "岐　阜",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "81.58",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "013952",
+          "name": "東　鉄也",
+          "prefecture": "三　重",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "両",
+          "points": "81.46",
+          "nige": "1",
+          "makuri": "2",
+          "sashi": "2",
+          "mark": "1",
+          "back": "3",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "014755",
+          "name": "奥出健士郎",
+          "prefecture": "福　井",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "77.96",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "1",
+          "mark": "0",
+          "back": "2",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "5",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:10",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "5",
+          "car_no": "1"
+        },
+        {
+          "position": "6",
+          "car_no": "2"
+        },
+        {
+          "position": "2",
+          "car_no": "3"
+        },
+        {
+          "position": "3",
+          "car_no": "4"
+        },
+        {
+          "position": "1",
+          "car_no": "5"
+        },
+        {
+          "position": "7",
+          "car_no": "6"
+        },
+        {
+          "position": "9",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "014032",
+          "name": "藤田　真",
+          "prefecture": "兵　庫",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "両",
+          "points": "87.09",
+          "nige": "0",
+          "makuri": "3",
+          "sashi": "2",
+          "mark": "1",
+          "back": "3",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "013047",
+          "name": "田中　俊充",
+          "prefecture": "福　井",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "85.61",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "5",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "012763",
+          "name": "内村　泰三",
+          "prefecture": "山　口",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "85.45",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "3",
+          "mark": "0",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "013434",
+          "name": "石黒　健",
+          "prefecture": "広　島",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "両",
+          "points": "82.20",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "1",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015915",
+          "name": "柏野　健吾",
+          "prefecture": "岡　山",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "逃",
+          "points": "80.12",
+          "nige": "4",
+          "makuri": "4",
+          "sashi": "0",
+          "mark": "0",
+          "back": "12",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "014703",
+          "name": "一ノ瀬貴将",
+          "prefecture": "大　阪",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "両",
+          "points": "79.19",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "012850",
+          "name": "渡邉　満",
+          "prefecture": "福　岡",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "追",
+          "points": "78.04",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "6",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:30",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "2",
+          "car_no": "2"
+        },
+        {
+          "position": "5",
+          "car_no": "3"
+        },
+        {
+          "position": "8",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "7",
+          "car_no": "6"
+        },
+        {
+          "position": "4",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015753",
+          "name": "枝村　弘樹",
+          "prefecture": "宮　崎",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "88.15",
+          "nige": "1",
+          "makuri": "6",
+          "sashi": "1",
+          "mark": "0",
+          "back": "11",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014333",
+          "name": "阿部　兼士",
+          "prefecture": "福　岡",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "追",
+          "points": "87.45",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "8",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014620",
+          "name": "二條　祐也",
+          "prefecture": "徳　島",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "85.04",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "1",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "012603",
+          "name": "大川　栄二",
+          "prefecture": "和歌山",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "追",
+          "points": "83.25",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "014758",
+          "name": "中野　智公",
+          "prefecture": "和歌山",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "82.76",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "015827",
+          "name": "藤原　夏志",
+          "prefecture": "大　阪",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "81.20",
+          "nige": "1",
+          "makuri": "1",
+          "sashi": "3",
+          "mark": "0",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "014412",
+          "name": "宮崎　康司",
+          "prefecture": "香　川",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "両",
+          "points": "80.14",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "2",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "7",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "22:50",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "1",
+          "car_no": "1"
+        },
+        {
+          "position": "2",
+          "car_no": "2"
+        },
+        {
+          "position": "3",
+          "car_no": "3"
+        },
+        {
+          "position": "7",
+          "car_no": "4"
+        },
+        {
+          "position": "6",
+          "car_no": "5"
+        },
+        {
+          "position": "5",
+          "car_no": "6"
+        },
+        {
+          "position": "9",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015634",
+          "name": "末廣　快理",
+          "prefecture": "兵　庫",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "逃",
+          "points": "91.96",
+          "nige": "7",
+          "makuri": "5",
+          "sashi": "1",
+          "mark": "1",
+          "back": "14",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "012981",
+          "name": "片山　弘城",
+          "prefecture": "大　阪",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "89.35",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "6",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014597",
+          "name": "上田　隼",
+          "prefecture": "岐　阜",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "追",
+          "points": "85.29",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "3",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "012920",
+          "name": "山崎　岳志",
+          "prefecture": "佐　賀",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "84.95",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "7",
+          "mark": "2",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "014269",
+          "name": "梶原　恵介",
+          "prefecture": "大　分",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "84.25",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "2",
+          "mark": "5",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "015659",
+          "name": "池田伍功羽",
+          "prefecture": "熊　本",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "81.82",
+          "nige": "2",
+          "makuri": "2",
+          "sashi": "1",
+          "mark": "0",
+          "back": "7",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015119",
+          "name": "佐伯　辰哉",
+          "prefecture": "広　島",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "両",
+          "points": "77.33",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "0",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "8",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg"
+      "race_name": "Ａ級予選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "23:10",
+      "distance_m": "1625",
+      "line_type": "二分戦",
+      "line_order": [
+        {
+          "position": "2",
+          "car_no": "1"
+        },
+        {
+          "position": "1",
+          "car_no": "2"
+        },
+        {
+          "position": "6",
+          "car_no": "3"
+        },
+        {
+          "position": "7",
+          "car_no": "4"
+        },
+        {
+          "position": "3",
+          "car_no": "5"
+        },
+        {
+          "position": "5",
+          "car_no": "6"
+        },
+        {
+          "position": "9",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "012972",
+          "name": "金子　貴志",
+          "prefecture": "愛　知",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "追",
+          "points": "88.38",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014473",
+          "name": "重倉　高史",
+          "prefecture": "富　山",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "両",
+          "points": "88.29",
+          "nige": "8",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "1",
+          "back": "20",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "014638",
+          "name": "川又　裕樹",
+          "prefecture": "鹿児島",
+          "previous_class": "A1",
+          "class": "A2",
+          "style": "追",
+          "points": "84.88",
+          "nige": "0",
+          "makuri": "1",
+          "sashi": "3",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "015481",
+          "name": "山川　奨太",
+          "prefecture": "熊　本",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "逃",
+          "points": "81.00",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "3",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "014596",
+          "name": "中村　賢二",
+          "prefecture": "愛　知",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "追",
+          "points": "79.79",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "015743",
+          "name": "丸林　駿太",
+          "prefecture": "福　岡",
+          "previous_class": "A3",
+          "class": "A2",
+          "style": "逃",
+          "points": "78.61",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "1",
+          "mark": "0",
+          "back": "8",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "012844",
+          "name": "米澤　大輔",
+          "prefecture": "徳　島",
+          "previous_class": "A2",
+          "class": "A2",
+          "style": "追",
+          "points": "78.00",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "0",
+          "mark": "1",
+          "back": "0",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg"
     },
     {
-      "stage": "race_detail",
       "venue": "豊橋",
+      "venue_code": "45",
+      "event_start_date": "20261015",
+      "day": "",
+      "race_date": "",
       "race_no": "9",
-      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0"
+      "race_name": "Ａ級初特選",
+      "race_url": "https://keirin.jp/sp/race",
+      "race_encp": "-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0",
+      "event_encp": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "race_date_display": "2026/10/15",
+      "start_time": "23:30",
+      "distance_m": "1625",
+      "line_type": "四分戦",
+      "line_order": [
+        {
+          "position": "4",
+          "car_no": "1"
+        },
+        {
+          "position": "7",
+          "car_no": "2"
+        },
+        {
+          "position": "1",
+          "car_no": "3"
+        },
+        {
+          "position": "5",
+          "car_no": "4"
+        },
+        {
+          "position": "9",
+          "car_no": "5"
+        },
+        {
+          "position": "2",
+          "car_no": "6"
+        },
+        {
+          "position": "10",
+          "car_no": "7"
+        }
+      ],
+      "riders": [
+        {
+          "car_no": "1",
+          "registration_no": "015204",
+          "name": "吉田　智哉",
+          "prefecture": "愛　媛",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "逃",
+          "points": "95.20",
+          "nige": "0",
+          "makuri": "4",
+          "sashi": "6",
+          "mark": "3",
+          "back": "1",
+          "comment": ""
+        },
+        {
+          "car_no": "2",
+          "registration_no": "014339",
+          "name": "成松　春樹",
+          "prefecture": "佐　賀",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "両",
+          "points": "95.16",
+          "nige": "0",
+          "makuri": "2",
+          "sashi": "9",
+          "mark": "4",
+          "back": "2",
+          "comment": ""
+        },
+        {
+          "car_no": "3",
+          "registration_no": "015278",
+          "name": "田中　和磨",
+          "prefecture": "岡　山",
+          "previous_class": "A2",
+          "class": "A1",
+          "style": "逃",
+          "points": "93.59",
+          "nige": "1",
+          "makuri": "7",
+          "sashi": "3",
+          "mark": "1",
+          "back": "6",
+          "comment": ""
+        },
+        {
+          "car_no": "4",
+          "registration_no": "014104",
+          "name": "池田　憲昭",
+          "prefecture": "香　川",
+          "previous_class": "S2",
+          "class": "A1",
+          "style": "追",
+          "points": "92.28",
+          "nige": "0",
+          "makuri": "0",
+          "sashi": "4",
+          "mark": "3",
+          "back": "0",
+          "comment": ""
+        },
+        {
+          "car_no": "5",
+          "registration_no": "015632",
+          "name": "常次　勇人",
+          "prefecture": "大　阪",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "92.26",
+          "nige": "6",
+          "makuri": "7",
+          "sashi": "0",
+          "mark": "0",
+          "back": "12",
+          "comment": ""
+        },
+        {
+          "car_no": "6",
+          "registration_no": "014952",
+          "name": "多田　晃紀",
+          "prefecture": "岡　山",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "91.29",
+          "nige": "4",
+          "makuri": "11",
+          "sashi": "1",
+          "mark": "0",
+          "back": "10",
+          "comment": ""
+        },
+        {
+          "car_no": "7",
+          "registration_no": "015719",
+          "name": "出口謙一郎",
+          "prefecture": "岐　阜",
+          "previous_class": "A1",
+          "class": "A1",
+          "style": "逃",
+          "points": "91.16",
+          "nige": "4",
+          "makuri": "7",
+          "sashi": "0",
+          "mark": "0",
+          "back": "9",
+          "comment": ""
+        }
+      ],
+      "rider_count": 7,
+      "comment_status": "本文未取得",
+      "source": "KEIRIN.JP",
+      "http_status": 200,
+      "final_url": "https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0"
     }
-  ]
+  ],
+  "errors": []
 }
