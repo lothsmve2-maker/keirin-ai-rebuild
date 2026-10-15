@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T10:53:31.520849+09:00",
+  "started_at_jst": "2026-10-15T11:11:04.190109+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "2R",
+      "race_num": "3R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -228,7 +228,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "2R",
+        "raceNum": "3R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -439,7 +439,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "1R",
+      "race_num": "2R",
       "start_date": "20261013",
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
@@ -477,8 +477,8 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "1",
-        "raceNum": "1R",
+        "denColorFlg": "0",
+        "raceNum": "2R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -1171,7 +1171,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "2R",
+      "race_num": "3R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -1209,7 +1209,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "2R",
+        "raceNum": "3R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -1415,7 +1415,7 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "1R",
+      "race_num": "2R",
       "start_date": "20261013",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -1452,8 +1452,8 @@
       "raw_relevant_fields": {
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-        "denColorFlg": "1",
-        "raceNum": "1R",
+        "denColorFlg": "0",
+        "raceNum": "2R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -1577,5 +1577,5 @@
       }
     }
   ],
-  "finished_at_jst": "2026-10-15T10:53:38.128106+09:00"
+  "finished_at_jst": "2026-10-15T11:11:11.535391+09:00"
 }
