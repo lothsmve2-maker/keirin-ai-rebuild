@@ -508,24 +508,42 @@ def download_javascript(session, script_url):
         }
 
 
-def test_candidate(session, url, params=None):
-    """GETのみで、発見した候補URLを安全に調査する。"""
+def test_candidate(
+    session,
+    url,
+    params=None,
+    method="GET",
+    referer=None,
+):
+    """発見した候補URLをGETまたはPOSTで検証する。"""
     try:
-        response = fetch(
-            session,
-            url,
-            params=params or None,
-            headers={"Referer": SCHEDULE_URL},
-        )
-
+        headers = {
+            "Referer": referer or SCHEDULE_URL,
+        }
+        if method.upper() == "POST":
+            response = session.post(
+                url,
+                data=params or {},
+                headers=headers,
+                timeout=TIMEOUT,
+                allow_redirects=True,
+            )
+        else:
+            response = fetch(
+                session,
+                url,
+                params=params or None,
+                headers=headers,
+            )
         response.encoding = (
             response.apparent_encoding or "utf-8"
         )
-
-        content_type = response.headers.get("Content-Type", "")
+        content_type = response.headers.get(
+            "Content-Type", ""
+        )
         body = response.text or ""
-
         result = {
+            "method": method.upper(),
             "requested_url": url,
             "final_url": response.url,
             "params": params or {},
@@ -536,40 +554,75 @@ def test_candidate(session, url, params=None):
                 {
                     "status_code": item.status_code,
                     "url": item.url,
-                    "location": item.headers.get("Location", ""),
+                    "location": item.headers.get(
+                        "Location", ""
+                    ),
                 }
                 for item in response.history
             ],
         }
-
         if "json" in content_type.lower():
             try:
                 parsed = response.json()
                 result["response_type"] = "json"
-                result["json_top_level_type"] = type(parsed).__name__
-
+                result["json_top_level_type"] = (
+                    type(parsed).__name__
+                )
                 if isinstance(parsed, dict):
-                    result["json_keys"] = list(parsed.keys())
-
-                result["json_sample"] = shorten(parsed, 5000)
+                    result["json_keys"] = list(
+                        parsed.keys()
+                    )
+                result["json_sample"] = shorten(
+                    parsed, 5000
+                )
             except Exception:
-                result["response_type"] = "json_parse_failed"
+                result["response_type"] = (
+                    "json_parse_failed"
+                )
                 result["body_sample"] = body[:1500]
         else:
-            metrics = inspect_html(body, response.url)
-
+            metrics = inspect_html(
+                body, response.url
+            )
             result["response_type"] = "html"
             result["title"] = metrics["title"]
-            result["text_length"] = metrics["text_length"]
-            result["body_sample"] = metrics["text_sample"][:1000]
-
+            result["text_length"] = (
+                metrics["text_length"]
+            )
+            result["body_sample"] = (
+                metrics["text_sample"][:1500]
+            )
+            # 出走表の可能性を判定するための手掛かり
+            result["entry_indicators"] = {
+                "has_race_number": bool(
+                    re.search(
+                        r"\b[1-9]R\b",
+                        metrics["text_sample"],
+                    )
+                ),
+                "has_rider_terms": bool(
+                    re.search(
+                        r"選手|車番|登録番号|出走表",
+                        body,
+                    )
+                ),
+                "has_error_terms": bool(
+                    re.search(
+                        r"予期せぬエラー|エラーが発生|"
+                        r"該当するデータがありません",
+                        body,
+                    )
+                ),
+            }
         return result
-
     except Exception as exc:
         return {
+            "method": method.upper(),
             "requested_url": url,
             "params": params or {},
-            "error": f"{type(exc).__name__}: {exc}",
+            "error": (
+                f"{type(exc).__name__}: {exc}"
+            ),
         }
 
 
