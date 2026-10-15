@@ -1,171 +1,195 @@
-import re
+import json
+import time
+from pathlib import Path
+
 import requests
-from bs4 import BeautifulSoup
 
 BASE = "https://keirin.jp"
-RACE_ENCP = "a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+DATA_FILE = Path("data/entries_today.json")
+RACE_LIST_API = f"{BASE}/sp/json"
+MAX_RACES = 8
 
-s = requests.Session()
-s.headers.update({
+HEADERS = {
     "User-Agent": (
         "Mozilla/5.0 (Linux; Android 14) "
-        "AppleWebKit/537.36 Chrome/131.0.0.0 Mobile Safari/537.36"
+        "AppleWebKit/537.36 Chrome/131.0.0.0 "
+        "Mobile Safari/537.36"
     ),
-    "Referer": BASE + "/sp/raceschedule",
-})
+    "Referer": f"{BASE}/sp/raceschedule",
+    "X-Requested-With": "XMLHttpRequest",
+}
 
-def fetch(url):
-    r = s.get(url, timeout=20)
-    r.encoding = r.apparent_encoding
-    return r
 
-def show_block(name, text, patterns, before=3, after=5):
-    lines = text.splitlines()
-    indexes = set()
+def collect_races(obj, found):
+    """JSON内からレース情報を再帰的に収集する。"""
 
-    for i, line in enumerate(lines):
-        if any(re.search(p, line, re.I) for p in patterns):
-            indexes.update(
-                range(max(0, i - before), min(len(lines), i + after + 1))
-            )
+    if isinstance(obj, dict):
+        encp = (
+            obj.get("race_encp")
+            or obj.get("race_encp_param")
+        )
 
-    print(f"\n--- {name} ---")
-    for i in sorted(indexes):
-        print(f"{i + 1}: {lines[i][:350]}")
+        if encp:
+            found.append({
+                "encp": str(encp),
+                "venue": obj.get("venue", obj.get("venue_name", "")),
+                "race_no": obj.get("race_no", obj.get("race_number", "")),
+                "url": obj.get("race_url", ""),
+            })
+
+        for value in obj.values():
+            if isinstance(value, (dict, list)):
+                collect_races(value, found)
+
+    elif isinstance(obj, list):
+        for value in obj:
+            collect_races(value, found)
+
 
 def main():
-    print("KEIRIN コメント通信・簡易調査")
+    print("=" * 45)
+    print("KEIRIN.JP 選手コメント取得・複数レース検証")
+    print("=" * 45)
 
-    url = f"{BASE}/sp/race?encp={RACE_ENCP}"
-    r = fetch(url)
-        # 選手コメントの公式JSON取得テスト
-    print("\n--- 選手コメントJSONテスト ---")
-
-    api = s.get(
-        f"{BASE}/sp/json",
-        params={
-            "type": "JSJ041",
-            "encp": RACE_ENCP,
-            "skbn": "1",
-        },
-        headers={
-            "Referer": url,
-            "X-Requested-With": "XMLHttpRequest",
-        },
-        timeout=20,
-    )
-
-    print("HTTP:", api.status_code)
-    print("取得サイズ:", len(api.text), "bytes")
+    if not DATA_FILE.exists():
+        print("ERROR: data/entries_today.json がありません")
+        return
 
     try:
-        data = api.json()
-
-        if isinstance(data, dict):
-            print("JSONキー:", list(data.keys()))
-
-            riders = data.get("sensyuTypeInfo", [])
-
-            if isinstance(riders, list):
-                print("選手件数:", len(riders))
-
-                for i, rider in enumerate(riders[:3], start=1):
-                    if not isinstance(rider, dict):
-                        print(f"選手{i}: データ形式が辞書ではありません")
-                        continue
-
-                    print(f"\n--- 選手{i}のJSON項目 ---")
-
-                    for key, value in rider.items():
-                        text_value = str(value).replace("\n", " ")
-                        print(f"{key}: {text_value[:160]}")
-            else:
-                print("sensyuTypeInfoの形式:", type(riders).__name__)
-            
-
-        else:
-            print("JSON形式:", type(data).__name__)
-
+        data = json.loads(DATA_FILE.read_text(encoding="utf-8"))
     except Exception as e:
-        print("JSON解析エラー:", str(e))
-        print("応答先頭:", api.text[:500])
-    print("レースページ:", r.status_code, len(r.text), "bytes")
+        print("JSON読込エラー:", e)
+        return
 
-    soup = BeautifulSoup(r.text, "html.parser")
+    print("対象日:", data.get("target_date"))
 
-    # コメント関連のHTML要素
-    for selector in [
-        "#ryTbodyRaceInfo",
-        "[id*='ry']",
-        "[id*='Comment']",
-    ]:
-        for el in soup.select(selector)[:5]:
-            print(
-                "HTML:",
-                el.name,
-                el.get("id"),
-                "text=",
-                el.get_text(" ", strip=True)[:120],
-            )
+    races = []
+    collect_races(data, races)
 
-    # 必要なJavaScriptだけ調査
-    targets = {
-        "SJ0321_c.js": [
-            r"JSON_REQ_ID",
-            r"getRequestGet",
-            r"ryController",
-        ],
-        "SJ0321_v.js": [
-            r"ryDrawJSONData",
-            r"ryCreateList",
-            r"ryTbodyRaceInfo",
-            r"sensyuTypeInfo",
-        ],
-        "FSJ0315.js": [
-            r"gReqPrmsObject",
-            r"getRequestGet",
-            r"reqPromises",
-            r"ryDrawJSONData",
-            r"JSON_REQ_ID",
-            r"update\(",
-        ],
-        "commonJSON.js": [
-            r"getRequestGet:",
-            r"getRequestPost:",
-            r"ajaxCfg",
-            r"url:",
-        ],
-    }
+    # encpで重複を除去
+    unique = {}
+    for race in races:
+        unique.setdefault(race["encp"], race)
 
-    for filename, patterns in targets.items():
-        js_url = f"{BASE}/sp/static/js/{filename}"
+    races = list(unique.values())[:MAX_RACES]
+
+    if not races:
+        print("レース情報から race_encp を検出できませんでした")
+        print("トップレベルのキー:", list(data.keys()))
+        print("JSONのレース項目名を確認する必要があります")
+        return
+
+    print("検証レース数:", len(races))
+
+    session = requests.Session()
+    session.headers.update(HEADERS)
+
+    total_riders = 0
+    total_comment_fields = 0
+    total_comments = 0
+
+    for index, race in enumerate(races, start=1):
+        label = (
+            f"{race['venue']} {race['race_no']}R"
+            if race["venue"] or race["race_no"]
+            else f"検証レース{index}"
+        )
+
+        print(f"\n--- {index}/{len(races)} {label} ---")
 
         try:
-            js = fetch(js_url)
-            print(
-                f"\n{filename}: HTTP {js.status_code}, "
-                f"{len(js.text)} bytes"
+            response = session.get(
+                RACE_LIST_API,
+                params={
+                    "type": "JSJ041",
+                    "encp": race["encp"],
+                    "skbn": "1",
+                },
+                headers={
+                    "Referer": (
+                        race["url"]
+                        if race["url"]
+                        else f"{BASE}/sp/race?encp={race['encp']}"
+                    )
+                },
+                timeout=20,
             )
-            show_block(filename, js.text, patterns)
+
+            print("HTTP:", response.status_code)
+            response.raise_for_status()
+            payload = response.json()
+
+            if not isinstance(payload, dict):
+                print("JSON形式:", type(payload).__name__)
+                continue
+
+            riders = payload.get("sensyuTypeInfo", [])
+
+            if not isinstance(riders, list):
+                print("選手データ形式:", type(riders).__name__)
+                continue
+
+            total_riders += len(riders)
+
+            print("選手数:", len(riders))
+            print("resultCd:", payload.get("resultCd"))
+
+            field_count = 0
+            comment_count = 0
+
+            for rider in riders:
+                if not isinstance(rider, dict):
+                    continue
+
+                # コメントに関係する項目名を探す
+                keys = [
+                    key for key in rider
+                    if "comment" in key.lower()
+                    or "jikou" in key.lower()
+                    or "sensyu" in key.lower()
+                ]
+
+                if keys:
+                    field_count += 1
+
+                for key in keys:
+                    value = rider.get(key)
+
+                    if (
+                        "comment" in key.lower()
+                        and isinstance(value, str)
+                        and value.strip()
+                    ):
+                        comment_count += 1
+                        print(
+                            "コメントあり:",
+                            rider.get("syaban", "?"),
+                            rider.get("sensyuName", ""),
+                            f"{key}={value[:80]}",
+                        )
+
+            total_comment_fields += field_count
+            total_comments += comment_count
+
+            print("関連項目を持つ選手数:", field_count)
+            print("コメント本文あり:", comment_count)
+
+            if riders and isinstance(riders[0], dict):
+                print("先頭選手の全キー:", list(riders[0].keys()))
+
         except Exception as e:
-            print(f"{filename}: ERROR {e}")
+            print("取得エラー:", str(e)[:200])
 
-    # HTML内の通信設定だけを表示
-    show_block(
-        "HTML通信設定",
-        r.text,
-        [
-            r"hhhdnPostUrl",
-            r"gReqPrmsObject",
-            r"JSJ041",
-            r"ryController",
-            r"ryTbodyRaceInfo",
-        ],
-        before=2,
-        after=4,
-    )
+        time.sleep(0.3)
 
-    print("\n調査終了")
+    print("\n" + "=" * 45)
+    print("検証結果")
+    print("検証レース数:", len(races))
+    print("選手データ合計:", total_riders)
+    print("関連項目を持つ選手数の合計:", total_comment_fields)
+    print("コメント本文ありの合計:", total_comments)
+    print("=" * 45)
+
 
 if __name__ == "__main__":
     main()
