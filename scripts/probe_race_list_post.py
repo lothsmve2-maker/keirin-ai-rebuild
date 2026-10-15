@@ -959,7 +959,7 @@ def main():
         "/",
         len(followup_urls),
     )
-        # 8. 公式JSON JSJ049の直接取得を検証
+    # 8. 公式JSON JSJ049の直接取得を検証
     print("[8/8] 出走表関連JSONを直接検証中...")
 
     report["json_endpoint_tests"] = []
