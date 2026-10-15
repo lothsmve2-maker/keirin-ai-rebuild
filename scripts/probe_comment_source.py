@@ -1,13 +1,12 @@
-import json
 import re
 import requests
 from bs4 import BeautifulSoup
-from urllib.parse import urljoin
 
 BASE = "https://keirin.jp"
+RACE_ENCP = "a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
 
-session = requests.Session()
-session.headers.update({
+s = requests.Session()
+s.headers.update({
     "User-Agent": (
         "Mozilla/5.0 (Linux; Android 14) "
         "AppleWebKit/537.36 Chrome/131.0.0.0 Mobile Safari/537.36"
@@ -15,156 +14,104 @@ session.headers.update({
     "Referer": BASE + "/sp/raceschedule",
 })
 
-def get(url):
-    r = session.get(url, timeout=25)
+def fetch(url):
+    r = s.get(url, timeout=20)
     r.encoding = r.apparent_encoding
     return r
 
-def print_context(name, source, patterns, radius=5):
-    lines = source.splitlines()
-    found = set()
+def show_block(name, text, patterns, before=3, after=5):
+    lines = text.splitlines()
+    indexes = set()
 
     for i, line in enumerate(lines):
         if any(re.search(p, line, re.I) for p in patterns):
-            for j in range(max(0, i - radius), min(len(lines), i + radius + 1)):
-                found.add(j)
+            indexes.update(
+                range(max(0, i - before), min(len(lines), i + after + 1))
+            )
 
-    print(f"\n===== {name} ({len(lines)} lines) =====")
-    for i in sorted(found):
-        print(f"L{i + 1}: {lines[i][:500]}")
+    print(f"\n--- {name} ---")
+    for i in sorted(indexes):
+        print(f"{i + 1}: {lines[i][:350]}")
 
 def main():
-    print("=" * 60)
-    print("KEIRIN.JP コメント通信パラメータ調査")
-    print("=" * 60)
+    print("KEIRIN コメント通信・簡易調査")
 
-    schedule = get(BASE + "/sp/raceschedule")
-    print("schedule:", schedule.status_code, len(schedule.text))
+    url = f"{BASE}/sp/race?encp={RACE_ENCP}"
+    r = fetch(url)
+    print("レースページ:", r.status_code, len(r.text), "bytes")
 
-    # 本日の開催情報を取得
-    from datetime import datetime
-    today = datetime.now().strftime("%Y%m%d")
+    soup = BeautifulSoup(r.text, "html.parser")
 
-    candidates = re.findall(
-        r"""encPrm["']?\s*[:=]\s*["']([^"']+)["']""",
-        schedule.text
-    )
+    # コメント関連のHTML要素
+    for selector in [
+        "#ryTbodyRaceInfo",
+        "[id*='ry']",
+        "[id*='Comment']",
+    ]:
+        for el in soup.select(selector)[:5]:
+            print(
+                "HTML:",
+                el.name,
+                el.get("id"),
+                "text=",
+                el.get_text(" ", strip=True)[:120],
+            )
 
-    # ページ内の開催情報から開催パラメータを探す
-    soup = BeautifulSoup(schedule.text, "html.parser")
-    page_text = str(soup)
-
-    event_url = None
-    event_params = []
-
-    for m in re.finditer(r"JSJ049|kaisaiDayList|strRaceLnkPrm", page_text):
-        event_params.append(page_text[max(0, m.start()-250):m.start()+500])
-
-    print("\n開催情報候補数:", len(event_params))
-    print("開催パラメータ候補:")
-    for item in event_params[:8]:
-        print(re.sub(r"\s+", " ", item)[:700])
-
-    # 今日の開催パラメータが見つからなければ、
-    # 調査対象の開催パラメータをログから設定して再実行できるようにする。
-    event_encp = None
-
-    for script in soup.find_all("script"):
-        text = script.string or script.get_text() or ""
-        if today in text and ("encPrm" in text or "JSJ049" in text):
-            print("\nスケジュール内の本日関連スクリプト:")
-            print(text[:5000])
-
-    # 開催一覧APIのパラメータが取得できる場合は使用
-    for value in candidates:
-        if value:
-            event_encp = value
-            break
-
-    print("\n日付:", today)
-    print("自動検出した開催encp:", event_encp)
-
-    # 既知の開催パラメータを使用して通信処理を調査
-    # 必要なら、現在開催中のレースのencpに変更する。
-    race_encp = (
-        "a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
-    )
-
-    race_url = BASE + "/sp/race?encp=" + race_encp
-    race = get(race_url)
-    print("\nレースページ:", race.status_code, len(race.text))
-
-    rsoup = BeautifulSoup(race.text, "html.parser")
-    hidden = {
-        x.get("name"): x.get("value", "")
-        for x in rsoup.select('input[type="hidden"][name]')
+    # 必要なJavaScriptだけ調査
+    targets = {
+        "SJ0321_c.js": [
+            r"JSON_REQ_ID",
+            r"getRequestGet",
+            r"ryController",
+        ],
+        "SJ0321_v.js": [
+            r"ryDrawJSONData",
+            r"ryCreateList",
+            r"ryTbodyRaceInfo",
+            r"sensyuTypeInfo",
+        ],
+        "FSJ0315.js": [
+            r"gReqPrmsObject",
+            r"getRequestGet",
+            r"reqPromises",
+            r"ryDrawJSONData",
+            r"JSON_REQ_ID",
+            r"update\(",
+        ],
+        "commonJSON.js": [
+            r"getRequestGet:",
+            r"getRequestPost:",
+            r"ajaxCfg",
+            r"url:",
+        ],
     }
 
-    print("\n===== hidden inputs =====")
-    print(json.dumps(hidden, ensure_ascii=False, indent=2)[:12000])
-
-    scripts = []
-    for tag in rsoup.find_all("script", src=True):
-        src = urljoin(race_url, tag["src"])
-        if "/static/js/" in src:
-            scripts.append(src)
-
-    targets = [
-        "SJ0321_c.js",
-        "SJ0321_v.js",
-        "FSJ0315.js",
-        "commonJSON.js",
-        "SC0201.js",
-    ]
-
-    for target in targets:
-        url = next((x for x in scripts if x.endswith("/" + target)), None)
-        if not url:
-            url = BASE + "/sp/static/js/" + target
+    for filename, patterns in targets.items():
+        js_url = f"{BASE}/sp/static/js/{filename}"
 
         try:
-            r = get(url)
-            print(f"\n取得 {target}: HTTP {r.status_code}, {len(r.text)} bytes")
-
-            patterns = [
-                r"JSON_REQ_ID",
-                r"getRequestGet",
-                r"getRequestPost",
-                r"ryController",
-                r"ryDrawJSONData",
-                r"ryCreateList",
-                r"gReqPrmsObject",
-                r"encp",
-                r"kaisai",
-                r"raceNo",
-                r"syoriKbn",
-                r"disp",
-                r"params",
-                r"ryTbodyRaceInfo",
-                r"comment",
-                r"jikou",
-            ]
-
-            print_context(target, r.text, patterns, radius=4)
-
+            js = fetch(js_url)
+            print(
+                f"\n{filename}: HTTP {js.status_code}, "
+                f"{len(js.text)} bytes"
+            )
+            show_block(filename, js.text, patterns)
         except Exception as e:
-            print(f"取得失敗 {target}: {e}")
+            print(f"{filename}: ERROR {e}")
 
-    # ページ内でコメント処理を呼び出している箇所も確認
-    print_context(
-        "RACE HTML",
-        race.text,
+    # HTML内の通信設定だけを表示
+    show_block(
+        "HTML通信設定",
+        r.text,
         [
-            r"ryTbodyRaceInfo",
-            r"SJ0321",
-            r"gReqPrmsObject",
-            r"ryController",
             r"hhhdnPostUrl",
-            r"encp",
-            r"kaisaiBi",
-            r"raceNo",
+            r"gReqPrmsObject",
+            r"JSJ041",
+            r"ryController",
+            r"ryTbodyRaceInfo",
         ],
-        radius=3,
+        before=2,
+        after=4,
     )
 
     print("\n調査終了")
