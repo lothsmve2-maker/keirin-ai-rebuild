@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T16:19:43.013266+09:00",
+  "started_at_jst": "2026-10-15T16:27:38.695362+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -309,7 +309,7 @@
       "raw_relevant_fields": {
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "3R",
         "sensyuList": [
           {
@@ -3914,7 +3914,7 @@
       "raw_relevant_fields": {
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "3R",
         "sensyuList": [
           {
@@ -5504,5 +5504,5 @@
       "sample": "{\"strUPDATE\": \"2026/10/15 02:37&nbsp;更新\", \"strKaisaiStop\": \"0\", \"strKaisaiStopMes\": \"\", \"kaisaiNitijiList\": [{\"strNitji\": \"初日\", \"strDay\": \"(10/15)\", \"strLnkIndex\": \"Nitiji_1\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"2日目\", \"strDay\": \"(10/16)\", \"strLnkIndex\": \"Nitiji_2\", \"strKaisaiST\": \"0\"}, {\"strNitji\": \"最終日\", \"strDay\": \"(10/17)\", \"strLnkIndex\": \"Nitiji_3\", \"strKaisaiST\": \"0\"}], \"kaisaiDayList\": [{\"strKaisaiNitijiLnk\": \"Nitiji_1\", \"strKaisaiNitijName\": \"初日(10/15)\", \"raceProgramList\": [{\"strRaceNo\": \"1\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"2\", \"strSyumokuName\": \"Ｌ級ガールズ予選（第１走）\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_B3\"}, {\"strRaceNo\": \"3\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"4\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"5\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"6\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"7\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"8\", \"strSyumokuName\": \"Ａ級予選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1_light\"}, {\"strRaceNo\": \"9\", \"strSyumokuName\": \"Ａ級初日特選\", \"strArrow\": \"/sp/static/img/icon/link_arrow.png\", \"strArrowName\": \"矢印\", \"strRaceLnk\": \"/sp/race\", \"strRaceLnkPrm\": \"-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0\", \"strRaceLnkKbn\": \"1\", \"strColorClass\": \"class_color_A1\"}]}, {\"strKaisaiNitijiLnk\": \"Nitiji_2\", \"strKaisaiNitijName\": \"2日目(10/16)\", \"r...(省略)"
     }
   ],
-  "finished_at_jst": "2026-10-15T16:20:01.986525+09:00"
+  "finished_at_jst": "2026-10-15T16:28:00.419540+09:00"
 }
