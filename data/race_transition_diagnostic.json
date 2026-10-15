@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T11:58:23.457887+09:00",
+  "started_at_jst": "2026-10-15T12:18:16.847408+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "4R",
+      "race_num": "5R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -227,8 +227,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "1",
-        "raceNum": "4R",
+        "denColorFlg": "0",
+        "raceNum": "5R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -439,7 +439,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "4R",
+      "race_num": "5R",
       "start_date": "20261013",
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
@@ -478,7 +478,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "4R",
+        "raceNum": "5R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -611,11 +611,873 @@
     "links": [
       {
         "text": "開催日程",
-        "href": "https://keirin.jp/sp/raceschedule"
+        "href": "https://keirin.jp/sp/raceschedule",
+        "onclick": ""
       },
       {
         "text": "グレードレース 開催日程",
-        "href": "https://keirin.jp/sp/graderaceschedule"
+        "href": "https://keirin.jp/sp/graderaceschedule",
+        "onclick": ""
+      }
+    ],
+    "click_handlers": [
+      {
+        "tag": "table",
+        "text": "09/30(水)～10/02(金) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO80VYyMPkDWzS_aNMcJgQ5Ns')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/14(水)～10/16(金) ＣＴＣ杯　ニッカン・コム杯",
+        "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8x30LOqYwaxS99_3JkEskrM')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/19(月)～10/21(水) ウィンチケット　ニッカン・コム",
+        "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO88ziB31mGQYBsGONoyb4HGI')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/24(土)～10/26(月) Ｂｅｔｉｍｏ杯×赤競杯",
+        "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO81KEL8r7GlTFwqRRiYFaQ7A')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/29(木)～10/31(土) ＪｏｍｏｎＧＰ日刊スポ杯ＯＰ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','YyUMwJFqH_os4DNhTHKO8wLV6OqCYrS_dR9olh2SZ7k')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/04(日)～10/06(火) サンスポ・ソラモギ・しいたけＣ",
+        "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8COdk5JfljoNyBmzNl2c9nJw')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/12(月)～10/14(水) 仲間と繋がるＴＩＰＳＴＡＲ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CDCL0qPydCPkwUAtI7oA1KQ')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/21(水)～10/23(金) ＣＴＣなら３分前まで買える杯",
+        "onclick": "lnk.formlnk('/sp/racelist','6nWOJ2YgWUh0vVMBoyI8CIjOXw91rJ15A1PGh9V-rQU')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/09(金)～10/12(月) 寛仁親王牌・世界選手権記念",
+        "onclick": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSPtQnORNQEO9Pheq8IxSWE8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "grade_g1_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/30(金)～11/01(日) 弥彦王冠記念・報知新聞賞",
+        "onclick": "lnk.formlnk('/sp/racelist','uT3_6zZe5WhDM6pyOeBlSJSKv-yQgc2fi9TP0qn22Yg')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "09/30(水)～10/02(金) 競輪データならＢｅｔｉｍｏ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1mDYdFLQ-EuakgV7Ncv5RQ')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/06(火)～10/08(木) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg3HjQlu3rvnA1GfpQX6SdFI')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/13(火)～10/15(木) ＣＴＣなら３分前まで買える杯",
+        "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjg1CmE93Vcm8Om666ynnA1FE')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/21(水)～10/23(金) オッズパーク杯",
+        "onclick": "lnk.formlnk('/sp/racelist','D-fs-ibaZM4Z3cYeuKvjgxDZ5nHFLRu4VSe9VQnbnlY')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/19(月)～10/21(水) スピードチャンネル・スカパー杯",
+        "onclick": "lnk.formlnk('/sp/racelist','fnI91TdVAK41Vyxrjvt6vTP-7VrZBUWZ4kJ0PBFZe_U')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/30(金)～11/01(日) ＵＪＣＣロード杯・トータリ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','VB1S_PaPR1rdxlfD6hcdcGswAKymhBptkQCjVRnMrSc')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/01(木)～10/03(土) スポーツニッポン新聞社杯",
+        "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwfdywKfgO9nQwA8qkBd-Qq4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/06(火)～10/08(木) 日刊スポーツ杯争奪戦",
+        "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwVtgF1pKnysAa7iD8gp9ic0')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/12(月)～10/14(水) ブリヂストンサイクル杯",
+        "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwcY9t7CZEhtTvDA9Loffv3M')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/22(木)～10/24(土) 日本シンライサービス杯",
+        "onclick": "lnk.formlnk('/sp/racelist','CpPQzSRN4GOX-sUUc0RGwQspyZuvSMcUaxuYENUHUxU')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/30(金)～11/01(日) 競輪データならＢｅｔｉｍｏ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','86UD0KmbHVSS6K2kIhuq0ZqLe71cbncKCEKRBerldq8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/17(土)～10/20(火) ゴールドカップレース",
+        "onclick": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvWFoiTJo-hFkji9i9fsclI')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "grade_g3_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/26(月)～10/28(水) 高木真備杯＆ベティモ杯＆日刊杯",
+        "onclick": "lnk.formlnk('/sp/racelist','yARyZ2RxXOeo4l7Z4BiVfvzb3fVDvXnGwDBPTiwQ5tQ')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/03(土)～10/05(月) 第９回みんなの競輪カップ",
+        "onclick": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkXzxFto3bCOrsCtlOAeUG7M')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/30(金)～11/01(日) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','PJOfLLI48RrgDLu5cqJtkbDlDZCKx1wsW0cyFWflKxs')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/01(木)～10/03(土) サンスポ杯　ラ・ピスタ新橋Ｃ",
+        "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhfzFrtNBlOnGTV6ZhUM2f0')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/09(金)～10/11(日) オッズパーク杯",
+        "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEpQvqK2Pya9zvb3YgGniqp0')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/20(火)～10/22(木) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEsKnuYr3LMg3BLNd3ofHOs8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/24(土)～10/26(月) 前検コメはウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','8IvInlH-g8qkyhDj_R7SEhE1zFAAk_3jLl0qngzym5A')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/03(土)～10/05(月) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlxnb_H4atigeMN8-loRZvrs')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/08(木)～10/10(土) 湘南しらす丸八丸杯",
+        "onclick": "lnk.formlnk('/sp/racelist','DmIwu_ksRjo1cUHhq6GFlwVwhA4adsu0dcSoYRqj8EI')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/20(火)～10/22(木) スポーツニッポン新聞社杯争奪戦",
+        "onclick": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXYkT68LaHvY3Djawu8X_fl4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/26(月)～10/28(水) 万葉の湯杯争奪戦",
+        "onclick": "lnk.formlnk('/sp/racelist','oGn5WPyFKUs7MmpVS67mXSd9y_c4GhJqsjIcnG1b_0Q')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/07(水)～10/09(金) 広告宣伝は静岡テレビセンター杯",
+        "onclick": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStb8OESi2-G-xCni41xAMs7w4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/15(木)～10/17(土) チャリロト杯",
+        "onclick": "lnk.formlnk('/sp/racelist','a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/24(土)～10/26(月) チャリロト杯　リンカイカップ",
+        "onclick": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiilOe8pBUmfUVxNNl5FeCQFo')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/30(金)～11/01(日) Ｋドリームス杯　ＪＰＦカップ",
+        "onclick": "lnk.formlnk('/sp/racelist','u93Y_4IZiF1UgerS4eAiiv7HUq64yiZ6ME0DTQMZTYk')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/10(土)～10/12(月) ＣＴＣなら３分前まで買える杯",
+        "onclick": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SB9LwskjkaXxX0eqfB-PPXU')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/28(水)～10/30(金) 日刊スポーツ杯　ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','fh4VmOIOM0WWTQX4GRt_SCr77ewKpBi7gVyeT4NMYGg')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/06(火)～10/08(木) 楽天Ｋドリームス杯",
+        "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVjJwAnTeus9GkllNppBWu8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/22(木)～10/24(土) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlVle08oB--MT0o8da__CyQw')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/27(火)～10/29(木) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','M55-TiOKRgzcmeiQ08HxlSUB0NjgR0WcaFXaVIfPlnk')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/15(木)～10/17(土) ＷＩＮＴＩＣＫＥＴ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/10(土)～10/12(月) 競輪データならＢｅｔｉｍｏ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuVxaV7xP0Y8NbfmJvCxleW6A')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/17(土)～10/19(月) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','NiH2Hdt-CWhCXytnwocuV4uMSKV6FG315QCDMBa-DHc')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/01(木)～10/04(日) 蒲生氏郷杯王座競輪",
+        "onclick": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwWWILb1bfXxVWgpZAS_OfI')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "grade_g3_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/21(水)～10/23(金) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','eNuNUsNFo4CVHMeFfGSwJwSll-sRfQyzbAcQIjfIY3I')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/07(水)～10/09(金) 萬古焼協賛　日刊スポーツ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7OQRCcav7YvgneLKvj6bFoY')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/16(金)～10/18(日) 稲藤日永うちわ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/21(水)～10/23(金) スポーツニッポン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','qv4GFogOJHiRvlOmhrBR7Aa-hl03lSN_3nFPdoyXYRw')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "09/30(水)～10/02(金) オッズパーク杯",
+        "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsPqNIF-sKwum5mQOxMjYZk')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/05(月)～10/07(水) Ｂｅｔｉｍｏ杯牛若丸賞ｉｎ奈良",
+        "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hs5WrSH89CG6UOEwUFxLQ-s')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/09(金)～10/11(日) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hts6oB72XDUdvmxRM2Gq-KA')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/14(水)～10/16(金) ラブリン杯弁慶賞ｉｎ奈良",
+        "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/23(金)～10/25(日) ＣＴＣなら３分前まで買える杯",
+        "onclick": "lnk.formlnk('/sp/racelist','hXAFouF_EW8oCnSpPo40hnlt_fgMJWRJ5PXpuN7pn7o')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/26(月)～10/28(水) ＣＴＣは３分前杯",
+        "onclick": "lnk.formlnk('/sp/racelist','D4DOyhWP8yD6jQkjiiZ35DL1LvWFBZCBp4NiU8lEyVE')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/13(火)～10/15(木) ＳＴ観音寺カップ＆ＣＴＣ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','v3GkGBnzcJwx-zPUFdtwmROC6PPEHcqiZVUSHxOlVO4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/18(日)～10/20(火) くにまつ杯／チャリロト杯",
+        "onclick": "lnk.formlnk('/sp/racelist','Ozpk-eumfo_0DwX9fHqEYZM2vaQijD5zEQSt7gPN5Vg')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/04(日)～10/06(火) 介護サービスのセービング杯",
+        "onclick": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW27DMre_ZraAHsHTLbMz7Cuk')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/23(金)～10/25(日) みんなの競輪杯",
+        "onclick": "lnk.formlnk('/sp/racelist','cT5PUT3R6DvBoJ7bLhzW23oHyCRUJpmVSh4R7JhMM9E')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/03(土)～10/05(月) ＣＴＣなら３分前まで買える杯",
+        "onclick": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfo0m4rnPSqrOoBrCjz7HIT4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/24(土)～10/26(月) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','MuuX8lCsFCCFm0JpogHUfg5J2ST_W0IySbTX98R8ck8')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/07(水)～10/09(金) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhbbH1g8teIJss01Rjzmv8aY')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/17(土)～10/19(月) 土佐の名人戦・日曜市１５０周年",
+        "onclick": "lnk.formlnk('/sp/racelist','u3ftnY5SRux-xk3s1TGkhZ7v27_Ztul7DZT5CZP0uN0')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/04(日)～10/06(火) サンケイスポーツ×ウィンチケ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','4QhapE1YS9GkaZAPKYUWdXvrEIXgCSmB3BNmfninRsg')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/11(日)～10/13(火) スポーツニッポン×ＨＰＣＪＣ",
+        "onclick": "lnk.formlnk('/sp/racelist','aTOkj2dFUUpQATsHeOxViBHjfEmMbGrPknkiBKLadBs')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/01(木)～10/03(土) 競輪データならＢｅｔｉｍｏ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIDb1FUhlN24zyV3EH0k246w')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/27(火)～10/29(木) 楽天ケイドリームス杯",
+        "onclick": "lnk.formlnk('/sp/racelist','1-mDn3P5FXuZU5C-JbtnIPO99Ab55n08ZLrFUT6ScWM')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/03(土)～10/05(月) オッズパーク杯",
+        "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM9muS26-e4kB1x3QxtM7jV0')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/09(金)～10/11(日) 第８回森うなぎ屋杯",
+        "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM4CcgcBIqUdHEXibAdR8KLA')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/17(土)～10/19(月) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM_kADHqqK95cySEHA2-RW-U')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/27(火)～10/29(木) サテライトみぞべカップ",
+        "onclick": "lnk.formlnk('/sp/racelist','uXOPvbsfbpEeQ909fsorM1ZJZg8ggHQrQazMyH0eRSA')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "09/30(水)～10/02(金) けいりんラブ！ラブリン杯",
+        "onclick": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_GYkhlG0pJaUU9gxegaVrpqY')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/18(日)～10/20(火) 競輪データならＢｅｔｉｍｏ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','pwzdqoQWyXU0o-0Slea_Gcm2_nVEs1nl-1EQIOxP-LQ')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/14(水)～10/16(金) 仲間と繋がるＴＩＰＳＴＡＲ杯",
+        "onclick": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/28(水)～10/30(金) 競輪するならみんなの競輪杯",
+        "onclick": "lnk.formlnk('/sp/racelist','28W231JXvY69KguDggGaUCrqaFX2JFjI4x_tNQkoXzA')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/12(月)～10/14(水) 前検日コメならウィンチケット杯",
+        "onclick": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SvCPDrdLm53Mc_01wnL8I70')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "white_bg_color",
+          "chgcolor"
+        ]
+      },
+      {
+        "tag": "table",
+        "text": "10/22(木)～10/25(日) 熊本地震復興事業火の国杯争奪戦",
+        "onclick": "lnk.formlnk('/sp/racelist','IOS13V6oiZkyQWK3r2H3SmNxXq7UszPF16rsUL4mFp4')",
+        "id": "",
+        "class": [
+          "race_tbl",
+          "grade_g3_bg_color",
+          "chgcolor"
+        ]
       }
     ],
     "forms": [],
@@ -1303,7 +2165,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "4R",
+      "race_num": "5R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -1340,8 +2202,8 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "1",
-        "raceNum": "4R",
+        "denColorFlg": "0",
+        "raceNum": "5R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -1547,7 +2409,7 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "4R",
+      "race_num": "5R",
       "start_date": "20261013",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -1585,7 +2447,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "4R",
+        "raceNum": "5R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -1709,5 +2571,5 @@
       }
     }
   ],
-  "finished_at_jst": "2026-10-15T11:58:29.000655+09:00"
+  "finished_at_jst": "2026-10-15T12:18:21.264029+09:00"
 }
