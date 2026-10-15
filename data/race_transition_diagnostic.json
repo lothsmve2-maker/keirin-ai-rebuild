@@ -1,15 +1,15 @@
 {
   "diagnostic": "KEIRIN.JP racecard communication investigation",
-  "started_at_utc": "2026-10-14T20:14:15.609859+00:00",
+  "started_at_utc": "2026-10-15T01:10:50.734427+00:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "events": [
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "12R",
+      "race_num": "1R",
       "start_date": "20261014",
-      "encPrm": "hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
       "sensyuList_type": "list",
       "sensyuList_count": 6
@@ -17,9 +17,9 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "12R",
+      "race_num": "1R",
       "start_date": "20261013",
-      "encPrm": "v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+      "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
       "sensyuList_type": "list",
       "sensyuList_count": 6
@@ -27,9 +27,9 @@
     {
       "venue": "別府",
       "venue_code": "86",
-      "race_num": "12R",
+      "race_num": "1R",
       "start_date": "20261014",
-      "encPrm": "28W231JXvY69KguDggGaUD8bL-cF8e1W3n0kqR10MIU",
+      "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
       "reqprm": "",
       "sensyuList_type": "list",
       "sensyuList_count": 6
@@ -45,17 +45,22 @@
         "disp"
       ],
       "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 30748,
-      "redirect_history": [],
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
       "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
         "race_number_count": 0,
         "race_numbers": [],
         "japanese_text_sample": [
-          "開催情報",
           "発生",
           "映像",
           "再生不具合",
@@ -69,16 +74,19 @@
           "競輪",
           "番車",
           "競走得点上位順",
-          "選手"
+          "選手",
+          "予期"
         ],
         "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -89,17 +97,22 @@
         "disp"
       ],
       "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 30748,
-      "redirect_history": [],
+      "bytes": 9135,
+      "redirect_history": [
+        {
+          "status_code": 302,
+          "url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
+          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
+        }
+      ],
       "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
+        "title": "エラーページ｜KEIRIN.JP",
+        "text_length": 339,
         "race_number_count": 0,
         "race_numbers": [],
         "japanese_text_sample": [
-          "開催情報",
           "発生",
           "映像",
           "再生不具合",
@@ -113,16 +126,19 @@
           "競輪",
           "番車",
           "競走得点上位順",
-          "選手"
+          "選手",
+          "予期"
         ],
         "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
+        "error_markers": [
+          "エラーが発生しました"
+        ],
+        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
       },
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -174,7 +190,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -191,7 +207,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -226,7 +242,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -278,7 +294,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -295,7 +311,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encprm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "url": "https://keirin.jp/sp/racelist?encprm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -330,7 +346,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -342,7 +358,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/sp/racelist",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 32668,
+      "bytes": 36474,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -373,7 +389,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -383,9 +399,9 @@
         "encp"
       ],
       "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 32668,
+      "bytes": 36474,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -416,7 +432,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -467,7 +483,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -483,7 +499,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -518,7 +534,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -531,7 +547,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -566,7 +582,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -579,11 +595,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -614,7 +630,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -627,7 +643,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -662,7 +678,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -675,11 +691,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -710,7 +726,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -723,7 +739,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -758,7 +774,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -771,11 +787,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encprm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encprm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -806,7 +822,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -818,7 +834,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/racelist",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 54779,
+      "bytes": 58978,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -851,7 +867,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -861,9 +877,9 @@
         "encp"
       ],
       "status_code": 200,
-      "final_url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+      "final_url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 54779,
+      "bytes": 58978,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -896,7 +912,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -908,7 +924,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -943,7 +959,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -955,11 +971,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hsg23wL3vdtUYc5IcKfjBY8",
+          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -990,7 +1006,7 @@
       "racecard_candidate": false,
       "venue": "奈良",
       "venue_code": "53",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1042,7 +1058,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1059,7 +1075,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1094,7 +1110,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1146,7 +1162,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1163,7 +1179,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1198,7 +1214,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1250,7 +1266,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1267,7 +1283,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/sp/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1302,7 +1318,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1314,7 +1330,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/sp/racelist",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 32536,
+      "bytes": 36397,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -1345,7 +1361,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1355,9 +1371,9 @@
         "encp"
       ],
       "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+      "final_url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 32536,
+      "bytes": 36397,
       "redirect_history": [],
       "html_metrics": {
         "title": "開催情報｜KEIRIN.JP",
@@ -1388,7 +1404,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1439,7 +1455,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1455,7 +1471,7 @@
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE",
+          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
           "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1490,7 +1506,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1503,7 +1519,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -1538,7 +1554,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1551,11 +1567,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1586,7 +1602,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1599,7 +1615,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -1634,7 +1650,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1647,11 +1663,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1682,7 +1698,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "POST",
@@ -1695,7 +1711,7 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
@@ -1730,7 +1746,7 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     },
     {
       "method": "GET",
@@ -1743,11 +1759,11 @@
       "status_code": 200,
       "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 16602,
+      "bytes": 16055,
       "redirect_history": [
         {
           "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRd04mjiINaMYNNQnqzV5iE&disp=SJ0301",
+          "url": "https://keirin.jp/pc/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
           "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
         }
       ],
@@ -1778,12 +1794,12 @@
       "racecard_candidate": false,
       "venue": "玉野",
       "venue_code": "61",
-      "race_num_hint": "12R"
+      "race_num_hint": "1R"
     }
   ],
   "summary": {
     "status": "not_confirmed",
-    "events_found": 8,
+    "events_found": 7,
     "events_tested": 3,
     "tests_executed": 36,
     "racecard_candidates": 0,
@@ -1803,8 +1819,8 @@
     "url": "https://keirin.jp/sp/json?type=JSJ058",
     "status_code": 200,
     "content_type": "application/json;charset=utf-8",
-    "bytes": 12371
+    "bytes": 10791
   },
-  "events_found": 8,
-  "finished_at_utc": "2026-10-14T20:14:52.178293+00:00"
+  "events_found": 7,
+  "finished_at_utc": "2026-10-15T01:11:25.830945+00:00"
 }
