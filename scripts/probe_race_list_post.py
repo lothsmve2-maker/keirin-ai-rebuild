@@ -857,7 +857,81 @@ def main():
     report["post_candidates_found"] = len(
         test_specs
     )
+    # 7. POST応答ページが読み込むJavaScriptを追加調査
+    print("[7/7] 出走表ページのJavaScriptを追加調査中...")
 
+    followup_pattern = re.compile(
+        r"/(?:"
+        r"SJ0301(?:_v|_c)?|"
+        r"SJ0304(?:_v|_c)?|"
+        r"SJ0305(?:_v|_c)?|"
+        r"SJ0306(?:_v|_c)?|"
+        r"SC0201(?:_v|_c)?|"
+        r"commonJSON|commonLoad|commonLink|commonSubmit"
+        r")\.js$",
+        re.IGNORECASE,
+    )
+
+    followup_urls = []
+    seen_followup_urls = set()
+
+    for candidate in report.get("candidate_tests", []):
+        for script in candidate.get("page_scripts", []):
+            script_url = script.get("src", "")
+
+            if not script_url:
+                continue
+
+            parsed = urlparse(script_url)
+
+            if parsed.netloc != urlparse(BASE).netloc:
+                continue
+
+            if not followup_pattern.search(parsed.path):
+                continue
+
+            if script_url in seen_followup_urls:
+                continue
+
+            seen_followup_urls.add(script_url)
+            followup_urls.append(script_url)
+
+    report["followup_javascript_files"] = []
+
+    print(f"追加調査するJavaScript: {len(followup_urls)}件")
+
+    for index, script_url in enumerate(followup_urls, 1):
+        print(
+            f"  追加JS {index}/{len(followup_urls)}: "
+            f"{script_url.rsplit('/', 1)[-1]}"
+        )
+
+        js_result = download_javascript(session, script_url)
+
+        report["followup_javascript_files"].append(js_result)
+
+        if js_result.get("status") == "ok":
+            scan = js_result.get("scan", {})
+
+            print(
+                "    通信候補:",
+                len(scan.get("race_urls", [])),
+                "URL候補:",
+                len(scan.get("json_urls", [])),
+                "JSON候補"
+            )
+
+        time.sleep(PAUSE_SECONDS)
+
+    print(
+        "追加JavaScript取得:",
+        sum(
+            1 for item in report["followup_javascript_files"]
+            if item.get("status") == "ok"
+        ),
+        "/",
+        len(followup_urls),
+    )
     # 集計
     js_ok = sum(
         1 for item in report["javascript_files"]
