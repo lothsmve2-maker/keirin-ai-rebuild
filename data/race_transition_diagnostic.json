@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T11:38:35.848226+09:00",
+  "started_at_jst": "2026-10-15T11:58:23.457887+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -227,7 +227,7 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "4R",
         "sensyuList": [
           {
@@ -439,7 +439,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "3R",
+      "race_num": "4R",
       "start_date": "20261013",
       "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
       "reqprm": "",
@@ -478,7 +478,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "3R",
+        "raceNum": "4R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -715,24 +715,24 @@
           "XMLHttpRequest"
         ]
       },
-      "relevant_lines": [
+      "source_contexts": [
         {
-          "line": 9587,
-          "text": "\t// For all other browsers, use the standard XMLHttpRequest object"
+          "matched_pattern": "location\\.href",
+          "position": 237532,
+          "context": "id comment-prolog char sequence (#10098); must appease lint and evade compression\n\tallTypes = \"*/\".concat(\"*\");\n\n// #8138, IE may throw an exception when accessing\n// a field from window.location if document.domain has been set\ntry {\n\tajaxLocation = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction add"
         },
         {
-          "line": 9613,
-          "text": "\t\t// Cross domain only allowed if supported through XMLHttpRequest"
+          "matched_pattern": "location\\.href",
+          "position": 237709,
+          "context": "om window.location if document.domain has been set\ntry {\n\tajaxLocation = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dataTypeExpression, func ) {\n\n\t\tif ( typeof dataTypeExpression "
         },
         {
-          "line": 9645,
-          "text": "\t\t\t\t\t\theaders[\"X-Requested-With\"] = \"XMLHttpRequest\";"
-        },
-        {
-          "line": 9748,
-          "text": "\t\treturn new window.XMLHttpRequest();"
+          "matched_pattern": "location\\.href",
+          "position": 237749,
+          "context": "s been set\ntry {\n\tajaxLocation = location.href;\n} catch( e ) {\n\t// Use the href attribute of an A element\n\t// since IE will modify it given document.location\n\tajaxLocation = document.createElement( \"a\" );\n\tajaxLocation.href = \"\";\n\tajaxLocation = ajaxLocation.href;\n}\n\n// Segment location into parts\najaxLocParts = rurl.exec( ajaxLocation.toLowerCase() ) || [];\n\n// Base \"constructor\" for jQuery.ajaxPrefilter and jQuery.ajaxTransport\nfunction addToPrefiltersOrTransports( structure ) {\n\n\t// dataTypeExpression is optional and defaults to \"*\"\n\treturn function( dataTypeExpression, func ) {\n\n\t\tif ( typeof dataTypeExpression !== \"string\" ) {\n\t\t\tfunc = dataTypeExpre"
         }
       ],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -750,7 +750,10 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [
+        "#"
+      ],
       "status": "ok"
     },
     {
@@ -773,7 +776,14 @@
           ".ajax("
         ]
       },
-      "relevant_lines": [],
+      "source_contexts": [
+        {
+          "matched_pattern": "location\\.href",
+          "position": 376123,
+          "context": "nction( anchor ) {\n\t\t\tvar anchorUrl, locationUrl;\n\n\t\t\t// support: IE7\n\t\t\t// IE7 doesn't normalize the href property when set via script (#9317)\n\t\t\tanchor = anchor.cloneNode( false );\n\n\t\t\tanchorUrl = anchor.href.replace( rhash, \"\" );\n\t\t\tlocationUrl = location.href.replace( rhash, \"\" );\n\n\t\t\t// decoding may throw an error if the URL isn't UTF-8 (#9518)\n\t\t\ttry {\n\t\t\t\tanchorUrl = decodeURIComponent( anchorUrl );\n\t\t\t} catch ( error ) {}\n\t\t\ttry {\n\t\t\t\tlocationUrl = decodeURIComponent( locationUrl );\n\t\t\t} catch ( error ) {}\n\n\t\t\treturn anchor.hash.length > 1 && anchorUrl === locationUrl;\n\t\t};\n\t})(),\n\n\t_create: function() {\n\t\tvar that = this,\n\t\t\toptions = this.option"
+        }
+      ],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -789,7 +799,8 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -812,16 +823,69 @@
           "Post("
         ]
       },
-      "relevant_lines": [
+      "source_contexts": [
         {
-          "line": 21,
-          "text": "var encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");"
+          "matched_pattern": "commonSubmit",
+          "position": 656,
+          "context": "CCCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTi"
         },
         {
-          "line": 24,
-          "text": "commonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");"
+          "matched_pattern": "formPost",
+          "position": 669,
+          "context": "00\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfu"
+        },
+        {
+          "matched_pattern": "fnHdn[A-Za-z0-9_]*",
+          "position": 599,
+          "context": ");\n$(\"#fnimgtop\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\")."
+        },
+        {
+          "matched_pattern": "fnHdn[A-Za-z0-9_]*",
+          "position": 682,
+          "context": "ion footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.h"
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 587,
+          "context": "ter_top.png\");\n$(\"#fnimgtop\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov."
+        },
+        {
+          "matched_pattern": "encPrm",
+          "position": 718,
+          "context": "r(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.href = $(\"#fnimgpc\").attr(\"p"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 587,
+          "context": "ter_top.png\");\n$(\"#fnimgtop\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_ho"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 710,
+          "context": "et\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.href = $(\"#fnimgpc"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 718,
+          "context": "r(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.href = $(\"#fnimgpc\").attr("
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 202,
+          "context": "var fnmenuview=false;\nfunction footer_top(){\n$(\"#fnimgtop\").attr(\"src\",\"/sp/static/img/icon/footer_top_hov.png\");\n$(\"#fnimgtop\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.href = $(\"#fnimgtop\").attr(\"prm\");\nreturn false;\n},200\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgtop\").attr(\"/sp/static/img/icon/footer_top.png\");\n$(\"#fnimgtop\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc'"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 1087,
+          "context": "(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfunction(){\nlocation.href = $(\"#fnimgpc\").attr(\"prm\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_menu(){\nvar flgLock=true;\nif( $(\"div.sub-menu\").attr(\"style\")){\nif( $(\"div.sub-menu\").attr(\"style\").indexOf(\"block\") != -1){\nflgLock=false;\n} else {\nflgLock=true;\n}\n} else {\nflgLock=tr"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 673,
+          "context": ";\n}\nfunction footer_bet(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet_hov.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nvar encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");\nsetTimeout(\nfunction(){\ncommonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");\n},500\n);\nsetTimeout(\nfunction(){\n$(\"#fnimgbet\").attr(\"src\",\"/sp/static/img/icon/footer_bet.png\");\n$(\"#fnimgbet\").parents(\"li\").css(\"background-color\",\"#CCCCCC\");\n},600\n);\n}\nfunction footer_pc(){\n$(\"#fnimgpc\").attr(\"src\",\"/sp/static/img/icon/footer_pc_hov.png\");\n$(\"#fnimgpc\").parents(\"li\").css(\"background-color\",\"#E0E0E0\");\nsetTimeout(\nfun"
         }
       ],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -839,7 +903,8 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -855,7 +920,8 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -873,7 +939,8 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -889,7 +956,8 @@
         "submit_calls": [],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -912,7 +980,54 @@
           "Post("
         ]
       },
-      "relevant_lines": [],
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 772,
+          "context": "\nif(numDay >= maxDay){\nselectDay = ('0'+maxDay).slice(-2);\n}\n} else if(numYear >= maxYear){\nselectYear = maxYear;\nif(numDay >= maxDay){\nselectDay = ('0'+maxDay).slice(-2);\n}\n}\nvar params = {};\nparams[\"scyy\"] = selectYear;\nparams[\"scym\"] = selectDay;\ncommonSubmit.formGet(location.href, params, null);\n});\n$(\"#cmdYearval\").change( function(){\nvar selectYear = $(\"#cmdYearval\").val();\nvar maxYear = $(\"#maxYear\").val();\nvar endloop = 0;\nvar setData = $(\"#cmdDayval\");\nvar selectData = setData.val();\nvar opData = \"\";\nif(selectYear == maxYear){\nendloop = $(\"#maxDay\").val();\nif(endloop < Number(selectData)){\nselectData = Number(endloop);\n}\nendloop = Number(endloop"
+        },
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 1636,
+          "context": " loop){\nopData.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 1649,
+          "context": "a.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        },
+        {
+          "matched_pattern": "formGet",
+          "position": 785,
+          "context": " maxDay){\nselectDay = ('0'+maxDay).slice(-2);\n}\n} else if(numYear >= maxYear){\nselectYear = maxYear;\nif(numDay >= maxDay){\nselectDay = ('0'+maxDay).slice(-2);\n}\n}\nvar params = {};\nparams[\"scyy\"] = selectYear;\nparams[\"scym\"] = selectDay;\ncommonSubmit.formGet(location.href, params, null);\n});\n$(\"#cmdYearval\").change( function(){\nvar selectYear = $(\"#cmdYearval\").val();\nvar maxYear = $(\"#maxYear\").val();\nvar endloop = 0;\nvar setData = $(\"#cmdDayval\");\nvar selectData = setData.val();\nvar opData = \"\";\nif(selectYear == maxYear){\nendloop = $(\"#maxDay\").val();\nif(endloop < Number(selectData)){\nselectData = Number(endloop);\n}\nendloop = Number(endloop) + 1;\n}"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1502,
+          "context": "oop < endloop; loop++){\nopData = $(\"<option>\");\nopData.attr(\"value\",(\"0\"+loop).slice(-2)).append(loop +'月</option>');\nif(selectData == loop){\nopData.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1594,
+          "context": "pend(loop +'月</option>');\nif(selectData == loop){\nopData.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        },
+        {
+          "matched_pattern": "encp",
+          "position": 1603,
+          "context": " +'月</option>');\nif(selectData == loop){\nopData.attr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        },
+        {
+          "matched_pattern": "location\\.href",
+          "position": 793,
+          "context": "{\nselectDay = ('0'+maxDay).slice(-2);\n}\n} else if(numYear >= maxYear){\nselectYear = maxYear;\nif(numDay >= maxDay){\nselectDay = ('0'+maxDay).slice(-2);\n}\n}\nvar params = {};\nparams[\"scyy\"] = selectYear;\nparams[\"scym\"] = selectDay;\ncommonSubmit.formGet(location.href, params, null);\n});\n$(\"#cmdYearval\").change( function(){\nvar selectYear = $(\"#cmdYearval\").val();\nvar maxYear = $(\"#maxYear\").val();\nvar endloop = 0;\nvar setData = $(\"#cmdDayval\");\nvar selectData = setData.val();\nvar opData = \"\";\nif(selectYear == maxYear){\nendloop = $(\"#maxDay\").val();\nif(endloop < Number(selectData)){\nselectData = Number(endloop);\n}\nendloop = Number(endloop) + 1;\n} else {\nendloo"
+        },
+        {
+          "matched_pattern": "Post\\s*\\(",
+          "position": 1653,
+          "context": "tr(\"selected\",\"selected\");\n}\nsetData.append(opData);\n}\n});\n});\nvar lnk = {\nformlnk: function(next, encp) {\nvar params = {};\nif(next == undefined){\nreturn;\n}\nif(next == \"\"){\nreturn;\n}\nparams[\"encp\"] = encp;\nparams[\"disp\"] = \"SJ0301\";\ncommonSubmit.formPost(next, params, null);\n}\n};\n"
+        }
+      ],
+      "form_target_hints": [],
       "status": "ok"
     },
     {
@@ -930,7 +1045,24 @@
         ],
         "api_calls": []
       },
-      "relevant_lines": [],
+      "source_contexts": [
+        {
+          "matched_pattern": "commonSubmit",
+          "position": 4,
+          "context": "var commonSubmit = {\nformPost: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"post\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().r"
+        },
+        {
+          "matched_pattern": "formPost",
+          "position": 21,
+          "context": "var commonSubmit = {\nformPost: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"post\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nretu"
+        },
+        {
+          "matched_pattern": "formGet",
+          "position": 436,
+          "context": ");\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nreturn;\n},\nformGet: function(actn, lprm, target) {\nvar $form = $('<form />');\n$form.attr(\"action\", actn).attr(\"method\", \"get\");\nif(target != null){\n$form.attr(\"target\",target);\n}\nvar kynm = Object.keys(lprm);\nfor( var ilop = 0; ilop < kynm.length; ilop++ ) {\n$form.append($('<input />').attr(\"type\", \"hidden\").attr(\"name\", kynm[ilop]).attr(\"value\", lprm[kynm[ilop]]));\n}\n$form.appendTo(\"body\").submit().remove();\nretur"
+        }
+      ],
+      "form_target_hints": [],
       "status": "ok"
     }
   ],
@@ -1208,7 +1340,7 @@
       "raw_relevant_fields": {
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-        "denColorFlg": "0",
+        "denColorFlg": "1",
         "raceNum": "4R",
         "sensyuList": [
           {
@@ -1415,7 +1547,7 @@
     {
       "venue": "玉野",
       "venue_code": "61",
-      "race_num": "3R",
+      "race_num": "4R",
       "start_date": "20261013",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -1453,7 +1585,7 @@
         "jyoName": "玉野",
         "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
         "denColorFlg": "0",
-        "raceNum": "3R",
+        "raceNum": "4R",
         "sensyuList": [
           {
             "sensyuName": "山岸　佳太",
@@ -1577,5 +1709,5 @@
       }
     }
   ],
-  "finished_at_jst": "2026-10-15T11:38:39.079463+09:00"
+  "finished_at_jst": "2026-10-15T11:58:29.000655+09:00"
 }
