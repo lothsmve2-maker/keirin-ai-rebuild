@@ -1,19 +1,19 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-14T13:07:39+09:00",
-  "target_date": "2026-10-14",
+  "generated_at": "2026-10-15T10:02:02+09:00",
+  "target_date": "2026-10-15",
   "status": "ok",
   "source": {
     "name": "KEIRIN.JP",
     "url": "https://www.keirin.jp/sp/raceschedule",
     "http_status": 200,
     "body_bytes": 121867,
-    "retrieved_at": "2026-10-14T13:07:39+09:00"
+    "retrieved_at": "2026-10-15T10:02:02+09:00"
   },
   "summary": {
     "venue_count": 42,
     "event_count": 78,
-    "active_event_count": 8,
+    "active_event_count": 7,
     "race_count": null,
     "race_count_status": "not_acquired"
   },
@@ -448,7 +448,7 @@
       "start_date": "2026-10-12",
       "end_date": "2026-10-14",
       "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
+      "is_active_today": false,
       "race_count": null,
       "race_count_status": "not_acquired"
     },
@@ -462,7 +462,7 @@
       "start_date": "2026-10-12",
       "end_date": "2026-10-14",
       "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
+      "is_active_today": false,
       "race_count": null,
       "race_count_status": "not_acquired"
     },
@@ -476,7 +476,7 @@
       "start_date": "2026-10-12",
       "end_date": "2026-10-14",
       "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
+      "is_active_today": false,
       "race_count": null,
       "race_count_status": "not_acquired"
     },
@@ -560,7 +560,7 @@
       "start_date": "2026-10-15",
       "end_date": "2026-10-17",
       "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": false,
+      "is_active_today": true,
       "race_count": null,
       "race_count_status": "not_acquired"
     },
@@ -574,7 +574,7 @@
       "start_date": "2026-10-15",
       "end_date": "2026-10-17",
       "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": false,
+      "is_active_today": true,
       "race_count": null,
       "race_count_status": "not_acquired"
     },
@@ -1113,48 +1113,6 @@
   ],
   "active_today": [
     {
-      "venue_code": "13",
-      "venue_name": "いわき平",
-      "region": "北日本",
-      "prefecture": "福島県",
-      "event_name": "仲間と繋がるＴＩＰＳＴＡＲ杯",
-      "grade": "F2",
-      "start_date": "2026-10-12",
-      "end_date": "2026-10-14",
-      "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
-      "race_count": null,
-      "race_count_status": "not_acquired"
-    },
-    {
-      "venue_code": "25",
-      "venue_name": "大宮",
-      "region": "関東",
-      "prefecture": "埼玉県",
-      "event_name": "ブリヂストンサイクル杯",
-      "grade": "F2",
-      "start_date": "2026-10-12",
-      "end_date": "2026-10-14",
-      "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
-      "race_count": null,
-      "race_count_status": "not_acquired"
-    },
-    {
-      "venue_code": "87",
-      "venue_name": "熊本",
-      "region": "九州",
-      "prefecture": "熊本県",
-      "event_name": "前検日コメならウィンチケット杯",
-      "grade": "F2",
-      "start_date": "2026-10-12",
-      "end_date": "2026-10-14",
-      "source": "https://www.keirin.jp/sp/raceschedule",
-      "is_active_today": true,
-      "race_count": null,
-      "race_count_status": "not_acquired"
-    },
-    {
       "venue_code": "22",
       "venue_name": "前橋",
       "region": "関東",
@@ -1219,6 +1177,34 @@
       "grade": "F1",
       "start_date": "2026-10-14",
       "end_date": "2026-10-16",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "38",
+      "venue_name": "静岡",
+      "region": "南関東",
+      "prefecture": "静岡県",
+      "event_name": "チャリロト杯",
+      "grade": "F2",
+      "start_date": "2026-10-15",
+      "end_date": "2026-10-17",
+      "source": "https://www.keirin.jp/sp/raceschedule",
+      "is_active_today": true,
+      "race_count": null,
+      "race_count_status": "not_acquired"
+    },
+    {
+      "venue_code": "45",
+      "venue_name": "豊橋",
+      "region": "中部",
+      "prefecture": "愛知県",
+      "event_name": "ＷＩＮＴＩＣＫＥＴ杯",
+      "grade": "F2",
+      "start_date": "2026-10-15",
+      "end_date": "2026-10-17",
       "source": "https://www.keirin.jp/sp/raceschedule",
       "is_active_today": true,
       "race_count": null,
