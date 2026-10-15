@@ -389,9 +389,7 @@ def download_javascript(session, script_url):
             "url": script_url,
             "final_url": response.url,
             "status_code": response.status_code,
-            "content_type": response.headers.get(
-                "Content-Type", ""
-            ),
+            "content_type": response.headers.get("Content-Type", ""),
             "bytes": len(response.content),
         }
 
@@ -410,28 +408,65 @@ def download_javascript(session, script_url):
 
         result["scan"] = scan_javascript(text)
 
-        # 関連キーワードを含む行を記録する
-        lines = text.splitlines()
-        relevant_lines = []
+        patterns = [
+            r"commonSubmit",
+            r"formPost",
+            r"formGet",
+            r"fnHdn[A-Za-z0-9_]*",
+            r"encPrm",
+            r"encp",
+            r"reqprm",
+            r"location\.href",
+            r"location\.replace",
+            r"Post\s*\(",
+            r"racelist",
+            r"racecard",
+            r"raceprogram",
+            r"disp\s*[:=]",
+        ]
 
-        for line_number, line in enumerate(lines, 1):
-            if re.search(
-                r"racelist|racecard|raceprogram|sensyuList|"
-                r"encPrm|reqprm|JSJ\d{3}|fetch\(|XMLHttpRequest",
-                line,
-                re.IGNORECASE,
+        contexts = []
+        seen = set()
+
+        for pattern in patterns:
+            for match in re.finditer(
+                pattern,
+                text,
+                flags=re.IGNORECASE,
             ):
-                relevant_lines.append({
-                    "line": line_number,
-                    "text": line[:600],
+                start = max(0, match.start() - 250)
+                end = min(len(text), match.end() + 400)
+                snippet = text[start:end]
+
+                if snippet in seen:
+                    continue
+
+                seen.add(snippet)
+
+                contexts.append({
+                    "matched_pattern": pattern,
+                    "position": match.start(),
+                    "context": snippet,
                 })
 
-                if len(relevant_lines) >= 60:
+                if len(contexts) >= 100:
                     break
 
-        result["relevant_lines"] = relevant_lines
-        result["status"] = "ok"
+            if len(contexts) >= 100:
+                break
 
+        result["source_contexts"] = contexts
+
+        result["form_target_hints"] = list(
+            dict.fromkeys(
+                re.findall(
+                    r"""(?i)(?:action|url|target)\s*[:=]\s*["']([^"']+)["']""",
+                    text,
+                )
+            )
+        )[:100]
+
+        result["status"] = "ok"
         return result
 
     except Exception as exc:
@@ -440,7 +475,6 @@ def download_javascript(session, script_url):
             "status": "error",
             "error": f"{type(exc).__name__}: {exc}",
         }
-
 
 
 def test_candidate(session, url, params=None):
