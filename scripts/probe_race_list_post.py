@@ -1096,7 +1096,8 @@ def main():
                 )[:3000]
 
                 page_test["html_inspection"] = inspect_html(
-                    race_response.text
+                    race_response.text,
+                    race_response.url,
                 )
 
                 page_test["html_contains_rider_terms"] = any(
