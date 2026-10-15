@@ -272,44 +272,13 @@ def inspect_html(html, page_url):
     soup = BeautifulSoup(html or "", "html.parser")
 
     links = []
-    click_handlers = []
-
-    # 通常のリンク
     for tag in soup.find_all("a", href=True):
-        href = urljoin(page_url, tag["href"])
-        text = tag.get_text(" ", strip=True)
-        onclick = tag.get("onclick", "")
-
         links.append({
-            "text": text[:150],
-            "href": href,
-            "onclick": onclick[:2000],
+            "text": tag.get_text(" ", strip=True)[:150],
+            "href": urljoin(page_url, tag["href"]),
         })
 
-    # onclickを持つボタン・リンク・その他の要素
-    for tag in soup.find_all(attrs={"onclick": True}):
-        onclick = str(tag.get("onclick", ""))
-
-        item = {
-            "tag": tag.name,
-            "text": tag.get_text(" ", strip=True)[:150],
-            "onclick": onclick[:3000],
-            "id": tag.get("id", ""),
-            "class": tag.get("class", []),
-        }
-
-        # 画面遷移に関係する呼び出しを抽出
-        if re.search(
-            r"formlnk|formPost|commonSubmit|"
-            r"encp|encPrm|SJ0\d+|racelist|racecard",
-            onclick,
-            re.IGNORECASE,
-        ):
-            click_handlers.append(item)
-
-    # フォーム
     forms = []
-
     for form in soup.find_all("form"):
         forms.append({
             "action": urljoin(
@@ -331,9 +300,7 @@ def inspect_html(html, page_url):
             ][:80],
         })
 
-    # JavaScriptファイルとインラインスクリプト
     scripts = []
-
     for tag in soup.find_all("script"):
         src = tag.get("src")
 
@@ -349,6 +316,28 @@ def inspect_html(html, page_url):
                 "text": (tag.string or tag.get_text())[:5000],
             })
 
+    # onclick属性から画面遷移とPOST送信の手掛かりを収集
+    click_handlers = []
+    for tag in soup.find_all(attrs={"onclick": True}):
+        handler = str(tag.get("onclick", "")).strip()
+        if handler:
+            click_handlers.append({
+                "tag": tag.name,
+                "text": tag.get_text(" ", strip=True)[:150],
+                "onclick": handler[:2000],
+            })
+
+    # onclick以外の属性に埋め込まれた遷移情報も調査
+    for tag in soup.find_all(True):
+        for attr in ("data-url", "data-href", "action"):
+            value = tag.get(attr)
+            if value:
+                click_handlers.append({
+                    "tag": tag.name,
+                    "attribute": attr,
+                    "value": urljoin(page_url, str(value))[:2000],
+                })
+
     title = soup.title.get_text(strip=True) if soup.title else ""
     page_text = soup.get_text(" ", strip=True)
 
@@ -357,9 +346,9 @@ def inspect_html(html, page_url):
         "text_length": len(page_text),
         "text_sample": page_text[:1500],
         "links": links,
-        "click_handlers": click_handlers,
         "forms": forms,
         "scripts": scripts,
+        "click_handlers": click_handlers[:500],
     }
 
 
@@ -515,38 +504,44 @@ def test_candidate(
     method="GET",
     referer=None,
 ):
-    """発見した候補URLをGETまたはPOSTで検証する。"""
+    """GETまたはPOSTで候補ページを検証する。"""
+    params = params or {}
+    method = method.upper()
+
     try:
-        headers = {
-            "Referer": referer or SCHEDULE_URL,
-        }
-        if method.upper() == "POST":
+        headers = {}
+        if referer:
+            headers["Referer"] = referer
+
+        if method == "POST":
             response = session.post(
                 url,
-                data=params or {},
+                data=params,
                 headers=headers,
                 timeout=TIMEOUT,
                 allow_redirects=True,
             )
         else:
-            response = fetch(
-                session,
+            response = session.get(
                 url,
                 params=params or None,
                 headers=headers,
+                timeout=TIMEOUT,
+                allow_redirects=True,
             )
+
         response.encoding = (
             response.apparent_encoding or "utf-8"
         )
-        content_type = response.headers.get(
-            "Content-Type", ""
-        )
+
+        content_type = response.headers.get("Content-Type", "")
         body = response.text or ""
+
         result = {
-            "method": method.upper(),
+            "method": method,
             "requested_url": url,
             "final_url": response.url,
-            "params": params or {},
+            "params": params,
             "status_code": response.status_code,
             "content_type": content_type,
             "bytes": len(response.content),
@@ -554,75 +549,51 @@ def test_candidate(
                 {
                     "status_code": item.status_code,
                     "url": item.url,
-                    "location": item.headers.get(
-                        "Location", ""
-                    ),
+                    "location": item.headers.get("Location", ""),
                 }
                 for item in response.history
             ],
         }
+
         if "json" in content_type.lower():
             try:
                 parsed = response.json()
                 result["response_type"] = "json"
-                result["json_top_level_type"] = (
-                    type(parsed).__name__
-                )
+                result["json_top_level_type"] = type(parsed).__name__
+
                 if isinstance(parsed, dict):
-                    result["json_keys"] = list(
-                        parsed.keys()
-                    )
-                result["json_sample"] = shorten(
-                    parsed, 5000
-                )
+                    result["json_keys"] = list(parsed.keys())
+
+                result["json_sample"] = shorten(parsed, 5000)
             except Exception:
-                result["response_type"] = (
-                    "json_parse_failed"
-                )
+                result["response_type"] = "json_parse_failed"
                 result["body_sample"] = body[:1500]
         else:
-            metrics = inspect_html(
-                body, response.url
-            )
+            metrics = inspect_html(body, response.url)
+
             result["response_type"] = "html"
             result["title"] = metrics["title"]
-            result["text_length"] = (
-                metrics["text_length"]
-            )
-            result["body_sample"] = (
-                metrics["text_sample"][:1500]
-            )
-            # 出走表の可能性を判定するための手掛かり
-            result["entry_indicators"] = {
-                "has_race_number": bool(
-                    re.search(
-                        r"\b[1-9]R\b",
-                        metrics["text_sample"],
-                    )
-                ),
-                "has_rider_terms": bool(
-                    re.search(
-                        r"選手|車番|登録番号|出走表",
-                        body,
-                    )
-                ),
-                "has_error_terms": bool(
-                    re.search(
-                        r"予期せぬエラー|エラーが発生|"
-                        r"該当するデータがありません",
-                        body,
-                    )
-                ),
-            }
+            result["text_length"] = metrics["text_length"]
+            result["body_sample"] = metrics["text_sample"][:1000]
+
+            # 出走表らしい内容が返ったかを後から確認できるようにする
+            result["response_links"] = [
+                link for link in metrics["links"]
+                if re.search(
+                    r"出走表|選手|競走得点|車番|racelist|racecard",
+                    link.get("text", "") + " " + link.get("href", ""),
+                    re.IGNORECASE,
+                )
+            ][:50]
+
         return result
+
     except Exception as exc:
         return {
-            "method": method.upper(),
+            "method": method,
             "requested_url": url,
-            "params": params or {},
-            "error": (
-                f"{type(exc).__name__}: {exc}"
-            ),
+            "params": params,
+            "error": f"{type(exc).__name__}: {exc}",
         }
 
 
