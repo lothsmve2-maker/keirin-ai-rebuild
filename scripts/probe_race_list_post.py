@@ -373,7 +373,6 @@ def scan_javascript(text):
 
     return result
 
-
 def download_javascript(session, script_url):
     parsed = urlparse(script_url)
 
@@ -441,6 +440,7 @@ def download_javascript(session, script_url):
             "status": "error",
             "error": f"{type(exc).__name__}: {exc}",
         }
+
 
 
 def test_candidate(session, url, params=None):
