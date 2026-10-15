@@ -29,11 +29,13 @@ jobs:
         run: |
           python -u scripts/probe_comment_source.py
 
-      - name: Upload diagnostic report
+      - name: Print diagnostic JSON
         if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: comment-source-diagnostic
-          path: data/comment_source_diagnostic.json
-          if-no-files-found: warn
-          retention-days: 7
+        run: |
+          echo "===== DIAGNOSTIC JSON START ====="
+          if [ -f data/comment_source_diagnostic.json ]; then
+            cat data/comment_source_diagnostic.json
+          else
+            echo "診断JSONが見つかりません"
+          fi
+          echo "===== DIAGNOSTIC JSON END ====="
