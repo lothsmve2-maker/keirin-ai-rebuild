@@ -571,33 +571,29 @@ def test_candidate(
         else:
             metrics = inspect_html(body, response.url)
 
-result["response_type"] = "html"
-result["title"] = metrics["title"]
-result["text_length"] = metrics["text_length"]
-result["body_sample"] = metrics["text_sample"][:1000]
+            result["response_type"] = "html"
+            result["title"] = metrics["title"]
+            result["text_length"] = metrics["text_length"]
+            result["body_sample"] = metrics["text_sample"][:1000]
 
-# ページが読み込むJavaScriptを記録
-result["page_scripts"] = [
-    item for item in metrics.get("scripts", [])
-    if item.get("src")
-][:100]
+            result["page_scripts"] = [
+                item for item in metrics.get("scripts", [])
+                if item.get("src")
+            ][:100]
 
-# ページ内フォームと送信先を記録
-result["page_forms"] = metrics.get("forms", [])[:50]
+            result["page_forms"] = metrics.get("forms", [])[:50]
 
-# ページ内のクリック処理を記録
-result["page_click_handlers"] = (
-    metrics.get("click_handlers", [])[:100]
-)
+            result["page_click_handlers"] = (
+                metrics.get("click_handlers", [])[:100]
+            )
 
-# 選手情報がHTMLに直接含まれているか確認
-result["rider_data_hints"] = [
-    {
-        "name": name,
-        "count": len(re.findall(name, body)),
-    }
-    for name in ["車番", "選手名", "競走得点", "出走表", "ライン"]
-]
+            result["rider_data_hints"] = [
+                {
+                    "name": name,
+                    "count": len(re.findall(name, body)),
+                }
+                for name in ["車番", "選手名", "競走得点", "出走表", "ライン"]
+            ]
 
             # 出走表らしい内容が返ったかを後から確認できるようにする
             result["response_links"] = [
