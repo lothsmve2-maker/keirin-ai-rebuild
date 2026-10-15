@@ -1,2031 +1,1581 @@
 {
-  "diagnostic": "KEIRIN.JP racecard communication investigation",
-  "started_at_utc": "2026-10-15T01:24:03.861453+00:00",
+  "diagnostic": "KEIRIN.JP race-list and entry data investigation",
+  "started_at_jst": "2026-10-15T10:53:31.520849+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
-  "events": [
-    {
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num": "1R",
-      "start_date": "20261014",
-      "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-      "reqprm": "",
-      "sensyuList_type": "list",
-      "sensyuList_count": 6,
-      "raw_keys": [
-        "jyoName",
-        "zenjituFlg",
-        "gradeIcon",
-        "gradeIconChar",
-        "nitijiIcon",
-        "nitijiIconChar",
-        "kaisaiIcon",
-        "kaisaiIconChar",
-        "huka1Icon",
-        "huka1IconChar",
-        "bgColor",
-        "encPrm",
-        "bKeirinCd",
-        "kStartDate",
-        "KeirinCd",
-        "btnFlgLive",
-        "btnFlgOdds",
-        "btnFlgResult",
-        "btnFlgDokanto",
-        "btnFlgLiveDelivery",
-        "denColorFlg",
-        "raceNum",
-        "denTime",
-        "denTitle",
-        "hyoujiFlg",
-        "sensyuList"
-      ],
-      "inspect_encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-      "inspect_denColorFlg": "0",
-      "inspect_raceNum": "1R",
-      "inspect_sensyuList": [
-        {
-          "sensyuName": "恩田　淳平",
-          "sensyuNo": "014809",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "中井　太祐",
-          "sensyuNo": "014605",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "東　龍之介",
-          "sensyuNo": "014523",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "福永　大智",
-          "sensyuNo": "015274",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "岡部　陸斗",
-          "sensyuNo": "015791",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
-          "sensyuIconChar": "A級"
-        },
-        {
-          "sensyuName": "尾崎　睦",
-          "sensyuNo": "015070",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
-          "sensyuIconChar": "ガールズ"
-        }
-      ]
-    },
-    {
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num": "1R",
-      "start_date": "20261013",
-      "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-      "reqprm": "",
-      "sensyuList_type": "list",
-      "sensyuList_count": 6,
-      "raw_keys": [
-        "jyoName",
-        "zenjituFlg",
-        "gradeIcon",
-        "gradeIconChar",
-        "nitijiIcon",
-        "nitijiIconChar",
-        "kaisaiIcon",
-        "kaisaiIconChar",
-        "huka1Icon",
-        "huka1IconChar",
-        "bgColor",
-        "encPrm",
-        "bKeirinCd",
-        "kStartDate",
-        "KeirinCd",
-        "btnFlgLive",
-        "btnFlgOdds",
-        "btnFlgResult",
-        "btnFlgDokanto",
-        "btnFlgLiveDelivery",
-        "denColorFlg",
-        "raceNum",
-        "denTime",
-        "denTitle",
-        "hyoujiFlg",
-        "sensyuList"
-      ],
-      "inspect_encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-      "inspect_denColorFlg": "0",
-      "inspect_raceNum": "1R",
-      "inspect_sensyuList": [
-        {
-          "sensyuName": "山岸　佳太",
-          "sensyuNo": "015038",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "久田　朔",
-          "sensyuNo": "015826",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "石毛　克幸",
-          "sensyuNo": "013628",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "三宅　達也",
-          "sensyuNo": "013291",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "佐藤　和也",
-          "sensyuNo": "014427",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "菅野　航基",
-          "sensyuNo": "015508",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
-          "sensyuIconChar": "A級"
-        }
-      ]
-    },
-    {
-      "venue": "別府",
-      "venue_code": "86",
-      "race_num": "1R",
-      "start_date": "20261014",
-      "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
-      "reqprm": "",
-      "sensyuList_type": "list",
-      "sensyuList_count": 6,
-      "raw_keys": [
-        "jyoName",
-        "zenjituFlg",
-        "gradeIcon",
-        "gradeIconChar",
-        "nitijiIcon",
-        "nitijiIconChar",
-        "kaisaiIcon",
-        "kaisaiIconChar",
-        "bgColor",
-        "encPrm",
-        "bKeirinCd",
-        "kStartDate",
-        "KeirinCd",
-        "btnFlgLive",
-        "btnFlgOdds",
-        "btnFlgResult",
-        "btnFlgDokanto",
-        "btnFlgLiveDelivery",
-        "denColorFlg",
-        "raceNum",
-        "denTime",
-        "denTitle",
-        "hyoujiFlg",
-        "sensyuList"
-      ],
-      "inspect_encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
-      "inspect_denColorFlg": "0",
-      "inspect_raceNum": "1R",
-      "inspect_sensyuList": [
-        {
-          "sensyuName": "小川真太郎",
-          "sensyuNo": "015063",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "森田　一郎",
-          "sensyuNo": "015799",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "阿部　将大",
-          "sensyuNo": "015474",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "須永　優太",
-          "sensyuNo": "014358",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "中川誠一郎",
-          "sensyuNo": "013745",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
-          "sensyuIconChar": "S級"
-        },
-        {
-          "sensyuName": "坂本　紘規",
-          "sensyuNo": "015415",
-          "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
-          "sensyuIconChar": "A級"
-        }
-      ]
-    }
-  ],
-  "tests": [
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encprm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 36474,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 36474,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encprm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/racelist",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 58978,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 477,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 出走表一覧",
-          "結果一覧 投票",
-          "発売締切 ",
-          "発走予定 ",
-          "出場予定選手一覧 発売案内",
-          "発売時間",
-          "最終"
-        ],
-        "rider_related_classes": [
-          "players"
-        ],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 出走表一覧 結果一覧 投票はこちら 発売締切 > 発走予定 > 出場予定選手一覧 発売案内 【発売時間】 ○○：○○～△△：△△ 終 ：最終レースまで 【発売レース】 全 ：全レース発売 部 ：一部レース発売 出走表印刷 出走表一覧 連続再生にチェックを入れて「ダイジェスト連続」ボタン(画面下部)を押してください。 一押し 好相性 ダイジェスト連続 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED. OK 競輪場 グレード 開催日 レース 種目 競走結果 ダイジェスト ■ ＢＳ通過順位・短評 着 ＢＳ 通過順位 車番 選手名 短評 ■ 車番 今開催出場選手は 太字で表示されます。 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 ■ 払戻金 ■ 備考"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/racelist?encp=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 58978,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 477,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 出走表一覧",
-          "結果一覧 投票",
-          "発売締切 ",
-          "発走予定 ",
-          "出場予定選手一覧 発売案内",
-          "発売時間",
-          "最終"
-        ],
-        "rider_related_classes": [
-          "players"
-        ],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 出走表一覧 結果一覧 投票はこちら 発売締切 > 発走予定 > 出場予定選手一覧 発売案内 【発売時間】 ○○：○○～△△：△△ 終 ：最終レースまで 【発売レース】 全 ：全レース発売 部 ：一部レース発売 出走表印刷 出走表一覧 連続再生にチェックを入れて「ダイジェスト連続」ボタン(画面下部)を押してください。 一押し 好相性 ダイジェスト連続 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED. OK 競輪場 グレード 開催日 レース 種目 競走結果 ダイジェスト ■ ＢＳ通過順位・短評 着 ＢＳ 通過順位 車番 選手名 短評 ■ 車番 今開催出場選手は 太字で表示されます。 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 ■ 払戻金 ■ 備考"
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "奈良",
-      "venue_code": "53",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 36397,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encp_only",
-      "params_keys": [
-        "encp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 36397,
-      "redirect_history": [],
-      "html_metrics": {
-        "title": "開催情報｜KEIRIN.JP",
-        "text_length": 401,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "開催情報",
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [],
-        "text_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/sp/racelist",
-      "candidate": "encPrm_only",
-      "params_keys": [
-        "encPrm"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 9135,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/sp/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
-          "location": "https://keirin.jp/sp/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 339,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "発生",
-          "映像",
-          "再生不具合",
-          "解消",
-          "不便",
-          "競輪",
-          "電話投票会員",
-          "会員",
-          "募集中",
-          "競輪",
-          "競輪",
-          "番車",
-          "競走得点上位順",
-          "選手",
-          "予期"
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 予期せぬエラーが発生しました。 (EC0001E) トップページ COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング"
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encp",
-      "params_keys": [
-        "encp",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encp=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encPrm",
-      "params_keys": [
-        "encPrm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encPrm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "POST",
-      "endpoint": "/pc/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    },
-    {
-      "method": "GET",
-      "endpoint": "/pc/racelist",
-      "candidate": "encprm",
-      "params_keys": [
-        "encprm",
-        "disp"
-      ],
-      "status_code": 200,
-      "final_url": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg",
-      "content_type": "text/html;charset=UTF-8",
-      "bytes": 16055,
-      "redirect_history": [
-        {
-          "status_code": 302,
-          "url": "https://keirin.jp/pc/racelist?encprm=v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk&disp=SJ0301",
-          "location": "https://keirin.jp/pc/error?PRM=jDDAjhDi1tpSxPWqBoMRgg"
-        }
-      ],
-      "html_metrics": {
-        "title": "エラーページ｜KEIRIN.JP",
-        "text_length": 207,
-        "race_number_count": 0,
-        "race_numbers": [],
-        "japanese_text_sample": [
-          "初心者",
-          "開催日程 検索",
-          "資料室 ",
-          "競輪場",
-          "場外売場 日本競輪選手養成",
-          "今日",
-          "開催 明日",
-          "開催 予期",
-          "発生",
-          "操作",
-          "客様利用環境表示 "
-        ],
-        "rider_related_classes": [],
-        "error_markers": [
-          "エラーが発生しました"
-        ],
-        "text_sample": "エラーページ｜KEIRIN.JP 初心者コンテンツ 開催日程 検索/資料室 ランキング 競輪場/場外売場 日本競輪選手養成所 リンク 今日の開催 明日の開催 予期せぬエラーが発生しました。 (EC0001E) トップページ 操作ガイド/ヘルプ | お問い合わせ | お客様利用環境表示 | サイトマップ | サイトポリシー | スマホサイト COPYRIGHT JKA. ALL RIGHTS  RESERVED."
-      },
-      "racecard_candidate": false,
-      "venue": "玉野",
-      "venue_code": "61",
-      "race_num_hint": "1R"
-    }
-  ],
-  "summary": {
-    "status": "not_confirmed",
-    "events_found": 7,
-    "events_tested": 3,
-    "tests_executed": 36,
-    "racecard_candidates": 0,
-    "successful_candidates": []
-  },
-  "warnings": [
-    "この診断では、正しい送信パラメータを事前に確定していません。",
-    "HTTP 200だけでは出走表取得成功と判定しません。",
-    "診断対象は公開ページへの読み取りリクエストのみです。"
-  ],
   "schedule": {
     "status_code": 200,
     "final_url": "https://keirin.jp/sp/raceschedule",
     "bytes": 121867
   },
   "json_source": {
-    "url": "https://keirin.jp/sp/json?type=JSJ058",
+    "requested_url": "https://keirin.jp/sp/json?type=JSJ058",
+    "final_url": "https://keirin.jp/sp/json?type=JSJ058",
     "status_code": 200,
     "content_type": "application/json;charset=utf-8",
-    "bytes": 10791
+    "bytes": 10786
   },
   "events_found": 7,
-  "finished_at_utc": "2026-10-15T01:24:39.631708+00:00"
+  "events": [
+    {
+      "json_path": "$.kInfo[5]",
+      "venue": "静岡",
+      "venue_code": "38",
+      "race_num": "1R",
+      "start_date": "20261015",
+      "encPrm": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"蕗澤鴻太郎\", \"sensyuNo\": \"015162\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"邊見　竜馬\", \"sensyuNo\": \"015875\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"真船圭一郎\", \"sensyuNo\": \"014361\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"高橋　雅之\", \"sensyuNo\": \"014082\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"二藤　元太\", \"sensyuNo\": \"014466\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"山原さくら\", \"sensyuNo\": \"014974\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "静岡",
+        "encPrm": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "蕗澤鴻太郎",
+            "sensyuNo": "015162",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "邊見　竜馬",
+            "sensyuNo": "015875",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "真船圭一郎",
+            "sensyuNo": "014361",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "高橋　雅之",
+            "sensyuNo": "014082",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "二藤　元太",
+            "sensyuNo": "014466",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "山原さくら",
+            "sensyuNo": "014974",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[6]",
+      "venue": "豊橋",
+      "venue_code": "45",
+      "race_num": "1R",
+      "start_date": "20261015",
+      "encPrm": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"吉田　智哉\", \"sensyuNo\": \"015204\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"成松　春樹\", \"sensyuNo\": \"014339\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"田中　和磨\", \"sensyuNo\": \"015278\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"池田　憲昭\", \"sensyuNo\": \"014104\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"常次　勇人\", \"sensyuNo\": \"015632\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"久米　詩\", \"sensyuNo\": \"015400\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "豊橋",
+        "encPrm": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "吉田　智哉",
+            "sensyuNo": "015204",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "成松　春樹",
+            "sensyuNo": "014339",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "田中　和磨",
+            "sensyuNo": "015278",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "池田　憲昭",
+            "sensyuNo": "014104",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "常次　勇人",
+            "sensyuNo": "015632",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "久米　詩",
+            "sensyuNo": "015400",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[0]",
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num": "2R",
+      "start_date": "20261014",
+      "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"恩田　淳平\", \"sensyuNo\": \"014809\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"中井　太祐\", \"sensyuNo\": \"014605\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"東　龍之介\", \"sensyuNo\": \"014523\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"福永　大智\", \"sensyuNo\": \"015274\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"岡部　陸斗\", \"sensyuNo\": \"015791\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"尾崎　睦\", \"sensyuNo\": \"015070\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "奈良",
+        "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
+        "denColorFlg": "0",
+        "raceNum": "2R",
+        "sensyuList": [
+          {
+            "sensyuName": "恩田　淳平",
+            "sensyuNo": "014809",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "中井　太祐",
+            "sensyuNo": "014605",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "東　龍之介",
+            "sensyuNo": "014523",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "福永　大智",
+            "sensyuNo": "015274",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "岡部　陸斗",
+            "sensyuNo": "015791",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "尾崎　睦",
+            "sensyuNo": "015070",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[2]",
+      "venue": "別府",
+      "venue_code": "86",
+      "race_num": "1R",
+      "start_date": "20261014",
+      "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"小川真太郎\", \"sensyuNo\": \"015063\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"森田　一郎\", \"sensyuNo\": \"015799\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"阿部　将大\", \"sensyuNo\": \"015474\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"須永　優太\", \"sensyuNo\": \"014358\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"中川誠一郎\", \"sensyuNo\": \"013745\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"坂本　紘規\", \"sensyuNo\": \"015415\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "別府",
+        "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "小川真太郎",
+            "sensyuNo": "015063",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "森田　一郎",
+            "sensyuNo": "015799",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "阿部　将大",
+            "sensyuNo": "015474",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "須永　優太",
+            "sensyuNo": "014358",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "中川誠一郎",
+            "sensyuNo": "013745",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "坂本　紘規",
+            "sensyuNo": "015415",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[3]",
+      "venue": "青森",
+      "venue_code": "12",
+      "race_num": "7R",
+      "start_date": "20261014",
+      "encPrm": "YyUMwJFqH_os4DNhTHKO8zpIoiSWHkwLTfAiMqm4dls",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"邊見　祐太\", \"sensyuNo\": \"015523\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"横溝　貫太\", \"sensyuNo\": \"016015\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"戸田　康平\", \"sensyuNo\": \"014885\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"川村　昭弘\", \"sensyuNo\": \"013408\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"入田　龍馬\", \"sensyuNo\": \"015846\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"坂口　楓華\", \"sensyuNo\": \"015225\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "青森",
+        "encPrm": "YyUMwJFqH_os4DNhTHKO8zpIoiSWHkwLTfAiMqm4dls",
+        "denColorFlg": "0",
+        "raceNum": "7R",
+        "sensyuList": [
+          {
+            "sensyuName": "邊見　祐太",
+            "sensyuNo": "015523",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "横溝　貫太",
+            "sensyuNo": "016015",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "戸田　康平",
+            "sensyuNo": "014885",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "川村　昭弘",
+            "sensyuNo": "013408",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "入田　龍馬",
+            "sensyuNo": "015846",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "坂口　楓華",
+            "sensyuNo": "015225",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[1]",
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num": "1R",
+      "start_date": "20261013",
+      "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"山岸　佳太\", \"sensyuNo\": \"015038\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"久田　朔\", \"sensyuNo\": \"015826\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"石毛　克幸\", \"sensyuNo\": \"013628\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"三宅　達也\", \"sensyuNo\": \"013291\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"佐藤　和也\", \"sensyuNo\": \"014427\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"菅野　航基\", \"sensyuNo\": \"015508\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "玉野",
+        "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
+        "denColorFlg": "1",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "山岸　佳太",
+            "sensyuNo": "015038",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "久田　朔",
+            "sensyuNo": "015826",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "石毛　克幸",
+            "sensyuNo": "013628",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "三宅　達也",
+            "sensyuNo": "013291",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "佐藤　和也",
+            "sensyuNo": "014427",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "菅野　航基",
+            "sensyuNo": "015508",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          }
+        ]
+      }
+    },
+    {
+      "json_path": "$.kInfo[4]",
+      "venue": "前橋",
+      "venue_code": "22",
+      "race_num": "1R",
+      "start_date": "20261013",
+      "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
+      "reqprm": "",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"山田　敦也\", \"sensyuNo\": \"013901\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"蒔田　英彦\", \"sensyuNo\": \"014298\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"中村　隆生\", \"sensyuNo\": \"015424\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"鈴木　輝大\", \"sensyuNo\": \"015254\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"長川　達哉\", \"sensyuNo\": \"015973\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"松井　優佳\", \"sensyuNo\": \"015769\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "前橋",
+        "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "山田　敦也",
+            "sensyuNo": "013901",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "蒔田　英彦",
+            "sensyuNo": "014298",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "中村　隆生",
+            "sensyuNo": "015424",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "鈴木　輝大",
+            "sensyuNo": "015254",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "長川　達哉",
+            "sensyuNo": "015973",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "松井　優佳",
+            "sensyuNo": "015769",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    }
+  ],
+  "html_discovery": {
+    "title": "開催日程｜KEIRIN.JP",
+    "text_length": 3268,
+    "text_sample": "開催日程｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 開催日程 グレードレース 開催日程 2027年 2026年 2025年 2024年 2023年 2022年 2021年 2020年 2019年 2018年 2017年 2016年 2015年 2014年 2013年 2012年 2011年 2010年 2009年 2008年 2007年 2006年 2005年 2004年 2003年 2002年 2001年 2000年 1999年 1月 2月 3月 4月 5月 6月 7月 8月 9月 10月 11月 12月 表  示 北日本 函館 開催がありません。 青森 09/30(水)～10/02(金) 前検日コメならウィンチケット杯 10/14(水)～10/16(金) ＣＴＣ杯　ニッカン・コム杯 10/19(月)～10/21(水) ウィンチケット　ニッカン・コム 10/24(土)～10/26(月) Ｂｅｔｉｍｏ杯×赤競杯 10/29(木)～10/31(土) ＪｏｍｏｎＧＰ日刊スポ杯ＯＰ杯 いわき平 10/04(日)～10/06(火) サンスポ・ソラモギ・しいたけＣ 10/12(月)～10/14(水) 仲間と繋がるＴＩＰＳＴＡＲ杯 10/21(水)～10/23(金) ＣＴＣなら３分前まで買える杯 関東 弥彦 10/09(金)～10/12(月) 寛仁親王牌・世界選手権記念 10/30(金)～11/01(日) 弥彦王冠記念・報知新聞賞 前橋 09/30(水)～10/02(金) 競輪データならＢｅｔｉｍｏ杯 10/06(火)～10/08(木) 前検日コメならウィンチケット杯 10/13(火)～10/15(木) ＣＴＣなら３分前まで買える杯 10/21(水)～10/23(金) オッズパーク杯 取手 10/19(月)～10/21(水) スピードチャンネル・スカパー杯 宇都宮 10/30(金)～11/01(日) ＵＪＣＣロード杯・トータリ杯 大宮 10/01(木)～10/03(土) スポーツニッポン新聞社杯 10/06(火)～10/08(木) 日刊スポーツ杯争奪戦 10/12(月)～10/14(水) ブリヂストンサイクル杯 10/22(木)～10/24(土) 日本シンライサービス杯 西武園 10/30(金)～11/01(日) 競輪データならＢｅｔｉｍｏ杯 京王閣 10/17(土)～10/20(火) ゴールドカップレース 10/26(月)～10/28(水) 高木真備杯＆ベティモ杯＆日刊杯 立川 開催がありません。 南関東 松戸 10/03(土)～10/05(月) 第９回みんなの競輪カップ 10/30(金)～11/01(日) 前検日コメならウィンチケット杯 千葉 開催日程及びあっせん情報等については、VELO250サイトをご確認ください。 川崎 10/01(木)～10/03(土) サンスポ杯　ラ・ピスタ新橋Ｃ 10/09(金)～10/11(日) オッズパーク杯 10/20(火)～10/22(木) けいりんラブ！ラブリン杯 10/24(土)～10/26(月) 前検コメはウィンチケット杯 平塚 10/03(土)～1",
+    "links": [
+      {
+        "text": "開催日程",
+        "href": "https://keirin.jp/sp/raceschedule"
+      },
+      {
+        "text": "グレードレース 開催日程",
+        "href": "https://keirin.jp/sp/graderaceschedule"
+      }
+    ],
+    "forms": [],
+    "scripts": [
+      {
+        "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/S_footer.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/bopen.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/S_touch.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/SJ0201.js",
+        "inline": false
+      },
+      {
+        "src": "",
+        "inline": true,
+        "text": "\n$(window).load(function() {\n\tvar flg = 0; \n\tvar widthTckH = window.innerWidth-1;\n\tvar dispFlg = true;\n\tif (flg == 0){\n\t\t$('#ticker_area').css('height','32px');\n\t}\t\n\tif (dispFlg == true) {\n\t\t$('#ticker_area').removeClass('dispoff');\n\t\ttickerdisp(flg,'ticker',widthTckH);\n\t\t$('#shTickerHsep').width(widthTckH);\n\t}\n});\n"
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/S_footer.js",
+        "inline": false
+      },
+      {
+        "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+        "inline": false
+      },
+      {
+        "src": "",
+        "inline": true,
+        "text": "\n$(window).load(function() {\nvar flg = 9; \nfooterloading(flg);\n});\nsfLoadingFinalize();\n"
+      },
+      {
+        "src": "",
+        "inline": true,
+        "text": "\n//<![CDATA[\n    var anaxhr = new XMLHttpRequest();\n    var anaURL = location.protocol + '//' + location.host + '/sp' + '/ana';   \n    anaxhr.open(\"GET\", anaURL);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-SCREEN\", screen.width+\"x\"+screen.height);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-URI\", window.location.href);\n    if(\"anaJsonType\" in window){\n      anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-JSONTYPE\", anaJsonType);\n    }\n    anaxhr.send();\n   \n//]]>\n"
+      }
+    ]
+  },
+  "javascript_files": [
+    {
+      "url": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+      "final_url": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 284394,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [
+          "\"\\s*:?|true|false|null|-?(?!0\\d)\\d+(?:\\.\\d+|)(?:[eE][+-]?\\d+|)/g;\n\njQuery.parseJSON = function( data ) {\n\t// Attempt to parse using the native JSON parser first\n\tif ( window.JSON && window.JSON.parse ) {\n\t\t// Support: Android 2.3\n\t\t// Workaround failure to string-cast null input\n\t\treturn window.JSON.parse( data + \"",
+          "\"application/json, text/javascript\"",
+          "\", function( s, originalSettings, jqXHR ) {\n\n\tvar callbackName, overwritten, responseContainer,\n\t\tjsonProp = s.jsonp !== false && ( rjsonp.test( s.url ) ?\n\t\t\t\"",
+          "\" ) {\n\n\t\t// Get callback name, remembering preexisting value associated with it\n\t\tcallbackName = s.jsonpCallback = jQuery.isFunction( s.jsonpCallback ) ?\n\t\t\ts.jsonpCallback() :\n\t\t\ts.jsonpCallback;\n\n\t\t// Insert callback into url or form data\n\t\tif ( jsonProp ) {\n\t\t\ts[ jsonProp ] = s[ jsonProp ].replace( rjsonp, \"",
+          "\" + callbackName );\n\t\t} else if ( s.jsonp !== false ) {\n\t\t\ts.url += ( rquery.test( s.url ) ? \"",
+          "\" ) + s.jsonp + \""
+        ],
+        "parameter_names": [
+          "disp",
+          "Disp"
+        ],
+        "submit_calls": [
+          "location.href",
+          "Location.href"
+        ],
+        "api_calls": [
+          ".ajax(",
+          "XMLHttpRequest"
+        ]
+      },
+      "relevant_lines": [
+        {
+          "line": 9587,
+          "text": "\t// For all other browsers, use the standard XMLHttpRequest object"
+        },
+        {
+          "line": 9613,
+          "text": "\t\t// Cross domain only allowed if supported through XMLHttpRequest"
+        },
+        {
+          "line": 9645,
+          "text": "\t\t\t\t\t\theaders[\"X-Requested-With\"] = \"XMLHttpRequest\";"
+        },
+        {
+          "line": 9748,
+          "text": "\t\treturn new window.XMLHttpRequest();"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+      "final_url": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 36816,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+      "final_url": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 470325,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp",
+          "Disp"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          ".ajax("
+        ]
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+      "final_url": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 54780,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/S_footer.js",
+      "final_url": "https://keirin.jp/sp/static/js/S_footer.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 4212,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "encPrm",
+          "encp"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "relevant_lines": [
+        {
+          "line": 21,
+          "text": "var encPrm =$('#fnHdnTouhyouEnc').attr(\"value\");"
+        },
+        {
+          "line": 24,
+          "text": "commonSubmit.formPost($('#fnHdnTouhyouUrl').val(), { \"encp\" : encPrm }, \"_self\");"
+        }
+      ],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/S_ticker.js",
+      "final_url": "https://keirin.jp/sp/static/js/S_ticker.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 771,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+      "final_url": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 3140,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/bopen.js",
+      "final_url": "https://keirin.jp/sp/static/js/bopen.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 758,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/S_touch.js",
+      "final_url": "https://keirin.jp/sp/static/js/S_touch.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 225,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/SJ0201.js",
+      "final_url": "https://keirin.jp/sp/static/js/SJ0201.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 1686,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp",
+          "encp"
+        ],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          "Post("
+        ]
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    },
+    {
+      "url": "https://keirin.jp/sp/static/js/commonSubmit.js",
+      "final_url": "https://keirin.jp/sp/static/js/commonSubmit.js",
+      "status_code": 200,
+      "content_type": "application/javascript",
+      "bytes": 851,
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [
+          "submit("
+        ],
+        "api_calls": []
+      },
+      "relevant_lines": [],
+      "status": "ok"
+    }
+  ],
+  "candidate_tests": [],
+  "summary": {
+    "status": "diagnostic_completed",
+    "events_found": 7,
+    "events_inspected": 7,
+    "events_with_sensyuList": 7,
+    "javascript_files_found": 11,
+    "javascript_files_read": 11,
+    "relevant_links_found": 0,
+    "javascript_url_candidates": 0,
+    "candidate_urls_tested": 0,
+    "confirmed_racecard_url": false,
+    "next_step": "JSONの選手データ構造とJavaScriptの通信先を確認し、実際の出走表取得先を特定する。"
+  },
+  "warnings": [
+    "HTTP 200だけでは出走表取得成功と判断しない。",
+    "取得できたデータと推測した情報を区別する。",
+    "update.pyとtoday.jsonは変更しない。"
+  ],
+  "json_structure": {
+    "top_level_type": "dict",
+    "top_level_keys": [
+      "kInfo",
+      "kResultCd",
+      "resultCd",
+      "reqprm",
+      "writeANA"
+    ]
+  },
+  "inline_scripts": [
+    {
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [
+          "disp"
+        ],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "text_sample": "\n$(window).load(function() {\n\tvar flg = 0; \n\tvar widthTckH = window.innerWidth-1;\n\tvar dispFlg = true;\n\tif (flg == 0){\n\t\t$('#ticker_area').css('height','32px');\n\t}\t\n\tif (dispFlg == true) {\n\t\t$('#ticker_area').removeClass('dispoff');\n\t\ttickerdisp(flg,'ticker',widthTckH);\n\t\t$('#shTickerHsep').width(widthTckH);\n\t}\n});\n"
+    },
+    {
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [],
+        "api_calls": []
+      },
+      "text_sample": "\n$(window).load(function() {\nvar flg = 9; \nfooterloading(flg);\n});\nsfLoadingFinalize();\n"
+    },
+    {
+      "scan": {
+        "race_urls": [],
+        "json_urls": [],
+        "parameter_names": [],
+        "submit_calls": [
+          "location.href"
+        ],
+        "api_calls": [
+          "XMLHttpRequest"
+        ]
+      },
+      "text_sample": "\n//<![CDATA[\n    var anaxhr = new XMLHttpRequest();\n    var anaURL = location.protocol + '//' + location.host + '/sp' + '/ana';   \n    anaxhr.open(\"GET\", anaURL);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-SCREEN\", screen.width+\"x\"+screen.height);\n    anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-URI\", window.location.href);\n    if(\"anaJsonType\" in window){\n      anaxhr.setRequestHeader(\"X-KEIRINJP-ANA-JSONTYPE\", anaJsonType);\n    }\n    anaxhr.send();\n   \n//]]>\n"
+    }
+  ],
+  "relevant_links": [],
+  "javascript_url_candidates": [],
+  "rider_data_inspection": [
+    {
+      "venue": "静岡",
+      "venue_code": "38",
+      "race_num": "1R",
+      "start_date": "20261015",
+      "json_path": "$.kInfo[5]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"蕗澤鴻太郎\", \"sensyuNo\": \"015162\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"邊見　竜馬\", \"sensyuNo\": \"015875\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"真船圭一郎\", \"sensyuNo\": \"014361\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"高橋　雅之\", \"sensyuNo\": \"014082\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"二藤　元太\", \"sensyuNo\": \"014466\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"山原さくら\", \"sensyuNo\": \"014974\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "静岡",
+        "encPrm": "a1Mwgr0l_Pv5qcmXHYStbyt8xPdyf_O1Ftmulcs8Cwc",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "蕗澤鴻太郎",
+            "sensyuNo": "015162",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "邊見　竜馬",
+            "sensyuNo": "015875",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "真船圭一郎",
+            "sensyuNo": "014361",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "高橋　雅之",
+            "sensyuNo": "014082",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "二藤　元太",
+            "sensyuNo": "014466",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "山原さくら",
+            "sensyuNo": "014974",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "豊橋",
+      "venue_code": "45",
+      "race_num": "1R",
+      "start_date": "20261015",
+      "json_path": "$.kInfo[6]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"吉田　智哉\", \"sensyuNo\": \"015204\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"成松　春樹\", \"sensyuNo\": \"014339\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"田中　和磨\", \"sensyuNo\": \"015278\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"池田　憲昭\", \"sensyuNo\": \"014104\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"常次　勇人\", \"sensyuNo\": \"015632\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"久米　詩\", \"sensyuNo\": \"015400\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "豊橋",
+        "encPrm": "-rgLOUDZaX8RQ73rPRpBXoOpTIvLVlENBbarsdzRWco",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "吉田　智哉",
+            "sensyuNo": "015204",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "成松　春樹",
+            "sensyuNo": "014339",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "田中　和磨",
+            "sensyuNo": "015278",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "池田　憲昭",
+            "sensyuNo": "014104",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "常次　勇人",
+            "sensyuNo": "015632",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "久米　詩",
+            "sensyuNo": "015400",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "奈良",
+      "venue_code": "53",
+      "race_num": "2R",
+      "start_date": "20261014",
+      "json_path": "$.kInfo[0]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"恩田　淳平\", \"sensyuNo\": \"014809\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"中井　太祐\", \"sensyuNo\": \"014605\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"東　龍之介\", \"sensyuNo\": \"014523\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"福永　大智\", \"sensyuNo\": \"015274\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"岡部　陸斗\", \"sensyuNo\": \"015791\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"尾崎　睦\", \"sensyuNo\": \"015070\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "奈良",
+        "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
+        "denColorFlg": "0",
+        "raceNum": "2R",
+        "sensyuList": [
+          {
+            "sensyuName": "恩田　淳平",
+            "sensyuNo": "014809",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "中井　太祐",
+            "sensyuNo": "014605",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "東　龍之介",
+            "sensyuNo": "014523",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "福永　大智",
+            "sensyuNo": "015274",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "岡部　陸斗",
+            "sensyuNo": "015791",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "尾崎　睦",
+            "sensyuNo": "015070",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "別府",
+      "venue_code": "86",
+      "race_num": "1R",
+      "start_date": "20261014",
+      "json_path": "$.kInfo[2]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"小川真太郎\", \"sensyuNo\": \"015063\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"森田　一郎\", \"sensyuNo\": \"015799\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"阿部　将大\", \"sensyuNo\": \"015474\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"須永　優太\", \"sensyuNo\": \"014358\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"中川誠一郎\", \"sensyuNo\": \"013745\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"坂本　紘規\", \"sensyuNo\": \"015415\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "別府",
+        "encPrm": "28W231JXvY69KguDggGaUK7-khi2uiM0vq_3ecRHFXc",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "小川真太郎",
+            "sensyuNo": "015063",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "森田　一郎",
+            "sensyuNo": "015799",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "阿部　将大",
+            "sensyuNo": "015474",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "須永　優太",
+            "sensyuNo": "014358",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "中川誠一郎",
+            "sensyuNo": "013745",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "坂本　紘規",
+            "sensyuNo": "015415",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "青森",
+      "venue_code": "12",
+      "race_num": "7R",
+      "start_date": "20261014",
+      "json_path": "$.kInfo[3]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"邊見　祐太\", \"sensyuNo\": \"015523\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"横溝　貫太\", \"sensyuNo\": \"016015\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"戸田　康平\", \"sensyuNo\": \"014885\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"川村　昭弘\", \"sensyuNo\": \"013408\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"入田　龍馬\", \"sensyuNo\": \"015846\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"坂口　楓華\", \"sensyuNo\": \"015225\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "青森",
+        "encPrm": "YyUMwJFqH_os4DNhTHKO8zpIoiSWHkwLTfAiMqm4dls",
+        "denColorFlg": "0",
+        "raceNum": "7R",
+        "sensyuList": [
+          {
+            "sensyuName": "邊見　祐太",
+            "sensyuNo": "015523",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "横溝　貫太",
+            "sensyuNo": "016015",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "戸田　康平",
+            "sensyuNo": "014885",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "川村　昭弘",
+            "sensyuNo": "013408",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "入田　龍馬",
+            "sensyuNo": "015846",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "坂口　楓華",
+            "sensyuNo": "015225",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "玉野",
+      "venue_code": "61",
+      "race_num": "1R",
+      "start_date": "20261013",
+      "json_path": "$.kInfo[1]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"山岸　佳太\", \"sensyuNo\": \"015038\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"久田　朔\", \"sensyuNo\": \"015826\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"石毛　克幸\", \"sensyuNo\": \"013628\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"三宅　達也\", \"sensyuNo\": \"013291\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"佐藤　和也\", \"sensyuNo\": \"014427\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_sq_top.png\", \"sensyuIconChar\": \"S級\"}, {\"sensyuName\": \"菅野　航基\", \"sensyuNo\": \"015508\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "玉野",
+        "encPrm": "v3GkGBnzcJwx-zPUFdtwmRs3OTHgv1KYCk7VkDuWURk",
+        "denColorFlg": "1",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "山岸　佳太",
+            "sensyuNo": "015038",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "久田　朔",
+            "sensyuNo": "015826",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "石毛　克幸",
+            "sensyuNo": "013628",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "三宅　達也",
+            "sensyuNo": "013291",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "佐藤　和也",
+            "sensyuNo": "014427",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_sq_top.png",
+            "sensyuIconChar": "S級"
+          },
+          {
+            "sensyuName": "菅野　航基",
+            "sensyuNo": "015508",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          }
+        ]
+      }
+    },
+    {
+      "venue": "前橋",
+      "venue_code": "22",
+      "race_num": "1R",
+      "start_date": "20261013",
+      "json_path": "$.kInfo[4]",
+      "raw_keys": [
+        "jyoName",
+        "zenjituFlg",
+        "gradeIcon",
+        "gradeIconChar",
+        "nitijiIcon",
+        "nitijiIconChar",
+        "kaisaiIcon",
+        "kaisaiIconChar",
+        "huka1Icon",
+        "huka1IconChar",
+        "bgColor",
+        "encPrm",
+        "bKeirinCd",
+        "kStartDate",
+        "KeirinCd",
+        "btnFlgLive",
+        "btnFlgOdds",
+        "btnFlgResult",
+        "btnFlgDokanto",
+        "btnFlgLiveDelivery",
+        "denColorFlg",
+        "raceNum",
+        "denTime",
+        "denTitle",
+        "hyoujiFlg",
+        "sensyuList"
+      ],
+      "sensyuList_type": "list",
+      "sensyuList_count": 6,
+      "sensyuList_sample": "[{\"sensyuName\": \"山田　敦也\", \"sensyuNo\": \"013901\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"蒔田　英彦\", \"sensyuNo\": \"014298\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"中村　隆生\", \"sensyuNo\": \"015424\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"鈴木　輝大\", \"sensyuNo\": \"015254\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_aq_top.png\", \"sensyuIconChar\": \"A級\"}, {\"sensyuName\": \"長川　達哉\", \"sensyuNo\": \"015973\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_challenge_top.png\", \"sensyuIconChar\": \"チャレンジ\"}, {\"sensyuName\": \"松井　優佳\", \"sensyuNo\": \"015769\", \"sensyuIcon\": \"/sp/static/img/icon/ClassTeam/ico_girls_top.png\", \"sensyuIconChar\": \"ガールズ\"}]",
+      "raw_relevant_fields": {
+        "jyoName": "前橋",
+        "encPrm": "D-fs-ibaZM4Z3cYeuKvjg9Sb1_rZGqOigJx3pxx3wew",
+        "denColorFlg": "0",
+        "raceNum": "1R",
+        "sensyuList": [
+          {
+            "sensyuName": "山田　敦也",
+            "sensyuNo": "013901",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "蒔田　英彦",
+            "sensyuNo": "014298",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "中村　隆生",
+            "sensyuNo": "015424",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "鈴木　輝大",
+            "sensyuNo": "015254",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_aq_top.png",
+            "sensyuIconChar": "A級"
+          },
+          {
+            "sensyuName": "長川　達哉",
+            "sensyuNo": "015973",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_challenge_top.png",
+            "sensyuIconChar": "チャレンジ"
+          },
+          {
+            "sensyuName": "松井　優佳",
+            "sensyuNo": "015769",
+            "sensyuIcon": "/sp/static/img/icon/ClassTeam/ico_girls_top.png",
+            "sensyuIconChar": "ガールズ"
+          }
+        ]
+      }
+    }
+  ],
+  "finished_at_jst": "2026-10-15T10:53:38.128106+09:00"
 }
