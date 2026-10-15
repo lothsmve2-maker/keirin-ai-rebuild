@@ -1,0 +1,168 @@
+{
+  "schema_version": 1,
+  "source": "KEIRIN.JP",
+  "target_date": "2026-10-15",
+  "started_at": "2026-10-15T19:46:39.581122+09:00",
+  "finished_at": "2026-10-15T19:46:48.120788+09:00",
+  "status": "error",
+  "events_found": 7,
+  "races_found": 18,
+  "races_fetched": 0,
+  "races_failed": 18,
+  "rider_count": 0,
+  "events": [
+    {
+      "venue": "奈良",
+      "venue_code": "53",
+      "start_date": "20261014",
+      "race_count": 0
+    },
+    {
+      "venue": "玉野",
+      "venue_code": "61",
+      "start_date": "20261013",
+      "race_count": 0
+    },
+    {
+      "venue": "別府",
+      "venue_code": "86",
+      "start_date": "20261014",
+      "race_count": 0
+    },
+    {
+      "venue": "青森",
+      "venue_code": "12",
+      "start_date": "20261014",
+      "race_count": 0
+    },
+    {
+      "venue": "前橋",
+      "venue_code": "22",
+      "start_date": "20261013",
+      "race_count": 0
+    },
+    {
+      "venue": "静岡",
+      "venue_code": "38",
+      "start_date": "20261015",
+      "race_count": 9
+    },
+    {
+      "venue": "豊橋",
+      "venue_code": "45",
+      "start_date": "20261015",
+      "race_count": 9
+    }
+  ],
+  "races": [],
+  "errors": [
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "1",
+      "error": "HTTPError: 500 Server Error: Internal Server Error for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb3sofmLSwL6URPrXDRtm078"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "2",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbyJb4KPHMKr4mTqSW5aXef8"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "3",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb_DFG_k2ZcUIkFyuTor9wZc"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "4",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbwt4Ki4Sx1DBLDROHFjumkI"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "5",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2hspPB6T9OJf15pUFOzprY"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "6",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2tJ53mVuGoywNcFT8H6708"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "7",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStbx4JIFHjaUqjLyQAHrvoD7c"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "8",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb9wfjcV9mhWFsoBFthknXAA"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "静岡",
+      "race_no": "9",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=a1Mwgr0l_Pv5qcmXHYStb2BQ0tNpNep0I22S3nKWfOU"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "1",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXppk2kKQYCfrDmXzIw36hZ4"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "2",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXmBY29bdRzMiqNdbMowsMMg"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "3",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkd1scijnGBUq0deMngzawk"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "4",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXkrErrPOuvzWeywvyAXNh90"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "5",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXomH9ssPwt-EqZmEMSPHyRw"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "6",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXhYcn5da-LDxpUW3ipITI6Y"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "7",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXpyVxNpD_oZlBrupvk8nPr8"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "8",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXplKj_AHhYoLBBr95A3e-qg"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "豊橋",
+      "race_no": "9",
+      "error": "HTTPError: 404 Client Error: Not Found for url: https://keirin.jp/sp/race?encp=-rgLOUDZaX8RQ73rPRpBXgvEbb2DF00zDzA10H3Xzc0"
+    }
+  ]
+}
