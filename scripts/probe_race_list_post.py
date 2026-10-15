@@ -440,7 +440,32 @@ def main():
             for key, value in event.items()
             if key != "raw"
         }
-        report["events"].append(event_copy)
+
+        # 公式JSONの内部データを確認する
+        raw = event.get("raw", {})
+
+        if isinstance(raw, dict):
+            event_copy["raw_keys"] = list(raw.keys())
+
+            # 選手・レース関連データをそのまま記録
+            for key, value in raw.items():
+                if any(
+                    word in key.lower()
+                    for word in (
+                        "sensyu",
+                        "rider",
+                        "race",
+                        "entry",
+                        "member",
+                        "comment",
+                        "line",
+                        "enc",
+                        "req",
+                    )
+                ):
+                    event_copy[f"inspect_{key}"] = value
+
+        report["events"].append(event_copy) 
 
     if not selected:
         report["summary"] = {
