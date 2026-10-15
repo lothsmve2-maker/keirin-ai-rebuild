@@ -68,27 +68,19 @@ def main():
             if isinstance(riders, list):
                 print("選手件数:", len(riders))
 
-                count = 0
-                for rider in riders:
+                for i, rider in enumerate(riders[:3], start=1):
                     if not isinstance(rider, dict):
+                        print(f"選手{i}: データ形式が辞書ではありません")
                         continue
 
-                    comment = str(
-                        rider.get("sensyuComment", "")
-                    ).strip()
+                    print(f"\n--- 選手{i}のJSON項目 ---")
 
-                    if comment:
-                        print(
-                            "コメント:",
-                            rider.get("syaban", "?"),
-                            rider.get("sensyuName", ""),
-                            comment[:100],
-                        )
-                        count += 1
-
-                print("コメント取得件数:", count)
+                    for key, value in rider.items():
+                        text_value = str(value).replace("\n", " ")
+                        print(f"{key}: {text_value[:160]}")
             else:
                 print("sensyuTypeInfoの形式:", type(riders).__name__)
+            
 
         else:
             print("JSON形式:", type(data).__name__)
