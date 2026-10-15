@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-15T12:45:28.409349+09:00",
+  "started_at_jst": "2026-10-15T13:02:31.949066+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -189,7 +189,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "6R",
+      "race_num": "7R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
       "reqprm": "",
@@ -228,7 +228,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "6R",
+        "raceNum": "7R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -1770,6 +1770,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1806,6 +1993,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1842,6 +2216,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1878,6 +2439,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1914,6 +2662,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1950,6 +2885,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -1986,6 +3108,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -2022,6 +3331,193 @@
       "title": "開催情報｜KEIRIN.JP",
       "text_length": 401,
       "body_sample": "開催情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 一押し 好相性 COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
+      "page_scripts": [
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-1.11.3.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/bootstrap.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.cookie.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.json.min.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery-ui.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/common/jquery.carouFredSel-6.2.1-packed.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonJSON.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLoad.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonLink.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/subdialog.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/bopen.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_ticker.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SC0201.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/FSJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0301_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0304.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0305.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_v.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/SJ0306_c.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/S_footer.js",
+          "inline": false
+        },
+        {
+          "src": "https://keirin.jp/sp/static/js/commonSubmit.js",
+          "inline": false
+        }
+      ],
+      "page_forms": [],
+      "page_click_handlers": [
+        {
+          "tag": "button",
+          "text": "競輪トピックス",
+          "onclick": "location.href='/sp/topicslist'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場／場外車券 売場からのお知らせ",
+          "onclick": "location.href='/sp/rmationlist'"
+        },
+        {
+          "tag": "button",
+          "text": "選手検索",
+          "onclick": "location.href='/sp/racersearch'"
+        },
+        {
+          "tag": "button",
+          "text": "開催日程",
+          "onclick": "location.href='/sp/raceschedule'"
+        },
+        {
+          "tag": "button",
+          "text": "競輪場一覧",
+          "onclick": "location.href='/sp/jyolist'"
+        },
+        {
+          "tag": "button",
+          "text": "場外車券売場一覧",
+          "onclick": "location.href='/sp/jyogailist'"
+        },
+        {
+          "tag": "button",
+          "text": "ランキング",
+          "onclick": "sfRankingLinkClick()"
+        },
+        {
+          "tag": "a",
+          "text": "",
+          "onclick": "sfHelpLinkClick()"
+        }
+      ],
+      "rider_data_hints": [
+        {
+          "name": "車番",
+          "count": 0
+        },
+        {
+          "name": "選手名",
+          "count": 0
+        },
+        {
+          "name": "競走得点",
+          "count": 1
+        },
+        {
+          "name": "出走表",
+          "count": 3
+        },
+        {
+          "name": "ライン",
+          "count": 0
+        }
+      ],
       "response_links": [
         {
           "text": "出走表 直近4ヶ月",
@@ -2279,7 +3775,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "6R",
+      "race_num": "7R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -2317,7 +3813,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hrHWEGsiDoOcMzXJr88dfqY",
         "denColorFlg": "0",
-        "raceNum": "6R",
+        "raceNum": "7R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -2686,5 +4182,5 @@
     }
   ],
   "post_candidates_found": 78,
-  "finished_at_jst": "2026-10-15T12:45:38.221879+09:00"
+  "finished_at_jst": "2026-10-15T13:02:44.482562+09:00"
 }
