@@ -2,8 +2,8 @@
   "schema_version": 3,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-16",
-  "started_at": "2026-10-16T16:17:02.830989+09:00",
-  "finished_at": "2026-10-16T16:17:17.399441+09:00",
+  "started_at": "2026-10-16T17:08:08.853717+09:00",
+  "finished_at": "2026-10-16T17:08:20.346928+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 0,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 77,
-  "commented_rider_count": 70,
+  "commented_rider_count": 56,
   "events": [
     {
       "venue": "奈良",
@@ -244,37 +244,8 @@
       "verified_race_date": "2026-10-16",
       "start_time": "16:21",
       "distance_m": "1625",
-      "line_type": "二分戦",
-      "line_order": [
-        {
-          "position": 7,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 6,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
       "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
@@ -292,9 +263,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "1",
-          "comment": "話して九州へ。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -310,9 +281,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -328,9 +299,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "宮道君の番手。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -346,9 +317,9 @@
           "sashi": "1",
           "mark": "4",
           "back": "0",
-          "comment": "切れ目から。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -364,9 +335,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -382,9 +353,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "中四国の三番手。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -400,21 +371,29 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "同県の宮本君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -433,37 +412,8 @@
       "verified_race_date": "2026-10-16",
       "start_time": "16:46",
       "distance_m": "1625",
-      "line_type": "二分戦",
-      "line_order": [
-        {
-          "position": 8,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "3"
-        },
-        {
-          "position": 5,
-          "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 10,
-          "car_no": "6"
-        },
-        {
-          "position": 1,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
       "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
@@ -481,9 +431,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "1",
-          "comment": "単騎で前々に。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -499,9 +449,9 @@
           "sashi": "2",
           "mark": "6",
           "back": "0",
-          "comment": "小出君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -517,9 +467,9 @@
           "sashi": "9",
           "mark": "2",
           "back": "0",
-          "comment": "初の森田君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -535,9 +485,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "3",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -553,9 +503,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "九州の三番手。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -571,9 +521,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "決めずに。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -589,21 +539,29 @@
           "sashi": "0",
           "mark": "0",
           "back": "15",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2129,7 +2087,7 @@
     },
     "race_count": 11,
     "rider_count": 77,
-    "commented_rider_count": 70,
-    "comment_missing_rider_count": 7
+    "commented_rider_count": 56,
+    "comment_missing_rider_count": 21
   }
 }
