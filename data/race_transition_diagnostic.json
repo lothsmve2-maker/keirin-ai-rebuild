@@ -1,6 +1,6 @@
 {
   "diagnostic": "KEIRIN.JP race-list and entry data investigation",
-  "started_at_jst": "2026-10-16T10:30:49.856491+09:00",
+  "started_at_jst": "2026-10-17T00:31:33.732573+09:00",
   "schedule_url": "https://keirin.jp/sp/raceschedule",
   "json_url": "https://keirin.jp/sp/json?type=JSJ058",
   "schedule": {
@@ -13,7 +13,7 @@
     "final_url": "https://keirin.jp/sp/json?type=JSJ058",
     "status_code": 200,
     "content_type": "application/json;charset=utf-8",
-    "bytes": 9182
+    "bytes": 9155
   },
   "events_found": 6,
   "events": [
@@ -21,7 +21,7 @@
       "json_path": "$.kInfo[5]",
       "venue": "四日市",
       "venue_code": "48",
-      "race_num": "1R",
+      "race_num": "11R",
       "start_date": "20261016",
       "encPrm": "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4",
       "reqprm": "",
@@ -58,7 +58,7 @@
         "jyoName": "四日市",
         "encPrm": "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "古賀　勝大",
@@ -103,7 +103,7 @@
       "json_path": "$.kInfo[3]",
       "venue": "静岡",
       "venue_code": "38",
-      "race_num": "1R",
+      "race_num": "9R",
       "start_date": "20261015",
       "encPrm": "a1Mwgr0l_Pv5qcmXHYStb6i728XwD3ys4_i3HROHklI",
       "reqprm": "",
@@ -142,7 +142,7 @@
         "jyoName": "静岡",
         "encPrm": "a1Mwgr0l_Pv5qcmXHYStb6i728XwD3ys4_i3HROHklI",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "9R",
         "sensyuList": [
           {
             "sensyuName": "蕗澤鴻太郎",
@@ -187,7 +187,7 @@
       "json_path": "$.kInfo[4]",
       "venue": "豊橋",
       "venue_code": "45",
-      "race_num": "1R",
+      "race_num": "9R",
       "start_date": "20261015",
       "encPrm": "-rgLOUDZaX8RQ73rPRpBXrYGmHr0MxfMyPm4JTBi0IE",
       "reqprm": "",
@@ -226,7 +226,7 @@
         "jyoName": "豊橋",
         "encPrm": "-rgLOUDZaX8RQ73rPRpBXrYGmHr0MxfMyPm4JTBi0IE",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "9R",
         "sensyuList": [
           {
             "sensyuName": "吉田　智哉",
@@ -271,7 +271,7 @@
       "json_path": "$.kInfo[0]",
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "1R",
+      "race_num": "12R",
       "start_date": "20261014",
       "encPrm": "hXAFouF_EW8oCnSpPo40hqsIcalodaCwA2nc6MeCKVw",
       "reqprm": "",
@@ -310,7 +310,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hqsIcalodaCwA2nc6MeCKVw",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -355,7 +355,7 @@
       "json_path": "$.kInfo[1]",
       "venue": "別府",
       "venue_code": "86",
-      "race_num": "1R",
+      "race_num": "12R",
       "start_date": "20261014",
       "encPrm": "28W231JXvY69KguDggGaUIk1nneVJxaFjPkWG9147YY",
       "reqprm": "",
@@ -392,7 +392,7 @@
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUIk1nneVJxaFjPkWG9147YY",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "小川真太郎",
@@ -475,7 +475,7 @@
       "raw_relevant_fields": {
         "jyoName": "青森",
         "encPrm": "YyUMwJFqH_os4DNhTHKO8_QjZ5n2tLLYgh4Kc9UP0KE",
-        "denColorFlg": "1",
+        "denColorFlg": "0",
         "raceNum": "7R",
         "sensyuList": [
           {
@@ -3547,7 +3547,7 @@
     {
       "venue": "四日市",
       "venue_code": "48",
-      "race_num": "1R",
+      "race_num": "11R",
       "start_date": "20261016",
       "json_path": "$.kInfo[5]",
       "raw_keys": [
@@ -3583,7 +3583,7 @@
         "jyoName": "四日市",
         "encPrm": "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "11R",
         "sensyuList": [
           {
             "sensyuName": "古賀　勝大",
@@ -3627,7 +3627,7 @@
     {
       "venue": "静岡",
       "venue_code": "38",
-      "race_num": "1R",
+      "race_num": "9R",
       "start_date": "20261015",
       "json_path": "$.kInfo[3]",
       "raw_keys": [
@@ -3665,7 +3665,7 @@
         "jyoName": "静岡",
         "encPrm": "a1Mwgr0l_Pv5qcmXHYStb6i728XwD3ys4_i3HROHklI",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "9R",
         "sensyuList": [
           {
             "sensyuName": "蕗澤鴻太郎",
@@ -3709,7 +3709,7 @@
     {
       "venue": "豊橋",
       "venue_code": "45",
-      "race_num": "1R",
+      "race_num": "9R",
       "start_date": "20261015",
       "json_path": "$.kInfo[4]",
       "raw_keys": [
@@ -3747,7 +3747,7 @@
         "jyoName": "豊橋",
         "encPrm": "-rgLOUDZaX8RQ73rPRpBXrYGmHr0MxfMyPm4JTBi0IE",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "9R",
         "sensyuList": [
           {
             "sensyuName": "吉田　智哉",
@@ -3791,7 +3791,7 @@
     {
       "venue": "奈良",
       "venue_code": "53",
-      "race_num": "1R",
+      "race_num": "12R",
       "start_date": "20261014",
       "json_path": "$.kInfo[0]",
       "raw_keys": [
@@ -3829,7 +3829,7 @@
         "jyoName": "奈良",
         "encPrm": "hXAFouF_EW8oCnSpPo40hqsIcalodaCwA2nc6MeCKVw",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "恩田　淳平",
@@ -3873,7 +3873,7 @@
     {
       "venue": "別府",
       "venue_code": "86",
-      "race_num": "1R",
+      "race_num": "12R",
       "start_date": "20261014",
       "json_path": "$.kInfo[1]",
       "raw_keys": [
@@ -3909,7 +3909,7 @@
         "jyoName": "別府",
         "encPrm": "28W231JXvY69KguDggGaUIk1nneVJxaFjPkWG9147YY",
         "denColorFlg": "0",
-        "raceNum": "1R",
+        "raceNum": "12R",
         "sensyuList": [
           {
             "sensyuName": "小川真太郎",
@@ -3990,7 +3990,7 @@
       "raw_relevant_fields": {
         "jyoName": "青森",
         "encPrm": "YyUMwJFqH_os4DNhTHKO8_QjZ5n2tLLYgh4Kc9UP0KE",
-        "denColorFlg": "1",
+        "denColorFlg": "0",
         "raceNum": "7R",
         "sensyuList": [
           {
@@ -5267,7 +5267,7 @@
       "request_id": "JSJ049",
       "status_code": 200,
       "content_type": "application/json;charset=utf-8",
-      "bytes": 8410,
+      "bytes": 9092,
       "top_level_keys": [
         "strUPDATE",
         "strKaisaiStop",
@@ -5301,6 +5301,23 @@
           "race_param": "qv4GFogOJHiRvlOmhrBR7GQJqnCWW8Gb0rr-lnN-SDI"
         }
       ]
+    },
+    {
+      "venue": "静岡",
+      "start_date": "20261015",
+      "request_id": "JSJ049",
+      "status_code": 200,
+      "content_type": "application/json;charset=utf-8",
+      "bytes": 109,
+      "top_level_keys": [
+        "kaisaiNitijiList",
+        "kaisaiDayList",
+        "resultCd",
+        "messageCd",
+        "writeANA"
+      ],
+      "race_count": 0,
+      "race_samples": []
     }
   ],
   "race_page_tests": [
@@ -5313,7 +5330,7 @@
       "parameter_present": true,
       "status_code": 200,
       "content_type": "text/html;charset=UTF-8",
-      "bytes": 66030,
+      "bytes": 65597,
       "title": "レース情報｜KEIRIN.JP",
       "text_sample": "レース情報｜KEIRIN.JP 【お知らせ】Androidスマートフォンにて発生しておりましたライブ映像の再生不具合は解消いたしました。ご不便をお掛けしましたことをお詫び申し上げます。詳しくは競輪トピックスをご覧ください。 KEIRIN.JPインターネット・電話投票会員（CTC会員）募集中！詳しくは競輪トピックスをご覧ください。 ミッドナイト競輪は1番車から競走得点上位順に選手を並べ、より分かりやすく、よりシンプルに！ 出走表 一覧 結果一覧 レース プログラム 開催発売 案内 出走表 直近4ヶ月 出走表 種目別成績 オッズ 結　果 発売締切 → 発走予定 → 投　票 投票入力へ戻る 選手紹介 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 バック回数の上位2人は、1位赤字、2位青字で表示されます。 競走得点・バック回数の上位2人は、1位赤字、2位青字で表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の対戦成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 今回成績 前回成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 「もっと見る」ボタンを押すと過去15場所までの成績が表示されます。 備考エリア 枠 番 印 車 番 選手名 府県 / 級班 前 現 / 脚質 選手コメント 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 1 着 2 着 3 着 着 外 H S 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 直近1年間の種目別成績を表示しています。 備考エリア 枠 番 車 番 選手名 府県 / 級班 前 現 / 脚質 期別 年齢 ホーム バンク 失格点 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 同時出走レース一覧 開催 開催日 R 競走種目 成績 基本情報 直近成績 対戦成績 当場成績 連対率 ギヤ倍数 着度数 H·S回数 選手情報 予想情報 備考エリア 着 車 番 選手名 着差 上り 決手 B 個人状況 結果払戻金 短評・展開 ダイジェスト 車番 選手名 短評 ■ レース展開 周回中 打鐘 ＨＳ ＢＳ ゴール前 結果払戻金 短評・展開 ダイジェスト COPYRIGHT JKA. ALL RIGHTS RESERVED. 競輪トピックス 競輪場／場外車券 売場からのお知らせ 選手検索 開催日程 競輪場一覧 場外車券売場一覧 ランキング",
       "html_inspection": {
@@ -5579,7 +5596,7 @@
           {
             "src": "",
             "inline": true,
-            "text": "\n     var displayingId = \"SJ0315\";\n     var parentFuncId = \"FSJ0315\";\n     var displayingSyoriKbn = 1;\n     var currentPath = \"/sp\";\n     var jsonData = [];\n     jsonData[\"SC0201\"] = {\"C0201data\":{\"imgGradeSrc\":\"/sp/static/img/icon/grade/ico_f2.png\",\"imgGradeAlt\":\"F2\",\"raceName\":\"稲藤日永うちわ杯\",\"joName\":\"四日市\",\"txtKikan\":\"2026/10/16～2026/10/18\",\"txtEventDate\":\"2026/10/16\",\"txtDaily\":\"(初日)\",\"selRaceNo\":1,\"syumoku\":\"Ａ級チ予選\",\"kyori\":1625,\"syukai\":4,\"nameKyosou\":\"先固\",\"aftStartTime\":\"15:56\",\"aftBetTime\":\"15:53\",\"bfrStartTime\":\"15:56\",\"bfrBetTime\":\"15:53\",\"flgPrevBet\":false,\"cidPrevBetBgcolor\":\"zenjitu_hatubai_bg_color\",\"flgActvKekkaList\":false,\"flgActvSyumoku\":true,\"flgActvOdds\":true,\"flgActvKekka\":false,\"encSelParaR\":\"qv4GFogOJHiRvlOmhrBR7D7-6SQ6RdZyUyXwx2BKIokFJ8Wo05q2S_Fy8ImT9-zJ\",\"encSelParaK\":\"qv4GFogOJHiRvlOmhrBR7D7-6SQ6RdZyUyXwx2BKIokFJ8Wo05q2S_Fy8ImT9-zJ\",\"encParaS\":\"qv4GFogOJHiRvlOmhrBR7EI8tYsmAo95Hdypjtuav2jr48M4oQ0uLsE_KoOciVvK\",\"flgKekkaRefund\":false,\"flgRecodes\":true,\"flgRaceCancel\":false,\"flgSyusso\":true,\"nmOddsBtn\":\"オッズ\",\"sKbn\":\"1\",\"gyomuDate\":\"202610161031\",\"aftBetDate\":\"202610161553\"},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0314\"] = {\"narabiyoso\":{\"chushiFlg\":\"2\",\"maxAxixY\":1,\"lineKeitai\":\"三分戦\",\"lineKeitaiClass\":\"sanbusen\",\"kyoHyoji\":\"false\",\"teikyo\":\"中部競輪\",\"errFlg\":\"false\",\"ryoikiFlg\":\"true\",\"shaban\":[{\"ichi\":\"2\",\"shaban\":\"1\",\"classname\":\"base_color_1\"},{\"ichi\":\"5\",\"shaban\":\"2\",\"classname\":\"base_color_2\"},{\"ichi\":\"8\",\"shaban\":\"3\",\"classname\":\"base_color_3\"},{\"ichi\":\"9\",\"shaban\":\"4\",\"classname\":\"base_color_4\"},{\"ichi\":\"1\",\"shaban\":\"5\",\"classname\":\"base_color_5\"},{\"ichi\":\"3\",\"shaban\":\"6\",\"classname\":\"base_color_6\"},{\"ichi\":\"6\",\"shaban\":\"7\",\"classname\":\"base_color_7\"}]},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0315\"] = {\"syoriKbn\":\"1\",\"syusouInfoExistFlg\":\"1\",\"charColor1\":\"color_red\",\"charColor2\":\"color_blue\",\"lastUpdateTime\":\"2026/10/16 07:01\\u0026nbsp;更新\",\"yudoSensyuName\":\"井田　晶之\",\"raceResult1Syaban\":\"4\",\"raceResult2Syaban\":\"2\",\"backCnt1Syaban\":\"5\",\"backCnt2Syaban\":\"2,3\",\"sensyuTypeInfo\":[{\"syabanBgColorInfo\":\"base_color_1_bk\",\"syabanCharColorInfo\":\"base_color_1\",\"syaban\":\"1\",\"sensyuRegistNo\":\"013264\",\"sensyuName\":\"山中　貴雄\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"71.45\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"3\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_2_bk\",\"syabanCharColorInfo\":\"base_color_2\",\"syaban\":\"2\",\"sensyuRegistNo\":\"013375\",\"sensyuName\":\"五反田豊和\",\"huKen\":\"宮　崎\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"72.06\",\"nigeCnt\":\"3\",\"makuriCnt\":\"0\",\"sasiCnt\":\"6\",\"markCnt\":\"1\",\"backCnt\":\"6\"},{\"syabanBgColorInfo\":\"base_color_3_bk\",\"syabanCharColorInfo\":\"base_color_3\",\"syaban\":\"3\",\"sensyuRegistNo\":\"014254\",\"sensyuName\":\"武田　和也\",\"huKen\":\"奈　良\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"71.92\",\"nigeCnt\":\"1\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"2\",\"backCnt\":\"6\"},{\"syabanBgColorInfo\":\"base_color_4_bk\",\"syabanCharColorInfo\":\"base_color_4\",\"syaban\":\"4\",\"sensyuRegistNo\":\"013206\",\"sensyuName\":\"岡崎　和久\",\"ketujyouTuikaHojyuColorInfo\":\"color_blue\",\"ketujyouTuikaHojyu\":\"追加\",\"huKen\":\"奈　良\",\"prevKyuhan\":\"A2\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"72.41\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"2\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_5_bk\",\"syabanCharColorInfo\":\"base_color_5\",\"syaban\":\"5\",\"sensyuRegistNo\":\"015053\",\"sensyuName\":\"廣田　敦士\",\"huKen\":\"三　重\",\"prevKyuhan\":\"A2\",\"kyuhan\":\"A3\",\"kyakusitu\":\"逃\",\"heikinTokuten\":\"68.70\",\"nigeCnt\":\"6\",\"makuriCnt\":\"2\",\"sasiCnt\":\"2\",\"markCnt\":\"0\",\"backCnt\":\"10\"},{\"syabanBgColorInfo\":\"base_color_6_bk\",\"syabanCharColorInfo\":\"base_color_6\",\"syaban\":\"6\",\"sensyuRegistNo\":\"011382\",\"sensyuName\":\"清水　広幸\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"62.75\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"0\",\"markCnt\":\"0\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_7_bk\",\"syabanCharColorInfo\":\"base_color_7\",\"syaban\":\"7\",\"sensyuRegistNo\":\"012997\",\"sensyuName\":\"後田　康成\",\"huKen\":\"長　崎\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"69.29\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"1\",\"backCnt\":\"0\"}],\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0326\"] = {};\n   "
+            "text": "\n     var displayingId = \"SJ0315\";\n     var parentFuncId = \"FSJ0315\";\n     var displayingSyoriKbn = 1;\n     var currentPath = \"/sp\";\n     var jsonData = [];\n     jsonData[\"SC0201\"] = {\"C0201data\":{\"imgGradeSrc\":\"/sp/static/img/icon/grade/ico_f2.png\",\"imgGradeAlt\":\"F2\",\"raceName\":\"稲藤日永うちわ杯\",\"joName\":\"四日市\",\"txtKikan\":\"2026/10/16～2026/10/18\",\"txtEventDate\":\"2026/10/16\",\"txtDaily\":\"(初日)\",\"selRaceNo\":1,\"syumoku\":\"Ａ級チ予選\",\"kyori\":1625,\"syukai\":4,\"nameKyosou\":\"先固\",\"aftStartTime\":\"15:56\",\"aftBetTime\":\"15:53\",\"bfrStartTime\":\"15:56\",\"bfrBetTime\":\"15:53\",\"introductionURL\":\"https://wm.st.keirin.jp/wm-keirin48/20261016-48-01-01-02-00.mp4\",\"flgPrevBet\":false,\"cidPrevBetBgcolor\":\"zenjitu_hatubai_bg_color\",\"flgActvKekkaList\":true,\"flgActvSyumoku\":true,\"flgActvOdds\":true,\"flgActvKekka\":true,\"encSelParaR\":\"qv4GFogOJHiRvlOmhrBR7D7-6SQ6RdZyUyXwx2BKIokFJ8Wo05q2S_Fy8ImT9-zJ\",\"encSelParaK\":\"qv4GFogOJHiRvlOmhrBR7D7-6SQ6RdZyUyXwx2BKIokFJ8Wo05q2S_Fy8ImT9-zJ\",\"encParaS\":\"qv4GFogOJHiRvlOmhrBR7EI8tYsmAo95Hdypjtuav2jr48M4oQ0uLsE_KoOciVvK\",\"flgKekkaRefund\":false,\"flgRecodes\":true,\"flgRaceCancel\":false,\"flgSyusso\":true,\"nmOddsBtn\":\"オッズ\",\"sKbn\":\"1\",\"gyomuDate\":\"202610170031\",\"aftBetDate\":\"202610161553\"},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0314\"] = {\"narabiyoso\":{\"chushiFlg\":\"2\",\"maxAxixY\":0},\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0315\"] = {\"syoriKbn\":\"1\",\"syusouInfoExistFlg\":\"1\",\"charColor1\":\"color_red\",\"charColor2\":\"color_blue\",\"lastUpdateTime\":\"2026/10/16 07:01\\u0026nbsp;更新\",\"yudoSensyuName\":\"井田　晶之\",\"raceResult1Syaban\":\"4\",\"raceResult2Syaban\":\"2\",\"backCnt1Syaban\":\"5\",\"backCnt2Syaban\":\"2,3\",\"sensyuTypeInfo\":[{\"syabanBgColorInfo\":\"base_color_1_bk\",\"syabanCharColorInfo\":\"base_color_1\",\"syaban\":\"1\",\"sensyuRegistNo\":\"013264\",\"sensyuName\":\"山中　貴雄\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"71.45\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"3\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_2_bk\",\"syabanCharColorInfo\":\"base_color_2\",\"syaban\":\"2\",\"sensyuRegistNo\":\"013375\",\"sensyuName\":\"五反田豊和\",\"huKen\":\"宮　崎\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"72.06\",\"nigeCnt\":\"3\",\"makuriCnt\":\"0\",\"sasiCnt\":\"6\",\"markCnt\":\"1\",\"backCnt\":\"6\"},{\"syabanBgColorInfo\":\"base_color_3_bk\",\"syabanCharColorInfo\":\"base_color_3\",\"syaban\":\"3\",\"sensyuRegistNo\":\"014254\",\"sensyuName\":\"武田　和也\",\"huKen\":\"奈　良\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"両\",\"heikinTokuten\":\"71.92\",\"nigeCnt\":\"1\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"2\",\"backCnt\":\"6\"},{\"syabanBgColorInfo\":\"base_color_4_bk\",\"syabanCharColorInfo\":\"base_color_4\",\"syaban\":\"4\",\"sensyuRegistNo\":\"013206\",\"sensyuName\":\"岡崎　和久\",\"ketujyouTuikaHojyuColorInfo\":\"color_blue\",\"ketujyouTuikaHojyu\":\"追加\",\"huKen\":\"奈　良\",\"prevKyuhan\":\"A2\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"72.41\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"2\",\"markCnt\":\"2\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_5_bk\",\"syabanCharColorInfo\":\"base_color_5\",\"syaban\":\"5\",\"sensyuRegistNo\":\"015053\",\"sensyuName\":\"廣田　敦士\",\"huKen\":\"三　重\",\"prevKyuhan\":\"A2\",\"kyuhan\":\"A3\",\"kyakusitu\":\"逃\",\"heikinTokuten\":\"68.70\",\"nigeCnt\":\"6\",\"makuriCnt\":\"2\",\"sasiCnt\":\"2\",\"markCnt\":\"0\",\"backCnt\":\"10\"},{\"syabanBgColorInfo\":\"base_color_6_bk\",\"syabanCharColorInfo\":\"base_color_6\",\"syaban\":\"6\",\"sensyuRegistNo\":\"011382\",\"sensyuName\":\"清水　広幸\",\"huKen\":\"愛　知\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"62.75\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"0\",\"markCnt\":\"0\",\"backCnt\":\"0\"},{\"syabanBgColorInfo\":\"base_color_7_bk\",\"syabanCharColorInfo\":\"base_color_7\",\"syaban\":\"7\",\"sensyuRegistNo\":\"012997\",\"sensyuName\":\"後田　康成\",\"huKen\":\"長　崎\",\"prevKyuhan\":\"A3\",\"kyuhan\":\"A3\",\"kyakusitu\":\"追\",\"heikinTokuten\":\"69.29\",\"nigeCnt\":\"0\",\"makuriCnt\":\"0\",\"sasiCnt\":\"3\",\"markCnt\":\"1\",\"backCnt\":\"0\"}],\"resultCd\":0,\"writeANA\":false};\n     jsonData[\"SJ0326\"] = {};\n   "
           }
         ],
         "click_handlers": [
@@ -6018,5 +6035,5 @@
       "html_contains_rider_terms": true
     }
   ],
-  "finished_at_jst": "2026-10-16T10:31:07.441072+09:00"
+  "finished_at_jst": "2026-10-17T00:31:51.493391+09:00"
 }
