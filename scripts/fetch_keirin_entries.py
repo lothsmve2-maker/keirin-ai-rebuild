@@ -386,64 +386,50 @@ def extract_assignment(html, variable_name):
 def fetch_official_comments(session, race_encp, referer=None):
     """
     KEIRIN.JP公式JSONから選手コメントを取得する。
-    戻り値は車番をキーにした辞書。
-    取得できない場合は空辞書を返す。
+    戻り値:
+        comments: 車番をキーにしたコメント辞書
+        status: 取得済み / 未掲載 / 取得失敗
     """
     url = f"{BASE}/sp/json"
-
     headers = {
         "Referer": referer or f"{BASE}/sp/raceschedule",
         "X-Requested-With": "XMLHttpRequest",
     }
-
     comments = {}
-
-    # 公式ページと同じ通信形式で取得する
-    for skbn in ("1",):
-        try:
-            response = session.get(
-                url,
-                params={
-                    "type": "JSJ041",
-                    "encp": race_encp,
-                    "skbn": skbn,
-                },
-                headers=headers,
-                timeout=TIMEOUT,
-            )
-            response.raise_for_status()
-            payload = response.json()
-
-            if not isinstance(payload, dict):
+    try:
+        response = session.get(
+            url,
+            params={
+                "type": "JSJ041",
+                "encp": race_encp,
+                "skbn": "1",
+            },
+            headers=headers,
+            timeout=TIMEOUT,
+        )
+        response.raise_for_status()
+        payload = response.json()
+        if not isinstance(payload, dict):
+            print("  コメント取得失敗: JSON形式が想定外")
+            return comments, "取得失敗"
+        riders = payload.get("sensyuTypeInfo")
+        if not isinstance(riders, list):
+            print("  コメント取得失敗: 選手データが見つからない")
+            return comments, "取得失敗"
+        for rider in riders:
+            if not isinstance(rider, dict):
                 continue
-
-            riders = payload.get("sensyuTypeInfo", [])
-
-            if not isinstance(riders, list):
-                continue
-
-            for rider in riders:
-                if not isinstance(rider, dict):
-                    continue
-
-                car_no = str(rider.get("syaban", "")).strip()
-                comment = str(
-                    rider.get("sensyuComment", "")
-                ).strip()
-
-                if car_no and comment:
-                    comments[car_no] = comment
-
-            # JSONが正常に返った場合はここで終了
-            break
-
-        except Exception as e:
-            print(
-                f"  コメント取得エラー: "
-                f"{str(e)[:150]}"
-            )
-
-    return comments
+            car_no = str(rider.get("syaban", "")).strip()
+            comment = str(rider.get("sensyuComment", "") or "").strip()
+            if car_no and comment:
+                comments[car_no] = comment
+        if comments:
+            return comments, "取得済み"
+        # JSONの取得には成功したが、コメント本文がない
+        return comments, "未掲載"
+    except Exception as e:
+        print(f"  コメント取得失敗: {str(e)[:150]}")
+        return comments, "取得失敗"
 def normalize_rider(raw):
     """公式JSONの選手データを共通形式にする。"""
 
@@ -665,11 +651,23 @@ def extract_race_data(session, race):
         if rider["car_no"] or rider["name"]:
             riders.append(rider)
     # KEIRIN.JP公式コメントを取得
-    official_comments = fetch_official_comments(
+    official_comments, comment_fetch_status = fetch_official_comments(
         session,
         race["race_encp"],
         referer=race.get("race_url"),
     )
+    # コメントと取得状態を選手ごとに保存
+    for rider in riders:
+        car_no = str(rider.get("car_no", "")).strip()
+        comment = official_comments.get(car_no, "")
+        rider["comment"] = comment
+        rider["comment_available"] = bool(comment)
+        if comment:
+            rider["comment_status"] = "取得済み"
+        elif comment_fetch_status == "取得失敗":
+            rider["comment_status"] = "取得失敗"
+        else:
+            rider["comment_status"] = "未掲載"
 
     # 取得したコメントを選手データに反映
     for rider in riders:
