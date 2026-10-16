@@ -3,7 +3,8 @@
 
 import json
 from datetime import datetime, timezone, timedelta
-import re
+from urllib.parse import urljoin
+
 import requests
 
 BASE = "https://keirin.jp"
@@ -12,203 +13,119 @@ TIMEOUT = 25
 
 HEADERS = {
     "User-Agent": (
-        "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-        "AppleWebKit/605.1.15 (KHTML, like Gecko) "
-        "Version/17.0 Mobile/15E148 Safari/604.1"
+        "Mozilla/5.0 (Linux; Android 14) "
+        "AppleWebKit/537.36 (KHTML, like Gecko) "
+        "Chrome/130.0.0.0 Mobile Safari/537.36"
     ),
     "Accept": "application/json, text/plain, */*",
     "Accept-Language": "ja-JP,ja;q=0.9",
 }
 
 
-def dump_json(obj, limit=1800):
+def show_json(data, limit=2500):
     text = json.dumps(
-        obj,
+        data,
         ensure_ascii=False,
         indent=2,
     )
-    return text[:limit]
+    print(text[:limit])
+
+
+def request_json(session, method, url, **kwargs):
+    try:
+        response = session.request(
+            method,
+            url,
+            timeout=TIMEOUT,
+            **kwargs,
+        )
+
+        print("HTTP:", response.status_code)
+        print("URL:", response.url)
+        print(
+            "Content-Type:",
+            response.headers.get("Content-Type"),
+        )
+        print("Bytes:", len(response.content))
+
+        try:
+            payload = response.json()
+        except ValueError:
+            print("JSONではない応答:")
+            print(response.text[:1000])
+            return None
+
+        if isinstance(payload, dict):
+            print("resultCd:", payload.get("resultCd"))
+            print("messageCd:", payload.get("messageCd"))
+            print(
+                "kaisaiDayList件数:",
+                len(payload.get("kaisaiDayList", []))
+                if isinstance(payload.get("kaisaiDayList"), list)
+                else "対象外",
+            )
+        else:
+            print("応答型:", type(payload).__name__)
+
+        return payload
+
+    except Exception as exc:
+        print("通信エラー:", repr(exc))
+        return None
 
 
 def main():
     today = datetime.now(JST).date()
 
-    print("=" * 60)
-    print("KEIRIN.JP JSJ049 応答構造比較")
+    print("=" * 64)
+    print("KEIRIN.JP 開催情報リクエスト比較")
     print("対象日:", today.isoformat())
-    print("=" * 60)
+    print("=" * 64)
 
     session = requests.Session()
     session.headers.update(HEADERS)
 
-    # 1. 開催一覧を取得
+    schedule_url = f"{BASE}/sp/raceschedule"
+    api_url = f"{BASE}/sp/json"
+
+    print()
+    print("[1] 開催日程ページを取得")
+
     try:
         page = session.get(
-            f"{BASE}/sp/raceschedule",
+            schedule_url,
             timeout=TIMEOUT,
         )
+        print("HTTP:", page.status_code)
+        print("URL:", page.url)
         page.raise_for_status()
-
-        response = session.get(
-            f"{BASE}/sp/json",
-            params={"type": "JSJ058"},
-            headers={"Referer": page.url},
-            timeout=TIMEOUT,
-        )
-        response.raise_for_status()
-
-        schedule = response.json()
-        # --------------------------------------------------
-        # KEIRIN.JPのJavaScriptからJSJ049の呼び出し方法を調査
-        # --------------------------------------------------
-        print()
-        print("=" * 60)
-        print("KEIRIN.JP JavaScript 通信先調査")
-        print("=" * 60)
-
-        race_page_url = f"{BASE}/sp/race"
-
-        try:
-            race_page = session.get(
-                race_page_url,
-                params={
-                    "encp": (
-                        "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4"
-                    )
-                },
-                headers={"Referer": f"{BASE}/sp/raceschedule"},
-                timeout=TIMEOUT,
-            )
-
-            print("出走表ページHTTP:", race_page.status_code)
-            print("出走表ページURL:", race_page.url)
-
-        except Exception as exc:
-            print("出走表ページ取得失敗:", repr(exc))
-            race_page = None
-
-        if race_page is not None and race_page.ok:
-            script_urls = re.findall(
-                r"""<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']""",
-                race_page.text,
-                flags=re.IGNORECASE,
-            )
-
-            absolute_urls = []
-
-            for src in script_urls:
-                if src.startswith("//"):
-                    url = "https:" + src
-                elif src.startswith("/"):
-                    url = BASE + src
-                elif src.startswith("http://") or src.startswith("https://"):
-                    url = src
-                else:
-                    url = requests.compat.urljoin(
-                        race_page.url,
-                        src,
-                    )
-
-                if url not in absolute_urls:
-                    absolute_urls.append(url)
-
-            print("JavaScript件数:", len(absolute_urls))
-
-            keywords = (
-                "JSJ049",
-                "JSJ058",
-                "strRaceLnkPrm",
-                "kaisaiDayList",
-                "encp",
-                "ajax",
-                "XMLHttpRequest",
-            )
-
-            for index, js_url in enumerate(absolute_urls, 1):
-                try:
-                    js_response = session.get(
-                        js_url,
-                        headers={"Referer": race_page.url},
-                        timeout=TIMEOUT,
-                    )
-
-                    if not js_response.ok:
-                        continue
-
-                    js_text = js_response.text
-                    found = [
-                        keyword
-                        for keyword in keywords
-                        if keyword.lower() in js_text.lower()
-                    ]
-
-                    if not found:
-                        continue
-
-                    print()
-                    print(f"--- JavaScript {index} ---")
-                    print("URL:", js_url)
-                    print("検出語:", ", ".join(found))
-
-                    for keyword in found:
-                        match_positions = [
-                            match.start()
-                            for match in re.finditer(
-                                re.escape(keyword),
-                                js_text,
-                                flags=re.IGNORECASE,
-                            )
-                        ]
-
-                        for position in match_positions[:2]:
-                            start = max(0, position - 350)
-                            end = min(
-                                len(js_text),
-                                position + len(keyword) + 650,
-                            )
-
-                            print(
-                                f"[{keyword} 周辺]"
-                            )
-                            print(
-                                js_text[start:end]
-                                .replace("\r", " ")
-                                .replace("\n", " ")[:1100]
-                            )
-
-                except Exception as exc:
-                    print(
-                        "JavaScript取得失敗:",
-                        js_url,
-                        repr(exc),
-                    )
-
-        print()
-        print("JavaScript通信先調査終了")
-        print("=" * 60)
     except Exception as exc:
-        print("開催一覧取得失敗:", repr(exc))
+        print("開催日程取得失敗:", repr(exc))
         return
 
-    print("JSJ058 HTTP:", response.status_code)
-    print("トップ階層:", type(schedule).__name__)
+    print()
+    print("[2] JSJ058を取得")
+
+    schedule = request_json(
+        session,
+        "GET",
+        api_url,
+        params={"type": "JSJ058"},
+        headers={"Referer": page.url},
+    )
 
     if not isinstance(schedule, dict):
-        print(dump_json(schedule, 3000))
+        print("JSJ058の形式が不正です")
         return
 
     events = schedule.get("kInfo", [])
 
     if not isinstance(events, list):
         print("kInfoがリストではありません")
-        print(dump_json(schedule, 3000))
+        show_json(schedule)
         return
 
-    print("kInfo件数:", len(events))
-
-    # 開催一覧で確認できた場を対象にする
-    target_names = {"四日市", "豊橋", "奈良"}
-
+    targets = {"奈良", "豊橋", "四日市"}
     selected = []
 
     for event in events:
@@ -216,166 +133,156 @@ def main():
             continue
 
         venue = str(event.get("jyoName", "")).strip()
-        encp = str(event.get("encPrm", "")).strip()
-        start = str(event.get("kStartDate", "")).strip()
 
-        if venue not in target_names or not encp:
+        if venue not in targets:
             continue
 
-        selected.append({
-            "venue": venue,
-            "encp": encp,
-            "start": start,
-            "race_num": event.get("raceNum"),
-            "keys": list(event.keys()),
-        })
-
-    print("比較対象:", len(selected))
-
-    for index, event in enumerate(selected, 1):
-        venue = event["venue"]
-
-        print()
-        print("-" * 60)
-        print(f'[{index}/{len(selected)}] {venue}')
-        print("開催初日:", event["start"])
-        print("JSJ058レース番号:", event["race_num"])
-        print("JSJ058キー:", event["keys"])
-        print("encPrm:", event["encp"])
-
-        # 2. レース一覧を取得
-        try:
-            response = session.get(
-                f"{BASE}/sp/json",
-                params={
-                    "type": "JSJ049",
-                    "encp": event["encp"],
-                },
-                headers={
-                    "Referer": f"{BASE}/sp/raceschedule",
-                },
-                timeout=TIMEOUT,
-            )
-
-            print("JSJ049 HTTP:", response.status_code)
-            print("Content-Type:", response.headers.get("Content-Type"))
-            print("レスポンスサイズ:", len(response.content))
-
-            response.raise_for_status()
-            payload = response.json()
-
-        except Exception as exc:
-            print("JSJ049取得失敗:", repr(exc))
-            continue
-
-        print("応答型:", type(payload).__name__)
-
-        if not isinstance(payload, dict):
-            print("応答:")
-            print(dump_json(payload, 3000))
-            continue
-
-        print("トップ階層キー:", list(payload.keys()))
-        print("API結果コード:", payload.get("resultCd"))
-        print("APIメッセージコード:", payload.get("messageCd"))
-
-        days = payload.get("kaisaiDayList")
-
-        if not days:
-            print("開催日時一覧:")
-            print(
-                json.dumps(
-                    payload.get("kaisaiNitijiList"),
-                    ensure_ascii=False,
-                    indent=2,
-                )
-            )
-
-            print("応答全文:")
-            print(
-                json.dumps(
-                    payload,
-                    ensure_ascii=False,
-                    indent=2,
-                )
-            )
-
-        print("kaisaiDayList型:", type(days).__name__)
-
-        if not isinstance(days, list):
-            print("開催日リストが見つかりません")
-            print("応答:")
-            print(dump_json(payload, 4000))
-            continue
-
-        print("開催日リスト件数:", len(days))
-
-        total_races = 0
-
-        for day_index, day in enumerate(days):
-            print()
-            print(f"  開催日データ[{day_index}]")
-
-            if not isinstance(day, dict):
-                print("  データ型:", type(day).__name__)
-                continue
-
-            print("  キー:", list(day.keys()))
-
-            for key in (
-                "strNitiji",
-                "strKaisaiDate",
-                "kaisaiDate",
-                "strDay",
-            ):
-                if key in day:
-                    print(f"  {key}:", day[key])
-
-            programs = day.get("raceProgramList")
-
-            print(
-                "  raceProgramList型:",
-                type(programs).__name__,
-            )
-
-            if not isinstance(programs, list):
-                print("  開催日データ:")
-                print(" ", dump_json(day, 1800))
-                continue
-
-            print("  レース一覧要素数:", len(programs))
-            total_races += len(programs)
-
-            for race_index, race in enumerate(programs[:2]):
-                print(f"  レースサンプル[{race_index}]:")
-
-                if isinstance(race, dict):
-                    print("    キー:", list(race.keys()))
-
-                    for key in (
-                        "strRaceNo",
-                        "strRaceLnk",
-                        "strRaceLnkPrm",
-                        "strRaceName",
-                        "strRaceTime",
-                    ):
-                        if key in race:
-                            print(f"    {key}:", race[key])
-
-                    print("    全データ:")
-                    print("    " + dump_json(race, 1800).replace(
-                        "\n", "\n    "
-                    ))
-                else:
-                    print("    ", repr(race)[:1000])
-
-        print()
-        print(f"{venue} 合計レース一覧要素数:", total_races)
+        selected.append(event)
 
     print()
-    print("=" * 60)
-    print("診断終了")
-    print("=" * 60)
+    print("比較対象開催:", len(selected))
+
+    for event in selected:
+        venue = str(event.get("jyoName", "")).strip()
+        encp = str(event.get("encPrm", "")).strip()
+
+        print()
+        print("=" * 64)
+        print("開催場:", venue)
+        print("開催初日:", event.get("kStartDate"))
+        print("表示レース番号:", event.get("raceNum"))
+        print("開催場コード:", event.get("KeirinCd"))
+        print("encPrm:", encp)
+        print("イベント全キー:", list(event.keys()))
+        print("=" * 64)
+
+        if not encp:
+            print("encPrmがないためスキップ")
+            continue
+
+        referer = schedule_url
+
+        # --------------------------------------------------
+        # 試験A：通常のGET
+        # --------------------------------------------------
+        print()
+        print("[A] GET type=JSJ049, encp")
+
+        request_json(
+            session,
+            "GET",
+            api_url,
+            params={
+                "type": "JSJ049",
+                "encp": encp,
+            },
+            headers={"Referer": referer},
+        )
+
+        # --------------------------------------------------
+        # 試験B：POSTフォーム
+        # --------------------------------------------------
+        print()
+        print("[B] POST type=JSJ049, encp")
+
+        request_json(
+            session,
+            "POST",
+            api_url,
+            data={
+                "type": "JSJ049",
+                "encp": encp,
+            },
+            headers={
+                "Referer": referer,
+                "Origin": BASE,
+                "Content-Type": (
+                    "application/x-www-form-urlencoded"
+                ),
+            },
+        )
+
+        # --------------------------------------------------
+        # 試験C：POSTでtypeをクエリに指定
+        # --------------------------------------------------
+        print()
+        print("[C] POST query type + form encp")
+
+        request_json(
+            session,
+            "POST",
+            api_url,
+            params={"type": "JSJ049"},
+            data={"encp": encp},
+            headers={
+                "Referer": referer,
+                "Origin": BASE,
+            },
+        )
+
+        # --------------------------------------------------
+        # 試験D：レースページへの遷移を確認
+        # --------------------------------------------------
+        print()
+        print("[D] /sp/race に encp を指定")
+
+        race_response = None
+
+        try:
+            race_response = session.get(
+                f"{BASE}/sp/race",
+                params={"encp": encp},
+                headers={"Referer": referer},
+                timeout=TIMEOUT,
+                allow_redirects=True,
+            )
+
+            print("HTTP:", race_response.status_code)
+            print("最終URL:", race_response.url)
+            print("Bytes:", len(race_response.content))
+            print(
+                "Content-Type:",
+                race_response.headers.get("Content-Type"),
+            )
+
+            if "/sp/error" in race_response.url:
+                print("結果: エラーページへ転送")
+                print("本文:")
+                print(race_response.text[:800])
+            else:
+                print("結果: エラーURLへの転送なし")
+
+        except Exception as exc:
+            print("レースページ取得失敗:", repr(exc))
+
+        # --------------------------------------------------
+        # 試験E：JSJ058の開催場コードも比較
+        # --------------------------------------------------
+        print()
+        print("[E] JSJ058の開催情報")
+
+        fields = (
+            "jyoName",
+            "bKeirinCd",
+            "KeirinCd",
+            "kStartDate",
+            "raceNum",
+            "denTime",
+            "denTitle",
+            "btnFlgLive",
+            "btnFlgOdds",
+            "btnFlgResult",
+            "hyoujiFlg",
+            "zenjituFlg",
+        )
+
+        for field in fields:
+            print(f"{field}: {event.get(field)}")
+
+    print()
+    print("=" * 64)
+    print("全比較終了")
+    print("=" * 64)
 
 
 if __name__ == "__main__":
