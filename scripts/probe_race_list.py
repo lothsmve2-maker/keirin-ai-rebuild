@@ -149,8 +149,29 @@ def main():
             continue
 
         print("トップ階層キー:", list(payload.keys()))
+        print("API結果コード:", payload.get("resultCd"))
+        print("APIメッセージコード:", payload.get("messageCd"))
 
         days = payload.get("kaisaiDayList")
+
+        if not days:
+            print("開催日時一覧:")
+            print(
+                json.dumps(
+                    payload.get("kaisaiNitijiList"),
+                    ensure_ascii=False,
+                    indent=2,
+                )
+            )
+
+            print("応答全文:")
+            print(
+                json.dumps(
+                    payload,
+                    ensure_ascii=False,
+                    indent=2,
+                )
+            )
 
         print("kaisaiDayList型:", type(days).__name__)
 
