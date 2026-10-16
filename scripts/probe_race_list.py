@@ -3,7 +3,7 @@
 
 import json
 from datetime import datetime, timezone, timedelta
-
+import re
 import requests
 
 BASE = "https://keirin.jp"
@@ -58,7 +58,134 @@ def main():
         response.raise_for_status()
 
         schedule = response.json()
+        # --------------------------------------------------
+        # KEIRIN.JPのJavaScriptからJSJ049の呼び出し方法を調査
+        # --------------------------------------------------
+        print()
+        print("=" * 60)
+        print("KEIRIN.JP JavaScript 通信先調査")
+        print("=" * 60)
 
+        race_page_url = f"{BASE}/sp/race"
+
+        try:
+            race_page = session.get(
+                race_page_url,
+                params={
+                    "encp": (
+                        "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4"
+                    )
+                },
+                headers={"Referer": f"{BASE}/sp/raceschedule"},
+                timeout=TIMEOUT,
+            )
+
+            print("出走表ページHTTP:", race_page.status_code)
+            print("出走表ページURL:", race_page.url)
+
+        except Exception as exc:
+            print("出走表ページ取得失敗:", repr(exc))
+            race_page = None
+
+        if race_page is not None and race_page.ok:
+            script_urls = re.findall(
+                r"""<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']""",
+                race_page.text,
+                flags=re.IGNORECASE,
+            )
+
+            absolute_urls = []
+
+            for src in script_urls:
+                if src.startswith("//"):
+                    url = "https:" + src
+                elif src.startswith("/"):
+                    url = BASE + src
+                elif src.startswith("http://") or src.startswith("https://"):
+                    url = src
+                else:
+                    url = requests.compat.urljoin(
+                        race_page.url,
+                        src,
+                    )
+
+                if url not in absolute_urls:
+                    absolute_urls.append(url)
+
+            print("JavaScript件数:", len(absolute_urls))
+
+            keywords = (
+                "JSJ049",
+                "JSJ058",
+                "strRaceLnkPrm",
+                "kaisaiDayList",
+                "encp",
+                "ajax",
+                "XMLHttpRequest",
+            )
+
+            for index, js_url in enumerate(absolute_urls, 1):
+                try:
+                    js_response = session.get(
+                        js_url,
+                        headers={"Referer": race_page.url},
+                        timeout=TIMEOUT,
+                    )
+
+                    if not js_response.ok:
+                        continue
+
+                    js_text = js_response.text
+                    found = [
+                        keyword
+                        for keyword in keywords
+                        if keyword.lower() in js_text.lower()
+                    ]
+
+                    if not found:
+                        continue
+
+                    print()
+                    print(f"--- JavaScript {index} ---")
+                    print("URL:", js_url)
+                    print("検出語:", ", ".join(found))
+
+                    for keyword in found:
+                        match_positions = [
+                            match.start()
+                            for match in re.finditer(
+                                re.escape(keyword),
+                                js_text,
+                                flags=re.IGNORECASE,
+                            )
+                        ]
+
+                        for position in match_positions[:2]:
+                            start = max(0, position - 350)
+                            end = min(
+                                len(js_text),
+                                position + len(keyword) + 650,
+                            )
+
+                            print(
+                                f"[{keyword} 周辺]"
+                            )
+                            print(
+                                js_text[start:end]
+                                .replace("\r", " ")
+                                .replace("\n", " ")[:1100]
+                            )
+
+                except Exception as exc:
+                    print(
+                        "JavaScript取得失敗:",
+                        js_url,
+                        repr(exc),
+                    )
+
+        print()
+        print("JavaScript通信先調査終了")
+        print("=" * 60)
     except Exception as exc:
         print("開催一覧取得失敗:", repr(exc))
         return
