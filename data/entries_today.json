@@ -2,8 +2,8 @@
   "schema_version": 3,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-16",
-  "started_at": "2026-10-16T08:54:26.724937+09:00",
-  "finished_at": "2026-10-16T08:54:44.520474+09:00",
+  "started_at": "2026-10-16T09:03:40.306071+09:00",
+  "finished_at": "2026-10-16T09:03:57.246073+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 0,
@@ -125,7 +125,8 @@
           "mark": "3",
           "back": "0",
           "comment": "廣田君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -142,7 +143,8 @@
           "mark": "1",
           "back": "6",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -159,7 +161,8 @@
           "mark": "2",
           "back": "6",
           "comment": "前で頑張ります。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -176,7 +179,8 @@
           "mark": "2",
           "back": "0",
           "comment": "武田君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -193,7 +197,8 @@
           "mark": "0",
           "back": "10",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -210,7 +215,8 @@
           "mark": "0",
           "back": "0",
           "comment": "中部の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -227,7 +233,8 @@
           "mark": "1",
           "back": "0",
           "comment": "五反田君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -307,7 +314,8 @@
           "mark": "1",
           "back": "1",
           "comment": "話して九州へ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -324,7 +332,8 @@
           "mark": "0",
           "back": "9",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -341,7 +350,8 @@
           "mark": "1",
           "back": "0",
           "comment": "宮道君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -358,7 +368,8 @@
           "mark": "4",
           "back": "0",
           "comment": "切れ目から。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -375,7 +386,8 @@
           "mark": "0",
           "back": "9",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -392,7 +404,8 @@
           "mark": "1",
           "back": "0",
           "comment": "中四国の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -409,7 +422,8 @@
           "mark": "1",
           "back": "0",
           "comment": "同県の宮本君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -489,7 +503,8 @@
           "mark": "2",
           "back": "1",
           "comment": "単騎で前々に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -506,7 +521,8 @@
           "mark": "6",
           "back": "0",
           "comment": "小出君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -523,7 +539,8 @@
           "mark": "2",
           "back": "0",
           "comment": "初の森田君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -540,7 +557,8 @@
           "mark": "2",
           "back": "3",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -557,7 +575,8 @@
           "mark": "0",
           "back": "0",
           "comment": "九州の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -574,7 +593,8 @@
           "mark": "0",
           "back": "0",
           "comment": "決めずに。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -591,7 +611,8 @@
           "mark": "0",
           "back": "15",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -671,7 +692,8 @@
           "mark": "2",
           "back": "1",
           "comment": "才迫さん。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -688,7 +710,8 @@
           "mark": "0",
           "back": "0",
           "comment": "宮田君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -705,7 +728,8 @@
           "mark": "0",
           "back": "6",
           "comment": "自力自在に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -722,7 +746,8 @@
           "mark": "2",
           "back": "0",
           "comment": "同県の楠本君",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -739,7 +764,8 @@
           "mark": "1",
           "back": "0",
           "comment": "中四国の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -756,7 +782,8 @@
           "mark": "0",
           "back": "5",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -773,7 +800,8 @@
           "mark": "0",
           "back": "19",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -853,7 +881,8 @@
           "mark": "3",
           "back": "3",
           "comment": "前々に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -870,7 +899,8 @@
           "mark": "1",
           "back": "1",
           "comment": "中部の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -887,7 +917,8 @@
           "mark": "0",
           "back": "10",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -904,7 +935,8 @@
           "mark": "0",
           "back": "0",
           "comment": "同県の川本君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -921,7 +953,8 @@
           "mark": "0",
           "back": "11",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -938,7 +971,8 @@
           "mark": "1",
           "back": "0",
           "comment": "松田君に任せる。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -955,7 +989,8 @@
           "mark": "2",
           "back": "0",
           "comment": "初の西澤君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1035,7 +1070,8 @@
           "mark": "6",
           "back": "0",
           "comment": "田代君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1052,7 +1088,8 @@
           "mark": "0",
           "back": "10",
           "comment": "布居君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1069,7 +1106,8 @@
           "mark": "2",
           "back": "0",
           "comment": "近畿勢へ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1086,7 +1124,8 @@
           "mark": "0",
           "back": "0",
           "comment": "小原君の後ろ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1103,7 +1142,8 @@
           "mark": "0",
           "back": "12",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1120,7 +1160,8 @@
           "mark": "0",
           "back": "0",
           "comment": "先手ラインへ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1137,7 +1178,8 @@
           "mark": "0",
           "back": "5",
           "comment": "自力自在に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1217,7 +1259,8 @@
           "mark": "0",
           "back": "0",
           "comment": "同県の弓矢君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1234,7 +1277,8 @@
           "mark": "3",
           "back": "1",
           "comment": "九州の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1251,7 +1295,8 @@
           "mark": "2",
           "back": "0",
           "comment": "入江君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1268,7 +1313,8 @@
           "mark": "1",
           "back": "2",
           "comment": "自在に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1285,7 +1331,8 @@
           "mark": "0",
           "back": "4",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1302,7 +1349,8 @@
           "mark": "0",
           "back": "0",
           "comment": "中部勢へ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1319,7 +1367,8 @@
           "mark": "0",
           "back": "0",
           "comment": "一人で。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1399,7 +1448,8 @@
           "mark": "1",
           "back": "8",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1416,7 +1466,8 @@
           "mark": "1",
           "back": "15",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1433,7 +1484,8 @@
           "mark": "0",
           "back": "0",
           "comment": "飯塚君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1450,7 +1502,8 @@
           "mark": "1",
           "back": "0",
           "comment": "初の野上君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1467,7 +1520,8 @@
           "mark": "4",
           "back": "1",
           "comment": "中釜君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1484,7 +1538,8 @@
           "mark": "0",
           "back": "0",
           "comment": "九州の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1501,7 +1556,8 @@
           "mark": "0",
           "back": "4",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1581,7 +1637,8 @@
           "mark": "5",
           "back": "0",
           "comment": "九州勢へ。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1598,7 +1655,8 @@
           "mark": "3",
           "back": "0",
           "comment": "小浦君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1615,7 +1673,8 @@
           "mark": "3",
           "back": "0",
           "comment": "吉田君の番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1632,7 +1691,8 @@
           "mark": "1",
           "back": "3",
           "comment": "自力自在に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1649,7 +1709,8 @@
           "mark": "0",
           "back": "0",
           "comment": "吉田君ラインから",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1666,7 +1727,8 @@
           "mark": "0",
           "back": "0",
           "comment": "中部の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1683,7 +1745,8 @@
           "mark": "0",
           "back": "13",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1763,7 +1826,8 @@
           "mark": "3",
           "back": "0",
           "comment": "中部の三番手。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1780,7 +1844,8 @@
           "mark": "2",
           "back": "0",
           "comment": "櫻木君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1797,7 +1862,8 @@
           "mark": "1",
           "back": "8",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1814,7 +1880,8 @@
           "mark": "2",
           "back": "1",
           "comment": "自力自在に。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1831,7 +1898,8 @@
           "mark": "0",
           "back": "14",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1848,7 +1916,8 @@
           "mark": "2",
           "back": "0",
           "comment": "伊藤歩君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1865,7 +1934,8 @@
           "mark": "4",
           "back": "0",
           "comment": "初の辻田君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1945,7 +2015,8 @@
           "mark": "3",
           "back": "2",
           "comment": "吉堂君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1962,7 +2033,8 @@
           "mark": "0",
           "back": "7",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1979,7 +2051,8 @@
           "mark": "0",
           "back": "6",
           "comment": "自力でいく。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1996,7 +2069,8 @@
           "mark": "0",
           "back": "14",
           "comment": "単騎でも自力。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2013,7 +2087,8 @@
           "mark": "5",
           "back": "0",
           "comment": "高野君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2030,7 +2105,8 @@
           "mark": "2",
           "back": "0",
           "comment": "初の尾野君。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2047,7 +2123,8 @@
           "mark": "0",
           "back": "2",
           "comment": "前で自力。",
-          "comment_available": true
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
