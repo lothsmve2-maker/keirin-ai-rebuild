@@ -2,17 +2,13 @@
 # -*- coding: utf-8 -*-
 
 import json
-import re
 from datetime import datetime, timezone, timedelta
 
 import requests
 
 BASE = "https://keirin.jp"
-SCHEDULE_URL = f"{BASE}/sp/raceschedule"
-SCHEDULE_API = f"{BASE}/sp/json"
-RACE_LIST_API = f"{BASE}/sp/json"
-
 JST = timezone(timedelta(hours=9))
+TIMEOUT = 25
 
 HEADERS = {
     "User-Agent": (
@@ -24,88 +20,39 @@ HEADERS = {
     "Accept-Language": "ja-JP,ja;q=0.9",
 }
 
-TIMEOUT = 25
 
-
-def walk_dicts(obj, path="$"):
-    if isinstance(obj, dict):
-        yield path, obj
-
-        for key, value in obj.items():
-            yield from walk_dicts(
-                value,
-                f"{path}.{key}",
-            )
-
-    elif isinstance(obj, list):
-        for index, value in enumerate(obj):
-            yield from walk_dicts(
-                value,
-                f"{path}[{index}]",
-            )
-
-
-def first_value(obj, *keys):
-    if not isinstance(obj, dict):
-        return ""
-
-    for key in keys:
-        value = obj.get(key)
-
-        if value not in (None, ""):
-            return value
-
-    return ""
-
-
-def parse_date(value):
-    if not value:
-        return None
-
-    value = str(value).strip()
-
-    patterns = [
-        r"(20\d{2})[-/年](\d{1,2})[-/月](\d{1,2})",
-        r"(20\d{2})(\d{2})(\d{2})",
-    ]
-
-    for pattern in patterns:
-        match = re.search(pattern, value)
-
-        if not match:
-            continue
-
-        try:
-            year, month, day = map(int, match.groups())
-            return datetime(year, month, day).date()
-        except ValueError:
-            pass
-
-    return None
+def dump_json(obj, limit=1800):
+    text = json.dumps(
+        obj,
+        ensure_ascii=False,
+        indent=2,
+    )
+    return text[:limit]
 
 
 def main():
     today = datetime.now(JST).date()
 
     print("=" * 60)
-    print("KEIRIN.JP レース一覧API診断")
+    print("KEIRIN.JP JSJ049 応答構造比較")
     print("対象日:", today.isoformat())
     print("=" * 60)
 
     session = requests.Session()
     session.headers.update(HEADERS)
 
+    # 1. 開催一覧を取得
     try:
-        landing = session.get(
-            SCHEDULE_URL,
+        page = session.get(
+            f"{BASE}/sp/raceschedule",
             timeout=TIMEOUT,
         )
-        landing.raise_for_status()
+        page.raise_for_status()
 
         response = session.get(
-            SCHEDULE_API,
+            f"{BASE}/sp/json",
             params={"type": "JSJ058"},
-            headers={"Referer": landing.url},
+            headers={"Referer": page.url},
             timeout=TIMEOUT,
         )
         response.raise_for_status()
@@ -113,226 +60,174 @@ def main():
         schedule = response.json()
 
     except Exception as exc:
-        print("開催一覧取得エラー:", repr(exc))
+        print("開催一覧取得失敗:", repr(exc))
         return
 
-    print("開催一覧HTTP:", response.status_code)
-    print("開催一覧トップ階層:", type(schedule).__name__)
+    print("JSJ058 HTTP:", response.status_code)
+    print("トップ階層:", type(schedule).__name__)
 
-    events = []
-    seen = set()
+    if not isinstance(schedule, dict):
+        print(dump_json(schedule, 3000))
+        return
 
-    for path, obj in walk_dicts(schedule):
-        encp = first_value(
-            obj,
-            "encPrm",
-            "encp",
-            "encprm",
-        )
+    events = schedule.get("kInfo", [])
 
-        venue = first_value(
-            obj,
-            "jyoName",
-            "venueName",
-            "jyo",
-        )
+    if not isinstance(events, list):
+        print("kInfoがリストではありません")
+        print(dump_json(schedule, 3000))
+        return
 
-        code = first_value(
-            obj,
-            "bKeirinCd",
-            "KeirinCd",
-            "jyoCd",
-        )
+    print("kInfo件数:", len(events))
 
-        start = first_value(
-            obj,
-            "kStartDate",
-            "startDate",
-            "kaisaiDate",
-            "start_date",
-        )
+    # 開催一覧で確認できた場を対象にする
+    target_names = {"四日市", "豊橋", "奈良"}
 
-        if not encp or not venue:
+    selected = []
+
+    for event in events:
+        if not isinstance(event, dict):
             continue
 
-        key = (str(venue), str(code), str(start), str(encp))
+        venue = str(event.get("jyoName", "")).strip()
+        encp = str(event.get("encPrm", "")).strip()
+        start = str(event.get("kStartDate", "")).strip()
 
-        if key in seen:
+        if venue not in target_names or not encp:
             continue
 
-        seen.add(key)
-
-        start_date = parse_date(start)
-
-        if start_date is not None and start_date > today:
-            continue
-
-        events.append({
-            "venue": str(venue),
-            "code": str(code),
-            "start": str(start),
-            "encp": str(encp),
-            "path": path,
+        selected.append({
+            "venue": venue,
+            "encp": encp,
+            "start": start,
+            "race_num": event.get("raceNum"),
+            "keys": list(event.keys()),
         })
 
-    print("開催候補:", len(events))
+    print("比較対象:", len(selected))
 
-    for index, event in enumerate(events, start=1):
+    for index, event in enumerate(selected, 1):
+        venue = event["venue"]
+
         print()
         print("-" * 60)
-        print(
-            f'[{index}/{len(events)}] {event["venue"]} '
-            f'開催初日={event["start"]} '
-            f'場コード={event["code"]}'
-        )
+        print(f'[{index}/{len(selected)}] {venue}')
+        print("開催初日:", event["start"])
+        print("JSJ058レース番号:", event["race_num"])
+        print("JSJ058キー:", event["keys"])
+        print("encPrm:", event["encp"])
 
-        print("開催データ位置:", event["path"])
-
+        # 2. レース一覧を取得
         try:
             response = session.get(
-                RACE_LIST_API,
+                f"{BASE}/sp/json",
                 params={
                     "type": "JSJ049",
                     "encp": event["encp"],
                 },
-                headers={"Referer": SCHEDULE_URL},
+                headers={
+                    "Referer": f"{BASE}/sp/raceschedule",
+                },
                 timeout=TIMEOUT,
             )
 
-            print("レース一覧HTTP:", response.status_code)
-            response.raise_for_status()
+            print("JSJ049 HTTP:", response.status_code)
+            print("Content-Type:", response.headers.get("Content-Type"))
+            print("レスポンスサイズ:", len(response.content))
 
+            response.raise_for_status()
             payload = response.json()
 
         except Exception as exc:
-            print("レース一覧取得エラー:", repr(exc))
+            print("JSJ049取得失敗:", repr(exc))
             continue
+
+        print("応答型:", type(payload).__name__)
 
         if not isinstance(payload, dict):
-            print("応答型:", type(payload).__name__)
-            print("応答冒頭:", repr(payload)[:500])
+            print("応答:")
+            print(dump_json(payload, 3000))
             continue
 
-        print("応答トップ階層キー:", list(payload.keys()))
+        print("トップ階層キー:", list(payload.keys()))
 
         days = payload.get("kaisaiDayList")
 
         print("kaisaiDayList型:", type(days).__name__)
 
         if not isinstance(days, list):
-            print("kaisaiDayList以外の構造を調査:")
-
-            for path, obj in walk_dicts(payload):
-                list_keys = [
-                    key for key, value in obj.items()
-                    if isinstance(value, list)
-                ]
-
-                if list_keys:
-                    print(
-                        " ",
-                        path,
-                        "リスト項目:",
-                        list_keys,
-                    )
-
-            print("応答JSON冒頭:")
-            print(
-                json.dumps(
-                    payload,
-                    ensure_ascii=False,
-                )[:2500]
-            )
+            print("開催日リストが見つかりません")
+            print("応答:")
+            print(dump_json(payload, 4000))
             continue
 
-        print("開催日数:", len(days))
+        print("開催日リスト件数:", len(days))
 
-        total_programs = 0
-        total_valid_races = 0
+        total_races = 0
 
         for day_index, day in enumerate(days):
+            print()
+            print(f"  開催日データ[{day_index}]")
+
             if not isinstance(day, dict):
-                print(
-                    f"  日程[{day_index}]型:",
-                    type(day).__name__,
-                )
+                print("  データ型:", type(day).__name__)
                 continue
 
-            day_name = first_value(
-                day,
-                "strNitiji",
-                "strDay",
-                "strKaisaiDate",
-            )
+            print("  キー:", list(day.keys()))
 
-            day_date = first_value(
-                day,
+            for key in (
+                "strNitiji",
                 "strKaisaiDate",
                 "kaisaiDate",
-                "strEventDate",
-            )
+                "strDay",
+            ):
+                if key in day:
+                    print(f"  {key}:", day[key])
 
             programs = day.get("raceProgramList")
 
             print(
-                f"  日程[{day_index}]",
-                f"日付={day_date}",
-                f"日程名={day_name}",
-                f"キー={list(day.keys())}",
+                "  raceProgramList型:",
+                type(programs).__name__,
             )
 
             if not isinstance(programs, list):
-                print(
-                    "    raceProgramList型:",
-                    type(programs).__name__,
-                )
+                print("  開催日データ:")
+                print(" ", dump_json(day, 1800))
                 continue
 
-            total_programs += len(programs)
+            print("  レース一覧要素数:", len(programs))
+            total_races += len(programs)
 
-            for program in programs:
-                if not isinstance(program, dict):
-                    continue
+            for race_index, race in enumerate(programs[:2]):
+                print(f"  レースサンプル[{race_index}]:")
 
-                race_path = first_value(
-                    program,
-                    "strRaceLnk",
-                )
+                if isinstance(race, dict):
+                    print("    キー:", list(race.keys()))
 
-                race_encp = first_value(
-                    program,
-                    "strRaceLnkPrm",
-                )
+                    for key in (
+                        "strRaceNo",
+                        "strRaceLnk",
+                        "strRaceLnkPrm",
+                        "strRaceName",
+                        "strRaceTime",
+                    ):
+                        if key in race:
+                            print(f"    {key}:", race[key])
 
-                race_no = first_value(
-                    program,
-                    "strRaceNo",
-                )
+                    print("    全データ:")
+                    print("    " + dump_json(race, 1800).replace(
+                        "\n", "\n    "
+                    ))
+                else:
+                    print("    ", repr(race)[:1000])
 
-                if race_path and race_encp and race_no:
-                    total_valid_races += 1
+        print()
+        print(f"{venue} 合計レース一覧要素数:", total_races)
 
-            if programs:
-                print("    レース数:", len(programs))
-                print(
-                    "    最初のレースデータ:",
-                    json.dumps(
-                        programs[0],
-                        ensure_ascii=False,
-                    )[:1000],
-                )
-
-        print("レース一覧要素数:", total_programs)
-        print("必要項目がそろったレース数:", total_valid_races)
-
-        if not days:
-            print("開催日程が空です。応答JSON:")
-            print(
-                json.dumps(
-                    payload,
-                    ensure_ascii=False,
-                )[:2500]
-            )
+    print()
+    print("=" * 60)
+    print("診断終了")
+    print("=" * 60)
 
 
 if __name__ == "__main__":
