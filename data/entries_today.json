@@ -2,20 +2,20 @@
   "schema_version": 3,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-17",
-  "started_at": "2026-10-17T00:04:35.863864+09:00",
-  "finished_at": "2026-10-17T00:04:58.078132+09:00",
-  "status": "ok",
+  "started_at": "2026-10-17T01:04:58.091935+09:00",
+  "finished_at": "2026-10-17T01:05:21.225467+09:00",
+  "status": "partial",
   "events_found": 6,
   "events_checked": 0,
   "events_with_races": 1,
   "races_found": 22,
   "races_checked": 22,
-  "races_fetched": 11,
+  "races_fetched": 10,
   "races_excluded_other_date": 11,
   "races_date_unknown": 0,
-  "races_failed": 0,
-  "rider_count": 77,
-  "commented_rider_count": 77,
+  "races_failed": 1,
+  "rider_count": 70,
+  "commented_rider_count": 70,
   "events": [
     {
       "venue": "奈良",
@@ -1768,195 +1768,6 @@
       "event_start_date": "20261016",
       "day": "",
       "race_date": "",
-      "race_no": "10",
-      "race_name": "Ａ級準決勝",
-      "race_url": "https://keirin.jp/sp/race",
-      "race_encp": "qv4GFogOJHiRvlOmhrBR7G4m4LYBA1jdV-H-DtTCW90",
-      "event_encp": "qv4GFogOJHiRvlOmhrBR7L61EfDc5SPYz8jEJbO57C4",
-      "race_date_display": "2026/10/17",
-      "verified_race_date": "2026-10-17",
-      "start_time": "19:44",
-      "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 5,
-          "car_no": "3"
-        },
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 4,
-          "car_no": "5"
-        },
-        {
-          "position": 9,
-          "car_no": "6"
-        },
-        {
-          "position": 8,
-          "car_no": "7"
-        }
-      ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
-      "riders": [
-        {
-          "car_no": "1",
-          "registration_no": "013955",
-          "name": "三宅　裕武",
-          "prefecture": "三　重",
-          "previous_class": "S2",
-          "class": "A1",
-          "style": "追",
-          "points": "92.37",
-          "nige": "0",
-          "makuri": "0",
-          "sashi": "2",
-          "mark": "5",
-          "back": "0",
-          "comment": "同県の辻田君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "2",
-          "registration_no": "015934",
-          "name": "吉田　航",
-          "prefecture": "大　分",
-          "previous_class": "A3",
-          "class": "A2",
-          "style": "逃",
-          "points": "88.78",
-          "nige": "9",
-          "makuri": "3",
-          "sashi": "0",
-          "mark": "0",
-          "back": "13",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "3",
-          "registration_no": "015003",
-          "name": "小笹　隼人",
-          "prefecture": "奈　良",
-          "previous_class": "A1",
-          "class": "A1",
-          "style": "両",
-          "points": "91.03",
-          "nige": "0",
-          "makuri": "0",
-          "sashi": "7",
-          "mark": "4",
-          "back": "1",
-          "comment": "同県の吉堂君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "4",
-          "registration_no": "015904",
-          "name": "辻田　祥大",
-          "prefecture": "三　重",
-          "previous_class": "A3",
-          "class": "A2",
-          "style": "逃",
-          "points": "89.00",
-          "nige": "6",
-          "makuri": "3",
-          "sashi": "0",
-          "mark": "0",
-          "back": "14",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "5",
-          "registration_no": "015364",
-          "name": "吉堂　将規",
-          "prefecture": "奈　良",
-          "previous_class": "A1",
-          "class": "A1",
-          "style": "逃",
-          "points": "93.47",
-          "nige": "2",
-          "makuri": "1",
-          "sashi": "5",
-          "mark": "0",
-          "back": "2",
-          "comment": "自力でいく。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "6",
-          "registration_no": "013491",
-          "name": "近藤　範昌",
-          "prefecture": "岡　山",
-          "previous_class": "A1",
-          "class": "A1",
-          "style": "追",
-          "points": "85.79",
-          "nige": "0",
-          "makuri": "0",
-          "sashi": "3",
-          "mark": "3",
-          "back": "1",
-          "comment": "九州勢へ。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        },
-        {
-          "car_no": "7",
-          "registration_no": "012705",
-          "name": "那須　久幸",
-          "prefecture": "福　岡",
-          "previous_class": "S2",
-          "class": "A1",
-          "style": "追",
-          "points": "91.37",
-          "nige": "0",
-          "makuri": "0",
-          "sashi": "6",
-          "mark": "2",
-          "back": "0",
-          "comment": "吉田君。",
-          "comment_available": true,
-          "comment_status": "取得済み"
-        }
-      ],
-      "rider_count": 7,
-      "validation": {
-        "duplicate_car_numbers": false,
-        "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
-        "unknown_line_numbers": [],
-        "rider_count_valid": true
-      },
-      "comment_count": 7,
-      "comment_status": "取得済み",
-      "source": "KEIRIN.JP",
-      "http_status": 200
-    },
-    {
-      "venue": "四日市",
-      "venue_code": "48",
-      "event_start_date": "20261016",
-      "day": "",
-      "race_date": "",
       "race_no": "11",
       "race_name": "Ａ級準決勝",
       "race_url": "https://keirin.jp/sp/race",
@@ -2141,16 +1952,23 @@
       "http_status": 200
     }
   ],
-  "errors": [],
+  "errors": [
+    {
+      "stage": "race_detail",
+      "venue": "四日市",
+      "race_no": "10",
+      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://keirin.jp/sp/race?encp=qv4GFogOJHiRvlOmhrBR7G4m4LYBA1jdV-H-DtTCW90"
+    }
+  ],
   "warnings": [],
   "summary": {
     "target_date": "2026-10-17",
     "fetched_by_venue": {
-      "四日市": 11
+      "四日市": 10
     },
-    "race_count": 11,
-    "rider_count": 77,
-    "commented_rider_count": 77,
+    "race_count": 10,
+    "rider_count": 70,
+    "commented_rider_count": 70,
     "comment_missing_rider_count": 0
   }
 }
