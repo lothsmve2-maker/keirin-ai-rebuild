@@ -168,6 +168,74 @@ def main():
 
     print()
     print("=" * 60)
+        print()
+    print("=" * 60)
+    print("開催一覧 POST方式の確認")
+    print("=" * 60)
+
+    # 日程ページのHTMLから、実際の開催一覧パラメータを取得
+    matches = re.findall(
+        r"""lnk\.formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]\s*\)""",
+        html,
+        flags=re.IGNORECASE,
+    )
+
+    print("開催一覧リンク数:", len(matches))
+
+    if matches:
+        encp = matches[-1]
+
+        print("テスト用encp:", encp)
+
+        try:
+            response = session.post(
+                f"{BASE}/sp/racelist",
+                data={
+                    "encp": encp,
+                    "disp": "SJ0301",
+                },
+                headers={
+                    "Referer": SCHEDULE,
+                    "Origin": BASE,
+                    "Content-Type": (
+                        "application/x-www-form-urlencoded"
+                    ),
+                },
+                timeout=TIMEOUT,
+                allow_redirects=True,
+            )
+
+            print("HTTP:", response.status_code)
+            print("最終URL:", response.url)
+            print("応答サイズ:", len(response.content))
+            print(
+                "エラーページ:",
+                "/sp/error" in response.url,
+            )
+
+            title = re.findall(
+                r"<title[^>]*>(.*?)</title>",
+                response.text,
+                flags=re.IGNORECASE | re.DOTALL,
+            )
+
+            print("ページタイトル:", title[:1])
+
+            for keyword in (
+                "race_tbl",
+                "strRaceNo",
+                "出走表",
+                "レース一覧",
+            ):
+                print(
+                    f"{keyword}:",
+                    keyword in response.text,
+                )
+
+        except Exception as exc:
+            print("POST失敗:", repr(exc))
+
+    print("=" * 60)
     print("調査終了")
     print("=" * 60)
 
