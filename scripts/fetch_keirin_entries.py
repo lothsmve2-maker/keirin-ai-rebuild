@@ -272,7 +272,7 @@ def find_events(payload):
     return events
 def find_schedule_event_encp(html, venue):
     if not html or not venue:
-return “”
+    return ""
 
 pattern = re.compile(
     r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
