@@ -1324,37 +1324,24 @@ def main():
 
         all_events = find_events(schedule)
 
-print("公式開催JSONから取得した開催数:", len(all_events))
-
-開催一覧HTMLにある遷移パラメータとJSONの値を照合する。
+print("Events found:", len(all_events))
 
 for event in all_events:
-html_encp = find_schedule_event_encp(
-landing.text,
-event[“venue”],
-)
-
-if html_encp:
-    if html_encp != event["encp"]:
-        print(
-            f'  {event["venue"]}: '
-            "開催パラメータがJSONとHTMLで異なります。"
-            "HTML側の値を採用します。"
-        )
-        event["encp"] = html_encp
-    else:
-        print(
-            f'  {event["venue"]}: '
-            "JSONとHTMLの開催パラメータが一致"
-        )
-else:
-    print(
-        f'  {event["venue"]}: '
-        "HTML側の開催パラメータを特定できません。"
-        "JSONの値を維持します。"
+    html_encp = find_schedule_event_encp(
+        landing.text,
+        event["venue"],
     )
 
-result[“events_found”] = len(all_events)
+    if html_encp:
+        if html_encp != event["encp"]:
+            print("HTML parameter differs:", event["venue"])
+            event["encp"] = html_encp
+        else:
+            print("Parameters match:", event["venue"])
+    else:
+        print("HTML parameter not found:", event["venue"])
+
+result["events_found"] = len(all_events)
 
         print("開催候補:", len(all_events))
 
