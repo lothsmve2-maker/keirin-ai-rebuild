@@ -274,37 +274,35 @@ def find_schedule_event_encp(html, venue):
     if not html or not venue:
         return ""
 
-pattern = re.compile(
-    r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
-    re.IGNORECASE,
-)
-for match in pattern.finditer(html):
-    start = max(0, match.start() - 5000)
-    end = min(len(html), match.end() + 5000)
-    context = html[start:end]
-    context_text = re.sub(
-        r"<script\b[^>]*>.*?</script>",
-        " ",
-        context,
-        flags=re.IGNORECASE | re.DOTALL,
+    pattern = re.compile(
+        r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
+        re.IGNORECASE,
     )
-    context_text = re.sub(
-        r"<style\b[^>]*>.*?</style>",
-        " ",
-        context_text,
-        flags=re.IGNORECASE | re.DOTALL,
-    )
-    context_text = re.sub(r"<[^>]+>", " ", context_text)
-    context_text = (
-        context_text
-        .replace("&nbsp;", " ")
-        .replace("&#160;", " ")
-        .replace("&amp;", "&")
-    )
-    context_text = re.sub(r"\s+", " ", context_text).strip()
-    if venue in context_text:
-        return match.group("encp")
-return ""
+
+    for match in pattern.finditer(html):
+        start = max(0, match.start() - 5000)
+        end = min(len(html), match.end() + 5000)
+        context = html[start:end]
+
+        context_text = re.sub(
+            r"<script\b[^>]*>.*?</script>",
+            " ",
+            context,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        context_text = re.sub(
+            r"<style\b[^>]*>.*?</style>",
+            " ",
+            context_text,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+        context_text = re.sub(r"<[^>]+>", " ", context)
+        context_text = re.sub(r"\s+", " ", context_text).strip()
+
+        if venue in context_text:
+            return match.group("encp")
+
+    return ""
 
 # ============================================================
 # 公式レース一覧HTMLの解析
