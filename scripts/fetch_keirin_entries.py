@@ -270,7 +270,58 @@ def find_events(payload):
         })
         
     return events
+def find_schedule_event_encp(html, venue):
+“”“公式開催一覧HTMLから、指定開催場の開催遷移パラメータを探す。”””
 
+if not html or not venue:
+    return ""
+pattern = re.compile(
+    r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
+    re.IGNORECASE,
+)
+matches = list(pattern.finditer(html))
+candidates = []
+for match in matches:
+    start = max(0, match.start() - 5000)
+    end = min(len(html), match.end() + 5000)
+    context = html[start:end]
+    context_text = re.sub(
+        r"<script\b[^>]*>.*?</script>",
+        " ",
+        context,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    context_text = re.sub(
+        r"<style\b[^>]*>.*?</style>",
+        " ",
+        context_text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    context_text = re.sub(r"<[^>]+>", " ", context_text)
+    context_text = (
+        context_text
+        .replace("&nbsp;", " ")
+        .replace("&#160;", " ")
+        .replace("&amp;", "&")
+    )
+    context_text = re.sub(r"\s+", " ", context_text).strip()
+    if venue not in context_text:
+        continue
+    # 開催場名がリンク周辺にある候補だけ採用する。
+    candidates.append({
+        "encp": match.group("encp"),
+        "distance": abs(
+            match.start()
+            - (
+                start
+                + context.find(venue)
+            )
+        ),
+    })
+if not candidates:
+    return ""
+candidates.sort(key=lambda item: item["distance"])
+return candidates[0]["encp"]
 
 # ============================================================
 # 公式レース一覧HTMLの解析
@@ -1277,7 +1328,37 @@ def main():
 
         all_events = find_events(schedule)
 
-        result["events_found"] = len(all_events)
+print(“公式開催JSONから取得した開催数:”, len(all_events))
+
+開催一覧HTMLにある遷移パラメータとJSONの値を照合する。
+
+for event in all_events:
+html_encp = find_schedule_event_encp(
+landing.text,
+event[“venue”],
+)
+
+if html_encp:
+    if html_encp != event["encp"]:
+        print(
+            f'  {event["venue"]}: '
+            "開催パラメータがJSONとHTMLで異なります。"
+            "HTML側の値を採用します。"
+        )
+        event["encp"] = html_encp
+    else:
+        print(
+            f'  {event["venue"]}: '
+            "JSONとHTMLの開催パラメータが一致"
+        )
+else:
+    print(
+        f'  {event["venue"]}: '
+        "HTML側の開催パラメータを特定できません。"
+        "JSONの値を維持します。"
+    )
+
+result[“events_found”] = len(all_events)
 
         print("開催候補:", len(all_events))
 
