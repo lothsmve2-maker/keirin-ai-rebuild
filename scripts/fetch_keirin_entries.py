@@ -268,15 +268,7 @@ def find_events(payload):
                 else 0
             ),
         })
-        if event["venue"] in ("静岡", "豊橋", "四日市"):
-            print(
-                f'  {event["venue"]}: '
-                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
-            )
-            print(
-                f'  {event["venue"]}: '
-                f'選手リスト件数={event.get("sensyu_count", 0)}'
-            )
+        
     return events
 
 
@@ -640,7 +632,15 @@ def fetch_event_races(session, event):
             f'encp={event_encp}, '
             f'取得元={event.get("source_path", "")}'
         )
-
+        if event["venue"] in ("静岡", "豊橋", "四日市"):
+            print(
+                f'  {event["venue"]}: '
+                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
+            )
+            print(
+                f'  {event["venue"]}: '
+                f'選手リスト件数={event.get("sensyu_count", 0)}'
+            )
         print(
             f'  {event["venue"]}: '
             f'JSJ049 resultCd={payload.get("resultCd", "(なし)")}, '
