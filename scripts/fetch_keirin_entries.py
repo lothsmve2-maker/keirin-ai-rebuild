@@ -662,7 +662,15 @@ def fetch_event_races(session, event):
             f'  {event["venue"]}: '
             f"開催日リスト={len(days)}件"
         )
-
+        if event["venue"] in ("静岡", "豊橋", "四日市"):
+            print(
+                f'  {event["venue"]}: '
+                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
+            )
+            print(
+                f'  {event["venue"]}: '
+                f'選手リスト件数={event.get("sensyu_count", 0)}'
+            )
         for day in days:
             if not isinstance(day, dict):
                 continue
