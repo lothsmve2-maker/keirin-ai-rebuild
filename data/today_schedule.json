@@ -1,6 +1,6 @@
 {
   "schema_version": 2,
-  "generated_at": "2026-10-17T09:34:52+09:00",
+  "generated_at": "2026-10-17T22:02:57+09:00",
   "target_date": "2026-10-17",
   "status": "ok",
   "source": {
@@ -8,7 +8,7 @@
     "url": "https://www.keirin.jp/sp/raceschedule",
     "http_status": 200,
     "body_bytes": 121867,
-    "retrieved_at": "2026-10-17T09:34:52+09:00"
+    "retrieved_at": "2026-10-17T22:02:57+09:00"
   },
   "summary": {
     "venue_count": 42,
