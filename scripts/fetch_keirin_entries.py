@@ -271,7 +271,7 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-“”“公式開催一覧HTMLから、指定開催場の開催遷移パラメータを探す。”””
+"""公式開催一覧HTMLから、指定開催場の開催遷移パラメータを探す。"""
 
 def find_schedule_event_encp(html, venue):
 “”“Find the event parameter in the official schedule HTML.”””
