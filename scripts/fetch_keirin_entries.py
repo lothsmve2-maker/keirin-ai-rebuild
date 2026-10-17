@@ -1311,24 +1311,24 @@ def main():
 
         all_events = find_events(schedule)
 
-print("Events found:", len(all_events))
+        print("Events found:", len(all_events))
 
-for event in all_events:
-    html_encp = find_schedule_event_encp(
-        landing.text,
-        event["venue"],
-    )
+        for event in all_events:
+            html_encp = find_schedule_event_encp(
+                landing.text,
+                event["venue"],
+            )
 
-    if html_encp:
-        if html_encp != event["encp"]:
-            print("HTML parameter differs:", event["venue"])
-            event["encp"] = html_encp
-        else:
-            print("Parameters match:", event["venue"])
-    else:
-        print("HTML parameter not found:", event["venue"])
+            if html_encp:
+                if html_encp != event["encp"]:
+                    print("HTML parameter differs:", event["venue"])
+                    event["encp"] = html_encp
+                else:
+                    print("Parameters match:", event["venue"])
+            else:
+                print("HTML parameter not found:", event["venue"])
 
-result["events_found"] = len(all_events)
+        result["events_found"] = len(all_events)
 
         print("開催候補:", len(all_events))
 
