@@ -1324,7 +1324,7 @@ def main():
 
         all_events = find_events(schedule)
 
-print(“公式開催JSONから取得した開催数:”, len(all_events))
+print("公式開催JSONから取得した開催数:", len(all_events))
 
 開催一覧HTMLにある遷移パラメータとJSONの値を照合する。
 
