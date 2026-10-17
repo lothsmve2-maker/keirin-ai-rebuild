@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-18",
-  "started_at": "2026-10-18T00:57:17.218446+09:00",
-  "finished_at": "2026-10-18T00:59:52.355882+09:00",
+  "started_at": "2026-10-18T01:27:22.212320+09:00",
+  "finished_at": "2026-10-18T01:30:20.511393+09:00",
   "status": "error",
   "events_found": 7,
   "events_checked": 7,
@@ -11,9 +11,9 @@
   "races_found": 171,
   "races_checked": 171,
   "races_fetched": 0,
-  "races_excluded_other_date": 170,
+  "races_excluded_other_date": 171,
   "races_date_unknown": 0,
-  "races_failed": 1,
+  "races_failed": 0,
   "rider_count": 0,
   "commented_rider_count": 0,
   "events": [
@@ -68,14 +68,7 @@
     }
   ],
   "races": [],
-  "errors": [
-    {
-      "stage": "race_detail",
-      "venue": "京王閣",
-      "race_no": "6",
-      "error": "HTTPError: 502 Server Error: Bad Gateway for url: https://keirin.jp/sp/race?encp=CpPQzSRN4GOX-sUUc0RGwckIzszqN5LlEw7oB2uVzPs"
-    }
-  ],
+  "errors": [],
   "warnings": [
     {
       "stage": "event_coverage",
