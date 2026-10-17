@@ -257,8 +257,26 @@ def find_events(payload):
             "start_date": clean(start_date),
             "encp": clean(encp),
             "source_path": path,
+            "raw_fields": {
+                key: value
+                for key, value in obj.items()
+                if key != "sensyuList"
+            },
+            "sensyu_count": (
+                len(obj.get("sensyuList", []))
+                if isinstance(obj.get("sensyuList"), list)
+                else 0
+            ),
         })
-
+        if event["venue"] in ("静岡", "豊橋", "四日市"):
+            print(
+                f'  {event["venue"]}: '
+                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
+            )
+            print(
+                f'  {event["venue"]}: '
+                f'選手リスト件数={event.get("sensyu_count", 0)}'
+            )
     return events
 
 
