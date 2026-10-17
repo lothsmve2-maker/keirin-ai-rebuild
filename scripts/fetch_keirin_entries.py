@@ -274,7 +274,7 @@ def find_schedule_event_encp(html, venue):
 """公式開催一覧HTMLから、指定開催場の開催遷移パラメータを探す。"""
 
 def find_schedule_event_encp(html, venue):
-“”“Find the event parameter in the official schedule HTML.”””
+"""Find the event parameter in the official schedule HTML."""
 
 if not html or not venue:
     return ""
