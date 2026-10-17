@@ -2,16 +2,16 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-18",
-  "started_at": "2026-10-18T07:54:06.776582+09:00",
-  "finished_at": "2026-10-18T07:56:39.005824+09:00",
+  "started_at": "2026-10-18T08:23:21.613040+09:00",
+  "finished_at": "2026-10-18T08:25:37.635268+09:00",
   "status": "error",
   "events_found": 7,
   "events_checked": 7,
   "events_with_races": 5,
-  "races_found": 171,
-  "races_checked": 171,
+  "races_found": 156,
+  "races_checked": 156,
   "races_fetched": 0,
-  "races_excluded_other_date": 171,
+  "races_excluded_other_date": 156,
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 0,
@@ -32,20 +32,6 @@
       "status": "レース一覧0件"
     },
     {
-      "venue": "静岡",
-      "venue_code": "38",
-      "start_date": "20261015",
-      "race_count": 36,
-      "status": "レース一覧取得済み"
-    },
-    {
-      "venue": "豊橋",
-      "venue_code": "45",
-      "start_date": "20261015",
-      "race_count": 0,
-      "status": "レース一覧0件"
-    },
-    {
       "venue": "富山",
       "venue_code": "46",
       "start_date": "20261017",
@@ -60,10 +46,24 @@
       "status": "レース一覧取得済み"
     },
     {
+      "venue": "広島",
+      "venue_code": "62",
+      "start_date": "20261018",
+      "race_count": 0,
+      "status": "レース一覧0件"
+    },
+    {
       "venue": "武雄",
       "venue_code": "84",
       "start_date": "20261017",
       "race_count": 36,
+      "status": "レース一覧取得済み"
+    },
+    {
+      "venue": "佐世保",
+      "venue_code": "85",
+      "start_date": "20261018",
+      "race_count": 21,
       "status": "レース一覧取得済み"
     }
   ],
@@ -75,7 +75,7 @@
       "message": "レース一覧を取得できていない開催場があります",
       "venues": [
         "高知",
-        "豊橋"
+        "広島"
       ]
     },
     {
@@ -92,7 +92,7 @@
     "comment_missing_rider_count": 0,
     "events_without_races": [
       "高知",
-      "豊橋"
+      "広島"
     ]
   }
 }
