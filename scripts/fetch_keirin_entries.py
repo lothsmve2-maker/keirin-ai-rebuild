@@ -1312,6 +1312,8 @@ def main():
         result["events_found"] = len(all_events)
 
         print("開催候補:", len(all_events))
+
+        candidate_events = []
         for event in all_events:
             html_encp = find_schedule_event_encp(
                 landing.text,
