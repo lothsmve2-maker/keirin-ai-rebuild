@@ -273,15 +273,17 @@ def find_events(payload):
 def find_schedule_event_encp(html, venue):
 “”“公式開催一覧HTMLから、指定開催場の開催遷移パラメータを探す。”””
 
+def find_schedule_event_encp(html, venue):
+“”“Find the event parameter in the official schedule HTML.”””
+
 if not html or not venue:
     return ""
 pattern = re.compile(
     r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
     re.IGNORECASE,
 )
-matches = list(pattern.finditer(html))
 candidates = []
-for match in matches:
+for match in pattern.finditer(html):
     start = max(0, match.start() - 5000)
     end = min(len(html), match.end() + 5000)
     context = html[start:end]
@@ -305,18 +307,12 @@ for match in matches:
         .replace("&amp;", "&")
     )
     context_text = re.sub(r"\s+", " ", context_text).strip()
-    if venue not in context_text:
+    venue_position = context_text.find(venue)
+    if venue_position < 0:
         continue
-    # 開催場名がリンク周辺にある候補だけ採用する。
     candidates.append({
         "encp": match.group("encp"),
-        "distance": abs(
-            match.start()
-            - (
-                start
-                + context.find(venue)
-            )
-        ),
+        "distance": abs(venue_position - len(context_text) // 2),
     })
 if not candidates:
     return ""
