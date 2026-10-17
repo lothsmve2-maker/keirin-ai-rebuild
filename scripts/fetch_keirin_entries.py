@@ -268,71 +268,157 @@ def find_events(payload):
 
 class RaceLinkParser(HTMLParser):
     """
-    /sp/racelist のHTMLから、/sp/raceへの遷移リンクを抽出する。
+    公式レース一覧HTMLから個別レースへの遷移を抽出する。
 
-    車番や選手名は生成しない。
-    レース番号はクリック対象要素内の文字列から確認する。
+    修正点:
+    ・br、img、inputなどの終了タグを持たない要素に対応
+    ・クリック対象の要素名を記録
+    ・ネストしたタグの終了時に解析を終了しない
+    ・レース番号の表記ゆれに対応
     """
+
+    VOID_TAGS = {
+        "area", "base", "br", "col", "embed",
+        "hr", "img", "input", "link", "meta",
+        "param", "source", "track", "wbr",
+    }
 
     def __init__(self):
         super().__init__(convert_charrefs=True)
-        self.depth = 0
+
+        self.stack = []
+
+        self.target_tag = None
         self.target_depth = None
         self.target_encp = ""
         self.target_path = ""
         self.target_text = []
+
         self.links = []
 
     def handle_starttag(self, tag, attrs):
-        self.depth += 1
         attr = dict(attrs)
-
         onclick = attr.get("onclick", "") or ""
 
-        if self.target_depth is None:
-            match = re.search(
-                r"""lnk\.formlnk\(\s*['"](?P<path>/sp/race)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
-                onclick,
-            )
+        # クリック対象がすでに解析中なら、
+        # その内部のテキストを収集する。
+        if self.target_tag is not None:
+            if tag not in self.VOID_TAGS:
+                self.stack.append(tag)
+            return
 
-            if match:
-                self.target_depth = self.depth
-                self.target_encp = match.group("encp")
-                self.target_path = match.group("path")
-                self.target_text = []
+        match = re.search(
+            r"""lnk\.formlnk\(\s*['"](?P<path>/sp/race(?:/[^'"]*)?)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
+            onclick,
+        )
+
+        if not match:
+            if tag not in self.VOID_TAGS:
+                self.stack.append(tag)
+            return
+
+        self.target_tag = tag
+        self.target_depth = len(self.stack) + (
+            0 if tag in self.VOID_TAGS else 1
+        )
+        self.target_encp = match.group("encp")
+        self.target_path = match.group("path")
+        self.target_text = []
+
+        if tag not in self.VOID_TAGS:
+            self.stack.append(tag)
+
+    def handle_startendtag(self, tag, attrs):
+        # <input /> などの自己終了タグ
+        # クリック対象ではないため、階層を変更しない。
+        return
 
     def handle_data(self, data):
-        if self.target_depth is not None:
+        if self.target_tag is not None:
             self.target_text.append(data)
 
     def handle_endtag(self, tag):
+        if not self.stack:
+            return
+
+        # 開始タグと終了タグが一致する位置まで戻す。
+        # 不正なHTMLでも階層が負にならないようにする。
+        if tag not in self.stack:
+            return
+
+        while self.stack:
+            popped = self.stack.pop()
+
+            if popped == tag:
+                break
+
+        # クリック対象そのものが閉じられたときだけ確定する。
         if (
-            self.target_depth is not None
-            and self.depth == self.target_depth
+            self.target_tag == tag
+            and self.target_depth == len(self.stack) + 1
         ):
-            text = " ".join(self.target_text)
-            text = re.sub(r"\s+", " ", text).strip()
+            self._finish_target()
 
-            self.links.append({
-                "race_encp": self.target_encp,
-                "race_path": self.target_path,
-                "text": text,
-            })
+    def _finish_target(self):
+        text = " ".join(self.target_text)
+        text = re.sub(r"\s+", " ", text).strip()
 
-            self.target_depth = None
-            self.target_encp = ""
-            self.target_path = ""
-            self.target_text = []
+        self.links.append({
+            "race_encp": self.target_encp,
+            "race_path": self.target_path,
+            "text": text,
+        })
 
-        self.depth = max(0, self.depth - 1)
+        self.target_tag = None
+        self.target_depth = None
+        self.target_encp = ""
+        self.target_path = ""
+        self.target_text = []
+
+    def close(self):
+        super().close()
+
+        # 閉じタグが欠落したHTMLにも対応する。
+        if self.target_tag is not None:
+            self._finish_target()
+
+
+def extract_race_number(text):
+    """画面上の表記からレース番号を抽出する。"""
+
+    if not text:
+        return ""
+
+    text = re.sub(r"\s+", " ", str(text)).strip()
+
+    patterns = [
+        r"(?<!\d)(\d{1,2})\s*R(?!\w)",
+        r"第\s*(\d{1,2})\s*レース",
+        r"(\d{1,2})\s*レース",
+    ]
+
+    for pattern in patterns:
+        match = re.search(
+            pattern,
+            text,
+            flags=re.IGNORECASE,
+        )
+
+        if match:
+            number = int(match.group(1))
+
+            if 1 <= number <= 12:
+                return str(number)
+
+    return ""
 
 
 def fetch_races_from_post(session, event):
     """
     公式レース一覧画面をPOSTで取得する。
 
-    POST成功だけではレース一覧取得成功とみなさない。
-    レース番号を確認できたリンクだけを採用する。
+    レースリンクの検出数と採用数をログに出す。
+    番号を確認できないリンクは推測で登録しない。
     """
 
     response = request_post_page(
@@ -345,16 +431,28 @@ def fetch_races_from_post(session, event):
         referer=SCHEDULE_URL,
     )
 
-    html = response.text
+    html = response.text or ""
+
+    print(
+        f'    POST HTTP: {response.status_code}, '
+        f'HTMLサイズ: {len(html)} bytes'
+    )
 
     if not html:
+        print("    POST画面が空です")
         return []
 
     parser = RaceLinkParser()
     parser.feed(html)
+    parser.close()
+
+    print(
+        f"    個別レースリンク検出: {len(parser.links)}"
+    )
 
     races = []
     seen = set()
+    rejected = 0
 
     for item in parser.links:
         race_encp = item["race_encp"]
@@ -363,14 +461,10 @@ def fetch_races_from_post(session, event):
         if not race_encp or race_encp in seen:
             continue
 
-        # クリック対象要素のテキストに番号がある場合だけ採用する。
-        match = re.search(
-            r"(?<!\d)(\d{1,2})\s*R(?!\w)",
-            text,
-            flags=re.I,
-        )
+        race_no = extract_race_number(text)
 
-        if not match:
+        if not race_no:
+            rejected += 1
             continue
 
         seen.add(race_encp)
@@ -381,13 +475,21 @@ def fetch_races_from_post(session, event):
             "event_start_date": event["start_date"],
             "day": None,
             "race_date": None,
-            "race_no": match.group(1),
+            "race_no": race_no,
             "race_name": "",
-            "race_url": urljoin(BASE, item["race_path"]),
+            "race_url": urljoin(
+                BASE,
+                item["race_path"],
+            ),
             "race_encp": race_encp,
             "event_encp": event["encp"],
             "list_source": "official_post_fallback",
         })
+
+    print(
+        f"    レース番号確認済み: {len(races)}, "
+        f"番号を確認できず除外: {rejected}"
+    )
 
     return races
 
@@ -1220,6 +1322,24 @@ def main():
 
         print("[4/4] 取得結果を検証...")
 
+        events_without_races = [
+            event
+            for event in result["events"]
+            if event["race_count"] == 0
+        ]
+
+        # 開催場のレース一覧が1つでも0件なら、
+        # 全開催の取得が完了したとは判定しない。
+        if events_without_races:
+            result["warnings"].append({
+                "stage": "event_coverage",
+                "message": "レース一覧を取得できていない開催場があります",
+                "venues": [
+                    event["venue"]
+                    for event in events_without_races
+                ],
+            })
+
         if result["races_fetched"] == 0:
             result["status"] = "error"
 
@@ -1227,6 +1347,7 @@ def main():
             result["races_failed"] > 0
             or result["races_date_unknown"] > 0
             or result["errors"]
+            or events_without_races
         ):
             result["status"] = "partial"
 
@@ -1255,6 +1376,10 @@ def main():
                 result["rider_count"]
                 - result["commented_rider_count"],
             ),
+            "events_without_races": [
+                event["venue"]
+                for event in events_without_races
+            ],
         }
 
         if not result["races"]:
