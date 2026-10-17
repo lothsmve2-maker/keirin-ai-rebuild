@@ -2,26 +2,28 @@
 # -*- coding: utf-8 -*-
 
 """
-KEIRIN.JP 公式出走表取得
-------------------------------------
+KEIRIN.JP 公式出走表取得 v4
+
 ・公式開催一覧を取得
-・開催別レース一覧を取得
+・JSJ049で開催別レース一覧を取得
+・JSJ049が失敗した場合は公式POST画面を試す
 ・個別レースの出走表を取得
-・公式のライン情報を保存
-・レース日を個別レースページから検証
-・選手コメントの取得状況を記録
-・車番、選手数、ライン情報を検証
+・公式コメントを取得
+・公式ライン情報を保存
+・レース日付を検証
+・選手数、車番、ライン情報を検証
 ・data/entries_today.json に保存
 
 重要:
-ラインのグループは公式データから確定できる場合だけ設定する。
-確認できないライン構造を数値の間隔だけで推測しない。
+確認できない選手情報やライン構造は推測で補完しない。
+日付を確定できないレースは当日分として登録しない。
 """
 
 import json
 import re
 import sys
 import time
+from html.parser import HTMLParser
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from urllib.parse import urljoin
@@ -44,8 +46,7 @@ JST = timezone(timedelta(hours=9))
 
 TIMEOUT = 25
 PAUSE = 0.15
-
-SCHEMA_VERSION = 3
+SCHEMA_VERSION = 4
 
 HEADERS = {
     "User-Agent": (
@@ -93,10 +94,7 @@ def first_value(obj, *keys):
 
 
 def parse_date(value):
-    """
-    日付文字列から日付を抽出する。
-    20261015 / 2026-10-15 / 2026/10/15 に対応。
-    """
+    """日本語・区切り付き・8桁の日付を解析する。"""
 
     if value is None:
         return None
@@ -104,7 +102,7 @@ def parse_date(value):
     text = str(value).strip()
 
     patterns = [
-        r"(20\d{2})[-/年](\d{1,2})[-/月](\d{1,2})",
+        r"(20\d{2})[-/年.](\d{1,2})[-/月.](\d{1,2})",
         r"(20\d{2})(\d{2})(\d{2})",
     ]
 
@@ -116,11 +114,7 @@ def parse_date(value):
 
         try:
             year, month, day = map(int, match.groups())
-
-            return datetime(
-                year, month, day
-            ).date()
-
+            return datetime(year, month, day).date()
         except ValueError:
             continue
 
@@ -128,7 +122,9 @@ def parse_date(value):
 
 
 def request_page(session, url, params=None, referer=None):
-    headers = {}
+    """GETリクエスト。失敗は呼び出し元で処理する。"""
+
+    headers = dict(HEADERS)
 
     if referer:
         headers["Referer"] = referer
@@ -141,6 +137,33 @@ def request_page(session, url, params=None, referer=None):
     )
 
     response.raise_for_status()
+
+    if not response.encoding or response.encoding.lower() == "iso-8859-1":
+        response.encoding = response.apparent_encoding or "utf-8"
+
+    return response
+
+
+def request_post_page(session, url, data, referer=None):
+    """公式フォームへのPOSTリクエスト。"""
+
+    headers = dict(HEADERS)
+    headers["Origin"] = BASE
+
+    if referer:
+        headers["Referer"] = referer
+
+    response = session.post(
+        url,
+        data=data,
+        headers=headers,
+        timeout=TIMEOUT,
+    )
+
+    response.raise_for_status()
+
+    if not response.encoding or response.encoding.lower() == "iso-8859-1":
+        response.encoding = response.apparent_encoding or "utf-8"
 
     return response
 
@@ -163,10 +186,7 @@ def walk_dicts(obj, path="$"):
         yield path, obj
 
         for key, value in obj.items():
-            yield from walk_dicts(
-                value,
-                f"{path}.{key}",
-            )
+            yield from walk_dicts(value, f"{path}.{key}")
 
     elif isinstance(obj, list):
         for index, value in enumerate(obj):
@@ -181,12 +201,7 @@ def walk_dicts(obj, path="$"):
 # ============================================================
 
 def find_events(payload):
-    """
-    JSJ058から開催候補を抽出する。
-
-    暗号化パラメータを持つ開催オブジェクトを対象とする。
-    同じ開催の重複を排除する。
-    """
+    """公式開催JSONから開催候補を抽出する。"""
 
     events = []
     seen = set()
@@ -247,100 +262,271 @@ def find_events(payload):
     return events
 
 
-def fetch_event_races(session, event):
-    """開催パラメータから開催日ごとのレース一覧を取得する。"""
+# ============================================================
+# 公式レース一覧HTMLの解析
+# ============================================================
 
-    payload = request_json(
+class RaceLinkParser(HTMLParser):
+    """
+    /sp/racelist のHTMLから、/sp/raceへの遷移リンクを抽出する。
+
+    車番や選手名は生成しない。
+    レース番号はクリック対象要素内の文字列から確認する。
+    """
+
+    def __init__(self):
+        super().__init__(convert_charrefs=True)
+        self.depth = 0
+        self.target_depth = None
+        self.target_encp = ""
+        self.target_path = ""
+        self.target_text = []
+        self.links = []
+
+    def handle_starttag(self, tag, attrs):
+        self.depth += 1
+        attr = dict(attrs)
+
+        onclick = attr.get("onclick", "") or ""
+
+        if self.target_depth is None:
+            match = re.search(
+                r"""lnk\.formlnk\(\s*['"](?P<path>/sp/race)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
+                onclick,
+            )
+
+            if match:
+                self.target_depth = self.depth
+                self.target_encp = match.group("encp")
+                self.target_path = match.group("path")
+                self.target_text = []
+
+    def handle_data(self, data):
+        if self.target_depth is not None:
+            self.target_text.append(data)
+
+    def handle_endtag(self, tag):
+        if (
+            self.target_depth is not None
+            and self.depth == self.target_depth
+        ):
+            text = " ".join(self.target_text)
+            text = re.sub(r"\s+", " ", text).strip()
+
+            self.links.append({
+                "race_encp": self.target_encp,
+                "race_path": self.target_path,
+                "text": text,
+            })
+
+            self.target_depth = None
+            self.target_encp = ""
+            self.target_path = ""
+            self.target_text = []
+
+        self.depth = max(0, self.depth - 1)
+
+
+def fetch_races_from_post(session, event):
+    """
+    公式レース一覧画面をPOSTで取得する。
+
+    POST成功だけではレース一覧取得成功とみなさない。
+    レース番号を確認できたリンクだけを採用する。
+    """
+
+    response = request_post_page(
         session,
-        RACE_LIST_API,
-        params={
-            "type": "JSJ049",
+        urljoin(BASE, "/sp/racelist"),
+        {
             "encp": event["encp"],
+            "disp": "SJ0301",
         },
         referer=SCHEDULE_URL,
     )
 
-    if not isinstance(payload, dict):
-        raise ValueError(
-            "JSJ049の応答が辞書形式ではありません"
-        )
+    html = response.text
 
-    days = payload.get("kaisaiDayList", [])
+    if not html:
+        return []
 
-    if not isinstance(days, list):
-        raise ValueError(
-            "kaisaiDayListがリスト形式ではありません"
-        )
+    parser = RaceLinkParser()
+    parser.feed(html)
 
     races = []
+    seen = set()
 
-    for day in days:
-        if not isinstance(day, dict):
+    for item in parser.links:
+        race_encp = item["race_encp"]
+        text = item["text"]
+
+        if not race_encp or race_encp in seen:
             continue
 
-        day_name = first_value(
-            day,
-            "strNitiji",
-            "strDay",
-            "strKaisaiDate",
+        # クリック対象要素のテキストに番号がある場合だけ採用する。
+        match = re.search(
+            r"(?<!\d)(\d{1,2})\s*R(?!\w)",
+            text,
+            flags=re.I,
         )
 
-        day_date = first_value(
-            day,
-            "strKaisaiDate",
-            "kaisaiDate",
-            "strEventDate",
-        )
-
-        programs = day.get("raceProgramList", [])
-
-        if not isinstance(programs, list):
+        if not match:
             continue
 
-        for program in programs:
-            if not isinstance(program, dict):
-                continue
+        seen.add(race_encp)
 
-            race_path = first_value(
-                program,
-                "strRaceLnk",
-            )
-
-            race_encp = first_value(
-                program,
-                "strRaceLnkPrm",
-            )
-
-            race_no = first_value(
-                program,
-                "strRaceNo",
-            )
-
-            race_name = first_value(
-                program,
-                "strSyumokuName",
-            )
-
-            if not race_path or not race_encp or not race_no:
-                continue
-
-            races.append({
-                "venue": event["venue"],
-                "venue_code": event["venue_code"],
-                "event_start_date": event["start_date"],
-                "day": clean(day_name),
-                "race_date": clean(day_date),
-                "race_no": clean(race_no),
-                "race_name": clean(race_name),
-                "race_url": urljoin(
-                    BASE,
-                    race_path,
-                ),
-                "race_encp": clean(race_encp),
-                "event_encp": event["encp"],
-            })
+        races.append({
+            "venue": event["venue"],
+            "venue_code": event["venue_code"],
+            "event_start_date": event["start_date"],
+            "day": None,
+            "race_date": None,
+            "race_no": match.group(1),
+            "race_name": "",
+            "race_url": urljoin(BASE, item["race_path"]),
+            "race_encp": race_encp,
+            "event_encp": event["encp"],
+            "list_source": "official_post_fallback",
+        })
 
     return races
+
+
+# ============================================================
+# 開催別レース一覧
+# ============================================================
+
+def fetch_event_races(session, event):
+    """JSONを優先し、失敗または0件なら公式POST画面を試す。"""
+
+    races = []
+    event_encp = event.get("encp")
+
+    if not event_encp:
+        raise ValueError("開催パラメータencpがありません")
+
+    try:
+        payload = request_json(
+            session,
+            RACE_LIST_API,
+            params={
+                "type": "JSJ049",
+                "encp": event_encp,
+            },
+            referer=SCHEDULE_URL,
+        )
+
+        if not isinstance(payload, dict):
+            raise ValueError("JSJ049の応答が辞書形式ではありません")
+
+        days = payload.get("kaisaiDayList", [])
+
+        if isinstance(days, list):
+            for day in days:
+                if not isinstance(day, dict):
+                    continue
+
+                day_name = first_value(
+                    day,
+                    "strNitiji",
+                    "strDay",
+                    "strKaisaiDate",
+                )
+
+                day_date = first_value(
+                    day,
+                    "strKaisaiDate",
+                    "kaisaiDate",
+                    "strEventDate",
+                )
+
+                programs = day.get("raceProgramList", [])
+
+                if not isinstance(programs, list):
+                    continue
+
+                for program in programs:
+                    if not isinstance(program, dict):
+                        continue
+
+                    race_path = first_value(
+                        program,
+                        "strRaceLnk",
+                    )
+
+                    race_encp = first_value(
+                        program,
+                        "strRaceLnkPrm",
+                    )
+
+                    race_no = first_value(
+                        program,
+                        "strRaceNo",
+                    )
+
+                    race_name = first_value(
+                        program,
+                        "strSyumokuName",
+                    )
+
+                    if not race_encp or not race_no:
+                        continue
+
+                    races.append({
+                        "venue": event["venue"],
+                        "venue_code": event["venue_code"],
+                        "event_start_date": event["start_date"],
+                        "day": clean(day_name),
+                        "race_date": clean(day_date),
+                        "race_no": clean(race_no),
+                        "race_name": clean(race_name),
+                        "race_url": urljoin(
+                            BASE,
+                            race_path or "/sp/race",
+                        ),
+                        "race_encp": clean(race_encp),
+                        "event_encp": event_encp,
+                        "list_source": "JSJ049",
+                    })
+
+    except Exception as exc:
+        print(
+            f'  {event["venue"]}: JSJ049失敗: '
+            f'{type(exc).__name__}: {exc}'
+        )
+
+    if races:
+        print(
+            f'  {event["venue"]}: JSONから'
+            f"{len(races)}レース取得"
+        )
+        return races
+
+    print(
+        f'  {event["venue"]}: JSONが0件のため'
+        "公式POST画面を試します"
+    )
+
+    try:
+        fallback_races = fetch_races_from_post(
+            session,
+            event,
+        )
+
+        if fallback_races:
+            print(
+                f'  {event["venue"]}: POST画面から'
+                f"{len(fallback_races)}レース取得"
+            )
+
+        return fallback_races
+
+    except Exception as exc:
+        print(
+            f'  {event["venue"]}: POST取得失敗: '
+            f'{type(exc).__name__}: {exc}'
+        )
+        raise
 
 
 # ============================================================
@@ -349,8 +535,9 @@ def fetch_event_races(session, event):
 
 def extract_assignment(html, variable_name):
     """
-    次のようなJavaScript内JSONを抽出する。
+    JavaScript内のJSONを抽出する。
 
+    例:
     jsonData["SJ0315"] = {...};
     """
 
@@ -365,76 +552,84 @@ def extract_assignment(html, variable_name):
     if not match:
         return None
 
-    start = match.end()
-
     decoder = json.JSONDecoder()
+    source = html[match.end():].lstrip()
 
     try:
-        value, _ = decoder.raw_decode(
-            html[start:].lstrip()
-        )
-
+        value, _ = decoder.raw_decode(source)
         return value
-
     except json.JSONDecodeError:
         return None
 
 
 # ============================================================
-# 選手データ
+# 公式コメント
 # ============================================================
+
 def fetch_official_comments(session, race_encp, referer=None):
-    """
-    KEIRIN.JP公式JSONから選手コメントを取得する。
-    戻り値:
-        comments: 車番をキーにしたコメント辞書
-        status: 取得済み / 未掲載 / 取得失敗
-    """
-    url = f"{BASE}/sp/json"
-    headers = {
-        "Referer": referer or f"{BASE}/sp/raceschedule",
-        "X-Requested-With": "XMLHttpRequest",
-    }
+    """公式JSONから選手コメントを取得する。"""
+
     comments = {}
+
     try:
-        response = session.get(
-            url,
+        payload = request_json(
+            session,
+            f"{BASE}/sp/json",
             params={
                 "type": "JSJ041",
                 "encp": race_encp,
                 "skbn": "1",
             },
-            headers=headers,
-            timeout=TIMEOUT,
+            referer=referer or SCHEDULE_URL,
         )
-        response.raise_for_status()
-        payload = response.json()
+
         if not isinstance(payload, dict):
-            print("  コメント取得失敗: JSON形式が想定外")
             return comments, "取得失敗"
+
         riders = payload.get("sensyuTypeInfo")
+
         if not isinstance(riders, list):
-            print("  コメント取得失敗: 選手データが見つからない")
             return comments, "取得失敗"
+
         for rider in riders:
             if not isinstance(rider, dict):
                 continue
-            car_no = str(rider.get("syaban", "")).strip()
-            comment = str(rider.get("sensyuComment", "") or "").strip()
+
+            car_no = str(
+                first_value(rider, "syaban", "shaban")
+            ).strip()
+
+            comment = str(
+                first_value(
+                    rider,
+                    "sensyuComment",
+                    "comment",
+                ) or ""
+            ).strip()
+
             if car_no and comment:
                 comments[car_no] = comment
+
         if comments:
             return comments, "取得済み"
-        # JSONの取得には成功したが、コメント本文がない
-        return comments, "未掲載"
-    except Exception as e:
-        print(f"  コメント取得失敗: {str(e)[:150]}")
-        return comments, "取得失敗"
-def normalize_rider(raw):
-    """公式JSONの選手データを共通形式にする。"""
 
-    # コメントのキーは公式データに存在するものだけ利用する。
-    # 存在しなければ空欄とし、推測で生成しない。
+        return comments, "未掲載"
+
+    except Exception as exc:
+        print(
+            "  コメント取得失敗:",
+            f"{type(exc).__name__}: {exc}",
+        )
+        return comments, "取得失敗"
+
+
+# ============================================================
+# 選手データ
+# ============================================================
+
+def normalize_rider(raw):
+    """公式選手データを共通形式に変換する。"""
+
     comment = first_value(
         raw,
         "sensyuComment",
@@ -518,14 +713,7 @@ def normalize_rider(raw):
 # ============================================================
 
 def extract_official_lines(line_info):
-    """
-    公式の並び予想データを保存する。
-
-    注意:
-    ichiの数値間隔からラインを推測しない。
-    公式のグループ情報が確認できない場合は、
-    位置情報だけを保存する。
-    """
+    """公式の位置情報を保存する。ラインを推測で分割しない。"""
 
     if not isinstance(line_info, dict):
         return {
@@ -535,18 +723,12 @@ def extract_official_lines(line_info):
             "line_status": "公式データなし",
         }
 
-    line_data = line_info.get(
-        "narabiyoso",
-        {},
-    )
+    line_data = line_info.get("narabiyoso", {})
 
     if not isinstance(line_data, dict):
         line_data = {}
 
-    raw_order = line_data.get(
-        "shaban",
-        [],
-    )
+    raw_order = line_data.get("shaban", [])
 
     if not isinstance(raw_order, list):
         raw_order = []
@@ -581,8 +763,6 @@ def extract_official_lines(line_info):
             "car_no": car_no,
         })
 
-    # 公式の位置情報は保持するが、
-    # 数値の連続性だけでラインを分割しない。
     return {
         "line_type": clean(first_value(
             line_data,
@@ -599,7 +779,7 @@ def extract_official_lines(line_info):
 # ============================================================
 
 def extract_race_data(session, race):
-    """個別レースページから出走表を取得する。"""
+    """個別レースページから選手・ライン・コメントを取得する。"""
 
     response = request_page(
         session,
@@ -612,30 +792,14 @@ def extract_race_data(session, race):
 
     html = response.text
 
-    base_info = extract_assignment(
-        html,
-        "SC0201",
-    )
-
-    rider_info = extract_assignment(
-        html,
-        "SJ0315",
-    )
-
-    line_info = extract_assignment(
-        html,
-        "SJ0314",
-    )
+    base_info = extract_assignment(html, "SC0201")
+    rider_info = extract_assignment(html, "SJ0315")
+    line_info = extract_assignment(html, "SJ0314")
 
     if not isinstance(rider_info, dict):
-        raise ValueError(
-            "SJ0315を抽出できません"
-        )
+        raise ValueError("SJ0315を抽出できません")
 
-    raw_riders = rider_info.get(
-        "sensyuTypeInfo",
-        [],
-    )
+    raw_riders = rider_info.get("sensyuTypeInfo", [])
 
     if not isinstance(raw_riders, list):
         raw_riders = []
@@ -650,63 +814,54 @@ def extract_race_data(session, race):
 
         if rider["car_no"] or rider["name"]:
             riders.append(rider)
-    # KEIRIN.JP公式コメントを取得
-    official_comments, comment_fetch_status = fetch_official_comments(
-        session,
-        race["race_encp"],
-        referer=race.get("race_url"),
-    )
-    # コメントと取得状態を選手ごとに保存
-    for rider in riders:
-        car_no = str(rider.get("car_no", "")).strip()
-        comment = official_comments.get(car_no, "")
-        rider["comment"] = comment
-        rider["comment_available"] = bool(comment)
-        if comment:
-            rider["comment_status"] = "取得済み"
-        elif comment_fetch_status == "取得失敗":
-            rider["comment_status"] = "取得失敗"
-        else:
-            rider["comment_status"] = "未掲載"
 
-    # 取得したコメントを選手データに反映
+    official_comments, comment_fetch_status = (
+        fetch_official_comments(
+            session,
+            race["race_encp"],
+            referer=response.url,
+        )
+    )
+
     for rider in riders:
         car_no = str(rider.get("car_no", "")).strip()
         comment = official_comments.get(car_no, "")
 
         if comment:
             rider["comment"] = comment
-            rider["comment_available"] = True
+
+        rider["comment_available"] = bool(
+            rider.get("comment", "").strip()
+        )
+
+        if rider["comment_available"]:
+            rider["comment_status"] = "取得済み"
+        elif comment_fetch_status == "取得失敗":
+            rider["comment_status"] = "取得失敗"
+        else:
+            rider["comment_status"] = "未掲載"
+
     meta = {}
 
     if isinstance(base_info, dict):
-        meta = base_info.get(
-            "C0201data",
-            {},
-        ) or {}
+        meta = base_info.get("C0201data", {}) or {}
 
     if not isinstance(meta, dict):
         meta = {}
 
-    official_lines = extract_official_lines(
-        line_info
+    official_lines = extract_official_lines(line_info)
+
+    race_date_display = clean(
+        first_value(meta, "txtEventDate")
     )
 
-    race_date_display = clean(first_value(
-        meta,
-        "txtEventDate",
-    ))
+    race_date = parse_date(race_date_display)
 
-    race_date = parse_date(
-        race_date_display
+    verified_race_date = (
+        race_date.isoformat()
+        if race_date is not None
+        else ""
     )
-
-    # 開催日程JSONの日付よりも、個別レースページの
-    # 日付表示を優先して検証する。
-    if race_date is not None:
-        verified_race_date = race_date.isoformat()
-    else:
-        verified_race_date = ""
 
     car_numbers = [
         rider["car_no"]
@@ -724,8 +879,7 @@ def extract_race_data(session, race):
     )
 
     duplicate_line_numbers = (
-        len(line_car_numbers)
-        != len(set(line_car_numbers))
+        len(line_car_numbers) != len(set(line_car_numbers))
     )
 
     missing_line_numbers = sorted(
@@ -737,12 +891,11 @@ def extract_race_data(session, race):
     )
 
     comment_count = sum(
-        1
-        for rider in riders
+        1 for rider in riders
         if rider["comment_available"]
     )
 
-    if comment_count == len(riders) and riders:
+    if riders and comment_count == len(riders):
         comment_status = "取得済み"
     elif comment_count > 0:
         comment_status = "一部取得"
@@ -758,7 +911,7 @@ def extract_race_data(session, race):
         "race_name": clean(first_value(
             meta,
             "syumoku",
-        )) or race["race_name"],
+        )) or race.get("race_name", ""),
 
         "venue": clean(first_value(
             meta,
@@ -840,16 +993,16 @@ def main():
     session.headers.update(HEADERS)
 
     print("=" * 60)
-    print(" KEIRIN.JP 公式出走表取得 v3")
+    print(" KEIRIN.JP 公式出走表取得 v4")
     print("=" * 60)
     print("対象日:", today.isoformat())
 
     try:
         # ----------------------------------------------------
-        # 1. セッション初期化・開催一覧
+        # 1. 開催一覧
         # ----------------------------------------------------
 
-        print("[1/4] 公式開催ページを初期化...")
+        print("[1/4] 公式開催一覧を取得...")
 
         landing = request_page(
             session,
@@ -868,14 +1021,10 @@ def main():
 
         print("開催候補:", len(all_events))
 
-        # 開催初日が今日以前の開催を調べる。
-        # 開催期間中かどうかは、個別レース日付で最終判定する。
         candidate_events = []
 
         for event in all_events:
-            start = parse_date(
-                event.get("start_date")
-            )
+            start = parse_date(event.get("start_date"))
 
             if start is None:
                 result["warnings"].append({
@@ -883,27 +1032,24 @@ def main():
                     "venue": event["venue"],
                     "message": "開催初日を解析できません",
                 })
-
-                # 日付不明の開催を自動で対象にしない。
                 continue
 
             if start <= today:
                 candidate_events.append(event)
 
-        print(
-            "開催詳細の確認対象:",
-            len(candidate_events),
-        )
+        print("開催詳細の確認対象:", len(candidate_events))
 
         # ----------------------------------------------------
-        # 2. 開催ごとのレース一覧
+        # 2. 開催別レース一覧
         # ----------------------------------------------------
 
-        print("[2/4] 開催ごとのレース一覧を取得...")
+        print("[2/4] 開催別レース一覧を取得...")
 
         candidate_races = []
 
         for event in candidate_events:
+            result["events_checked"] += 1
+
             event_record = {
                 "venue": event["venue"],
                 "venue_code": event["venue_code"],
@@ -913,10 +1059,7 @@ def main():
             }
 
             try:
-                races = fetch_event_races(
-                    session,
-                    event,
-                )
+                races = fetch_event_races(session, event)
 
                 event_record["race_count"] = len(races)
                 event_record["status"] = (
@@ -930,38 +1073,31 @@ def main():
                 if races:
                     result["events_with_races"] += 1
 
-                print(
-                    f'  {event["venue"]}: '
-                    f'{len(races)}レース候補'
-                )
-
             except Exception as exc:
                 event_record["status"] = "取得失敗"
 
                 result["errors"].append({
                     "stage": "race_list",
                     "venue": event["venue"],
-                    "error": (
-                        f"{type(exc).__name__}: {exc}"
-                    ),
+                    "error": f"{type(exc).__name__}: {exc}",
                 })
-
-                print(
-                    f'  {event["venue"]}: 取得失敗 - {exc}'
-                )
 
             result["events"].append(event_record)
 
+            print(
+                f'  {event["venue"]}: '
+                f'{event_record["race_count"]}レース'
+            )
+
             time.sleep(PAUSE)
 
-        # レース番号・会場・暗号化パラメータで重複排除。
         unique_races = []
         seen_races = set()
 
         for race in candidate_races:
             key = (
-                race["venue_code"],
-                race["race_encp"],
+                race.get("venue_code"),
+                race.get("race_encp"),
             )
 
             if key in seen_races:
@@ -972,25 +1108,16 @@ def main():
 
         result["races_found"] = len(unique_races)
 
-        print(
-            "個別ページで日付を確認するレース:",
-            len(unique_races),
-        )
+        print("個別レース候補:", len(unique_races))
 
         # ----------------------------------------------------
-        # 3. 個別レースを取得して日付を検証
+        # 3. 個別レース・日付検証
         # ----------------------------------------------------
 
         print("[3/4] 個別レースの出走表を取得...")
 
-        for index, race in enumerate(
-            unique_races,
-            start=1,
-        ):
-            label = (
-                f'{race["venue"]} '
-                f'{race["race_no"]}R'
-            )
+        for index, race in enumerate(unique_races, start=1):
+            label = f'{race["venue"]} {race["race_no"]}R'
 
             result["races_checked"] += 1
 
@@ -999,16 +1126,19 @@ def main():
             )
 
             try:
-                parsed = extract_race_data(
-                    session,
-                    race,
-                )
+                parsed = extract_race_data(session, race)
 
-                # 個別ページの日付が取得できなければ、
-                # 今日のレースと決めつけない。
+                # 個別ページの日付を最優先する。
                 actual_date = parse_date(
                     parsed.get("race_date_display")
                 )
+
+                # 個別ページの日付が不明なら、
+                # 開催別JSONの日付を補助情報として確認する。
+                if actual_date is None:
+                    actual_date = parse_date(
+                        race.get("race_date")
+                    )
 
                 if actual_date is None:
                     result["races_date_unknown"] += 1
@@ -1018,8 +1148,8 @@ def main():
                         "venue": race["venue"],
                         "race_no": race["race_no"],
                         "message": (
-                            "個別レースページの日付を"
-                            "確認できないため対象外"
+                            "個別ページと開催一覧の両方で"
+                            "レース日を確認できません"
                         ),
                     })
 
@@ -1027,11 +1157,13 @@ def main():
                     time.sleep(PAUSE)
                     continue
 
+                parsed["verified_race_date"] = actual_date.isoformat()
+
                 if actual_date != today:
                     result["races_excluded_other_date"] += 1
 
                     print(
-                        "    対象外:",
+                        "    別日として除外:",
                         actual_date.isoformat(),
                     )
 
@@ -1043,7 +1175,6 @@ def main():
                         "出走表の選手データが0人です"
                     )
 
-                # 車番重複は正常な出走表ではないため記録する。
                 if parsed["validation"]["duplicate_car_numbers"]:
                     result["warnings"].append({
                         "stage": "validation",
@@ -1053,7 +1184,6 @@ def main():
                     })
 
                 result["races"].append(parsed)
-
                 result["races_fetched"] += 1
                 result["rider_count"] += parsed["rider_count"]
                 result["commented_rider_count"] += parsed[
@@ -1063,8 +1193,7 @@ def main():
                 print(
                     "    成功:",
                     parsed["rider_count"],
-                    "人",
-                    "/ コメント:",
+                    "人 / コメント:",
                     parsed["comment_status"],
                 )
 
@@ -1075,37 +1204,35 @@ def main():
                     "stage": "race_detail",
                     "venue": race.get("venue", ""),
                     "race_no": race.get("race_no", ""),
-                    "error": (
-                        f"{type(exc).__name__}: {exc}"
-                    ),
+                    "error": f"{type(exc).__name__}: {exc}",
                 })
 
-                print("    取得失敗:", exc)
+                print(
+                    "    取得失敗:",
+                    f"{type(exc).__name__}: {exc}",
+                )
 
             time.sleep(PAUSE)
 
         # ----------------------------------------------------
-        # 4. 結果検証
+        # 4. 検証・集計
         # ----------------------------------------------------
 
-        print("[4/4] データを検証...")
+        print("[4/4] 取得結果を検証...")
 
         if result["races_fetched"] == 0:
             result["status"] = "error"
 
-        elif result["races_failed"] > 0:
-            result["status"] = "partial"
-
-        elif result["races_date_unknown"] > 0:
-            result["status"] = "partial"
-
-        elif result["errors"]:
+        elif (
+            result["races_failed"] > 0
+            or result["races_date_unknown"] > 0
+            or result["errors"]
+        ):
             result["status"] = "partial"
 
         else:
             result["status"] = "ok"
 
-        # 会場ごとの取得数を記録する。
         fetched_by_venue = {}
 
         for race in result["races"]:
@@ -1135,7 +1262,7 @@ def main():
                 "stage": "final_validation",
                 "message": (
                     "対象日の出走表が0件です。"
-                    "開催日程と日付抽出条件を確認してください。"
+                    "開催一覧、レース一覧、日付判定を確認してください。"
                 ),
             })
 
@@ -1146,6 +1273,9 @@ def main():
             "stage": "main",
             "error": f"{type(exc).__name__}: {exc}",
         })
+
+    finally:
+        session.close()
 
     # --------------------------------------------------------
     # JSON保存
@@ -1171,8 +1301,9 @@ def main():
     print("取得結果")
     print("状態:", result["status"])
     print("開催候補:", result["events_found"])
+    print("開催確認:", result["events_checked"])
     print("レース候補:", result["races_found"])
-    print("確認したレース:", result["races_checked"])
+    print("確認レース:", result["races_checked"])
     print("当日分の取得成功:", result["races_fetched"])
     print("別日として除外:", result["races_excluded_other_date"])
     print("日付不明:", result["races_date_unknown"])
@@ -1185,22 +1316,18 @@ def main():
     print("=" * 60)
 
     if result["errors"]:
-        print(
-            json.dumps(
-                result["errors"],
-                ensure_ascii=False,
-                indent=2,
-            )
-        )
+        print(json.dumps(
+            result["errors"],
+            ensure_ascii=False,
+            indent=2,
+        ))
 
     if result["warnings"]:
-        print(
-            json.dumps(
-                result["warnings"],
-                ensure_ascii=False,
-                indent=2,
-            )
-        )
+        print(json.dumps(
+            result["warnings"],
+            ensure_ascii=False,
+            indent=2,
+        ))
 
     if result["status"] == "error":
         sys.exit(1)
