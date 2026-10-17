@@ -415,10 +415,10 @@ def extract_race_number(text):
 
 def fetch_races_from_post(session, event):
     """
-    公式レース一覧画面をPOSTで取得する。
+    公式POST画面を取得し、HTML全体から個別レースリンクを探す。
 
-    レースリンクの検出数と採用数をログに出す。
-    番号を確認できないリンクは推測で登録しない。
+    クリック対象要素のテキストだけに依存せず、
+    リンク周辺のHTMLからレース番号を検出する。
     """
 
     response = request_post_page(
@@ -434,37 +434,129 @@ def fetch_races_from_post(session, event):
     html = response.text or ""
 
     print(
-        f'    POST HTTP: {response.status_code}, '
-        f'HTMLサイズ: {len(html)} bytes'
+        f'    POST HTTP: {response.status_code}'
+        f' / URL: {response.url}'
+        f' / HTML: {len(html)} bytes'
     )
 
     if not html:
-        print("    POST画面が空です")
+        print("    診断: HTML本文が空です")
         return []
 
-    parser = RaceLinkParser()
-    parser.feed(html)
-    parser.close()
-
-    print(
-        f"    個別レースリンク検出: {len(parser.links)}"
+    # HTML内の個別レースリンクを直接抽出する。
+    pattern = re.compile(
+        r"""lnk\.formlnk\(\s*['"](?P<path>/sp/race(?:/[^'"]*)?)['"]\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
+        re.IGNORECASE,
     )
+
+    matches = list(pattern.finditer(html))
+
+    print(f"    HTML内の個別レースリンク数: {len(matches)}")
+
+    if not matches:
+        # レースリンクが見つからない場合は、
+        # 返却された画面が想定どおりか確認するための情報を出す。
+        title_match = re.search(
+            r"<title[^>]*>(.*?)</title>",
+            html,
+            re.IGNORECASE | re.DOTALL,
+        )
+
+        title = (
+            re.sub(r"\s+", " ", title_match.group(1)).strip()
+            if title_match
+            else "(titleなし)"
+        )
+
+        print(f"    診断: ページタイトル={title}")
+        print(
+            "    診断: 本文先頭=",
+            re.sub(r"\s+", " ", html[:300])[:200],
+        )
+
+        return []
 
     races = []
     seen = set()
     rejected = 0
 
-    for item in parser.links:
-        race_encp = item["race_encp"]
-        text = item["text"]
+    # レース番号の候補となる表記。
+    race_number_patterns = [
+        re.compile(r"(?<!\d)(\d{1,2})\s*R(?!\w)", re.I),
+        re.compile(r"第\s*(\d{1,2})\s*レース"),
+        re.compile(r"(\d{1,2})\s*レース"),
+    ]
+
+    for index, match in enumerate(matches):
+        race_encp = match.group("encp")
+        race_path = match.group("path")
 
         if not race_encp or race_encp in seen:
             continue
 
-        race_no = extract_race_number(text)
+        # 各リンクの周辺を調べる。
+        # クリック対象の内部だけでなく、前後のHTMLも含める。
+        start = max(0, match.start() - 1200)
+        end = min(len(html), match.end() + 1800)
+        context = html[start:end]
+
+        # HTMLタグを除去して、文字参照をデコードする。
+        context_text = re.sub(
+            r"<script\b[^>]*>.*?</script>",
+            " ",
+            context,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+
+        context_text = re.sub(
+            r"<style\b[^>]*>.*?</style>",
+            " ",
+            context_text,
+            flags=re.IGNORECASE | re.DOTALL,
+        )
+
+        context_text = re.sub(
+            r"<[^>]+>",
+            " ",
+            context_text,
+        )
+
+        context_text = (
+            context_text
+            .replace("&nbsp;", " ")
+            .replace("&#160;", " ")
+            .replace("&amp;", "&")
+        )
+
+        context_text = re.sub(
+            r"\s+",
+            " ",
+            context_text,
+        ).strip()
+
+        race_no = ""
+
+        for number_pattern in race_number_patterns:
+            number_match = number_pattern.search(context_text)
+
+            if number_match:
+                number = int(number_match.group(1))
+
+                if 1 <= number <= 12:
+                    race_no = str(number)
+                    break
 
         if not race_no:
             rejected += 1
+
+            if rejected <= 3:
+                print(
+                    "    診断: レース番号を抽出できないリンク",
+                    race_encp,
+                    "周辺文字列:",
+                    context_text[:180],
+                )
+
             continue
 
         seen.add(race_encp)
@@ -477,18 +569,17 @@ def fetch_races_from_post(session, event):
             "race_date": None,
             "race_no": race_no,
             "race_name": "",
-            "race_url": urljoin(
-                BASE,
-                item["race_path"],
-            ),
+            "race_url": urljoin(BASE, race_path),
             "race_encp": race_encp,
             "event_encp": event["encp"],
             "list_source": "official_post_fallback",
         })
 
     print(
-        f"    レース番号確認済み: {len(races)}, "
-        f"番号を確認できず除外: {rejected}"
+        f"    POST解析結果: "
+        f"リンク={len(matches)}, "
+        f"採用={len(races)}, "
+        f"番号不明={rejected}"
     )
 
     return races
@@ -499,7 +590,7 @@ def fetch_races_from_post(session, event):
 # ============================================================
 
 def fetch_event_races(session, event):
-    """JSONを優先し、失敗または0件なら公式POST画面を試す。"""
+    """JSJ049の応答を診断し、0件の場合は公式POST画面を試す。"""
 
     races = []
     event_encp = event.get("encp")
@@ -519,77 +610,103 @@ def fetch_event_races(session, event):
         )
 
         if not isinstance(payload, dict):
+            print(
+                f'  {event["venue"]}: '
+                f"JSJ049応答形式={type(payload).__name__}"
+            )
             raise ValueError("JSJ049の応答が辞書形式ではありません")
+
+        print(
+            f'  {event["venue"]}: '
+            f'JSJ049 resultCd={payload.get("resultCd", "(なし)")}, '
+            f'keys={list(payload.keys())[:12]}'
+        )
 
         days = payload.get("kaisaiDayList", [])
 
-        if isinstance(days, list):
-            for day in days:
-                if not isinstance(day, dict):
+        if not isinstance(days, list):
+            print(
+                f'  {event["venue"]}: '
+                "kaisaiDayListがリストではありません"
+            )
+            days = []
+
+        print(
+            f'  {event["venue"]}: '
+            f"開催日リスト={len(days)}件"
+        )
+
+        for day in days:
+            if not isinstance(day, dict):
+                continue
+
+            day_name = first_value(
+                day,
+                "strNitiji",
+                "strDay",
+                "strKaisaiDate",
+            )
+
+            day_date = first_value(
+                day,
+                "strKaisaiDate",
+                "kaisaiDate",
+                "strEventDate",
+            )
+
+            programs = day.get("raceProgramList", [])
+
+            if not isinstance(programs, list):
+                continue
+
+            for program in programs:
+                if not isinstance(program, dict):
                     continue
 
-                day_name = first_value(
-                    day,
-                    "strNitiji",
-                    "strDay",
-                    "strKaisaiDate",
+                race_path = first_value(
+                    program,
+                    "strRaceLnk",
                 )
 
-                day_date = first_value(
-                    day,
-                    "strKaisaiDate",
-                    "kaisaiDate",
-                    "strEventDate",
+                race_encp = first_value(
+                    program,
+                    "strRaceLnkPrm",
                 )
 
-                programs = day.get("raceProgramList", [])
+                race_no = first_value(
+                    program,
+                    "strRaceNo",
+                )
 
-                if not isinstance(programs, list):
+                race_name = first_value(
+                    program,
+                    "strSyumokuName",
+                )
+
+                if not race_encp or not race_no:
                     continue
 
-                for program in programs:
-                    if not isinstance(program, dict):
-                        continue
+                races.append({
+                    "venue": event["venue"],
+                    "venue_code": event["venue_code"],
+                    "event_start_date": event["start_date"],
+                    "day": clean(day_name),
+                    "race_date": clean(day_date),
+                    "race_no": clean(race_no),
+                    "race_name": clean(race_name),
+                    "race_url": urljoin(
+                        BASE,
+                        race_path or "/sp/race",
+                    ),
+                    "race_encp": clean(race_encp),
+                    "event_encp": event_encp,
+                    "list_source": "JSJ049",
+                })
 
-                    race_path = first_value(
-                        program,
-                        "strRaceLnk",
-                    )
-
-                    race_encp = first_value(
-                        program,
-                        "strRaceLnkPrm",
-                    )
-
-                    race_no = first_value(
-                        program,
-                        "strRaceNo",
-                    )
-
-                    race_name = first_value(
-                        program,
-                        "strSyumokuName",
-                    )
-
-                    if not race_encp or not race_no:
-                        continue
-
-                    races.append({
-                        "venue": event["venue"],
-                        "venue_code": event["venue_code"],
-                        "event_start_date": event["start_date"],
-                        "day": clean(day_name),
-                        "race_date": clean(day_date),
-                        "race_no": clean(race_no),
-                        "race_name": clean(race_name),
-                        "race_url": urljoin(
-                            BASE,
-                            race_path or "/sp/race",
-                        ),
-                        "race_encp": clean(race_encp),
-                        "event_encp": event_encp,
-                        "list_source": "JSJ049",
-                    })
+        print(
+            f'  {event["venue"]}: '
+            f"JSJ049レース抽出={len(races)}件"
+        )
 
     except Exception as exc:
         print(
@@ -620,6 +737,11 @@ def fetch_event_races(session, event):
                 f'  {event["venue"]}: POST画面から'
                 f"{len(fallback_races)}レース取得"
             )
+        else:
+            print(
+                f'  {event["venue"]}: '
+                "JSON・POSTともにレースを抽出できませんでした"
+            )
 
         return fallback_races
 
@@ -628,6 +750,7 @@ def fetch_event_races(session, event):
             f'  {event["venue"]}: POST取得失敗: '
             f'{type(exc).__name__}: {exc}'
         )
+
         raise
 
 
