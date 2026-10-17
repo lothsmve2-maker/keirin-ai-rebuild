@@ -618,7 +618,16 @@ def fetch_event_races(session, event):
 
         print(
             f'  {event["venue"]}: '
+            f'開催コード={event.get("venue_code", "")}, '
+            f'encp={event_encp}, '
+            f'取得元={event.get("source_path", "")}'
+        )
+
+        print(
+            f'  {event["venue"]}: '
             f'JSJ049 resultCd={payload.get("resultCd", "(なし)")}, '
+            f'messageCd={payload.get("messageCd", "(なし)")}, '
+            f'message={payload.get("message", "(なし)")}, '
             f'keys={list(payload.keys())[:12]}'
         )
 
