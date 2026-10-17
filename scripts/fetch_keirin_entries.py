@@ -296,7 +296,7 @@ def find_schedule_event_encp(html, venue):
             context_text,
             flags=re.IGNORECASE | re.DOTALL,
         )
-        context_text = re.sub(r"<[^>]+>", " ", context)
+        context_text = re.sub(r"<[^>]+>", " ", context_text)
         context_text = re.sub(r"\s+", " ", context_text).strip()
 
         if venue in context_text:
@@ -1309,8 +1309,9 @@ def main():
 
         all_events = find_events(schedule)
 
-        print("Events found:", len(all_events))
+        result["events_found"] = len(all_events)
 
+        print("開催候補:", len(all_events))
         for event in all_events:
             html_encp = find_schedule_event_encp(
                 landing.text,
