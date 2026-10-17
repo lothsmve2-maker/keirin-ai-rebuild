@@ -271,7 +271,7 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-　　　　if not html or not venue:
+    if not html or not venue:
 return “”
 
 pattern = re.compile(
