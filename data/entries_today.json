@@ -2,9 +2,9 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-17",
-  "started_at": "2026-10-17T09:40:15.274837+09:00",
-  "finished_at": "2026-10-17T09:40:59.806551+09:00",
-  "status": "ok",
+  "started_at": "2026-10-17T09:51:43.508104+09:00",
+  "finished_at": "2026-10-17T09:52:31.825232+09:00",
+  "status": "partial",
   "events_found": 7,
   "events_checked": 7,
   "events_with_races": 4,
@@ -8494,7 +8494,17 @@
     }
   ],
   "errors": [],
-  "warnings": [],
+  "warnings": [
+    {
+      "stage": "event_coverage",
+      "message": "レース一覧を取得できていない開催場があります",
+      "venues": [
+        "静岡",
+        "豊橋",
+        "四日市"
+      ]
+    }
+  ],
   "summary": {
     "target_date": "2026-10-17",
     "fetched_by_venue": {
@@ -8506,6 +8516,11 @@
     "race_count": 42,
     "rider_count": 318,
     "commented_rider_count": 290,
-    "comment_missing_rider_count": 28
+    "comment_missing_rider_count": 28,
+    "events_without_races": [
+      "静岡",
+      "豊橋",
+      "四日市"
+    ]
   }
 }
