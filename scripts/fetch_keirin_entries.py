@@ -271,18 +271,45 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-    """開催一覧HTMLから開催場に対応するencpを探す。"""
+    """開催場と対象日程に合うレース一覧への遷移パラメータを探す。"""
     from bs4 import BeautifulSoup
+    from datetime import datetime, timezone, timedelta
 
     if not html or not venue:
         return ""
 
     soup = BeautifulSoup(html, "html.parser")
-    candidates = set()
+    jst = timezone(timedelta(hours=9))
+    today = datetime.now(jst).date()
 
-    for element in soup.find_all(attrs={"onclick": True}):
+    # 開催場の並び順。開催場名の見出しを境界として扱う。
+    venues = {
+        "函館", "青森", "いわき平", "弥彦", "前橋", "取手",
+        "宇都宮", "大宮", "西武園", "京王閣", "立川",
+        "松戸", "千葉", "川崎", "平塚", "小田原", "伊東",
+        "静岡", "名古屋", "岐阜", "大垣", "豊橋", "富山",
+        "松阪", "四日市", "福井", "奈良", "向日町",
+        "和歌山", "岸和田", "玉野", "広島", "防府",
+        "高松", "小松島", "高知", "松山", "小倉",
+        "久留米", "武雄", "佐世保", "別府", "熊本",
+    }
+
+    # ページ全体ではなく、開催場の見出しから次の見出しまで調べる。
+    elements = soup.find_all(True)
+    active_venue = ""
+    candidates = []
+
+    for element in elements:
+        # 入れ子の親要素を誤って開催場見出しと認識しない。
+        if not element.find(True):
+            text = element.get_text(" ", strip=True)
+            if text in venues:
+                active_venue = text
+
+        if active_venue != venue:
+            continue
+
         onclick = element.get("onclick", "")
-
         if "/sp/racelist" not in onclick:
             continue
 
@@ -290,39 +317,57 @@ def find_schedule_event_encp(html, venue):
             r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
             onclick,
         )
-
         if not match:
             continue
 
         encp = match.group(1).strip()
-
         if not encp:
             continue
 
-        # クリック要素から親要素を順番に調べる
+        # リンク周辺の日付が今日を含む開催か確認する。
         parent = element
+        date_matches = False
 
-        for _ in range(8):
+        for _ in range(5):
             if parent is None:
                 break
 
             text = parent.get_text(" ", strip=True)
+            dates = re.findall(
+                r"(\d{1,2})/(\d{1,2})\s*[（(][月火水木金土日][）)]"
+                r"\s*[～〜~-]\s*"
+                r"(\d{1,2})/(\d{1,2})",
+                text,
+            )
 
-            if venue in text:
-                candidates.add(encp)
+            for sm, sd, em, ed in dates:
+                start = datetime(today.year, int(sm), int(sd)).date()
+                end = datetime(today.year, int(em), int(ed)).date()
+
+                if end < start:
+                    end = end.replace(year=end.year + 1)
+
+                if start <= today <= end:
+                    date_matches = True
+                    break
+
+            if date_matches:
                 break
 
             parent = parent.parent
 
+        if date_matches:
+            candidates.append(encp)
+
+    candidates = list(dict.fromkeys(candidates))
+
     if len(candidates) == 1:
-        return next(iter(candidates))
+        return candidates[0]
 
-    if len(candidates) > 1:
-        print(
-            f"  {venue}: HTMLから複数のencpを検出"
-            f"（{len(candidates)}件）"
-        )
-
+    print(
+        f"  {venue}: 今日の開催パラメータ候補="
+        f"{len(candidates)}件"
+    )
     return ""
 
 # ============================================================
