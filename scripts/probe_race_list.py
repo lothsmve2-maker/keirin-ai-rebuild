@@ -168,7 +168,7 @@ def main():
 
     print()
     print("=" * 60)
-        print()
+    print()
     print("=" * 60)
     print("開催一覧 POST方式の確認")
     print("=" * 60)
