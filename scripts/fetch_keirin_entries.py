@@ -646,7 +646,7 @@ def fetch_races_from_post(session, event):
 # 開催別レース一覧
 # ============================================================
 
-def fetch_event_races(session, event):
+def fetch_event_races(session, event, schedule_html=""):
     """JSJ049の応答を診断し、0件の場合は公式POST画面を試す。"""
 
     races = []
@@ -802,7 +802,34 @@ def fetch_event_races(session, event):
             f"{len(races)}レース取得"
         )
         return races
+    # 開催一覧HTMLから別の遷移パラメータを探す。
+    # 複数候補がある場合、既存関数は空文字を返すため、
+    # 曖昧なパラメータでは再取得しない。
+    if schedule_html:
+        schedule_encp = find_schedule_event_encp(
+            schedule_html,
+            event.get("venue", ""),
+        )
 
+        if schedule_encp and schedule_encp != event_encp:
+            print(
+                f'  {event["venue"]}: '
+                "開催一覧から別の遷移パラメータを検出"
+            )
+
+            retry_event = dict(event)
+            retry_event["encp"] = schedule_encp
+
+            retry_races = fetch_event_races(
+                session,
+                retry_event,
+            )
+
+            if retry_races:
+                for race in retry_races:
+                    race["event_encp"] = schedule_encp
+
+                return retry_races
     print(
         f'  {event["venue"]}: JSONが0件のため'
         "公式POST画面を試します"
@@ -1376,7 +1403,11 @@ def main():
             }
 
             try:
-                races = fetch_event_races(session, event)
+                races = fetch_event_races(
+                    session,
+                    event,
+                    schedule_html=landing.text,
+                )
 
                 event_record["race_count"] = len(races)
                 event_record["status"] = (
