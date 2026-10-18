@@ -1307,36 +1307,20 @@ def main():
             referer=landing.url,
         )
 
+        # 公式JSONから開催情報を取得
         all_events = find_events(schedule)
 
         result["events_found"] = len(all_events)
 
         print("開催候補:", len(all_events))
 
+        # 対象日までに開催初日を迎えた開催を抽出
         candidate_events = []
+
         for event in all_events:
-            html_encp = find_schedule_event_encp(
-                landing.text,
-                event["venue"],
+            start = parse_date(
+                event.get("start_date")
             )
-
-            if html_encp:
-                if html_encp != event["encp"]:
-                    print("HTML parameter differs:", event["venue"])
-                    event["encp"] = html_encp
-                else:
-                    print("Parameters match:", event["venue"])
-            else:
-                print("HTML parameter not found:", event["venue"])
-
-        result["events_found"] = len(all_events)
-
-        print("開催候補:", len(all_events))
-
-        candidate_events = []
-
-        for event in all_events:
-            start = parse_date(event.get("start_date"))
 
             if start is None:
                 result["warnings"].append({
@@ -1349,7 +1333,10 @@ def main():
             if start <= today:
                 candidate_events.append(event)
 
-        print("開催詳細の確認対象:", len(candidate_events))
+        print(
+            "開催詳細の確認対象:",
+            len(candidate_events),
+        )
 
         # ----------------------------------------------------
         # 2. 開催別レース一覧
