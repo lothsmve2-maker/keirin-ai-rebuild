@@ -271,58 +271,53 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-    “”“開催一覧HTMLから開催場に対応するパラメータを探す。”””
-    
+    """開催一覧HTMLから開催場に対応するパラメータを探す。"""
+    import re
+    from bs4 import BeautifulSoup
+
     if not html or not venue:
         return ""
-        pattern = re.compile(
-            r"""<(?P<tag>table|tr|a|div)\b(?P<attrs>[^>]*)"""
-            r"""(?P<body>.*?)</(?P=tag)\s*>""",
-            re.IGNORECASE | re.DOTALL,
+
+    soup = BeautifulSoup(html, "html.parser")
+    candidates = set()
+
+    for element in soup.find_all(attrs={"onclick": True}):
+        onclick = element.get("onclick", "")
+
+        if "/sp/racelist" not in onclick:
+            continue
+
+        match = re.search(
+            r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
+            onclick,
         )
-        onclick_pattern = re.compile(
-            r"""lnk\.formlnk\(\s*['"](?P<path>/sp/racelist)['"]"""
-            r"""\s*,\s*['"](?P<encp>[^'"]+)['"]\s*\)""",
-            re.IGNORECASE,
-        )
-        candidates = []
-        for match in pattern.finditer(html):
-            block = match.group(0)
-            onclick = re.search(
-                r"""onclick\s*=\s*(['"])(.*?)\1""",
-                block,
-                re.IGNORECASE | re.DOTALL,
-            )
-            if not onclick:
-                continue
-                link_match = onclick_pattern.search(onclick.group(2))
-                if not link_match:
-                    continue
-                    text = re.sub(
-                        r"<script\b[^>]*>.*?</script>",
-                        " ",
-                        block,
-                        flags=re.IGNORECASE | re.DOTALL,
-                    )
-                    text = re.sub(r"<[^>]+>", " ", text)
-                    text = (
-                        text.replace("&nbsp;", " ")
-                        .replace("&#160;", " ")
-                        .replace("&amp;", "&")
-                    )
-                    text = re.sub(r"\s+", " ", text).strip()
-                    if venue in text:
-                        candidates.append(link_match.group("encp"))
-                        candidates = list(dict.fromkeys(candidates))
-                        if len(candidates) == 1:
-                            return candidates[0]
-                            if len(candidates) > 1:
-                                print(
-                                    f"開催パラメータ照合: {venue}: "
-                                    f"候補が複数あるため採用しません "
-                                    f"({len(candidates)}件)"
-                                )
-                                return ""
+
+        if not match:
+            continue
+
+        encp = match.group(1).strip()
+
+        if not encp:
+            continue
+
+        text = element.get_text(" ", strip=True)
+
+        if venue in text:
+            candidates.add(encp)
+            continue
+
+        parent = element.parent
+
+        if parent is not None:
+            parent_text = parent.get_text(" ", strip=True)
+
+            if venue in parent_text:
+                candidates.add(encp)
+
+    if len(candidates) == 1:
+        return next(iter(candidates))
+
+    return ""
 
 # ============================================================
 # 公式レース一覧HTMLの解析
