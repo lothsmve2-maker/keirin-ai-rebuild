@@ -271,8 +271,7 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-    """開催一覧HTMLから開催場に対応するパラメータを探す。"""
-    import re
+    """開催一覧HTMLから開催場に対応するencpを探す。"""
     from bs4 import BeautifulSoup
 
     if not html or not venue:
@@ -300,22 +299,29 @@ def find_schedule_event_encp(html, venue):
         if not encp:
             continue
 
-        text = element.get_text(" ", strip=True)
+        # クリック要素から親要素を順番に調べる
+        parent = element
 
-        if venue in text:
-            candidates.add(encp)
-            continue
+        for _ in range(8):
+            if parent is None:
+                break
 
-        parent = element.parent
+            text = parent.get_text(" ", strip=True)
 
-        if parent is not None:
-            parent_text = parent.get_text(" ", strip=True)
-
-            if venue in parent_text:
+            if venue in text:
                 candidates.add(encp)
+                break
+
+            parent = parent.parent
 
     if len(candidates) == 1:
         return next(iter(candidates))
+
+    if len(candidates) > 1:
+        print(
+            f"  {venue}: HTMLから複数のencpを検出"
+            f"（{len(candidates)}件）"
+        )
 
     return ""
 
@@ -1406,7 +1412,7 @@ def main():
                 races = fetch_event_races(
                     session,
                     event,
-                    schedule_html=landing.text,
+                    landing.text,
                 )
 
                 event_record["race_count"] = len(races)
