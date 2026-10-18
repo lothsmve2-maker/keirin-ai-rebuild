@@ -1304,6 +1304,9 @@ def main():
         schedule = request_json(
             session,
             SCHEDULE_API,
+            params={
+                "kday": today.strftime("%Y%m%d"),
+            },
             referer=landing.url,
         )
 
