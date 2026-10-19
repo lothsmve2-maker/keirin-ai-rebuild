@@ -2,20 +2,20 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-19",
-  "started_at": "2026-10-19T11:08:18.692823+09:00",
-  "finished_at": "2026-10-19T11:08:53.062237+09:00",
+  "started_at": "2026-10-19T11:32:18.828286+09:00",
+  "finished_at": "2026-10-19T11:32:55.894575+09:00",
   "status": "partial",
   "events_found": 8,
   "events_checked": 8,
   "events_with_races": 2,
-  "races_found": 18,
-  "races_checked": 18,
+  "races_found": 25,
+  "races_checked": 25,
   "races_fetched": 18,
-  "races_excluded_other_date": 0,
+  "races_excluded_other_date": 7,
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 126,
-  "commented_rider_count": 70,
+  "commented_rider_count": 63,
   "events": [
     {
       "venue": "京王閣",
@@ -35,7 +35,7 @@
       "venue": "青森",
       "venue_code": "12",
       "start_date": "20261019",
-      "race_count": 7,
+      "race_count": 14,
       "status": "レース一覧取得済み"
     },
     {
@@ -1443,37 +1443,8 @@
       "verified_race_date": "2026-10-19",
       "start_time": "11:17",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
-          "position": 5,
-          "car_no": "3"
-        },
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 6,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
       "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
@@ -1491,9 +1462,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "齊藤君の番手",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -1509,9 +1480,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "2",
-          "comment": "自力でいく",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -1527,9 +1498,9 @@
           "sashi": "0",
           "mark": "3",
           "back": "12",
-          "comment": "自力ですね",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -1545,9 +1516,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "14",
-          "comment": "先行基本に戦う",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -1563,9 +1534,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "2",
-          "comment": "初で瀧本君",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -1581,9 +1552,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "関東３番手",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -1599,21 +1570,29 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "大沼さんの番手",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3351,8 +3330,8 @@
     },
     "race_count": 18,
     "rider_count": 126,
-    "commented_rider_count": 70,
-    "comment_missing_rider_count": 56,
+    "commented_rider_count": 63,
+    "comment_missing_rider_count": 63,
     "events_without_races": [
       "京王閣",
       "高知",
