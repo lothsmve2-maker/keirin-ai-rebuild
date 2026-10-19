@@ -743,14 +743,10 @@ def fetch_event_races(session, event):
 
     # 公式HTMLから候補を追加する。
     try:
-        schedule_response = request_page(
-            session,
-            SCHEDULE_URL,
-            params={
-                "kday": today.strftime("%Y%m%d"),
-            },
-            referer=SCHEDULE_URL,
+        schedule_url = (
+            f"{SCHEDULE_URL}?kday={today.strftime('%Y%m%d')}"
         )
+        schedule_response = request_page(session, schedule_url)
 
         html_candidates = find_schedule_event_encp(
             schedule_response.text,
@@ -782,11 +778,7 @@ def fetch_event_races(session, event):
             payload = request_json(
                 session,
                 RACE_LIST_API,
-                params={
-                    "type": "JSJ049",
-                    "encp": candidate_encp,
-                },
-                referer=SCHEDULE_URL,
+                params={"type": "JSJ049", "encp": candidate_encp},
             )
 
         except Exception as exc:
