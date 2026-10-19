@@ -1116,7 +1116,7 @@ def validate_race_list_candidate(session, race, expected_venue, today_text):
 # ============================================================
 
 def fetch_official_comments(session, race_encp, referer=None):
-    """公式JSONから選手コメントを取得する。"""
+    """公式JSONの階層を走査して選手コメントを取得する。"""
 
     comments = {}
 
@@ -1132,37 +1132,144 @@ def fetch_official_comments(session, race_encp, referer=None):
             referer=referer or SCHEDULE_URL,
         )
 
-        if not isinstance(payload, dict):
+        if not isinstance(payload, (dict, list)):
+            print(
+                f"  コメント診断: JSON形式不正 "
+                f"race_encp={race_encp}"
+            )
             return comments, "取得失敗"
 
-        riders = payload.get("sensyuTypeInfo")
+        # 選手情報が入っている階層を限定せずに調べる。
+        rider_lists = []
 
-        if not isinstance(riders, list):
-            return comments, "取得失敗"
+        if isinstance(payload, dict):
+            for path, obj in walk_dicts(payload):
+                for key, value in obj.items():
+                    if (
+                        isinstance(value, list)
+                        and value
+                        and isinstance(value[0], dict)
+                    ):
+                        # 選手番号を持つリストを候補にする。
+                        if any(
+                            first_value(
+                                item,
+                                "syaban",
+                                "shaban",
+                                "carNo",
+                                "car_no",
+                            )
+                            for item in value
+                            if isinstance(item, dict)
+                        ):
+                            rider_lists.append((path + "." + key, value))
 
-        for rider in riders:
-            if not isinstance(rider, dict):
+        elif isinstance(payload, list):
+            rider_lists.append(("$", payload))
+
+        seen_lists = set()
+        for list_path, riders in rider_lists:
+            # 同一リストを重複処理しない。
+            signature = tuple(
+                (
+                    str(first_value(
+                        item,
+                        "syaban",
+                        "shaban",
+                        "carNo",
+                        "car_no",
+                    )),
+                    str(first_value(
+                        item,
+                        "sensyuComment",
+                        "comment",
+                        "commentText",
+                        "strComment",
+                        "jikouComment",
+                    )),
+                )
+                for item in riders
+                if isinstance(item, dict)
+            )
+
+            if signature in seen_lists:
                 continue
+            seen_lists.add(signature)
 
-            car_no = str(
-                first_value(rider, "syaban", "shaban")
-            ).strip()
+            for rider in riders:
+                if not isinstance(rider, dict):
+                    continue
 
-            comment = str(
-                first_value(
+                car_no = str(first_value(
+                    rider,
+                    "syaban",
+                    "shaban",
+                    "carNo",
+                    "car_no",
+                )).strip()
+
+                comment = first_value(
                     rider,
                     "sensyuComment",
                     "comment",
-                ) or ""
-            ).strip()
+                    "commentText",
+                    "strComment",
+                    "jikouComment",
+                    "riderComment",
+                    "rider_comment",
+                    "playerComment",
+                    "player_comment",
+                )
 
-            if car_no and comment:
-                comments[car_no] = comment
+                if isinstance(comment, str):
+                    comment = re.sub(
+                        r"\s+",
+                        " ",
+                        comment
+                    ).strip()
+                else:
+                    comment = ""
+
+                if (
+                    car_no.isdigit()
+                    and 1 <= int(car_no) <= 9
+                    and comment
+                ):
+                    comments[car_no] = comment
 
         if comments:
             return comments, "取得済み"
 
-        return comments, "未掲載"
+        # コメントが見つからない場合は構造診断を出す。
+        if isinstance(payload, dict):
+            print(
+                "  コメント診断:",
+                f"race_encp={race_encp}",
+                f"トップ階層={list(payload.keys())[:30]}",
+                f"候補リスト={len(rider_lists)}",
+            )
+
+            for path, obj in walk_dicts(payload):
+                keys = [
+                    key for key in obj.keys()
+                    if any(
+                        word in str(key).lower()
+                        for word in (
+                            "comment",
+                            "sensyu",
+                            "shaban",
+                            "syaban",
+                        )
+                    )
+                ]
+                if keys:
+                    print(
+                        "  コメント診断階層:",
+                        path,
+                        keys[:20],
+                    )
+
+        return comments, "本文未取得"
 
     except Exception as exc:
         print(
