@@ -120,10 +120,7 @@ def parse_date(value):
 
     return None
 
-
 def request_page(session, url, params=None, referer=None):
-    """GETリクエスト。失敗は呼び出し元で処理する。"""
-
     headers = dict(HEADERS)
 
     if referer:
@@ -137,11 +134,8 @@ def request_page(session, url, params=None, referer=None):
     )
 
     response.raise_for_status()
-
-    if not response.encoding or response.encoding.lower() == "iso-8859-1":
-        response.encoding = response.apparent_encoding or "utf-8"
-
     return response
+
 
 
 def request_post_page(session, url, data, referer=None):
@@ -167,16 +161,29 @@ def request_post_page(session, url, data, referer=None):
 
     return response
 
-
 def request_json(session, url, params=None, referer=None):
-    response = request_page(
-        session,
+    headers = dict(HEADERS)
+    headers["Accept"] = "application/json, text/javascript, */*; q=0.01"
+
+    if referer:
+        headers["Referer"] = referer
+
+    response = session.get(
         url,
         params=params,
-        referer=referer,
+        headers=headers,
+        timeout=TIMEOUT,
     )
 
-    return response.json()
+    response.raise_for_status()
+
+    try:
+        return response.json()
+    except ValueError as exc:
+        raise ValueError(
+            f"JSON解析失敗: {response.url}"
+        ) from exc
+
 
 
 def walk_dicts(obj, path="$"):
