@@ -1446,7 +1446,6 @@ def main():
                 races = fetch_event_races(
                     session,
                     event,
-                    landing.text,
                 )
 
                 event_record["race_count"] = len(races)
