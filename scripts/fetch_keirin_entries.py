@@ -1120,9 +1120,10 @@ def fetch_official_comments(
     race_encp,
     referer=None,
     html=None,
+    race_info=None,
 ):
-    """公式APIとレースページ内JSONからコメントを調査する。"""
-
+    """公式API・ページ内JSON・代替サイトからコメントを取得する。"""
+    race_info = race_info or {}
     comments = {}
     found_paths = set()
 
@@ -1321,10 +1322,127 @@ def fetch_official_comments(
         )
         return comments, "取得済み"
 
+    # 3. netkeirinの選手コメント一覧を代替取得先として試す。
+    # 日付・会場コード・レース番号が不足している場合は推測しない。
+    race_date = clean(race_info.get("race_date", ""))
+    venue_code = clean(race_info.get("venue_code", ""))
+    race_no = clean(race_info.get("race_no", ""))
+
+    parsed_date = parse_date(race_date)
+    venue_digits = re.sub(r"\D", "", venue_code)
+    race_digits = re.sub(r"\D", "", race_no)
+
+    if (
+        parsed_date is not None
+        and venue_digits
+        and race_digits
+        and 1 <= int(race_digits) <= 12
+    ):
+        race_id = (
+            parsed_date.strftime("%Y%m%d")
+            + venue_digits.zfill(2)
+            + race_digits.zfill(2)
+        )
+
+        fallback_url = (
+            "https://keirin.netkeiba.com/race/player_comment/"
+            f"?race_id={race_id}"
+        )
+
+        try:
+            from bs4 import BeautifulSoup
+
+            response = request_page(
+                session,
+                fallback_url,
+                referer=referer or SCHEDULE_URL,
+            )
+
+            soup = BeautifulSoup(
+                response.text,
+                "html.parser",
+            )
+
+            heading = soup.find(
+                lambda tag: (
+                    tag.name in ("h1", "h2", "h3", "h4")
+                    and "選手コメント一覧"
+                    in tag.get_text(" ", strip=True)
+                )
+            )
+
+            if heading:
+                table = heading.find_next("table")
+
+                if table:
+                    for row in table.find_all("tr"):
+                        cells = row.find_all(
+                            ["td", "th"],
+                            recursive=False,
+                        )
+
+                        if len(cells) < 3:
+                            continue
+
+                        car_text = cells[0].get_text(
+                            " ", strip=True
+                        )
+                        car_match = re.match(
+                            r"^\s*([1-9])\b",
+                            car_text,
+                        )
+
+                        if not car_match:
+                            continue
+
+                        car_no = car_match.group(1)
+                        cell_texts = [
+                            cell.get_text(" ", strip=True)
+                            for cell in cells
+                        ]
+
+                        # コメント欄は通常、行の末尾にある。
+                        comment = cell_texts[-1].strip()
+
+                        if (
+                            comment
+                            and comment not in (
+                                "コメント",
+                                "選手名",
+                                "車",
+                            )
+                            and len(comment) <= 300
+                        ):
+                            comments[car_no] = comment
+
+            if comments:
+                print(
+                    "  netkeirinコメント取得成功:",
+                    f"{len(comments)}人分",
+                    f"race_id={race_id}",
+                )
+                return comments, "取得済み"
+
+            print(
+                "  netkeirinページからコメント本文を抽出できません:",
+                race_id,
+            )
+
+        except Exception as exc:
+            print(
+                "  netkeirinコメント取得失敗:",
+                f"{type(exc).__name__}: {exc}",
+            )
+    else:
+        print(
+            "  netkeirin代替取得をスキップ:",
+            "日付・会場コード・レース番号を確認できません",
+        )
+
     print(
         "  コメント診断結果: 本文の取得先を特定できていません"
     )
-    return {}, "本文未取得"
+    return {}, "本文未取得"  
 
 
 # ============================================================
@@ -1614,12 +1732,33 @@ def extract_race_data(session, race):
         if rider["car_no"] or rider["name"]:
             riders.append(rider)
 
+        meta_for_comments = {}
+
+    if isinstance(base_info, dict):
+        meta_for_comments = base_info.get(
+            "C0201data", {}
+        ) or {}
+
+    if not isinstance(meta_for_comments, dict):
+        meta_for_comments = {}
+
     official_comments, comment_fetch_status = (
         fetch_official_comments(
             session,
             race["race_encp"],
             referer=response.url,
             html=html,
+            race_info={
+                "race_date": (
+                    race.get("race_date")
+                    or first_value(
+                        meta_for_comments,
+                        "txtEventDate",
+                    )
+                ),
+                "venue_code": race.get("venue_code", ""),
+                "race_no": race.get("race_no", ""),
+            },
         )
     )
 
