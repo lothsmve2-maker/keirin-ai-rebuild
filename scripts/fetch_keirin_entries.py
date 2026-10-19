@@ -850,8 +850,22 @@ def fetch_event_races(session, event):
                 )
                 continue
 
-            if day_date.isoformat() != today_text:
+            actual_date = day_date.isoformat()
+
+            if actual_date != today_text:
+                print(
+                    f"  [日付除外] 開催場={venue} "
+                    f"日程番号={day_index} "
+                    f"取得日={actual_date} "
+                    f"対象日={today_text}"
+                )
                 continue
+
+            print(
+                f"  [当日確認] 開催場={venue} "
+                f"日程番号={day_index} "
+                f"開催日={actual_date}"
+            )
 
             day_name = clean(
                 first_value(
