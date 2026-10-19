@@ -272,11 +272,11 @@ def find_events(payload):
     return events
 def find_schedule_event_encp(html, venue):
     """
-    公式開催HTMLから、指定開催場・当日開催に対応する
-    /sp/racelist の遷移パラメータを抽出する。
+    開催場名と開催期間を確認し、
+    対象開催のレース一覧遷移パラメータを抽出する。
 
-    親要素と子要素の順序に依存せず、
-    クリック要素の周辺にある開催場名と日付を照合する。
+    ページ全体のリンクを候補にせず、
+    開催場名が一致する最小のHTML領域から探す。
     """
 
     from bs4 import BeautifulSoup
@@ -287,59 +287,71 @@ def find_schedule_event_encp(html, venue):
     soup = BeautifulSoup(html, "html.parser")
     today = now_jst().date()
 
-    candidates = set()
+    date_pattern = re.compile(
+        r"(\d{1,2})/(\d{1,2})"
+        r"(?:\s*[（(][月火水木金土日][）)])?"
+        r"\s*[～〜~－―-]\s*"
+        r"(\d{1,2})/(\d{1,2})"
+    )
 
-    # 開催場のレース一覧への遷移を探す。
-    onclick_pattern = re.compile(
+    link_pattern = re.compile(
         r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
         re.IGNORECASE,
     )
 
-    # 開催期間を抽出する。
-    date_pattern = re.compile(
-        r"(\d{1,2})/(\d{1,2})"
-        r"(?:\s*[（(][月火水木金土日][）)])?"
-        r"\s*[～〜~〜－―-]\s*"
-        r"(\d{1,2})/(\d{1,2})"
-    )
+    candidates = set()
+
+    def normalize(text):
+        return re.sub(r"\s+", "", text or "")
+
+    venue_normalized = normalize(venue)
+
+    # 開催場名そのものが表示されている要素を起点にする。
+    venue_elements = []
 
     for element in soup.find_all(True):
+        element_text = normalize(
+            element.get_text(" ", strip=True)
+        )
 
-        onclick = element.get("onclick", "")
-
-        if not isinstance(onclick, str):
+        if element_text != venue_normalized:
             continue
 
-        if "/sp/racelist" not in onclick:
-            continue
+        # 同じ文字列を持つ親要素がある場合、
+        # 最も内側の要素を起点にする。
+        venue_elements.append(element)
 
-        match = onclick_pattern.search(onclick)
+    for venue_element in venue_elements:
 
-        if not match:
-            continue
+        parent = venue_element.parent
 
-        encp = match.group(1).strip()
-
-        if not encp:
-            continue
-
-        # クリック要素から親方向へ調べる。
-        # 開催場名と開催期間が同じ範囲にあるか確認する。
-        parent = element
-        matched_event = False
-
-        for _ in range(10):
+        # 開催場名から親要素を少しずつ広げる。
+        # ページ全体まで広げて別開催のリンクを混ぜない。
+        for _ in range(8):
 
             if parent is None:
                 break
 
             text = parent.get_text(" ", strip=True)
 
-            if venue not in text:
+            # 巨大な領域はページ全体の可能性があるため除外。
+            if len(text) > 1500:
+                break
+
+            # 開催場名が領域内にあることを確認。
+            if venue_normalized not in normalize(text):
                 parent = parent.parent
                 continue
 
-            for date_match in date_pattern.finditer(text):
+            date_matches = list(date_pattern.finditer(text))
+
+            if not date_matches:
+                parent = parent.parent
+                continue
+
+            active_today = False
+
+            for date_match in date_matches:
 
                 sm, sd, em, ed = map(
                     int,
@@ -347,7 +359,7 @@ def find_schedule_event_encp(html, venue):
                 )
 
                 try:
-                    start = datetime(
+                    start_date = datetime(
                         today.year,
                         sm,
                         sd,
@@ -355,11 +367,10 @@ def find_schedule_event_encp(html, venue):
 
                     end_year = today.year
 
-                    # 年をまたぐ開催にも対応する。
                     if (em, ed) < (sm, sd):
                         end_year += 1
 
-                    end = datetime(
+                    end_date = datetime(
                         end_year,
                         em,
                         ed,
@@ -368,19 +379,43 @@ def find_schedule_event_encp(html, venue):
                 except ValueError:
                     continue
 
-                if start <= today <= end:
-                    candidates.add(encp)
-                    matched_event = True
+                if start_date <= today <= end_date:
+                    active_today = True
                     break
 
-            if matched_event:
+            if not active_today:
+                parent = parent.parent
+                continue
+
+            # この開催場の領域内にある遷移リンクだけ調べる。
+            found_here = set()
+
+            for link in parent.find_all(True):
+
+                onclick = link.get("onclick", "")
+
+                if not isinstance(onclick, str):
+                    continue
+
+                match = link_pattern.search(onclick)
+
+                if match:
+                    encp = match.group(1).strip()
+
+                    if encp:
+                        found_here.add(encp)
+
+            # 最も内側の開催領域でリンクを発見したら、
+            # さらに外側の領域は調べない。
+            if found_here:
+                candidates.update(found_here)
                 break
 
             parent = parent.parent
 
     if len(candidates) == 1:
         encp = next(iter(candidates))
-        print(f"  {venue}: HTML開催パラメータを特定")
+        print(f"  {venue}: HTML開催パラメータを1件特定")
         return encp
 
     print(
