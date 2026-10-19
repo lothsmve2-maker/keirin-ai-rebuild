@@ -272,20 +272,22 @@ def find_events(payload):
     return events
 def find_schedule_event_encp(html, venue):
     """
-    開催場名と開催期間を確認し、
-    対象開催のレース一覧遷移パラメータを抽出する。
-
-    ページ全体のリンクを候補にせず、
-    開催場名が一致する最小のHTML領域から探す。
+    指定開催場の公式HTMLから開催パラメータ候補をすべて抽出する。
+    候補が複数あっても捨てず、後続のJSJ049検証に渡す。
     """
-
     from bs4 import BeautifulSoup
 
     if not html or not venue:
-        return ""
+        return []
 
     soup = BeautifulSoup(html, "html.parser")
     today = now_jst().date()
+    venue_normalized = re.sub(r"\s+", "", venue)
+
+    link_pattern = re.compile(
+        r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
+        re.IGNORECASE,
+    )
 
     date_pattern = re.compile(
         r"(\d{1,2})/(\d{1,2})"
@@ -294,65 +296,45 @@ def find_schedule_event_encp(html, venue):
         r"(\d{1,2})/(\d{1,2})"
     )
 
-    link_pattern = re.compile(
-        r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
-        re.IGNORECASE,
-    )
-
-    candidates = set()
-
-    def normalize(text):
-        return re.sub(r"\s+", "", text or "")
-
-    venue_normalized = normalize(venue)
-
-    # 開催場名そのものが表示されている要素を起点にする。
-    venue_elements = []
+    candidates = []
+    seen = set()
 
     for element in soup.find_all(True):
-        element_text = normalize(
-            element.get_text(" ", strip=True)
-        )
+        onclick = element.get("onclick", "")
 
-        if element_text != venue_normalized:
+        if not isinstance(onclick, str):
             continue
 
-        # 同じ文字列を持つ親要素がある場合、
-        # 最も内側の要素を起点にする。
-        venue_elements.append(element)
+        match = link_pattern.search(onclick)
 
-    for venue_element in venue_elements:
+        if not match:
+            continue
 
-        parent = venue_element.parent
+        encp = match.group(1).strip()
 
-        # 開催場名から親要素を少しずつ広げる。
-        # ページ全体まで広げて別開催のリンクを混ぜない。
-        for _ in range(8):
+        if not encp or encp in seen:
+            continue
 
+        parent = element
+        matched_today = False
+
+        # リンクから親要素をたどり、開催場と日付を確認する。
+        for _ in range(10):
             if parent is None:
                 break
 
             text = parent.get_text(" ", strip=True)
+            normalized_text = re.sub(r"\s+", "", text)
 
-            # 巨大な領域はページ全体の可能性があるため除外。
+            if venue_normalized not in normalized_text:
+                parent = parent.parent
+                continue
+
+            # ページ全体などの巨大な領域は使わない。
             if len(text) > 1500:
                 break
 
-            # 開催場名が領域内にあることを確認。
-            if venue_normalized not in normalize(text):
-                parent = parent.parent
-                continue
-
-            date_matches = list(date_pattern.finditer(text))
-
-            if not date_matches:
-                parent = parent.parent
-                continue
-
-            active_today = False
-
-            for date_match in date_matches:
-
+            for date_match in date_pattern.finditer(text):
                 sm, sd, em, ed = map(
                     int,
                     date_match.groups(),
@@ -360,9 +342,7 @@ def find_schedule_event_encp(html, venue):
 
                 try:
                     start_date = datetime(
-                        today.year,
-                        sm,
-                        sd,
+                        today.year, sm, sd
                     ).date()
 
                     end_year = today.year
@@ -371,59 +351,31 @@ def find_schedule_event_encp(html, venue):
                         end_year += 1
 
                     end_date = datetime(
-                        end_year,
-                        em,
-                        ed,
+                        end_year, em, ed
                     ).date()
 
                 except ValueError:
                     continue
 
                 if start_date <= today <= end_date:
-                    active_today = True
+                    matched_today = True
                     break
 
-            if not active_today:
-                parent = parent.parent
-                continue
-
-            # この開催場の領域内にある遷移リンクだけ調べる。
-            found_here = set()
-
-            for link in parent.find_all(True):
-
-                onclick = link.get("onclick", "")
-
-                if not isinstance(onclick, str):
-                    continue
-
-                match = link_pattern.search(onclick)
-
-                if match:
-                    encp = match.group(1).strip()
-
-                    if encp:
-                        found_here.add(encp)
-
-            # 最も内側の開催領域でリンクを発見したら、
-            # さらに外側の領域は調べない。
-            if found_here:
-                candidates.update(found_here)
+            if matched_today:
                 break
 
             parent = parent.parent
 
-    if len(candidates) == 1:
-        encp = next(iter(candidates))
-        print(f"  {venue}: HTML開催パラメータを1件特定")
-        return encp
+        if matched_today:
+            seen.add(encp)
+            candidates.append(encp)
 
     print(
         f"  {venue}: HTML開催パラメータ候補="
         f"{len(candidates)}件"
     )
 
-    return ""
+    return candidates
 
 # ============================================================
 # 公式レース一覧HTMLの解析
@@ -753,66 +705,72 @@ def fetch_races_from_post(session, event):
 # ============================================================
 
 def fetch_event_races(session, event):
-    """開催JSONと公式HTMLのパラメータを照合してレース一覧を取得する。"""
-    event_encp = event.get("encp")
+    """
+    開催パラメータ候補を公式JSJ049で検証し、
+    対象日に実際のレースが存在する候補を採用する。
+    """
+    event_encp = clean(event.get("encp"))
+    venue = clean(event.get("venue"))
+    venue_code = clean(event.get("venue_code"))
+
     if not event_encp:
         raise ValueError("開催パラメータencpがありません")
-    venue = event.get("venue", "")
-    venue_code = event.get("venue_code", "")
+
+    today = now_jst().date()
+    today_text = today.isoformat()
+
     candidates = []
     seen_encp = set()
+
     def add_candidate(encp, source):
         encp = clean(encp)
+
         if not encp or encp in seen_encp:
             return
+
         seen_encp.add(encp)
         candidates.append((encp, source))
-    # 最初に公式開催JSONのパラメータを試す。
+
+    # JSON由来の候補を最初に試す。
     add_candidate(event_encp, "schedule_json")
-    # 公式開催HTMLから同じ開催場のパラメータを取得する。
+
+    # 公式HTMLから候補を追加する。
     try:
         schedule_response = request_page(
             session,
             SCHEDULE_URL,
             params={
-                "kday": clean(event.get("start_date", ""))
+                "kday": today.strftime("%Y%m%d"),
             },
             referer=SCHEDULE_URL,
         )
-        html_encp = find_schedule_event_encp(
+
+        html_candidates = find_schedule_event_encp(
             schedule_response.text,
             venue,
         )
-        if html_encp:
-            if html_encp != event_encp:
-                print(
-                    f"  {venue}: 開催パラメータ不一致"
-                    f" JSON={event_encp}"
-                    f" HTML={html_encp}"
-                )
-            else:
-                print(
-                    f"  {venue}: JSONとHTMLの"
-                    "開催パラメータは一致"
-                )
-            add_candidate(html_encp, "schedule_html")
-        else:
-            print(
-                f"  {venue}: 公式HTMLから"
-                "開催パラメータを特定できません"
-            )
+
+        for encp in html_candidates:
+            add_candidate(encp, "schedule_html")
+
     except Exception as exc:
         print(
-            f"  {venue}: 公式HTMLの照合失敗: "
+            f"  {venue}: HTML候補取得失敗 "
             f"{type(exc).__name__}: {exc}"
         )
-    # 候補パラメータを順番にJSJ049へ渡す。
+
+    print(
+        f"  {venue}: 検証する開催パラメータ="
+        f"{len(candidates)}件"
+    )
+
+    # 候補ごとに公式APIを呼び出し、当日分を検証する。
     for candidate_encp, source in candidates:
         print(
-            f"  {venue}: JSJ049試行"
-            f" source={source}"
-            f" encp={candidate_encp}"
+            f"  {venue}: JSJ049試行 "
+            f"source={source} encp={candidate_encp}"
         )
+
         try:
             payload = request_json(
                 session,
@@ -823,138 +781,190 @@ def fetch_event_races(session, event):
                 },
                 referer=SCHEDULE_URL,
             )
-            if not isinstance(payload, dict):
-                print(
-                    f"  {venue}: JSON応答が辞書形式ではありません"
-                )
-                continue
-            result_cd = str(payload.get("resultCd", ""))
+
+        except Exception as exc:
             print(
-                f"  {venue}: JSJ049"
-                f" resultCd={result_cd}"
-                f" messageCd={payload.get('messageCd', '')}"
+                f"  {venue}: JSJ049通信失敗 "
+                f"{type(exc).__name__}: {exc}"
             )
-            if result_cd != "0":
+            continue
+
+        if not isinstance(payload, dict):
+            print(f"  {venue}: JSON形式が不正")
+            continue
+
+        result_cd = str(payload.get("resultCd", ""))
+
+        print(
+            f"  {venue}: JSJ049 resultCd={result_cd} "
+            f"messageCd={payload.get('messageCd', '')}"
+        )
+
+        if result_cd != "0":
+            continue
+
+        days = payload.get("kaisaiDayList", [])
+
+        if not isinstance(days, list):
+            continue
+
+        races = []
+        seen_races = set()
+
+        for day in days:
+            if not isinstance(day, dict):
                 continue
-            days = payload.get("kaisaiDayList", [])
-            if not isinstance(days, list):
+
+            day_date_raw = first_value(
+                day,
+                "strKaisaiDate",
+                "kaisaiDate",
+                "strEventDate",
+            )
+
+            day_date = parse_date(day_date_raw)
+
+            # 日付が確認できない日程は採用しない。
+            if day_date is None:
                 continue
-            races = []
-            seen_races = set()
-            for day in days:
-                if not isinstance(day, dict):
-                    continue
-                day_name = first_value(
+
+            # 当日以外のレースを候補から除外する。
+            if day_date.isoformat() != today_text:
+                continue
+
+            day_name = clean(
+                first_value(
                     day,
                     "strNitiji",
                     "strDay",
                     "strKaisaiDate",
                 )
-                day_date = first_value(
-                    day,
-                    "strKaisaiDate",
-                    "kaisaiDate",
-                    "strEventDate",
-                )
-                programs = day.get("raceProgramList", [])
-                if not isinstance(programs, list):
+            )
+
+            programs = day.get("raceProgramList", [])
+
+            if not isinstance(programs, list):
+                continue
+
+            for program in programs:
+                if not isinstance(program, dict):
                     continue
-                for program in programs:
-                    if not isinstance(program, dict):
-                        continue
-                    race_encp = first_value(
-                        program,
-                        "strRaceLnkPrm",
-                    )
-                    race_no = first_value(
-                        program,
-                        "strRaceNo",
-                    )
-                    if not race_encp or not race_no:
-                        continue
-                    race_key = (
-                        clean(day_date),
-                        clean(race_no),
-                        clean(race_encp),
-                    )
-                    if race_key in seen_races:
-                        continue
-                    seen_races.add(race_key)
-                    race_path = first_value(
-                        program,
-                        "strRaceLnk",
-                    )
-                    races.append({
-                        "venue": venue,
-                        "venue_code": venue_code,
-                        "event_start_date": event.get("start_date"),
-                        "day": clean(day_name),
-                        "race_date": clean(day_date),
-                        "race_no": clean(race_no),
-                        "race_name": clean(
-                            first_value(
-                                program,
-                                "strSyumokuName",
-                            )
-                        ),
-                        "race_url": urljoin(
-                            BASE,
-                            race_path or "/sp/race",
-                        ),
-                        "race_encp": clean(race_encp),
-                        "event_encp": candidate_encp,
-                        "list_source": f"JSJ049_{source}",
-                    })
-            if races:
-                print(
-                    f"  {venue}: {len(races)}レース取得"
-                    f" source={source}"
+
+                race_encp = clean(
+                    first_value(program, "strRaceLnkPrm")
                 )
-                return races
-            print(
-                f"  {venue}: 正常応答ですが"
-                "レース情報は0件です"
+
+                race_no = clean(
+                    first_value(program, "strRaceNo")
+                )
+
+                if not race_encp or not race_no:
+                    continue
+
+                try:
+                    race_no_int = int(
+                        re.sub(r"\D", "", race_no)
+                    )
+                except ValueError:
+                    continue
+
+                if not 1 <= race_no_int <= 12:
+                    continue
+
+                race_key = (
+                    today_text,
+                    str(race_no_int),
+                    race_encp,
+                )
+
+                if race_key in seen_races:
+                    continue
+
+                seen_races.add(race_key)
+
+                race_path = clean(
+                    first_value(program, "strRaceLnk")
+                )
+
+                races.append({
+                    "venue": venue,
+                    "venue_code": venue_code,
+                    "event_start_date": event.get("start_date"),
+                    "day": day_name,
+                    "race_date": today_text,
+                    "race_no": str(race_no_int),
+                    "race_name": clean(
+                        first_value(
+                            program,
+                            "strSyumokuName",
+                        )
+                    ),
+                    "race_url": urljoin(
+                        BASE,
+                        race_path or "/sp/race",
+                    ),
+                    "race_encp": race_encp,
+                    "event_encp": candidate_encp,
+                    "list_source": f"JSJ049_{source}",
+                })
+
+        if races:
+            races.sort(
+                key=lambda race: int(race["race_no"])
             )
-        except Exception as exc:
+
             print(
-                f"  {venue}: JSJ049取得失敗"
-                f" source={source}"
-                f" {type(exc).__name__}: {exc}"
+                f"  {venue}: 当日分{len(races)}レース取得 "
+                f"source={source}"
             )
-    # JSONから取得できない場合は、公式POST画面を試す。
-    # HTML由来のパラメータがあれば、そちらも候補にする。
+
+            return races
+
+        print(
+            f"  {venue}: 正常応答だが当日レースなし"
+        )
+
+    # すべての候補で取得できなかった場合のみPOSTを試す。
     for candidate_encp, source in candidates:
         fallback_event = dict(event)
         fallback_event["encp"] = candidate_encp
+
         print(
-            f"  {venue}: 公式POSTを試行"
-            f" source={source}"
-            f" encp={candidate_encp}"
+            f"  {venue}: 公式POSTを試行 "
+            f"source={source}"
         )
+
         try:
             fallback_races = fetch_races_from_post(
                 session,
                 fallback_event,
             )
+
             if fallback_races:
+                print(
+                    f"  {venue}: POST候補"
+                    f"{len(fallback_races)}レース"
+                )
+
+                # POSTの候補には日付がないため、
+                # ここでは当日分と確定せず検証対象として返す。
                 for race in fallback_races:
                     race["list_source"] = (
                         f"official_post_{source}"
                     )
-                print(
-                    f"  {venue}: POSTから"
-                    f"{len(fallback_races)}レース取得"
-                )
+
                 return fallback_races
+
         except Exception as exc:
             print(
-                f"  {venue}: POST取得失敗"
-                f" source={source}"
-                f" {type(exc).__name__}: {exc}"
+                f"  {venue}: POST失敗 "
+                f"{type(exc).__name__}: {exc}"
             )
+
     print(
         f"  {venue}: 全候補でレース一覧を取得できませんでした"
     )
+
     return []
 
 
