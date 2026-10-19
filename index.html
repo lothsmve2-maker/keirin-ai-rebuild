@@ -192,7 +192,47 @@ function getVenues(){
   const d=state.data;
   if(!d)return [];
 
-  let source=first(
+  // 出走表データがある場合は、実際のレース情報から開催場を構成する
+  // eventsには開催初日の日付しか入っていない場合があるため、
+  // eventsを先に使って当日レースを失わないようにする
+  if(Array.isArray(d.races)&&d.races.length){
+    const grouped=new Map();
+
+    d.races.forEach(r=>{
+      const name=first(
+        r.venue_name,
+        r.venue,
+        r.track,
+        r.競輪場,
+        '開催場未取得'
+      );
+
+      if(!grouped.has(name)){
+        grouped.set(name,{
+          name,
+          code:first(r.venue_code,r.venueCode,r.track_code,''),
+          races:[]
+        });
+      }
+
+      grouped.get(name).races.push(r);
+    });
+
+    // レース番号順に並べる
+    for(const venue of grouped.values()){
+      venue.races.sort((a,b)=>{
+        const an=Number(first(a.race_no,a.raceNo,a.number,0));
+        const bn=Number(first(b.race_no,b.raceNo,b.number,0));
+        return an-bn;
+      });
+      venue.race_count=venue.races.length;
+    }
+
+    return [...grouped.values()];
+  }
+
+  // レース単位のデータがない場合は従来の開催情報を使う
+  const source=first(
     d.active_today,
     d.venues,
     d.meetings,
@@ -212,17 +252,7 @@ function getVenues(){
     );
   }
 
-  // スケジュール形式によっては全開催が別名で保存されている
   if(Array.isArray(d.events))return d.events;
-  if(Array.isArray(d.races)){
-    const grouped=new Map();
-    d.races.forEach(r=>{
-      const name=first(r.venue_name,r.venue,r.track,r.競輪場,'開催場未取得');
-      if(!grouped.has(name))grouped.set(name,{name,races:[]});
-      grouped.get(name).races.push(r);
-    });
-    return [...grouped.values()];
-  }
 
   return [];
 }
@@ -293,33 +323,77 @@ async function loadData(){
   if(button)button.textContent='⟳ 読込中';
 
   state.err=null;
+  state.cacheUsed=false;
 
-  // GitHub Pagesの相対パス。index.htmlと同じ階層のdataフォルダを読む
+  // 日本時間の今日の日付
+  const now=new Date();
+  const todayISO=
+    now.getFullYear()+'-'+
+    String(now.getMonth()+1).padStart(2,'0')+'-'+
+    String(now.getDate()).padStart(2,'0');
+
+  // 出走表データを最優先にする
   const urls=[
+    './data/entries_today.json',
     './data/today_schedule.json',
     './data/today.json'
   ];
 
   let loaded=null;
-  let errors=[];
+  let loadedPath='';
+  const errors=[];
 
   for(const path of urls){
     try{
-      const response=await fetch(path+'?t='+Date.now(),{cache:'no-store'});
+      const response=await fetch(
+        path+'?t='+Date.now(),
+        {cache:'no-store'}
+      );
+
       if(!response.ok){
         errors.push(path+': HTTP '+response.status);
         continue;
       }
 
       const json=await response.json();
+
       if(!json||typeof json!=='object'||Array.isArray(json)){
         errors.push(path+': JSON形式が不正です');
         continue;
       }
 
-      loaded=unwrapData(json);
-      state.sourcePath=path;
+      const data=unwrapData(json);
+
+      // 対象日を取得する
+      const rawDate=first(
+        data.target_date,
+        data.date,
+        data.targetDate,
+        data.schedule_date,
+        data.generated_date
+      );
+
+      if(rawDate){
+        const normalizedDate=String(rawDate).slice(0,10);
+
+        // 今日ではないデータは読み込まず、次の候補へ
+        if(normalizedDate!==todayISO){
+          errors.push(
+            path+': 対象日が違います（'+normalizedDate+'）'
+          );
+          continue;
+        }
+      }else{
+        // 日付が確認できないデータを今日のデータとして採用しない
+        errors.push(path+': 対象日を確認できません');
+        continue;
+      }
+
+      // 当日分のデータとして採用
+      loaded=data;
+      loadedPath=path;
       break;
+
     }catch(e){
       errors.push(path+': '+e.message);
     }
@@ -327,25 +401,63 @@ async function loadData(){
 
   if(loaded){
     state.data=loaded;
+    state.sourcePath=loadedPath;
     state.loaded=true;
     state.err=null;
+    state.cacheUsed=false;
+
     try{
-      localStorage.setItem('keirin_ai_last_data',JSON.stringify(loaded));
-      localStorage.setItem('keirin_ai_last_data_path',state.sourcePath);
+      localStorage.setItem(
+        'keirin_ai_last_data',
+        JSON.stringify(loaded)
+      );
+      localStorage.setItem(
+        'keirin_ai_last_data_path',
+        loadedPath
+      );
     }catch(_){}
+
   }else{
-    state.err=errors.join(' / ')||'データを取得できませんでした';
+    state.err=errors.join(' / ')||'当日データを取得できませんでした';
+
+    // キャッシュも今日のデータだと確認できる場合だけ使う
     try{
       const cached=localStorage.getItem('keirin_ai_last_data');
+
       if(cached){
-        state.data=unwrapData(JSON.parse(cached));
-        state.loaded=true;
-        state.cacheUsed=true;
+        const cachedData=unwrapData(JSON.parse(cached));
+        const cachedDate=String(first(
+          cachedData.target_date,
+          cachedData.date,
+          cachedData.targetDate,
+          cachedData.schedule_date,
+          cachedData.generated_date,
+          ''
+        )).slice(0,10);
+
+        if(cachedDate===todayISO){
+          state.data=cachedData;
+          state.sourcePath=
+            localStorage.getItem('keirin_ai_last_data_path')||
+            'キャッシュ';
+          state.loaded=true;
+          state.cacheUsed=true;
+        }else{
+          state.data=null;
+          state.loaded=false;
+        }
+      }else{
+        state.data=null;
+        state.loaded=false;
       }
-    }catch(_){}
+    }catch(_){
+      state.data=null;
+      state.loaded=false;
+    }
   }
 
   render();
+
   const refreshed=$('#refreshBtn');
   if(refreshed)refreshed.textContent='⟳ 更新';
 }
