@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-19",
-  "started_at": "2026-10-19T14:11:24.008166+09:00",
-  "finished_at": "2026-10-19T14:12:56.021813+09:00",
+  "started_at": "2026-10-19T14:43:34.168135+09:00",
+  "finished_at": "2026-10-19T14:45:12.445536+09:00",
   "status": "ok",
   "events_found": 8,
   "events_checked": 8,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 564,
-  "commented_rider_count": 313,
+  "commented_rider_count": 292,
   "events": [
     {
       "venue": "京王閣",
@@ -98,32 +98,77 @@
           "car_no": "1"
         },
         {
+          "position": 2,
+          "car_no": "7"
+        },
+        {
           "position": 3,
           "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "4"
         },
         {
           "position": 5,
           "car_no": "5"
         },
         {
-          "position": 9,
-          "car_no": "6"
+          "position": 7,
+          "car_no": "4"
         },
         {
-          "position": 2,
-          "car_no": "7"
+          "position": 8,
+          "car_no": "3"
+        },
+        {
+          "position": 9,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "7",
+            "2"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "4",
+            "3",
+            "6"
+          ],
+          "positions": [
+            7,
+            8,
+            9
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -284,36 +329,81 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "7"
+        },
+        {
           "position": 2,
           "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 6,
-          "car_no": "4"
         },
         {
           "position": 3,
           "car_no": "5"
         },
         {
-          "position": 9,
-          "car_no": "6"
+          "position": 5,
+          "car_no": "2"
         },
         {
-          "position": 1,
-          "car_no": "7"
+          "position": 6,
+          "car_no": "4"
+        },
+        {
+          "position": 8,
+          "car_no": "3"
+        },
+        {
+          "position": 9,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "7",
+            "1",
+            "5"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "4"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "6"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -474,24 +564,20 @@
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
           "position": 1,
           "car_no": "4"
         },
         {
-          "position": 10,
-          "car_no": "5"
+          "position": 2,
+          "car_no": "1"
+        },
+        {
+          "position": 4,
+          "car_no": "8"
+        },
+        {
+          "position": 5,
+          "car_no": "2"
         },
         {
           "position": 6,
@@ -502,12 +588,63 @@
           "car_no": "7"
         },
         {
-          "position": 4,
-          "car_no": "8"
+          "position": 9,
+          "car_no": "3"
+        },
+        {
+          "position": 10,
+          "car_no": "5"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "8",
+            "2",
+            "6"
+          ],
+          "positions": [
+            4,
+            5,
+            6
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "7",
+            "3",
+            "5"
+          ],
+          "positions": [
+            8,
+            9,
+            10
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -686,24 +823,12 @@
       "line_type": "コマ切れ",
       "line_order": [
         {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 10,
-          "car_no": "3"
-        },
-        {
-          "position": 11,
-          "car_no": "4"
-        },
-        {
           "position": 1,
           "car_no": "5"
+        },
+        {
+          "position": 2,
+          "car_no": "1"
         },
         {
           "position": 3,
@@ -714,16 +839,87 @@
           "car_no": "7"
         },
         {
-          "position": 12,
-          "car_no": "8"
+          "position": 6,
+          "car_no": "2"
         },
         {
           "position": 8,
           "car_no": "9"
+        },
+        {
+          "position": 10,
+          "car_no": "3"
+        },
+        {
+          "position": 11,
+          "car_no": "4"
+        },
+        {
+          "position": 12,
+          "car_no": "8"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "1",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "7",
+            "2"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "9"
+          ],
+          "positions": [
+            8
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "3",
+            "4",
+            "8"
+          ],
+          "positions": [
+            10,
+            11,
+            12
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -920,44 +1116,103 @@
       "line_type": "コマ切れ",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "8"
+        },
+        {
           "position": 2,
           "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
-          "position": 11,
-          "car_no": "3"
-        },
-        {
-          "position": 10,
-          "car_no": "4"
         },
         {
           "position": 4,
           "car_no": "5"
         },
         {
-          "position": 12,
-          "car_no": "6"
-        },
-        {
           "position": 6,
           "car_no": "7"
         },
         {
-          "position": 1,
-          "car_no": "8"
-        },
-        {
           "position": 7,
           "car_no": "9"
+        },
+        {
+          "position": 8,
+          "car_no": "2"
+        },
+        {
+          "position": 10,
+          "car_no": "4"
+        },
+        {
+          "position": 11,
+          "car_no": "3"
+        },
+        {
+          "position": 12,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "8",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            4
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "7",
+            "9",
+            "2"
+          ],
+          "positions": [
+            6,
+            7,
+            8
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4",
+            "3",
+            "6"
+          ],
+          "positions": [
+            10,
+            11,
+            12
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -1154,44 +1409,103 @@
       "line_type": "四分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "5"
+        },
+        {
           "position": 2,
           "car_no": "1"
+        },
+        {
+          "position": 4,
+          "car_no": "9"
         },
         {
           "position": 5,
           "car_no": "2"
         },
         {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 12,
-          "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
           "position": 7,
           "car_no": "6"
         },
         {
-          "position": 11,
-          "car_no": "7"
+          "position": 8,
+          "car_no": "3"
         },
         {
           "position": 10,
           "car_no": "8"
         },
         {
-          "position": 4,
-          "car_no": "9"
+          "position": 11,
+          "car_no": "7"
+        },
+        {
+          "position": 12,
+          "car_no": "4"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "9",
+            "2"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "6",
+            "3"
+          ],
+          "positions": [
+            7,
+            8
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "8",
+            "7",
+            "4"
+          ],
+          "positions": [
+            10,
+            11,
+            12
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -1392,24 +1706,12 @@
           "car_no": "1"
         },
         {
-          "position": 4,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
-          "position": 11,
-          "car_no": "4"
-        },
-        {
           "position": 2,
           "car_no": "5"
         },
         {
-          "position": 12,
-          "car_no": "6"
+          "position": 4,
+          "car_no": "2"
         },
         {
           "position": 5,
@@ -1422,10 +1724,81 @@
         {
           "position": 8,
           "car_no": "9"
+        },
+        {
+          "position": 9,
+          "car_no": "3"
+        },
+        {
+          "position": 11,
+          "car_no": "4"
+        },
+        {
+          "position": 12,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "5"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "7",
+            "8"
+          ],
+          "positions": [
+            4,
+            5,
+            6
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "9",
+            "3"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4",
+            "6"
+          ],
+          "positions": [
+            11,
+            12
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -1622,44 +1995,103 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 6,
+          "car_no": "8"
+        },
+        {
           "position": 15,
           "car_no": "1"
-        },
-        {
-          "position": 21,
-          "car_no": "2"
-        },
-        {
-          "position": 20,
-          "car_no": "3"
-        },
-        {
-          "position": 24,
-          "car_no": "4"
-        },
-        {
-          "position": 17,
-          "car_no": "5"
-        },
-        {
-          "position": 23,
-          "car_no": "6"
         },
         {
           "position": 16,
           "car_no": "7"
         },
         {
-          "position": 6,
-          "car_no": "8"
+          "position": 17,
+          "car_no": "5"
         },
         {
           "position": 19,
           "car_no": "9"
+        },
+        {
+          "position": 20,
+          "car_no": "3"
+        },
+        {
+          "position": 21,
+          "car_no": "2"
+        },
+        {
+          "position": 23,
+          "car_no": "6"
+        },
+        {
+          "position": 24,
+          "car_no": "4"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "8"
+          ],
+          "positions": [
+            6
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "1",
+            "7",
+            "5"
+          ],
+          "positions": [
+            15,
+            16,
+            17
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "9",
+            "3",
+            "2"
+          ],
+          "positions": [
+            19,
+            20,
+            21
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "6",
+            "4"
+          ],
+          "positions": [
+            23,
+            24
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -1860,40 +2292,89 @@
           "car_no": "1"
         },
         {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
+          "position": 2,
+          "car_no": "5"
         },
         {
           "position": 3,
           "car_no": "4"
         },
         {
-          "position": 2,
-          "car_no": "5"
+          "position": 5,
+          "car_no": "7"
+        },
+        {
+          "position": 6,
+          "car_no": "2"
         },
         {
           "position": 7,
           "car_no": "6"
         },
         {
-          "position": 5,
-          "car_no": "7"
-        },
-        {
-          "position": 11,
-          "car_no": "8"
+          "position": 9,
+          "car_no": "3"
         },
         {
           "position": 10,
           "car_no": "9"
+        },
+        {
+          "position": 11,
+          "car_no": "8"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "5",
+            "4"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "7",
+            "2",
+            "6"
+          ],
+          "positions": [
+            5,
+            6,
+            7
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "9",
+            "8"
+          ],
+          "positions": [
+            9,
+            10,
+            11
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -2094,16 +2575,20 @@
           "car_no": "1"
         },
         {
+          "position": 2,
+          "car_no": "7"
+        },
+        {
           "position": 4,
           "car_no": "2"
         },
         {
-          "position": 7,
-          "car_no": "3"
+          "position": 5,
+          "car_no": "8"
         },
         {
-          "position": 11,
-          "car_no": "4"
+          "position": 7,
+          "car_no": "3"
         },
         {
           "position": 8,
@@ -2114,20 +2599,75 @@
           "car_no": "6"
         },
         {
-          "position": 2,
-          "car_no": "7"
-        },
-        {
-          "position": 5,
-          "car_no": "8"
+          "position": 11,
+          "car_no": "4"
         },
         {
           "position": 12,
           "car_no": "9"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "7"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "8"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "5",
+            "6"
+          ],
+          "positions": [
+            7,
+            8,
+            9
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4",
+            "9"
+          ],
+          "positions": [
+            11,
+            12
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -2324,24 +2864,12 @@
       "line_type": "コマ切れ",
       "line_order": [
         {
-          "position": 6,
-          "car_no": "1"
+          "position": 1,
+          "car_no": "5"
         },
         {
           "position": 2,
           "car_no": "2"
-        },
-        {
-          "position": 10,
-          "car_no": "3"
-        },
-        {
-          "position": 12,
-          "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
         },
         {
           "position": 3,
@@ -2352,16 +2880,87 @@
           "car_no": "7"
         },
         {
+          "position": 6,
+          "car_no": "1"
+        },
+        {
           "position": 7,
           "car_no": "8"
         },
         {
           "position": 9,
           "car_no": "9"
+        },
+        {
+          "position": 10,
+          "car_no": "3"
+        },
+        {
+          "position": 12,
+          "car_no": "4"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "2",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "7",
+            "1",
+            "8"
+          ],
+          "positions": [
+            5,
+            6,
+            7
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "9",
+            "3"
+          ],
+          "positions": [
+            9,
+            10
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            12
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -2558,20 +3157,12 @@
       "line_type": "コマ切れ",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "9"
+        },
+        {
           "position": 2,
           "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 12,
-          "car_no": "4"
         },
         {
           "position": 3,
@@ -2582,6 +3173,14 @@
           "car_no": "6"
         },
         {
+          "position": 6,
+          "car_no": "2"
+        },
+        {
+          "position": 8,
+          "car_no": "3"
+        },
+        {
           "position": 9,
           "car_no": "7"
         },
@@ -2590,12 +3189,71 @@
           "car_no": "8"
         },
         {
-          "position": 1,
-          "car_no": "9"
+          "position": 12,
+          "car_no": "4"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "9",
+            "1",
+            "5"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "6",
+            "2"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "7",
+            "8"
+          ],
+          "positions": [
+            8,
+            9,
+            10
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            12
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -2792,7 +3450,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -2961,7 +3619,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3130,7 +3788,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3299,7 +3957,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3468,7 +4126,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3637,7 +4295,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3806,7 +4464,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3975,7 +4633,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4141,39 +4799,10 @@
       "verified_race_date": "2026-10-19",
       "start_time": "14:32",
       "distance_m": "2000",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
-          "position": 4,
-          "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 10,
-          "car_no": "6"
-        },
-        {
-          "position": 6,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4189,9 +4818,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "松本さんへ",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -4207,9 +4836,9 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "塩島君へ",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -4225,9 +4854,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "15",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -4243,9 +4872,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "単騎",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -4261,9 +4890,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "13",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -4279,9 +4908,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "徳田君へ",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -4297,21 +4926,29 @@
           "sashi": "2",
           "mark": "0",
           "back": "14",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -4334,6 +4971,10 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "7"
+        },
+        {
           "position": 2,
           "car_no": "1"
         },
@@ -4342,28 +4983,69 @@
           "car_no": "2"
         },
         {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
           "position": 5,
           "car_no": "4"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
         },
         {
           "position": 6,
           "car_no": "6"
         },
         {
-          "position": 1,
-          "car_no": "7"
+          "position": 8,
+          "car_no": "5"
+        },
+        {
+          "position": 9,
+          "car_no": "3"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "7",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "4",
+            "6"
+          ],
+          "positions": [
+            4,
+            5,
+            6
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "5",
+            "3"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -4524,36 +5206,81 @@
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
           "position": 1,
           "car_no": "4"
         },
         {
-          "position": 6,
-          "car_no": "5"
+          "position": 2,
+          "car_no": "1"
         },
         {
           "position": 3,
           "car_no": "6"
         },
         {
+          "position": 5,
+          "car_no": "2"
+        },
+        {
+          "position": 6,
+          "car_no": "5"
+        },
+        {
           "position": 8,
           "car_no": "7"
+        },
+        {
+          "position": 9,
+          "car_no": "3"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "1",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "5"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "7",
+            "3"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -4714,36 +5441,91 @@
       "line_type": "先行一車",
       "line_order": [
         {
-          "position": 10,
-          "car_no": "1"
-        },
-        {
-          "position": 3,
-          "car_no": "2"
-        },
-        {
-          "position": 6,
-          "car_no": "3"
-        },
-        {
           "position": 1,
           "car_no": "4"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
         },
         {
           "position": 2,
           "car_no": "6"
         },
         {
+          "position": 3,
+          "car_no": "2"
+        },
+        {
           "position": 4,
           "car_no": "7"
+        },
+        {
+          "position": 6,
+          "car_no": "3"
+        },
+        {
+          "position": 8,
+          "car_no": "5"
+        },
+        {
+          "position": 10,
+          "car_no": "1"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "6",
+            "2",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "rider_count": 4,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            6
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            8
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            10
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -4904,7 +5686,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5073,7 +5855,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5242,7 +6024,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5411,7 +6193,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5580,7 +6362,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5749,7 +6531,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5918,7 +6700,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6087,7 +6869,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6256,7 +7038,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6425,7 +7207,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6594,7 +7376,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6763,7 +7545,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6932,7 +7714,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7101,7 +7883,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7267,39 +8049,10 @@
       "verified_race_date": "2026-10-19",
       "start_time": "14:12",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7315,9 +8068,9 @@
           "sashi": "6",
           "mark": "1",
           "back": "0",
-          "comment": "秋本君の番手",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -7333,9 +8086,9 @@
           "sashi": "5",
           "mark": "5",
           "back": "0",
-          "comment": "中村君に付く",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -7351,9 +8104,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "5",
-          "comment": "自力でいく",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -7369,9 +8122,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "6",
-          "comment": "自力で頑張る",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -7387,9 +8140,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "秋本君－土屋さんの後ろ",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -7405,9 +8158,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "5",
-          "comment": "自力で戦う",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -7423,21 +8176,29 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "深瀬君に付く",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -7460,20 +8221,8 @@
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
           "position": 1,
           "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
         },
         {
           "position": 2,
@@ -7484,12 +8233,69 @@
           "car_no": "6"
         },
         {
+          "position": 5,
+          "car_no": "1"
+        },
+        {
           "position": 7,
           "car_no": "7"
+        },
+        {
+          "position": 8,
+          "car_no": "2"
+        },
+        {
+          "position": 9,
+          "car_no": "4"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "3",
+            "5"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "6",
+            "1"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "7",
+            "2",
+            "4"
+          ],
+          "positions": [
+            7,
+            8,
+            9
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -7654,32 +8460,77 @@
           "car_no": "1"
         },
         {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
-          "position": 6,
-          "car_no": "3"
-        },
-        {
           "position": 2,
           "car_no": "4"
-        },
-        {
-          "position": 5,
-          "car_no": "5"
         },
         {
           "position": 3,
           "car_no": "6"
         },
         {
+          "position": 5,
+          "car_no": "5"
+        },
+        {
+          "position": 6,
+          "car_no": "3"
+        },
+        {
+          "position": 8,
+          "car_no": "2"
+        },
+        {
           "position": 9,
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "4",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "5",
+            "3"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "2",
+            "7"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -7840,6 +8691,10 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "5"
+        },
+        {
           "position": 2,
           "car_no": "1"
         },
@@ -7848,28 +8703,69 @@
           "car_no": "2"
         },
         {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
           "position": 5,
           "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
         },
         {
           "position": 6,
           "car_no": "6"
         },
         {
+          "position": 8,
+          "car_no": "3"
+        },
+        {
           "position": 9,
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "4",
+            "6"
+          ],
+          "positions": [
+            4,
+            5,
+            6
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "7"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -8030,7 +8926,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8199,7 +9095,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8368,7 +9264,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8537,7 +9433,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8687,7 +9583,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8856,7 +9752,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9025,7 +9921,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9191,39 +10087,10 @@
       "verified_race_date": "2026-10-19",
       "start_time": "14:22",
       "distance_m": "1682",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 3,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 10,
-          "car_no": "3"
-        },
-        {
-          "position": 6,
-          "car_no": "4"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
-        },
-        {
-          "position": 2,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9239,9 +10106,9 @@
           "sashi": "7",
           "mark": "5",
           "back": "0",
-          "comment": "坂木田さん",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -9257,9 +10124,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "3",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -9275,9 +10142,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "関東３番手",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -9293,9 +10160,9 @@
           "sashi": "5",
           "mark": "4",
           "back": "0",
-          "comment": "後藤君",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -9311,9 +10178,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "18",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -9329,9 +10196,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "12",
-          "comment": "自力",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -9347,21 +10214,29 @@
           "sashi": "0",
           "mark": "2",
           "back": "1",
-          "comment": "西村君",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -9384,6 +10259,10 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 2,
+          "car_no": "4"
+        },
+        {
           "position": 3,
           "car_no": "1"
         },
@@ -9392,28 +10271,69 @@
           "car_no": "2"
         },
         {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
           "position": 6,
           "car_no": "5"
         },
         {
-          "position": 10,
-          "car_no": "6"
+          "position": 8,
+          "car_no": "3"
         },
         {
           "position": 9,
           "car_no": "7"
+        },
+        {
+          "position": 10,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "1"
+          ],
+          "positions": [
+            2,
+            3
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "5"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "7",
+            "6"
+          ],
+          "positions": [
+            8,
+            9,
+            10
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -9602,8 +10522,93 @@
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            2
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2"
+          ],
+          "positions": [
+            4
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            6
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            8
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            10
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 6,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            12
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 7,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            14
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -9764,22 +10769,6 @@
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": 4,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "4"
-        },
-        {
           "position": 2,
           "car_no": "5"
         },
@@ -9788,12 +10777,73 @@
           "car_no": "6"
         },
         {
+          "position": 4,
+          "car_no": "1"
+        },
+        {
+          "position": 6,
+          "car_no": "2"
+        },
+        {
+          "position": 7,
+          "car_no": "4"
+        },
+        {
+          "position": 9,
+          "car_no": "3"
+        },
+        {
           "position": 10,
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "6",
+            "1"
+          ],
+          "positions": [
+            2,
+            3,
+            4
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "4"
+          ],
+          "positions": [
+            6,
+            7
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "7"
+          ],
+          "positions": [
+            9,
+            10
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -9962,10 +11012,6 @@
           "car_no": "2"
         },
         {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
           "position": 5,
           "car_no": "4"
         },
@@ -9974,16 +11020,105 @@
           "car_no": "5"
         },
         {
-          "position": 13,
-          "car_no": "6"
+          "position": 9,
+          "car_no": "3"
         },
         {
           "position": 11,
           "car_no": "7"
+        },
+        {
+          "position": 13,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            1
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2"
+          ],
+          "positions": [
+            3
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            7
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            9
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 6,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            11
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 7,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            13
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -10144,16 +11279,24 @@
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": 9,
-          "car_no": "1"
+          "position": 1,
+          "car_no": "7"
         },
         {
           "position": 3,
           "car_no": "2"
         },
         {
+          "position": 5,
+          "car_no": "6"
+        },
+        {
           "position": 7,
           "car_no": "3"
+        },
+        {
+          "position": 9,
+          "car_no": "1"
         },
         {
           "position": 11,
@@ -10162,18 +11305,95 @@
         {
           "position": 13,
           "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 1,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            1
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2"
+          ],
+          "positions": [
+            3
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            7
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            9
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 6,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            11
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 7,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            13
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -10338,8 +11558,8 @@
           "car_no": "1"
         },
         {
-          "position": 7,
-          "car_no": "2"
+          "position": 2,
+          "car_no": "5"
         },
         {
           "position": 4,
@@ -10350,20 +11570,75 @@
           "car_no": "4"
         },
         {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 10,
-          "car_no": "6"
+          "position": 7,
+          "car_no": "2"
         },
         {
           "position": 8,
           "car_no": "7"
+        },
+        {
+          "position": 10,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "5"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            4
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "4",
+            "2",
+            "7"
+          ],
+          "positions": [
+            6,
+            7,
+            8
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            10
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -10524,36 +11799,81 @@
       "line_type": "二分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "3"
+        },
+        {
           "position": 2,
           "car_no": "1"
         },
         {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
-          "position": 1,
-          "car_no": "3"
+          "position": 3,
+          "car_no": "7"
         },
         {
           "position": 5,
           "car_no": "4"
         },
         {
-          "position": 9,
-          "car_no": "5"
-        },
-        {
           "position": 7,
           "car_no": "6"
         },
         {
-          "position": 3,
-          "car_no": "7"
+          "position": 8,
+          "car_no": "2"
+        },
+        {
+          "position": 9,
+          "car_no": "5"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "3",
+            "1",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "6",
+            "2",
+            "5"
+          ],
+          "positions": [
+            7,
+            8,
+            9
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -10714,6 +12034,22 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "5"
+        },
+        {
+          "position": 2,
+          "car_no": "4"
+        },
+        {
+          "position": 3,
+          "car_no": "7"
+        },
+        {
+          "position": 5,
+          "car_no": "6"
+        },
+        {
           "position": 6,
           "car_no": "1"
         },
@@ -10724,26 +12060,55 @@
         {
           "position": 9,
           "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 3,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "5",
+            "4",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "6",
+            "1"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "2",
+            "3"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -10904,12 +12269,24 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "7"
+        },
+        {
           "position": 2,
           "car_no": "1"
         },
         {
+          "position": 3,
+          "car_no": "6"
+        },
+        {
           "position": 5,
           "car_no": "2"
+        },
+        {
+          "position": 6,
+          "car_no": "5"
         },
         {
           "position": 8,
@@ -10918,22 +12295,55 @@
         {
           "position": 9,
           "car_no": "4"
-        },
-        {
-          "position": 6,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 1,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "7",
+            "1",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "5"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "4"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -11094,6 +12504,10 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "4"
+        },
+        {
           "position": 2,
           "car_no": "1"
         },
@@ -11102,28 +12516,79 @@
           "car_no": "2"
         },
         {
-          "position": 7,
-          "car_no": "3"
+          "position": 5,
+          "car_no": "6"
         },
         {
-          "position": 1,
-          "car_no": "4"
+          "position": 7,
+          "car_no": "3"
         },
         {
           "position": 8,
           "car_no": "5"
         },
         {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
           "position": 10,
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "1"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "6"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3",
+            "5"
+          ],
+          "positions": [
+            7,
+            8
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            10
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -11284,36 +12749,81 @@
       "line_type": "三分戦",
       "line_order": [
         {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
           "position": 1,
           "car_no": "2"
-        },
-        {
-          "position": 6,
-          "car_no": "3"
         },
         {
           "position": 2,
           "car_no": "4"
         },
         {
-          "position": 8,
-          "car_no": "5"
-        },
-        {
           "position": 3,
           "car_no": "6"
+        },
+        {
+          "position": 5,
+          "car_no": "1"
+        },
+        {
+          "position": 6,
+          "car_no": "3"
+        },
+        {
+          "position": 8,
+          "car_no": "5"
         },
         {
           "position": 9,
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "2",
+            "4",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "1",
+            "3"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "5",
+            "7"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -11474,6 +12984,18 @@
       "line_type": "三分戦",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "4"
+        },
+        {
+          "position": 2,
+          "car_no": "3"
+        },
+        {
+          "position": 3,
+          "car_no": "6"
+        },
+        {
           "position": 5,
           "car_no": "1"
         },
@@ -11482,28 +13004,61 @@
           "car_no": "2"
         },
         {
-          "position": 2,
-          "car_no": "3"
-        },
-        {
-          "position": 1,
-          "car_no": "4"
+          "position": 8,
+          "car_no": "7"
         },
         {
           "position": 9,
           "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 8,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4",
+            "3",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "1",
+            "2"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "7",
+            "5"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -11664,7 +13219,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -11833,7 +13388,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12002,7 +13557,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12171,7 +13726,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12340,7 +13895,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12509,7 +14064,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12678,7 +14233,7 @@
       "line_type": "",
       "line_order": [],
       "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12847,20 +14402,24 @@
       "line_type": "ライン無し",
       "line_order": [
         {
-          "position": 7,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
+          "position": 1,
+          "car_no": "4"
         },
         {
           "position": 3,
           "car_no": "3"
         },
         {
-          "position": 1,
-          "car_no": "4"
+          "position": 5,
+          "car_no": "2"
+        },
+        {
+          "position": 7,
+          "car_no": "1"
+        },
+        {
+          "position": 9,
+          "car_no": "7"
         },
         {
           "position": 11,
@@ -12869,14 +14428,95 @@
         {
           "position": 13,
           "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            1
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            3
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "2"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            7
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            9
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 6,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            11
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 7,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            13
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13037,6 +14677,14 @@
       "line_type": "ライン無し",
       "line_order": [
         {
+          "position": 1,
+          "car_no": "3"
+        },
+        {
+          "position": 3,
+          "car_no": "5"
+        },
+        {
           "position": 5,
           "car_no": "1"
         },
@@ -13045,16 +14693,8 @@
           "car_no": "2"
         },
         {
-          "position": 1,
-          "car_no": "3"
-        },
-        {
           "position": 9,
           "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
         },
         {
           "position": 11,
@@ -13065,8 +14705,93 @@
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            1
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            3
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            5
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "2"
+          ],
+          "positions": [
+            7
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "4"
+          ],
+          "positions": [
+            9
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 6,
+          "car_numbers": [
+            "6"
+          ],
+          "positions": [
+            11
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 7,
+          "car_numbers": [
+            "7"
+          ],
+          "positions": [
+            13
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13235,8 +14960,16 @@
           "car_no": "2"
         },
         {
+          "position": 3,
+          "car_no": "7"
+        },
+        {
           "position": 5,
           "car_no": "3"
+        },
+        {
+          "position": 6,
+          "car_no": "6"
         },
         {
           "position": 8,
@@ -13245,18 +14978,55 @@
         {
           "position": 9,
           "car_no": "5"
-        },
-        {
-          "position": 6,
-          "car_no": "6"
-        },
-        {
-          "position": 3,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "2",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "3",
+            "6"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "4",
+            "5"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13421,12 +15191,12 @@
           "car_no": "1"
         },
         {
-          "position": 4,
-          "car_no": "2"
-        },
-        {
           "position": 2,
           "car_no": "3"
+        },
+        {
+          "position": 4,
+          "car_no": "2"
         },
         {
           "position": 5,
@@ -13437,16 +15207,71 @@
           "car_no": "5"
         },
         {
-          "position": 10,
-          "car_no": "6"
-        },
-        {
           "position": 9,
           "car_no": "7"
+        },
+        {
+          "position": 10,
+          "car_no": "6"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "3"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "2",
+            "4"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            7
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "7",
+            "6"
+          ],
+          "positions": [
+            9,
+            10
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13607,20 +15432,20 @@
       "line_type": "コマ切れ",
       "line_order": [
         {
-          "position": 4,
-          "car_no": "1"
-        },
-        {
           "position": 1,
           "car_no": "2"
         },
         {
-          "position": 6,
-          "car_no": "3"
-        },
-        {
           "position": 2,
           "car_no": "4"
+        },
+        {
+          "position": 4,
+          "car_no": "1"
+        },
+        {
+          "position": 6,
+          "car_no": "3"
         },
         {
           "position": 8,
@@ -13635,8 +15460,73 @@
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "2",
+            "4"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "1"
+          ],
+          "positions": [
+            4
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "3"
+          ],
+          "positions": [
+            6
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 4,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            8
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 5,
+          "car_numbers": [
+            "6",
+            "7"
+          ],
+          "positions": [
+            10,
+            11
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13809,24 +15699,69 @@
           "car_no": "3"
         },
         {
-          "position": 7,
-          "car_no": "4"
-        },
-        {
-          "position": 9,
-          "car_no": "5"
-        },
-        {
           "position": 4,
           "car_no": "6"
         },
         {
           "position": 6,
           "car_no": "7"
+        },
+        {
+          "position": 7,
+          "car_no": "4"
+        },
+        {
+          "position": 9,
+          "car_no": "5"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "2",
+            "3",
+            "6"
+          ],
+          "positions": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "rider_count": 4,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "7",
+            "4"
+          ],
+          "positions": [
+            6,
+            7
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "5"
+          ],
+          "positions": [
+            9
+          ],
+          "rider_count": 1,
+          "is_single": true,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -13991,32 +15926,77 @@
           "car_no": "1"
         },
         {
-          "position": 6,
-          "car_no": "2"
+          "position": 2,
+          "car_no": "4"
+        },
+        {
+          "position": 3,
+          "car_no": "7"
         },
         {
           "position": 5,
           "car_no": "3"
         },
         {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 9,
-          "car_no": "5"
+          "position": 6,
+          "car_no": "2"
         },
         {
           "position": 8,
           "car_no": "6"
         },
         {
-          "position": 3,
-          "car_no": "7"
+          "position": 9,
+          "car_no": "5"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "4",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "3",
+            "2"
+          ],
+          "positions": [
+            5,
+            6
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "6",
+            "5"
+          ],
+          "positions": [
+            8,
+            9
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -14181,20 +16161,20 @@
           "car_no": "1"
         },
         {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
           "position": 2,
           "car_no": "3"
         },
         {
-          "position": 7,
-          "car_no": "4"
-        },
-        {
           "position": 4,
           "car_no": "5"
+        },
+        {
+          "position": 5,
+          "car_no": "2"
+        },
+        {
+          "position": 7,
+          "car_no": "4"
         },
         {
           "position": 8,
@@ -14205,8 +16185,53 @@
           "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "1",
+            "3"
+          ],
+          "positions": [
+            1,
+            2
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "5",
+            "2"
+          ],
+          "positions": [
+            4,
+            5
+          ],
+          "rider_count": 2,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 3,
+          "car_numbers": [
+            "4",
+            "6",
+            "7"
+          ],
+          "positions": [
+            7,
+            8,
+            9
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -14367,20 +16392,24 @@
       "line_type": "二分戦",
       "line_order": [
         {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
           "position": 1,
           "car_no": "3"
         },
         {
+          "position": 2,
+          "car_no": "1"
+        },
+        {
+          "position": 3,
+          "car_no": "7"
+        },
+        {
           "position": 5,
           "car_no": "4"
+        },
+        {
+          "position": 6,
+          "car_no": "2"
         },
         {
           "position": 7,
@@ -14389,14 +16418,45 @@
         {
           "position": 8,
           "car_no": "6"
-        },
-        {
-          "position": 3,
-          "car_no": "7"
         }
       ],
-      "lines": [],
-      "line_status": "公式位置情報を保存・グループ未確定",
+      "lines": [
+        {
+          "line_no": 1,
+          "car_numbers": [
+            "3",
+            "1",
+            "7"
+          ],
+          "positions": [
+            1,
+            2,
+            3
+          ],
+          "rider_count": 3,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        },
+        {
+          "line_no": 2,
+          "car_numbers": [
+            "4",
+            "2",
+            "5",
+            "6"
+          ],
+          "positions": [
+            5,
+            6,
+            7,
+            8
+          ],
+          "rider_count": 4,
+          "is_single": false,
+          "status": "位置番号から生成した候補"
+        }
+      ],
+      "line_status": "位置番号からグループ候補を生成・検証待ち",
       "riders": [
         {
           "car_no": "1",
@@ -14555,8 +16615,8 @@
     },
     "race_count": 78,
     "rider_count": 564,
-    "commented_rider_count": 313,
-    "comment_missing_rider_count": 251,
+    "commented_rider_count": 292,
+    "comment_missing_rider_count": 272,
     "events_without_races": []
   }
 }
