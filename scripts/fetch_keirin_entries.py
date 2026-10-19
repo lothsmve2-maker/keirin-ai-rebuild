@@ -1208,7 +1208,32 @@ def fetch_official_comments(
             },
             referer=referer or SCHEDULE_URL,
         )
+        # レースごとのコメント項目の有無を診断
+        if isinstance(payload, dict):
+            print(
+                "  コメント項目診断:",
+                f"senComMei={payload.get('senComMei', '<なし>')!r}",
+                f"yosoinMei={payload.get('yosoinMei', '<なし>')!r}",
+            )
 
+            riders = payload.get("sensyuTypeInfo", [])
+
+            if isinstance(riders, list):
+                print(
+                    f"  選手データ件数={len(riders)}"
+                )
+
+                for rider in riders:
+                    if not isinstance(rider, dict):
+                        continue
+
+                    print(
+                        "  選手コメント診断:",
+                        f"車番={rider.get('syaban', '?')}",
+                        f"選手={rider.get('sensyuName', '?')}",
+                        f"sensyuComment="
+                        f"{rider.get('sensyuComment', '<キーなし>')!r}",
+                    )
         inspect_payload(payload, "JSJ041")
 
         if isinstance(payload, dict):
