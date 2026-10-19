@@ -1198,6 +1198,7 @@ def fetch_official_comments(
 
     # 1. 公式JSON APIを調べる。
     try:
+        # まず従来の条件で取得する
         payload = request_json(
             session,
             f"{BASE}/sp/json",
@@ -1208,6 +1209,43 @@ def fetch_official_comments(
             },
             referer=referer or SCHEDULE_URL,
         )
+
+        inspect_payload(payload, "JSJ041-skbn=1")
+
+        # コメントが見つからなければ、skbnを省略して再取得する
+        if not comments:
+            try:
+                payload_without_skbn = request_json(
+                    session,
+                    f"{BASE}/sp/json",
+                    params={
+                        "type": "JSJ041",
+                        "encp": race_encp,
+                    },
+                    referer=referer or SCHEDULE_URL,
+                )
+
+                inspect_payload(
+                    payload_without_skbn,
+                    "JSJ041-skbn省略",
+                )
+
+                if isinstance(payload_without_skbn, dict):
+                    print(
+                        "  skbn省略時のトップ階層:",
+                        list(payload_without_skbn.keys())[:40],
+                    )
+
+                if comments:
+                    print(
+                        "  コメント取得成功: skbn省略条件"
+                    )
+
+            except Exception as exc:
+                print(
+                    "  skbn省略取得失敗:",
+                    f"{type(exc).__name__}: {exc}",
+                )
         # レースごとのコメント項目の有無を診断
         if isinstance(payload, dict):
             print(
