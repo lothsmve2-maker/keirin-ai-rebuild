@@ -705,18 +705,55 @@ function racePage(){
 }
 
 function entriesHTML(es){
-  if(!es.length)return '<div class="empty">出走表データがありません。</div>';
+  if(!es.length){
+    return '<div class="empty">出走表データがありません。</div>';
+  }
 
-  return `<div class="sectionhead"><h2>全選手</h2><span class="muted">${es.length}名</span></div>${es.map((p,i)=>{
-    const no=riderNo(p,i);
-    const g=String(first(p.ai_grade,p.rating,p.ai_rating,'—')).toUpperCase();
-    return `<div class="rider">
-      <span class="number n${no}">${no}</span>
-      <div class="ridername">${esc(riderName(p))}<small>${esc(p.age?`${p.age}歳`:'')}${p.prefecture?' ・'+esc(p.prefecture):''}</small></div>
-      <div class="mini-grade">${esc(g)}</div>
-      <div class="muted">${esc(first(p.comment,p.rider_comment,p.player_comment,'コメント未取得'))}</div>
-    </div>`;
-  }).join('')}`;
+  return `
+    <div class="sectionhead">
+      <h2>全選手</h2>
+      <span class="muted">${es.length}名</span>
+    </div>
+    ${es.map((p,i)=>{
+      const no=riderNo(p,i);
+      const g=String(first(
+        p.ai_grade,
+        p.rating,
+        p.ai_rating,
+        '—'
+      )).toUpperCase();
+
+      const comment=first(
+        p.comment,
+        p.rider_comment,
+        p.player_comment,
+        p.sensyuComment,
+        p.sensyu_comment,
+        p.comment_text,
+        p.commentText,
+        ''
+      );
+
+      return `
+        <div class="rider">
+          <span class="number n${no}">${no}</span>
+          <div class="ridername">
+            ${esc(riderName(p))}
+            <small>
+              ${esc(p.age?`${p.age}歳`:'')}
+              ${p.prefecture?' ・'+esc(p.prefecture):''}
+            </small>
+          </div>
+          <div class="mini-grade">${esc(g)}</div>
+          <div class="muted">
+            ${comment
+              ?esc(comment)
+              :'コメント未取得'}
+          </div>
+        </div>
+      `;
+    }).join('')}
+  `;
 }
 
 function animationHTML(r){
