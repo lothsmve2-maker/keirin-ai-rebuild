@@ -1713,7 +1713,57 @@ def extract_race_data(session, race):
         "source": "KEIRIN.JP",
         "http_status": response.status_code,
     }
+def load_previous_comments(target_date):
+    """同じ日付の前回取得済みコメントを読み込む。"""
 
+    if not OUTPUT.exists():
+        return {}
+
+    try:
+        previous = json.loads(
+            OUTPUT.read_text(encoding="utf-8")
+        )
+    except (OSError, json.JSONDecodeError) as exc:
+        print(f"前回コメントの読み込み失敗: {exc}")
+        return {}
+
+    if previous.get("target_date") != target_date.isoformat():
+        print("前回データは別日付のため、コメントを引き継ぎません")
+        return {}
+
+    cache = {}
+
+    for race in previous.get("races", []):
+        if not isinstance(race, dict):
+            continue
+
+        race_key = str(race.get("race_encp", "")).strip()
+
+        if not race_key:
+            continue
+
+        riders = {}
+
+        for rider in race.get("riders", []):
+            if not isinstance(rider, dict):
+                continue
+
+            car_no = str(rider.get("car_no", "")).strip()
+            comment = str(rider.get("comment", "")).strip()
+
+            if car_no and comment:
+                riders[car_no] = comment
+
+        if riders:
+            cache[race_key] = riders
+
+    print(
+        "前回取得済みコメント:",
+        sum(len(riders) for riders in cache.values()),
+        "人分",
+    )
+
+    return cache
 
 # ============================================================
 # メイン処理
@@ -1722,7 +1772,7 @@ def extract_race_data(session, race):
 def main():
     started = now_jst()
     today = started.date()
-
+    previous_comments = load_previous_comments(today)
     result = {
         "schema_version": SCHEMA_VERSION,
         "source": "KEIRIN.JP",
@@ -1902,7 +1952,55 @@ def main():
 
             try:
                 parsed = extract_race_data(session, race)
+                # 今回取得できなかったコメントは、
+                # 同じ日付・同じレース・同じ車番の前回分を保持する。
+                race_key = str(
+                    parsed.get("race_encp", "")
+                ).strip()
 
+                old_riders = previous_comments.get(
+                    race_key, {}
+                )
+
+                for rider in parsed.get("riders", []):
+                    car_no = str(
+                        rider.get("car_no", "")
+                    ).strip()
+
+                    current_comment = str(
+                        rider.get("comment", "")
+                    ).strip()
+
+                    old_comment = old_riders.get(
+                        car_no, ""
+                    )
+
+                    if not current_comment and old_comment:
+                        rider["comment"] = old_comment
+                        rider["comment_available"] = True
+                        rider["comment_status"] = (
+                            "前回取得分を保持"
+                        )
+
+                # 引き継ぎ後の件数でレース全体を再集計する。
+                riders = parsed.get("riders", [])
+
+                parsed["comment_count"] = sum(
+                    1 for rider in riders
+                    if str(
+                        rider.get("comment", "")
+                    ).strip()
+                )
+
+                if (
+                    riders
+                    and parsed["comment_count"] == len(riders)
+                ):
+                    parsed["comment_status"] = "取得済み"
+                elif parsed["comment_count"] > 0:
+                    parsed["comment_status"] = "一部取得"
+                else:
+                    parsed["comment_status"] = "本文未取得"
                 # 個別ページの日付を最優先する。
                 actual_date = parse_date(
                     parsed.get("race_date_display")
