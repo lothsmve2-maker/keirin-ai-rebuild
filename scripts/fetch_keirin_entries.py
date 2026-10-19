@@ -271,103 +271,123 @@ def find_events(payload):
         
     return events
 def find_schedule_event_encp(html, venue):
-    """開催場と対象日程に合うレース一覧への遷移パラメータを探す。"""
+    """
+    公式開催HTMLから、指定開催場・当日開催に対応する
+    /sp/racelist の遷移パラメータを抽出する。
+
+    親要素と子要素の順序に依存せず、
+    クリック要素の周辺にある開催場名と日付を照合する。
+    """
+
     from bs4 import BeautifulSoup
-    from datetime import datetime, timezone, timedelta
 
     if not html or not venue:
         return ""
 
     soup = BeautifulSoup(html, "html.parser")
-    jst = timezone(timedelta(hours=9))
-    today = datetime.now(jst).date()
+    today = now_jst().date()
 
-    # 開催場の並び順。開催場名の見出しを境界として扱う。
-    venues = {
-        "函館", "青森", "いわき平", "弥彦", "前橋", "取手",
-        "宇都宮", "大宮", "西武園", "京王閣", "立川",
-        "松戸", "千葉", "川崎", "平塚", "小田原", "伊東",
-        "静岡", "名古屋", "岐阜", "大垣", "豊橋", "富山",
-        "松阪", "四日市", "福井", "奈良", "向日町",
-        "和歌山", "岸和田", "玉野", "広島", "防府",
-        "高松", "小松島", "高知", "松山", "小倉",
-        "久留米", "武雄", "佐世保", "別府", "熊本",
-    }
+    candidates = set()
 
-    # ページ全体ではなく、開催場の見出しから次の見出しまで調べる。
-    elements = soup.find_all(True)
-    active_venue = ""
-    candidates = []
+    # 開催場のレース一覧への遷移を探す。
+    onclick_pattern = re.compile(
+        r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
+        re.IGNORECASE,
+    )
 
-    for element in elements:
-        # 入れ子の親要素を誤って開催場見出しと認識しない。
-        if not element.find(True):
-            text = element.get_text(" ", strip=True)
-            if text in venues:
-                active_venue = text
+    # 開催期間を抽出する。
+    date_pattern = re.compile(
+        r"(\d{1,2})/(\d{1,2})"
+        r"(?:\s*[（(][月火水木金土日][）)])?"
+        r"\s*[～〜~〜－―-]\s*"
+        r"(\d{1,2})/(\d{1,2})"
+    )
 
-        if active_venue != venue:
-            continue
+    for element in soup.find_all(True):
 
         onclick = element.get("onclick", "")
+
+        if not isinstance(onclick, str):
+            continue
+
         if "/sp/racelist" not in onclick:
             continue
 
-        match = re.search(
-            r"""formlnk\(\s*['"]/sp/racelist['"]\s*,\s*['"]([^'"]+)['"]""",
-            onclick,
-        )
+        match = onclick_pattern.search(onclick)
+
         if not match:
             continue
 
         encp = match.group(1).strip()
+
         if not encp:
             continue
 
-        # リンク周辺の日付が今日を含む開催か確認する。
+        # クリック要素から親方向へ調べる。
+        # 開催場名と開催期間が同じ範囲にあるか確認する。
         parent = element
-        date_matches = False
+        matched_event = False
 
-        for _ in range(5):
+        for _ in range(10):
+
             if parent is None:
                 break
 
             text = parent.get_text(" ", strip=True)
-            dates = re.findall(
-                r"(\d{1,2})/(\d{1,2})\s*[（(][月火水木金土日][）)]"
-                r"\s*[～〜~-]\s*"
-                r"(\d{1,2})/(\d{1,2})",
-                text,
-            )
 
-            for sm, sd, em, ed in dates:
-                start = datetime(today.year, int(sm), int(sd)).date()
-                end = datetime(today.year, int(em), int(ed)).date()
+            if venue not in text:
+                parent = parent.parent
+                continue
 
-                if end < start:
-                    end = end.replace(year=end.year + 1)
+            for date_match in date_pattern.finditer(text):
+
+                sm, sd, em, ed = map(
+                    int,
+                    date_match.groups(),
+                )
+
+                try:
+                    start = datetime(
+                        today.year,
+                        sm,
+                        sd,
+                    ).date()
+
+                    end_year = today.year
+
+                    # 年をまたぐ開催にも対応する。
+                    if (em, ed) < (sm, sd):
+                        end_year += 1
+
+                    end = datetime(
+                        end_year,
+                        em,
+                        ed,
+                    ).date()
+
+                except ValueError:
+                    continue
 
                 if start <= today <= end:
-                    date_matches = True
+                    candidates.add(encp)
+                    matched_event = True
                     break
 
-            if date_matches:
+            if matched_event:
                 break
 
             parent = parent.parent
 
-        if date_matches:
-            candidates.append(encp)
-
-    candidates = list(dict.fromkeys(candidates))
-
     if len(candidates) == 1:
-        return candidates[0]
+        encp = next(iter(candidates))
+        print(f"  {venue}: HTML開催パラメータを特定")
+        return encp
 
     print(
-        f"  {venue}: 今日の開催パラメータ候補="
+        f"  {venue}: HTML開催パラメータ候補="
         f"{len(candidates)}件"
     )
+
     return ""
 
 # ============================================================
