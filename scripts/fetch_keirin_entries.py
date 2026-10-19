@@ -1607,7 +1607,10 @@ def main():
         # ----------------------------------------------------
 
         print("[4/4] 取得結果を検証...")
-
+        print(f"DEBUG events: {len(result['events'])}")
+        print(f"DEBUG races: {len(result['races'])}")
+        print(f"DEBUG races_fetched: {result['races_fetched']}")
+        print(f"DEBUG races_failed: {result['races_failed']}")
         events_without_races = [
             event
             for event in result["events"]
