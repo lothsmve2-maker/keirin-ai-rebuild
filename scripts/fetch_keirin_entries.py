@@ -697,221 +697,210 @@ def fetch_races_from_post(session, event):
 # 開催別レース一覧
 # ============================================================
 
-def fetch_event_races(session, event, schedule_html=""):
-    """JSJ049の応答を診断し、0件の場合は公式POST画面を試す。"""
-
-    races = []
+def fetch_event_races(session, event):
+    """開催JSONと公式HTMLのパラメータを照合してレース一覧を取得する。"""
     event_encp = event.get("encp")
-
     if not event_encp:
         raise ValueError("開催パラメータencpがありません")
-
+    venue = event.get("venue", "")
+    venue_code = event.get("venue_code", "")
+    candidates = []
+    seen_encp = set()
+    def add_candidate(encp, source):
+        encp = clean(encp)
+        if not encp or encp in seen_encp:
+            return
+        seen_encp.add(encp)
+        candidates.append((encp, source))
+    # 最初に公式開催JSONのパラメータを試す。
+    add_candidate(event_encp, "schedule_json")
+    # 公式開催HTMLから同じ開催場のパラメータを取得する。
     try:
-        payload = request_json(
+        schedule_response = request_page(
             session,
-            RACE_LIST_API,
+            SCHEDULE_URL,
             params={
-                "type": "JSJ049",
-                "encp": event_encp,
+                "kday": clean(event.get("start_date", ""))
             },
             referer=SCHEDULE_URL,
         )
-
-        if not isinstance(payload, dict):
-            print(
-                f'  {event["venue"]}: '
-                f"JSJ049応答形式={type(payload).__name__}"
-            )
-            raise ValueError("JSJ049の応答が辞書形式ではありません")
-
-        print(
-            f'  {event["venue"]}: '
-            f'開催コード={event.get("venue_code", "")}, '
-            f'encp={event_encp}, '
-            f'取得元={event.get("source_path", "")}'
+        html_encp = find_schedule_event_encp(
+            schedule_response.text,
+            venue,
         )
-        if event["venue"] in ("静岡", "豊橋", "四日市"):
-            print(
-                f'  {event["venue"]}: '
-                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
-            )
-            print(
-                f'  {event["venue"]}: '
-                f'選手リスト件数={event.get("sensyu_count", 0)}'
-            )
-        print(
-            f'  {event["venue"]}: '
-            f'JSJ049 resultCd={payload.get("resultCd", "(なし)")}, '
-            f'messageCd={payload.get("messageCd", "(なし)")}, '
-            f'message={payload.get("message", "(なし)")}, '
-            f'keys={list(payload.keys())[:12]}'
-        )
-
-        days = payload.get("kaisaiDayList", [])
-
-        if not isinstance(days, list):
-            print(
-                f'  {event["venue"]}: '
-                "kaisaiDayListがリストではありません"
-            )
-            days = []
-
-        print(
-            f'  {event["venue"]}: '
-            f"開催日リスト={len(days)}件"
-        )
-        if event["venue"] in ("静岡", "豊橋", "四日市"):
-            print(
-                f'  {event["venue"]}: '
-                f'公式開催情報={json.dumps(event.get("raw_fields", {}), ensure_ascii=False)}'
-            )
-            print(
-                f'  {event["venue"]}: '
-                f'選手リスト件数={event.get("sensyu_count", 0)}'
-            )
-        for day in days:
-            if not isinstance(day, dict):
-                continue
-
-            day_name = first_value(
-                day,
-                "strNitiji",
-                "strDay",
-                "strKaisaiDate",
-            )
-
-            day_date = first_value(
-                day,
-                "strKaisaiDate",
-                "kaisaiDate",
-                "strEventDate",
-            )
-
-            programs = day.get("raceProgramList", [])
-
-            if not isinstance(programs, list):
-                continue
-
-            for program in programs:
-                if not isinstance(program, dict):
-                    continue
-
-                race_path = first_value(
-                    program,
-                    "strRaceLnk",
+        if html_encp:
+            if html_encp != event_encp:
+                print(
+                    f"  {venue}: 開催パラメータ不一致"
+                    f" JSON={event_encp}"
+                    f" HTML={html_encp}"
                 )
-
-                race_encp = first_value(
-                    program,
-                    "strRaceLnkPrm",
+            else:
+                print(
+                    f"  {venue}: JSONとHTMLの"
+                    "開催パラメータは一致"
                 )
-
-                race_no = first_value(
-                    program,
-                    "strRaceNo",
-                )
-
-                race_name = first_value(
-                    program,
-                    "strSyumokuName",
-                )
-
-                if not race_encp or not race_no:
-                    continue
-
-                races.append({
-                    "venue": event["venue"],
-                    "venue_code": event["venue_code"],
-                    "event_start_date": event["start_date"],
-                    "day": clean(day_name),
-                    "race_date": clean(day_date),
-                    "race_no": clean(race_no),
-                    "race_name": clean(race_name),
-                    "race_url": urljoin(
-                        BASE,
-                        race_path or "/sp/race",
-                    ),
-                    "race_encp": clean(race_encp),
-                    "event_encp": event_encp,
-                    "list_source": "JSJ049",
-                })
-
-        print(
-            f'  {event["venue"]}: '
-            f"JSJ049レース抽出={len(races)}件"
-        )
-
-    except Exception as exc:
-        print(
-            f'  {event["venue"]}: JSJ049失敗: '
-            f'{type(exc).__name__}: {exc}'
-        )
-
-    if races:
-        print(
-            f'  {event["venue"]}: JSONから'
-            f"{len(races)}レース取得"
-        )
-        return races
-    # 開催一覧HTMLから別の遷移パラメータを探す。
-    # 複数候補がある場合、既存関数は空文字を返すため、
-    # 曖昧なパラメータでは再取得しない。
-    if schedule_html:
-        schedule_encp = find_schedule_event_encp(
-            schedule_html,
-            event.get("venue", ""),
-        )
-
-        if schedule_encp and schedule_encp != event_encp:
-            print(
-                f'  {event["venue"]}: '
-                "開催一覧から別の遷移パラメータを検出"
-            )
-
-            retry_event = dict(event)
-            retry_event["encp"] = schedule_encp
-
-            retry_races = fetch_event_races(
-                session,
-                retry_event,
-            )
-
-            if retry_races:
-                for race in retry_races:
-                    race["event_encp"] = schedule_encp
-
-                return retry_races
-    print(
-        f'  {event["venue"]}: JSONが0件のため'
-        "公式POST画面を試します"
-    )
-
-    try:
-        fallback_races = fetch_races_from_post(
-            session,
-            event,
-        )
-
-        if fallback_races:
-            print(
-                f'  {event["venue"]}: POST画面から'
-                f"{len(fallback_races)}レース取得"
-            )
+            add_candidate(html_encp, "schedule_html")
         else:
             print(
-                f'  {event["venue"]}: '
-                "JSON・POSTともにレースを抽出できませんでした"
+                f"  {venue}: 公式HTMLから"
+                "開催パラメータを特定できません"
             )
-
-        return fallback_races
-
     except Exception as exc:
         print(
-            f'  {event["venue"]}: POST取得失敗: '
-            f'{type(exc).__name__}: {exc}'
+            f"  {venue}: 公式HTMLの照合失敗: "
+            f"{type(exc).__name__}: {exc}"
         )
-
-        raise
+    # 候補パラメータを順番にJSJ049へ渡す。
+    for candidate_encp, source in candidates:
+        print(
+            f"  {venue}: JSJ049試行"
+            f" source={source}"
+            f" encp={candidate_encp}"
+        )
+        try:
+            payload = request_json(
+                session,
+                RACE_LIST_API,
+                params={
+                    "type": "JSJ049",
+                    "encp": candidate_encp,
+                },
+                referer=SCHEDULE_URL,
+            )
+            if not isinstance(payload, dict):
+                print(
+                    f"  {venue}: JSON応答が辞書形式ではありません"
+                )
+                continue
+            result_cd = str(payload.get("resultCd", ""))
+            print(
+                f"  {venue}: JSJ049"
+                f" resultCd={result_cd}"
+                f" messageCd={payload.get('messageCd', '')}"
+            )
+            if result_cd != "0":
+                continue
+            days = payload.get("kaisaiDayList", [])
+            if not isinstance(days, list):
+                continue
+            races = []
+            seen_races = set()
+            for day in days:
+                if not isinstance(day, dict):
+                    continue
+                day_name = first_value(
+                    day,
+                    "strNitiji",
+                    "strDay",
+                    "strKaisaiDate",
+                )
+                day_date = first_value(
+                    day,
+                    "strKaisaiDate",
+                    "kaisaiDate",
+                    "strEventDate",
+                )
+                programs = day.get("raceProgramList", [])
+                if not isinstance(programs, list):
+                    continue
+                for program in programs:
+                    if not isinstance(program, dict):
+                        continue
+                    race_encp = first_value(
+                        program,
+                        "strRaceLnkPrm",
+                    )
+                    race_no = first_value(
+                        program,
+                        "strRaceNo",
+                    )
+                    if not race_encp or not race_no:
+                        continue
+                    race_key = (
+                        clean(day_date),
+                        clean(race_no),
+                        clean(race_encp),
+                    )
+                    if race_key in seen_races:
+                        continue
+                    seen_races.add(race_key)
+                    race_path = first_value(
+                        program,
+                        "strRaceLnk",
+                    )
+                    races.append({
+                        "venue": venue,
+                        "venue_code": venue_code,
+                        "event_start_date": event.get("start_date"),
+                        "day": clean(day_name),
+                        "race_date": clean(day_date),
+                        "race_no": clean(race_no),
+                        "race_name": clean(
+                            first_value(
+                                program,
+                                "strSyumokuName",
+                            )
+                        ),
+                        "race_url": urljoin(
+                            BASE,
+                            race_path or "/sp/race",
+                        ),
+                        "race_encp": clean(race_encp),
+                        "event_encp": candidate_encp,
+                        "list_source": f"JSJ049_{source}",
+                    })
+            if races:
+                print(
+                    f"  {venue}: {len(races)}レース取得"
+                    f" source={source}"
+                )
+                return races
+            print(
+                f"  {venue}: 正常応答ですが"
+                "レース情報は0件です"
+            )
+        except Exception as exc:
+            print(
+                f"  {venue}: JSJ049取得失敗"
+                f" source={source}"
+                f" {type(exc).__name__}: {exc}"
+            )
+    # JSONから取得できない場合は、公式POST画面を試す。
+    # HTML由来のパラメータがあれば、そちらも候補にする。
+    for candidate_encp, source in candidates:
+        fallback_event = dict(event)
+        fallback_event["encp"] = candidate_encp
+        print(
+            f"  {venue}: 公式POSTを試行"
+            f" source={source}"
+            f" encp={candidate_encp}"
+        )
+        try:
+            fallback_races = fetch_races_from_post(
+                session,
+                fallback_event,
+            )
+            if fallback_races:
+                for race in fallback_races:
+                    race["list_source"] = (
+                        f"official_post_{source}"
+                    )
+                print(
+                    f"  {venue}: POSTから"
+                    f"{len(fallback_races)}レース取得"
+                )
+                return fallback_races
+        except Exception as exc:
+            print(
+                f"  {venue}: POST取得失敗"
+                f" source={source}"
+                f" {type(exc).__name__}: {exc}"
+            )
+    print(
+        f"  {venue}: 全候補でレース一覧を取得できませんでした"
+    )
+    return []
 
 
 # ============================================================
