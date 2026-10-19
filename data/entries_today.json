@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-19",
-  "started_at": "2026-10-19T12:03:22.143543+09:00",
-  "finished_at": "2026-10-19T12:04:04.315006+09:00",
+  "started_at": "2026-10-19T12:32:09.044871+09:00",
+  "finished_at": "2026-10-19T12:32:47.182100+09:00",
   "status": "partial",
   "events_found": 8,
   "events_checked": 8,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 126,
-  "commented_rider_count": 56,
+  "commented_rider_count": 49,
   "events": [
     {
       "venue": "京王閣",
@@ -1781,37 +1781,8 @@
       "verified_race_date": "2026-10-19",
       "start_time": "12:12",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 4,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 9,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 7,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
       "line_status": "公式位置情報を保存・グループ未確定",
       "riders": [
@@ -1829,9 +1800,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "1",
-          "comment": "児玉君に付く",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "2",
@@ -1847,9 +1818,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "4",
-          "comment": "自力でいく",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "3",
@@ -1865,9 +1836,9 @@
           "sashi": "1",
           "mark": "7",
           "back": "0",
-          "comment": "同県の大本君",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "4",
@@ -1883,9 +1854,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "先行勝負する",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "5",
@@ -1901,9 +1872,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "神奈川勢の後ろ",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "6",
@@ -1919,9 +1890,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "松本君。点数上げたい",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         },
         {
           "car_no": "7",
@@ -1937,21 +1908,29 @@
           "sashi": "0",
           "mark": "0",
           "back": "13",
-          "comment": "自力で戦う",
-          "comment_available": true,
-          "comment_status": "取得済み"
+          "comment": "",
+          "comment_available": false,
+          "comment_status": "未掲載"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 7,
-      "comment_status": "取得済み",
+      "comment_count": 0,
+      "comment_status": "本文未取得",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3309,8 +3288,8 @@
     },
     "race_count": 18,
     "rider_count": 126,
-    "commented_rider_count": 56,
-    "comment_missing_rider_count": 70,
+    "commented_rider_count": 49,
+    "comment_missing_rider_count": 77,
     "events_without_races": [
       "京王閣",
       "高知",
