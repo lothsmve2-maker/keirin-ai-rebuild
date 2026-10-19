@@ -810,7 +810,7 @@ def fetch_event_races(session, event):
         races = []
         seen_races = set()
 
-        for day in days:
+        for day_index, day in enumerate(days):
             if not isinstance(day, dict):
                 continue
 
@@ -819,15 +819,37 @@ def fetch_event_races(session, event):
                 "strKaisaiDate",
                 "kaisaiDate",
                 "strEventDate",
+                "kaisaiYmd",
+                "strKaisaiYmd",
+                "raceDate",
+                "strRaceDate",
             )
 
             day_date = parse_date(day_date_raw)
 
-            # 日付が確認できない日程は採用しない。
+            # 開催日が明示されていない場合は、
+            # 開催一覧の初日と日程リストの順序から補完する。
+            # 日付が確定できない場合は採用しない。
             if day_date is None:
+                event_start_date = parse_date(
+                    event.get("start_date")
+                )
+
+                if event_start_date is not None:
+                    from datetime import timedelta
+                    day_date = (
+                        event_start_date
+                        + timedelta(days=day_index)
+                    )
+
+            if day_date is None:
+                print(
+                    f"  {venue}: 日付を確認できない日程を除外 "
+                    f"day_index={day_index}, "
+                    f"keys={list(day.keys())}"
+                )
                 continue
 
-            # 当日以外のレースを候補から除外する。
             if day_date.isoformat() != today_text:
                 continue
 
