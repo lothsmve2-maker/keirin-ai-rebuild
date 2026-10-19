@@ -948,6 +948,20 @@ def fetch_event_races(session, event):
                 key=lambda race: int(race["race_no"])
             )
 
+            # 一覧の日付だけで採用せず、
+            # 個別レースの開催日と競輪場も確認する。
+            if not validate_race_list_candidate(
+                session,
+                races[0],
+                venue,
+                today_text,
+            ):
+                print(
+                    f"  {venue}: 候補を不採用。"
+                    "次の開催パラメータを検証します"
+                )
+                continue
+
             print(
                 f"  {venue}: 当日分{len(races)}レース取得 "
                 f"source={source}"
@@ -1035,6 +1049,67 @@ def extract_assignment(html, variable_name):
     except json.JSONDecodeError:
         return None
 
+def validate_race_list_candidate(session, race, expected_venue, today_text):
+    """
+    レース一覧の候補から先頭レースを開き、
+    実際の開催日と競輪場が一致するか検証する。
+    """
+    try:
+        response = request_page(
+            session,
+            race["race_url"],
+            params={"encp": race["race_encp"]},
+            referer=SCHEDULE_URL,
+        )
+
+        html = response.text or ""
+        base_info = extract_assignment(html, "SC0201")
+
+        if not isinstance(base_info, dict):
+            print(
+                f"    候補検証NG: 開催情報を解析できない "
+                f"{expected_venue}"
+            )
+            return False
+
+        meta = base_info.get("C0201data", {})
+
+        if not isinstance(meta, dict):
+            return False
+
+        actual_date_raw = first_value(meta, "txtEventDate")
+        actual_date = parse_date(actual_date_raw)
+
+        actual_venue = clean(
+            first_value(meta, "joName", "jyoName")
+        )
+
+        normalized_expected = re.sub(r"\s+", "", expected_venue)
+        normalized_actual = re.sub(r"\s+", "", actual_venue)
+
+        date_ok = (
+            actual_date is not None
+            and actual_date.isoformat() == today_text
+        )
+        venue_ok = (
+            normalized_actual != ""
+            and normalized_expected in normalized_actual
+        )
+
+        print(
+            f"    候補検証: 期待={expected_venue}/{today_text} "
+            f"実際={actual_venue}/{actual_date_raw} "
+            f"結果={'OK' if date_ok and venue_ok else 'NG'}"
+        )
+
+        return date_ok and venue_ok
+
+    except Exception as exc:
+        print(
+            f"    候補検証失敗: "
+            f"{type(exc).__name__}: {exc}"
+        )
+        return False
 
 # ============================================================
 # 公式コメント
