@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-20",
-  "started_at": "2026-10-20T00:15:19.386143+09:00",
-  "finished_at": "2026-10-20T00:17:30.735015+09:00",
+  "started_at": "2026-10-20T01:05:25.948868+09:00",
+  "finished_at": "2026-10-20T01:07:13.637965+09:00",
   "status": "ok",
   "events_found": 7,
   "events_checked": 7,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 511,
-  "commented_rider_count": 287,
+  "commented_rider_count": 385,
   "events": [
     {
       "venue": "京王閣",
@@ -103,9 +103,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "畝木聖",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -121,9 +121,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "松岡健介",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -139,9 +139,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "木村幸希",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -157,9 +157,9 @@
           "sashi": "5",
           "mark": "0",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "中井俊亮",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -175,9 +175,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "内山貴裕",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 5,
@@ -194,8 +194,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 5,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -234,9 +234,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "吉松直人",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -252,9 +252,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "5",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "植原琢也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -270,9 +270,9 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "柿沼信也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -288,9 +288,9 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "成清貴之",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -306,9 +306,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "吉武信太朗",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -324,9 +324,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "金成和幸",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 6,
@@ -344,8 +344,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 6,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -384,9 +384,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "庄子信弘",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -402,9 +402,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "長屋秀明",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -420,9 +420,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "城幸弘",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -438,9 +438,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "早坂秀悟",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -456,9 +456,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "笹倉慎也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -474,9 +474,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "高橋成英",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 6,
@@ -494,8 +494,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 6,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -534,9 +534,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "内田英介",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -552,9 +552,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "元砂勇雪",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -570,9 +570,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "島川将貴",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -588,9 +588,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "13",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "永井哉多",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -606,9 +606,9 @@
           "sashi": "5",
           "mark": "4",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "山本奨",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -624,9 +624,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "長谷部龍一",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -642,9 +642,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "塩崎隼秀",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -660,9 +660,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐川翔吾",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -678,9 +678,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "岡田泰地",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -701,8 +701,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -741,9 +741,9 @@
           "sashi": "7",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "小堺浩二",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -759,9 +759,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "藤根俊貴",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -777,9 +777,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "志村龍己",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -795,9 +795,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐方良行",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -813,9 +813,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "滝本幸正",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -831,9 +831,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "相川永伍",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -849,9 +849,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "長松空吾",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -867,9 +867,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "10",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐藤大地",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -885,9 +885,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "11",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "齋藤雄行",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -908,8 +908,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -948,9 +948,9 @@
           "sashi": "0",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "桐山敬太郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -966,9 +966,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "平原啓多",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -984,9 +984,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "荒澤貴史",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1002,9 +1002,9 @@
           "sashi": "6",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "伊藤慶太郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1020,9 +1020,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "25",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "野口裕史",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1038,9 +1038,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "蓮井祐輝",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1056,9 +1056,9 @@
           "sashi": "6",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "畑段嵐士",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -1074,9 +1074,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "6",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "鈴木謙太郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -1092,9 +1092,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "立花昌也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -1115,8 +1115,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1155,9 +1155,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "菅原大也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1173,9 +1173,9 @@
           "sashi": "8",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "中川貴徳",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1191,9 +1191,9 @@
           "sashi": "7",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "岩谷拓磨",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1209,9 +1209,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "嶋田誠也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1227,9 +1227,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "中村浩士",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1245,9 +1245,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "望月永悟",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1263,9 +1263,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "13",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "橋本宇宙",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -1281,9 +1281,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "西田雅志",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -1299,9 +1299,9 @@
           "sashi": "7",
           "mark": "4",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "中田健太",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -1322,8 +1322,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1362,9 +1362,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "小森貴大",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1380,9 +1380,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "林慶次郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1398,9 +1398,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "城戸俊潔",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1416,9 +1416,9 @@
           "sashi": "9",
           "mark": "4",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "北村信明",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1434,9 +1434,9 @@
           "sashi": "7",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "吉本卓仁",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1452,9 +1452,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "高木和仁",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1470,9 +1470,9 @@
           "sashi": "5",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "岡田征陽",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -1488,9 +1488,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "山本拳也",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -1506,9 +1506,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "武田豊樹",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -1529,8 +1529,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1569,9 +1569,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "坂本修一",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1587,9 +1587,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "照井拓成",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1605,9 +1605,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "小島歩",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1623,9 +1623,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "石塚孝幸",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1641,9 +1641,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "15",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "山崎賢人",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1659,9 +1659,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "中西大",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1677,9 +1677,9 @@
           "sashi": "6",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "坂本健太郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -1695,9 +1695,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "木村直隆",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -1713,9 +1713,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "荻原尚人",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -1736,8 +1736,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1776,9 +1776,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "篠田幸希",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1794,9 +1794,9 @@
           "sashi": "5",
           "mark": "6",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "守澤太志",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1812,9 +1812,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "片岡迪之",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1830,9 +1830,9 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "清水一幸",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1848,9 +1848,9 @@
           "sashi": "7",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "川津悠揮",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1866,9 +1866,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "内田玄希",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1884,9 +1884,9 @@
           "sashi": "6",
           "mark": "0",
           "back": "8",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "磯島成介",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -1902,9 +1902,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "6",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "張野幸聖",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -1920,9 +1920,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "寺沼拓摩",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -1943,8 +1943,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1983,9 +1983,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐藤慎太郎",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2001,9 +2001,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "大西貴晃",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2019,9 +2019,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "伊藤信",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2037,9 +2037,9 @@
           "sashi": "6",
           "mark": "7",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐々木和紀",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2055,9 +2055,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "小堀敢太",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2073,9 +2073,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "渡辺正光",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2091,9 +2091,9 @@
           "sashi": "8",
           "mark": "1",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐藤幸治",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -2109,9 +2109,9 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "山崎将幸",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -2127,9 +2127,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "10",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "大石剣士",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -2150,8 +2150,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2190,9 +2190,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "11",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "杉浦侑吾",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2208,9 +2208,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "16",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "石原颯",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2226,9 +2226,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "嶋津拓弥",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2244,9 +2244,9 @@
           "sashi": "3",
           "mark": "4",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "鈴木竜士",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2262,9 +2262,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "5",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "佐々木悠葵",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2280,9 +2280,9 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "鰐淵圭佑",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2298,9 +2298,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "6",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "岩本俊介",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "8",
@@ -2316,9 +2316,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "高橋築",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "9",
@@ -2334,9 +2334,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "未掲載"
+          "comment": "取鳥雄吾",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 9,
@@ -2357,8 +2357,8 @@
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
+      "comment_count": 9,
+      "comment_status": "取得済み",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -15235,8 +15235,8 @@
     },
     "race_count": 71,
     "rider_count": 511,
-    "commented_rider_count": 287,
-    "comment_missing_rider_count": 224,
+    "commented_rider_count": 385,
+    "comment_missing_rider_count": 126,
     "events_without_races": []
   }
 }
