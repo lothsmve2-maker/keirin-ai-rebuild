@@ -1115,11 +1115,88 @@ def validate_race_list_candidate(session, race, expected_venue, today_text):
 # 公式コメント
 # ============================================================
 
-def fetch_official_comments(session, race_encp, referer=None):
-    """公式JSONの階層を走査して選手コメントを取得する。"""
+def fetch_official_comments(
+    session,
+    race_encp,
+    referer=None,
+    html=None,
+):
+    """公式APIとレースページ内JSONからコメントを調査する。"""
 
     comments = {}
+    found_paths = set()
 
+    def inspect_payload(payload, source):
+        if not isinstance(payload, (dict, list)):
+            return
+
+        for path, obj in walk_dicts(payload):
+            # コメントに関連するキーを持つ階層を調べる。
+            comment_keys = [
+                key for key in obj
+                if any(
+                    word in str(key).lower()
+                    for word in (
+                        "comment",
+                        "kome",
+                        "jikou",
+                    )
+                )
+                or "コメント" in str(key)
+            ]
+
+            for key in comment_keys:
+                value = obj.get(key)
+
+                if isinstance(value, str) and value.strip():
+                    diagnostic = (
+                        source,
+                        path,
+                        str(key),
+                        value.strip()[:100],
+                    )
+
+                    if diagnostic not in found_paths:
+                        found_paths.add(diagnostic)
+                        print(
+                            "  コメント候補:",
+                            f"取得元={source}",
+                            f"階層={path}",
+                            f"項目={key}",
+                            f"値={value.strip()[:100]}",
+                        )
+
+            # 車番とコメントが同じ選手データ内にあるか確認する。
+            car_no = str(first_value(
+                obj,
+                "syaban",
+                "shaban",
+                "carNo",
+                "car_no",
+            )).strip()
+
+            comment = first_value(
+                obj,
+                "sensyuComment",
+                "comment",
+                "commentText",
+                "strComment",
+                "jikouComment",
+                "riderComment",
+                "rider_comment",
+                "playerComment",
+                "player_comment",
+            )
+
+            if (
+                car_no.isdigit()
+                and 1 <= int(car_no) <= 9
+                and isinstance(comment, str)
+                and comment.strip()
+            ):
+                comments[car_no] = comment.strip()
+
+    # 1. 公式JSON APIを調べる。
     try:
         payload = request_json(
             session,
@@ -1132,151 +1209,59 @@ def fetch_official_comments(session, race_encp, referer=None):
             referer=referer or SCHEDULE_URL,
         )
 
-        if not isinstance(payload, (dict, list)):
-            print(
-                f"  コメント診断: JSON形式不正 "
-                f"race_encp={race_encp}"
-            )
-            return comments, "取得失敗"
-
-        # 選手情報が入っている階層を限定せずに調べる。
-        rider_lists = []
+        inspect_payload(payload, "JSJ041")
 
         if isinstance(payload, dict):
-            for path, obj in walk_dicts(payload):
-                for key, value in obj.items():
-                    if (
-                        isinstance(value, list)
-                        and value
-                        and isinstance(value[0], dict)
-                    ):
-                        # 選手番号を持つリストを候補にする。
-                        if any(
-                            first_value(
-                                item,
-                                "syaban",
-                                "shaban",
-                                "carNo",
-                                "car_no",
-                            )
-                            for item in value
-                            if isinstance(item, dict)
-                        ):
-                            rider_lists.append((path + "." + key, value))
-
-        elif isinstance(payload, list):
-            rider_lists.append(("$", payload))
-
-        seen_lists = set()
-        for list_path, riders in rider_lists:
-            # 同一リストを重複処理しない。
-            signature = tuple(
-                (
-                    str(first_value(
-                        item,
-                        "syaban",
-                        "shaban",
-                        "carNo",
-                        "car_no",
-                    )),
-                    str(first_value(
-                        item,
-                        "sensyuComment",
-                        "comment",
-                        "commentText",
-                        "strComment",
-                        "jikouComment",
-                    )),
-                )
-                for item in riders
-                if isinstance(item, dict)
-            )
-
-            if signature in seen_lists:
-                continue
-            seen_lists.add(signature)
-
-            for rider in riders:
-                if not isinstance(rider, dict):
-                    continue
-
-                car_no = str(first_value(
-                    rider,
-                    "syaban",
-                    "shaban",
-                    "carNo",
-                    "car_no",
-                )).strip()
-
-                comment = first_value(
-                    rider,
-                    "sensyuComment",
-                    "comment",
-                    "commentText",
-                    "strComment",
-                    "jikouComment",
-                    "riderComment",
-                    "rider_comment",
-                    "playerComment",
-                    "player_comment",
-                )
-
-                if isinstance(comment, str):
-                    comment = re.sub(
-                        r"\s+",
-                        " ",
-                        comment
-                    ).strip()
-                else:
-                    comment = ""
-
-                if (
-                    car_no.isdigit()
-                    and 1 <= int(car_no) <= 9
-                    and comment
-                ):
-                    comments[car_no] = comment
-
-        if comments:
-            return comments, "取得済み"
-
-        # コメントが見つからない場合は構造診断を出す。
-        if isinstance(payload, dict):
             print(
-                "  コメント診断:",
-                f"race_encp={race_encp}",
-                f"トップ階層={list(payload.keys())[:30]}",
-                f"候補リスト={len(rider_lists)}",
+                "  JSJ041トップ階層:",
+                list(payload.keys())[:40],
             )
-
-            for path, obj in walk_dicts(payload):
-                keys = [
-                    key for key in obj.keys()
-                    if any(
-                        word in str(key).lower()
-                        for word in (
-                            "comment",
-                            "sensyu",
-                            "shaban",
-                            "syaban",
-                        )
-                    )
-                ]
-                if keys:
-                    print(
-                        "  コメント診断階層:",
-                        path,
-                        keys[:20],
-                    )
-
-        return comments, "本文未取得"
 
     except Exception as exc:
         print(
-            "  コメント取得失敗:",
+            "  JSJ041取得失敗:",
             f"{type(exc).__name__}: {exc}",
         )
-        return comments, "取得失敗"
+
+    # 2. レースページ内に埋め込まれたJSONを調べる。
+    if html:
+        assignment_pattern = re.compile(
+            r"""jsonData\s*\[\s*["']([^"']+)["']\s*\]\s*=\s*"""
+        )
+
+        decoder = json.JSONDecoder()
+        matches = list(assignment_pattern.finditer(html))
+
+        print(
+            f"  ページ内JSON診断: "
+            f"埋め込みデータ候補={len(matches)}"
+        )
+
+        for match in matches:
+            variable_name = match.group(1)
+            source_text = html[match.end():].lstrip()
+
+            try:
+                payload = decoder.raw_decode(source_text)[0]
+            except (json.JSONDecodeError, ValueError):
+                continue
+
+            inspect_payload(
+                payload,
+                f"ページ内JSON:{variable_name}",
+            )
+
+    if comments:
+        print(
+            f"  コメント診断結果: "
+            f"{len(comments)}人分の本文を確認"
+        )
+        return comments, "取得済み"
+
+    print(
+        "  コメント診断結果: 本文の取得先を特定できていません"
+    )
+    return {}, "本文未取得"
 
 
 # ============================================================
@@ -1571,6 +1556,7 @@ def extract_race_data(session, race):
             session,
             race["race_encp"],
             referer=response.url,
+            html=html,
         )
     )
 
