@@ -2125,40 +2125,34 @@ def main():
 
         print("個別レース候補:", len(unique_races))
 
-        # ----------------------------------------------------
-        # 3. 個別レース・日付検証
-        # ----------------------------------------------------
-
-        print("[3/4] 個別レースの出走表を取得...")
-
-        for index, race in enumerate(unique_races, start=1):
-            label = f'{race["venue"]} {race["race_no"]}R'
-
-            result["races_checked"] += 1
-
-            print(
-                f"  [{index}/{len(unique_races)}] {label}"
+    # ----------------------------------------------------
+    # 3. 個別レース・日付検証
+    # ----------------------------------------------------
+    print("[3/4] 個別レースの出走表を取得...")
+    for index, race in enumerate(unique_races, start=1):
+        label = f'{race["venue"]} {race["race_no"]}R'
+        result["races_checked"] += 1
+        print(
+            f"  [{index}/{len(unique_races)}] {label}"
+        )
+        try:
+            parsed = extract_race_data(session, race)
+            # 同じ日付・同じレース・同じ車番の前回コメントを確認する。
+            race_key = str(
+                parsed.get("race_encp", "")
+            ).strip()
+            old_riders = previous_comments.get(
+                race_key, {}
             )
-
-            try:
-                parsed = extract_race_data(session, race)
-                # 今回取得できなかったコメントは、
-                # 同じ日付・同じレース・同じ車番の前回分を保持する。
-                race_key = str(
-                    parsed.get("race_encp", "")
-                ).strip()
-
-                old_riders = previous_comments.get(
-race_key, {}
-)
-
             def normalize_comment_text(value):
                 return re.sub(
                     r"[\s　]+",
                     "",
                     str(value or ""),
                 )
-            for rider in parsed.get("riders", []):
+            riders = parsed.get("riders", [])
+            # 現在のコメントと前回コメントを照合する。
+            for rider in riders:
                 car_no = str(
                     rider.get("car_no", "")
                 ).strip()
@@ -2171,14 +2165,13 @@ race_key, {}
                 old_comment = str(
                     old_riders.get(car_no, "")
                 ).strip()
-                # 現在のコメントが選手名だけなら無効にする。
+                # 選手名そのものはコメントとして扱わない。
                 if (
                     current_comment
                     and normalize_comment_text(current_comment)
                     == normalize_comment_text(rider_name)
                 ):
                     current_comment = ""
-                # 前回コメントも選手名と一致する場合は引き継がない。
                 if (
                     old_comment
                     and normalize_comment_text(old_comment)
@@ -2198,129 +2191,92 @@ race_key, {}
                     rider["comment"] = ""
                     rider["comment_available"] = False
                     rider["comment_status"] = "本文未取得"
-                    car_no = str(
-                        rider.get("car_no", "")
-                    ).strip()
-
-                    current_comment = str(
-                        rider.get("comment", "")
-                    ).strip()
-
-                    old_comment = old_riders.get(
-                        car_no, ""
-                    )
-
-                    if not current_comment and old_comment:
-                        rider["comment"] = old_comment
-                        rider["comment_available"] = True
-                        rider["comment_status"] = (
-                            "前回取得分を保持"
-                        )
-
-                # 引き継ぎ後の件数でレース全体を再集計する。
-                riders = parsed.get("riders", [])
-
-                parsed["comment_count"] = sum(
-                    1 for rider in riders
-                    if str(
-                        rider.get("comment", "")
-                    ).strip()
-                )
-
-                if (
-                    riders
-                    and parsed["comment_count"] == len(riders)
-                ):
-                    parsed["comment_status"] = "取得済み"
-                elif parsed["comment_count"] > 0:
-                    parsed["comment_status"] = "一部取得"
-                else:
-                    parsed["comment_status"] = "本文未取得"
-                # 個別ページの日付を最優先する。
+            # コメント本文がある選手だけを集計する。
+            parsed["comment_count"] = sum(
+                1
+                for rider in riders
+                if rider.get("comment_available") is True
+                and str(
+                    rider.get("comment", "")
+                ).strip()
+            )
+            if (
+                riders
+                and parsed["comment_count"] == len(riders)
+            ):
+                parsed["comment_status"] = "取得済み"
+            elif parsed["comment_count"] > 0:
+                parsed["comment_status"] = "一部取得"
+            else:
+                parsed["comment_status"] = "本文未取得"
+            # 個別ページの日付を最優先する。
+            actual_date = parse_date(
+                parsed.get("race_date_display")
+            )
+            # 個別ページの日付が不明なら開催一覧の日付を確認する。
+            if actual_date is None:
                 actual_date = parse_date(
-                    parsed.get("race_date_display")
+                    race.get("race_date")
                 )
-
-                # 個別ページの日付が不明なら、
-                # 開催別JSONの日付を補助情報として確認する。
-                if actual_date is None:
-                    actual_date = parse_date(
-                        race.get("race_date")
-                    )
-
-                if actual_date is None:
-                    result["races_date_unknown"] += 1
-
-                    result["warnings"].append({
-                        "stage": "race_date",
-                        "venue": race["venue"],
-                        "race_no": race["race_no"],
-                        "message": (
-                            "個別ページと開催一覧の両方で"
-                            "レース日を確認できません"
-                        ),
-                    })
-
-                    print("    日付不明: 対象外")
-                    time.sleep(PAUSE)
-                    continue
-
-                parsed["verified_race_date"] = actual_date.isoformat()
-
-                if actual_date != today:
-                    result["races_excluded_other_date"] += 1
-
-                    print(
-                        "    別日として除外:",
-                        actual_date.isoformat(),
-                    )
-
-                    time.sleep(PAUSE)
-                    continue
-
-                if not parsed["riders"]:
-                    raise ValueError(
-                        "出走表の選手データが0人です"
-                    )
-
-                if parsed["validation"]["duplicate_car_numbers"]:
-                    result["warnings"].append({
-                        "stage": "validation",
-                        "venue": race["venue"],
-                        "race_no": race["race_no"],
-                        "message": "車番が重複しています",
-                    })
-
-                result["races"].append(parsed)
-                result["races_fetched"] += 1
-                result["rider_count"] += parsed["rider_count"]
-                result["commented_rider_count"] += parsed[
-                    "comment_count"
-                ]
-
-                print(
-                    "    成功:",
-                    parsed["rider_count"],
-                    "人 / コメント:",
-                    parsed["comment_status"],
-                )
-
-            except Exception as exc:
-                result["races_failed"] += 1
-
-                result["errors"].append({
-                    "stage": "race_detail",
-                    "venue": race.get("venue", ""),
-                    "race_no": race.get("race_no", ""),
-                    "error": f"{type(exc).__name__}: {exc}",
+            if actual_date is None:
+                result["races_date_unknown"] += 1
+                result["warnings"].append({
+                    "stage": "race_date",
+                    "venue": race["venue"],
+                    "race_no": race["race_no"],
+                    "message": (
+                        "個別ページと開催一覧の両方で"
+                        "レース日を確認できません"
+                    ),
                 })
-
+                print("    日付不明: 対象外")
+                time.sleep(PAUSE)
+                continue
+            parsed["verified_race_date"] = actual_date.isoformat()
+            if actual_date != today:
+                result["races_excluded_other_date"] += 1
                 print(
-                    "    取得失敗:",
-                    f"{type(exc).__name__}: {exc}",
+                    "    別日として除外:",
+                    actual_date.isoformat(),
                 )
-
-            time.sleep(PAUSE)
+                time.sleep(PAUSE)
+                continue
+            if not parsed["riders"]:
+                raise ValueError(
+                    "出走表の選手データが0人です"
+                )
+            if parsed["validation"]["duplicate_car_numbers"]:
+                result["warnings"].append({
+                    "stage": "validation",
+                    "venue": race["venue"],
+                    "race_no": race["race_no"],
+                    "message": "車番が重複しています",
+                })
+            result["races"].append(parsed)
+            result["races_fetched"] += 1
+            result["rider_count"] += parsed["rider_count"]
+            result["commented_rider_count"] += parsed[
+                "comment_count"
+            ]
+            print(
+                "    成功:",
+                parsed["rider_count"],
+                "人 / コメント:",
+                parsed["comment_status"],
+            )
+        except Exception as exc:
+            result["races_failed"] += 1
+            result["errors"].append({
+                "stage": "race_detail",
+                "venue": race.get("venue", ""),
+                "race_no": race.get("race_no", ""),
+                "error": f"{type(exc).__name__}: {exc}",
+            })
+            print(
+                "    取得失敗:",
+                f"{type(exc).__name__}: {exc}",
+            )
+        time.sleep(PAUSE)
 
         # ----------------------------------------------------
         # 4. 検証・集計
