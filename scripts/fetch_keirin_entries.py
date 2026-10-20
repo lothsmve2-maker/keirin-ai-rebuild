@@ -1901,7 +1901,7 @@ def extract_race_data(session, race):
         "http_status": response.status_code,
     }
 def load_previous_comments(target_date):
-"""同じ日付の前回コメントを読み込む。選手名だけの値は除外する。"""
+    """同じ日付の前回コメントを読み込む。選手名だけの値は除外する。"""
 
 if not OUTPUT.exists():
     return {}
