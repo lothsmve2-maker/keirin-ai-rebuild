@@ -2148,7 +2148,7 @@ def main():
         print("[3/4] 個別レースの出走表を取得...")
 
         for index, race in enumerate(unique_races, start=1):
-            label = f’{race[“venue”]} {race[“race_no”]}R’
+            label = f'{race["venue"]} {race["race_no"]}R'
             result[“races_checked”] += 1
 
         print(
