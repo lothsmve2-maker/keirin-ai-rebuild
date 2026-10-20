@@ -1901,57 +1901,60 @@ def extract_race_data(session, race):
         "http_status": response.status_code,
     }
 def load_previous_comments(target_date):
-    """同じ日付の前回取得済みコメントを読み込む。"""
+“”“同じ日付の前回コメントを読み込む。選手名だけの値は除外する。”””
 
-    if not OUTPUT.exists():
-        return {}
-
-    try:
-        previous = json.loads(
-            OUTPUT.read_text(encoding="utf-8")
-        )
-    except (OSError, json.JSONDecodeError) as exc:
-        print(f"前回コメントの読み込み失敗: {exc}")
-        return {}
-
-    if previous.get("target_date") != target_date.isoformat():
-        print("前回データは別日付のため、コメントを引き継ぎません")
-        return {}
-
-    cache = {}
-
-    for race in previous.get("races", []):
-        if not isinstance(race, dict):
-            continue
-
-        race_key = str(race.get("race_encp", "")).strip()
-
-        if not race_key:
-            continue
-
-        riders = {}
-
-        for rider in race.get("riders", []):
-            if not isinstance(rider, dict):
-                continue
-
-            car_no = str(rider.get("car_no", "")).strip()
-            comment = str(rider.get("comment", "")).strip()
-
-            if car_no and comment:
-                riders[car_no] = comment
-
-        if riders:
-            cache[race_key] = riders
-
-    print(
-        "前回取得済みコメント:",
-        sum(len(riders) for riders in cache.values()),
-        "人分",
+if not OUTPUT.exists():
+    return {}
+try:
+    previous = json.loads(
+        OUTPUT.read_text(encoding="utf-8")
     )
-
-    return cache
-
+except (OSError, json.JSONDecodeError) as exc:
+    print(f"前回コメントの読み込み失敗: {exc}")
+    return {}
+if not isinstance(previous, dict):
+    return {}
+if previous.get("target_date") != target_date.isoformat():
+    print("前回データは別日付のため、コメントを引き継ぎません")
+    return {}
+def normalize_text(value):
+    return re.sub(r"[\s　]+", "", str(value or ""))
+cache = {}
+rejected_names = 0
+for race in previous.get("races", []):
+    if not isinstance(race, dict):
+        continue
+    race_key = str(race.get("race_encp", "")).strip()
+    if not race_key:
+        continue
+    valid_riders = {}
+    for rider in race.get("riders", []):
+        if not isinstance(rider, dict):
+            continue
+        car_no = str(rider.get("car_no", "")).strip()
+        name = str(rider.get("name", "")).strip()
+        comment = str(rider.get("comment", "")).strip()
+        if not car_no or not comment:
+            continue
+        if normalize_text(comment) == normalize_text(name):
+            rejected_names += 1
+            continue
+        if len(comment) > 300:
+            continue
+        valid_riders[car_no] = comment
+    if valid_riders:
+        cache[race_key] = valid_riders
+print(
+    "前回コメント引き継ぎ:",
+    sum(len(riders) for riders in cache.values()),
+    "人分",
+)
+print(
+    "選手名と一致したため除外:",
+    rejected_names,
+    "人分",
+)
+return cache
 # ============================================================
 # メイン処理
 # ============================================================
@@ -2146,10 +2149,55 @@ def main():
                 ).strip()
 
                 old_riders = previous_comments.get(
-                    race_key, {}
-                )
+race_key, {}
+)
 
-                for rider in parsed.get("riders", []):
+            def normalize_comment_text(value):
+                return re.sub(
+                    r"[\s　]+",
+                    "",
+                    str(value or ""),
+                )
+            for rider in parsed.get("riders", []):
+                car_no = str(
+                    rider.get("car_no", "")
+                ).strip()
+                rider_name = str(
+                    rider.get("name", "")
+                ).strip()
+                current_comment = str(
+                    rider.get("comment", "")
+                ).strip()
+                old_comment = str(
+                    old_riders.get(car_no, "")
+                ).strip()
+                # 現在のコメントが選手名だけなら無効にする。
+                if (
+                    current_comment
+                    and normalize_comment_text(current_comment)
+                    == normalize_comment_text(rider_name)
+                ):
+                    current_comment = ""
+                # 前回コメントも選手名と一致する場合は引き継がない。
+                if (
+                    old_comment
+                    and normalize_comment_text(old_comment)
+                    == normalize_comment_text(rider_name)
+                ):
+                    old_comment = ""
+                if not current_comment and old_comment:
+                    rider["comment"] = old_comment
+                    rider["comment_available"] = True
+                    rider["comment_status"] = "前回取得分を保持"
+                elif current_comment:
+                    rider["comment"] = current_comment
+                    rider["comment_available"] = True
+                    if rider.get("comment_status") != "前回取得分を保持":
+                        rider["comment_status"] = "取得済み"
+                else:
+                    rider["comment"] = ""
+                    rider["comment_available"] = False
+                    rider["comment_status"] = "本文未取得"
                     car_no = str(
                         rider.get("car_no", "")
                     ).strip()
