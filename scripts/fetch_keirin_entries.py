@@ -2232,6 +2232,7 @@ def main():
                 parsed.get("race_date_display")
             )
             # 個別ページの日付が不明なら開催一覧の日付を確認する。
+
             if actual_date is None:
                 actual_date = parse_date(
                     race.get("race_date")
