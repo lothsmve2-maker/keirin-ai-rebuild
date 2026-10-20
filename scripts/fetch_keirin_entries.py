@@ -1314,13 +1314,7 @@ def fetch_official_comments(
                 payload,
                 f"ページ内JSON:{variable_name}",
             )
-
-    if comments:
-        print(
-            f"  コメント診断結果: "
-            f"{len(comments)}人分の本文を確認"
-        )
-        return comments, "取得済み"
+    official_comment_count = len(comments)
 
     # 3. netkeirinの選手コメント一覧を代替取得先として試す。
     # 日付・会場コード・レース番号が不足している場合は推測しない。
@@ -1413,12 +1407,14 @@ def fetch_official_comments(
                             )
                             and len(comment) <= 300
                         ):
-                            comments[car_no] = comment
+                            if car_no not in comments:
+                                comments[car_no] = comment
 
-            if comments:
+            if len(comments) > official_comment_count:
                 print(
-                    "  netkeirinコメント取得成功:",
-                    f"{len(comments)}人分",
+                    "  代替取得でコメントを追加:",
+                    f"追加={len(comments) - official_comment_count}人分",
+                    f"合計={len(comments)}人分",
                     f"race_id={race_id}",
                 )
                 return comments, "取得済み"
@@ -1439,10 +1435,19 @@ def fetch_official_comments(
             "日付・会場コード・レース番号を確認できません",
         )
 
+    if comments:
+        car_numbers = sorted(comments.keys(), key=int)
+        print(
+            "  コメント診断結果:",
+            f"部分取得={len(comments)}人分",
+            f"車番={','.join(car_numbers)}",
+        )
+        return comments, "取得済み"
+
     print(
         "  コメント診断結果: 本文の取得先を特定できていません"
     )
-    return {}, "本文未取得"  
+    return {}, "本文未取得"
 
 
 # ============================================================
