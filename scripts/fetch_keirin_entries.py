@@ -2137,7 +2137,7 @@ def main():
 
             seen_races.add(key)
             unique_races.append(race)
-            result[“races_found”] = len(unique_races)
+            result["races_found"] = len(unique_races)
 
     print("個別レース候補:", len(unique_races))
     # ----------------------------------------------------
