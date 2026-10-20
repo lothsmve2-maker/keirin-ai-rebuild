@@ -2148,8 +2148,9 @@ def main():
         print("[3/4] 個別レースの出走表を取得...")
 
         for index, race in enumerate(unique_races, start=1):
-            label = f'{race["venue"]} {race["race_no"]}R'
-            result["races_checked"] += 1
+            label = f’{race[“venue”]} {race[“race_no”]}R’
+            result[“races_checked”] += 1
+
         print(
             f"  [{index}/{len(unique_races)}] {label}"
         )
@@ -2232,7 +2233,6 @@ def main():
                 parsed.get("race_date_display")
             )
             # 個別ページの日付が不明なら開催一覧の日付を確認する。
-
             if actual_date is None:
                 actual_date = parse_date(
                     race.get("race_date")
