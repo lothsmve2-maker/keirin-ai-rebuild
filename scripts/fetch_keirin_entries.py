@@ -2149,7 +2149,7 @@ def main():
 
         for index, race in enumerate(unique_races, start=1):
             label = f'{race["venue"]} {race["race_no"]}R'
-            result[“races_checked”] += 1
+            result["races_checked"] += 1
 
         print(
             f"  [{index}/{len(unique_races)}] {label}"
