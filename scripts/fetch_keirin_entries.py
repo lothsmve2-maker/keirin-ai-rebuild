@@ -2125,13 +2125,14 @@ def main():
 
         print("個別レース候補:", len(unique_races))
 
-    # ----------------------------------------------------
-    # 3. 個別レース・日付検証
-    # ----------------------------------------------------
-    print("[3/4] 個別レースの出走表を取得...")
-    for index, race in enumerate(unique_races, start=1):
-        label = f'{race["venue"]} {race["race_no"]}R'
-        result["races_checked"] += 1
+        # ----------------------------------------------------
+        # 3. 個別レース・日付検証
+        # ----------------------------------------------------
+        print("[3/4] 個別レースの出走表を取得...")
+
+        for index, race in enumerate(unique_races, start=1):
+            label = f'{race["venue"]} {race["race_no"]}R'
+            result["races_checked"] += 1
         print(
             f"  [{index}/{len(unique_races)}] {label}"
         )
