@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-20",
-  "started_at": "2026-10-20T12:32:15.981426+09:00",
-  "finished_at": "2026-10-20T12:34:03.733826+09:00",
+  "started_at": "2026-10-20T13:06:35.963452+09:00",
+  "finished_at": "2026-10-20T13:08:24.780225+09:00",
   "status": "ok",
   "events_found": 7,
   "events_checked": 7,
@@ -3976,84 +3976,10 @@
       "verified_race_date": "2026-10-20",
       "start_time": "12:30",
       "distance_m": "1692",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "7"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "5",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "7",
-            "4"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置番号からグループ候補を生成・検証待ち",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4069,7 +3995,7 @@
           "sashi": "0",
           "mark": "2",
           "back": "20",
-          "comment": "自力。",
+          "comment": "志田愛希飛",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4087,7 +4013,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "9",
-          "comment": "自力。",
+          "comment": "坪内恒",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4105,7 +4031,7 @@
           "sashi": "4",
           "mark": "5",
           "back": "0",
-          "comment": "一人で。",
+          "comment": "小橋明紀",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4123,7 +4049,7 @@
           "sashi": "9",
           "mark": "4",
           "back": "0",
-          "comment": "南関勢。",
+          "comment": "星野辰也",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4141,7 +4067,7 @@
           "sashi": "10",
           "mark": "4",
           "back": "0",
-          "comment": "志田君。",
+          "comment": "米嶋恵介",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4159,7 +4085,7 @@
           "sashi": "6",
           "mark": "8",
           "back": "0",
-          "comment": "米嶋君。",
+          "comment": "西田大志",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4177,7 +4103,7 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "坪内君。",
+          "comment": "川口直人",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -4186,7 +4112,15 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
@@ -4211,94 +4145,10 @@
       "verified_race_date": "2026-10-20",
       "start_time": "12:58",
       "distance_m": "2025",
-      "line_type": "四分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 2,
-          "car_no": "7"
-        },
-        {
-          "position": 3,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 7,
-          "car_no": "3"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
-        },
-        {
-          "position": 10,
-          "car_no": "6"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "7",
-            "1"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "5"
-          ],
-          "positions": [
-            7,
-            8
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            10
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置番号からグループ候補を生成・検証待ち",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4314,7 +4164,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "大石君。",
+          "comment": "小谷実",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4332,7 +4182,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "自力。",
+          "comment": "後藤悠",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4350,7 +4200,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "9",
-          "comment": "自力。",
+          "comment": "山田駿斗",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4368,7 +4218,7 @@
           "sashi": "6",
           "mark": "1",
           "back": "3",
-          "comment": "自力。",
+          "comment": "皿屋豊",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4386,7 +4236,7 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "山田君。",
+          "comment": "近藤保",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4404,7 +4254,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "自力。",
+          "comment": "邊見光輝",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4422,7 +4272,7 @@
           "sashi": "5",
           "mark": "0",
           "back": "1",
-          "comment": "皿屋さん。",
+          "comment": "大石崇晴",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -4431,7 +4281,15 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
@@ -7765,84 +7623,10 @@
       "verified_race_date": "2026-10-20",
       "start_time": "12:44",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 4,
-          "car_no": "2"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 7,
-          "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "4"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "6"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "1",
-            "5",
-            "7"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置番号からグループ候補を生成・検証待ち",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7858,7 +7642,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "13",
-          "comment": "自力で頑張る",
+          "comment": "大本隆也",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7876,7 +7660,7 @@
           "sashi": "4",
           "mark": "0",
           "back": "10",
-          "comment": "自力で頑張ります",
+          "comment": "中野楚樂",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7894,7 +7678,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "先行したい",
+          "comment": "児玉東次郎",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7912,7 +7696,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "児玉君の番手",
+          "comment": "西川弘資",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7930,7 +7714,7 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "同県の大本君",
+          "comment": "佐藤有輝",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7948,7 +7732,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "同県の中野君へ",
+          "comment": "加美山隆行",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7966,7 +7750,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "2",
-          "comment": "神奈川勢の後ろ",
+          "comment": "大沼孝行",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -7975,7 +7759,15 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
