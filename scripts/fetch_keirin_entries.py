@@ -1764,21 +1764,31 @@ def extract_race_data(session, race):
 
     for rider in riders:
         car_no = str(rider.get("car_no", "")).strip()
-        comment = official_comments.get(car_no, "")
+        rider_name = str(rider.get("name", "")).strip()
+
+        comment = str(
+            official_comments.get(car_no, "")
+        ).strip()
+
+        # 選手名と同じ文字列はコメント本文として扱わない。
+        normalize_text = lambda value: re.sub(
+            r"[\s　]+", "", str(value or "")
+        )
+
+        if (
+            not comment
+            or normalize_text(comment) == normalize_text(rider_name)
+        ):
+            comment = ""
 
         if comment:
             rider["comment"] = comment
-
-        rider["comment_available"] = bool(
-            rider.get("comment", "").strip()
-        )
-
-        if rider["comment_available"]:
+            rider["comment_available"] = True
             rider["comment_status"] = "取得済み"
-        elif comment_fetch_status == "取得失敗":
-            rider["comment_status"] = "取得失敗"
         else:
-            rider["comment_status"] = "未掲載"
+            rider["comment"] = ""
+            rider["comment_available"] = False
+            rider["comment_status"] = "本文未取得"
 
     meta = {}
 
