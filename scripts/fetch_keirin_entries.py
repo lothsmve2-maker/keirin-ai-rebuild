@@ -1367,87 +1367,121 @@ def fetch_official_comments(
 
             if heading:
                 table = heading.find_next("table")
-
                 if table:
-                    for row in table.find_all("tr"):
+                    rows = table.find_all("tr")
+                    current_car_no = None
+                    current_rider_name = ""
+                    def clean_comment_text(value):
+                        value = re.sub(
+                            r"\s+",
+                            " ",
+                            str(value or ""),
+                        ).strip()
+                        if not value or len(value) > 300:
+                            return ""
+                        invalid_values = {
+                            "コメント",
+                            "選手名",
+                            "車",
+                            "選手コメント",
+                            "入力",
+                            "選択",
+                            "投稿",
+                        }
+                        if value in invalid_values:
+                            return ""
+                        return value
+                    for row in rows:
                         cells = row.find_all(
                             ["td", "th"],
                             recursive=False,
                         )
-
-                        if len(cells) < 3:
+                        if not cells:
                             continue
-
-                        car_text = cells[0].get_text(
-                            " ", strip=True
-                        )
-                        car_match = re.match(
-                            r"^\s*([1-9])\b",
-                            car_text,
-                        )
-
-                        if not car_match:
-                            continue
-
-                        car_no = car_match.group(1)
                         cell_texts = [
                             cell.get_text(" ", strip=True)
                             for cell in cells
                         ]
-
-                        # コメント欄は通常、行の末尾にある。
-                        comment = cell_texts[-1].strip()
-
-                        if (
-                            comment
-                            and comment not in (
-                                "コメント",
-                                "選手名",
-                                "車",
+                        car_match = re.match(
+                            r"^\s*([1-9])\s*$",
+                            cell_texts[0],
+                        )
+                        if car_match:
+                            current_car_no = car_match.group(1)
+                            current_rider_name = (
+                                cell_texts[2]
+                                if len(cell_texts) >= 3
+                                else ""
                             )
-                            and len(comment) <= 300
+                            # 同じ行のコメント候補を確認する。
+                            # 選手名と一致する文字列は採用しない。
+                            for candidate in reversed(cell_texts[3:]):
+                                comment = clean_comment_text(candidate)
+                                if not comment:
+                                    continue
+                                if (
+                                    current_rider_name
+                                    and re.sub(
+                                        r"[\s　]+",
+                                        "",
+                                        comment,
+                                    )
+                                    == re.sub(
+                                        r"[\s　]+",
+                                        "",
+                                        current_rider_name,
+                                    )
+                                ):
+                                    continue
+                                if current_car_no not in comments:
+                                    comments[current_car_no] = comment
+                                break
+                            continue
+                        # 車番と本文が別の行にある場合に備え、
+                        # 選手名・操作表示だけの行は除外する。
+                        if not current_car_no:
+                            continue
+                        row_text = clean_comment_text(
+                            " ".join(cell_texts)
+                        )
+                        if not row_text:
+                            continue
+                        if (
+                            current_rider_name
+                            and re.sub(
+                                r"[\s　]+",
+                                "",
+                                row_text,
+                            )
+                            == re.sub(
+                                r"[\s　]+",
+                                "",
+                                current_rider_name,
+                            )
                         ):
-                            if car_no not in comments:
-                                comments[car_no] = comment
-
-            if len(comments) > official_comment_count:
-                print(
-                    "  代替取得でコメントを追加:",
-                    f"追加={len(comments) - official_comment_count}人分",
-                    f"合計={len(comments)}人分",
-                    f"race_id={race_id}",
-                )
-                return comments, "取得済み"
-
-            print(
-                "  netkeirinページからコメント本文を抽出できません:",
-                race_id,
-            )
-
-        except Exception as exc:
-            print(
-                "  netkeirinコメント取得失敗:",
-                f"{type(exc).__name__}: {exc}",
-            )
-    else:
-        print(
-            "  netkeirin代替取得をスキップ:",
-            "日付・会場コード・レース番号を確認できません",
-        )
-
-    if comments:
-        car_numbers = sorted(comments.keys(), key=int)
-        print(
-            "  コメント診断結果:",
-            f"部分取得={len(comments)}人分",
-            f"車番={','.join(car_numbers)}",
-        )
-        return comments, "取得済み"
-
-    print(
-        "  コメント診断結果: 本文の取得先を特定できていません"
-    )
-    return {}, "本文未取得"
+                            continue
+                        # 明らかな操作記号だけの文字列は除外。
+                        if re.fullmatch(
+                            r"[\s\-―ー・◎◯○▲△☆✓消]+",
+                            row_text,
+                        ):
+                            continue
+                        if current_car_no not in comments:
+                            comments[current_car_no] = row_text
+                    print(
+                        "  netkeirin HTML解析:",
+                        f"テーブル行数={len(rows)}",
+                        f"コメント候補={len(comments)}人分",
+                    )
+                    # 実際にコメント候補が追加されたかを判定する。
+                    if len(comments) > official_comment_count:
+                        print(
+                            "  代替取得でコメントを追加:",
+                            f"追加={len(comments) - official_comment_count}人分",
+                            f"合計={len(comments)}人分",
+                            f"race_id={race_id}",
+                        )
+                        return comments, "取得済み"
 
 
 # ============================================================
