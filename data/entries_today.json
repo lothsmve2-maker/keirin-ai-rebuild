@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-20",
-  "started_at": "2026-10-20T18:09:29.175187+09:00",
-  "finished_at": "2026-10-20T18:12:04.255166+09:00",
+  "started_at": "2026-10-20T18:23:14.474543+09:00",
+  "finished_at": "2026-10-20T18:25:04.075859+09:00",
   "status": "ok",
   "events_found": 7,
   "events_checked": 7,
@@ -105,7 +105,7 @@
           "back": "3",
           "comment": "畝木聖",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -123,7 +123,7 @@
           "back": "0",
           "comment": "松岡健介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -141,7 +141,7 @@
           "back": "0",
           "comment": "木村幸希",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -159,7 +159,7 @@
           "back": "4",
           "comment": "中井俊亮",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -177,7 +177,7 @@
           "back": "0",
           "comment": "内山貴裕",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 5,
@@ -236,7 +236,7 @@
           "back": "0",
           "comment": "吉松直人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -254,7 +254,7 @@
           "back": "5",
           "comment": "植原琢也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -272,7 +272,7 @@
           "back": "0",
           "comment": "柿沼信也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -290,7 +290,7 @@
           "back": "0",
           "comment": "成清貴之",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -308,7 +308,7 @@
           "back": "4",
           "comment": "吉武信太朗",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -326,7 +326,7 @@
           "back": "0",
           "comment": "金成和幸",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 6,
@@ -386,7 +386,7 @@
           "back": "0",
           "comment": "庄子信弘",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -404,7 +404,7 @@
           "back": "3",
           "comment": "長屋秀明",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -422,7 +422,7 @@
           "back": "0",
           "comment": "城幸弘",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -440,7 +440,7 @@
           "back": "4",
           "comment": "早坂秀悟",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -458,7 +458,7 @@
           "back": "0",
           "comment": "笹倉慎也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -476,7 +476,7 @@
           "back": "0",
           "comment": "高橋成英",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 6,
@@ -536,7 +536,7 @@
           "back": "0",
           "comment": "内田英介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -554,7 +554,7 @@
           "back": "0",
           "comment": "元砂勇雪",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -572,7 +572,7 @@
           "back": "7",
           "comment": "島川将貴",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -590,7 +590,7 @@
           "back": "13",
           "comment": "永井哉多",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -608,7 +608,7 @@
           "back": "0",
           "comment": "山本奨",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -626,7 +626,7 @@
           "back": "3",
           "comment": "長谷部龍一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -644,7 +644,7 @@
           "back": "7",
           "comment": "塩崎隼秀",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "8",
@@ -662,7 +662,7 @@
           "back": "0",
           "comment": "佐川翔吾",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "9",
@@ -680,7 +680,7 @@
           "back": "0",
           "comment": "岡田泰地",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 9,
@@ -743,7 +743,7 @@
           "back": "0",
           "comment": "小堺浩二",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -761,7 +761,7 @@
           "back": "2",
           "comment": "藤根俊貴",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -779,7 +779,7 @@
           "back": "0",
           "comment": "志村龍己",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -797,7 +797,7 @@
           "back": "1",
           "comment": "佐方良行",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -815,7 +815,7 @@
           "back": "3",
           "comment": "滝本幸正",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -833,7 +833,7 @@
           "back": "0",
           "comment": "相川永伍",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -851,7 +851,7 @@
           "back": "1",
           "comment": "長松空吾",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "8",
@@ -869,7 +869,7 @@
           "back": "10",
           "comment": "佐藤大地",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "9",
@@ -887,7 +887,7 @@
           "back": "11",
           "comment": "齋藤雄行",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 9,
@@ -950,7 +950,7 @@
           "back": "0",
           "comment": "桐山敬太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -968,7 +968,7 @@
           "back": "0",
           "comment": "平原啓多",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -986,7 +986,7 @@
           "back": "0",
           "comment": "荒澤貴史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -1004,7 +1004,7 @@
           "back": "0",
           "comment": "伊藤慶太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -1022,7 +1022,7 @@
           "back": "25",
           "comment": "野口裕史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -1040,7 +1040,7 @@
           "back": "0",
           "comment": "蓮井祐輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -1058,7 +1058,7 @@
           "back": "0",
           "comment": "畑段嵐士",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "8",
@@ -1076,7 +1076,7 @@
           "back": "6",
           "comment": "鈴木謙太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "9",
@@ -1094,7 +1094,7 @@
           "back": "9",
           "comment": "立花昌也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 9,
@@ -1157,7 +1157,7 @@
           "back": "9",
           "comment": "菅原大也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -1175,7 +1175,7 @@
           "back": "0",
           "comment": "中川貴徳",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -1193,7 +1193,7 @@
           "back": "3",
           "comment": "岩谷拓磨",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -1211,7 +1211,7 @@
           "back": "0",
           "comment": "嶋田誠也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -1229,7 +1229,7 @@
           "back": "0",
           "comment": "中村浩士",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -1247,7 +1247,7 @@
           "back": "0",
           "comment": "望月永悟",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -1265,7 +1265,7 @@
           "back": "13",
           "comment": "橋本宇宙",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "8",
@@ -1283,7 +1283,7 @@
           "back": "0",
           "comment": "西田雅志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "9",
@@ -1301,7 +1301,7 @@
           "back": "0",
           "comment": "中田健太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 9,
@@ -2809,7 +2809,7 @@
           "back": "23",
           "comment": "松下綾馬",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -2827,7 +2827,7 @@
           "back": "1",
           "comment": "富安保充",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -2845,7 +2845,7 @@
           "back": "0",
           "comment": "堀政美",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -2863,7 +2863,7 @@
           "back": "0",
           "comment": "佐藤正吾",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -2881,7 +2881,7 @@
           "back": "4",
           "comment": "蒋野翔太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -2899,7 +2899,7 @@
           "back": "3",
           "comment": "藤井稜也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -2917,7 +2917,7 @@
           "back": "14",
           "comment": "川田真也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -2978,7 +2978,7 @@
           "back": "0",
           "comment": "柴田竜史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -2996,7 +2996,7 @@
           "back": "11",
           "comment": "稲留敦貴",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3014,7 +3014,7 @@
           "back": "0",
           "comment": "船曳義之",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3032,7 +3032,7 @@
           "back": "7",
           "comment": "八嶋稔真",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3050,7 +3050,7 @@
           "back": "3",
           "comment": "川田忍",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3068,7 +3068,7 @@
           "back": "2",
           "comment": "中岡海",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3086,7 +3086,7 @@
           "back": "0",
           "comment": "園田鉄兵",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3147,7 +3147,7 @@
           "back": "4",
           "comment": "菊池翔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -3165,7 +3165,7 @@
           "back": "0",
           "comment": "榊原洋",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3183,7 +3183,7 @@
           "back": "13",
           "comment": "西森一稀",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3201,7 +3201,7 @@
           "back": "9",
           "comment": "佐々木祐太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3219,7 +3219,7 @@
           "back": "6",
           "comment": "寺師幸成",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3237,7 +3237,7 @@
           "back": "0",
           "comment": "武田哲二",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3255,7 +3255,7 @@
           "back": "0",
           "comment": "布居寛幸",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3316,7 +3316,7 @@
           "back": "1",
           "comment": "原田泰志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -3334,7 +3334,7 @@
           "back": "0",
           "comment": "滝山実",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3352,7 +3352,7 @@
           "back": "0",
           "comment": "渡邊健",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3370,7 +3370,7 @@
           "back": "13",
           "comment": "杉浦颯太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3388,7 +3388,7 @@
           "back": "4",
           "comment": "石口慶多",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3406,7 +3406,7 @@
           "back": "1",
           "comment": "和田禎嗣",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3424,7 +3424,7 @@
           "back": "8",
           "comment": "火島裕輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3485,7 +3485,7 @@
           "back": "20",
           "comment": "志田愛希飛",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -3503,7 +3503,7 @@
           "back": "9",
           "comment": "坪内恒",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3521,7 +3521,7 @@
           "back": "0",
           "comment": "小橋明紀",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3539,7 +3539,7 @@
           "back": "0",
           "comment": "星野辰也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3557,7 +3557,7 @@
           "back": "0",
           "comment": "米嶋恵介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3575,7 +3575,7 @@
           "back": "0",
           "comment": "西田大志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3593,7 +3593,7 @@
           "back": "0",
           "comment": "川口直人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3654,7 +3654,7 @@
           "back": "0",
           "comment": "小谷実",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -3672,7 +3672,7 @@
           "back": "4",
           "comment": "後藤悠",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3690,7 +3690,7 @@
           "back": "9",
           "comment": "山田駿斗",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3708,7 +3708,7 @@
           "back": "3",
           "comment": "皿屋豊",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3726,7 +3726,7 @@
           "back": "0",
           "comment": "近藤保",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3744,7 +3744,7 @@
           "back": "4",
           "comment": "邊見光輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3762,7 +3762,7 @@
           "back": "1",
           "comment": "大石崇晴",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3823,7 +3823,7 @@
           "back": "0",
           "comment": "今野有樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -3841,7 +3841,7 @@
           "back": "5",
           "comment": "鈴木陸来",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -3859,7 +3859,7 @@
           "back": "16",
           "comment": "中嶋宣成",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -3877,7 +3877,7 @@
           "back": "0",
           "comment": "大森慶一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -3895,7 +3895,7 @@
           "back": "1",
           "comment": "長井妙樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -3913,7 +3913,7 @@
           "back": "1",
           "comment": "谷口明正",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -3931,7 +3931,7 @@
           "back": "15",
           "comment": "遠藤拓巳",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -3992,7 +3992,7 @@
           "back": "5",
           "comment": "晝田宗一郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -4010,7 +4010,7 @@
           "back": "0",
           "comment": "福田滉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -4028,7 +4028,7 @@
           "back": "1",
           "comment": "窓場千加頼",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -4046,7 +4046,7 @@
           "back": "0",
           "comment": "渡部哲男",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -4064,7 +4064,7 @@
           "back": "23",
           "comment": "上杉嘉槻",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -4082,7 +4082,7 @@
           "back": "0",
           "comment": "伊藤世哉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -4100,7 +4100,7 @@
           "back": "15",
           "comment": "川上隆義",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -4161,7 +4161,7 @@
           "back": "0",
           "comment": "岩本和也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -4179,7 +4179,7 @@
           "back": "16",
           "comment": "鈴木浩太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -4197,7 +4197,7 @@
           "back": "0",
           "comment": "都築巧",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -4215,7 +4215,7 @@
           "back": "4",
           "comment": "染谷幸喜",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -4233,7 +4233,7 @@
           "back": "19",
           "comment": "谷内健太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -4251,7 +4251,7 @@
           "back": "4",
           "comment": "奥村諭志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -4269,7 +4269,7 @@
           "back": "0",
           "comment": "山口富生",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -4499,7 +4499,7 @@
           "back": "16",
           "comment": "松井宏佑",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -4517,7 +4517,7 @@
           "back": "0",
           "comment": "岡光良",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -4535,7 +4535,7 @@
           "back": "1",
           "comment": "兼本将太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -4553,7 +4553,7 @@
           "back": "11",
           "comment": "村上直久",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -4571,7 +4571,7 @@
           "back": "5",
           "comment": "一戸康宏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -4589,7 +4589,7 @@
           "back": "0",
           "comment": "伊豆田浩人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -4607,7 +4607,7 @@
           "back": "0",
           "comment": "大坪功一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -4668,7 +4668,7 @@
           "back": "4",
           "comment": "北津留翼",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -4686,7 +4686,7 @@
           "back": "0",
           "comment": "佐々木龍",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -4704,7 +4704,7 @@
           "back": "1",
           "comment": "金子幸央",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -4722,7 +4722,7 @@
           "back": "2",
           "comment": "山田庸平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -4740,7 +4740,7 @@
           "back": "1",
           "comment": "道場晃規",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -4758,7 +4758,7 @@
           "back": "8",
           "comment": "酒井雄多",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -4776,7 +4776,7 @@
           "back": "0",
           "comment": "東口善朋",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -4837,7 +4837,7 @@
           "back": "0",
           "comment": "檀雄二",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -4855,7 +4855,7 @@
           "back": "1",
           "comment": "小林大能",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -4873,7 +4873,7 @@
           "back": "0",
           "comment": "曽我部匡史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -4891,7 +4891,7 @@
           "back": "0",
           "comment": "中野功史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -4909,7 +4909,7 @@
           "back": "0",
           "comment": "高瀬卓",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -4927,7 +4927,7 @@
           "back": "0",
           "comment": "落合豊",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -4945,7 +4945,7 @@
           "back": "5",
           "comment": "矢田晋",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5006,7 +5006,7 @@
           "back": "10",
           "comment": "鈴木康平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5024,7 +5024,7 @@
           "back": "0",
           "comment": "富永昌久",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5042,7 +5042,7 @@
           "back": "0",
           "comment": "佐藤裕輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5060,7 +5060,7 @@
           "back": "0",
           "comment": "渡邊政幸",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5078,7 +5078,7 @@
           "back": "0",
           "comment": "早坂道義",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5096,7 +5096,7 @@
           "back": "2",
           "comment": "竹村達也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5114,7 +5114,7 @@
           "back": "0",
           "comment": "横瀬聡",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5175,7 +5175,7 @@
           "back": "0",
           "comment": "取鳥敬一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5193,7 +5193,7 @@
           "back": "14",
           "comment": "猪野泰介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5211,7 +5211,7 @@
           "back": "7",
           "comment": "鈴木広人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5229,7 +5229,7 @@
           "back": "0",
           "comment": "沖本尚織",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5247,7 +5247,7 @@
           "back": "0",
           "comment": "吉原友彦",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5265,7 +5265,7 @@
           "back": "0",
           "comment": "奥山雅士",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5283,7 +5283,7 @@
           "back": "1",
           "comment": "早川成矢",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5344,7 +5344,7 @@
           "back": "0",
           "comment": "佐野多喜男",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5362,7 +5362,7 @@
           "back": "13",
           "comment": "松本一志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5380,7 +5380,7 @@
           "back": "0",
           "comment": "櫻川雅彦",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5398,7 +5398,7 @@
           "back": "0",
           "comment": "重一徳",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5416,7 +5416,7 @@
           "back": "9",
           "comment": "横田政直",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5434,7 +5434,7 @@
           "back": "0",
           "comment": "長崎達也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5452,7 +5452,7 @@
           "back": "1",
           "comment": "瀬口匠",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5513,7 +5513,7 @@
           "back": "0",
           "comment": "川上修平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5531,7 +5531,7 @@
           "back": "11",
           "comment": "中西将太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5549,7 +5549,7 @@
           "back": "11",
           "comment": "財満伊織",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5567,7 +5567,7 @@
           "back": "1",
           "comment": "秋山貴宏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5585,7 +5585,7 @@
           "back": "0",
           "comment": "坂本英一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5603,7 +5603,7 @@
           "back": "0",
           "comment": "齋藤輝彦",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5621,7 +5621,7 @@
           "back": "9",
           "comment": "田上晃也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5682,7 +5682,7 @@
           "back": "4",
           "comment": "石田宏樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5700,7 +5700,7 @@
           "back": "0",
           "comment": "龍門慎太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5718,7 +5718,7 @@
           "back": "10",
           "comment": "田崎隼翔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5736,7 +5736,7 @@
           "back": "7",
           "comment": "渡邊諒馬",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5754,7 +5754,7 @@
           "back": "0",
           "comment": "阿部利光",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5772,7 +5772,7 @@
           "back": "0",
           "comment": "長田彰人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5790,7 +5790,7 @@
           "back": "0",
           "comment": "西巻秀太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -5851,7 +5851,7 @@
           "back": "0",
           "comment": "大内達也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -5869,7 +5869,7 @@
           "back": "15",
           "comment": "田中衛太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -5887,7 +5887,7 @@
           "back": "8",
           "comment": "織茂雄一郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -5905,7 +5905,7 @@
           "back": "0",
           "comment": "佐藤純嘉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -5923,7 +5923,7 @@
           "back": "0",
           "comment": "南部亮太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -5941,7 +5941,7 @@
           "back": "0",
           "comment": "吉田英二",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -5959,7 +5959,7 @@
           "back": "12",
           "comment": "榊枝天旺",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6020,7 +6020,7 @@
           "back": "0",
           "comment": "田崎良太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6038,7 +6038,7 @@
           "back": "9",
           "comment": "浜田翔平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6056,7 +6056,7 @@
           "back": "2",
           "comment": "竹田慎一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6074,7 +6074,7 @@
           "back": "0",
           "comment": "畠山裕行",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6092,7 +6092,7 @@
           "back": "0",
           "comment": "金田健一郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6110,7 +6110,7 @@
           "back": "0",
           "comment": "井上典善",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6128,7 +6128,7 @@
           "back": "0",
           "comment": "南蓮",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6189,7 +6189,7 @@
           "back": "4",
           "comment": "松本一成",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6207,7 +6207,7 @@
           "back": "0",
           "comment": "中嶋響",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6225,7 +6225,7 @@
           "back": "0",
           "comment": "中川昌久",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6243,7 +6243,7 @@
           "back": "12",
           "comment": "瀧本匡平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6261,7 +6261,7 @@
           "back": "1",
           "comment": "中井修",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6279,7 +6279,7 @@
           "back": "0",
           "comment": "山内大作",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6297,7 +6297,7 @@
           "back": "0",
           "comment": "小林高志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6358,7 +6358,7 @@
           "back": "8",
           "comment": "白井輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6376,7 +6376,7 @@
           "back": "0",
           "comment": "三木翔太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6394,7 +6394,7 @@
           "back": "12",
           "comment": "山田祐太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6412,7 +6412,7 @@
           "back": "4",
           "comment": "中川飛隆",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6430,7 +6430,7 @@
           "back": "5",
           "comment": "安達豪太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6448,7 +6448,7 @@
           "back": "0",
           "comment": "嶋貫高大",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6466,7 +6466,7 @@
           "back": "0",
           "comment": "青木亮太",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6527,7 +6527,7 @@
           "back": "14",
           "comment": "齊藤宏樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6545,7 +6545,7 @@
           "back": "6",
           "comment": "三浦大輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6563,7 +6563,7 @@
           "back": "14",
           "comment": "中秀平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6581,7 +6581,7 @@
           "back": "1",
           "comment": "関根崇人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6599,7 +6599,7 @@
           "back": "0",
           "comment": "安藤宜明",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6617,7 +6617,7 @@
           "back": "0",
           "comment": "薮田貴幸",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6635,7 +6635,7 @@
           "back": "0",
           "comment": "植田誠",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6696,7 +6696,7 @@
           "back": "13",
           "comment": "大本隆也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6714,7 +6714,7 @@
           "back": "10",
           "comment": "中野楚樂",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6732,7 +6732,7 @@
           "back": "9",
           "comment": "児玉東次郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6750,7 +6750,7 @@
           "back": "0",
           "comment": "西川弘資",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6768,7 +6768,7 @@
           "back": "0",
           "comment": "佐藤有輝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6786,7 +6786,7 @@
           "back": "0",
           "comment": "加美山隆行",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6804,7 +6804,7 @@
           "back": "2",
           "comment": "大沼孝行",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -6865,7 +6865,7 @@
           "back": "0",
           "comment": "山本恵介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -6883,7 +6883,7 @@
           "back": "0",
           "comment": "疋田敏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -6901,7 +6901,7 @@
           "back": "8",
           "comment": "加賀美智史",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -6919,7 +6919,7 @@
           "back": "0",
           "comment": "宮司周郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -6937,7 +6937,7 @@
           "back": "0",
           "comment": "外崎一成",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -6955,7 +6955,7 @@
           "back": "7",
           "comment": "阿久津浩之",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -6973,7 +6973,7 @@
           "back": "16",
           "comment": "森崎英登",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7034,7 +7034,7 @@
           "back": "0",
           "comment": "真田晃",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7052,7 +7052,7 @@
           "back": "0",
           "comment": "岩橋則明",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7070,7 +7070,7 @@
           "back": "0",
           "comment": "武田憲祐",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7088,7 +7088,7 @@
           "back": "5",
           "comment": "樋口開土",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7106,7 +7106,7 @@
           "back": "0",
           "comment": "西徹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7124,7 +7124,7 @@
           "back": "0",
           "comment": "篠崎高志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7142,7 +7142,7 @@
           "back": "5",
           "comment": "深瀬泰我",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7203,7 +7203,7 @@
           "back": "6",
           "comment": "秋本耀太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7221,7 +7221,7 @@
           "back": "0",
           "comment": "大竹哲也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7239,7 +7239,7 @@
           "back": "1",
           "comment": "大利航平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7257,7 +7257,7 @@
           "back": "0",
           "comment": "小室貴広",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7275,7 +7275,7 @@
           "back": "0",
           "comment": "前田拓也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7293,7 +7293,7 @@
           "back": "0",
           "comment": "若林耕司",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7311,7 +7311,7 @@
           "back": "1",
           "comment": "浅沼聖士",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7372,7 +7372,7 @@
           "back": "8",
           "comment": "林敬宏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7390,7 +7390,7 @@
           "back": "0",
           "comment": "土屋仁",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7408,7 +7408,7 @@
           "back": "0",
           "comment": "金澤幸司",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7426,7 +7426,7 @@
           "back": "15",
           "comment": "松坂侑亮",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7444,7 +7444,7 @@
           "back": "15",
           "comment": "平根優大",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7462,7 +7462,7 @@
           "back": "4",
           "comment": "古屋琢晶",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7480,7 +7480,7 @@
           "back": "0",
           "comment": "原真司",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7541,7 +7541,7 @@
           "back": "0",
           "comment": "飯田辰哉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7559,7 +7559,7 @@
           "back": "16",
           "comment": "伊藤京介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7577,7 +7577,7 @@
           "back": "0",
           "comment": "山口慎吾",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7595,7 +7595,7 @@
           "back": "0",
           "comment": "村上卓茂",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7613,7 +7613,7 @@
           "back": "20",
           "comment": "水澤秀哉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7631,7 +7631,7 @@
           "back": "5",
           "comment": "中村泰輔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7649,7 +7649,7 @@
           "back": "11",
           "comment": "田口勇介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7710,7 +7710,7 @@
           "back": "0",
           "comment": "木村貴宏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7728,7 +7728,7 @@
           "back": "0",
           "comment": "大木雅也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7746,7 +7746,7 @@
           "back": "15",
           "comment": "上杉有弘",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7764,7 +7764,7 @@
           "back": "3",
           "comment": "馬場和広",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7782,7 +7782,7 @@
           "back": "0",
           "comment": "高間悠平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7800,7 +7800,7 @@
           "back": "0",
           "comment": "宇賀神浩幸",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7818,7 +7818,7 @@
           "back": "7",
           "comment": "神尾敬冬",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -7879,7 +7879,7 @@
           "back": "0",
           "comment": "作田悦章",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -7897,7 +7897,7 @@
           "back": "0",
           "comment": "富澤洋祐",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -7915,7 +7915,7 @@
           "back": "1",
           "comment": "大越啓介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -7933,7 +7933,7 @@
           "back": "7",
           "comment": "阿部龍也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -7951,7 +7951,7 @@
           "back": "0",
           "comment": "長岡豪",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -7969,7 +7969,7 @@
           "back": "3",
           "comment": "近内三孝",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -7987,7 +7987,7 @@
           "back": "6",
           "comment": "田村純一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8048,7 +8048,7 @@
           "back": "7",
           "comment": "小川佑希也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8066,7 +8066,7 @@
           "back": "9",
           "comment": "松本充生",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -8084,7 +8084,7 @@
           "back": "0",
           "comment": "松丸裕紀",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -8102,7 +8102,7 @@
           "back": "11",
           "comment": "篠田樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -8120,7 +8120,7 @@
           "back": "0",
           "comment": "井上剛",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -8138,7 +8138,7 @@
           "back": "0",
           "comment": "梶應弘樹",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -8156,7 +8156,7 @@
           "back": "0",
           "comment": "相樂修",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8217,7 +8217,7 @@
           "back": "1",
           "comment": "安部龍文",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8235,7 +8235,7 @@
           "back": "12",
           "comment": "吉松賢二",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -8253,7 +8253,7 @@
           "back": "0",
           "comment": "千澤大輔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -8271,7 +8271,7 @@
           "back": "0",
           "comment": "本間慎吾",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -8289,7 +8289,7 @@
           "back": "8",
           "comment": "鶴健志",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -8307,7 +8307,7 @@
           "back": "0",
           "comment": "中山敬太郎",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -8325,7 +8325,7 @@
           "back": "8",
           "comment": "小林寛弥",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8386,7 +8386,7 @@
           "back": "11",
           "comment": "角田吏",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8404,7 +8404,7 @@
           "back": "9",
           "comment": "田山誠",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -8422,7 +8422,7 @@
           "back": "0",
           "comment": "大林亮介",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -8440,7 +8440,7 @@
           "back": "4",
           "comment": "大室翔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -8458,7 +8458,7 @@
           "back": "0",
           "comment": "瓦田勝也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -8476,7 +8476,7 @@
           "back": "0",
           "comment": "浦野慈生",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -8494,7 +8494,7 @@
           "back": "0",
           "comment": "藤田和彦",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8555,7 +8555,7 @@
           "back": "0",
           "comment": "小林和彦",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8573,7 +8573,7 @@
           "back": "4",
           "comment": "菅原洋輔",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -8591,7 +8591,7 @@
           "back": "1",
           "comment": "秋永昂人",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -8609,7 +8609,7 @@
           "back": "1",
           "comment": "藤田剣次",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -8627,7 +8627,7 @@
           "back": "6",
           "comment": "藤本龍也",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -8645,7 +8645,7 @@
           "back": "0",
           "comment": "相良勝美",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -8663,7 +8663,7 @@
           "back": "11",
           "comment": "滿田光紀",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8724,7 +8724,7 @@
           "back": "1",
           "comment": "小竹洋平",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8742,7 +8742,7 @@
           "back": "1",
           "comment": "大瀬戸潤一",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -8760,7 +8760,7 @@
           "back": "0",
           "comment": "佐藤政利",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -8778,7 +8778,7 @@
           "back": "0",
           "comment": "須藤誠",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -8796,7 +8796,7 @@
           "back": "12",
           "comment": "橋谷成海",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -8814,7 +8814,7 @@
           "back": "2",
           "comment": "小山峻汰",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -8832,7 +8832,7 @@
           "back": "9",
           "comment": "山崎駿哉",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
@@ -8872,84 +8872,10 @@
       "verified_race_date": "2026-10-20",
       "start_time": "18:14",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "7"
-        },
-        {
-          "position": 4,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "6"
-        },
-        {
-          "position": 8,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "1",
-            "6"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "4"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置番号からグループ候補を生成・検証待ち",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -8967,7 +8893,7 @@
           "back": "0",
           "comment": "四国ラインで松本君",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -8985,7 +8911,7 @@
           "back": "9",
           "comment": "自力勝負していく",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -9003,7 +8929,7 @@
           "back": "11",
           "comment": "いつも通り自力です",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -9021,7 +8947,7 @@
           "back": "0",
           "comment": "関東で伊早坂君目標",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -9039,7 +8965,7 @@
           "back": "2",
           "comment": "自力で頑張ります",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -9057,7 +8983,7 @@
           "back": "0",
           "comment": "四国ライン３番手",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -9075,14 +9001,22 @@
           "back": "0",
           "comment": "福岡同士の野津君へ",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true
       },
