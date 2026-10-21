@@ -1868,15 +1868,15 @@ def extract_race_data(session, race):
     # ライン関連語がHTML内に存在するか調べる
     # 並び予想関連JavaScriptの実装を調査
     print("\n========== 並び予想JavaScript調査 ==========")
-
-js_paths = [
-    "/sp/static/js/SJ0313.js",
-    "/sp/static/js/SJ0314_c.js",
-    "/sp/static/js/SJ0314_v.js",
-    "/sp/static/js/commonJSON.js",
-    "/sp/static/js/commonLoad.js",
-    "/sp/static/js/commonSubmit.js",
-]
+    
+    js_paths = [
+        "/sp/static/js/SJ0313.js",
+        "/sp/static/js/SJ0314_c.js",
+        "/sp/static/js/SJ0314_v.js",
+        "/sp/static/js/commonJSON.js",
+        "/sp/static/js/commonLoad.js",
+        "/sp/static/js/commonSubmit.js",
+    ]
 
     for js_path in js_paths:
         js_url = urljoin(BASE, js_path)
