@@ -1308,7 +1308,70 @@ def fetch_official_comments(
             try:
                 payload = decoder.raw_decode(source_text)[0]
             except (json.JSONDecodeError, ValueError):
+                print(
+                    f"  ページ内JSON解析失敗: "
+                    f"{variable_name}"
+                )
                 continue
+
+            print(
+                f"  ページ内JSON構造: "
+                f"変数={variable_name}, "
+                f"型={type(payload).__name__}"
+            )
+
+            if isinstance(payload, dict):
+                print(
+                    "    トップ階層キー:",
+                    list(payload.keys())[:50],
+                )
+
+            for path, obj in walk_dicts(payload):
+                keys = list(obj.keys())
+
+                comment_keys = [
+                    str(key)
+                    for key in keys
+                    if (
+                        any(
+                            word in str(key).lower()
+                            for word in (
+                                "comment",
+                                "kome",
+                                "jikou",
+                                "sensyu",
+                                "yoso",
+                            )
+                        )
+                        or "コメント" in str(key)
+                    )
+                ]
+
+                if comment_keys:
+                    print(
+                        "    JSON項目候補:",
+                        f"階層={path}",
+                        f"項目={comment_keys[:20]}",
+                    )
+
+                car_no = first_value(
+                    obj,
+                    "syaban",
+                    "shaban",
+                    "carNo",
+                    "car_no",
+                )
+
+                if (
+                    car_no is not None
+                    and str(car_no).strip().isdigit()
+                ):
+                    print(
+                        "    選手階層候補:",
+                        f"階層={path}",
+                        f"車番={car_no}",
+                        f"項目={keys[:35]}",
+                    )
 
             inspect_payload(
                 payload,
@@ -1372,6 +1435,23 @@ def fetch_official_comments(
                     rows = table.find_all("tr")
                     added_before = set(comments.keys())
 
+                    for row_index, row in enumerate(rows[:20]):
+                        cells = row.find_all(
+                            ["td", "th"],
+                            recursive=False,
+                        )
+
+                        cell_texts = [
+                            cell.get_text(" ", strip=True)
+                            for cell in cells
+                        ]
+
+                        print(
+                            "  netkeirin行診断:",
+                            f"行={row_index}",
+                            f"セル数={len(cells)}",
+                            f"内容={cell_texts[:12]}",
+                        )
                     for row in rows:
                         cells = row.find_all(
                             ["td", "th"],
