@@ -1452,78 +1452,78 @@ def fetch_official_comments(
                             f"セル数={len(cells)}",
                             f"内容={cell_texts[:12]}",
                         )
+                    # 選手情報の行と、その直後にあるコメント行を対応させる。
+                    current_car_no = None
+                    current_rider_name = ""
+
                     for row in rows:
                         cells = row.find_all(
                             ["td", "th"],
                             recursive=False,
                         )
 
-                        if len(cells) < 3:
-                            continue
-
                         cell_texts = [
                             cell.get_text(" ", strip=True)
                             for cell in cells
                         ]
 
-                        car_match = re.match(
-                            r"^\s*([1-9])\b",
-                            cell_texts[0],
-                        )
+                        # 車番と選手名がある行を検出する。
+                        if len(cells) >= 3:
+                            car_match = re.match(
+                                r"^\s*([1-9])\b",
+                                cell_texts[0],
+                            )
 
-                        if not car_match:
+                            if car_match:
+                                current_car_no = car_match.group(1)
+                                current_rider_name = cell_texts[2]
+                                continue
+
+                        # 選手情報の行の次にある、1セルのコメント行を調べる。
+                        if current_car_no is None:
                             continue
 
-                        car_no = car_match.group(1)
+                        if len(cells) != 1:
+                            continue
 
-                        # 選手名とコメントの対応を確認するため、
-                        # 行のセルを診断できるようにする。
-                        rider_name = (
-                            cell_texts[2]
-                            if len(cell_texts) >= 3
-                            else ""
+                        candidate = cell_texts[0].strip()
+
+                        if not candidate:
+                            continue
+
+                        normalized_candidate = re.sub(
+                            r"[\s　]+",
+                            "",
+                            candidate,
+                        )
+                        normalized_name = re.sub(
+                            r"[\s　]+",
+                            "",
+                            current_rider_name,
                         )
 
-                        # 現段階では、最後のセルを無条件に
-                        # コメントとして採用しない。
-                        # HTML構造を確認できるよう候補を記録する。
-                        candidates = [
-                            value.strip()
-                            for value in cell_texts[3:]
-                            if value.strip()
-                        ]
+                        if normalized_candidate == normalized_name:
+                            continue
 
-                        for candidate in reversed(candidates):
-                            normalized_candidate = re.sub(
-                                r"[\s　]+", "", candidate
-                            )
-                            normalized_name = re.sub(
-                                r"[\s　]+", "", rider_name
-                            )
+                        if candidate in (
+                            "コメント",
+                            "選手名",
+                            "選手コメント",
+                            "入力",
+                            "選択",
+                            "投稿",
+                        ):
+                            continue
 
-                            if not normalized_candidate:
-                                continue
+                        if len(candidate) > 300:
+                            continue
 
-                            if normalized_candidate == normalized_name:
-                                continue
+                        if current_car_no not in comments:
+                            comments[current_car_no] = candidate
 
-                            if candidate in (
-                                "コメント",
-                                "選手名",
-                                "選手コメント",
-                                "入力",
-                                "選択",
-                                "投稿",
-                            ):
-                                continue
-
-                            if len(candidate) > 300:
-                                continue
-
-                            if car_no not in comments:
-                                comments[car_no] = candidate
-
-                            break
+                        # この選手の処理を終え、次の選手行を待つ。
+                        current_car_no = None
+                        current_rider_name = ""
 
                     added_count = len(
                         set(comments.keys()) - added_before
