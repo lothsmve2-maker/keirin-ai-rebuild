@@ -1868,9 +1868,9 @@ def extract_race_data(session, race):
     # ライン関連語がHTML内に存在するか調べる
     # 並び予想関連JavaScriptの実装を調査
     print("\n========== 並び予想JavaScript調査 ==========")
-    
+
     js_paths = [
-        "/sp/static/js/SJ0313.js",
+        "/sp/static/js/SJ0314.js",
         "/sp/static/js/SJ0314_c.js",
         "/sp/static/js/SJ0314_v.js",
         "/sp/static/js/commonJSON.js",
@@ -1889,10 +1889,10 @@ def extract_race_data(session, race):
             )
 
             js_text = js_response.text or ""
-            if js_path.endswith("SJ0313.js"):
-                print("\n========== SJ0313.js 全文 ==========")
+            if js_path.endswith("SJ0314.js"):
+                print("\n========== SJ0314.js 全文 ==========")
                 print(js_text)
-                print("========== SJ0313.js 終了 ==========")
+                print("========== SJ0314.js 終了 ==========")
             print(
                 f"\nJavaScript: {js_path} "
                 f"HTTP={js_response.status_code} "
