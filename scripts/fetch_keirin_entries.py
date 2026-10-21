@@ -1866,6 +1866,85 @@ def extract_race_data(session, race):
         print("JavaScript参照:", src)
 
     # ライン関連語がHTML内に存在するか調べる
+    # 並び予想関連JavaScriptの実装を調査
+    print("\n========== 並び予想JavaScript調査 ==========")
+
+    js_paths = [
+        "/sp/static/js/SJ0314_v.js",
+        "/sp/static/js/SJ0314_c.js",
+        "/sp/static/js/SJ0313.js",
+        "/sp/static/js/commonJSON.js",
+        "/sp/static/js/commonLoad.js",
+    ]
+
+    for js_path in js_paths:
+        js_url = urljoin(BASE, js_path)
+
+        try:
+            js_response = request_page(
+                session,
+                js_url,
+                referer=response.url,
+            )
+
+            js_text = js_response.text or ""
+
+            print(
+                f"\nJavaScript: {js_path} "
+                f"HTTP={js_response.status_code} "
+                f"文字数={len(js_text)}"
+            )
+
+            patterns = [
+                r"jsonData",
+                r"narabiyoso",
+                r"lineKeitai",
+                r"shaban",
+                r"ajax",
+                r"\.post\s*\(",
+                r"\.get\s*\(",
+                r"\.submit\s*\(",
+                r"encp",
+                r"skbn",
+            ]
+
+            for pattern in patterns:
+                matches = list(
+                    re.finditer(
+                        pattern,
+                        js_text,
+                        re.IGNORECASE,
+                    )
+                )
+
+                if not matches:
+                    continue
+
+                print(
+                    f"  {pattern}: {len(matches)}件"
+                )
+
+                for match in matches[:2]:
+                    start = max(0, match.start() - 180)
+                    end = min(
+                        len(js_text),
+                        match.end() + 350,
+                    )
+
+                    print(
+                        "  ",
+                        js_text[start:end]
+                        .replace("\n", " ")
+                        .replace("\r", " "),
+                    )
+
+        except Exception as exc:
+            print(
+                f"JavaScript取得失敗: {js_path} "
+                f"{type(exc).__name__}: {exc}"
+            )
+
+    print("========== JavaScript調査終了 ==========\n")
     line_keywords = [
         "narabiyoso",
         "lineKeitai",
