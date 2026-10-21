@@ -1844,7 +1844,59 @@ def extract_race_data(session, race):
     base_info = extract_assignment(html, "SC0201")
     rider_info = extract_assignment(html, "SJ0315")
     line_info = extract_assignment(html, "SJ0314")
+    # 公式ライン情報の構造を診断する
+    print(
+        f"  ライン情報診断: 会場={race.get('venue', '')} "
+        f"レース={race.get('race_no', '')}R"
+    )
 
+    if isinstance(line_info, dict):
+        print(
+            "  ライン情報トップ階層:",
+            list(line_info.keys()),
+        )
+
+        narabiyoso = line_info.get("narabiyoso")
+
+        print(
+            "  narabiyosoの型:",
+            type(narabiyoso).__name__,
+        )
+
+        if isinstance(narabiyoso, dict):
+            print(
+                "  narabiyosoの項目:",
+                list(narabiyoso.keys()),
+            )
+
+            print(
+                "  lineKeitai:",
+                repr(narabiyoso.get("lineKeitai")),
+            )
+
+            shaban = narabiyoso.get("shaban")
+
+            print(
+                "  shabanの型:",
+                type(shaban).__name__,
+            )
+
+            if isinstance(shaban, list):
+                print(
+                    "  shabanの内容:",
+                    shaban[:12],
+                )
+            else:
+                print(
+                    "  shabanの値:",
+                    repr(shaban)[:1000],
+                )
+    else:
+        print(
+            "  ライン情報を辞書として取得できません:",
+            type(line_info).__name__,
+            repr(line_info)[:500],
+        )
     if not isinstance(rider_info, dict):
         raise ValueError("SJ0315を抽出できません")
 
