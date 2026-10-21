@@ -1871,7 +1871,12 @@ def extract_race_data(session, race):
     ]
 
     line_car_numbers = [
-        item["car_no"]
+        str(item.get("car_no", "")).strip()
+        for item in official_lines["line_order"]
+    ]
+
+    line_positions = [
+        item.get("position")
         for item in official_lines["line_order"]
     ]
 
@@ -1884,24 +1889,69 @@ def extract_race_data(session, race):
     )
 
     missing_line_numbers = sorted(
-        set(car_numbers) - set(line_car_numbers)
+        set(car_numbers) - set(line_car_numbers),
+        key=lambda value: int(value) if value.isdigit() else 999,
     )
 
     unknown_line_numbers = sorted(
-        set(line_car_numbers) - set(car_numbers)
+        set(line_car_numbers) - set(car_numbers),
+        key=lambda value: int(value) if value.isdigit() else 999,
     )
 
-    comment_count = sum(
-        1 for rider in riders
-        if rider["comment_available"]
+    # 位置番号が正しい整数で、重複していないか確認する。
+    line_positions_valid = (
+        bool(line_positions)
+        and all(
+            isinstance(position, int)
+            and not isinstance(position, bool)
+            and position >= 1
+            for position in line_positions
+        )
+        and len(line_positions) == len(set(line_positions))
     )
 
-    if riders and comment_count == len(riders):
-        comment_status = "取得済み"
-    elif comment_count > 0:
-        comment_status = "一部取得"
+    # 出走選手とライン情報の車番が完全に一致するか確認する。
+    line_order_complete = (
+        bool(car_numbers)
+        and bool(line_car_numbers)
+        and not duplicate_car_numbers
+        and not duplicate_line_numbers
+        and not missing_line_numbers
+        and not unknown_line_numbers
+    )
+
+    # ライン候補のグループ化で車番が欠落・重複していないか確認する。
+    grouped_car_numbers = [
+        str(car_no).strip()
+        for line in official_lines["lines"]
+        for car_no in line.get("car_numbers", [])
+    ]
+
+    line_groups_consistent = (
+        bool(official_lines["lines"])
+        and len(grouped_car_numbers) == len(line_car_numbers)
+        and len(grouped_car_numbers) == len(set(grouped_car_numbers))
+        and set(grouped_car_numbers) == set(line_car_numbers)
+    )
+
+    line_validation_passed = (
+        line_order_complete
+        and line_positions_valid
+        and line_groups_consistent
+    )
+
+    if line_validation_passed:
+        official_lines["line_status"] = (
+            "位置情報整合性確認済み・ライン構成は候補"
+        )
+    elif not line_car_numbers:
+        official_lines["line_status"] = "公式位置情報なし"
+    elif not line_positions_valid:
+        official_lines["line_status"] = "位置番号不整合・要確認"
+    elif not line_order_complete:
+        official_lines["line_status"] = "出走選手との不一致・要確認"
     else:
-        comment_status = "本文未取得"
+        official_lines["line_status"] = "ライン構成不整合・要確認" 
 
     return {
         **race,
@@ -1944,6 +1994,10 @@ def extract_race_data(session, race):
             "missing_line_numbers": missing_line_numbers,
             "unknown_line_numbers": unknown_line_numbers,
             "rider_count_valid": len(riders) > 0,
+            "line_positions_valid": line_positions_valid,
+            "line_order_complete": line_order_complete,
+            "line_groups_consistent": line_groups_consistent,
+            "line_validation_passed": line_validation_passed,
         },
 
         "comment_count": comment_count,
