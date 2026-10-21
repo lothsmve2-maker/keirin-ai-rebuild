@@ -1869,13 +1869,14 @@ def extract_race_data(session, race):
     # 並び予想関連JavaScriptの実装を調査
     print("\n========== 並び予想JavaScript調査 ==========")
 
-    js_paths = [
-        "/sp/static/js/SJ0314_c.js",
-        "/sp/static/js/SJ0314_v.js",
-        "/sp/static/js/commonJSON.js",
-        "/sp/static/js/commonLoad.js",
-        "/sp/static/js/commonSubmit.js",
-    ]
+js_paths = [
+    "/sp/static/js/SJ0313.js",
+    "/sp/static/js/SJ0314_c.js",
+    "/sp/static/js/SJ0314_v.js",
+    "/sp/static/js/commonJSON.js",
+    "/sp/static/js/commonLoad.js",
+    "/sp/static/js/commonSubmit.js",
+]
 
     for js_path in js_paths:
         js_url = urljoin(BASE, js_path)
@@ -1888,7 +1889,10 @@ def extract_race_data(session, race):
             )
 
             js_text = js_response.text or ""
-
+            if js_path.endswith("SJ0313.js"):
+                print("\n========== SJ0313.js 全文 ==========")
+                print(js_text)
+                print("========== SJ0313.js 終了 ==========")
             print(
                 f"\nJavaScript: {js_path} "
                 f"HTTP={js_response.status_code} "
