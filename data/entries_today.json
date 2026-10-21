@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-22",
-  "started_at": "2026-10-22T03:03:05.587475+09:00",
-  "finished_at": "2026-10-22T03:05:46.197108+09:00",
+  "started_at": "2026-10-22T03:35:38.938450+09:00",
+  "finished_at": "2026-10-22T03:39:06.539069+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -4559,7 +4559,7 @@
           "back": "0",
           "comment": "川田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -4577,7 +4577,7 @@
           "back": "6",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -4595,7 +4595,7 @@
           "back": "0",
           "comment": "西森君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -4613,7 +4613,7 @@
           "back": "13",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -4631,7 +4631,7 @@
           "back": "14",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -4649,7 +4649,7 @@
           "back": "0",
           "comment": "寺師君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -4667,7 +4667,7 @@
           "back": "1",
           "comment": "関東三番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -4684,19 +4684,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "コメント不足",
-      "prediction_basis": "公式ライン中心",
-      "prediction_warning": "コメント未掲載・未取得の選手あり。発表済みラインを中心に判断すること。未確認の戦法やラインを推測で補完しない。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
