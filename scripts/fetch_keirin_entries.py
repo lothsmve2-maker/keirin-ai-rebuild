@@ -1841,7 +1841,20 @@ def extract_race_data(session, race):
             rider["comment"] = ""
             rider["comment_available"] = False
             rider["comment_status"] = "本文未取得"
+    comment_count = sum(
+        1
+        for rider in riders
+        if rider.get("comment_available") is True
+        and str(rider.get("comment", "")).strip()
+    )
 
+    comment_status = (
+        "取得済み"
+        if riders and comment_count == len(riders)
+        else "部分取得"
+        if comment_count > 0
+        else "本文未取得"
+    )
     meta = {}
 
     if isinstance(base_info, dict):
