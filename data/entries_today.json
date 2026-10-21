@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-21",
-  "started_at": "2026-10-21T18:29:40.757522+09:00",
-  "finished_at": "2026-10-21T18:32:03.288719+09:00",
+  "started_at": "2026-10-21T19:07:45.095849+09:00",
+  "finished_at": "2026-10-21T19:10:10.645580+09:00",
   "status": "ok",
   "events_found": 8,
   "events_checked": 8,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 517,
-  "commented_rider_count": 426,
+  "commented_rider_count": 517,
   "events": [
     {
       "venue": "小田原",
@@ -110,9 +110,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -128,9 +128,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "堀さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -146,9 +146,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "中岡君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -164,9 +164,9 @@
           "sashi": "5",
           "mark": "5",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自分で。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -182,9 +182,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "八嶋君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -200,9 +200,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -218,9 +218,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "渡邊さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -243,21 +243,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -296,9 +288,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "14",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -314,9 +306,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "8",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -332,9 +324,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力自在。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -350,9 +342,9 @@
           "sashi": "1",
           "mark": "5",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "火島君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -368,9 +360,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "佐々木君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -386,9 +378,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "四国３番手。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -404,9 +396,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "川田君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -429,21 +421,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -482,9 +466,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -500,9 +484,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "西森君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -518,9 +502,9 @@
           "sashi": "6",
           "mark": "1",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎で自在。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -536,9 +520,9 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "坪内君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -554,9 +538,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "南関勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -572,9 +556,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "3",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "兵庫勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -590,9 +574,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "13",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -615,21 +599,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -670,7 +646,7 @@
           "back": "0",
           "comment": "菊池君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -688,7 +664,7 @@
           "back": "0",
           "comment": "稲留君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -706,7 +682,7 @@
           "back": "20",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -724,7 +700,7 @@
           "back": "3",
           "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -742,7 +718,7 @@
           "back": "0",
           "comment": "志田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -760,7 +736,7 @@
           "back": "4",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -778,7 +754,7 @@
           "back": "11",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -803,19 +779,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -856,7 +824,7 @@
           "back": "0",
           "comment": "松下君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -874,7 +842,7 @@
           "back": "1",
           "comment": "栃木勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -892,7 +860,7 @@
           "back": "6",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -910,7 +878,7 @@
           "back": "23",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -928,7 +896,7 @@
           "back": "13",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -946,7 +914,7 @@
           "back": "0",
           "comment": "寺師君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -964,7 +932,7 @@
           "back": "0",
           "comment": "杉浦君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -989,19 +957,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1042,7 +1002,7 @@
           "back": "1",
           "comment": "一人で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1060,7 +1020,7 @@
           "back": "0",
           "comment": "邊見君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1078,7 +1038,7 @@
           "back": "15",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1096,7 +1056,7 @@
           "back": "4",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1114,7 +1074,7 @@
           "back": "0",
           "comment": "川上君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1132,7 +1092,7 @@
           "back": "4",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1150,7 +1110,7 @@
           "back": "0",
           "comment": "補充出走",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1175,19 +1135,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1228,7 +1180,7 @@
           "back": "0",
           "comment": "単騎。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1246,7 +1198,7 @@
           "back": "23",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1264,7 +1216,7 @@
           "back": "16",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1282,7 +1234,7 @@
           "back": "0",
           "comment": "上杉君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1300,7 +1252,7 @@
           "back": "1",
           "comment": "単騎。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1318,7 +1270,7 @@
           "back": "0",
           "comment": "千葉勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1336,7 +1288,7 @@
           "back": "0",
           "comment": "鈴木君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1361,19 +1313,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1414,7 +1358,7 @@
           "back": "0",
           "comment": "後藤君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1432,7 +1376,7 @@
           "back": "0",
           "comment": "梶原君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1450,7 +1394,7 @@
           "back": "4",
           "comment": "山田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1468,7 +1412,7 @@
           "back": "9",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1486,7 +1430,7 @@
           "back": "0",
           "comment": "単騎。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1504,7 +1448,7 @@
           "back": "4",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1522,7 +1466,7 @@
           "back": "14",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1547,19 +1491,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1600,7 +1536,7 @@
           "back": "0",
           "comment": "松井君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1618,7 +1554,7 @@
           "back": "1",
           "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1636,7 +1572,7 @@
           "back": "1",
           "comment": "中嶋君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1654,7 +1590,7 @@
           "back": "0",
           "comment": "京都勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1672,7 +1608,7 @@
           "back": "16",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1690,7 +1626,7 @@
           "back": "0",
           "comment": "窓場君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1708,7 +1644,7 @@
           "back": "16",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1733,19 +1669,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1786,7 +1714,7 @@
           "back": "19",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1804,7 +1732,7 @@
           "back": "0",
           "comment": "皿屋君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -1822,7 +1750,7 @@
           "back": "5",
           "comment": "道場君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -1840,7 +1768,7 @@
           "back": "0",
           "comment": "谷内君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -1858,7 +1786,7 @@
           "back": "3",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -1876,7 +1804,7 @@
           "back": "1",
           "comment": "単騎。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -1894,7 +1822,7 @@
           "back": "1",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -1919,19 +1847,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -1972,7 +1892,7 @@
           "back": "8",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -1990,7 +1910,7 @@
           "back": "5",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2008,7 +1928,7 @@
           "back": "1",
           "comment": "小松原君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2026,7 +1946,7 @@
           "back": "1",
           "comment": "近畿３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2044,7 +1964,7 @@
           "back": "0",
           "comment": "酒井君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2062,7 +1982,7 @@
           "back": "3",
           "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2080,7 +2000,7 @@
           "back": "0",
           "comment": "晝田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -2105,19 +2025,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2156,9 +2068,9 @@
           "sashi": "10",
           "mark": "0",
           "back": "2",
-          "comment": "北津留さん。",
+          "comment": "感覚は悪くないけど体調が悪いので整えて。北津留さん。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2174,9 +2086,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "5",
-          "comment": "金子君。",
+          "comment": "金子君。奈良と青森で連係あり両方ともワンツーでした。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2192,9 +2104,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "遠藤君。",
+          "comment": "初日同様に遠藤君。強かったし、自分も調子は問題ない。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2210,9 +2122,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "15",
-          "comment": "自力。",
+          "comment": "自力。先行しやすい流れでした。初の決勝目指して頑張る",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2228,9 +2140,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "1",
-          "comment": "自力。",
+          "comment": "位置にこだわったのに負けたのは反省。技術不足。自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2246,9 +2158,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "単騎。",
+          "comment": "松井君が全部やってくれた。脚自体は悪くない。単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2264,9 +2176,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "自力。",
+          "comment": "初日はモロさが出た。状態も良いとは言えない。自力で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -2291,19 +2203,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2342,9 +2246,9 @@
           "sashi": "11",
           "mark": "2",
           "back": "0",
-          "comment": "大城さん。",
+          "comment": "大城君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2360,9 +2264,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "堀君の番手。",
+          "comment": "堀君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2378,9 +2282,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "北日本へ。",
+          "comment": "北勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2396,9 +2300,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "大阪へ。",
+          "comment": "大阪勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2414,9 +2318,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "10",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2432,9 +2336,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "東の四番手。",
+          "comment": "東４番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2450,9 +2354,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -2477,19 +2381,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2528,9 +2424,9 @@
           "sashi": "7",
           "mark": "8",
           "back": "0",
-          "comment": "初の山本君へ。",
+          "comment": "山本君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2546,9 +2442,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2564,9 +2460,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "吉田君の後ろ。",
+          "comment": "吉田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2582,9 +2478,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "1",
-          "comment": "九州の三番手。",
+          "comment": "九州３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2600,9 +2496,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2618,9 +2514,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "一人で。",
+          "comment": "単騎。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2636,9 +2532,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "一ノ瀬君の番手。",
+          "comment": "一ノ瀬君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -2663,19 +2559,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2714,9 +2602,9 @@
           "sashi": "7",
           "mark": "8",
           "back": "0",
-          "comment": "横内君に任せる。",
+          "comment": "横内君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2732,9 +2620,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "3",
-          "comment": "自力自在に。",
+          "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2750,9 +2638,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "矢口君に付ける。",
+          "comment": "矢口君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2770,7 +2658,7 @@
           "back": "1",
           "comment": "藤岡さん。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2786,9 +2674,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2804,9 +2692,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "渡邉さんの後ろ。",
+          "comment": "渡邉さん。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -2822,9 +2710,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -2849,19 +2737,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -2900,9 +2780,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "14",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -2918,9 +2798,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "1",
-          "comment": "高谷さんへ。",
+          "comment": "高谷さん。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -2936,9 +2816,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "4",
-          "comment": "一人でやります。",
+          "comment": "１人で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -2954,9 +2834,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "秋末君の番手。",
+          "comment": "秋末君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -2972,9 +2852,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -2990,9 +2870,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "中近勢へ。",
+          "comment": "中近勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -3008,9 +2888,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "中近の三番手。",
+          "comment": "中近３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -3035,19 +2915,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3086,9 +2958,9 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": "初の船瀬君へ。",
+          "comment": "船瀬君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -3104,9 +2976,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "15",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -3122,9 +2994,9 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "前回に続き藤田君",
+          "comment": "藤田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -3140,9 +3012,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "17",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -3158,9 +3030,9 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": "同県の石田君。",
+          "comment": "石田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -3176,9 +3048,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "東の三番手。",
+          "comment": "東３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -3194,9 +3066,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -3221,19 +3093,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3272,9 +3136,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "3",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -3290,9 +3154,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "5",
-          "comment": "下井君の番手。",
+          "comment": "下井君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -3310,7 +3174,7 @@
           "back": "0",
           "comment": "坂本君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -3326,9 +3190,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -3344,9 +3208,9 @@
           "sashi": "5",
           "mark": "4",
           "back": "0",
-          "comment": "同県の緒方君。",
+          "comment": "緒方君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -3362,9 +3226,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "中部の三番手。",
+          "comment": "中部３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -3380,9 +3244,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "3",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -3407,19 +3271,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3458,9 +3314,9 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "外田君の番手。",
+          "comment": "外田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -3478,7 +3334,7 @@
           "back": "0",
           "comment": "纐纈君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -3494,9 +3350,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -3514,7 +3370,7 @@
           "back": "0",
           "comment": "吉田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -3530,9 +3386,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "12",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -3548,9 +3404,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": "四国の三番手。",
+          "comment": "四国３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -3566,9 +3422,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "5",
-          "comment": "自力自在に。",
+          "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -3593,19 +3449,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -3625,84 +3473,10 @@
       "verified_race_date": "2026-10-21",
       "start_time": "18:43",
       "distance_m": "2025",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "7"
-        },
-        {
-          "position": 6,
-          "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "5"
-        },
-        {
-          "position": 9,
-          "car_no": "2"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "4",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "1"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置情報整合性確認済み・ライン構成は候補",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3718,7 +3492,7 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "荒川君の番手。",
+          "comment": "荒川君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3736,7 +3510,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "小川君に任せる。",
+          "comment": "小川君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3754,7 +3528,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3772,7 +3546,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "1",
-          "comment": "渡口君の番手。",
+          "comment": "渡口君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3790,7 +3564,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3808,7 +3582,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "中国の三番手。",
+          "comment": "中国３番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3826,7 +3600,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -3835,13 +3609,21 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
-        "line_validation_passed": true
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
+        "line_validation_passed": false
       },
       "comment_count": 7,
       "comment_status": "取得済み",
@@ -4864,9 +4646,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "吉原さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -4882,9 +4664,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "5",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -4900,9 +4682,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力自在。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -4918,9 +4700,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "決めずに。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -4936,9 +4718,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "櫻川君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -4954,9 +4736,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "南関勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -4972,9 +4754,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -4997,21 +4779,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5050,9 +4824,9 @@
           "sashi": "1",
           "mark": "4",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "佐野さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5068,9 +4842,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "竹村君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -5086,9 +4860,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "１人で。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -5104,9 +4878,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "14",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "何でも。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -5122,9 +4896,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "中四国勢から。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -5140,9 +4914,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -5158,9 +4932,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "猪野君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -5183,21 +4957,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5236,9 +5002,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "13",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5254,9 +5020,9 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "鈴木君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -5272,9 +5038,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "10",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -5290,9 +5056,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "九州３番手。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -5308,9 +5074,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "１人で。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -5326,9 +5092,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "南関勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -5344,9 +5110,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "松本君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -5369,21 +5135,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5422,9 +5180,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "瀬口君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5440,9 +5198,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -5458,9 +5216,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "関東３番手。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -5476,9 +5234,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "横田君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -5494,9 +5252,9 @@
           "sashi": "6",
           "mark": "7",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力自在。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -5512,9 +5270,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -5530,9 +5288,9 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "石田さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -5555,21 +5313,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5608,9 +5358,9 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5626,9 +5376,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力基本。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -5644,9 +5394,9 @@
           "sashi": "5",
           "mark": "7",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "財満君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -5662,9 +5412,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -5680,9 +5430,9 @@
           "sashi": "0",
           "mark": "8",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "九州勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -5698,9 +5448,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "決めずに。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -5716,9 +5466,9 @@
           "sashi": "5",
           "mark": "8",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "早川君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -5741,21 +5491,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5794,9 +5536,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5812,9 +5554,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "12",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -5830,9 +5572,9 @@
           "sashi": "0",
           "mark": "4",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "切れ目から。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -5848,9 +5590,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "東北勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -5866,9 +5608,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -5884,9 +5626,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "鈴木君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -5902,9 +5644,9 @@
           "sashi": "5",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "榊枝君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -5927,21 +5669,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -5980,9 +5714,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "10",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -5998,9 +5732,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "7",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -6016,9 +5750,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "15",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -6034,9 +5768,9 @@
           "sashi": "3",
           "mark": "4",
           "back": "8",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "関東３番手。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -6052,9 +5786,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "渡邊君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -6070,9 +5804,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "田上君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -6088,9 +5822,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "11",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "田崎君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -6113,21 +5847,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -9732,9 +9458,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -9750,9 +9476,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "1",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "決めず。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -9768,9 +9494,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "山田君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -9786,9 +9512,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -9804,9 +9530,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "12",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -9822,9 +9548,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "大沼さん。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -9840,9 +9566,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -9865,21 +9591,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -9918,9 +9636,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎で。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -9936,9 +9654,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "4",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -9954,9 +9672,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "中君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -9972,9 +9690,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "松本君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -9990,9 +9708,9 @@
           "sashi": "1",
           "mark": "2",
           "back": "14",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10008,9 +9726,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "神奈川勢。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -10026,9 +9744,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "単騎で。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -10051,21 +9769,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -10104,9 +9814,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "前々。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -10122,9 +9832,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "14",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "先行。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -10140,9 +9850,9 @@
           "sashi": "1",
           "mark": "7",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "大本君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -10158,9 +9868,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "関東３番手。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -10176,9 +9886,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "13",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10194,9 +9904,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "加美山君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -10212,9 +9922,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "齊藤君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -10237,21 +9947,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -10290,9 +9992,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "4",
-          "comment": "自力で頑張る",
+          "comment": "自力で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -10308,9 +10010,9 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "中近ラインへ",
+          "comment": "中近勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -10326,9 +10028,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "瀧本君の番手",
+          "comment": "瀧本君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -10344,9 +10046,9 @@
           "sashi": "0",
           "mark": "3",
           "back": "0",
-          "comment": "中川飛君の番手",
+          "comment": "中川飛君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -10362,9 +10064,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "単騎で走る",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10380,9 +10082,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "中川昌さんの後ろ",
+          "comment": "中川昌さんへ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -10398,9 +10100,9 @@
           "sashi": "0",
           "mark": "3",
           "back": "12",
-          "comment": "自力を出す",
+          "comment": "自力で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -10425,19 +10127,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -10476,9 +10170,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "16",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -10494,9 +10188,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "阿久津君の番手",
+          "comment": "阿久津君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -10512,9 +10206,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "愛知勢の後ろ",
+          "comment": "愛知勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -10530,9 +10224,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "7",
-          "comment": "自力を出す",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -10548,9 +10242,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "同県の森崎君",
+          "comment": "森崎君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10566,9 +10260,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "関東３番手",
+          "comment": "関東３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 6,
@@ -10592,18 +10286,11 @@
       },
       "comment_count": 6,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -10642,9 +10329,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "秋本君の番手",
+          "comment": "秋本君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -10660,9 +10347,9 @@
           "sashi": "2",
           "mark": "6",
           "back": "0",
-          "comment": "深瀬君－山本君へ",
+          "comment": "山本君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -10678,9 +10365,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "5",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -10696,9 +10383,9 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": "単騎で走る",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -10714,9 +10401,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "6",
-          "comment": "自力で勝負する",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10732,9 +10419,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "栃茨勢の後ろ",
+          "comment": "栃茨勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -10750,9 +10437,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "深瀬君に付く",
+          "comment": "深瀬君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -10777,19 +10464,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -10828,9 +10507,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "中村君に付く",
+          "comment": "中村君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -10846,9 +10525,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "5",
-          "comment": "自力で勝負する",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -10864,9 +10543,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "15",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -10882,9 +10561,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "平根君の番手",
+          "comment": "平根君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -10900,9 +10579,9 @@
           "sashi": "6",
           "mark": "1",
           "back": "0",
-          "comment": "樋口君を目標に",
+          "comment": "樋口君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -10918,9 +10597,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "5",
-          "comment": "自力を出す",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -10936,9 +10615,9 @@
           "sashi": "5",
           "mark": "0",
           "back": "0",
-          "comment": "北日本３番手",
+          "comment": "北の３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -10963,19 +10642,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11014,9 +10685,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11032,9 +10703,9 @@
           "sashi": "5",
           "mark": "5",
           "back": "0",
-          "comment": "同県の林君",
+          "comment": "林君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11050,9 +10721,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "加賀美君に付く",
+          "comment": "加賀美君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11068,9 +10739,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "8",
-          "comment": "自力で勝負する",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -11086,9 +10757,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": "静岡３番手",
+          "comment": "静岡３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -11104,9 +10775,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "8",
-          "comment": "自力を出す",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -11122,9 +10793,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "同県の神尾君",
+          "comment": "神尾君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -11149,19 +10820,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11200,9 +10863,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "4",
-          "comment": "自力で勝負する",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11218,9 +10881,9 @@
           "sashi": "6",
           "mark": "5",
           "back": "0",
-          "comment": "再度で水澤君",
+          "comment": "水澤君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11236,9 +10899,9 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "大利君に任せる",
+          "comment": "大利君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11254,9 +10917,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "古屋君の番手",
+          "comment": "古屋君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -11272,9 +10935,9 @@
           "sashi": "5",
           "mark": "5",
           "back": "0",
-          "comment": "千葉コンビへ",
+          "comment": "千葉勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -11290,9 +10953,9 @@
           "sashi": "5",
           "mark": "1",
           "back": "1",
-          "comment": "自力自在に",
+          "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -11308,9 +10971,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "20",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -11335,19 +10998,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11386,9 +11041,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "10",
-          "comment": "自力でいきます",
+          "comment": "自力で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11404,9 +11059,9 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "中部３番手",
+          "comment": "中部の３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11422,9 +11077,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "5",
-          "comment": "単騎で走ります",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11440,9 +11095,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "8",
-          "comment": "同期の児玉君",
+          "comment": "児玉君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -11458,9 +11113,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "6",
-          "comment": "中野君です",
+          "comment": "中野君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -11476,9 +11131,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "1",
-          "comment": "宮城勢に付け",
+          "comment": "宮城勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -11494,9 +11149,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "先行でいきます",
+          "comment": "先行です。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -11521,19 +11176,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11572,9 +11219,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "15",
-          "comment": "自力自在に",
+          "comment": "単騎だったのであの仕掛けに。最後差し返されましたね。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11590,9 +11237,9 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "同県の上杉君",
+          "comment": "判断が難しいレースだった。自分は何もしていない。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11608,9 +11255,9 @@
           "sashi": "0",
           "mark": "2",
           "back": "11",
-          "comment": "自力で頑張る",
+          "comment": "中団が取れたのが大きかった。ペダリングはよかったです",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11626,9 +11273,9 @@
           "sashi": "4",
           "mark": "4",
           "back": "0",
-          "comment": "松坂君の番手",
+          "comment": "展開がよかった。もう歳だし、１走１走頑張るだけです。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -11644,9 +11291,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "15",
-          "comment": "自力で勝負する",
+          "comment": "自分はプレッシャーに弱い。気持ちがなかなか入らない。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -11662,9 +11309,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "16",
-          "comment": "単騎で走る",
+          "comment": "臨機応変に走れたと思う。脚も悪くない。優勝目指して。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -11680,9 +11327,9 @@
           "sashi": "8",
           "mark": "3",
           "back": "0",
-          "comment": "再度で田口君",
+          "comment": "平根君に申し訳ない。集中はできていたが、難しかった。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -11707,19 +11354,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11758,9 +11397,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11776,9 +11415,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "3",
-          "comment": "単騎でも自力勝負",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11794,9 +11433,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "九州の後ろを回る",
+          "comment": "九州勢。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11812,9 +11451,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "位置は決めずにいく",
+          "comment": "決めず。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -11830,9 +11469,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "九州で田山君に任す",
+          "comment": "田山君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -11848,9 +11487,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "井上君の後ろですね",
+          "comment": "井上君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -11866,9 +11505,9 @@
           "sashi": "2",
           "mark": "3",
           "back": "6",
-          "comment": "単騎でやりますよ",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -11893,19 +11532,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -11944,9 +11575,9 @@
           "sashi": "4",
           "mark": "0",
           "back": "0",
-          "comment": "決めずに単騎でやる",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -11962,9 +11593,9 @@
           "sashi": "5",
           "mark": "8",
           "back": "0",
-          "comment": "吉松君にジカ付け",
+          "comment": "吉松君ジカで。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -11980,9 +11611,9 @@
           "sashi": "4",
           "mark": "3",
           "back": "12",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -11998,9 +11629,9 @@
           "sashi": "1",
           "mark": "4",
           "back": "0",
-          "comment": "作田君の後ろを回る",
+          "comment": "作田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -12016,9 +11647,9 @@
           "sashi": "9",
           "mark": "4",
           "back": "0",
-          "comment": "同県の吉松君に任す",
+          "comment": "吉松君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -12034,9 +11665,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "単騎で自在にやる",
+          "comment": "自在に。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -12052,9 +11683,9 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "群馬の３番手です",
+          "comment": "群馬３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -12079,19 +11710,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -12130,9 +11753,9 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "福岡両者の後ろから",
+          "comment": "福岡勢から。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -12148,9 +11771,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "7",
-          "comment": "自力で頑張ります",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -12166,9 +11789,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "8",
-          "comment": "自力勝負で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -12184,9 +11807,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "6",
-          "comment": "単騎で流れに応じて",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -12202,9 +11825,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "4",
-          "comment": "決めずに単騎でやる",
+          "comment": "単騎で。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -12220,9 +11843,9 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "南関で小川君マーク",
+          "comment": "小川君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -12238,9 +11861,9 @@
           "sashi": "6",
           "mark": "4",
           "back": "1",
-          "comment": "福岡同士の鶴君任せ",
+          "comment": "鶴君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -12265,19 +11888,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -12316,9 +11931,9 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": "地元の浦野君を追走",
+          "comment": "浦野君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -12334,9 +11949,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "11",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -12352,9 +11967,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "単騎で自力自在に",
+          "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -12370,9 +11985,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "11",
-          "comment": "自力で頑張ります",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -12388,9 +12003,9 @@
           "sashi": "3",
           "mark": "4",
           "back": "0",
-          "comment": "位置は決めずにいく",
+          "comment": "決めず。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -12406,9 +12021,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "角田君に付けます",
+          "comment": "角田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -12424,9 +12039,9 @@
           "sashi": "4",
           "mark": "2",
           "back": "1",
-          "comment": "九州で篠田君に任す",
+          "comment": "篠田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -12451,19 +12066,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -12502,9 +12109,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "4",
-          "comment": "自分が前で自力勝負",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -12520,9 +12127,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "8",
-          "comment": "自力で頑張ります",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -12538,9 +12145,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "11",
-          "comment": "自力勝負で頑張る",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -12556,9 +12163,9 @@
           "sashi": "5",
           "mark": "10",
           "back": "1",
-          "comment": "九州の後ろにします",
+          "comment": "九州勢へ。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -12574,9 +12181,9 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "南関ラインで小林君",
+          "comment": "小林君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -12592,9 +12199,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "中四国で大室君任せ",
+          "comment": "大室君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -12610,9 +12217,9 @@
           "sashi": "5",
           "mark": "10",
           "back": "1",
-          "comment": "九州で満田君に任す",
+          "comment": "滿田君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -12637,19 +12244,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -12688,9 +12287,9 @@
           "sashi": "7",
           "mark": "3",
           "back": "0",
-          "comment": "小山君にマークする",
+          "comment": "小山君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -12706,9 +12305,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "関東ライン３番手",
+          "comment": "関東３番手。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -12724,9 +12323,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "東北で相笠さん任せ",
+          "comment": "相笠さん。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -12742,9 +12341,9 @@
           "sashi": "1",
           "mark": "0",
           "back": "12",
-          "comment": "いつも通り自力です",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -12760,9 +12359,9 @@
           "sashi": "3",
           "mark": "0",
           "back": "1",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -12778,9 +12377,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": "自力自在にいきます",
+          "comment": "自力自在。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -12796,9 +12395,9 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "関東ラインで橋谷君",
+          "comment": "橋谷君。",
           "comment_available": true,
-          "comment_status": "前回取得分を保持"
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -12823,19 +12422,11 @@
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -12855,84 +12446,10 @@
       "verified_race_date": "2026-10-21",
       "start_time": "18:30",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 2,
-          "car_no": "3"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "7"
-        },
-        {
-          "position": 8,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "2"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "3",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "7"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置情報整合性確認済み・ライン構成は候補",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12948,7 +12465,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "4",
-          "comment": "自力自在にいきます",
+          "comment": "自力自在。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12966,7 +12483,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "関東ラインで吉田君",
+          "comment": "吉田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12984,7 +12501,7 @@
           "sashi": "4",
           "mark": "2",
           "back": "1",
-          "comment": "福岡同士の野津君へ",
+          "comment": "野津君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13002,7 +12519,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13020,7 +12537,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "福岡の後ろですね",
+          "comment": "福岡勢。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13038,7 +12555,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "いつも通り自力です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13056,7 +12573,7 @@
           "sashi": "0",
           "mark": "2",
           "back": "1",
-          "comment": "もちろん同県田中君",
+          "comment": "田中君。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -13065,13 +12582,21 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
-        "line_validation_passed": true
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
+        "line_validation_passed": false
       },
       "comment_count": 7,
       "comment_status": "取得済み",
@@ -13099,94 +12624,10 @@
       "verified_race_date": "2026-10-21",
       "start_time": "18:56",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 4,
-          "car_no": "6"
-        },
-        {
-          "position": 6,
-          "car_no": "4"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
-          "position": 10,
-          "car_no": "7"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            4
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4",
-            "2"
-          ],
-          "positions": [
-            6,
-            7
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "位置情報整合性確認済み・ライン構成は候補",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -13202,7 +12643,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "17",
-          "comment": "いつも通り自力です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13220,7 +12661,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "九州で上吹越君目標",
+          "comment": "上吹越君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13238,7 +12679,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13256,7 +12697,7 @@
           "sashi": "0",
           "mark": "2",
           "back": "1",
-          "comment": "自力自在にいきます",
+          "comment": "自力自在。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13274,7 +12715,7 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "鈴木君にマークする",
+          "comment": "鈴木君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13292,7 +12733,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "位置は決めずにいく",
+          "comment": "決めず。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13310,7 +12751,7 @@
           "sashi": "0",
           "mark": "2",
           "back": "0",
-          "comment": "茨栃ライン伊早坂君",
+          "comment": "伊早坂君。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -13319,13 +12760,21 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
-        "line_validation_passed": true
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
+        "line_validation_passed": false
       },
       "comment_count": 7,
       "comment_status": "取得済み",
@@ -15814,8 +15263,8 @@
     },
     "race_count": 74,
     "rider_count": 517,
-    "commented_rider_count": 426,
-    "comment_missing_rider_count": 91,
+    "commented_rider_count": 517,
+    "comment_missing_rider_count": 0,
     "events_without_races": []
   }
 }
