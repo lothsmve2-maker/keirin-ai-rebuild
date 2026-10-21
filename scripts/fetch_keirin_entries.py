@@ -1870,11 +1870,11 @@ def extract_race_data(session, race):
     print("\n========== 並び予想JavaScript調査 ==========")
 
     js_paths = [
-        "/sp/static/js/SJ0314_v.js",
         "/sp/static/js/SJ0314_c.js",
-        "/sp/static/js/SJ0313.js",
+        "/sp/static/js/SJ0314_v.js",
         "/sp/static/js/commonJSON.js",
         "/sp/static/js/commonLoad.js",
+        "/sp/static/js/commonSubmit.js",
     ]
 
     for js_path in js_paths:
