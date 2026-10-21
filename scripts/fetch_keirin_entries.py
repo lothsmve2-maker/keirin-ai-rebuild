@@ -1979,7 +1979,46 @@ def extract_race_data(session, race):
         and line_positions_valid
         and line_groups_consistent
     )
+    # ========================================================
+    # 予想制限の判定
+    # ========================================================
 
+    missing_comment_car_numbers = [
+        str(rider.get("car_no", "")).strip()
+        for rider in riders
+        if not (
+            rider.get("comment_available") is True
+            and str(rider.get("comment", "")).strip()
+        )
+    ]
+
+    all_comments_available = (
+        len(riders) > 0
+        and len(missing_comment_car_numbers) == 0
+    )
+
+    if not missing_comment_car_numbers:
+        prediction_restriction = "通常"
+        prediction_basis = "通常の予想材料を使用"
+        prediction_warning = ""
+
+    elif line_validation_passed:
+        prediction_restriction = "コメント不足"
+        prediction_basis = "公式ライン中心"
+        prediction_warning = (
+            "コメント未掲載・未取得の選手あり。"
+            "発表済みラインを中心に判断すること。"
+            "未確認の戦法やラインを推測で補完しない。"
+        )
+
+    else:
+        prediction_restriction = "情報不足"
+        prediction_basis = "判断材料不足"
+        prediction_warning = (
+            "コメント不足に加えてライン情報も不十分。"
+            "予想の信頼度を下げ、見送りを検討すること。"
+        )
+    
     if line_validation_passed:
         official_lines["line_status"] = (
             "位置情報整合性確認済み・ライン構成は候補"
@@ -2042,6 +2081,13 @@ def extract_race_data(session, race):
 
         "comment_count": comment_count,
         "comment_status": comment_status,
+        "missing_comment_car_numbers": (
+            missing_comment_car_numbers
+        ),
+        "all_comments_available": all_comments_available,
+        "prediction_restriction": prediction_restriction,
+        "prediction_basis": prediction_basis,
+        "prediction_warning": prediction_warning,
 
         "source": "KEIRIN.JP",
         "http_status": response.status_code,
