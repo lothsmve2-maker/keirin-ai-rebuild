@@ -1784,7 +1784,7 @@ def extract_race_data(session, race):
         if rider["car_no"] or rider["name"]:
             riders.append(rider)
 
-        meta_for_comments = {}
+    meta_for_comments = {}
 
     if isinstance(base_info, dict):
         meta_for_comments = base_info.get(
