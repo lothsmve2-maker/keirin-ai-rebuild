@@ -1840,7 +1840,51 @@ def extract_race_data(session, race):
     )
 
     html = response.text
+    # ライン情報の取得元を探すためのHTML診断
+    print("\n========== HTMLデータ取得元調査 ==========")
 
+    # ページ内で宣言されているjsonDataの項目名を確認
+    assignment_names = sorted(set(
+        re.findall(
+            r"""jsonData\s*\[\s*["']([^"']+)["']\s*\]\s*=""",
+            html,
+        )
+    ))
+
+    print("jsonData項目一覧:", assignment_names)
+
+    # HTMLからJavaScriptファイルの参照先を確認
+    script_sources = re.findall(
+        r"""<script\b[^>]*\bsrc\s*=\s*["']([^"']+)["']""",
+        html,
+        re.IGNORECASE,
+    )
+
+    print("JavaScript参照数:", len(script_sources))
+
+    for src in script_sources[:40]:
+        print("JavaScript参照:", src)
+
+    # ライン関連語がHTML内に存在するか調べる
+    line_keywords = [
+        "narabiyoso",
+        "lineKeitai",
+        "shaban",
+        "lineOrder",
+        "lineInfo",
+        "並び予想",
+        "ライン",
+    ]
+
+    for keyword in line_keywords:
+        count = len(re.findall(
+            re.escape(keyword),
+            html,
+            re.IGNORECASE,
+        ))
+        print(f"HTMLキーワード: {keyword} / {count}件")
+
+    print("========== HTML調査終了 ==========\n")
     base_info = extract_assignment(html, "SC0201")
     rider_info = extract_assignment(html, "SJ0315")
     line_info = extract_assignment(html, "SJ0314")
