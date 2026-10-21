@@ -1855,6 +1855,33 @@ def extract_race_data(session, race):
         if comment_count > 0
         else "本文未取得"
     )
+    # コメント未取得の選手を車番単位で診断する。
+    missing_comments = [
+        {
+            "car_no": str(rider.get("car_no", "")).strip(),
+            "name": str(rider.get("name", "")).strip(),
+        }
+        for rider in riders
+        if not (
+            rider.get("comment_available") is True
+            and str(rider.get("comment", "")).strip()
+        )
+    ]
+
+    if missing_comments:
+        print(
+            "  コメント未取得診断:",
+            f"会場={race.get('venue', '')}",
+            f"レース={race.get('race_no', '')}R",
+            f"取得={comment_count}/{len(riders)}人",
+            f"公式候補={len(official_comments)}人",
+            f"未取得車番={','.join(
+                item['car_no'] for item in missing_comments
+            )}",
+            f"未取得選手={','.join(
+                item['name'] for item in missing_comments
+            )}",
+        )    
     meta = {}
 
     if isinstance(base_info, dict):
