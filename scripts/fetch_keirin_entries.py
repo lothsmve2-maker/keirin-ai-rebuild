@@ -1983,18 +1983,15 @@ def extract_race_data(session, race):
     # 予想制限の判定
     # ========================================================
 
+    # コメント未取得の判定は、直前に作成した一覧を共通利用する。
     missing_comment_car_numbers = [
-        str(rider.get("car_no", "")).strip()
-        for rider in riders
-        if not (
-            rider.get("comment_available") is True
-            and str(rider.get("comment", "")).strip()
-        )
+        item["car_no"]
+        for item in missing_comments
     ]
 
     all_comments_available = (
         len(riders) > 0
-        and len(missing_comment_car_numbers) == 0
+        and len(missing_comments) == 0
     )
 
     if not missing_comment_car_numbers:
