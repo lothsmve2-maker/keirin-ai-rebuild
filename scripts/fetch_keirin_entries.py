@@ -1740,7 +1740,119 @@ def extract_official_lines(line_info):
         "line_status": status,
     }
 
+# ============================================================
+# 公式ラインAPIの呼び出し調査
+# ============================================================
 
+_LINE_JS_DIAG_CACHE = {}
+_LINE_JS_DIAG_DONE = set()
+
+
+def diagnose_official_line_js(session, html, referer):
+    """
+    公式レースページのJavaScriptを調べ、
+    JSJ036の呼び出し元とパラメータを診断する。
+    """
+
+    global _LINE_JS_DIAG_CACHE
+
+    if not html:
+        print("[LINE-JS] HTMLなし")
+        return
+
+    # HTMLからJavaScriptのURLを抽出する。
+    script_urls = re.findall(
+        r"""<script\b[^>]*\bsrc\s*=\s*['"]([^'"]+\.js(?:\?[^'"]*)?)['"]""",
+        html,
+        flags=re.IGNORECASE,
+    )
+
+    script_urls = list(dict.fromkeys(
+        urljoin(referer, url)
+        for url in script_urls
+    ))
+
+    # ライン表示に関係するファイルを優先して調べる。
+    targets = [
+        url for url in script_urls
+        if re.search(
+            r"SJ0314|commonJSON|commonLoad|commonSubmit",
+            url,
+            flags=re.IGNORECASE,
+        )
+    ]
+
+    print(
+        f"[LINE-JS] 読込JS={len(script_urls)}件"
+        f" / 調査対象={len(targets)}件"
+    )
+
+    if not targets:
+        print("[LINE-JS] 対象JSのURLを特定できません")
+        return
+
+    for url in targets:
+        if url in _LINE_JS_DIAG_DONE:
+            continue
+
+        _LINE_JS_DIAG_DONE.add(url)
+
+        try:
+            response = session.get(
+                url,
+                headers={
+                    **HEADERS,
+                    "Referer": referer,
+                },
+                timeout=TIMEOUT,
+            )
+
+            print(
+                f"[LINE-JS] HTTP={response.status_code}"
+                f" bytes={len(response.content)}"
+                f" URL={response.url}"
+            )
+
+            response.raise_for_status()
+            source = response.text
+
+            _LINE_JS_DIAG_CACHE[url] = source
+
+        except Exception as exc:
+            print(
+                f"[LINE-JS] 取得失敗 URL={url}"
+                f" error={type(exc).__name__}: {exc}"
+            )
+            continue
+
+    # 取得済みのJSからAPI名と呼び出し周辺を検索する。
+    for url in targets:
+        source = _LINE_JS_DIAG_CACHE.get(url, "")
+
+        if not source:
+            continue
+
+        for match in re.finditer(r"JSJ036", source):
+            start = max(0, match.start() - 1200)
+            end = min(len(source), match.end() + 1800)
+
+            context = source[start:end]
+
+            print(
+                f"[LINE-JS] JSJ036発見 URL={url}"
+            )
+            print(
+                "[LINE-JS] 呼び出し周辺:",
+                context[:3000],
+            )
+
+    if not any(
+        "JSJ036" in _LINE_JS_DIAG_CACHE.get(url, "")
+        for url in targets
+    ):
+        print(
+            "[LINE-JS] 調査対象JS内にJSJ036なし"
+        )
 # ============================================================
 # 個別レース
 # ============================================================
@@ -1758,7 +1870,11 @@ def extract_race_data(session, race):
     )
 
     html = response.text
-
+    diagnose_official_line_js(
+        session,
+        html,
+        response.url,
+    )
     base_info = extract_assignment(html, "SC0201")
     rider_info = extract_assignment(html, "SJ0315")
     line_info = extract_assignment(html, "SJ0314")
