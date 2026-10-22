@@ -1832,21 +1832,24 @@ def diagnose_official_line_js(session, html, referer):
         if not source:
             continue
 
-        if "SJ0314_c.js" not in url:
+        # 公式ラインAPIの呼び出し元を調べる
+        if not any(
+            key in url.lower()
+            for key in (
+                "sj0314",
+                "common",
+                "sj030",
+                "sc020",
+            )
+        ):
             continue
 
-        print("[LINE-JS] SJ0314_c.js 詳細調査")
-
-        patterns = [
+        patterns = (
             r"rfCreateList",
-            r"JSON_REQ_ID",
-            r"lineKeitai",
-            r"narabiyoso",
-            r"encPrm",
-            r"jocd",
-            r"race",
-            r"params",
-        ]
+            r"\.rfCreateList\s*\(",
+            r"rfController",
+            r"JSJ036",
+        )
 
         for pattern in patterns:
             matches = list(
@@ -1857,21 +1860,26 @@ def diagnose_official_line_js(session, html, referer):
                 )
             )
 
+            if not matches:
+                continue
+
             print(
-                f"[LINE-JS] 検索={pattern}"
+                f"[LINE-JS] 呼出元調査"
+                f" URL={url}"
+                f" / 検索={pattern}"
                 f" / 件数={len(matches)}"
             )
 
-            for match in matches[:5]:
-                start = max(0, match.start() - 700)
+            for match in matches[:3]:
+                start = max(0, match.start() - 1000)
                 end = min(
                     len(source),
-                    match.end() + 1200,
+                    match.end() + 1500,
                 )
 
                 print(
-                    f"[LINE-JS] {pattern} 周辺:\n"
-                    f"{source[start:end]}"
+                    "[LINE-JS] 呼出元周辺:\n"
+                    + source[start:end]
                 )
 
     if not any(
