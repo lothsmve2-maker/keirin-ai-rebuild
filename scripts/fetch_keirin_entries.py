@@ -1668,158 +1668,76 @@ def normalize_rider(raw):
 
 def extract_official_lines(line_info):
     """
-    公式の位置情報を読み取り、連続する位置番号から
-    ライン候補を作成する。
-
-    注意:
-    位置情報が欠落している場合は無理に補完しない。
-    生成したグループは検証前の候補として扱う。
+    公式の位置情報を保存する。
+    位置番号の連続性からライン構成を推測しない。
     """
-
     empty_result = {
         "line_type": "",
         "line_order": [],
         "lines": [],
-        "line_status": "公式データなし",
+        "line_status": "公式ライン未確認",
     }
-
     if not isinstance(line_info, dict):
         return empty_result
-
     line_data = line_info.get("narabiyoso", {})
-
     if not isinstance(line_data, dict):
         return empty_result
-
     line_type = clean(
         first_value(line_data, "lineKeitai")
     )
-
     raw_order = line_data.get("shaban", [])
-
     if not isinstance(raw_order, list):
         raw_order = []
-
     line_order = []
     seen_cars = set()
-
     for item in raw_order:
         if not isinstance(item, dict):
             continue
-
         car_no = clean(
             first_value(item, "shaban", "syaban")
         )
-
         if not car_no:
             continue
-
-        position_raw = first_value(item, "ichi")
-
-        try:
-            position = int(position_raw)
-        except (TypeError, ValueError):
-            position = None
-
-        # 同じ車番が重複していた場合は重複を保存しない。
+        if not car_no.isdigit():
+            continue
+        if not 1 <= int(car_no) <= 9:
+            continue
         if car_no in seen_cars:
             continue
-
         seen_cars.add(car_no)
-
+        position_raw = first_value(item, "ichi")
+        try:
+            position = int(position_raw)
+            if position < 1:
+                position = None
+        except (TypeError, ValueError):
+            position = None
         line_order.append({
             "position": position,
             "car_no": car_no,
         })
-
-    # 位置番号のない選手を含む場合、
-    # 不確かなグループを作らず位置情報のみ保存する。
+    line_order.sort(
+        key=lambda item: (
+            item["position"] is None,
+            item["position"]
+            if item["position"] is not None
+            else 999,
+        )
+    )
     if not line_order:
-        return {
-            "line_type": line_type,
-            "line_order": [],
-            "lines": [],
-            "line_status": "公式位置情報なし",
-        }
-
-    if any(
+        status = "公式位置情報なし"
+    elif any(
         item["position"] is None
-        or item["position"] < 1
         for item in line_order
     ):
-        return {
-            "line_type": line_type,
-            "line_order": line_order,
-            "lines": [],
-            "line_status": "位置番号不明・グループ未確定",
-        }
-
-    # 位置番号の順番で並べる。
-    line_order.sort(
-        key=lambda item: item["position"]
-    )
-
-    positions = [
-        item["position"]
-        for item in line_order
-    ]
-
-    # 同じ位置番号が複数ある場合は、安全のため分割しない。
-    if len(positions) != len(set(positions)):
-        return {
-            "line_type": line_type,
-            "line_order": line_order,
-            "lines": [],
-            "line_status": "位置番号重複・グループ未確定",
-        }
-
-    # 連続する位置番号ごとにグループ化する。
-    # 例: 1,2,3 / 5 / 7,8,9
-    groups = []
-    current_group = []
-    previous_position = None
-
-    for item in line_order:
-        position = item["position"]
-
-        if (
-            current_group
-            and position != previous_position + 1
-        ):
-            groups.append(current_group)
-            current_group = []
-
-        current_group.append(item)
-        previous_position = position
-
-    if current_group:
-        groups.append(current_group)
-
-    lines = []
-
-    for index, group in enumerate(groups, start=1):
-        car_numbers = [
-            item["car_no"]
-            for item in group
-        ]
-
-        lines.append({
-            "line_no": index,
-            "car_numbers": car_numbers,
-            "positions": [
-                item["position"]
-                for item in group
-            ],
-            "rider_count": len(car_numbers),
-            "is_single": len(car_numbers) == 1,
-            "status": "位置番号から生成した候補",
-        })
-
+        status = "位置番号不明・公式ライン未確認"
+    else:
+        status = "位置情報取得済み・公式ライン未確認"
     return {
         "line_type": line_type,
         "line_order": line_order,
-        "lines": lines,
-        "line_status": "位置番号からグループ候補を生成・検証待ち",
+        "lines": [],
+        "line_status": status,
     }
 
 
