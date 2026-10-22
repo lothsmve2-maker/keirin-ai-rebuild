@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-22",
-  "started_at": "2026-10-22T15:18:15.831494+09:00",
-  "finished_at": "2026-10-22T15:21:09.561231+09:00",
+  "started_at": "2026-10-22T15:29:11.590804+09:00",
+  "finished_at": "2026-10-22T15:32:04.416626+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -11610,39 +11610,10 @@
       "verified_race_date": "2026-10-22",
       "start_time": "15:16",
       "distance_m": "1525",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "7"
-        },
-        {
-          "position": 9,
-          "car_no": "5"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -11775,11 +11746,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
