@@ -1832,19 +1832,47 @@ def diagnose_official_line_js(session, html, referer):
         if not source:
             continue
 
-        for match in re.finditer(r"JSJ036", source):
-            start = max(0, match.start() - 1200)
-            end = min(len(source), match.end() + 1800)
+        if "SJ0314_c.js" not in url:
+            continue
 
-            context = source[start:end]
+        print("[LINE-JS] SJ0314_c.js 詳細調査")
+
+        patterns = [
+            r"rfCreateList",
+            r"JSON_REQ_ID",
+            r"lineKeitai",
+            r"narabiyoso",
+            r"encPrm",
+            r"jocd",
+            r"race",
+            r"params",
+        ]
+
+        for pattern in patterns:
+            matches = list(
+                re.finditer(
+                    pattern,
+                    source,
+                    flags=re.IGNORECASE,
+                )
+            )
 
             print(
-                f"[LINE-JS] JSJ036発見 URL={url}"
+                f"[LINE-JS] 検索={pattern}"
+                f" / 件数={len(matches)}"
             )
-            print(
-                "[LINE-JS] 呼び出し周辺:",
-                context[:3000],
-            )
+
+            for match in matches[:5]:
+                start = max(0, match.start() - 700)
+                end = min(
+                    len(source),
+                    match.end() + 1200,
+                )
+
+                print(
+                    f"[LINE-JS] {pattern} 周辺:\n"
+                    f"{source[start:end]}"
+                )
 
     if not any(
         "JSJ036" in _LINE_JS_DIAG_CACHE.get(url, "")
