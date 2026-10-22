@@ -2054,11 +2054,11 @@ def extract_race_data(session, race):
         and set(grouped_car_numbers) == set(line_car_numbers)
     )
 
-    line_validation_passed = (
-        line_order_complete
-        and line_positions_valid
-        and line_groups_consistent
-    )
+    # 位置番号から生成した候補は、公式ラインの確認とは区別する。
+    # 現在は公式ライン構成を確認できていないため、
+    # 候補の整合性だけで公式ラインとして合格させない。
+    line_validation_passed = False
+
     # ========================================================
     # 予想制限の判定
     # ========================================================
