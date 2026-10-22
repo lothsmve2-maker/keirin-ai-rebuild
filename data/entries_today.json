@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-22",
-  "started_at": "2026-10-22T12:36:42.439617+09:00",
-  "finished_at": "2026-10-22T12:40:06.047816+09:00",
+  "started_at": "2026-10-22T13:08:50.589660+09:00",
+  "finished_at": "2026-10-22T13:11:49.049916+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -962,96 +962,10 @@
       "verified_race_date": "2026-10-22",
       "start_time": "12:37",
       "distance_m": "2025",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "3"
-        },
-        {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "8"
-        },
-        {
-          "position": 5,
-          "car_no": "9"
-        },
-        {
-          "position": 6,
-          "car_no": "1"
-        },
-        {
-          "position": 7,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        },
-        {
-          "position": 10,
-          "car_no": "2"
-        },
-        {
-          "position": 11,
-          "car_no": "4"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "5",
-            "8"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "9",
-            "1",
-            "6"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "2",
-            "4"
-          ],
-          "positions": [
-            9,
-            10,
-            11
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -1067,7 +981,7 @@
           "sashi": "8",
           "mark": "2",
           "back": "0",
-          "comment": "松本秀之慎に",
+          "comment": "松本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1085,7 +999,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "橋本壮史君",
+          "comment": "橋本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1103,7 +1017,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "7",
-          "comment": "自力",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1121,7 +1035,7 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "茨栃の後",
+          "comment": "栃茨勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1139,7 +1053,7 @@
           "sashi": "5",
           "mark": "0",
           "back": "0",
-          "comment": "福永君",
+          "comment": "福永君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1157,7 +1071,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "地元の後",
+          "comment": "地元勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1175,7 +1089,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1193,7 +1107,7 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "中近の後",
+          "comment": "中近勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -1211,7 +1125,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "自力です",
+          "comment": "自力で。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -1220,12 +1134,22 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -1293,66 +1217,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "5"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "1"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "9"
-          ],
-          "positions": [
-            7,
-            8
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "8",
-            "4",
-            "6"
-          ],
-          "positions": [
-            10,
-            11,
-            12
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -1527,7 +1392,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -1595,66 +1460,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "2"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "7",
-            "8"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "9"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6",
-            "4"
-          ],
-          "positions": [
-            11,
-            12
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -1829,7 +1635,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -1897,66 +1703,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "3",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "9"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "8",
-            "4"
-          ],
-          "positions": [
-            11,
-            12
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -2131,7 +1878,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -2199,66 +1946,7 @@
           "car_no": "8"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "9",
-            "1",
-            "4"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6",
-            "8"
-          ],
-          "positions": [
-            11,
-            12
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -2433,7 +2121,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -2501,66 +2189,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "9",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "7",
-            "4"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "8",
-            "6"
-          ],
-          "positions": [
-            11,
-            12
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -2735,7 +2364,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -2803,66 +2432,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "1",
-            "8"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "2",
-            "9"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "6"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            12
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -3037,7 +2607,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -3105,86 +2675,7 @@
           "car_no": "9"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "6",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3",
-            "8"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            8
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            10
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            12
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 6,
-          "car_numbers": [
-            "9"
-          ],
-          "positions": [
-            14
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -3359,7 +2850,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 9,
@@ -4278,104 +3769,10 @@
       "verified_race_date": "2026-10-22",
       "start_time": "12:56",
       "distance_m": "2025",
-      "line_type": "コマ切れ",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "6"
-        },
-        {
-          "position": 4,
-          "car_no": "1"
-        },
-        {
-          "position": 6,
-          "car_no": "5"
-        },
-        {
-          "position": 7,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        },
-        {
-          "position": 11,
-          "car_no": "7"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "2",
-            "6"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1"
-          ],
-          "positions": [
-            4
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            6,
-            7
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            11
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4508,12 +3905,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -4573,52 +3978,7 @@
           "car_no": "7"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "6",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4",
-            "3",
-            "7"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -4757,7 +4117,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -4817,52 +4177,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "4",
-            "2"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3",
-            "5",
-            "7"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -5001,7 +4316,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -5061,62 +4376,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "4"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            7,
-            8
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            10
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -5255,7 +4515,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -5315,52 +4575,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "2",
-            "7",
-            "4"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "5"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -5499,7 +4714,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -5559,52 +4774,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "6"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "7",
-            "4"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "5"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -5743,7 +4913,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -5803,62 +4973,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "2"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            7,
-            8
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            10
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -5997,7 +5112,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -6057,52 +5172,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1",
-            "7"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "6"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -6241,7 +5311,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -6301,52 +5371,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "2",
-            "1"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "3",
-            "7"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -6485,7 +5510,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -6545,52 +5570,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "7"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "4",
-            "6"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -6729,7 +5709,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -6789,52 +5769,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "2"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "6"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -6973,7 +5908,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -7033,52 +5968,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "5",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "4",
-            "2"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -7217,7 +6107,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -7273,60 +6163,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "2",
-            "4"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            4
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "1"
-          ],
-          "positions": [
-            6,
-            7
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -7447,7 +6284,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 6,
@@ -7503,50 +6340,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "6",
-            "1"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4",
-            "2"
-          ],
-          "positions": [
-            7,
-            8
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -7667,7 +6461,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 6,
@@ -7727,52 +6521,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "3"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "6"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "1",
-            "5",
-            "4"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -7911,7 +6660,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -7971,52 +6720,7 @@
           "car_no": "7"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "2",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "6"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -8155,7 +6859,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -8215,52 +6919,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "4"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -8399,7 +7058,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -8459,62 +7118,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "1"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "2",
-            "6"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -8653,7 +7257,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -8713,52 +7317,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "2"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -8897,7 +7456,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10165,92 +8724,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            1
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            3
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "1"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 6,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            11
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 7,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            13
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -10389,7 +8863,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10449,92 +8923,7 @@
           "car_no": "7"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            1
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            3
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "1"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 6,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            11
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 7,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            13
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -10673,7 +9062,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10733,52 +9122,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "7",
-            "2",
-            "3"
-          ],
-          "positions": [
-            1,
-            2,
-            3,
-            4
-          ],
-          "rider_count": 4,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "4",
-            "5"
-          ],
-          "positions": [
-            6,
-            7
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -10917,7 +9261,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10977,42 +9321,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "3",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "7",
-            "4",
-            "6"
-          ],
-          "positions": [
-            5,
-            6,
-            7,
-            8
-          ],
-          "rider_count": 4,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -11151,7 +9460,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -11211,62 +9520,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "3"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "7",
-            "6"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -11405,7 +9659,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -11465,52 +9719,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "4"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "3",
-            "6"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "5"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -11649,7 +9858,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -11709,62 +9918,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "4"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6",
-            "3"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -11903,7 +10057,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -12644,124 +10798,10 @@
       "verified_race_date": "2026-10-22",
       "start_time": "12:46",
       "distance_m": "1525",
-      "line_type": "ライン無し",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 3,
-          "car_no": "3"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 7,
-          "car_no": "7"
-        },
-        {
-          "position": 9,
-          "car_no": "6"
-        },
-        {
-          "position": 11,
-          "car_no": "5"
-        },
-        {
-          "position": 13,
-          "car_no": "4"
-        }
-      ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1"
-          ],
-          "positions": [
-            1
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            3
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 6,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            11
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 7,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            13
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12894,12 +10934,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -12959,92 +11007,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            1
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1"
-          ],
-          "positions": [
-            3
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "7"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 5,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 6,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            11
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 7,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            13
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -13183,7 +11146,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -13243,62 +11206,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "5",
-            "7"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "6",
-            "2"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -13437,7 +11345,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -13497,52 +11405,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "7",
-            "4"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "5",
-            "3"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -13681,7 +11544,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -13741,52 +11604,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "2"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "3",
-            "4"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -13925,7 +11743,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -13985,52 +11803,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "7",
-            "5"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -14169,7 +11942,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -14229,62 +12002,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "2"
-          ],
-          "positions": [
-            4,
-            5
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "3",
-            "4"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -14423,7 +12141,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -14483,52 +12201,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3",
-            "5",
-            "6"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -14667,7 +12340,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -14727,62 +12400,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            4
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            6
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "5",
-            "1",
-            "6"
-          ],
-          "positions": [
-            8,
-            9,
-            10
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -14921,7 +12539,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -14981,52 +12599,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "2",
-            "3"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "1",
-            "7"
-          ],
-          "positions": [
-            5,
-            6,
-            7
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6"
-          ],
-          "positions": [
-            9
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -15165,7 +12738,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -15225,52 +12798,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "3",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "6"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -15409,7 +12937,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -15469,52 +12997,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3",
-            "5",
-            "7"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -15653,7 +13136,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -15713,52 +13196,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "2",
-            "5",
-            "1"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "4"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "7",
-            "6"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -15897,7 +13335,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -15957,52 +13395,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "7"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "5",
-            "4",
-            "1"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "6",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -16141,7 +13534,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -16201,52 +13594,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "7"
-          ],
-          "positions": [
-            1,
-            2
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "4",
-            "2",
-            "6"
-          ],
-          "positions": [
-            4,
-            5,
-            6
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -16385,7 +13733,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -16445,52 +13793,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "1",
-            "5"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "4",
-            "6"
-          ],
-          "positions": [
-            7,
-            8,
-            9
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -16629,7 +13932,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -16689,52 +13992,7 @@
           "car_no": "3"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "5",
-            "2"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "6"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "3"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -16873,7 +14131,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -16933,62 +14191,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "1",
-            "7"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "3"
-          ],
-          "positions": [
-            5
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5"
-          ],
-          "positions": [
-            7
-          ],
-          "rider_count": 1,
-          "is_single": true,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 4,
-          "car_numbers": [
-            "2",
-            "6"
-          ],
-          "positions": [
-            9,
-            10
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -17127,7 +14330,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -18433,52 +15636,7 @@
           "car_no": "4"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "5",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "2"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "7",
-            "4"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -18617,7 +15775,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -18677,52 +15835,7 @@
           "car_no": "2"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "5",
-            "4",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "7"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "3",
-            "2"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -18861,7 +15974,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -18921,52 +16034,7 @@
           "car_no": "6"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "7",
-            "3",
-            "2"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "4"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "6"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -19105,7 +16173,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -19165,42 +16233,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "3",
-            "2"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "7",
-            "1",
-            "6",
-            "5"
-          ],
-          "positions": [
-            5,
-            6,
-            7,
-            8
-          ],
-          "rider_count": 4,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -19339,7 +16372,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -19399,52 +16432,7 @@
           "car_no": "5"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "4",
-            "7",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "1",
-            "3"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "2",
-            "5"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -19583,7 +16571,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -19643,52 +16631,7 @@
           "car_no": "7"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "3",
-            "1",
-            "6"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "2",
-            "4"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "7"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -19827,7 +16770,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -19887,52 +16830,7 @@
           "car_no": "7"
         }
       ],
-      "lines": [
-        {
-          "line_no": 1,
-          "car_numbers": [
-            "1",
-            "6",
-            "3"
-          ],
-          "positions": [
-            1,
-            2,
-            3
-          ],
-          "rider_count": 3,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 2,
-          "car_numbers": [
-            "4",
-            "2"
-          ],
-          "positions": [
-            5,
-            6
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        },
-        {
-          "line_no": 3,
-          "car_numbers": [
-            "5",
-            "7"
-          ],
-          "positions": [
-            8,
-            9
-          ],
-          "rider_count": 2,
-          "is_single": false,
-          "status": "位置番号から生成した候補"
-        }
-      ],
+      "lines": [],
       "line_status": "ライン構成不整合・要確認",
       "riders": [
         {
@@ -20071,7 +16969,7 @@
         "rider_count_valid": true,
         "line_positions_valid": true,
         "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
