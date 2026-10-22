@@ -1747,55 +1747,58 @@ def extract_official_lines(line_info):
 _LINE_JS_DIAG_CACHE = {}
 _LINE_JS_DIAG_DONE = set()
 
-
 def diagnose_official_line_js(session, html, referer):
     """
-    公式レースページのJavaScriptを調べ、
-    JSJ036の初回呼び出し元・パラメータ生成元・
-    Com.getRequestGetの定義を診断する。
+    公式レースページのJavaScriptを調査する。
+    JSJ036の初回呼び出し元とパラメータ生成元を特定する。
+    ログには検索件数と短い抜粋だけを出力する。
     """
+
     global _LINE_JS_DIAG_CACHE
+
     if not html:
         print("[LINE-JS] HTMLなし")
         return
-    # HTMLからJavaScriptのURLを抽出する。
+
+    # JavaScriptのURLを抽出
     script_urls = re.findall(
         r"""<script\b[^>]*\bsrc\s*=\s*['"]([^'"]+\.js(?:\?[^'"]*)?)['"]""",
         html,
         flags=re.IGNORECASE,
     )
+
     script_urls = list(dict.fromkeys(
         urljoin(referer, url)
         for url in script_urls
     ))
-    # 初回リクエスト・共通通信処理・ライン表示に関係する
-    # JavaScriptを優先して調査する。
-    target_pattern = (
-        r"SJ0314"
-        r"|common"
-        r"|SJ030"
-        r"|SC020"
-        r"|JSON"
-    )
+
+    # 調査対象を絞る
     targets = [
         url for url in script_urls
         if re.search(
-            target_pattern,
+            r"SJ0314|common|SJ030|SC020|JSON",
             url,
             flags=re.IGNORECASE,
         )
     ]
+
     print(
         f"[LINE-JS] 読込JS={len(script_urls)}件"
         f" / 調査対象={len(targets)}件"
     )
+
     if not targets:
-        print("[LINE-JS] 対象JSのURLを特定できません")
+        print("[LINE-JS] 対象JSなし")
         return
-    # 対象JavaScriptを取得する。
+
+    # JavaScriptを取得。取得済みの内容はキャッシュを利用する。
     for url in targets:
+        if url in _LINE_JS_DIAG_CACHE:
+            continue
+
         if url in _LINE_JS_DIAG_DONE:
             continue
+
         try:
             response = session.get(
                 url,
@@ -1805,42 +1808,52 @@ def diagnose_official_line_js(session, html, referer):
                 },
                 timeout=TIMEOUT,
             )
-            print(
-                f"[LINE-JS] HTTP={response.status_code}"
-                f" bytes={len(response.content)}"
-                f" URL={response.url}"
-            )
+
             response.raise_for_status()
+
             _LINE_JS_DIAG_CACHE[url] = response.text
             _LINE_JS_DIAG_DONE.add(url)
+
         except Exception as exc:
             print(
-                f"[LINE-JS] 取得失敗 URL={url}"
-                f" error={type(exc).__name__}: {exc}"
+                f"[LINE-JS] 取得失敗"
+                f" URL={url.rsplit('/', 1)[-1]}"
+                f" error={type(exc).__name__}"
             )
-    # 調査する文字列。
-    # 特にHDNKEY_IDとgetRequestGetから、
-    # 初回リクエストのパラメータ生成経路を探す。
-    patterns = (
-        r"JSJ036",
-        r"rfCreateList",
-        r"rfController",
-        r"getRequestGet",
-        r"HDNKEY_ID",
-        r"psj0314",
-        r"makeSpUpdatePage",
-        r"lineKeitai",
-        r"narabiyoso",
-        r"encPrm",
-        r"\bjocd\b",
-        r"\bparams\b",
-    )
-    found_counts = {}
+
+    # 調査対象のソースをまとめる
+    sources = []
+
     for url in targets:
         source = _LINE_JS_DIAG_CACHE.get(url, "")
-        if not source:
-            continue
-        for pattern in patterns:
+
+        if source:
+            sources.append((url, source))
+
+    # 重要な識別子とパラメータ関連処理を検索する
+    patterns = (
+        ("JSJ036", r"JSJ036"),
+        ("rfCreateList", r"rfCreateList"),
+        ("rfController", r"rfController"),
+        ("getRequestGet", r"getRequestGet"),
+        ("HDNKEY_ID", r"HDNKEY_ID"),
+        ("psj0314", r"psj0314"),
+        ("makeSpUpdatePage", r"makeSpUpdatePage"),
+        ("encPrm", r"encPrm"),
+        ("jocd", r"\bjocd\b"),
+        ("race", r"\brace(?:no|No)?\b"),
+        ("params", r"\bparams\b"),
+        ("narabiyoso", r"narabiyoso"),
+    )
+
+    total_counts = {}
+    matches_by_pattern = {}
+
+    for label, pattern in patterns:
+        count = 0
+        first_match = None
+
+        for url, source in sources:
             matches = list(
                 re.finditer(
                     pattern,
@@ -1848,79 +1861,93 @@ def diagnose_official_line_js(session, html, referer):
                     flags=re.IGNORECASE,
                 )
             )
-            if not matches:
-                continue
-            found_counts[pattern] = (
-                found_counts.get(pattern, 0)
-                + len(matches)
-            )
-            # 全件出力でログが膨らまないよう、
-            # 各ファイル・各パターン最大2件に限定する。
-            for match in matches[:2]:
-                start = max(0, match.start() - 700)
-                end = min(
-                    len(source),
-                    match.end() + 1100,
-                )
-                print(
-                    f"\n[LINE-JS] 検索={pattern}"
-                    f" / URL={url}"
-                    f" / 該当数={len(matches)}"
-                )
-                print(
-                    "[LINE-JS] 該当コード:\n"
-                    + source[start:end]
-                )
-    print("\n[LINE-JS] 検索件数集計")
-    for pattern in patterns:
-        print(
-            f"  {pattern}: "
-            f"{found_counts.get(pattern, 0)}件"
-        )
-    # 初回リクエストのパラメータを生成している処理を
-    # 追跡するため、重要な定義の有無を表示する。
-    all_sources = "\n".join(
-        _LINE_JS_DIAG_CACHE.get(url, "")
-        for url in targets
+
+            count += len(matches)
+
+            if matches and first_match is None:
+                first_match = (url, source, matches[0])
+
+        total_counts[label] = count
+
+        if first_match is not None:
+            matches_by_pattern[label] = first_match
+
+    # 件数だけをまとめて出力
+    print("[LINE-JS] 検索結果")
+
+    for label, _ in patterns:
+        print(f"  {label}: {total_counts[label]}件")
+
+    # 初回リクエストの調査に重要な箇所だけを抜粋する
+    important_labels = (
+        "getRequestGet",
+        "HDNKEY_ID",
+        "JSJ036",
+        "rfCreateList",
+        "encPrm",
     )
-    checks = (
-        ("JSJ036", "JSJ036 API識別子"),
-        ("rfCreateList", "ライン一覧取得処理"),
-        ("getRequestGet", "共通GET通信処理"),
-        ("HDNKEY_ID", "ページ識別キー"),
-        ("psj0314", "ラインページ識別値"),
-        ("makeSpUpdatePage", "ページ更新・再取得処理"),
-        ("encPrm", "暗号化パラメータ"),
-        ("narabiyoso", "並び予想データ"),
-    )
-    print("\n[LINE-JS] 定義・参照の存在確認")
-    for keyword, label in checks:
-        count = len(
-            re.findall(
-                re.escape(keyword),
-                all_sources,
-                flags=re.IGNORECASE,
-            )
+
+    print("[LINE-JS] 重要箇所の短縮抜粋")
+
+    snippets_printed = 0
+    max_snippets = 5
+    max_snippet_length = 240
+
+    for label in important_labels:
+        item = matches_by_pattern.get(label)
+
+        if item is None:
+            continue
+
+        url, source, match = item
+
+        start = max(0, match.start() - 100)
+        end = min(
+            len(source),
+            match.end() + 140,
         )
+
+        snippet = re.sub(
+            r"\s+",
+            " ",
+            source[start:end],
+        )
+
+        if len(snippet) > max_snippet_length:
+            snippet = snippet[:max_snippet_length] + "..."
+
         print(
-            f"  {label}: {count}件"
+            f"  [{label}] "
+            f"{url.rsplit('/', 1)[-1]}: {snippet}"
         )
-    if found_counts.get("getRequestGet", 0) == 0:
+
+        snippets_printed += 1
+
+        if snippets_printed >= max_snippets:
+            break
+
+    if snippets_printed == 0:
+        print("  重要箇所は見つかりませんでした")
+
+    # 調査状況を短く表示
+    if total_counts["JSJ036"] == 0:
         print(
-            "[LINE-JS] getRequestGetが未検出。"
-            "共通通信処理の定義元が"
-            "今回の調査対象外にある可能性があります。"
+            "[LINE-JS] JSJ036未検出。"
+            "別の共通JSに定義されている可能性があります。"
         )
-    if found_counts.get("HDNKEY_ID", 0) == 0:
+
+    if total_counts["getRequestGet"] == 0:
         print(
-            "[LINE-JS] HDNKEY_IDが未検出。"
-            "ページ識別キーの定義元を"
-            "引き続き調査する必要があります。"
+            "[LINE-JS] getRequestGet未検出。"
+            "共通通信JSの追加調査が必要です。"
         )
-    if found_counts.get("JSJ036", 0) == 0:
+
+    if total_counts["HDNKEY_ID"] == 0:
         print(
-            "[LINE-JS] 調査対象JS内にJSJ036なし"
+            "[LINE-JS] HDNKEY_ID未検出。"
+            "ページ初期化処理の追加調査が必要です。"
         )
+
 # ============================================================
 # 個別レース
 # ============================================================
