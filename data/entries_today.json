@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-22",
-  "started_at": "2026-10-22T20:25:51.113932+09:00",
-  "finished_at": "2026-10-22T20:28:59.509121+09:00",
+  "started_at": "2026-10-22T20:36:15.602171+09:00",
+  "finished_at": "2026-10-22T20:38:50.242272+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -6746,39 +6746,10 @@
       "verified_race_date": "2026-10-22",
       "start_time": "20:30",
       "distance_m": "2025",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "4"
-        },
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "7"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "6"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -6794,7 +6765,7 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "荒川君へ。",
+          "comment": "後ろに小原さんがいたので外を踏みました。東で荒川君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6812,7 +6783,7 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "佐々木君へ。",
+          "comment": "外田君頑張ってくれたのに何もできず情けない。佐々木君",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6830,7 +6801,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "3",
-          "comment": "初の小柳君。",
+          "comment": "後ろがしっかりしていたし展開も向いた。同級生の小柳君",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6848,7 +6819,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
+          "comment": "落ち着いては行けた。ぎりぎり２着だし修正したい。自力",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6866,7 +6837,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "東の三番手。",
+          "comment": "復帰戦にしてはまあまあでした。東の３番手を固めます。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6884,7 +6855,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力でいく。",
+          "comment": "相手が踏みあってくれたのでよかった。前で自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -6902,7 +6873,7 @@
           "sashi": "4",
           "mark": "2",
           "back": "5",
-          "comment": "自力でいく。",
+          "comment": "あれで１着とれないんじゃ新車でいくか迷う。自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -6911,11 +6882,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
