@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-24",
-  "started_at": "2026-10-24T03:00:38.843781+09:00",
-  "finished_at": "2026-10-24T03:03:21.396700+09:00",
+  "started_at": "2026-10-24T03:35:59.740919+09:00",
+  "finished_at": "2026-10-24T03:38:49.875158+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -8922,7 +8922,7 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": "北３番手。",
+          "comment": "日当君の後ろ",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -8940,7 +8940,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "14",
-          "comment": "自力。",
+          "comment": "自力で頑張る",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -8958,7 +8958,7 @@
           "sashi": "4",
           "mark": "5",
           "back": "0",
-          "comment": "池邉君。",
+          "comment": "池邉君を目標に",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -8976,7 +8976,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "8",
-          "comment": "自力自在。",
+          "comment": "自力自在に",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -8994,7 +8994,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "１人で。",
+          "comment": "一人で走る",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -9012,7 +9012,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "5",
-          "comment": "荻原君。",
+          "comment": "荻原君に任せる",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -9030,7 +9030,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "南関３番手。",
+          "comment": "南関３番手",
           "comment_available": true,
           "comment_status": "取得済み"
         }
