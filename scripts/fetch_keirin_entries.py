@@ -1749,15 +1749,17 @@ _LINE_JS_DIAG_DONE = set()
 
 def diagnose_official_line_js(session, html, referer):
     """
-    公式レースページのJavaScriptを調査する。
+    KEIRIN.JP公式ライン情報の取得処理を診断する。
 
-    目的:
-    - JSJ036の初回呼び出し元を探す
-    - rfCreateListの呼び出し箇所を探す
-    - getRequestMainの定義とパラメータ処理を探す
-    - ページ初期化処理を探す
+    調査対象:
+    - HTML内の外部JavaScript
+    - HTML内のインラインJavaScript
+    - JSJ036の呼び出し元
+    - rfCreateListの初期化・呼び出し
+    - getRequestMainの通信パラメータ処理
+    - HDNKEY_ID、psj0314などの画面初期化処理
 
-    ログにはファイル名、件数、短い抜粋だけを出力する。
+    データ取得処理や保存処理は変更しない。
     """
 
     global _LINE_JS_DIAG_CACHE
@@ -1766,9 +1768,11 @@ def diagnose_official_line_js(session, html, referer):
         print("[LINE-JS] HTMLなし")
         return
 
-    # HTML内のJavaScript URLを抽出する。
+    # --------------------------------------------------
+    # 1. HTMLから外部JavaScriptのURLを抽出
+    # --------------------------------------------------
     script_urls = re.findall(
-        r"""<script\b[^>]*\bsrc\s*=\s*['"]([^'"]+\.js(?:\?[^'"]*)?)['"]""",
+        r"""<script\b[^>]*\bsrc\s*=\s*['"]([^'"]+)['"][^>]*>""",
         html,
         flags=re.IGNORECASE,
     )
@@ -1779,14 +1783,15 @@ def diagnose_official_line_js(session, html, referer):
     ))
 
     print(
-        f"[LINE-JS] 読込JS={len(script_urls)}件"
-        " / 全JSから呼び出し元を調査"
+        f"[LINE-JS] 外部JS={len(script_urls)}件"
+        " / インラインJSも調査"
     )
 
-    # 今までの14ファイル限定を解除し、全JavaScriptを調べる。
-    # URL単位でキャッシュし、同じファイルは再取得しない。
     failed_count = 0
 
+    # --------------------------------------------------
+    # 2. 外部JavaScriptを取得（既存キャッシュを再利用）
+    # --------------------------------------------------
     for url in script_urls:
         if url in _LINE_JS_DIAG_CACHE:
             continue
@@ -1812,113 +1817,213 @@ def diagnose_official_line_js(session, html, referer):
                 f" error={type(exc).__name__}"
             )
 
-    # 調査可能なJavaScriptをまとめる。
+    # --------------------------------------------------
+    # 3. 外部JSを調査対象に追加
+    # --------------------------------------------------
     sources = [
         (url, source)
         for url, source in _LINE_JS_DIAG_CACHE.items()
         if source
     ]
 
+    # --------------------------------------------------
+    # 4. HTML内のインラインJSを抽出
+    #    外部JSのscriptタグは対象外
+    # --------------------------------------------------
+    inline_count = 0
+
+    for match in re.finditer(
+        r"<script\b([^>]*)>(.*?)</script\s*>",
+        html,
+        flags=re.IGNORECASE | re.DOTALL,
+    ):
+        attributes = match.group(1) or ""
+        body = match.group(2) or ""
+
+        if re.search(
+            r"""\bsrc\s*=""",
+            attributes,
+            flags=re.IGNORECASE,
+        ):
+            continue
+
+        if not body.strip():
+            continue
+
+        inline_count += 1
+
+        sources.append((
+            f"{referer}#inline-{inline_count}",
+            body,
+        ))
+
     print(
-        f"[LINE-JS] 調査可能JS={len(sources)}件"
-        f" / 取得失敗={failed_count}件"
+        f"[LINE-JS] 調査対象={len(sources)}件"
+        f" / インラインJS={inline_count}件"
+        f" / 外部JS取得失敗={failed_count}件"
     )
 
-    # 初回呼び出し元とパラメータ生成に関係する検索語。
+    # --------------------------------------------------
+    # 5. 重要なキーワードの出現件数を調査
+    # --------------------------------------------------
     patterns = (
         ("JSJ036", r"JSJ036"),
         ("rfCreateList", r"rfCreateList"),
         ("rfController", r"rfController"),
         ("getRequestGet", r"getRequestGet"),
         ("getRequestMain", r"getRequestMain"),
+        ("getRequest", r"\.getRequest\s*\("),
         ("HDNKEY_ID", r"HDNKEY_ID"),
         ("psj0314", r"psj0314"),
+        ("SJ0314", r"SJ0314"),
         ("makeSpUpdatePage", r"makeSpUpdatePage"),
         ("encPrm", r"encPrm"),
         ("narabiyoso", r"narabiyoso"),
-        ("document.ready", r"document\.ready"),
-        ("onload", r"\bonload\b"),
     )
 
-    counts = {}
-    matches_by_pattern = {}
+    print("[LINE-JS] キーワード出現件数")
 
     for label, pattern in patterns:
-        count = 0
-        occurrences = []
+        total = 0
+        files = []
 
+        for url, source in sources:
+            matches = list(re.finditer(
+                pattern,
+                source,
+                flags=re.IGNORECASE,
+            ))
+
+            if matches:
+                total += len(matches)
+                files.append(
+                    f"{url.rsplit('/', 1)[-1]}({len(matches)})"
+                )
+
+        print(
+            f"  {label}: {total}件"
+            + (
+                " / " + ", ".join(files[:8])
+                if files else ""
+            )
+        )
+
+    # --------------------------------------------------
+    # 6. 該当箇所の前後を短く表示
+    # --------------------------------------------------
+    search_patterns = (
+        (
+            "JSJ036呼び出し",
+            r"JSJ036",
+        ),
+        (
+            "rfCreateList",
+            r"rfCreateList",
+        ),
+        (
+            "getRequestGet呼び出し",
+            r"\.getRequestGet\s*\(",
+        ),
+        (
+            "getRequest呼び出し",
+            r"\.getRequest\s*\(",
+        ),
+        (
+            "HDNKEY_ID",
+            r"HDNKEY_ID",
+        ),
+        (
+            "psj0314",
+            r"psj0314",
+        ),
+        (
+            "SJ0314",
+            r"SJ0314",
+        ),
+        (
+            "encPrm",
+            r"encPrm",
+        ),
+    )
+
+    print("[LINE-JS] 呼び出し箇所")
+
+    printed = set()
+    snippet_count = 0
+    max_snippets = 12
+    max_length = 420
+
+    for label, pattern in search_patterns:
         for url, source in sources:
             for match in re.finditer(
                 pattern,
                 source,
                 flags=re.IGNORECASE,
             ):
-                count += 1
+                # 同じファイル・同じ位置の重複表示を防ぐ
+                key = (
+                    url,
+                    label,
+                    match.start(),
+                )
 
-                # 呼び出し元を調べるため、ファイルごとに
-                # 最初の2箇所だけ保持する。
-                if len(occurrences) < 12:
-                    occurrences.append(
-                        (url, source, match)
-                    )
+                if key in printed:
+                    continue
 
-        counts[label] = count
-        matches_by_pattern[label] = occurrences
+                printed.add(key)
 
-    print("[LINE-JS] 検索件数")
+                start = max(0, match.start() - 180)
+                end = min(
+                    len(source),
+                    match.end() + 240,
+                )
 
-    for label, _ in patterns:
-        print(f"  {label}: {counts[label]}件")
+                snippet = re.sub(
+                    r"\s+",
+                    " ",
+                    source[start:end],
+                ).strip()
 
-    # rfCreateListの定義と呼び出し元を区別する。
-    # 定義行だけでなく、実際の呼び出し位置を探す。
-    print("[LINE-JS] rfCreateListの出現ファイル")
+                if len(snippet) > max_length:
+                    snippet = snippet[:max_length] + "..."
 
-    rf_files = set()
+                filename = url.rsplit("/", 1)[-1]
+
+                print(
+                    f"  [{label}] {filename}: {snippet}"
+                )
+
+                snippet_count += 1
+
+                if snippet_count >= max_snippets:
+                    break
+
+            if snippet_count >= max_snippets:
+                break
+
+        if snippet_count >= max_snippets:
+            break
+
+    if snippet_count == 0:
+        print("  該当箇所なし")
+
+    # --------------------------------------------------
+    # 7. getRequestMainの定義部分を重点的に調査
+    # --------------------------------------------------
+    print("[LINE-JS] getRequestMain定義")
+
+    definition_count = 0
 
     for url, source in sources:
-        if re.search(r"rfCreateList", source, re.IGNORECASE):
-            rf_files.add(url)
-
-    for url in sorted(rf_files):
-        source = _LINE_JS_DIAG_CACHE[url]
-
-        print(
-            "  file="
-            + url.rsplit("/", 1)[-1]
-            + " / "
-            + str(len(re.findall(
-                r"rfCreateList",
-                source,
-                flags=re.IGNORECASE,
-            )))
-            + "件"
-        )
-
-    # パラメータ生成処理を特定するため、
-    # 呼び出し位置周辺の短い抜粋を出力する。
-    important_labels = (
-        "rfCreateList",
-        "getRequestMain",
-        "HDNKEY_ID",
-        "makeSpUpdatePage",
-        "encPrm",
-    )
-
-    print("[LINE-JS] 呼び出し元の短い抜粋")
-
-    snippets_printed = 0
-    max_snippets = 8
-    max_length = 300
-
-    for label in important_labels:
-        occurrences = matches_by_pattern.get(label, [])
-
-        for url, source, match in occurrences:
-            start = max(0, match.start() - 120)
+        for match in re.finditer(
+            r"getRequestMain\s*:\s*function\s*\(",
+            source,
+            flags=re.IGNORECASE,
+        ):
+            start = match.start()
             end = min(
                 len(source),
-                match.end() + 180,
+                start + 1000,
             )
 
             snippet = re.sub(
@@ -1927,24 +2032,73 @@ def diagnose_official_line_js(session, html, referer):
                 source[start:end],
             ).strip()
 
-            if len(snippet) > max_length:
-                snippet = snippet[:max_length] + "..."
+            if len(snippet) > 850:
+                snippet = snippet[:850] + "..."
 
             print(
-                f"  [{label}] "
-                f"{url.rsplit('/', 1)[-1]}: "
-                f"{snippet}"
+                f"  file={url.rsplit('/', 1)[-1]}"
+                f": {snippet}"
             )
 
-            snippets_printed += 1
+            definition_count += 1
 
-            if snippets_printed >= max_snippets:
+            if definition_count >= 2:
                 break
 
-        if snippets_printed >= max_snippets:
+        if definition_count >= 2:
             break
 
-    if snippets_printed == 0:
+    if definition_count == 0:
+        print("  定義箇所なし")
+
+    # --------------------------------------------------
+    # 8. 公式画面のHTML内にある関連記述を調査
+    # --------------------------------------------------
+    print("[LINE-JS] HTML内の関連記述")
+
+    html_patterns = (
+        ("JSJ036", r"JSJ036"),
+        ("rfCreateList", r"rfCreateList"),
+        ("psj0314", r"psj0314"),
+        ("SJ0314", r"SJ0314"),
+        ("HDNKEY_ID", r"HDNKEY_ID"),
+        ("onload", r"\bonload\b"),
+    )
+
+    html_snippets = 0
+
+    for label, pattern in html_patterns:
+        for match in re.finditer(
+            pattern,
+            html,
+            flags=re.IGNORECASE,
+        ):
+            start = max(0, match.start() - 120)
+            end = min(
+                len(html),
+                match.end() + 180,
+            )
+
+            snippet = re.sub(
+                r"\s+",
+                " ",
+                html[start:end],
+            ).strip()
+
+            if len(snippet) > 300:
+                snippet = snippet[:300] + "..."
+
+            print(f"  [{label}] {snippet}")
+
+            html_snippets += 1
+
+            if html_snippets >= 8:
+                break
+
+        if html_snippets >= 8:
+            break
+
+    if html_snippets == 0:
         print("  該当箇所なし")
 
     print("[LINE-JS] 調査終了")
