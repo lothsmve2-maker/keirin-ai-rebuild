@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-24",
-  "started_at": "2026-10-24T19:28:49.503037+09:00",
-  "finished_at": "2026-10-24T19:31:52.580250+09:00",
+  "started_at": "2026-10-24T19:59:02.948006+09:00",
+  "finished_at": "2026-10-24T20:02:40.023736+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -4197,39 +4197,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "19:34",
       "distance_m": "2015",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "4"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4245,7 +4216,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "8",
-          "comment": "自力自在に。",
+          "comment": "自力自在。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4281,7 +4252,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "3",
-          "comment": "自力です。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4299,7 +4270,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "8",
-          "comment": "自力で。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4335,7 +4306,7 @@
           "sashi": "6",
           "mark": "1",
           "back": "0",
-          "comment": "近畿へ。",
+          "comment": "近畿勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4353,7 +4324,7 @@
           "sashi": "9",
           "mark": "1",
           "back": "0",
-          "comment": "室井君マーク。",
+          "comment": "室井君。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -4362,11 +4333,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
@@ -14072,39 +14051,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "19:47",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "6"
-        },
-        {
-          "position": 4,
-          "car_no": "2"
-        },
-        {
-          "position": 5,
-          "car_no": "5"
-        },
-        {
-          "position": 7,
-          "car_no": "3"
-        },
-        {
-          "position": 8,
-          "car_no": "4"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -14120,7 +14070,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "2",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14138,7 +14088,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "4",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14156,7 +14106,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "25",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14174,7 +14124,7 @@
           "sashi": "6",
           "mark": "4",
           "back": "0",
-          "comment": "３マーク",
+          "comment": "藤田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14192,7 +14142,7 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "２マーク",
+          "comment": "谷口友君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14210,7 +14160,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "１マーク",
+          "comment": "山崎君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14228,7 +14178,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "中国勢へ",
+          "comment": "中国勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -14237,11 +14187,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
