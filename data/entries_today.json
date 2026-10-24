@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-24",
-  "started_at": "2026-10-24T20:10:54.649085+09:00",
-  "finished_at": "2026-10-24T20:13:29.791647+09:00",
+  "started_at": "2026-10-24T20:28:13.644703+09:00",
+  "finished_at": "2026-10-24T20:31:12.936738+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -14208,39 +14208,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "20:15",
       "distance_m": "1625",
-      "line_type": "コマ切れ",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "7"
-        },
-        {
-          "position": 2,
-          "car_no": "1"
-        },
-        {
-          "position": 4,
-          "car_no": "4"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 7,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "5"
-        },
-        {
-          "position": 19,
-          "car_no": "6"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -14256,7 +14227,7 @@
           "sashi": "7",
           "mark": "2",
           "back": "0",
-          "comment": "７マーク",
+          "comment": "小玉君。強いのは知っているし、離れないよう付いていく",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14274,7 +14245,7 @@
           "sashi": "4",
           "mark": "0",
           "back": "7",
-          "comment": "４マーク",
+          "comment": "佐藤君。脚自体は悪くないが、最近は組み立てが単調で…",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14292,7 +14263,7 @@
           "sashi": "10",
           "mark": "2",
           "back": "0",
-          "comment": "単騎で",
+          "comment": "単騎で。ここに向け練習も出来たし仕上がりも悪くない。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14310,7 +14281,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "12",
-          "comment": "自力で",
+          "comment": "自力。前回は良かったです。今期初Ｖを獲れて嬉しかった",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14328,7 +14299,7 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "単騎で",
+          "comment": "単騎で。良かったり、悪かったり調子に波がありますね。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14346,7 +14317,7 @@
           "sashi": "3",
           "mark": "7",
           "back": "0",
-          "comment": "４にジカ",
+          "comment": "佐藤君にジカ。近況は悪くないと思います。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -14364,7 +14335,7 @@
           "sashi": "11",
           "mark": "0",
           "back": "0",
-          "comment": "自力自在に",
+          "comment": "自力自在に。脚はここ最近の中では一番いいと思います。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -14373,11 +14344,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
