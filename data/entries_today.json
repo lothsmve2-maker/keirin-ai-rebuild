@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-24",
-  "started_at": "2026-10-24T19:59:02.948006+09:00",
-  "finished_at": "2026-10-24T20:02:40.023736+09:00",
+  "started_at": "2026-10-24T20:10:54.649085+09:00",
+  "finished_at": "2026-10-24T20:13:29.791647+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -4375,39 +4375,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "20:01",
       "distance_m": "2015",
-      "line_type": "コマ切れ",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 2,
-          "car_no": "2"
-        },
-        {
-          "position": 4,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "7"
-        },
-        {
-          "position": 7,
-          "car_no": "6"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 10,
-          "car_no": "4"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4423,7 +4394,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "11",
-          "comment": "自力勝負する。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4441,7 +4412,7 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "石塚君に付く。",
+          "comment": "石塚君へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4459,7 +4430,7 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "尾方君の番手。",
+          "comment": "尾方君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4477,7 +4448,7 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "単騎で。",
+          "comment": "単騎。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4495,7 +4466,7 @@
           "sashi": "4",
           "mark": "1",
           "back": "6",
-          "comment": "自力、自在に。",
+          "comment": "自力自在。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4513,7 +4484,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "9",
-          "comment": "自力です。",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4531,7 +4502,7 @@
           "sashi": "6",
           "mark": "0",
           "back": "0",
-          "comment": "青野君の番手。",
+          "comment": "青野君へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -4540,11 +4511,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
