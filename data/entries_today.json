@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-24",
-  "started_at": "2026-10-24T11:30:37.025959+09:00",
-  "finished_at": "2026-10-24T11:33:11.253871+09:00",
+  "started_at": "2026-10-24T12:03:31.662765+09:00",
+  "finished_at": "2026-10-24T12:06:30.534770+09:00",
   "status": "ok",
   "events_found": 9,
   "events_checked": 9,
@@ -454,43 +454,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "11:43",
       "distance_m": "2025",
-      "line_type": "二分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "5"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
-          "position": 7,
-          "car_no": "8"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        },
-        {
-          "position": 10,
-          "car_no": "7"
-        },
-        {
-          "position": 11,
-          "car_no": "4"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -506,7 +473,7 @@
           "sashi": "3",
           "mark": "3",
           "back": "3",
-          "comment": "単騎",
+          "comment": "単騎で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -524,7 +491,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "14",
-          "comment": "自力",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -542,7 +509,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "4",
-          "comment": "自力",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -560,7 +527,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "0",
-          "comment": "埼京の後",
+          "comment": "関東３番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -578,7 +545,7 @@
           "sashi": "3",
           "mark": "3",
           "back": "1",
-          "comment": "南部君に",
+          "comment": "南部君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -596,7 +563,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "中近へ",
+          "comment": "中近勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -614,7 +581,7 @@
           "sashi": "4",
           "mark": "2",
           "back": "0",
-          "comment": "熊崎の番手",
+          "comment": "熊崎君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -632,7 +599,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "単騎",
+          "comment": "単騎で。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -641,11 +608,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
@@ -5606,39 +5582,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "11:34",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 6,
-          "car_no": "2"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "7"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -5771,11 +5718,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
@@ -9743,39 +9698,10 @@
       "verified_race_date": "2026-10-24",
       "start_time": "11:52",
       "distance_m": "1525",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 2,
-          "car_no": "7"
-        },
-        {
-          "position": 3,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "4"
-        },
-        {
-          "position": 6,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "2"
-        },
-        {
-          "position": 9,
-          "car_no": "6"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9908,11 +9834,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
