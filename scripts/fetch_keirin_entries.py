@@ -1750,8 +1750,14 @@ _LINE_JS_DIAG_DONE = set()
 def diagnose_official_line_js(session, html, referer):
     """
     公式レースページのJavaScriptを調査する。
-    JSJ036の初回呼び出し元とパラメータ生成元を特定する。
-    ログには検索件数と短い抜粋だけを出力する。
+
+    目的:
+    - JSJ036の初回呼び出し元を探す
+    - rfCreateListの呼び出し箇所を探す
+    - getRequestMainの定義とパラメータ処理を探す
+    - ページ初期化処理を探す
+
+    ログにはファイル名、件数、短い抜粋だけを出力する。
     """
 
     global _LINE_JS_DIAG_CACHE
@@ -1760,7 +1766,7 @@ def diagnose_official_line_js(session, html, referer):
         print("[LINE-JS] HTMLなし")
         return
 
-    # JavaScriptのURLを抽出
+    # HTML内のJavaScript URLを抽出する。
     script_urls = re.findall(
         r"""<script\b[^>]*\bsrc\s*=\s*['"]([^'"]+\.js(?:\?[^'"]*)?)['"]""",
         html,
@@ -1772,31 +1778,17 @@ def diagnose_official_line_js(session, html, referer):
         for url in script_urls
     ))
 
-    # 調査対象を絞る
-    targets = [
-        url for url in script_urls
-        if re.search(
-            r"SJ0314|common|SJ030|SC020|JSON",
-            url,
-            flags=re.IGNORECASE,
-        )
-    ]
-
     print(
         f"[LINE-JS] 読込JS={len(script_urls)}件"
-        f" / 調査対象={len(targets)}件"
+        " / 全JSから呼び出し元を調査"
     )
 
-    if not targets:
-        print("[LINE-JS] 対象JSなし")
-        return
+    # 今までの14ファイル限定を解除し、全JavaScriptを調べる。
+    # URL単位でキャッシュし、同じファイルは再取得しない。
+    failed_count = 0
 
-    # JavaScriptを取得。取得済みの内容はキャッシュを利用する。
-    for url in targets:
+    for url in script_urls:
         if url in _LINE_JS_DIAG_CACHE:
-            continue
-
-        if url in _LINE_JS_DIAG_DONE:
             continue
 
         try:
@@ -1808,146 +1800,154 @@ def diagnose_official_line_js(session, html, referer):
                 },
                 timeout=TIMEOUT,
             )
-
             response.raise_for_status()
 
             _LINE_JS_DIAG_CACHE[url] = response.text
-            _LINE_JS_DIAG_DONE.add(url)
 
         except Exception as exc:
+            failed_count += 1
             print(
-                f"[LINE-JS] 取得失敗"
-                f" URL={url.rsplit('/', 1)[-1]}"
+                "[LINE-JS] JS取得失敗"
+                f" file={url.rsplit('/', 1)[-1]}"
                 f" error={type(exc).__name__}"
             )
 
-    # 調査対象のソースをまとめる
-    sources = []
+    # 調査可能なJavaScriptをまとめる。
+    sources = [
+        (url, source)
+        for url, source in _LINE_JS_DIAG_CACHE.items()
+        if source
+    ]
 
-    for url in targets:
-        source = _LINE_JS_DIAG_CACHE.get(url, "")
+    print(
+        f"[LINE-JS] 調査可能JS={len(sources)}件"
+        f" / 取得失敗={failed_count}件"
+    )
 
-        if source:
-            sources.append((url, source))
-
-    # 重要な識別子とパラメータ関連処理を検索する
+    # 初回呼び出し元とパラメータ生成に関係する検索語。
     patterns = (
         ("JSJ036", r"JSJ036"),
         ("rfCreateList", r"rfCreateList"),
         ("rfController", r"rfController"),
         ("getRequestGet", r"getRequestGet"),
+        ("getRequestMain", r"getRequestMain"),
         ("HDNKEY_ID", r"HDNKEY_ID"),
         ("psj0314", r"psj0314"),
         ("makeSpUpdatePage", r"makeSpUpdatePage"),
         ("encPrm", r"encPrm"),
-        ("jocd", r"\bjocd\b"),
-        ("race", r"\brace(?:no|No)?\b"),
-        ("params", r"\bparams\b"),
         ("narabiyoso", r"narabiyoso"),
+        ("document.ready", r"document\.ready"),
+        ("onload", r"\bonload\b"),
     )
 
-    total_counts = {}
+    counts = {}
     matches_by_pattern = {}
 
     for label, pattern in patterns:
         count = 0
-        first_match = None
+        occurrences = []
 
         for url, source in sources:
-            matches = list(
-                re.finditer(
-                    pattern,
-                    source,
-                    flags=re.IGNORECASE,
-                )
-            )
+            for match in re.finditer(
+                pattern,
+                source,
+                flags=re.IGNORECASE,
+            ):
+                count += 1
 
-            count += len(matches)
+                # 呼び出し元を調べるため、ファイルごとに
+                # 最初の2箇所だけ保持する。
+                if len(occurrences) < 12:
+                    occurrences.append(
+                        (url, source, match)
+                    )
 
-            if matches and first_match is None:
-                first_match = (url, source, matches[0])
+        counts[label] = count
+        matches_by_pattern[label] = occurrences
 
-        total_counts[label] = count
-
-        if first_match is not None:
-            matches_by_pattern[label] = first_match
-
-    # 件数だけをまとめて出力
-    print("[LINE-JS] 検索結果")
+    print("[LINE-JS] 検索件数")
 
     for label, _ in patterns:
-        print(f"  {label}: {total_counts[label]}件")
+        print(f"  {label}: {counts[label]}件")
 
-    # 初回リクエストの調査に重要な箇所だけを抜粋する
+    # rfCreateListの定義と呼び出し元を区別する。
+    # 定義行だけでなく、実際の呼び出し位置を探す。
+    print("[LINE-JS] rfCreateListの出現ファイル")
+
+    rf_files = set()
+
+    for url, source in sources:
+        if re.search(r"rfCreateList", source, re.IGNORECASE):
+            rf_files.add(url)
+
+    for url in sorted(rf_files):
+        source = _LINE_JS_DIAG_CACHE[url]
+
+        print(
+            "  file="
+            + url.rsplit("/", 1)[-1]
+            + " / "
+            + str(len(re.findall(
+                r"rfCreateList",
+                source,
+                flags=re.IGNORECASE,
+            )))
+            + "件"
+        )
+
+    # パラメータ生成処理を特定するため、
+    # 呼び出し位置周辺の短い抜粋を出力する。
     important_labels = (
-        "getRequestGet",
-        "HDNKEY_ID",
-        "JSJ036",
         "rfCreateList",
+        "getRequestMain",
+        "HDNKEY_ID",
+        "makeSpUpdatePage",
         "encPrm",
     )
 
-    print("[LINE-JS] 重要箇所の短縮抜粋")
+    print("[LINE-JS] 呼び出し元の短い抜粋")
 
     snippets_printed = 0
-    max_snippets = 5
-    max_snippet_length = 240
+    max_snippets = 8
+    max_length = 300
 
     for label in important_labels:
-        item = matches_by_pattern.get(label)
+        occurrences = matches_by_pattern.get(label, [])
 
-        if item is None:
-            continue
+        for url, source, match in occurrences:
+            start = max(0, match.start() - 120)
+            end = min(
+                len(source),
+                match.end() + 180,
+            )
 
-        url, source, match = item
+            snippet = re.sub(
+                r"\s+",
+                " ",
+                source[start:end],
+            ).strip()
 
-        start = max(0, match.start() - 100)
-        end = min(
-            len(source),
-            match.end() + 140,
-        )
+            if len(snippet) > max_length:
+                snippet = snippet[:max_length] + "..."
 
-        snippet = re.sub(
-            r"\s+",
-            " ",
-            source[start:end],
-        )
+            print(
+                f"  [{label}] "
+                f"{url.rsplit('/', 1)[-1]}: "
+                f"{snippet}"
+            )
 
-        if len(snippet) > max_snippet_length:
-            snippet = snippet[:max_snippet_length] + "..."
+            snippets_printed += 1
 
-        print(
-            f"  [{label}] "
-            f"{url.rsplit('/', 1)[-1]}: {snippet}"
-        )
-
-        snippets_printed += 1
+            if snippets_printed >= max_snippets:
+                break
 
         if snippets_printed >= max_snippets:
             break
 
     if snippets_printed == 0:
-        print("  重要箇所は見つかりませんでした")
+        print("  該当箇所なし")
 
-    # 調査状況を短く表示
-    if total_counts["JSJ036"] == 0:
-        print(
-            "[LINE-JS] JSJ036未検出。"
-            "別の共通JSに定義されている可能性があります。"
-        )
-
-    if total_counts["getRequestGet"] == 0:
-        print(
-            "[LINE-JS] getRequestGet未検出。"
-            "共通通信JSの追加調査が必要です。"
-        )
-
-    if total_counts["HDNKEY_ID"] == 0:
-        print(
-            "[LINE-JS] HDNKEY_ID未検出。"
-            "ページ初期化処理の追加調査が必要です。"
-        )
-
+    print("[LINE-JS] 調査終了")
 # ============================================================
 # 個別レース
 # ============================================================
