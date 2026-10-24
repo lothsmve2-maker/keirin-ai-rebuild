@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-25",
-  "started_at": "2026-10-25T08:24:15.317158+09:00",
-  "finished_at": "2026-10-25T08:27:09.048859+09:00",
+  "started_at": "2026-10-25T08:53:06.848023+09:00",
+  "finished_at": "2026-10-25T08:55:40.576286+09:00",
   "status": "ok",
   "events_found": 7,
   "events_checked": 7,
@@ -13254,39 +13254,10 @@
       "verified_race_date": "2026-10-25",
       "start_time": "08:30",
       "distance_m": "1682",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "2"
-        },
-        {
-          "position": 3,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 6,
-          "car_no": "1"
-        },
-        {
-          "position": 8,
-          "car_no": "4"
-        },
-        {
-          "position": 10,
-          "car_no": "7"
-        },
-        {
-          "position": 11,
-          "car_no": "3"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -13302,7 +13273,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "前島の後ろへ",
+          "comment": "前島君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13320,7 +13291,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "自力でいく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13338,7 +13309,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "與古田の後ろへ",
+          "comment": "與古田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13356,7 +13327,7 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": "決めず先手ラインからいく",
+          "comment": "決めず先手ライン",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13374,7 +13345,7 @@
           "sashi": "1",
           "mark": "2",
           "back": "13",
-          "comment": "友永の後ろへ",
+          "comment": "友永君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13392,7 +13363,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "4",
-          "comment": "自分でやる",
+          "comment": "自分で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13410,7 +13381,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "11",
-          "comment": "自力でいく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -13419,11 +13390,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
@@ -13453,39 +13432,10 @@
       "verified_race_date": "2026-10-25",
       "start_time": "08:50",
       "distance_m": "1682",
-      "line_type": "先行一車",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "2"
-        },
-        {
-          "position": 3,
-          "car_no": "7"
-        },
-        {
-          "position": 4,
-          "car_no": "5"
-        },
-        {
-          "position": 5,
-          "car_no": "3"
-        },
-        {
-          "position": 7,
-          "car_no": "1"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        },
-        {
-          "position": 11,
-          "car_no": "6"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -13501,7 +13451,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "決めずにいく",
+          "comment": "決めず。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13519,7 +13469,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "11",
-          "comment": "自力でいく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13537,7 +13487,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "安坂の後ろへ",
+          "comment": "安坂君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13555,7 +13505,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "前々にいく",
+          "comment": "前々。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13573,7 +13523,7 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "山口３番手へ",
+          "comment": "山口勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13591,7 +13541,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "2",
-          "comment": "自分でやる",
+          "comment": "自分で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -13609,7 +13559,7 @@
           "sashi": "2",
           "mark": "2",
           "back": "0",
-          "comment": "（補充）",
+          "comment": "補充出走",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -13618,11 +13568,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
