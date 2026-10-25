@@ -1114,7 +1114,74 @@ def validate_race_list_candidate(session, race, expected_venue, today_text):
 # ============================================================
 # 公式コメント
 # ============================================================
+def fetch_official_line_info(
+    session,
+    race_encp,
+    referer=None,
+):
+    """KEIRIN.JP公式APIからライン情報を取得する。"""
 
+    if not race_encp:
+        print("  [公式ライン] race_encpがないため取得をスキップ")
+        return {}
+
+    api_url = f"{BASE}/sp/json"
+
+    try:
+        payload = request_json(
+            session,
+            api_url,
+            params={
+                "type": "JSJ036",
+                "encp": race_encp,
+            },
+            referer=referer or SCHEDULE_URL,
+        )
+
+        if not isinstance(payload, dict):
+            print(
+                "  [公式ライン] 想定外のレスポンス型:",
+                type(payload).__name__,
+            )
+            return {}
+
+        line_data = payload.get("narabiyoso")
+
+        print(
+            "  [公式ライン] API応答:",
+            f"トップ階層={list(payload.keys())[:30]}",
+            f"narabiyoso型={type(line_data).__name__}",
+        )
+
+        if isinstance(line_data, dict):
+            print(
+                "  [公式ライン] narabiyoso項目:",
+                list(line_data.keys())[:40],
+            )
+
+            shaban_data = line_data.get("shaban")
+
+            if isinstance(shaban_data, list):
+                print(
+                    "  [公式ライン] shaban件数:",
+                    len(shaban_data),
+                )
+
+                for item in shaban_data[:12]:
+                    if isinstance(item, dict):
+                        print(
+                            "  [公式ライン] 選手位置:",
+                            item,
+                        )
+
+        return payload
+
+    except Exception as exc:
+        print(
+            "  [公式ライン] API取得失敗:",
+            f"{type(exc).__name__}: {exc}",
+        )
+        return {}
 def fetch_official_comments(
     session,
     race_encp,
