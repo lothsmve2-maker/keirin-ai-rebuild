@@ -2060,6 +2060,25 @@ def extract_race_data(session, race):
     rider_info = extract_assignment(html, "SJ0315")
     line_info = extract_assignment(html, "SJ0314")
 
+    # KEIRIN.JP公式ラインAPI（JSJ036）から位置情報を取得する。
+    # 既存の選手・コメント取得処理には影響させない。
+    official_line_info = fetch_official_line_info(
+        session,
+        race["race_encp"],
+        referer=response.url,
+    )
+
+    # 公式APIで取得できたデータを優先する。
+    # 取得できなかった場合は、個別レースページからの情報を残す。
+    if (
+        isinstance(official_line_info, dict)
+        and isinstance(
+            official_line_info.get("narabiyoso"),
+            dict,
+        )
+    ):
+        line_info = official_line_info
+
     if not isinstance(rider_info, dict):
         raise ValueError("SJ0315を抽出できません")
 
