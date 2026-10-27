@@ -1861,8 +1861,9 @@ _LINE_JS_DIAG_DONE = set()
 
 def diagnose_official_line_js(session, html, referer):
     """
-    KEIRIN.JPの公式ライン情報取得処理を診断する。
-    FSJ0315.jsのリクエストIDとパラメータ登録処理を重点調査する。
+    KEIRIN.JP公式ライン情報の描画処理を調査する。
+    ichiの意味と、ライン構成への変換方法を特定するため、
+    SJ0314関連のJavaScriptを優先して調べる。
     """
 
     global _LINE_JS_DIAG_CACHE
@@ -1943,54 +1944,70 @@ def diagnose_official_line_js(session, html, referer):
         f" / 取得失敗={failed_count}件"
     )
 
-    # 今回重点的に調べる処理。
-    targets = (
-        ("getReqID", r"getReqID"),
-        ("gReqPrmsObject", r"gReqPrmsObject"),
-        ("jsonRequest", r"jsonRequest"),
+    # ライン描画・位置変換に関係する語句。
+    target_patterns = (
+        ("ライン描画関数", r"function\s+rf\w*"),
+        ("ライン描画呼出", r"rfView\.rf\w+"),
+        ("ライン形式", r"lineKeitai"),
+        ("位置情報ichi", r"\bichi\b"),
+        ("車番shaban", r"\bshaban\b"),
+        ("並び予想", r"narabiyoso"),
+        ("ライン生成", r"rfCreateList"),
+        ("位置・座標", r"maxAxixY"),
+        ("表示領域", r"ryoikiFlg"),
+        ("JSON取得ID", r"JSON_REQ_ID"),
         ("SJ0314", r"SJ0314"),
-        ("JSJ036", r"JSJ036"),
-        ("narabiyoso", r"narabiyoso"),
-        ("rfCreateList", r"rfCreateList"),
     )
 
-    print("[LINE-JS] リクエスト登録・変換処理")
+    # 関連性の高いファイルを優先する。
+    def source_priority(item):
+        url, source = item
+        filename = url.rsplit("/", 1)[-1].lower()
 
+        if "sj0314" in filename:
+            return 0
+        if "fsj0315" in filename:
+            return 1
+        if "#inline-" in filename:
+            return 2
+        if "sj031" in filename:
+            return 3
+        return 4
+
+    ordered_sources = sorted(
+        sources,
+        key=source_priority,
+    )
+
+    print("[LINE-JS] ライン描画・位置変換の調査")
+
+    printed = set()
     total_printed = 0
-    max_total = 16
-    max_snippet = 650
-    seen = set()
+    max_total = 24
+    max_per_pattern = 4
+    max_snippet = 1100
 
-    for label, pattern in targets:
-        for url, source in sources:
-            for match in re.finditer(
+    for label, pattern in target_patterns:
+        pattern_count = 0
+
+        for url, source in ordered_sources:
+            filename = url.rsplit("/", 1)[-1]
+
+            matches = list(re.finditer(
                 pattern,
                 source,
                 flags=re.IGNORECASE,
-            ):
-                # FSJ0315.jsを優先し、次にSJ0314関連を調べる。
-                filename = url.rsplit("/", 1)[-1]
+            ))
 
-                priority = (
-                    "FSJ0315" in filename
-                    or "SJ0314" in filename
-                    or "#inline-" in filename
-                )
+            if not matches:
+                continue
 
-                if not priority:
-                    continue
-
-                key = (url, label, match.start())
-
-                if key in seen:
-                    continue
-
-                seen.add(key)
-
-                start = max(0, match.start() - 250)
+            for match in matches:
+                # 一致位置の前後から処理内容を確認する。
+                start = max(0, match.start() - 450)
                 end = min(
                     len(source),
-                    match.end() + 400,
+                    match.end() + 650,
                 )
 
                 snippet = re.sub(
@@ -1998,6 +2015,17 @@ def diagnose_official_line_js(session, html, referer):
                     " ",
                     source[start:end],
                 ).strip()
+
+                key = (
+                    filename,
+                    label,
+                    snippet,
+                )
+
+                if key in printed:
+                    continue
+
+                printed.add(key)
 
                 if len(snippet) > max_snippet:
                     snippet = snippet[:max_snippet] + "..."
@@ -2007,76 +2035,149 @@ def diagnose_official_line_js(session, html, referer):
                 )
 
                 total_printed += 1
+                pattern_count += 1
 
-                if total_printed >= max_total:
+                if (
+                    pattern_count >= max_per_pattern
+                    or total_printed >= max_total
+                ):
                     break
 
-            if total_printed >= max_total:
+            if (
+                pattern_count >= max_per_pattern
+                or total_printed >= max_total
+            ):
                 break
 
         if total_printed >= max_total:
+            print(
+                "[LINE-JS] 出力上限に達したため"
+                "残りの検索を省略"
+            )
             break
 
-    if total_printed == 0:
-        print("  該当箇所なし")
+    # 描画関数そのものを、関数名から抽出する。
+    print("[LINE-JS] ライン描画関数の定義")
 
-    # FSJ0315.jsの関数定義を個別に抽出する。
-    print("[LINE-JS] FSJ0315.js関数定義")
-
-    function_patterns = (
-        (
-            "getReqID",
-            r"function\s+getReqID\s*\(",
-        ),
-        (
-            "jsonRequest",
-            r"function\s+jsonRequest\s*\(",
-        ),
+    function_pattern = re.compile(
+        r"function\s+"
+        r"((?:rf|RF)\w*)\s*"
+        r"\([^)]*\)\s*\{",
+        flags=re.IGNORECASE,
     )
 
-    definition_count = 0
+    function_count = 0
+    max_functions = 12
 
-    for url, source in sources:
+    for url, source in ordered_sources:
         filename = url.rsplit("/", 1)[-1]
 
-        if "FSJ0315" not in filename:
-            continue
+        for match in function_pattern.finditer(source):
+            function_name = match.group(1)
 
-        for label, pattern in function_patterns:
-            for match in re.finditer(
-                pattern,
-                source,
-                flags=re.IGNORECASE,
+            # ライン・位置表示に関係する関数を優先する。
+            function_start = match.start()
+            brace_start = source.find("{", match.start())
+
+            if brace_start < 0:
+                continue
+
+            depth = 0
+            quote = None
+            escaped = False
+            function_end = None
+
+            for index in range(brace_start, len(source)):
+                char = source[index]
+
+                if quote is not None:
+                    if escaped:
+                        escaped = False
+                    elif char == "\\":
+                        escaped = True
+                    elif char == quote:
+                        quote = None
+                    continue
+
+                if char in ("'", '"', "`"):
+                    quote = char
+                    continue
+
+                if char == "{":
+                    depth += 1
+                elif char == "}":
+                    depth -= 1
+
+                    if depth == 0:
+                        function_end = index + 1
+                        break
+
+            if function_end is None:
+                continue
+
+            function_text = source[
+                function_start:function_end
+            ]
+
+            relevant_terms = (
+                "ichi",
+                "shaban",
+                "narabiyoso",
+                "lineKeitai",
+                "maxAxixY",
+                "rfCreateList",
+                "line",
+                "draw",
+            )
+
+            if not any(
+                term.lower() in function_text.lower()
+                for term in relevant_terms
             ):
-                start = match.start()
-                end = min(
-                    len(source),
-                    start + 1600,
+                continue
+
+            key = (
+                filename,
+                function_name,
+                function_text,
+            )
+
+            if key in printed:
+                continue
+
+            printed.add(key)
+
+            snippet = re.sub(
+                r"\s+",
+                " ",
+                function_text,
+            ).strip()
+
+            print(
+                f"  [関数定義] {filename}"
+                f" / {function_name}:"
+            )
+            print(
+                "    " + snippet[:3500]
+                + (
+                    "..."
+                    if len(snippet) > 3500
+                    else ""
                 )
+            )
 
-                snippet = re.sub(
-                    r"\s+",
-                    " ",
-                    source[start:end],
-                ).strip()
+            function_count += 1
 
-                print(
-                    f"  [{label}] {snippet[:1300]}"
-                )
-
-                definition_count += 1
-
-                if definition_count >= 4:
-                    break
-
-            if definition_count >= 4:
+            if function_count >= max_functions:
                 break
 
-        if definition_count >= 4:
+        if function_count >= max_functions:
             break
 
-    if definition_count == 0:
-        print("  関数定義が見つかりません")
+    if function_count == 0:
+        print(
+            "  ライン描画関数を特定できませんでした"
+        )
 
     print("[LINE-JS] 調査終了")
 # ============================================================
