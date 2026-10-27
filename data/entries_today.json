@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-28",
-  "started_at": "2026-10-28T02:46:54.027687+09:00",
-  "finished_at": "2026-10-28T02:50:11.911494+09:00",
+  "started_at": "2026-10-28T03:42:50.601045+09:00",
+  "finished_at": "2026-10-28T03:45:31.976643+09:00",
   "status": "ok",
   "events_found": 8,
   "events_checked": 8,
@@ -15,7 +15,7 @@
   "races_date_unknown": 0,
   "races_failed": 0,
   "rider_count": 545,
-  "commented_rider_count": 338,
+  "commented_rider_count": 345,
   "events": [
     {
       "venue": "京王閣",
@@ -485,9 +485,9 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "片桐君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "2",
@@ -503,9 +503,9 @@
           "sashi": "0",
           "mark": "1",
           "back": "15",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "3",
@@ -521,9 +521,9 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "関東勢へ。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "4",
@@ -539,9 +539,9 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "決めずに。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "5",
@@ -557,9 +557,9 @@
           "sashi": "3",
           "mark": "1",
           "back": "2",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "自力。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "6",
@@ -575,9 +575,9 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "越智君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         },
         {
           "car_no": "7",
@@ -593,9 +593,9 @@
           "sashi": "7",
           "mark": "3",
           "back": "0",
-          "comment": "",
-          "comment_available": false,
-          "comment_status": "本文未取得"
+          "comment": "小林君。",
+          "comment_available": true,
+          "comment_status": "取得済み"
         }
       ],
       "rider_count": 7,
@@ -618,21 +618,13 @@
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
-      "comment_count": 0,
-      "comment_status": "本文未取得",
-      "missing_comment_car_numbers": [
-        "1",
-        "2",
-        "3",
-        "4",
-        "5",
-        "6",
-        "7"
-      ],
-      "all_comments_available": false,
-      "prediction_restriction": "情報不足",
-      "prediction_basis": "判断材料不足",
-      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
+      "comment_count": 7,
+      "comment_status": "取得済み",
+      "missing_comment_car_numbers": [],
+      "all_comments_available": true,
+      "prediction_restriction": "通常",
+      "prediction_basis": "通常の予想材料を使用",
+      "prediction_warning": "",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
@@ -15670,8 +15662,8 @@
     },
     "race_count": 79,
     "rider_count": 545,
-    "commented_rider_count": 338,
-    "comment_missing_rider_count": 207,
+    "commented_rider_count": 345,
+    "comment_missing_rider_count": 200,
     "events_without_races": []
   }
 }
