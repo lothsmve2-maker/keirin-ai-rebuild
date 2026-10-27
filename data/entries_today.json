@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-27",
-  "started_at": "2026-10-27T09:00:28.359213+09:00",
-  "finished_at": "2026-10-27T09:02:39.033363+09:00",
+  "started_at": "2026-10-27T09:40:54.693774+09:00",
+  "finished_at": "2026-10-27T09:43:10.968265+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 6,
@@ -6978,39 +6978,10 @@
       "verified_race_date": "2026-10-27",
       "start_time": "09:11",
       "distance_m": "1625",
-      "line_type": "二分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "7"
-        },
-        {
-          "position": 3,
-          "car_no": "4"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 7,
-          "car_no": "5"
-        },
-        {
-          "position": 8,
-          "car_no": "1"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7026,7 +6997,7 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "高橋さんマーク",
+          "comment": "高橋さん。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7044,7 +7015,7 @@
           "sashi": "3",
           "mark": "4",
           "back": "8",
-          "comment": "自力で頑張る",
+          "comment": "自力です。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7062,7 +7033,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "0",
-          "comment": "北日本勢に続く",
+          "comment": "北日本勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7080,7 +7051,7 @@
           "sashi": "1",
           "mark": "3",
           "back": "0",
-          "comment": "関東３番手",
+          "comment": "中川拓君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7098,7 +7069,7 @@
           "sashi": "5",
           "mark": "0",
           "back": "3",
-          "comment": "自力で勝負する",
+          "comment": "自力です。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7116,7 +7087,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "位置を決めずに",
+          "comment": "決めずに。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7134,7 +7105,7 @@
           "sashi": "6",
           "mark": "4",
           "back": "0",
-          "comment": "再度、織茂君へ",
+          "comment": "織茂君。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -7143,11 +7114,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
@@ -7177,39 +7156,10 @@
       "verified_race_date": "2026-10-27",
       "start_time": "09:32",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 4,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "2"
-        },
-        {
-          "position": 7,
-          "car_no": "5"
-        },
-        {
-          "position": 8,
-          "car_no": "7"
-        },
-        {
-          "position": 9,
-          "car_no": "3"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -7225,7 +7175,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "15",
-          "comment": "先行希望",
+          "comment": "先行希望です。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7243,7 +7193,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "門馬君マーク",
+          "comment": "門馬君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7261,7 +7211,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "中近３番手",
+          "comment": "中近三番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7279,7 +7229,7 @@
           "sashi": "5",
           "mark": "9",
           "back": "0",
-          "comment": "再度、齊藤君へ",
+          "comment": "齊藤君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7297,7 +7247,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "もちろん自力",
+          "comment": "自力です。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7315,7 +7265,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "3",
-          "comment": "前で頑張る",
+          "comment": "前で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -7333,7 +7283,7 @@
           "sashi": "12",
           "mark": "2",
           "back": "0",
-          "comment": "白井君マーク",
+          "comment": "白井君。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -7342,11 +7292,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
