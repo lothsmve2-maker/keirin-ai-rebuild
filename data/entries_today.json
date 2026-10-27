@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-27",
-  "started_at": "2026-10-27T11:32:01.159518+09:00",
-  "finished_at": "2026-10-27T11:34:34.574503+09:00",
+  "started_at": "2026-10-27T12:08:26.837138+09:00",
+  "finished_at": "2026-10-27T12:10:53.128943+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 6,
@@ -2799,39 +2799,10 @@
       "verified_race_date": "2026-10-27",
       "start_time": "11:42",
       "distance_m": "1692",
-      "line_type": "二分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2"
-        },
-        {
-          "position": 2,
-          "car_no": "4"
-        },
-        {
-          "position": 3,
-          "car_no": "6"
-        },
-        {
-          "position": 5,
-          "car_no": "1"
-        },
-        {
-          "position": 7,
-          "car_no": "7"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 10,
-          "car_no": "5"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -2847,7 +2818,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "位置は決めずにいく",
+          "comment": "決めず。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2865,7 +2836,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "16",
-          "comment": "いつも通り自力です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2883,7 +2854,7 @@
           "sashi": "5",
           "mark": "1",
           "back": "0",
-          "comment": "北日本で猪狩君目標",
+          "comment": "猪狩君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2901,7 +2872,7 @@
           "sashi": "6",
           "mark": "5",
           "back": "0",
-          "comment": "南関ラインで松坂君",
+          "comment": "松坂君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2919,7 +2890,7 @@
           "sashi": "4",
           "mark": "3",
           "back": "1",
-          "comment": "自分も位置は決めず",
+          "comment": "決めず。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2937,7 +2908,7 @@
           "sashi": "5",
           "mark": "2",
           "back": "0",
-          "comment": "南関の後ろへいく",
+          "comment": "南関勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -2955,7 +2926,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "5",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -2964,11 +2935,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
