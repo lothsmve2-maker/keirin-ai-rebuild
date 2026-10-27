@@ -1153,32 +1153,29 @@ def fetch_official_line_info(
             line_data = {}
 
         raw_order = line_data.get("shaban", [])
+
         if not isinstance(raw_order, list):
             raw_order = []
 
         print(
             "  [公式ライン診断]",
             f"resultCd={payload.get('resultCd')!r}",
-            f"narabiyosoキー={list(line_data.keys())}",
+            f"lineKeitai={line_data.get('lineKeitai')!r}",
+            f"lineKeitaiClass={line_data.get('lineKeitaiClass')!r}",
             f"shaban件数={len(raw_order)}",
         )
 
-        # ライン情報が存在する場合は、選手番号と位置情報を出力する。
-        if raw_order:
-            for item in raw_order:
-                if isinstance(item, dict):
-                    print(
-                        "  [公式ライン選手]",
-                        repr(item),
-                    )
-                else:
-                    print(
-                        "  [公式ライン選手]",
-                        repr(item),
-                    )
+        print(
+            "  [公式ライン全体データ]",
+            repr(line_data),
+        )
 
-        # 応答を加工せず返す。
-        # 取得できていない情報を推測で補完しない。
+        for item in raw_order:
+            print(
+                "  [公式ライン選手]",
+                repr(item),
+            )
+
         return payload
 
     except Exception as exc:
