@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-27",
-  "started_at": "2026-10-27T12:37:28.053294+09:00",
-  "finished_at": "2026-10-27T12:39:43.230013+09:00",
+  "started_at": "2026-10-27T13:11:04.635434+09:00",
+  "finished_at": "2026-10-27T13:12:58.887575+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 6,
@@ -3155,39 +3155,10 @@
       "verified_race_date": "2026-10-27",
       "start_time": "12:40",
       "distance_m": "1692",
-      "line_type": "三分戦",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "5"
-        },
-        {
-          "position": 2,
-          "car_no": "2"
-        },
-        {
-          "position": 4,
-          "car_no": "1"
-        },
-        {
-          "position": 5,
-          "car_no": "6"
-        },
-        {
-          "position": 7,
-          "car_no": "7"
-        },
-        {
-          "position": 8,
-          "car_no": "3"
-        },
-        {
-          "position": 9,
-          "car_no": "4"
-        }
-      ],
+      "line_type": "",
+      "line_order": [],
       "lines": [],
-      "line_status": "ライン構成不整合・要確認",
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -3203,7 +3174,7 @@
           "sashi": "5",
           "mark": "0",
           "back": "11",
-          "comment": "何でもやっていく",
+          "comment": "何でもやる。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3221,7 +3192,7 @@
           "sashi": "3",
           "mark": "5",
           "back": "0",
-          "comment": "蒔田さんにマーク",
+          "comment": "蒔田さん。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3239,7 +3210,7 @@
           "sashi": "7",
           "mark": "3",
           "back": "0",
-          "comment": "岡山同士の橋本凌君",
+          "comment": "橋本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3257,7 +3228,7 @@
           "sashi": "12",
           "mark": "1",
           "back": "0",
-          "comment": "中四国で岡山の後ろ",
+          "comment": "岡山勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3275,7 +3246,7 @@
           "sashi": "6",
           "mark": "0",
           "back": "4",
-          "comment": "先行、捲りの自力",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3293,7 +3264,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "同県の大谷君に任せ",
+          "comment": "大谷君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -3311,7 +3282,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "9",
-          "comment": "自力勝負していく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -3320,11 +3291,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
         "line_groups_consistent": false,
         "line_validation_passed": false
       },
