@@ -1740,11 +1740,12 @@ def normalize_rider(raw):
 
 def extract_official_lines(line_info):
     """
-    公式の位置情報を保存する。
-    位置番号の連続性からライン構成を推測しない。
+    KEIRIN.JP公式ラインAPIの情報を正規化して保存する。
+    位置番号だけからラインの区切りを推測しない。
     """
     empty_result = {
         "line_type": "",
+        "line_type_class": "",
         "line_order": [],
         "lines": [],
         "line_status": "公式ライン未確認",
@@ -1757,6 +1758,9 @@ def extract_official_lines(line_info):
     line_type = clean(
         first_value(line_data, "lineKeitai")
     )
+    line_type_class = clean(
+        first_value(line_data, "lineKeitaiClass")
+    )
     raw_order = line_data.get("shaban", [])
     if not isinstance(raw_order, list):
         raw_order = []
@@ -1768,9 +1772,7 @@ def extract_official_lines(line_info):
         car_no = clean(
             first_value(item, "shaban", "syaban")
         )
-        if not car_no:
-            continue
-        if not car_no.isdigit():
+        if not car_no or not car_no.isdigit():
             continue
         if not 1 <= int(car_no) <= 9:
             continue
@@ -1787,13 +1789,18 @@ def extract_official_lines(line_info):
         line_order.append({
             "position": position,
             "car_no": car_no,
+            "classname": clean(
+                first_value(item, "classname")
+            ),
         })
     line_order.sort(
         key=lambda item: (
             item["position"] is None,
-            item["position"]
-            if item["position"] is not None
-            else 999,
+            (
+                item["position"]
+                if item["position"] is not None
+                else 999
+            ),
         )
     )
     if not line_order:
@@ -1802,11 +1809,12 @@ def extract_official_lines(line_info):
         item["position"] is None
         for item in line_order
     ):
-        status = "位置番号不明・公式ライン未確認"
+        status = "位置番号不明・要確認"
     else:
-        status = "位置情報取得済み・公式ライン未確認"
+        status = "公式位置情報取得済み・ライン構成未確認"
     return {
         "line_type": line_type,
+        "line_type_class": line_type_class,
         "line_order": line_order,
         "lines": [],
         "line_status": status,
@@ -2376,10 +2384,11 @@ def extract_race_data(session, race):
         )),
 
         "line_type": official_lines["line_type"],
+        "line_type_class": official_lines["line_type_class"],
         "line_order": official_lines["line_order"],
         "lines": official_lines["lines"],
         "line_status": official_lines["line_status"],
-
+       
         "riders": riders,
         "rider_count": len(riders),
 
