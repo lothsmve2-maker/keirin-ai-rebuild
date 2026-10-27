@@ -2078,8 +2078,8 @@ def extract_race_data(session, race):
         referer=response.url,
     )
 
-    # 公式APIで取得できたデータを優先する。
-    # 取得できなかった場合は、個別レースページからの情報を残す。
+    # 公式APIのライン情報を確認する。
+    # shabanが空の場合は、ページ内JSONの情報を保持する。
     if (
         isinstance(official_line_info, dict)
         and isinstance(
@@ -2087,7 +2087,28 @@ def extract_race_data(session, race):
             dict,
         )
     ):
-        line_info = official_line_info
+        official_narabiyoso = (
+            official_line_info["narabiyoso"]
+        )
+        official_shaban = official_narabiyoso.get(
+            "shaban",
+            [],
+        )
+
+        if (
+            isinstance(official_shaban, list)
+            and len(official_shaban) > 0
+        ):
+            line_info = official_line_info
+            print(
+                "  [公式ライン] APIの位置情報を採用:",
+                f"{len(official_shaban)}人",
+            )
+        else:
+            print(
+                "  [公式ライン] APIの位置情報が空のため、"
+                "ページ内JSONを保持"
+            )
 
     if not isinstance(rider_info, dict):
         raise ValueError("SJ0315を抽出できません")
