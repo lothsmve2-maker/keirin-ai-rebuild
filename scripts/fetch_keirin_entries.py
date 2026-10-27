@@ -1394,35 +1394,41 @@ def fetch_official_comments(
                     "    トップ階層キー:",
                     list(payload.keys())[:50],
                 )
-                
-        # SJ0314の公式ライン情報を詳細表示する
-        if variable_name == "SJ0314":
-            narabiyoso = payload.get(
-                "narabiyoso",
-                {},
-            )
-            print(
-                "  [SJ0314公式ライン詳細]",
-                repr(narabiyoso),
-            )
-            if isinstance(narabiyoso, dict):
-                raw_shaban = narabiyoso.get(
-                    "shaban",
-                    [],
+
+            # SJ0314の公式ライン情報を詳細表示する
+            if variable_name == "SJ0314":
+                narabiyoso = payload.get(
+                    "narabiyoso",
+                    {},
                 )
-                if not isinstance(raw_shaban, list):
-                    raw_shaban = []
+
                 print(
-                    "  [SJ0314公式ライン項目]",
-                    f"lineKeitai={narabiyoso.get('lineKeitai')!r}",
-                    f"lineKeitaiClass={narabiyoso.get('lineKeitaiClass')!r}",
-                    f"shaban件数={len(raw_shaban)}",
+                    "  [SJ0314公式ライン詳細]",
+                    repr(narabiyoso),
                 )
-                for rider_item in raw_shaban:
-                    print(
-                        "  [SJ0314公式ライン選手]",
-                        repr(rider_item),
+
+                if isinstance(narabiyoso, dict):
+                    raw_shaban = narabiyoso.get(
+                        "shaban",
+                        [],
                     )
+
+                    if not isinstance(raw_shaban, list):
+                        raw_shaban = []
+
+                    print(
+                        "  [SJ0314公式ライン項目]",
+                        f"lineKeitai={narabiyoso.get('lineKeitai')!r}",
+                        f"lineKeitaiClass={narabiyoso.get('lineKeitaiClass')!r}",
+                        f"shaban件数={len(raw_shaban)}",
+                    )
+
+                    for rider_item in raw_shaban:
+                        print(
+                            "  [SJ0314公式ライン選手]",
+                            repr(rider_item),
+                        )
+
             for path, obj in walk_dicts(payload):
                 keys = list(obj.keys())
 
@@ -1474,6 +1480,7 @@ def fetch_official_comments(
                 payload,
                 f"ページ内JSON:{variable_name}",
             )
+
     official_comment_count = len(comments)
 
     # 3. netkeirinの選手コメント一覧を代替取得先として試す。
