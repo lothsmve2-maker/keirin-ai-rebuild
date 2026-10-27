@@ -1119,10 +1119,12 @@ def fetch_official_line_info(
     race_encp,
     referer=None,
 ):
-    """KEIRIN.JP公式APIからライン情報を取得する。"""
+    """KEIRIN.JP公式JSJ036からライン情報を取得・診断する。"""
 
     if not race_encp:
-        print("  [公式ライン] race_encpがないため取得をスキップ")
+        print(
+            "  [公式ライン] race_encpがないため取得をスキップ"
+        )
         return {}
 
     api_url = f"{BASE}/sp/json"
@@ -1140,40 +1142,43 @@ def fetch_official_line_info(
 
         if not isinstance(payload, dict):
             print(
-                "  [公式ライン] 想定外のレスポンス型:",
+                "  [公式ライン] 応答型:",
                 type(payload).__name__,
             )
             return {}
 
         line_data = payload.get("narabiyoso")
 
+        if not isinstance(line_data, dict):
+            line_data = {}
+
+        raw_order = line_data.get("shaban", [])
+        if not isinstance(raw_order, list):
+            raw_order = []
+
         print(
-            "  [公式ライン] API応答:",
-            f"トップ階層={list(payload.keys())[:30]}",
-            f"narabiyoso型={type(line_data).__name__}",
+            "  [公式ライン診断]",
+            f"resultCd={payload.get('resultCd')!r}",
+            f"narabiyosoキー={list(line_data.keys())}",
+            f"shaban件数={len(raw_order)}",
         )
 
-        if isinstance(line_data, dict):
-            print(
-                "  [公式ライン] narabiyoso項目:",
-                list(line_data.keys())[:40],
-            )
+        # ライン情報が存在する場合は、選手番号と位置情報を出力する。
+        if raw_order:
+            for item in raw_order:
+                if isinstance(item, dict):
+                    print(
+                        "  [公式ライン選手]",
+                        repr(item),
+                    )
+                else:
+                    print(
+                        "  [公式ライン選手]",
+                        repr(item),
+                    )
 
-            shaban_data = line_data.get("shaban")
-
-            if isinstance(shaban_data, list):
-                print(
-                    "  [公式ライン] shaban件数:",
-                    len(shaban_data),
-                )
-
-                for item in shaban_data[:12]:
-                    if isinstance(item, dict):
-                        print(
-                            "  [公式ライン] 選手位置:",
-                            item,
-                        )
-
+        # 応答を加工せず返す。
+        # 取得できていない情報を推測で補完しない。
         return payload
 
     except Exception as exc:
