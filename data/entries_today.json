@@ -2,18 +2,18 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-29",
-  "started_at": "2026-10-29T06:38:46.757830+09:00",
-  "finished_at": "2026-10-29T06:40:45.377963+09:00",
+  "started_at": "2026-10-29T07:15:25.076757+09:00",
+  "finished_at": "2026-10-29T07:17:36.611433+09:00",
   "status": "partial",
   "events_found": 6,
   "events_checked": 6,
-  "events_with_races": 5,
-  "races_found": 49,
-  "races_checked": 49,
+  "events_with_races": 6,
+  "races_found": 60,
+  "races_checked": 60,
   "races_fetched": 18,
   "races_excluded_other_date": 0,
   "races_date_unknown": 0,
-  "races_failed": 31,
+  "races_failed": 42,
   "rider_count": 125,
   "commented_rider_count": 0,
   "events": [
@@ -49,8 +49,8 @@
       "venue": "武雄",
       "venue_code": "84",
       "start_date": "20261027",
-      "race_count": 0,
-      "status": "レース一覧0件"
+      "race_count": 11,
+      "status": "レース一覧取得済み"
     },
     {
       "venue": "別府",
@@ -3555,6 +3555,72 @@
     },
     {
       "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "1",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "2",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "3",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "4",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "5",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "6",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "7",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "8",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "9",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "10",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
+      "venue": "武雄",
+      "race_no": "11",
+      "error": "AttributeError: 'list' object has no attribute 'get'"
+    },
+    {
+      "stage": "race_detail",
       "venue": "別府",
       "race_no": "1",
       "error": "AttributeError: 'list' object has no attribute 'get'"
@@ -3596,15 +3662,7 @@
       "error": "AttributeError: 'list' object has no attribute 'get'"
     }
   ],
-  "warnings": [
-    {
-      "stage": "event_coverage",
-      "message": "レース一覧を取得できていない開催場があります",
-      "venues": [
-        "武雄"
-      ]
-    }
-  ],
+  "warnings": [],
   "summary": {
     "target_date": "2026-10-29",
     "fetched_by_venue": {
@@ -3615,8 +3673,6 @@
     "rider_count": 125,
     "commented_rider_count": 0,
     "comment_missing_rider_count": 125,
-    "events_without_races": [
-      "武雄"
-    ]
+    "events_without_races": []
   }
 }
