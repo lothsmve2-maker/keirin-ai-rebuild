@@ -1772,9 +1772,19 @@ def normalize_rider(raw):
 
 def extract_official_lines(line_info):
     """
-    KEIRIN.JP公式ラインAPIの情報を正規化して保存する。
-    位置番号だけからラインの区切りを推測しない。
+    KEIRIN.JP公式ライン情報を正規化し、
+    公式画面の14列グリッドからライン構成を復元する。
+
+    ichi:
+        1～14   = 1行目
+        15～28  = 2行目
+        29～42  = 3行目
+
+    同じ行で位置が連続する車番を同一ラインとする。
+    空き位置があれば別ラインとする。
+    位置情報が不完全な場合は推測で補完しない。
     """
+
     empty_result = {
         "line_type": "",
         "line_type_class": "",
@@ -1782,42 +1792,71 @@ def extract_official_lines(line_info):
         "lines": [],
         "line_status": "公式ライン未確認",
     }
+
     if not isinstance(line_info, dict):
         return empty_result
+
     line_data = line_info.get("narabiyoso", {})
+
     if not isinstance(line_data, dict):
         return empty_result
+
     line_type = clean(
         first_value(line_data, "lineKeitai")
     )
+
     line_type_class = clean(
         first_value(line_data, "lineKeitaiClass")
     )
+
     raw_order = line_data.get("shaban", [])
+
     if not isinstance(raw_order, list):
         raw_order = []
+
     line_order = []
     seen_cars = set()
+    seen_positions = set()
+    invalid_position = False
+
     for item in raw_order:
         if not isinstance(item, dict):
             continue
+
         car_no = clean(
             first_value(item, "shaban", "syaban")
         )
+
         if not car_no or not car_no.isdigit():
             continue
+
         if not 1 <= int(car_no) <= 9:
             continue
+
         if car_no in seen_cars:
+            invalid_position = True
             continue
+
         seen_cars.add(car_no)
+
         position_raw = first_value(item, "ichi")
+
         try:
             position = int(position_raw)
+
             if position < 1:
                 position = None
+
         except (TypeError, ValueError):
             position = None
+
+        if position is None:
+            invalid_position = True
+        elif position in seen_positions:
+            invalid_position = True
+        else:
+            seen_positions.add(position)
+
         line_order.append({
             "position": position,
             "car_no": car_no,
@@ -1825,6 +1864,7 @@ def extract_official_lines(line_info):
                 first_value(item, "classname")
             ),
         })
+
     line_order.sort(
         key=lambda item: (
             item["position"] is None,
@@ -1835,21 +1875,103 @@ def extract_official_lines(line_info):
             ),
         )
     )
+
     if not line_order:
-        status = "公式位置情報なし"
-    elif any(
+        empty_result["line_type"] = line_type
+        empty_result["line_type_class"] = line_type_class
+        empty_result["line_status"] = "公式位置情報なし"
+        return empty_result
+
+    # 位置番号が欠けている場合は、
+    # ライン構成を推測せず位置情報だけ保存する。
+    if invalid_position or any(
         item["position"] is None
         for item in line_order
     ):
-        status = "位置番号不明・要確認"
-    else:
-        status = "公式位置情報取得済み・ライン構成未確認"
+        return {
+            "line_type": line_type,
+            "line_type_class": line_type_class,
+            "line_order": line_order,
+            "lines": [],
+            "line_status": "位置情報不完全・ライン未確定",
+        }
+
+    # 公式画面の14列グリッドを行・列に変換する。
+    # ichi=1 は0行目・0列目。
+    grid_rows = {}
+
+    for item in line_order:
+        position = item["position"]
+
+        row_index = (position - 1) // 14
+        column_index = (position - 1) % 14
+
+        grid_rows.setdefault(row_index, []).append({
+            "column": column_index,
+            "car_no": item["car_no"],
+        })
+
+    lines = []
+
+    # 行ごとに列順で並べ、
+    # 空き位置によってラインを分割する。
+    for row_index in sorted(grid_rows):
+        row_items = sorted(
+            grid_rows[row_index],
+            key=lambda item: item["column"],
+        )
+
+        current_line = []
+        previous_column = None
+
+        for item in row_items:
+            column = item["column"]
+            car_no = item["car_no"]
+
+            if (
+                current_line
+                and previous_column is not None
+                and column != previous_column + 1
+            ):
+                lines.append(current_line)
+                current_line = []
+
+            current_line.append(car_no)
+            previous_column = column
+
+        if current_line:
+            lines.append(current_line)
+
+    # ライン復元の整合性を検査する。
+    flattened_cars = [
+        car_no
+        for line in lines
+        for car_no in line
+    ]
+
+    expected_cars = [
+        item["car_no"]
+        for item in line_order
+    ]
+
+    if (
+        len(flattened_cars) != len(expected_cars)
+        or sorted(flattened_cars) != sorted(expected_cars)
+    ):
+        return {
+            "line_type": line_type,
+            "line_type_class": line_type_class,
+            "line_order": line_order,
+            "lines": [],
+            "line_status": "ライン復元検証失敗",
+        }
+
     return {
         "line_type": line_type,
         "line_type_class": line_type_class,
         "line_order": line_order,
-        "lines": [],
-        "line_status": status,
+        "lines": lines,
+        "line_status": "公式位置情報から復元",
     }
 
 # ============================================================
