@@ -2325,6 +2325,36 @@ def extract_race_data(session, race):
         response.url,
     )
     base_info = extract_assignment(html, "SC0201")
+    # SC0201から取得したレース情報の項目を診断する。
+    if isinstance(base_info, dict):
+        c0201data = base_info.get("C0201data", {})
+
+        if isinstance(c0201data, dict):
+            print(
+                "  [レース種別診断] C0201dataの項目:",
+                list(c0201data.keys()),
+            )
+
+            for key, value in c0201data.items():
+                key_text = str(key).lower()
+                value_text = str(value).lower()
+
+                if any(
+                    word in key_text or word in value_text
+                    for word in (
+                        "girl",
+                        "girls",
+                        "ladies",
+                        "女子",
+                        "ガールズ",
+                        "競走種別",
+                        "種別",
+                    )
+                ):
+                    print(
+                        "  [レース種別診断]",
+                        f"{key}={value!r}",
+                    )
     rider_info = extract_assignment(html, "SJ0315")
     line_info = extract_assignment(html, "SJ0314")
 
