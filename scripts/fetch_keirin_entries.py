@@ -2564,10 +2564,12 @@ def extract_race_data(session, race):
     )
 
     # ライン候補のグループ化で車番が欠落・重複していないか確認する。
+    # extract_official_lines() の lines は、車番リストのリスト。
     grouped_car_numbers = [
         str(car_no).strip()
         for line in official_lines["lines"]
-        for car_no in line.get("car_numbers", [])
+        if isinstance(line, list)
+        for car_no in line
     ]
 
     line_groups_consistent = (
