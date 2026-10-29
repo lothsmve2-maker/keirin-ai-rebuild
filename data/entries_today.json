@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-29",
-  "started_at": "2026-10-29T14:23:46.171999+09:00",
-  "finished_at": "2026-10-29T14:26:15.650888+09:00",
+  "started_at": "2026-10-29T14:43:02.756459+09:00",
+  "finished_at": "2026-10-29T14:45:40.257250+09:00",
   "status": "ok",
   "events_found": 6,
   "events_checked": 6,
@@ -4169,61 +4169,11 @@
       "verified_race_date": "2026-10-29",
       "start_time": "14:37",
       "distance_m": "2025",
-      "line_type": "二分戦",
-      "line_type_class": "nibusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 2,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 3,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 5,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 6,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 7,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 9,
-          "car_no": "6",
-          "classname": "base_color_6"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "4",
-          "2"
-        ],
-        [
-          "7",
-          "3",
-          "5"
-        ],
-        [
-          "6"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -4239,7 +4189,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "1",
-          "comment": "自力",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4257,7 +4207,7 @@
           "sashi": "7",
           "mark": "2",
           "back": "2",
-          "comment": "九州勢へ",
+          "comment": "九州勢。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4275,7 +4225,7 @@
           "sashi": "7",
           "mark": "3",
           "back": "0",
-          "comment": "７マーク",
+          "comment": "小西君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4293,7 +4243,7 @@
           "sashi": "5",
           "mark": "4",
           "back": "0",
-          "comment": "１マーク",
+          "comment": "兼本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4311,7 +4261,7 @@
           "sashi": "4",
           "mark": "3",
           "back": "0",
-          "comment": "３の後ろ",
+          "comment": "海老根さん。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4329,7 +4279,7 @@
           "sashi": "3",
           "mark": "0",
           "back": "0",
-          "comment": "一人で",
+          "comment": "１人で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -4347,7 +4297,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "5",
-          "comment": "自力基本",
+          "comment": "自力基本。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -4356,12 +4306,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
