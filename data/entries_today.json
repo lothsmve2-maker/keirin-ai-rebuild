@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-10-30",
-  "started_at": "2026-10-30T22:35:37.940706+09:00",
-  "finished_at": "2026-10-30T22:38:19.665151+09:00",
+  "started_at": "2026-10-30T23:28:14.840927+09:00",
+  "finished_at": "2026-10-30T23:30:57.269415+09:00",
   "status": "ok",
   "events_found": 8,
   "events_checked": 8,
@@ -9182,61 +9182,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "22:36",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 2,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 3,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 5,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 6,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 8,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 9,
-          "car_no": "3",
-          "classname": "base_color_3"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "5",
-          "6"
-        ],
-        [
-          "7",
-          "2"
-        ],
-        [
-          "4",
-          "3"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9369,12 +9319,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -9403,61 +9361,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "23:03",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 2,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 4,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 5,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 7,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 8,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 9,
-          "car_no": "5",
-          "classname": "base_color_5"
-        }
-      ],
-      "lines": [
-        [
-          "2",
-          "3"
-        ],
-        [
-          "4",
-          "7"
-        ],
-        [
-          "6",
-          "1",
-          "5"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -9590,12 +9498,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10742,61 +10658,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "22:54",
       "distance_m": "1682",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 2,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 3,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 5,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 6,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 8,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 9,
-          "car_no": "4",
-          "classname": "base_color_4"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "3",
-          "6"
-        ],
-        [
-          "7",
-          "2"
-        ],
-        [
-          "5",
-          "4"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -10812,7 +10678,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "14",
-          "comment": "自力勝負です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10830,7 +10696,7 @@
           "sashi": "7",
           "mark": "6",
           "back": "0",
-          "comment": "友永君に付ける",
+          "comment": "友永君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10848,7 +10714,7 @@
           "sashi": "3",
           "mark": "2",
           "back": "0",
-          "comment": "阿部君目標に",
+          "comment": "阿部君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10866,7 +10732,7 @@
           "sashi": "3",
           "mark": "3",
           "back": "0",
-          "comment": "牧田君に付ける",
+          "comment": "牧田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10884,7 +10750,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "6",
-          "comment": "自力勝負です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10902,7 +10768,7 @@
           "sashi": "1",
           "mark": "2",
           "back": "0",
-          "comment": "櫻川君の後ろへ",
+          "comment": "櫻川君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -10920,7 +10786,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "11",
-          "comment": "自力で頑張る",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -10929,12 +10795,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -10963,59 +10837,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "23:21",
       "distance_m": "1682",
-      "line_type": "二分戦",
-      "line_type_class": "nibusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 2,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 3,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 4,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 6,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 7,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 8,
-          "car_no": "7",
-          "classname": "base_color_7"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "2",
-          "5",
-          "6"
-        ],
-        [
-          "4",
-          "3",
-          "7"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -11031,7 +10857,7 @@
           "sashi": "0",
           "mark": "1",
           "back": "17",
-          "comment": "自力勝負です",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11049,7 +10875,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "1",
-          "comment": "吉川君に付ける",
+          "comment": "吉川君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11067,7 +10893,7 @@
           "sashi": "1",
           "mark": "7",
           "back": "0",
-          "comment": "吉成君目標に",
+          "comment": "吉成君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11085,7 +10911,7 @@
           "sashi": "3",
           "mark": "1",
           "back": "2",
-          "comment": "前で頑張る",
+          "comment": "前で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11103,7 +10929,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "埼京勢の後ろへ",
+          "comment": "埼京勢。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11121,7 +10947,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "渡辺君の後ろから",
+          "comment": "渡辺君から。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -11139,7 +10965,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "0",
-          "comment": "熊本３番手",
+          "comment": "熊本３番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -11148,12 +10974,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -12077,61 +11911,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "22:45",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 2,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 3,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 5,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 6,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 7,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 9,
-          "car_no": "5",
-          "classname": "base_color_5"
-        }
-      ],
-      "lines": [
-        [
-          "2",
-          "1",
-          "7"
-        ],
-        [
-          "3",
-          "4",
-          "6"
-        ],
-        [
-          "5"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12147,7 +11931,7 @@
           "sashi": "13",
           "mark": "7",
           "back": "0",
-          "comment": "２マーク",
+          "comment": "山本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12165,7 +11949,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "7",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12183,7 +11967,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "10",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12201,7 +11985,7 @@
           "sashi": "4",
           "mark": "1",
           "back": "0",
-          "comment": "３マーク",
+          "comment": "川本君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12219,7 +12003,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "10",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12237,7 +12021,7 @@
           "sashi": "7",
           "mark": "5",
           "back": "0",
-          "comment": "岡山三番手",
+          "comment": "岡山３番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12255,7 +12039,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "神奈川勢へ",
+          "comment": "神奈川勢へ。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -12264,12 +12048,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
@@ -12298,61 +12090,11 @@
       "verified_race_date": "2026-10-30",
       "start_time": "23:12",
       "distance_m": "1625",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 1,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 2,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 4,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 5,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 6,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 8,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 9,
-          "car_no": "3",
-          "classname": "base_color_3"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "6"
-        ],
-        [
-          "7",
-          "2",
-          "4"
-        ],
-        [
-          "5",
-          "3"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -12368,7 +12110,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "16",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12386,7 +12128,7 @@
           "sashi": "12",
           "mark": "4",
           "back": "0",
-          "comment": "７マーク",
+          "comment": "浜田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12404,7 +12146,7 @@
           "sashi": "6",
           "mark": "4",
           "back": "0",
-          "comment": "５マーク",
+          "comment": "廣田君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12422,7 +12164,7 @@
           "sashi": "2",
           "mark": "3",
           "back": "0",
-          "comment": "近畿三番手",
+          "comment": "近畿３番手。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12440,7 +12182,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "4",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12458,7 +12200,7 @@
           "sashi": "2",
           "mark": "1",
           "back": "0",
-          "comment": "１マーク",
+          "comment": "渡邉君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -12476,7 +12218,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "10",
-          "comment": "自力で",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -12485,12 +12227,20 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
