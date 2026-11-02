@@ -2,8 +2,8 @@
   "schema_version": 4,
   "source": "KEIRIN.JP",
   "target_date": "2026-11-02",
-  "started_at": "2026-11-02T11:01:38.562045+09:00",
-  "finished_at": "2026-11-02T11:04:30.155978+09:00",
+  "started_at": "2026-11-02T11:50:15.300686+09:00",
+  "finished_at": "2026-11-02T11:53:01.200592+09:00",
   "status": "ok",
   "events_found": 8,
   "events_checked": 8,
@@ -91,57 +91,11 @@
       "verified_race_date": "2026-11-02",
       "start_time": "11:05",
       "distance_m": "2015",
-      "line_type": "コマ切れ",
-      "line_type_class": "komagire",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 3,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 5,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 7,
-          "car_no": "6",
-          "classname": "base_color_6"
-        },
-        {
-          "position": 9,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 10,
-          "car_no": "5",
-          "classname": "base_color_5"
-        }
-      ],
-      "lines": [
-        [
-          "1",
-          "4"
-        ],
-        [
-          "3"
-        ],
-        [
-          "6"
-        ],
-        [
-          "2",
-          "5"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -157,7 +111,7 @@
           "sashi": "0",
           "mark": "0",
           "back": "6",
-          "comment": "自力でいく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -175,7 +129,7 @@
           "sashi": "1",
           "mark": "0",
           "back": "6",
-          "comment": "自力でいく",
+          "comment": "自力。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -193,7 +147,7 @@
           "sashi": "3",
           "mark": "1",
           "back": "0",
-          "comment": "単騎でいく",
+          "comment": "単騎で。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -211,7 +165,7 @@
           "sashi": "6",
           "mark": "2",
           "back": "0",
-          "comment": "佐藤の後ろへ",
+          "comment": "佐藤君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -229,7 +183,7 @@
           "sashi": "1",
           "mark": "1",
           "back": "0",
-          "comment": "佐伯の後ろへ",
+          "comment": "佐伯君。",
           "comment_available": true,
           "comment_status": "取得済み"
         },
@@ -247,7 +201,7 @@
           "sashi": "2",
           "mark": "0",
           "back": "0",
-          "comment": "単騎でいく",
+          "comment": "単騎で。",
           "comment_available": true,
           "comment_status": "取得済み"
         }
@@ -256,12 +210,19 @@
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 6,
@@ -290,61 +251,11 @@
       "verified_race_date": "2026-11-02",
       "start_time": "11:32",
       "distance_m": "2015",
-      "line_type": "三分戦",
-      "line_type_class": "sanbusen",
-      "line_order": [
-        {
-          "position": 2,
-          "car_no": "5",
-          "classname": "base_color_5"
-        },
-        {
-          "position": 3,
-          "car_no": "1",
-          "classname": "base_color_1"
-        },
-        {
-          "position": 4,
-          "car_no": "7",
-          "classname": "base_color_7"
-        },
-        {
-          "position": 6,
-          "car_no": "2",
-          "classname": "base_color_2"
-        },
-        {
-          "position": 7,
-          "car_no": "4",
-          "classname": "base_color_4"
-        },
-        {
-          "position": 9,
-          "car_no": "3",
-          "classname": "base_color_3"
-        },
-        {
-          "position": 10,
-          "car_no": "6",
-          "classname": "base_color_6"
-        }
-      ],
-      "lines": [
-        [
-          "5",
-          "1",
-          "7"
-        ],
-        [
-          "2",
-          "4"
-        ],
-        [
-          "3",
-          "6"
-        ]
-      ],
-      "line_status": "ライン構成不整合・要確認",
+      "line_type": "",
+      "line_type_class": "",
+      "line_order": [],
+      "lines": [],
+      "line_status": "公式位置情報なし",
       "riders": [
         {
           "car_no": "1",
@@ -362,7 +273,7 @@
           "back": "0",
           "comment": "後藤の後ろへ",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "2",
@@ -380,7 +291,7 @@
           "back": "9",
           "comment": "自力でいく",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "3",
@@ -398,7 +309,7 @@
           "back": "4",
           "comment": "自力でいく",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "4",
@@ -416,7 +327,7 @@
           "back": "0",
           "comment": "橋本の後ろへ",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "5",
@@ -434,7 +345,7 @@
           "back": "4",
           "comment": "自力でいく",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "6",
@@ -452,7 +363,7 @@
           "back": "0",
           "comment": "奥村の後ろへ",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         },
         {
           "car_no": "7",
@@ -470,28 +381,44 @@
           "back": "0",
           "comment": "伊勢崎の後ろへ",
           "comment_available": true,
-          "comment_status": "取得済み"
+          "comment_status": "前回取得分を保持"
         }
       ],
       "rider_count": 7,
       "validation": {
         "duplicate_car_numbers": false,
         "duplicate_line_numbers": false,
-        "missing_line_numbers": [],
+        "missing_line_numbers": [
+          "1",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7"
+        ],
         "unknown_line_numbers": [],
         "rider_count_valid": true,
-        "line_positions_valid": true,
-        "line_order_complete": true,
-        "line_groups_consistent": true,
+        "line_positions_valid": false,
+        "line_order_complete": false,
+        "line_groups_consistent": false,
         "line_validation_passed": false
       },
       "comment_count": 7,
       "comment_status": "取得済み",
-      "missing_comment_car_numbers": [],
-      "all_comments_available": true,
-      "prediction_restriction": "通常",
-      "prediction_basis": "通常の予想材料を使用",
-      "prediction_warning": "",
+      "missing_comment_car_numbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7"
+      ],
+      "all_comments_available": false,
+      "prediction_restriction": "情報不足",
+      "prediction_basis": "判断材料不足",
+      "prediction_warning": "コメント不足に加えてライン情報も不十分。予想の信頼度を下げ、見送りを検討すること。",
       "source": "KEIRIN.JP",
       "http_status": 200
     },
