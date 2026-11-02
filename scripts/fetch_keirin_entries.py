@@ -1147,21 +1147,39 @@ def fetch_official_line_info(
             )
             return {}
 
+        print(
+            "  [公式ライン診断]",
+            f"resultCd={payload.get('resultCd')!r}",
+            f"トップ階層キー={list(payload.keys())!r}",
+        )
+
         line_data = payload.get("narabiyoso")
 
         if not isinstance(line_data, dict):
-            line_data = {}
+            print(
+                "  [公式ライン] narabiyosoが存在しない、"
+                "または辞書形式ではありません"
+            )
+            print(
+                "  [公式ライン応答全体]",
+                repr(payload),
+            )
+            return payload
 
         raw_order = line_data.get("shaban", [])
 
         if not isinstance(raw_order, list):
+            print(
+                "  [公式ライン] shabanがリスト形式ではありません:",
+                repr(raw_order),
+            )
             raw_order = []
 
         print(
             "  [公式ライン診断]",
-            f"resultCd={payload.get('resultCd')!r}",
             f"lineKeitai={line_data.get('lineKeitai')!r}",
             f"lineKeitaiClass={line_data.get('lineKeitaiClass')!r}",
+            f"maxAxixY={line_data.get('maxAxixY')!r}",
             f"shaban件数={len(raw_order)}",
         )
 
